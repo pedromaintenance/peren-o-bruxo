@@ -49,3 +49,22 @@ HTML + CSS + JavaScript puro, PWA por Service Worker, localStorage e exportaçã
 - **32** missões e **10** regiões exploráveis.
 
 As contagens são base de dados, não promessa de efeitos exclusivos para cada registro. O jogo é uma versão sandbox inicial e o catálogo de Skyrim é **parcial**.
+
+
+## Patch v0.1.1 — Estabilidade e Mercado (13/10/2026)
+
+- Corrigido acúmulo de notificações de proficiência e level up: apenas um aviso aparece por vez e qualquer clique o fecha imediatamente; mensagens desaparecem sozinhas após 2,7 segundos.
+- Corrigidas recompensas de missões lendárias: o catálogo `reliquias_dnd.json` agora é carregado pelo jogo.
+- Adicionado botão **Recuar da batalha**, inclusive durante missões; o contrato permanece disponível. Saves com todos os inimigos mortos permitem **Concluir vitória pendente** após recarregar.
+- Ganho de XP recebe validação e limites defensivos, consolidando múltiplos níveis em uma única mensagem.
+- Magias da batalha paginadas em grupos de seis, mesmo quando o jogador conhece centenas.
+- Cada vendedor expõe um estoque selecionado de até 18 mercadorias, com forte preferência por ingredientes básicos, renovado a cada três dias. **Nenhum item ou receita foi removido do catálogo.**
+- Saves de versão 1 continuam aceitos no `localStorage`, sem reiniciar personagem nem suas missões. O Service Worker usa cache novo `peren-mercador-carcaca-0.1.1-offline`.
+
+### Testes de regressão
+
+`tests/qa_smoke.py` valida a interface usando dados JSON em memória: 32 missões, 354 magias, 2.316 receitas referencialmente íntegras, 27 vendedores, avisos, XP, recuo, consumíveis, persistência simulada e quatro larguras móveis. Ele **não substitui o teste da atualização instalada no aparelho** nem testes completos de equilíbrio de combate.
+
+Para executar: `pip install playwright` e `playwright install chromium`, depois `python tests/qa_smoke.py` na raiz do repositório.
+
+Para receber a atualização no PWA já instalado, entre no jogo com internet, feche e abra novamente (pode ser necessário atualizar/reabrir duas vezes enquanto o Service Worker novo assume). Confira `v0.1.1` no topo. **Não limpe os dados do site para atualizar**, pois isso pode apagar o save local. Exporte o save como precaução.
