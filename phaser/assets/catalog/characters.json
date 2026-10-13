@@ -1,3 +1,3 @@
 [
-  {"id":"peren","name":"Peren, o Bruxo","status":"planejado"}
+  {"id":"peren","name":"Peren, o Bruxo","status":"em_producao","artist":"arte procedural autoral · Carcaça","license":"arte original para RPG Carcaça","atlas":"phaser/assets/characters/peren/peren-atlas.png","animation_data":"phaser/assets/characters/peren/atlas.json","portrait":"phaser/assets/characters/peren/portrait.png","qa":"128 frames/32 clips testados estaticamente; revisão visual e Android pendentes"}
 ]

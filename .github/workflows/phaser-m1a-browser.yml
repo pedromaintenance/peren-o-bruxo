@@ -1,0 +1,41 @@
+name: Phaser M1a - navegador e build
+on:
+  push:
+    branches: ["feature/phaser-movimento"]
+    paths: ["phaser-lab/**", "phaser/assets/characters/peren/**", "phaser/assets/regions/floresta-murin/**", ".github/workflows/phaser-m1a-browser.yml"]
+  pull_request:
+    paths: ["phaser-lab/**", "phaser/assets/characters/peren/**", "phaser/assets/regions/floresta-murin/**", ".github/workflows/phaser-m1a-browser.yml"]
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências da compilação
+        run: npm install --no-audit --no-fund
+      - name: Testes determinísticos
+        run: npm test
+      - name: Construir pacote estático com Phaser local
+        run: npm run build
+      - name: Instalar Chromium para teste visual
+        run: npx playwright install --with-deps chromium
+      - name: Prévia, exploração e screenshots
+        run: |
+          (npm run preview -- --host 127.0.0.1 > /tmp/peren-preview.log 2>&1 &)
+          for i in $(seq 1 35); do curl -fsS http://127.0.0.1:4173/ > /dev/null && break || sleep 1; done
+          npm run test:e2e
+      - name: Anexar imagens de QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-murin-qa
+          path: phaser-lab/screenshots/*.png
+          if-no-files-found: ignore

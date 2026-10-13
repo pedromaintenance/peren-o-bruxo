@@ -12,6 +12,19 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [ ] Validar a execução do Phaser empacotado localmente sem rede em navegador de destino.
 - [ ] Abrir PR da fundação contra `phaser/develop` após revisão.
 
+## M1a — Movimento e coleta (fatia em feature/phaser-movimento) [EM EXECUÇÃO]
+
+- [x] Criar sprite **autoral provisório** de Peren: 4 direções × 8 estados × 4 frames; validar atlas e clips por dados.
+- [x] Criar o primeiro tileset original de Mürin e seus props; geração por seed, rio, ponte, saída alcançável, nós de coleta.
+- [x] Integrar movimento direcional/Arcade Physics, joystick, corrida, câmera e coleta no laboratório Phaser isolado.
+- [x] Testar geração determinística e alcance: 86 cenários/validações Node passaram localmente.
+- [x] Criar workflow de build e teste visual Playwright para navegador remoto no GitHub Actions.
+- [ ] Confirmar compilação Vite e Phaser empacotado no CI (dependências npm inacessíveis no container de desenvolvimento).
+- [ ] Revisar arte, proporções e UX com screenshot de navegador + aprovação do usuário.
+- [ ] Validar fps, toque e responsividade em dispositivo Android físico.
+
+**Atenção:** M1a não encerra M1. Não inclui ainda inimigos, combate Phaser, magias animadas, crafting/economia integrada ou saves migrados. Detalhes: `docs/08-m1a-movimento.md`.
+
 ## M1 — Portomonte + Floresta de Mürin (vertical slice)
 
 - [ ] Importar lógica econômica atual e manter seus testes.
