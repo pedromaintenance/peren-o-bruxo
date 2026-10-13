@@ -1,0 +1,12 @@
+[
+  {"id":"costa-sangue","name":"Recifes do Mar de Sangue","status":"planejado","city":"portomonte"},
+  {"id":"floresta-murin","name":"Floresta de Mürin","status":"planejado","city":"portomonte"},
+  {"id":"minas-thargrid","name":"Minas de Thargrid","status":"planejado","city":"thargrid"},
+  {"id":"trilha-ironwood","name":"Caminhos de Ironwood","status":"planejado","city":"ironwood"},
+  {"id":"ruinas-vandar","name":"Ruínas de Vandar","status":"planejado","city":"eldroth"},
+  {"id":"cranio-golzdov","name":"Escavações do Crânio","status":"planejado","city":"garganta"},
+  {"id":"docas-drakport","name":"Docas de Drakport","status":"planejado","city":"drakport"},
+  {"id":"lama-da-foz","name":"Foz de Gualápoles","status":"planejado","city":"boca-abismo"},
+  {"id":"corte-riverie","name":"Jardins da Corte","status":"planejado","city":"shadar-riverie"},
+  {"id":"deserto-ossos","name":"Areias do Além Sul","status":"planejado","city":"alem-sul"}
+]

@@ -1,0 +1,64 @@
+# Roadmap e critérios de aceite — Peren Phaser
+
+O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que não for concluído fica explícito no manifesto; placeholders não contam como asset aprovado.
+
+## M0 — Fundação e auditoria [EM EXECUÇÃO]
+
+- [x] Manter o mesmo repositório e proteger a `main` existente com branches.
+- [x] Criar `phaser/develop` e `feature/phaser-fundacao`.
+- [x] Documentar gameplay, arte, arquitetura, pipeline, cobertura, exploração, combate e segurança de save.
+- [x] Gerar manifesto inicial dos IDs reais do catálogo com status `planejado`.
+- [ ] Revisar e aprovar estilo artístico e escala de sprites no celular.
+- [ ] Validar a execução do Phaser empacotado localmente sem rede em navegador de destino.
+- [ ] Abrir PR da fundação contra `phaser/develop` após revisão.
+
+## M1 — Portomonte + Floresta de Mürin (vertical slice)
+
+- [ ] Importar lógica econômica atual e manter seus testes.
+- [ ] Caminhada fluida com aceleração, colisões, joystick, teclado e câmera.
+- [ ] Sprite definitivo de Peren (idle, andar 4 direções, correr, interagir, colher, sofrer dano, conjurar, atacar).
+- [ ] Cenário de Portomonte (menu), retratos/ambientes dos 3 vendedores existentes e oficinas locais.
+- [ ] Tileset/props definitivos de Mürin; coleta de ingredientes visíveis, feedback de inventário.
+- [ ] Três monstros de Mürin com retrato, sprite e **animações próprias completas**.
+- [ ] Batalha Phaser com ações, transição, animação de combate e 3 feitiços visuais distintos.
+- [ ] Retorno seguro da batalha ao mesmo mapa; loot e XP idempotentes.
+- [ ] Teste de 30 minutos no celular, reload em viagem e combate, alternar online/offline.
+
+## M2 — Combate definitivo
+
+- [ ] Apresentação JRPG com câmera, posição, turnos, alvo, VFX, SFX, dano, escudos, status, derrota, vitória.
+- [ ] Interface paginada para grimório de centenas de magias.
+- [ ] Assinaturas únicas das magias, com primeiro lote de 30 pronto e validado.
+- [ ] Priorização dos bosses e dos inimigos associados às missões iniciais.
+- [ ] Teste dos 354 feitiços, mesmo quando visuais ainda marcados como provisórios.
+
+## M3 — Biomas e exploração procedural
+
+- [ ] Dez zonas com estilos próprios (mar, bosque, mina, ruínas etc.) e mapas gerados por seed.
+- [ ] Lógica de Ironwood adaptada: fogo, água, gelo, fumaça, vegetação, terreno frágil e efeitos de estado.
+- [ ] IA de patrulha, perseguição, visão, fuga, detecção e zonas de perigo.
+- [ ] Geração sempre com entrada/saída acessíveis, recursos coletáveis e sem softlocks.
+
+## M4 — Nove cidades e pessoas
+
+- [ ] Ilustração para cada cidade, cada oficina ativa e cada vendedor, com retratos e animações de interação.
+- [ ] Treinamento com tutores mantido, sem regressão de custos ou progressão.
+- [ ] Transições de viagem e ambientação regional; menus acessíveis no celular.
+
+## M5 — Cobertura visual integral do catálogo
+
+- [ ] 222 monstros: retrato, sprite e sete ou mais animações específicas, com especiais quando previstos.
+- [ ] 354 magias: efeito distinguível por ID, sequências de conjuração e impacto.
+- [ ] 2.785 itens: ícone individual; apresentação contextual (saque, uso, equipamento).
+- [ ] 27 vendedores: retratos e visuais de interação; 9 cidades e 10 zonas: arte própria.
+- [ ] 2.316 receitas: ingredientes e resultado visíveis, animação procedural de elaboração por receita.
+- [ ] Revisão de legibilidade, desempenho e tamanho do download/cache.
+
+## M6 — Lançamento / substituição progressiva
+
+- [ ] Auditoria de licenças, arquivos órfãos, compressão, loading, uso de memória.
+- [ ] Export/import e migração de saves 0.1.x.
+- [ ] Playtest completo em dispositivo físico, incluindo PWA offline.
+- [ ] Merge aprovado: `feature/*` → `phaser/develop` → PR de release → `main`.
+
+**Regra:** não registrar trabalho como concluído apenas porque existe a referência de um asset no JSON; o arquivo, a animação, a integração e os testes precisam existir.

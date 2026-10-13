@@ -1,0 +1,20 @@
+[
+  {"id":"ui-mundo","name":"mundo","status":"planejado"},
+  {"id":"ui-mercado","name":"mercado","status":"planejado"},
+  {"id":"ui-oficinas","name":"oficinas","status":"planejado"},
+  {"id":"ui-grimorio","name":"grimorio","status":"planejado"},
+  {"id":"ui-peren","name":"peren","status":"planejado"},
+  {"id":"ui-missoes","name":"missoes","status":"planejado"},
+  {"id":"ui-viagem","name":"viagem","status":"planejado"},
+  {"id":"ui-exploracao","name":"exploracao","status":"planejado"},
+  {"id":"ui-combate","name":"combate","status":"planejado"},
+  {"id":"ui-recompensas","name":"recompensas","status":"planejado"},
+  {"id":"ui-tutores","name":"tutores","status":"planejado"},
+  {"id":"ui-alquimia","name":"alquimia","status":"planejado"},
+  {"id":"ui-forja","name":"forja","status":"planejado"},
+  {"id":"ui-encantamento","name":"encantamento","status":"planejado"},
+  {"id":"ui-curtume","name":"curtume","status":"planejado"},
+  {"id":"ui-joalheria","name":"joalheria","status":"planejado"},
+  {"id":"ui-cozinha","name":"cozinha","status":"planejado"},
+  {"id":"ui-escrita","name":"escrita","status":"planejado"}
+]
