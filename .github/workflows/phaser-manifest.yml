@@ -1,0 +1,40 @@
+name: Phaser foundation checks
+on:
+  push:
+    branches:
+      - 'phaser/**'
+      - 'feature/phaser-*'
+    paths:
+      - 'data/**'
+      - 'phaser/**'
+      - 'phaser-lab/**'
+      - 'tools/generate_visual_manifest.py'
+      - 'tests/test_phaser_manifest.py'
+      - '.github/workflows/phaser-manifest.yml'
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'phaser/**'
+      - 'phaser-lab/**'
+      - 'tools/generate_visual_manifest.py'
+      - 'tests/test_phaser_manifest.py'
+      - '.github/workflows/phaser-manifest.yml'
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify manifest and catalog
+        run: |
+          python tools/generate_visual_manifest.py --check
+          python -m unittest discover -s tests -p 'test_phaser_manifest.py'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax check Phaser lab
+        run: |
+          node --check phaser-lab/src/main.js
+          node --check phaser-lab/src/exploration.js
