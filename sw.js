@@ -1,4 +1,4 @@
-const CACHE='peren-mercador-carcaca-0.1.1-offline';
+const CACHE='peren-mercador-carcaca-0.1.2-offline';
 const FILES=['./','./index.html','./style.css','./game.js','./manifest.webmanifest','./assets/visao-carcaca.webp','./assets/icone-base.webp','./icons/icon-192.png','./icons/icon-512.png',...['espada','armadura','pocao','elmo','grimorio','anel','arco','martelo','tomo','erva','escama','osso','cristal'].map(n=>'./assets/icons/'+n+'.webp'),...'itens receitas magias monstros cidades expedicoes missoes manifesto_dados reliquias_dnd'.split(' ').map(n=>'./data/'+n+'.json')];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(n=>n!==CACHE&&n.startsWith('peren-mercador-')).map(n=>caches.delete(n)))),self.clients.claim()]))});

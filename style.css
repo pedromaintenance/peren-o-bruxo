@@ -4,3 +4,6 @@
 
 /* v0.1.1: notificações transitórias não capturam toque */
 .toast{pointer-events:none;max-height:20vh;overflow:hidden}
+
+/* v0.1.2 — professores nas oficinas */
+.tutor-section{margin:8px 0 22px;padding:8px 0;border-bottom:1px solid #44564c}.tutor-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0 12px}.tutor-card{margin:0}.tutor-card .labelled{font-size:14px}.tutor-card .price{font-size:12px}.tutor-card p{margin:4px 0 10px}

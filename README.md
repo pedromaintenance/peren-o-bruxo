@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
-**Versão 0.1.0 — campanha sandbox jogável / base de dados extensível.**
+**Versão 0.1.2 — campanha sandbox jogável / base de dados extensível.**
 
 ## Publicação e instalação
 
@@ -68,3 +68,16 @@ As contagens são base de dados, não promessa de efeitos exclusivos para cada r
 Para executar: `pip install playwright` e `playwright install chromium`, depois `python tests/qa_smoke.py` na raiz do repositório.
 
 Para receber a atualização no PWA já instalado, entre no jogo com internet, feche e abra novamente (pode ser necessário atualizar/reabrir duas vezes enquanto o Service Worker novo assume). Confira `v0.1.1` no topo. **Não limpe os dados do site para atualizar**, pois isso pode apagar o save local. Exporte o save como precaução.
+
+
+## Patch v0.1.2 — Tutores de Ofício (13/10/2026)
+
+- Na aba **Oficinas**, cada cidade apresenta seus tutores locais, associados às estações disponíveis: Alquimia, Forja, Encantamento, Curtume, Escrita, Joalheria ou Cozinha.
+- Cada aula consome **1 ação** e **moedas**, sem exigir materiais; o preço é calculado de forma crescente pelo nível **do próprio ofício**: `12 + 3 × nível + arredondar_para_cima(nível² / 18)`.
+- Até a proficiência 39, uma aula pode elevar **2 níveis**; a partir da proficiência 40, eleva **1 nível**, até o máximo 100. A implementação calcula a XP necessária para atingir o novo patamar, em vez de dar XP fixa que se tornaria insuficiente com o tempo.
+- Há um atalho na aba **Peren → Proficiências → Encontrar tutores de ofício**. Estudos mágicos continuam no **Grimório**.
+- A compra de aulas é validada antes de descontar ações ou dinheiro: sem tutor local, moedas suficientes, ações ou estando no nível máximo, não ocorre gasto.
+- O sistema utiliza as proficiências `skills` já existentes no save; **não há migração nem reinicialização**. O cache PWA foi atualizado para `peren-mercador-carcaca-0.1.2-offline`.
+- QA adicional: `python tests/qa_tutores.py`; verificação de nove cidades, sete ofícios, aumento do preço, cobrança, save, requisitos, limite de nível e quatro larguras de tela.
+
+O patch foi testado em navegador automatizado com o catálogo JSON completo em memória. A atualização de um PWA já instalado deve ser confirmada no aparelho; **faça um backup do save** e evite limpar os dados do site.
