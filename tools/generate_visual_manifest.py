@@ -60,7 +60,7 @@ def put(path, value, check):
     else:
         text=json.dumps(value,ensure_ascii=False,indent=2)+'\n'
     if check:
-        if not path.exists() or path.read_text(encoding='utf-8')!=text:
+        if not path.exists() or path.read_text(encoding='utf-8').rstrip('\r\n') != text.rstrip('\r\n'):
             raise AssertionError(f'Manifesto desatualizado: {path}; execute novamente o gerador')
     else:
         path.parent.mkdir(parents=True,exist_ok=True)
