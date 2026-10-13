@@ -19,6 +19,16 @@ for(const [w,h] of [[390,844],[360,800]]){
  assert.ok(moved>stats.startX+12,`player did not move: ${moved} <= ${stats.startX}`);
  // Single nearby plant is placed under Peren to check a real animation and pickup.
  await page.evaluate(()=>{const scene=window.__perenLab.scene.getScene('ExplorationScene'),n=scene.world.nodes[0];scene.player.setPosition((n.x+.5)*32,(n.y+.5)*32);scene.player.body.reset(scene.player.x,scene.player.y)});
+ // A fixed HTML joystick must remain fully visible at mobile sizes.
+ const joy=page.locator('#joystick');const joyBox=await joy.boundingBox();
+ assert.ok(joyBox.x>=0&&joyBox.x+joyBox.width<=w,'joystick clipped horizontally');
+ assert.ok(joyBox.y>=0&&joyBox.y+joyBox.height<=h,'joystick clipped vertically');
+ await page.mouse.move(joyBox.x+55,joyBox.y+55);await page.mouse.down();
+ await page.mouse.move(joyBox.x+88,joyBox.y+55,{steps:5});
+ await page.waitForTimeout(130);
+ const joyVector=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').joy.x);
+ assert.ok(joyVector>0.3,'touch drag not passed to Phaser');
+ await page.mouse.up();
  await page.locator('#gatherBtn').click();
  await page.waitForFunction(()=>{const x=window.__perenLab.registry.get('collected');return x&&Object.values(x).some(n=>n>0)},{timeout:8000});
  await page.screenshot({path:`screenshots/murin-forest-${w}.png`,fullPage:true});
