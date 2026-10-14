@@ -86,3 +86,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 ## Próxima ação
 
 Concluir e revisar M1g-A; a partir da tela aprovada, implementar inventário M1g-B preservando o contrato de progresso e os controles existentes.
+
+### Revisão do primeiro lote de screenshots
+
+Após inspeção visual das capturas reais, foram removidas duas imagens clássicas que continham menus/legendas embutidos. O M1g-A mantém apenas a pintura de ambientação sem controles incorporados; artes próprias de Portomonte e de oficinas seguem pendentes de produção. O CSS do hub foi corrigido para carregar o cenário relativo à página compilada, não ao CSS de desenvolvimento.
