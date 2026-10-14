@@ -209,6 +209,12 @@ for(const [w,h] of [[390,844],[360,800]]){
  await page.locator('#encounterModal').waitFor({state:'visible',timeout:8000});
  await page.locator('#observeBeast').click();
  await page.locator('#battleUI').waitFor({state:'visible',timeout:8000});
+ // The scene is visible before its entry animation is finished; do not issue B while busy.
+ await page.waitForFunction(()=>{
+   const battle=window.__perenLab.scene.getScene('BattleScene');
+   return battle?.state?.status==='active'&&!battle.busy;
+ },{timeout:12000});
+ await page.waitForTimeout(110);
  if(w===390){
    await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:true,value:1}});
    await page.waitForFunction(()=>window.__perenLab.scene.getScene('BattleScene').state.status==='fled',{timeout:6000});
