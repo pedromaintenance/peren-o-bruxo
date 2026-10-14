@@ -39,6 +39,37 @@ for(const [w,h] of [[390,844],[360,800]]){
  assert.equal(stats.valid,true);
  const creatures=await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),g=window.__perenLab;return {n:s.beasts.length,types:s.beasts.map(b=>b.type),atlas:s.beasts.map(b=>g.textures.get(b.type).frameTotal)};});
  assert.equal(creatures.n,6);assert.equal(new Set(creatures.types).size,3);assert.ok(creatures.atlas.every(n=>n>=28));assert.equal(stats.texture,true);assert.ok(stats.frames>=128,JSON.stringify(stats));assert.ok(stats.anims>=32,JSON.stringify(stats));
+ // Regression: foliage is visual only; only the tree's narrow trunk is solid.
+ const trunkStatus=await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene');
+   const trees=s.world.obstacles.filter(o=>o.kind==='tree');
+   const t=s.treeTrunks?.[0],body=t?.collider.body;
+   if(!t||!body)throw Error('Missing separated tree trunk collider');
+   return {n:s.treeTrunks.length,expected:trees.length,x:t.x,y:t.y,
+     width:body.width,height:body.height,cx:body.center.x,cy:body.center.y};
+ });
+ assert.equal(trunkStatus.n,trunkStatus.expected);
+ assert.ok(trunkStatus.n>=80,'Too few tree colliders: '+trunkStatus.n);
+ assert.ok(trunkStatus.width<=16&&trunkStatus.height<=16,
+   'Tree canopy has a giant physical body: '+JSON.stringify(trunkStatus));
+ assert.ok(Math.abs(trunkStatus.cx-trunkStatus.x)<=2&&Math.abs(trunkStatus.cy-trunkStatus.y)<=6,
+   'Tree trunk physical body is misplaced: '+JSON.stringify(trunkStatus));
+ const startUnderCanopy=await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene'),world=s.world;
+   const free=(x,y)=>!world.blocked.has(x+','+y);
+   for(const tree of s.treeTrunks){
+     const x=Math.floor(tree.x/32),y=Math.floor(tree.y/32);
+     if(x<4||x>world.width-5||y<5||y>world.height-5)continue;
+     if(!free(x,y-1)||!free(x,y-2)||!free(x,y-3))continue;
+     s.player.body.reset(tree.x,tree.y-78);s.player.setVelocity(0,0);
+     return s.player.y;
+   }
+   throw Error('Unable to find a canopy test position');
+ });
+ await page.keyboard.down('ArrowDown');await page.waitForTimeout(330);await page.keyboard.up('ArrowDown');
+ const afterUnderCanopy=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.y);
+ assert.ok(afterUnderCanopy>startUnderCanopy+12,
+   'Green canopy blocked walking: '+afterUnderCanopy+' <= '+startUnderCanopy);
  await page.keyboard.down('ArrowRight');await page.waitForTimeout(700);await page.keyboard.up('ArrowRight');
  const moved=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.x);
  assert.ok(moved>stats.startX+12,`player did not move: ${moved} <= ${stats.startX}`);
