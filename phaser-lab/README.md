@@ -71,6 +71,6 @@ Ao executar `npm run dev`, abra **http://localhost:5173/review.html** para compa
 O planejamento de redesign visual está em [docs/14-m1g-ui-premium.md](../docs/14-m1g-ui-premium.md).
 A fatia **M1g-A** acrescenta ui-theme.css, ui-portomonte.css e src/ui-hub.js, mantendo os IDs e eventos da tela atual: Floresta, Oficinas, Comércio, Inventário de leitura, Vender, Descansar, Gerar Floresta e backup. Tutores são mostrados como indisponíveis porque ainda não possuem integração Phaser, evitando menu com ação falsa.
 
-O fundo cenográfico nesta fatia usa três artes já existentes no Peren clássico, **provisórias e não equivalentes ao padrão final das referências conceituais**. Roda em Vite e mantém peren_carcaca_save_v1 inalterado.
+O fundo cenográfico nesta fatia usa uma pintura de ambientação já existente no Peren clássico, **provisórias e não equivalentes ao padrão final das referências conceituais**. Roda em Vite e mantém peren_carcaca_save_v1 inalterado.
 
 Para QA: npm test, npm run build, node scripts/prepare-demo.mjs, node scripts/portomonte-browser.mjs (requer Chromium instalado pelo Playwright).
