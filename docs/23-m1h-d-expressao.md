@@ -21,6 +21,13 @@ O gerador `scripts/peren-m1hd-generator.mjs` usa PNGJS e a M1h-C como base, pres
 
 A primeira prancha produzida pelo CI revelou uma faixa cinza larga ao redor da boca. O código foi ajustado para reduzir as áreas chapadas do bigode e remover o crescente claro remanescente no centro da barba. A revisão visual desta nova iteração é um *gate* explícito: não basta que os testes de PNGs e navegador estejam verdes.
 
+## Validação realizada
+
+- ✅ [Workflow #38653803218](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38653803218), com 128 quadros, três retratos, cinco variantes em Chromium 360×800 / 390×844 / 1280×800, 35 capturas da vertical slice e movimentação/combate com Xbox simulado.
+- 🖼️ Capturas e prancha PNG real em **Artifacts → `peren-m1h-d-refino`**.
+- A primeira prancha indicou bigode cinza desproporcional. Uma segunda revisão reduziu a massa, o crescente claro da barba e a linha da boca. Inspeção preliminar confirma redução desses problemas, mas **o rosto-base ainda transmite juventude** e requer julgamento estético do usuário.
+- **Sem aprovação canônica nem release.** Android e Xbox físicos ainda não testados.
+
 ## Verificação e critérios de aceite
 
 - Testes unitários: alterações efetivas nos 128 frames, canal alfa preservado, corpo inalterado, todos os retratos com mudanças **somente no retângulo facial**, e isolamento da lógica/save.
