@@ -43,7 +43,9 @@ try{
   const initial=await page.evaluate(()=>window.__perenProgress.save.character);
   const materials=await page.locator('.craft-ingredient').allTextContents();
   assert.ok(first.length>2&&materials.length>0,'Detalhes da receita ausentes');
-  await page.locator('#craftMake').click();
+  // Two synthetic clicks in the same event loop emulate accidental double tap.
+  // Even a recipe with ingredients for two batches may only transact once.
+  await page.evaluate(()=>{const button=document.getElementById('craftMake');button.click();button.click()});
   const after=await page.evaluate(()=>window.__perenProgress.save.character);
   assert.equal(after.crafted,initial.crafted+1,'Criação não registrada uma única vez');
   assert.equal(after.actions,initial.actions-1,'Uma ação não foi consumida');
