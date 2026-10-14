@@ -33,6 +33,6 @@
 - [x] Somente três slots canônicos, sem falsas funcionalidades.
 - [x] Dados reais de Peren e do item selecionado, sem transações.
 - [x] Estados de vazio, busca, seleção, rolagem e alvos touch.
-- [ ] Revisão final de capturas reais em desktop/mobile e regressões CI.
+- [x] QA automatizado e capturas reais em desktop/mobile (arte ainda não aprovada) — [run 38594839312](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38594839312).
 - [ ] Revisão visual com o usuário e playtest Android/Xbox físicos.
 - [ ] Produção de ícones individuais e ilustrações finais (fases visuais futuras).
