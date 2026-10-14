@@ -82,21 +82,25 @@ function portrait(im,mode){
  rectangle(im,126,146,10,2,'lit',face);
  rectangle(im,125,148,4,2,'shadow',face);
  rectangle(im,133,148,4,2,'shadow',face);
- // Moustache locks point down, never up at the ends. Rebuild a strict
- // horizontal mouth seam, set inside the beard, with dark corners.
- polygon(im,[[108,152],[119,147],[128,152],[128,157],[116,160],
-  [107,157]],'deep',face);
- polygon(im,[[137,152],[144,147],[155,151],[156,157],[145,160],
-  [135,157]],'deep',face);
- polygon(im,[[109,150],[119,147],[127,153],[123,157],[114,155]],'beard',face);
- polygon(im,[[138,152],[145,148],[154,150],[151,155],[140,157]],'beard',face);
- segment(im,116,151,124,155,'silver',face);
- segment(im,145,151,138,155,'silver',face);
- // Compressed mouth: no white teeth, smile corners or big bright lips.
- segment(im,123,158,140,158,'ink',face);
- paint(im,121,158,'shadow',face);paint(im,142,158,'shadow',face);
- segment(im,125,160,137,160,'shadow',face);
- segment(im,119,163,143,163,'lowlight',face);
+ // Reduce the inherited bright crescent, which looked like a toothy grin.
+ // Darken ONLY existing near-mouth pale beard pixels, keeping the cheek skin.
+ const pale=new Set(['e1e4df','f3f0e6','c8d0d0','b4bfc4']);
+ for(let y=157;y<=166;y++)for(let x=108;x<=154;x++){
+  if(pale.has(colorAt(im,x,y)))paint(im,x,y,y<161?'beard':'lowlight',face);
+ }
+ // A moustache is two narrow locks separated under the nose, not a wide
+ // horizontal band. The tufts fall down into the beard, never curve upward.
+ polygon(im,[[110,151],[119,150],[125,154],[123,158],[116,156]],'lowlight',face);
+ polygon(im,[[140,154],[146,150],[153,151],[148,156],[140,158]],'lowlight',face);
+ segment(im,115,152,119,154,'beard',face);
+ segment(im,147,152,144,154,'beard',face);
+ // A short, level, unsmiling mouth. Dark moustache roots above and silver
+ // beard locks BELOW the lip prevent the appearance of exposed teeth.
+ segment(im,125,157,138,157,'ink',face);
+ paint(im,123,157,'shadow',face);paint(im,140,157,'shadow',face);
+ segment(im,124,160,139,160,'shadow',face);
+ segment(im,119,164,126,166,'beard',face);
+ segment(im,139,166,146,164,'beard',face);
  // A couple of age strokes below the eyes; only on existing skin.
  segment(im,103,130,110,132,'wrinkle',cheek);
  segment(im,148,131,155,130,'wrinkle',cheek);
