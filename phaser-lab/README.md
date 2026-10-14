@@ -49,3 +49,14 @@ Detalhes e testes em [`docs/10-m1b-criaturas.md`](../docs/10-m1b-criaturas.md).
 A PR M1c acrescenta cena JRPG com 3 monstros, animações, combate por turnos, 3 VFX e carteira de XP/loot **apenas de teste**. O Peren clássico e seu save ficam intactos. Em um encontro, toque **ENFRENTAR**; ataque, conjure, defenda, beba poção ou fuja; ao terminar, toque **RETORNAR**. Controles Xbox: A confirmar, B fuga, X poção, Y fogo, direcional/analógico para escolha.
 
 Os catálogos de monstros e magias são as fontes das estatísticas, IDs e custos. A futura M1d extrairá o motor econômico compartilhado antes de permitir persistência real de loot e XP. Consulte `docs/11-m1c-combate.md`.
+
+
+## M1d — Economia e progresso persistentes (PR #5)
+
+O laboratório **importa uma cópia read-only** do save clássico `peren_carcaca_save_v1` na primeira execução. As vitórias, materiais, ouro, HP, MP, experiência, ações e receitas passam a ser gravados em **`peren_phaser_save_m1d_v1`**. O save clássico original nunca é sobrescrito nesta etapa. Existe um botão para exportar e importar **backup Phaser**.
+
+No hub de Portomonte, **Oficinas** oferece receitas vinculadas ao catálogo real, **Comércio** compra suprimentos e **Vender** negocia itens já existentes na mochila; os preços e os requisitos de proficiência usam as fórmulas do jogo original. Coleta e saque possuem ledger persistente por mapa/instância para evitar duplicação após reload. **Descanse** para renovar ações antes de fabricar novamente.
+
+Os catálogos de dados são copiados de `data/` para `phaser-lab/public/data/` na branch de integração e ficam empacotados com o build, sem dependência de API em runtime. `npm test` cobre 312 cenários, e a execução Playwright da M1d confirmou importação, coleta, vitória, fuga, crafting, compra, reload e preservação do save clássico em 390 e 360 px.
+
+**Limites:** três monstros, três magias e uma zona ilustrada; não existe sincronização bidirecional com o PWA antigo. O Playwright não substitui Android e Xbox reais. As PRs são empilhadas; não mesclar esta branch diretamente em `main`. Veja [docs/12-m1d-progresso.md](../docs/12-m1d-progresso.md).
