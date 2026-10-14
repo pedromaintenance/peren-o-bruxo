@@ -103,6 +103,18 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 
 Referências: [M1h-A](20-m1h-a-peren-palette.md) e [M1h-B](21-m1h-b-peren-silhueta.md).
 
+### M1h-C — Refinamento de rosto, cabelo e barba [CANDIDATO EM QA]
+
+- [x] Nova paleta de mechas/sombras e textura de barba/idade aplicada ao atlas existente.
+- [x] Preservados os 128 quadros, geometria, alfa, cajado e corpo a partir da linha 43.
+- [x] Retratos normal, conjuração e ferimento refinados em 256×256.
+- [x] Habilitar variante `?art=m1hc`, sem alterar a arte padrão M1e.
+- [x] Adicionar testes por pixel e comparação de quatro variantes em navegador/ateliê.
+- [ ] Validar CI final, revisar capturas e obter aprovação estética, Android e Xbox físicos.
+
+Detalhes: [docs/22-m1h-c-peren-refino.md](22-m1h-c-peren-refino.md).
+
+
 ## Design system: primeiros tokens
 
 - **Profundidade e fundo:** `#08131c`, `#101f2a`, `#1b3039`; superfícies com translucidez controlada.
