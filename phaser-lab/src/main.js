@@ -111,7 +111,7 @@ function pollXbox(){
   if(!$('battleUI').hidden){
     if(key.up||key.left)selectBattleChoice(selectedBattleIndex-1);
     else if(key.down||key.right)selectBattleChoice(selectedBattleIndex+1);
-    if(key.a)activateBattleChoice();
+    if(key.a){if(!$('battleFinish').hidden)battleAction('finish');else activateBattleChoice();}
     else if(key.x)battleAction('potion');
     else if(key.y)battleAction('spell:mag-raio-de-fogo');
     else if(key.b||key.menu)battleAction($('battleFinish').hidden?'flee':'finish');
@@ -186,7 +186,7 @@ window.addEventListener('keydown',event=>{
   if($('battleUI').hidden)return;
   if(event.code==='ArrowUp'){event.preventDefault();selectBattleChoice(selectedBattleIndex-1)}
   if(event.code==='ArrowDown'){event.preventDefault();selectBattleChoice(selectedBattleIndex+1)}
-  if(event.code==='Enter'||event.code==='Space'){event.preventDefault();activateBattleChoice()}
+  if(event.code==='Enter'||event.code==='Space'){event.preventDefault();if(!$('battleFinish').hidden)battleAction('finish');else activateBattleChoice()}
   if(event.code==='Digit1')battleAction('attack');
   if(event.code==='Digit2')battleAction('defend');
   if(event.code==='Digit3')battleAction('spell:mag-raio-de-fogo');
