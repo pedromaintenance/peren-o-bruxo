@@ -43,3 +43,9 @@ está planejada para M1c. Ambiente: vegetação como cobertura, névoa limitando
 e solo encharcado reduzindo deslocamento. Sem alteração do save da `main`.
 
 Detalhes e testes em [`docs/10-m1b-criaturas.md`](../docs/10-m1b-criaturas.md).
+
+## M1c — Batalha animada no Phaser
+
+A PR M1c acrescenta cena JRPG com 3 monstros, animações, combate por turnos, 3 VFX e carteira de XP/loot **apenas de teste**. O Peren clássico e seu save ficam intactos. Em um encontro, toque **ENFRENTAR**; ataque, conjure, defenda, beba poção ou fuja; ao terminar, toque **RETORNAR**. Controles Xbox: A confirmar, B fuga, X poção, Y fogo, direcional/analógico para escolha.
+
+Os catálogos de monstros e magias são as fontes das estatísticas, IDs e custos. A futura M1d extrairá o motor econômico compartilhado antes de permitir persistência real de loot e XP. Consulte `docs/11-m1c-combate.md`.

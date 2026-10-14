@@ -2,16 +2,19 @@ import Phaser from 'phaser';
 import { ExplorationScene } from './exploration.js';
 import {HERBS} from './world.js';
 import {XboxPadTracker} from './gamepad.js';
+import {BattleScene} from './battle-scene.js';
+import {SPELLS,defaultProfile} from './combat.js';
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
 const $=id=>document.getElementById(id);
 const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#101b1b',
   scale:{mode:Phaser.Scale.RESIZE,autoCenter:Phaser.Scale.CENTER_BOTH,width:390,height:844},
   render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
-  scene:[ExplorationScene]});
+  scene:[ExplorationScene,BattleScene]});
 window.__perenLab=app;
 const seed=String(new URLSearchParams(location.search).get('seed')||'murin-001').slice(0,60);
 app.registry.set('seed',seed);
+app.registry.set('combatProfile',defaultProfile());
 let last='';
 function updateHud(){
   const bag=app.registry.get('collected')||{};
@@ -65,11 +68,15 @@ app.events.on('peren-encounter',info=>{
  $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
- $('encounterHint').textContent='Encontro interrompido: observe ou recue sem ganhar recompensas.';
+ $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
 });
 function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){$('encounterModal').hidden=true;}}
 $('retreatBeast').addEventListener('click',retreatBeast);
-$('observeBeast').addEventListener('click',()=>{$('encounterHint').textContent='A batalha Phaser ainda está em desenvolvimento. Use RECUAR para retomar a coleta sem risco de loop.'});
+$('observeBeast').addEventListener('click',()=>{
+  const scene=joyScene();if(!scene?.fightEncounter())return;
+  $('encounterModal').hidden=true;$('controls').hidden=true;$('battleUI').hidden=false;
+  selectedBattleIndex=0;syncBattleButtons();
+});
 // Standalone hub shown first. Real Peren HTML hub remains untouched in main.
 $('hub').hidden=false;$('controls').hidden=true;
 // Expedition pause is applied inside the scene after assets have loaded.
@@ -101,7 +108,16 @@ function pollXbox(){
   if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint};
   if(!state.connected)return;
   const key=state.justPressed;
-  if(!$('encounterModal').hidden){if(key.a||key.b||key.menu)retreatBeast();return;}
+  if(!$('battleUI').hidden){
+    if(key.up||key.left)selectBattleChoice(selectedBattleIndex-1);
+    else if(key.down||key.right)selectBattleChoice(selectedBattleIndex+1);
+    if(key.a){if(!$('battleFinish').hidden)battleAction('finish');else activateBattleChoice();}
+    else if(key.x)battleAction('potion');
+    else if(key.y)battleAction('spell:mag-raio-de-fogo');
+    else if(key.b||key.menu)battleAction($('battleFinish').hidden?'flee':'finish');
+    return;
+  }
+  if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
   if(!$('hub').hidden){
     if(key.down)selectHubChoice(hubChoice+1);
     if(key.up)selectHubChoice(hubChoice-1);
@@ -120,8 +136,61 @@ function pollXbox(){
 app.events.on('step',pollXbox);
 window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
+  if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
   if(!$('bagPanel').hidden){toggleBag(false);return;}
   hub($('hub').hidden);
 });
 $('bagClose').addEventListener('click',()=>toggleBag(false));
+
+
+// M1c: illustrated turn battle. Same catalog IDs and monster values as classic,
+// but a completely isolated in-memory testing profile. Never reads Peren's save.
+let selectedBattleIndex=0;
+const battleOptions=[...document.querySelectorAll('[data-battle]')];
+function selectBattleChoice(i){selectedBattleIndex=(i+battleOptions.length)%battleOptions.length;syncBattleButtons();}
+function syncBattleButtons(){battleOptions.forEach((b,i)=>b.classList.toggle('pad-selected',i===selectedBattleIndex));}
+function activateBattleChoice(){const b=battleOptions[selectedBattleIndex];if(b&&!b.disabled)battleAction(b.dataset.battle);}
+function battleScene(){try{return app.scene.getScene('BattleScene')}catch{return null}}
+async function battleAction(action){
+  const scene=battleScene();if(!scene||scene.resolved)return;
+  if(action==='finish'){if(scene.endBattle())$('battleUI').hidden=true;return;}
+  await scene.takeTurn(action);
+}
+for(const button of battleOptions)button.addEventListener('click',()=>battleAction(button.dataset.battle));
+$('battleFinish').addEventListener('click',()=>battleAction('finish'));
+function renderBattleState(state){
+  if(!state)return;
+  $('battleRound').textContent=state.status==='active'?`RODADA ${state.round}`:'DESFECHO';
+  $('battleMonster').textContent=`${state.monster} · ${state.enemyHp}/${state.enemyMaxHp} PV`;
+  $('battleStats').textContent=`Peren ${state.hp}/${state.maxHp} PV · ${state.mp}/${state.maxMp} PM · ${state.potions} poções`;
+  $('battleJournal').textContent=state.log.join(' · ');
+  const finished=state.status!=='active';
+  $('battleCommands').hidden=finished;
+  $('battleFinish').hidden=!finished;
+  $('battleFinish').textContent=state.status==='won'?'RECOLHER SAQUE E VOLTAR':state.status==='lost'?'ACEITAR RESGATE':'RETORNAR À FLORESTA';
+  $('battleEndHint').textContent=state.status==='won'?'Vitória! A recompensa é entregue uma única vez.':state.status==='lost'?'Peren caiu, mas esta prévia não causa perda de save.':state.status==='fled'?'Fuga concluída; sem XP nem loot.':'';
+  battleOptions.forEach(b=>{
+    b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0)) || (b.dataset.battle==='potion'&&state.potions<=0);
+  });
+}
+app.events.on('peren-battle-change',renderBattleState);
+app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
+app.events.on('peren-battle-end',({result,reward,profile})=>{
+  $('battleUI').hidden=true;$('controls').hidden=false;
+  const itemLabel=reward?Object.keys(reward.items).join(', '):'nenhum material';
+  $('feedback').textContent=result==='won'?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`:'Retorno à floresta sem recompensa.';
+  $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;
+});
+window.addEventListener('keydown',event=>{
+  if($('battleUI').hidden)return;
+  if(event.code==='ArrowUp'){event.preventDefault();selectBattleChoice(selectedBattleIndex-1)}
+  if(event.code==='ArrowDown'){event.preventDefault();selectBattleChoice(selectedBattleIndex+1)}
+  if(event.code==='Enter'||event.code==='Space'){event.preventDefault();if(!$('battleFinish').hidden)battleAction('finish');else activateBattleChoice()}
+  if(event.code==='Digit1')battleAction('attack');
+  if(event.code==='Digit2')battleAction('defend');
+  if(event.code==='Digit3')battleAction('spell:mag-raio-de-fogo');
+  if(event.code==='Digit4')battleAction('spell:mag-raio-de-gelo');
+  if(event.code==='Digit5')battleAction('spell:mag-misseis-magicos');
+});
+syncBattleButtons();
