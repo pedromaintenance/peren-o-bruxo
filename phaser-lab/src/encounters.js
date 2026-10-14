@@ -81,11 +81,11 @@ export function monsterDecision(world,monster,player,dt,{sprint=false,weather='s
   const encounter=detected&&distance<TILE*.92;
   return {next,encounter,detected};
 }
-export function safeRetreat(world,player,enemy){
+export function safeRetreat(world,player,enemy,otherEnemies=[]){
   // Choose the nearest reachable dry spot that is at least five tiles away from the enemy.
   const reachable=reachableCells(world);let result=null,best=Infinity;
   for(const key of reachable){const [x,y]=key.split(',').map(Number);const pos={x:(x+.5)*TILE,y:(y+.5)*TILE};
-    if(dist(pos,enemy)<TILE*5)continue;
+    if([enemy,...otherEnemies].some(e=>dist(pos,e)<TILE*5))continue;
     const val=dist(pos,player)+Math.abs(x-world.entry.x)*.01;
     if(val<best){best=val;result=pos;}
   }
