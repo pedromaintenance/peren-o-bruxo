@@ -67,7 +67,8 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Painéis JRPG de batalha: comandos, seleção e descrições por IDs reais.
 - [x] Preservar transições, Xbox B e estado ocupado; evitar dupla ação.
 - [x] Testes Node e Playwright com capturas 360×800 / 390×844 / 1280×800 adicionados.
-- [ ] Validar CI integral, screenshots, Android e Xbox físicos; revisão de arte final.
+- [x] [CI completo #38629438749](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38629438749) passou: 9 capturas Chromium, regressoes M1g-A/B/C/D, Xbox simulado, ciclo de jogo e save clássico intacto.
+- [ ] Aprovar arte e testar Android/Xbox físicos.
 
 ### M1g-F — Aceite da vertical slice visual
 
@@ -94,7 +95,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. M1g-E implementado em branch empilhada, aguardando QA/arte. Próximo recorte: M1g-F, auditoria da vertical slice e qualidade visual. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. M1g-E validado funcionalmente por CI em branch empilhada; aprovação visual e playtest físico pendentes. Próximo recorte: M1g-F, auditoria da vertical slice e qualidade visual. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 
