@@ -47,7 +47,16 @@ jobs:
       - name: Regressao de inventario
         run: node scripts/inventory-browser.mjs
       - name: Regressao da exploracao e combate
-        run: npm run test:e2e
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
       - name: Salvar screenshots do novo menu
         if: always()
         uses: actions/upload-artifact@v4
