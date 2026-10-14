@@ -7,6 +7,7 @@ import {SPELLS,defaultProfile} from './combat.js';
 import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
 import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
+import {createWorkshopScreen} from './ui-workshop.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -27,6 +28,9 @@ const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#10
   render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
   scene:[ExplorationScene,BattleScene]});
 window.__perenLab=app;
+const workshop=createWorkshopScreen({document,bridge,catalogs,onChange:()=>{
+  app.registry.set('combatProfile',bridge.combatProfile());renderHub();
+}});
 const seed=String(new URLSearchParams(location.search).get('seed')||bridge.read().worlds.activeSeed||'murin-001').slice(0,60);
 app.registry.set('seed',seed);
 app.registry.set('progressBridge',bridge);
@@ -140,6 +144,14 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(workshop.isOpen()){
+    if(key.b||key.menu){workshop.close();return;}
+    if(key.x){workshop.cycleStation(1);return;}
+    if(key.up)workshop.move(-1);
+    else if(key.down)workshop.move(1);
+    else if(key.a)workshop.make();
+    return;
+  }
   if(inventory.isOpen()){
     if(key.b||key.y||key.menu){inventory.close();return;}
     if(key.x){inventory.cycleTab(1);return;}
@@ -171,6 +183,7 @@ window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
+  if(workshop.isOpen()){workshop.close();return;}
   if(inventory.isOpen()){inventory.close();return;}
   if(!$('bagPanel').hidden){toggleBag(false);return;}
   hub($('hub').hidden);
@@ -254,12 +267,7 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
  };
  if(hubTab==='craft'){
   title.textContent='Oficinas · receitas reais';
-  const list=catalogs.receitas.filter(r=>city.estacoes.includes(r.estacao))
-   .sort((a,b)=>Number(craftable(s,b,catalogs))-Number(craftable(s,a,catalogs))||a.nivel-b.nivel);
-  for(const rec of list.slice(0,12)){
-   const status=`${rec.estacao.toUpperCase()} · Ofício ${skillLevel(s.skills[rec.pericia])}/${rec.nivel} · ${rec.ingredientes.map(i=>`${catalogs.itensById[i.item]?.nome} ${s.bag[i.item]||0}/${i.quantidade}`).join(', ')}`;
-   addButton('CRIAR',rec.nome,status,'craft',rec.id,!craftable(s,rec,catalogs)||s.actions<=0);
-  }
+  panel.textContent='Alquimia e Criação agora têm uma oficina própria. Selecione a opção no menu de Portomonte para preparar receitas reais, conferir ingredientes e nível de ofício.';
  }else if(hubTab==='shop'){
   title.textContent='Comércio de Portomonte';
   const stock=['ing-blue-mountain-flower','ing-red-mountain-flower','ing-mudcrab-chitin','mat-agua-purificada','ger-pocao-restauradora','mat-couro-curtido','mat-carvao-de-forja','ger-racoes-de-viagem'];
@@ -275,8 +283,10 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
  }else{title.textContent='Armazém de Portomonte';panel.textContent='Peren pode coletar ingredientes em Mürin, voltar para a cidade, fabricar itens, negociar e guardar o progresso nesta versão de desenvolvimento.';}
  if(hubTab!=='intro')panel.append(wrapper);
  if(inventory.isOpen())inventory.render();
+ if(workshop.isOpen())workshop.render();
 }
-for(const [id,tab] of [['showCraft','craft'],['showShop','shop'],['showInventory','bag']])$(id).addEventListener('click',()=>{hubTab=hubTab===tab?'intro':tab;renderHub()});
+$('showCraft').addEventListener('click',()=>{hubTab='craft';renderHub();workshop.open()});
+for(const [id,tab] of [['showShop','shop'],['showInventory','bag']])$(id).addEventListener('click',()=>{hubTab=hubTab===tab?'intro':tab;renderHub()});
 $('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
 $('exportProgress').addEventListener('click',()=>{
  const blob=new Blob([bridge.export()],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
