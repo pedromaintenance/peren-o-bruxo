@@ -115,12 +115,19 @@ function refinePortrait(img,kind){
  // Restrict the edit to existing drawn hair pixels: no extra cap/hat outline.
  for(let y=38;y<113;y++)for(let x=66;x<190;x++){
   if(!inHair(x,y))continue;
-  const code=rHex(img,x,y),t=((x*7+y*11+(x>>3)*13)%43);
-  if(y>77&&x<97&&t<24)point(img,x,y,'silverShadow');
-  else if(y<64&&x>147&&t<20)point(img,x,y,'silverMid');
-  else if(code==='f3f1e8'&&t<30)point(img,x,y,'silver');
-  else if(code==='e5e9e8'&&t<13)point(img,x,y,'silverMid');
-  else if(code==='c0c8ce'&&t>38)point(img,x,y,'pearl');
+  const code=rHex(img,x,y);
+  // Shaded hair in broad clumps, NOT per-pixel noise: miniature pixel art
+  // needs readable silver locks rather than diagonal crosshatching.
+  const leftLock=100+(70-y)*0.55;
+  const centreLock=134+(70-y)*0.35;
+  const rightLock=164+(70-y)*0.22;
+  if(y>76&&x<99)point(img,x,y,'silverShadow');
+  else if(y<62&&x>153)point(img,x,y,'silverMid');
+  else if(y>54&&y<93&&Math.abs(x-leftLock)<5)point(img,x,y,'silverMid');
+  else if(y>48&&y<90&&Math.abs(x-centreLock)<5)point(img,x,y,'silver');
+  else if(y>56&&y<90&&Math.abs(x-rightLock)<4)point(img,x,y,'silverShadow');
+  else if(code==='f3f1e8'&&y>70)point(img,x,y,'pearl');
+  else if(code==='e5e9e8'&&y>96)point(img,x,y,'silverMid');
  }
  // Six asymmetric swept locks. Use existing hair as a per-pixel stencil so
  // long strokes cannot paint over brows, face, halo or empty background.
@@ -135,10 +142,12 @@ function refinePortrait(img,kind){
  // Break up monotonous beard triangles; the locks taper toward the jaw.
  for(let y=151;y<215;y++)for(let x=88;x<175;x++){
   if(!inBeard(x,y))continue;
-  const code=rHex(img,x,y),stripe=Math.abs(x-128)+Math.floor(y/4);
-  if(code==='e5e9e8'&&(stripe%17)<6)point(img,x,y,'beardMid');
-  else if(code==='c3c7c8'&&((x*3+y*5)%23)<6)point(img,x,y,'beardShade');
-  else if(code==='758390'&&((x*5+y)%17)===0)point(img,x,y,'silverMid');
+  const code=rHex(img,x,y);
+  // Volume is built from a few long lock groups rather than dithering.
+  if(y>168&&y<195&&x<110)point(img,x,y,'beardShade');
+  else if(y>168&&y<194&&x>151)point(img,x,y,'silverMid');
+  else if(y>188&&x>=114&&x<139&&code==='e5e9e8')point(img,x,y,'beardMid');
+  else if(y>175&&x>138&&x<151&&code==='c3c7c8')point(img,x,y,'silver');
  }
  const beardLocks=[
   [101,156,113,184,'pearl'],[113,165,121,202,'beardShade'],
@@ -161,8 +170,13 @@ function refinePortrait(img,kind){
  // Softer central eye sockets and narrow, un-smiling mouth.
  line(img,109,118,122,119,'skinShadow',inFace);
  line(img,141,118,153,118,'skinShadow',inFace);
- line(img,122,155,139,155,'coal',(x,y)=>x>120&&x<145);
- line(img,124,158,137,158,'beardShade',inBeard);
+ // Eliminate the residual white "smile" left by the polygonal M1h-B lips.
+ // Flat skin shade, stern small mouth, moustache tapering into the beard.
+ block(img,117,151,29,9,'skinShadow',(x,y)=>rHex(img,x,y)!=='');
+ block(img,120,152,23,3,'skin',(x,y)=>rHex(img,x,y)!=='');
+ line(img,122,156,140,156,'coal');
+ line(img,119,158,141,158,'beardShade');
+ line(img,122,160,138,160,'beardMid');
  // A few isolated silver sideburn flecks; no fake hat brim.
  block(img,90,119,2,5,'silverMid',inBeard);
  block(img,166,119,2,5,'silverMid',inBeard);
