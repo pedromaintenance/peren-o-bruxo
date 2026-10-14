@@ -21,6 +21,8 @@ function updateHud(){
   if(last!==signature){last=signature;$('inventory-count').textContent=total;$('feedback').textContent=msg;
     $('collected').textContent=HERBS.filter(h=>bag[h.id]).map(h=>`${h.name}: ${bag[h.id]}`).join(' · ')||'Nenhum ingrediente coletado';}
   $('returnBtn').hidden=!app.registry.get('atExit');
+  $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
+  $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
   $('bagContents').textContent=$('collected').textContent;
 }
 app.events.on('step',updateHud);
@@ -51,6 +53,23 @@ function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.
 $('returnBtn').addEventListener('click',()=>hub(true));
 $('goForest').addEventListener('click',()=>hub(false));
 $('resetForest').addEventListener('click',()=>{app.registry.set('seed',String(Date.now()));app.registry.set('atExit',false);app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');hub(false)});
+// M1b encounter preview: no battle calculation and no mutation of classic saves.
+const beastLore={
+ 'mob-galho-infectado':'Galhos profanados se movem quando a mata percebe intrusos. A cobertura densa reduz sua percepção.',
+ 'mob-fungo-violeta':'Esporos púrpuras denunciam sua presença. Prefere vagar em terrenos úmidos e entre raízes.',
+ 'mob-ettercap':'Caçador aracnídeo da mata. Enxerga mais longe que os outros e persegue corredores descuidados.'
+};
+app.events.on('peren-encounter',info=>{
+ $('encounterModal').hidden=false;
+ $('beastName').textContent=info.name;
+ $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
+ $('beastPortrait').alt=`Retrato de ${info.name}`;
+ $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
+ $('encounterHint').textContent='Encontro interrompido: observe ou recue sem ganhar recompensas.';
+});
+function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){$('encounterModal').hidden=true;}}
+$('retreatBeast').addEventListener('click',retreatBeast);
+$('observeBeast').addEventListener('click',()=>{$('encounterHint').textContent='A batalha Phaser ainda está em desenvolvimento. Use RECUAR para retomar a coleta sem risco de loop.'});
 // Standalone hub shown first. Real Peren HTML hub remains untouched in main.
 $('hub').hidden=false;$('controls').hidden=true;
 // Expedition pause is applied inside the scene after assets have loaded.
@@ -82,6 +101,7 @@ function pollXbox(){
   if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint};
   if(!state.connected)return;
   const key=state.justPressed;
+  if(!$('encounterModal').hidden){if(key.a||key.b||key.menu)retreatBeast();return;}
   if(!$('hub').hidden){
     if(key.down)selectHubChoice(hubChoice+1);
     if(key.up)selectHubChoice(hubChoice-1);
@@ -100,6 +120,7 @@ function pollXbox(){
 app.events.on('step',pollXbox);
 window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
+  if(!$('encounterModal').hidden){retreatBeast();return;}
   if(!$('bagPanel').hidden){toggleBag(false);return;}
   hub($('hub').hidden);
 });

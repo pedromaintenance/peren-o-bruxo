@@ -33,3 +33,13 @@ Os assets do build são copiados pelo script Node `scripts/sync-assets.mjs`, da 
 - Aprovado no script de QA de geração e rotas; execução em navegador/celular só marcada após Playwright e teste físico.
 
 Documentação de contrato de controles, incluindo combate planejado: [`docs/09-gamepad-xbox.md`](../docs/09-gamepad-xbox.md).
+
+## M1b — Criaturas animadas de Mürin
+
+A branch `feature/phaser-m1b-criaturas` adiciona três espécies do catálogo existente,
+seis patrulhas por mapa e encontros com **observação e recuo seguro**. Esses encontros
+**não** oferecem XP nem loot ainda, pois a integração ao motor de combate clássico
+está planejada para M1c. Ambiente: vegetação como cobertura, névoa limitando visão
+e solo encharcado reduzindo deslocamento. Sem alteração do save da `main`.
+
+Detalhes e testes em [`docs/10-m1b-criaturas.md`](../docs/10-m1b-criaturas.md).

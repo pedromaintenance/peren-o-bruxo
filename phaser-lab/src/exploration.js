@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import {buildForest,nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.js';
+import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
 
 const ASSET = './art/';
 const PEREN = `${ASSET}characters/peren/`;
@@ -14,9 +15,15 @@ export class ExplorationScene extends Phaser.Scene {
     this.load.spritesheet('peren',PEREN+'peren-atlas.png',{frameWidth:48,frameHeight:64});
     this.load.spritesheet('forest-ground',MURIN+'ground-tiles.png',{frameWidth:32,frameHeight:32});
     ['tree-0','tree-1','tree-2','herb','mushroom','stone','rune','exit','bush'].forEach(n=>this.load.image(n,MURIN+n+'.png'));
+    for(const beast of MURIN_BEASTS){
+      this.load.spritesheet(beast.id,`${ASSET}monsters/${beast.id}/atlas.png`,{frameWidth:64,frameHeight:64});
+      this.load.image(`${beast.id}-portrait`,`${ASSET}monsters/${beast.id}/portrait.png`);
+    }
   }
   create(){
     this.world=buildForest(this.registry.get('seed')||'murin-001');
+    this.weather=worldWeather(this.world.seed);
+    this.activeEncounter=null;this.enemyClock=0;
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
     this.cameras.main.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
@@ -46,12 +53,14 @@ export class ExplorationScene extends Phaser.Scene {
     this.player.setSize(20,14).setOffset(14,47).setCollideWorldBounds(true).setMaxVelocity(210);
     this.player.setDrag(500);this.direction='right';this.currentAnimation='';
     this.physics.add.collider(this.player,colliders);this.physics.add.collider(this.player,blockers);
+    this.createBeasts(colliders,blockers);
     this.cameras.main.startFollow(this.player,true,.10,.10);
     this.cameras.main.setZoom(1.4);
     this.key=this.input.keyboard.addKeys('W,A,S,D,UP,DOWN,LEFT,RIGHT,SHIFT,E,SPACE,ESC');
     // A joystick is drawn in fixed HTML, outside the zoomed camera.
     this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false};
-    this.registry.set('collected',{});this.registry.set('status','Procure uma erva e toque em COLHER.');
+    this.registry.set('collected',{});this.registry.set('status',this.weather==='neblina'?'A névoa esconde predadores. Observe antes de avançar.':'Siga a trilha: ervas e criaturas estão à espreita.');
+    this.registry.set('beastCount',this.beasts.length);this.registry.set('weather',this.weather);this.registry.set('threat','Patrulhas distantes');
     this.registry.set('ready',true);
     // a few subtle environmental motes, spatial and not interactive
     const motes=this.add.particles(0,0,'rune',{x:{min:0,max:WIDTH*TILE},y:{min:0,max:HEIGHT*TILE},scale:{start:.08,end:0},alpha:{start:.32,end:0},lifespan:1800,frequency:400,quantity:1,blendMode:'ADD'}).setDepth(1000);
@@ -66,6 +75,77 @@ export class ExplorationScene extends Phaser.Scene {
     }
   }
   playState(act){const key=`peren-${this.direction}-${act}`;if(this.currentAnimation!==key){this.currentAnimation=key;this.player.anims.play(key,true)}}
+  createBeasts(colliders,blockers){
+    this.beasts=spawnMurinCreatures(this.world).map(monster=>{
+      const spr=this.physics.add.sprite(monster.x,monster.y,monster.type,0);
+      spr.setCollideWorldBounds(true).setSize(25,18).setOffset(20,38).setMaxVelocity(95);
+      spr.setDepth(spr.y+28);
+      this.physics.add.collider(spr,colliders);this.physics.add.collider(spr,blockers);
+      for(const [ai,act] of ['idle','walk','alert','attack','hurt','retreat','death'].entries()){
+        const key=`${monster.type}-${act}`;
+        if(!this.anims.exists(key))this.anims.create({key,
+          frames:this.anims.generateFrameNumbers(monster.type,{start:ai*4,end:ai*4+3}),
+          frameRate:{idle:3,walk:7,alert:6,attack:10,hurt:8,retreat:8,death:6}[act],
+          repeat:['idle','walk','alert','retreat'].includes(act)?-1:0});
+      }
+      spr.anims.play(`${monster.type}-idle`);
+      const bar=this.add.graphics().setDepth(5000);
+      return {...monster,sprite:spr,bar};
+    });
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN,()=>{
+      for(const beast of this.beasts){beast.sprite?.destroy();beast.bar?.destroy();}
+    });
+  }
+  updateBeasts(delta,time){
+    if(!this.beasts||this.activeEncounter)return;
+    const player={x:this.player.x,y:this.player.y};
+    const running=this.key.SHIFT.isDown||this.sprintTouch||this.gamepadInput?.sprint;
+    let highest=0;
+    for(let i=0;i<this.beasts.length;i++){
+      const beast=this.beasts[i];const spr=beast.sprite;
+      const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,weather:this.weather,time});
+      Object.assign(beast,decision.next);
+      if(decision.detected)highest++;
+      if(decision.encounter){this.openEncounter(beast);return;}
+      const target=beast.target;
+      const walk=target?Math.hypot(target.x-spr.x,target.y-spr.y):0;
+      const speed=beast.state==='perseguicao'?beast.speed*1.15:beast.state==='retirada'?beast.speed*.85:beast.speed*.65;
+      if(target&&walk>8){spr.setVelocity((target.x-spr.x)/walk*speed,(target.y-spr.y)/walk*speed);}else spr.setVelocity(0,0);
+      const wanted=beast.state==='perseguicao'?'alert':beast.state==='retirada'?'retreat':walk>8?'walk':'idle';
+      const anim=`${beast.type}-${wanted}`;
+      if(spr.anims.currentAnim?.key!==anim)spr.anims.play(anim,true);
+      spr.setFlipX(target?.x<spr.x);spr.setDepth(spr.y+28);
+      beast.x=spr.x;beast.y=spr.y;
+      const bar=beast.bar;bar.clear();
+      // The red alert rune appears only when the creature perceives Peren.
+      if(beast.state==='perseguicao'){
+        bar.fillStyle(0x11151a,.82);bar.fillRoundedRect(spr.x-14,spr.y-39,28,5,2);
+        bar.fillStyle(0xe99d68,1);bar.fillRoundedRect(spr.x-13,spr.y-38,26,3,1);
+      }
+    }
+    const label=highest?`${highest} criatura(s) perceberam Peren`:'Patrulhas distantes';
+    if(this.registry.get('threat')!==label)this.registry.set('threat',label);
+  }
+  openEncounter(beast){
+    if(this.activeEncounter)return;
+    this.activeEncounter=beast;
+    this.player.setVelocity(0,0);beast.sprite.setVelocity(0,0);
+    this.registry.set('status',`Encontro: ${beast.name}. É possível observar ou recuar.`);
+    this.registry.set('encounter',{id:beast.instanceId,type:beast.type,name:beast.name,behavior:beast.behavior});
+    this.game.events.emit('peren-encounter',this.registry.get('encounter'));
+    this.scene.pause();
+  }
+  retreatEncounter(){
+    const beast=this.activeEncounter;if(!beast)return false;
+    const safe=safeRetreat(this.world,{x:this.player.x,y:this.player.y},beast,this.beasts.filter(b=>b!==beast));
+    this.player.body.reset(safe.x,safe.y);
+    beast.cooldown=10000;beast.state='retirada';beast.lastSeen=null;
+    beast.sprite.body.reset(beast.sprite.x,beast.sprite.y);
+    this.activeEncounter=null;
+    this.registry.set('encounter',null);
+    this.registry.set('status',`Você recuou de ${beast.name}. Nenhum XP, ouro ou loot foi concedido.`);
+    this.scene.resume();return true;
+  }
   collect(){
     if(this.isGathering)return;
     const n=nearestResource(this.world,this.player.x,this.player.y,this.collected);
@@ -83,7 +163,7 @@ export class ExplorationScene extends Phaser.Scene {
   }
   command(action){if(action==='gather')this.collect();if(action==='sprint')this.sprintTouch=true;if(action==='walk')this.sprintTouch=false;}
   update(_t,delta){
-    if(!this.player||this.isGathering)return;
+    if(!this.player||this.isGathering||this.activeEncounter)return;
     if(Phaser.Input.Keyboard.JustDown(this.key.E)||Phaser.Input.Keyboard.JustDown(this.key.SPACE)){this.collect();return}
     let x=0,y=0;
     if(this.key.A.isDown||this.key.LEFT.isDown)x--;if(this.key.D.isDown||this.key.RIGHT.isDown)x++;
@@ -91,7 +171,9 @@ export class ExplorationScene extends Phaser.Scene {
     x+=this.joy.active?this.joy.x:0;y+=this.joy.active?this.joy.y:0;
     x+=this.gamepadInput?.move?.x||0;y+=this.gamepadInput?.move?.y||0;
     const n=Math.hypot(x,y);const sprint=this.sprintTouch||this.key.SHIFT.isDown||this.gamepadInput?.sprint;
-    const speed=sprint?205:135;
+    // Soggy soil slows movement; shrub cover reduces monster sight in pure AI rules.
+    const env=environmentAt(this.world,this.player.x,this.player.y);
+    const speed=(sprint?205:135)*(env.wet?.78:1);
     const vx=n>0?x/n*speed:0,vy=n>0?y/n*speed:0;
     // Accelerator keeps movement fluid without grid snapping.
     const k=Math.min(1,delta*.012);
@@ -99,6 +181,7 @@ export class ExplorationScene extends Phaser.Scene {
     if(n>.12){this.direction=Math.abs(x)>Math.abs(y)?x>0?'right':'left':y>0?'down':'up';this.playState(sprint?'run':'walk')}
     else this.playState('idle');
     this.player.setDepth(this.player.y+24);
+    this.updateBeasts(delta,_t);
     const e=this.world.exit;if(Math.hypot((e.x+.5)*TILE-this.player.x,(e.y+.5)*TILE-this.player.y)<40){this.registry.set('status','Você encontrou a saída. O portal de Portomonte está logo adiante.');this.registry.set('atExit',true)}
     else if(this.registry.get('atExit'))this.registry.set('atExit',false);
   }
