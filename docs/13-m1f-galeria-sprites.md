@@ -2,18 +2,18 @@
 
 **Branch empilhada na M1e. Não altera main, o Peren clássico nem o deploy público.**
 
-A nova rota \`phaser-lab/review.html\` permite conferir os atlas reais (não mockups), com:
+A nova rota `phaser-lab/review.html` permite conferir os atlas reais (não mockups), com:
 - Peren: 4 direções × 8 ações × 4 quadros; alterar FPS, escala, direção e pose.
 - Galho Infectado, Fungo Violeta, Ettercap: 7 ações × 4 quadros.
 - Retratos originais, incluindo as duas expressões extras de Peren criadas na M1e.
-- Linha de tempo de quatro quadros e reprodução com respeito a \`prefers-reduced-motion\`.
+- Linha de tempo de quatro quadros e reprodução com respeito a `prefers-reduced-motion`.
 - Ausência deliberada de acesso a qualquer chave de save.
 
-A configuração multi-page do Vite mantém \`index.html\` como página jogável e acrescenta \`review.html\` à pasta \`dist\`, incluída pelo pipeline da demo. O preparo do service worker usa a lista de arquivos do \`dist\` e inclui automaticamente a galeria no cache isolado.
+A configuração multi-page do Vite mantém `index.html` como página jogável e acrescenta `review.html` à pasta `dist`, incluída pelo pipeline da demo. O preparo do service worker usa a lista de arquivos do `dist` e inclui automaticamente a galeria no cache isolado.
 
 ## Executar e conferir
 
-\`\`\`bash
+```bash
 cd phaser-lab
 npm install
 npm test
@@ -22,7 +22,7 @@ npm run dev
 npm run build
 node scripts/prepare-demo.mjs
 # confirmar dist/review.html
-\`\`\`
+```
 
 ## Critérios de aprovação artística
 
