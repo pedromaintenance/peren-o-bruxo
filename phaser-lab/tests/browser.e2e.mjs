@@ -236,10 +236,12 @@ for(const [w,h] of [[390,844],[360,800]]){
  await page.screenshot({path:`screenshots/murin-${w}.png`,fullPage:true});
  // Real workshop action (original recipe ID) and commercial transaction.
  await page.locator('#showCraft').click();
+ await page.locator('#craftUI').waitFor({state:'visible'});
  const craftsBefore=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
- await page.locator('.market-line button').first().click();
+ await page.locator('#craftMake').click();
  const craftsAfter=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
  assert.equal(craftsAfter,craftsBefore+1);
+ await page.locator('#craftClose').click();
  await page.locator('#showShop').click();
  const tradeBefore=await page.evaluate(()=>window.__perenProgress.save.character.gold);
  await page.locator('.market-line button').first().click();
