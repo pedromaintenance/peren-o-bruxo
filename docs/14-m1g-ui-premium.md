@@ -31,13 +31,15 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] QA browser automatizado (360×800, 390×844, 1280×800) e save clássico imutável: GitHub Actions passou.
 - [ ] Revisão visual presencial e playtest Android + Xbox físicos.
 
-### M1g-B — Inventário e equipamento
+### M1g-B — Inventário e equipamento [CÓDIGO VALIDADO / ARTE EM REVISÃO]
 
-- [ ] Separar visualização do inventário (não confundir com vender).
-- [ ] Filtros por categoria, grid e seleção acessível, quantidades reais, detalhes do item.
-- [ ] Equipamento verdadeiro com os slots existentes do save (`weapon`, `armor`, `relic`); outros slots apenas se regras futuras os suportarem.
-- [ ] Retrato Peren, vida/mana e status em componente compartilhado.
-- [ ] Scroll, navegação controller/touch, nenhum item ou moeda criado pela interface.
+- [x] Separar visualização do inventário (não confundir com vender).
+- [x] Filtros por categoria, grid e seleção acessível, quantidades reais, detalhes do item.
+- [x] Equipamento verdadeiro com os slots existentes do save (`weapon`, `armor`, `relic`); outros slots apenas se regras futuras os suportarem.
+- [x] Retrato Peren, vida/mana e status no design system compartilhado.
+- [x] Scroll, navegação controller/touch, nenhum item ou moeda criado pela interface.
+- [x] Node, Vite, PWA e Chromium em 360×800, 390×844 e 1280×800; Xbox simulado e integridade dos saves aprovados. [Run 38594839312](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38594839312).
+- [ ] Aprovação visual pelo usuário, Android/Xbox físicos e ícones individuais finais.
 
 ### M1g-C — Alquimia / criação
 
@@ -85,7 +87,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-Concluir e revisar M1g-A; a partir da tela aprovada, implementar inventário M1g-B preservando o contrato de progresso e os controles existentes.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. Próximo recorte de código: M1g-C, Alquimia e Criação, mantendo transações canônicas. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 

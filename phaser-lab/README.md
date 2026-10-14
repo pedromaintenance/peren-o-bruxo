@@ -74,3 +74,7 @@ A fatia **M1g-A** acrescenta ui-theme.css, ui-portomonte.css e src/ui-hub.js, ma
 O fundo cenográfico nesta fatia usa uma pintura de ambientação já existente no Peren clássico, **provisórias e não equivalentes ao padrão final das referências conceituais**. Roda em Vite e mantém peren_carcaca_save_v1 inalterado.
 
 Para QA: npm test, npm run build, node scripts/prepare-demo.mjs, node scripts/portomonte-browser.mjs (requer Chromium instalado pelo Playwright).
+
+## M1g-B — Inventário e equipamentos (branch de revisão)
+
+A nova tela `#inventoryUI` abre pelo botão **Inventário** em Portomonte (tecla Y no Xbox conectado), separado de **Vender**. Lista itens reais do save Phaser por categoria, mostra descrições/quantidades, retrato, PV/PM/EXP e os únicos slots suportados — arma, armadura e relíquia. Nada é equipado, criado, vendido ou gravado por essa tela. X alterna categorias no Xbox, B fecha; Tab/setas/Esc no teclado e toque no celular. QA: `npm test`, `npm run build` e `node scripts/inventory-browser.mjs` com Chromium. Mais detalhes em [docs/15-m1g-b-inventario.md](../docs/15-m1g-b-inventario.md).
