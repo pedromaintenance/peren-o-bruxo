@@ -39,12 +39,13 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 </style>
 </head>
 <body>
-<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1f</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a></header>
+<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1h-A</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a></header>
 <main>
 <div class="grid">
 <section class="panel">
-<h2>Selecionar animação</h2>
+<h2>Selecionar animação</h2><p><a href="./?art=m1h" id="m1hGameLink">Testar candidato M1h-A no jogo →</a></p>
 <div class="controls">
+<label>Versão da arte de Peren<select id="perenVariant"><option value="m1e">M1e · Original</option><option value="m1h">M1h-A · Prateado (em produção)</option></select></label>
 <label>Personagem ou criatura
 <select id="entity"><option value="peren">Peren, o Bruxo</option><option value="mob-galho-infectado">Galho Infectado</option><option value="mob-fungo-violeta">Fungo Violeta</option><option value="mob-ettercap">Ettercap</option></select>
 </label>
@@ -70,7 +71,7 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 <p id="status" role="status" aria-live="polite">Carregando atlas de animações…</p>
 <h2>Retrato em pixel art</h2>
 <img id="portrait" src="./art/characters/peren/portrait.png" alt="Retrato do personagem selecionado">
-<p><small>Os três retratos alternativos de Peren só existem na branch M1e. Para criaturas, apenas o retrato principal está previsto.</small></p>
+<p><small>M1h-A altera apenas a paleta e preserva a silhueta do M1e. Ainda não remove integralmente adereços da arte anterior; este candidato não é a versão final aprovada.</small></p>
 </section>
 <section class="panel">
 <h2>Prévia animada</h2>
@@ -104,6 +105,18 @@ peren:{w:48,h:64,columns:32,rows:4,path:'./art/characters/peren/peren-atlas.png'
 'mob-ettercap':{w:64,h:64,columns:4,rows:7,path:'./art/monsters/mob-ettercap/atlas.png',portrait:'./art/monsters/mob-ettercap/'}
 };
 let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
+$('perenVariant').value=new URLSearchParams(location.search).get('art')==='m1h'?'m1h':'m1e';
+function applyVariant(){
+ if($('perenVariant').value==='m1h'){
+  ents.peren.path='./art-m1h/characters/peren/peren-atlas.png';
+  ents.peren.portrait='./art-m1h/characters/peren/';
+  $('m1hGameLink').href='./?art=m1h';
+ }else{
+  ents.peren.path='./art/characters/peren/peren-atlas.png';
+  ents.peren.portrait='./art/characters/peren/';
+  $('m1hGameLink').href='./';
+ }
+}
 const ctx=$('frame').getContext('2d',{alpha:true});ctx.imageSmoothingEnabled=false;
 function entity(){return $('entity').value}
 function meta(){return ents[entity()]}
@@ -164,6 +177,7 @@ function load(){
   portrait();paintAll();
 }
 $('entity').addEventListener('change',load);
+$('perenVariant').addEventListener('change',()=>{applyVariant();load();});
 $('direction').addEventListener('change',()=>{frame=0;paintAll()});
 $('action').addEventListener('change',()=>{frame=0;paintAll()});
 $('portraitMode').addEventListener('change',portrait);
@@ -173,7 +187,7 @@ $('toggle').addEventListener('click',()=>{playing=!playing;last=0;paintAll()});
 $('next').addEventListener('click',()=>{playing=false;frame=(frame+1)%4;paintAll()});
 if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)playing=false;
 function animate(t){if(ready&&playing&&(!last||t-last>=1000/Number($('fps').value))){last=t;frame=(frame+1)%4;paintAll()}requestAnimationFrame(animate)}
-load();requestAnimationFrame(animate);
+applyVariant();load();requestAnimationFrame(animate);
 })();
 </script>
 </body>
