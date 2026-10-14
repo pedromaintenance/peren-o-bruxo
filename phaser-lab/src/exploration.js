@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import {buildForest,nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.js';
 import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
+import {encounterKey,defaultProfile} from './combat.js';
 
 const ASSET = './art/';
 const PEREN = `${ASSET}characters/peren/`;
@@ -22,6 +23,7 @@ export class ExplorationScene extends Phaser.Scene {
   }
   create(){
     this.world=buildForest(this.registry.get('seed')||'murin-001');
+    if(!this.registry.get('combatProfile'))this.registry.set('combatProfile',defaultProfile());
     this.weather=worldWeather(this.world.seed);
     this.activeEncounter=null;this.enemyClock=0;
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
@@ -76,7 +78,8 @@ export class ExplorationScene extends Phaser.Scene {
   }
   playState(act){const key=`peren-${this.direction}-${act}`;if(this.currentAnimation!==key){this.currentAnimation=key;this.player.anims.play(key,true)}}
   createBeasts(colliders,blockers){
-    this.beasts=spawnMurinCreatures(this.world).map(monster=>{
+    const claims=this.registry.get('combatProfile')?.claims||{};
+    this.beasts=spawnMurinCreatures(this.world).filter(monster=>!claims[encounterKey(this.world.seed,monster.instanceId)]).map(monster=>{
       const spr=this.physics.add.sprite(monster.x,monster.y,monster.type,0);
       spr.setCollideWorldBounds(true).setSize(25,18).setOffset(20,38).setMaxVelocity(95);
       spr.setDepth(spr.y+28);
@@ -134,6 +137,33 @@ export class ExplorationScene extends Phaser.Scene {
     this.registry.set('encounter',{id:beast.instanceId,type:beast.type,name:beast.name,behavior:beast.behavior});
     this.game.events.emit('peren-encounter',this.registry.get('encounter'));
     this.scene.pause();
+  }
+  fightEncounter(){
+    const beast=this.activeEncounter;
+    if(!beast||this.scene.isActive('BattleScene'))return false;
+    this.registry.set('encounter',null);
+    const key=encounterKey(this.world.seed,beast.instanceId);
+    this.scene.launch('BattleScene',{beast:{type:beast.type,name:beast.name,instanceId:beast.instanceId},key});
+    return true;
+  }
+  finishCombat(outcome){
+    const beast=this.activeEncounter;
+    if(!beast){this.scene.resume();return false;}
+    if(outcome==='won'){
+      beast.sprite?.destroy();beast.bar?.destroy();
+      this.beasts=this.beasts.filter(b=>b!==beast);
+      this.registry.set('beastCount',this.beasts.length);
+      this.registry.set('status',`${beast.name} foi derrotado. Os materiais estão na bolsa provisória.`);
+    }else{
+      const safe=safeRetreat(this.world,{x:this.player.x,y:this.player.y},beast,this.beasts.filter(b=>b!==beast));
+      this.player.body.reset(safe.x,safe.y);
+      beast.cooldown=14000;beast.state='retirada';beast.lastSeen=null;
+      beast.sprite.body.reset(beast.sprite.x,beast.sprite.y);
+      this.registry.set('status',outcome==='fled'?'Peren escapou. Nenhuma recompensa concedida.':'Peren foi resgatado. Nenhuma recompensa concedida.');
+    }
+    this.activeEncounter=null;
+    this.registry.set('encounter',null);
+    this.scene.resume();return true;
   }
   retreatEncounter(){
     const beast=this.activeEncounter;if(!beast)return false;

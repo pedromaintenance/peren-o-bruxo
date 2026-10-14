@@ -6,8 +6,8 @@ const here=resolve(fileURLToPath(new URL('.',import.meta.url)));
 const lab=resolve(here,'..');
 const source=resolve(lab,'..','phaser','assets');
 const dest=join(lab,'public','art');
-for(const path of ['characters/peren','regions/floresta-murin','monsters/mob-galho-infectado','monsters/mob-fungo-violeta','monsters/mob-ettercap']) {
+for(const path of ['characters/peren','regions/floresta-murin','monsters/mob-galho-infectado','monsters/mob-fungo-violeta','monsters/mob-ettercap','vfx','battle']) {
   await mkdir(join(dest,path),{recursive:true});
   await cp(join(source,path),join(dest,path),{recursive:true,force:true});
 }
-console.log('Assets autorais M1b sincronizados de phaser/assets -> public/art');
+console.log('Assets autorais M1c sincronizados de phaser/assets -> public/art');

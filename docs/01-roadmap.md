@@ -88,3 +88,17 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [ ] Merge aprovado: `feature/*` → `phaser/develop` → PR de release → `main`.
 
 **Regra:** não registrar trabalho como concluído apenas porque existe a referência de um asset no JSON; o arquivo, a animação, a integração e os testes precisam existir.
+
+
+## M1c — Combate JRPG Phaser [CÓDIGO DA FATIA IMPLEMENTADO, TESTES EM ANDAMENTO]
+
+- [x] Cena de batalha com sprites de Peren e dos 3 monstros de Mürin.
+- [x] Ataque, defesa, poção, fuga e três magias com VFX PNG animados.
+- [x] Recompensas XP/ouro/material com chave de idempotência por criatura e seed.
+- [x] Carteira de QA em memória separada do save clássico.
+- [x] Testes unitários contra duplicação de saque e 90 simulações de combate.
+- [ ] QA Chromium e screenshots no GitHub Actions (avaliar antes do merge).
+- [ ] Testes com controle Xbox real e aparelho Android.
+- [ ] Adapter do save/economia real — a ser feito em M1d, sem alterar o Peren estável até ser aprovado.
+
+Detalhes: `docs/11-m1c-combate.md`.

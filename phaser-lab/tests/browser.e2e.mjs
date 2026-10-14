@@ -107,6 +107,71 @@ for(const [w,h] of [[390,844],[360,800]]){
  assert.equal(await page.evaluate(()=>JSON.stringify(window.__perenLab.registry.get('collected'))),bagBefore);
  await page.waitForTimeout(500);
  assert.equal(await page.locator('#encounterModal').isVisible(),false,'repeated instant encounter softlock');
+ // M1c: battle scene, spell animation, one-time XP/loot and safe return.
+ await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene');
+   const b=s.beasts.find(x=>x.type==='mob-galho-infectado');
+   b.cooldown=0;s.openEncounter(b);
+ });
+ await page.locator('#encounterModal').waitFor({state:'visible',timeout:8000});
+ await page.locator('#observeBeast').click();
+ await page.locator('#battleUI').waitFor({state:'visible',timeout:10000});
+ await page.waitForFunction(()=>window.__perenLab?.registry?.get('battleState')?.status==='active',{timeout:10000});
+ const battleAtStart=await page.evaluate(()=>{
+   const a=window.__perenLab,s=a.scene.getScene('BattleScene');return {type:s.config.beast.type,hp:s.state.hp,
+     animations:a.anims.anims.size,fx:['vfx-fire','vfx-ice','vfx-arcane'].every(k=>a.textures.exists(k)),
+     profile:a.registry.get('combatProfile')};
+ });
+ assert.equal(battleAtStart.type,'mob-galho-infectado');assert.equal(battleAtStart.fx,true);
+ assert.equal(battleAtStart.profile.kills,0);
+ // Three visually distinct skills are wired to their actual spell IDs and mana.
+ await page.locator('[data-battle="spell:mag-raio-de-fogo"]').click();
+ await page.waitForFunction(()=>!window.__perenLab.scene.getScene('BattleScene').busy,{timeout:12000});
+ const mpAfter=await page.evaluate(()=>window.__perenLab.scene.getScene('BattleScene').state.playerMp);
+ assert.equal(mpAfter,battleAtStart.profile.mp-3);
+ await page.screenshot({path:`screenshots/murin-combat-${w}.png`,fullPage:true});
+ for(let j=0;j<15;j++){
+   const state=await page.evaluate(()=>window.__perenLab.scene.getScene('BattleScene').state?.status);
+   if(state!=='active')break;
+   await page.locator('[data-battle="attack"]').click();
+   await page.waitForFunction(()=>!window.__perenLab.scene.getScene('BattleScene').busy,{timeout:12000});
+ }
+ const status=await page.evaluate(()=>window.__perenLab.scene.getScene('BattleScene').state.status);
+ assert.equal(status,'won',`expected battle victory, got ${status}`);
+ assert.equal(await page.locator('#battleFinish').isVisible(),true);
+ await page.locator('#battleFinish').click();
+ await page.locator('#battleUI').waitFor({state:'hidden',timeout:8000});
+ const win=await page.evaluate(()=>{
+   const a=window.__perenLab,p=a.registry.get('combatProfile'),s=a.scene.getScene('ExplorationScene');
+   return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss'],remaining:s.beasts.length,paused:s.scene.isPaused()};
+ });
+ assert.deepEqual(win,{gold:8,xp:13,kills:1,moss:1,remaining:5,paused:false});
+ await page.waitForTimeout(200);
+ assert.equal(await page.locator('#encounterModal').isVisible(),false);
+ // A second encounter can be fled; this must not add loot, experience or gold.
+ await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene');
+   s.openEncounter(s.beasts.find(x=>x.type==='mob-fungo-violeta'));
+ });
+ await page.locator('#encounterModal').waitFor({state:'visible',timeout:8000});
+ await page.locator('#observeBeast').click();
+ await page.locator('#battleUI').waitFor({state:'visible',timeout:8000});
+ if(w===390){
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:true,value:1}});
+   await page.waitForFunction(()=>window.__perenLab.scene.getScene('BattleScene').state.status==='fled',{timeout:6000});
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:false,value:0}});
+   await page.waitForTimeout(180);
+   await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:true,value:1}});
+   await page.locator('#battleUI').waitFor({state:'hidden',timeout:8000});
+   await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:false,value:0}});
+ }else{
+   await page.locator('[data-battle="flee"]').click();
+   await page.waitForFunction(()=>window.__perenLab.scene.getScene('BattleScene').state.status==='fled',{timeout:8000});
+   await page.locator('#battleFinish').click();
+   await page.locator('#battleUI').waitFor({state:'hidden',timeout:8000});
+ }
+ const afterFlee=await page.evaluate(()=>{const p=window.__perenLab.registry.get('combatProfile');return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss']}});
+ assert.deepEqual(afterFlee,{gold:8,xp:13,kills:1,moss:1});
  // Return to hub from exit marker.
  await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),n=s.world.exit;s.player.setPosition((n.x+.5)*32,(n.y+.5)*32);s.player.body.reset(s.player.x,s.player.y)});
  await page.waitForTimeout(250);
