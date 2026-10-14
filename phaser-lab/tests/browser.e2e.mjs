@@ -1,1 +1,100 @@
-The requested file reference is not currently visible. Use files.search or files.list to rediscover the file, then retry with a returned ref_id or file_id.
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {mkdir} from 'node:fs/promises';
+const base=process.env.PEREN_PREVIEW_URL||'http://127.0.0.1:4173/';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+const errors=[];
+await mkdir('../phaser-lab/screenshots',{recursive:true});
+for(const [w,h] of [[390,844],[360,800]]){
+ const page=await browser.newPage({viewport:{width:w,height:h},isMobile:true,hasTouch:true,deviceScaleFactor:1});
+ page.on('pageerror',e=>errors.push(String(e)));page.on('console',m=>{if(m.type()==='error')errors.push('console '+m.text())});
+ // 390px scenario uses an Xbox Standard Gamepad emulator, exercised via browser API.
+ // It never introduces synthetic mouse clicks for the gamepad steps.
+ if(w===390)await page.addInitScript(()=>{
+   window.__mockXbox={id:'Xbox Wireless Controller (mock)',index:0,connected:true,mapping:'standard',axes:[0,0,0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};
+   Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[window.__mockXbox]});
+ });
+ await page.goto(base,{waitUntil:'networkidle',timeout:30000});
+ if(w===390){
+   await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready'),{timeout:30000});
+   await page.waitForFunction(()=>document.querySelector('#gamepad-status').textContent.includes('Xbox Wireless'));
+   await page.evaluate(()=>{window.__mockXbox.buttons[0].pressed=true;window.__mockXbox.buttons[0].value=1});
+   await page.waitForFunction(()=>document.querySelector('#hub').hidden,{timeout:5000});
+   await page.evaluate(()=>{window.__mockXbox.buttons[0].pressed=false;window.__mockXbox.buttons[0].value=0});
+   await page.waitForTimeout(110);
+ }else await page.locator('#goForest').click();
+ await page.waitForFunction(()=>!!window.__perenLab?.registry?.get('ready'),{timeout:30000});
+ await page.waitForTimeout(350);
+ const stats=await page.evaluate(()=>{const game=window.__perenLab,s=game.scene.getScene('ExplorationScene');return {valid:game.registry.get('worldValid'),texture:game.textures.exists('peren'),frames:game.textures.get('peren').frameTotal,anims:game.anims.anims.size,startX:s.player.x,startY:s.player.y}});
+ assert.equal(stats.valid,true);assert.equal(stats.texture,true);assert.ok(stats.frames>=128,JSON.stringify(stats));assert.ok(stats.anims>=32,JSON.stringify(stats));
+ await page.keyboard.down('ArrowRight');await page.waitForTimeout(700);await page.keyboard.up('ArrowRight');
+ const moved=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.x);
+ assert.ok(moved>stats.startX+12,`player did not move: ${moved} <= ${stats.startX}`);
+ if(w===390){
+   // Move to an obstacle-free strip; collisions are correctly enabled on real maps.
+   const before=await page.evaluate(()=>{
+     const s=window.__perenLab.scene.getScene('ExplorationScene'),w=s.world;
+     for(let y=3;y<w.height-3;y++)for(let x=3;x<w.width-8;x++){
+       const clear=Array.from({length:7},(_,dx)=>x+dx).every(xx=>[y-1,y,y+1].every(yy=>!w.blocked.has(`${xx},${yy}`)));
+       if(!clear)continue;
+       s.player.body.reset((x+.5)*32,(y+.5)*32);
+       return s.player.x;
+     }
+     throw Error('No suitable clear corridor for Xbox input QA');
+   });
+   await page.evaluate(()=>{window.__mockXbox.axes[0]=1;window.__mockXbox.buttons[7]={pressed:true,value:1}});
+   await page.waitForTimeout(430);
+   const xbox=await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene');return {x:s.player.x,sprint:s.gamepadInput.sprint,anim:s.player.anims.currentAnim?.key}});
+   assert.ok(xbox.x>before+15,`Xbox analog movement failed: ${JSON.stringify(xbox)}`);
+   assert.equal(xbox.sprint,true);
+   assert.ok(xbox.anim.endsWith('-run'),`Xbox sprint animation not active: ${xbox.anim}`);
+   await page.evaluate(()=>{window.__mockXbox.axes[0]=0;window.__mockXbox.buttons[7]={pressed:false,value:0}});
+   await page.waitForTimeout(100);
+ }
+ // Single nearby plant is placed under Peren to check a real animation and pickup.
+ await page.evaluate(()=>{const scene=window.__perenLab.scene.getScene('ExplorationScene'),n=scene.world.nodes[0];scene.player.setPosition((n.x+.5)*32,(n.y+.5)*32);scene.player.body.reset(scene.player.x,scene.player.y)});
+ // A fixed HTML joystick must remain fully visible at mobile sizes.
+ const joy=page.locator('#joystick');const joyBox=await joy.boundingBox();
+ assert.ok(joyBox.x>=0&&joyBox.x+joyBox.width<=w,'joystick clipped horizontally');
+ assert.ok(joyBox.y>=0&&joyBox.y+joyBox.height<=h,'joystick clipped vertically');
+ await page.mouse.move(joyBox.x+55,joyBox.y+55);await page.mouse.down();
+ await page.mouse.move(joyBox.x+88,joyBox.y+55,{steps:5});
+ await page.waitForTimeout(130);
+ const joyVector=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').joy.x);
+ assert.ok(joyVector>0.3,'touch drag not passed to Phaser');
+ await page.mouse.up();
+ if(w===390){
+   await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:true,value:1}});
+   await page.waitForTimeout(150);
+   await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:false,value:0}});
+ }else await page.locator('#gatherBtn').click();
+ await page.waitForFunction(()=>{const x=window.__perenLab.registry.get('collected');return x&&Object.values(x).some(n=>n>0)},{timeout:8000});
+ if(w===390){
+   await page.evaluate(()=>{window.__mockXbox.buttons[3]={pressed:true,value:1}}); // Y opens bag
+   await page.locator('#bagPanel').waitFor({state:'visible'});
+   await page.evaluate(()=>{window.__mockXbox.buttons[3]={pressed:false,value:0}});
+   await page.waitForTimeout(100);
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:true,value:1}}); // B closes bag
+   await page.locator('#bagPanel').waitFor({state:'hidden'});
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:false,value:0}});
+   await page.waitForTimeout(100);
+   await page.evaluate(()=>{window.__mockXbox.buttons[9]={pressed:true,value:1}}); // Menu pauses to hub
+   await page.locator('#hub').waitFor({state:'visible'});
+   await page.evaluate(()=>{window.__mockXbox.buttons[9]={pressed:false,value:0}});
+   await page.waitForTimeout(100);
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:true,value:1}}); // B resumes
+   await page.locator('#hub').waitFor({state:'hidden'});
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:false,value:0}});
+   await page.waitForTimeout(100);
+ }
+ await page.screenshot({path:`screenshots/murin-forest-${w}.png`,fullPage:true});
+ // Return to hub from exit marker.
+ await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),n=s.world.exit;s.player.setPosition((n.x+.5)*32,(n.y+.5)*32);s.player.body.reset(s.player.x,s.player.y)});
+ await page.waitForTimeout(250);
+ await page.locator('#returnBtn').click();await page.locator('#hub').waitFor({state:'visible'});
+ await page.screenshot({path:`screenshots/murin-${w}.png`,fullPage:true});
+ await page.close();
+ console.log(`BROWSER OK ${w}x${h}: animated character, Xbox/keyboard/touch movement, gather, hub, 32 clips`);
+}
+await browser.close();
+assert.deepEqual(errors,[],errors.join('\n'));
