@@ -107,21 +107,37 @@ const beastLore={
  'mob-fungo-violeta':'Esporos púrpuras denunciam sua presença. Prefere vagar em terrenos úmidos e entre raízes.',
  'mob-ettercap':'Caçador aracnídeo da mata. Enxerga mais longe que os outros e persegue corredores descuidados.'
 };
+let encounterFocus=null;
 app.events.on('peren-encounter',info=>{
+ encounterFocus=document.activeElement;
  $('encounterModal').hidden=false;
+ $('controls').inert=true;
  $('beastName').textContent=info.name;
  $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
  $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura de Mürin');
+ $('observeBeast').focus({preventScroll:true});
 });
-function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){$('encounterModal').hidden=true;}}
+function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){
+ $('encounterModal').hidden=true;$('controls').inert=false;
+ (encounterFocus?.isConnected&&!encounterFocus.closest('[hidden]')?encounterFocus:$('gatherBtn')).focus?.({preventScroll:true});
+}}
 $('retreatBeast').addEventListener('click',retreatBeast);
+$('encounterModal').addEventListener('keydown',event=>{
+ if(event.key==='Escape'){event.preventDefault();event.stopPropagation();retreatBeast();return;}
+ if(event.key!=='Tab')return;
+ const buttons=[$('observeBeast'),$('retreatBeast')];
+ const index=buttons.indexOf(document.activeElement);
+ if(event.shiftKey&&index===0){event.preventDefault();buttons[1].focus();}
+ else if(!event.shiftKey&&index===1){event.preventDefault();buttons[0].focus();}
+});
 $('observeBeast').addEventListener('click',()=>{
   const scene=joyScene();if(!scene?.fightEncounter())return;
   $('encounterModal').hidden=true;$('controls').hidden=true;$('battleUI').hidden=false;
   selectedBattleIndex=0;syncBattleButtons();
+  battleOptions[0]?.focus({preventScroll:true});
 });
 // Standalone hub shown first. Real Peren HTML hub remains untouched in main.
 $('hub').hidden=false;$('controls').hidden=true;
@@ -273,7 +289,8 @@ function renderBattleState(state){
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
 app.events.on('peren-battle-end',({result,reward,profile})=>{
-  $('battleUI').hidden=true;$('controls').hidden=false;
+  $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
+  $('gatherBtn').focus({preventScroll:true});
   const itemLabel=reward?Object.keys(reward.items).join(', '):'nenhum material';
   $('feedback').textContent=result==='won'?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`:'Retorno à floresta sem recompensa.';
   $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;renderHub();updateHud();
