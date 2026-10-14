@@ -5,6 +5,7 @@ import {XboxPadTracker} from './gamepad.js';
 import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
 import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
+import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -105,7 +106,7 @@ $('hub').hidden=false;$('controls').hidden=true;
 // Browsers generally reveal a new controller only after the user presses a button.
 const xbox=new XboxPadTracker();
 let lastPadLabel='', hubChoice=0, forestVisited=false;
-const hubButtons=[$('goForest'),$('resetForest')];
+const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('endDayBtn'),$('showInventory'),$('resetForest')];
 function selectHubChoice(index){
   hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
   hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
@@ -115,6 +116,7 @@ function toggleBag(show){
   $('bagPanel').hidden=!show;
   if(show){$('bagContents').textContent=inventoryText();}
 }
+$('openBagHub').addEventListener('click',()=>toggleBag(true));
 const originalHub=hub;
 // Wrap the existing hub transition so pause, controller selection and bag agree.
 hub=function(show){originalHub(show);if(show){toggleBag(false);selectHubChoice(0);}else forestVisited=true;};
@@ -136,15 +138,15 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(!$('bagPanel').hidden){
+    if(key.b||key.y||key.view||key.menu)toggleBag(false);
+    return;
+  }
   if(!$('hub').hidden){
     if(key.down)selectHubChoice(hubChoice+1);
     if(key.up)selectHubChoice(hubChoice-1);
     if(key.a)hubButtons[hubChoice].click();
     else if((key.b||key.menu)&&forestVisited)hub(false);
-    return;
-  }
-  if(!$('bagPanel').hidden){
-    if(key.b||key.y||key.view||key.menu)toggleBag(false);
     return;
   }
   if(key.a||key.x)scene?.command('gather');
@@ -223,6 +225,7 @@ function notifyProgressError(err){const msg=err?.message||String(err);$('hubStat
   $('feedback').textContent=msg;app.registry.set('status',msg);
 }
 function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
+ applyHubViewModel(document,hubViewModel(s,catalogs,bridge.source));
  $('combatWallet').textContent=`Nível ${s.level} · ${s.gold} moedas · ${s.exp} XP · ${inventoryTotal(s)} itens · ${s.actions} ações`;
  $('progressSource').textContent=bridge.source==='classic-import'?'Progresso importado do Peren clássico (cópia isolada)':'Progresso Phaser salvo (sem alterar o clássico)';
  $('cityMeta').textContent=`Origem: ${city.nome} · Dia ${s.day} · PV ${s.hp} · PM ${s.mp}`;
