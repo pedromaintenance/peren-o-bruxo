@@ -50,12 +50,14 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Integrar controles teclado, touchscreen e Xbox simulado; testes automatizados incluídos.
 - [ ] Aprovação visual, CI de navegador completo e teste Android/Xbox físicos.
 
-### M1g-D — Comércio
+### M1g-D — Comércio [CÓDIGO IMPLEMENTADO, ARTE EM REVISÃO]
 
-- [ ] Mercador contextual da cidade, lista de comprar/vender e card do item com preços da lógica real.
-- [ ] Navegação teclado/gamepad, moeda disponível e confirmação de ação.
-- [ ] UI deve distinguir compra, venda e inventário sem reuso ambíguo da navegação.
-- [ ] Não inventar estoque, preços e comerciantes; quando faltar regra exibir claramente como indisponível.
+- [x] Mercadores oficiais de Portomonte, retratos provisórios, lista de comprar/vender e painel de preços dinâmicos.
+- [x] Navegação por teclado/gamepad/touch, moeda disponível, cotação de lote e confirmação atômica.
+- [x] UI distingue compra, venda e inventário sem reuso ambíguo da navegação.
+- [x] Não inventa estoques individuais, preços e comerciantes: suprimentos comuns de Portomonte (IDs usados pela M1d), estoque indisponível em outras cidades.
+- [x] Regressões Node/Chromium e capturas em 360×800, 390×844 e 1280×800 implementadas.
+- [ ] Validar CI final e revisar capturas visuais; Android/Xbox físicos e arte definitiva pendentes.
 
 ### M1g-E — HUD / Encontros / Batalha
 
@@ -89,7 +91,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. Próximo recorte após revisão do M1g-C: M1g-D, Comércio, mantendo transações canônicas. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, pendente de QA final e revisão artística. Próximo recorte: M1g-E, HUD/Encontros/Combate. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 
