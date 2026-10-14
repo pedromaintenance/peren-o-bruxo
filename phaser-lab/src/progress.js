@@ -95,6 +95,31 @@ export function purchasePrice(s,item,city){let k=1.15+(city.perigo*.04);
  if(item.zona===city.id)k*=.78;if(item.nivel>city.perigo)k*=1.5;
  return Math.max(1,Math.ceil(item.valor*k*(1-Math.min(.18,skillLevel(s.skills.comercio)/800))))}
 export function salePrice(s,item,city){return Math.max(1,Math.floor(item.valor*(item.zona===city.id?.48:.72)*(1+Math.min(.35,skillLevel(s.skills.comercio)/260))))}
+/**
+ * Price quote for a single atomic batch; reproduces N individual trades,
+ * including commerce skill increments, without mutating the input state.
+ * No vendor-specific stock is assumed by this game rule.
+ */
+export function tradeQuote(state,item,city,type,quantity=1){
+ if(!Number.isSafeInteger(quantity)||quantity<1||quantity>99)throw Error('Quantidade inválida (1 a 99).');
+ if(!item||!city||!['buy','sell'].includes(type))throw Error('Negociação inválida.');
+ if(type==='sell'&&[state.equip?.weapon,state.equip?.armor,state.equip?.relic].includes(item.id))throw Error('Não é permitido vender um item equipado.');
+ let gold=state.gold,owned=state.bag[item.id]||0,points=state.skills.comercio,total=0;
+ for(let i=0;i<quantity;i++){
+  const simulated={...state,skills:{...state.skills,comercio:points}};
+  const price=type==='buy'?purchasePrice(simulated,item,city):salePrice(simulated,item,city);
+  if(type==='buy'){
+   if(gold<price)throw Error('Ouro insuficiente.');
+   gold-=price;owned++;points+=2+Math.ceil(price/100);
+  }else{
+   if(owned<1)throw Error('Quantidade indisponível.');
+   owned--;gold+=price;points+=4+Math.ceil(price/70);
+  }
+  if(gold>MAX_GOLD||owned>MAX_COUNT)throw Error('Limite de inventário ou ouro excedido.');
+  total+=price;
+ }
+ return {type,item:item.id,quantity,gold:total,commercePoints:points};
+}
 export function craftable(s,recipe,c){const city=c.cidadesById[s.city];return Boolean(recipe&&city?.estacoes?.includes(recipe.estacao)&&skillLevel(s.skills[recipe.pericia])>=recipe.nivel&&recipe.ingredientes.every(x=>(s.bag[x.item]||0)>=x.quantidade));}
 const ledgerKey=(category,seed,id)=>`${category}:${encounterKey(seed,id)}`;
 /** Returns {next,result,applied}; does not mutate the previous envelope. */
@@ -144,17 +169,19 @@ export function applyTransaction(env,command,c){
   result={type,item:rec.resultado,quantity:rec.quantidade,recipe:rec.id};
   record(char,`Fabricou ${rec.quantidade}× ${c.itensById[rec.resultado].nome}.`);
  }else if(type==='buy'||type==='sell'){
-  const item=c.itensById[command.id],city=c.cidadesById[char.city];if(!item)throw Error('Item desconhecido.');
-  if(type==='buy'){
-   const gold=purchasePrice(char,item,city);if(char.gold<gold)throw Error('Ouro insuficiente.');
-   char.gold-=gold;add(char,item.id,1,c);char.skills.comercio+=2+Math.ceil(gold/100);
-   result={type,item:item.id,gold,quantity:1};record(char,`Comprou ${item.nome} por ${gold} moedas.`);
-  }else{
-   if([char.equip?.weapon,char.equip?.armor,char.equip?.relic].includes(item.id))throw Error('Não é permitido vender um item equipado.');
-   const gold=salePrice(char,item,city);add(char,item.id,-1,c);
-   char.gold+=gold;char.sales++;char.skills.comercio+=4+Math.ceil(gold/70);
-   result={type,item:item.id,gold,quantity:1};record(char,`Vendeu ${item.nome} por ${gold} moedas.`);
-  }
+  const item=c.itensById[command.id],city=c.cidadesById[char.city];
+  if(!item)throw Error('Item desconhecido.');
+  // Default quantity=1 preserves all old commands/backups. Multi-item trades
+  // follow exactly the same unit prices/skills as N sequential transactions,
+  // but commit only once after all validations succeed.
+  const quantity=command.quantity===undefined?1:command.quantity;
+  const quote=tradeQuote(char,item,city,type,quantity);
+  add(char,item.id,type==='buy'?quantity:-quantity,c);
+  char.gold+=type==='buy'?-quote.gold:quote.gold;
+  char.skills.comercio=quote.commercePoints;
+  if(type==='sell')char.sales+=quantity;
+  result={type,item:item.id,gold:quote.gold,quantity};
+  record(char,`${type==='buy'?'Comprou':'Vendeu'} ${quantity}× ${item.nome} por ${quote.gold} moedas.`);
  }else if(type==='selectSeed'){
   const seed=String(command.seed||'');if(!/^[a-zA-Z0-9_-]{3,60}$/.test(seed))throw Error('Seed inválida.');
   next.worlds.activeSeed=seed;result={type,seed};
