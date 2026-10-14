@@ -43,3 +43,13 @@ jobs:
           done
           test -s dist/demo-sw.js
           echo 'Galeria e jogo compilados, sem mudanças na main'
+      - name: Instalar Chromium para inspeção visual
+        run: npx playwright install --with-deps chromium
+      - name: Testar render real e capturar galerias
+        run: node scripts/review-browser.mjs
+      - name: Guardar capturas para aprovação visual
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1f-galeria-qa
+          path: phaser-lab/screenshots/*-ateliê-*.png
+          if-no-files-found: error
