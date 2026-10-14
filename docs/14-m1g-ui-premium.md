@@ -23,12 +23,13 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 ### M1g-A — Fundação visual e hub Portomonte [EM IMPLEMENTAÇÃO]
 
 - [x] Registrar direção e planejamento detalhado no repositório.
-- [ ] Centralizar tokens de cor, moldura, tipografia, espaçamento e interação no CSS próprio.
-- [ ] Redesenhar cabeçalho, status, painel de Peren, navegação e atalhos de Portomonte.
+- [x] Centralizar tokens de cor, moldura, tipografia, espaçamento e interação no CSS próprio.
+- [x] Redesenhar cabeçalho, status, painel de Peren, navegação e atalhos de Portomonte.
 - [ ] Conservar `goForest`, `resetForest`, `showCraft`, `showShop`, `showInventory`, `endDayBtn`, `exportProgress`, `importProgress` e `hubPanel`, sem quebra de eventos/testes.
-- [ ] Integrar indicadores vivos: cidade de origem, dia, ouro, nível, EXP, PV, PM e recursos.
-- [ ] Criar layout mobile com hierarquia clara e versão desktop com composição em colunas.
-- [ ] QA browser, teste do save clássico imutável e revisão visual presencial.
+- [x] Integrar indicadores vivos: cidade de origem, dia, ouro, nível, EXP, PV, PM e recursos.
+- [x] Criar layout mobile com hierarquia clara e versão desktop com composição em colunas (implementado, aguardando aprovação artística).
+- [x] QA browser automatizado (360×800, 390×844, 1280×800) e save clássico imutável: GitHub Actions passou.
+- [ ] Revisão visual presencial e playtest Android + Xbox físicos.
 
 ### M1g-B — Inventário e equipamento
 
