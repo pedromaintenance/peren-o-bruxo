@@ -57,9 +57,10 @@ try {
   await page.locator('#showShop').click();
   assert.match(await page.locator('#hubTitle').textContent(),/Comércio/);
   await page.locator('#openBagHub').click();
-  assert.equal(await page.locator('#bagPanel').isVisible(),true);
-  await page.locator('#bagClose').click();
+  assert.equal(await page.locator('#inventoryUI').isVisible(),true);
   assert.equal(await page.locator('#bagPanel').isVisible(),false);
+  await page.locator('#invClose').click();
+  assert.equal(await page.locator('#inventoryUI').isVisible(),false);
   await page.locator('#endDayBtn').click();
   assert.equal(await page.locator('#hubDay').textContent(),'Dia 5');
   assert.deepEqual(await page.evaluate(k=>JSON.parse(localStorage.getItem(k)),CLASSIC_KEY),original);
