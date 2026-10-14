@@ -1,0 +1,69 @@
+name: Peren M1g-F - auditoria vertical slice
+on:
+  push:
+    branches: [feature/phaser-m1g-f-vertical-slice-audit]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-f.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-f.yml"
+permissions:
+  contents: read
+jobs:
+  vertical-slice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Suite de regras e view models
+        run: npm test
+      - name: Compilar jogo completo
+        run: npm run build
+      - name: Preparar PWA com escopo isolado
+        run: node scripts/prepare-demo.mjs
+      - name: Auditar pacote, cache, dimensoes e orientacao
+        run: node scripts/audit-package.mjs
+      - name: Preparar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Auditar 6 telas, teclado e touch em 5 resolucoes
+        run: node scripts/vertical-slice-audit.mjs
+      - name: Regressao historica Portomonte
+        run: node scripts/portomonte-browser.mjs
+      - name: Regressao historica Inventario
+        run: node scripts/inventory-browser.mjs
+      - name: Regressao historica Alquimia
+        run: node scripts/workshop-browser.mjs
+      - name: Regressao historica Comercio
+        run: node scripts/marketplace-browser.mjs
+      - name: Regressao historica HUD e batalha
+        run: node scripts/adventure-browser.mjs
+      - name: Jornada completa com coleta XP loot save e Xbox
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Publicar capturas e relatorios de QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-f-auditoria
+          path: |
+            phaser-lab/screenshots/m1g-f-*.png
+            phaser-lab/screenshots/m1g-f-*.json
+          if-no-files-found: warn

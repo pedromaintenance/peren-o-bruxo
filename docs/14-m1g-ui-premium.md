@@ -70,11 +70,15 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] [CI completo #38629438749](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38629438749) passou: 9 capturas Chromium, regressoes M1g-A/B/C/D, Xbox simulado, ciclo de jogo e save clássico intacto.
 - [ ] Aprovar arte e testar Android/Xbox físicos.
 
-### M1g-F — Aceite da vertical slice visual
+### M1g-F — Auditoria da vertical slice [AUTOMAÇÃO IMPLEMENTADA / ACEITE ARTÍSTICO PENDENTE]
 
-- [ ] Fluxo completo: Portomonte → Mürin → coleta → combate → retorno → criação → comércio → reload.
-- [ ] Comparação com as quatro telas conceituais + screenshots desktop/mobile.
-- [ ] Avaliar performance, bundle/cache/PWA, contraste, alvos de toque, overlays e safe areas.
+- [x] Roteiro de jornada completa com Portomonte → Mürin → coleta → combate → retorno → criação → comércio → reload (regressão M1g-E reaproveitada).
+- [x] Matriz de paridade *conceito × funcionalidade × lacuna artística* documentada em [docs/19-m1g-f-auditoria.md](19-m1g-f-auditoria.md).
+- [x] Auditoria automática de 7 telas em 5 resoluções, 35 screenshots, hitboxes, overflow, foco modal e save.
+- [x] Auditoria de PWA, escopo do cache, presença de assets, tamanho do bundle e orientação; orçamento registrado em JSON.
+- [x] Corrigir gradiente EXP, tamanho mínimo de comandos de batalha, restauração de foco e orientação PWA.
+- [x] [Workflow completo #38631438717](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38631438717) aprovado: 35 capturas, 35 métricas, Node, Chromium, PWA e regressões da vertical slice.
+- [ ] Revisar capturas com o usuário, corrigir diferenças artísticas e repetir QA em hardware físico.
 - [ ] Playtest em Android físico + Xbox real; só então considerar pronto.
 - [ ] Revisão artística explícita antes de publicar a demo.
 
@@ -95,7 +99,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. M1g-E validado funcionalmente por CI em branch empilhada; aprovação visual e playtest físico pendentes. Próximo recorte: M1g-F, auditoria da vertical slice e qualidade visual. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. M1g-E validado funcionalmente por CI em branch empilhada; aprovação visual e playtest físico pendentes. M1g-F implementado em branch empilhada e sob CI; próxima entrega após auditoria funcional é M1h, passe de arte e sprites finais. Não mesclar nem publicar sem revisão artística e testes físicos. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 

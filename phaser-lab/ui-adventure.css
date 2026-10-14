@@ -133,7 +133,7 @@
  #controls .m1g-hud-weather{font-size:9px}
  #battleUI #battlePanel{bottom:calc(5px + env(safe-area-inset-bottom))}
  #battleUI .m1g-battle-panelhead{margin-bottom:4px}
- #battleUI #battleCommands button{min-height:42px}
+ #battleUI #battleCommands button{min-height:44px}
 }
 @media(max-height:610px) and (orientation:landscape){
  #controls #status.m1g-expedition-hud{max-height:calc(100dvh - 10px);overflow:hidden}

@@ -96,3 +96,11 @@ Retratos e cenário vetoriais provisórios, sem textos/controles embutidos. Xbox
 O HUD da exploração agora exibe valores canônicos de Peren (PV/PM, nível, ouro), informações ambientais e coleta, sem bloquear o mapa. Os encontros usam retratos reais das criaturas de Mürin com opções Enfrentar e Recuar. A batalha usa painéis azul-petróleo/dourado, barras do jogador e inimigo, log e nomes/custos das três magias de `SPELLS`; a lógica continua em `combat.js` e `BattleScene`.
 
 Os sete botões de combate conservam IDs e atalhos. Testes e capturas: `node scripts/adventure-browser.mjs` após build; `npm test` cobre os dados puros. Documentação: [docs/18-m1g-e-hud-combate.md](../docs/18-m1g-e-hud-combate.md). Arte M1e ainda provisória e sujeita à revisão visual.
+
+## M1g-F — Auditoria da vertical slice (não é aprovação da arte)
+
+A revisão de interface inclui correções no design system (barra EXP), nos alvos touch do combate (44px), no foco dos encontros e na orientação livre da PWA. A lógica de combate, o save clássico e os catálogos continuam inalterados.
+
+Após `npm run build` e `node scripts/prepare-demo.mjs`, executar `node scripts/audit-package.mjs` para conferir manifesto, assets/offline, escopo do service worker e peso do pacote. Executar `node scripts/vertical-slice-audit.mjs` com Chromium instalado para obter 35 capturas (sete cenas, cinco resoluções incluindo paisagem) e métricas JSON de overflow, foco e alvos touch. `npm test` também verifica a razão de contraste dos tokens CSS pelo critério 4,5:1 para texto sobre os fundos definidos. O workflow `.github/workflows/phaser-m1g-f.yml` executa tudo e todas as regressões anteriores.
+
+O relatório de lacunas entre conceito e jogo está em [docs/19-m1g-f-auditoria.md](../docs/19-m1g-f-auditoria.md). A direção artística e o hardware real precisam de aceite separado antes de qualquer merge/publicação.
