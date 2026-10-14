@@ -80,15 +80,6 @@ try{
   assert.equal(await page.locator('#tradeConfirm').isDisabled(),false);
   await page.locator('#tradeConfirm').click();
   const afterSell=await page.evaluate(()=>window.__perenProgress.save);
-  if(afterSell.revision!==afterBuy.revision+1)console.log('SELL DIAGNOSTIC',await page.evaluate(()=>({
-    revision:window.__perenProgress.save.revision,mode:document.querySelector('[data-trade-mode][aria-pressed="true"]')?.dataset.tradeMode,
-    feedback:document.getElementById('tradeFeedback').textContent,
-    reason:document.getElementById('tradeReason').textContent,
-    quantity:document.getElementById('tradeQuantity').value,disabled:document.getElementById('tradeConfirm').disabled,
-    active:document.querySelector('.trade-item.is-selected')?.dataset.itemId,
-    attempt:document.getElementById('tradeUI').dataset.tradeAttempt,
-    clickCount:document.getElementById('tradeUI').dataset.confirmClicks
-  })));
   assert.equal(afterSell.revision,afterBuy.revision+1);
   assert.equal(afterSell.character.bag['mat-agua-purificada'],before.character.bag['mat-agua-purificada']);
   assert.ok(afterSell.character.gold>afterBuy.character.gold);
