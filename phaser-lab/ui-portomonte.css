@@ -38,8 +38,8 @@
 #hub .m1g-hubnav .ui-button b {display:block;font:17px Georgia,serif;color:var(--ui-gold-bright)}
 #hub .m1g-hubnav .ui-button small {display:block;font:11px/1.2 var(--ui-font-sans);color:#b8cbd0}
 #hub .m1g-hubnav .ui-button[data-visual="explore"] {background:linear-gradient(90deg,#0f2839e8,#0b2330cf),url("./art/regions/floresta-murin/tree-0.png") center/cover}
-#hub .m1g-hubnav .ui-button[data-visual="craft"] {background:linear-gradient(90deg,#0d2230ef,#0d2230dc),url("./art/regions/portomonte/laboratorio.webp") center/cover}
-#hub .m1g-hubnav .ui-button[data-visual="shop"] {background:linear-gradient(90deg,#0d2230f2,#0d2230d7),url("./art/regions/portomonte/mercado.webp") center/cover}
+#hub .m1g-hubnav .ui-button[data-visual="craft"] {background:linear-gradient(120deg,#29414b,#0d2230)}
+#hub .m1g-hubnav .ui-button[data-visual="shop"] {background:linear-gradient(120deg,#29354c,#101d2e)}
 #hub .m1g-console {display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.38fr);gap:12px;min-width:0;align-items:stretch}
 #hub .m1g-content {padding:14px;min-width:0}
 #hub #hubTitle {font:24px/1.25 var(--ui-font-fantasy);color:var(--ui-gold-bright);margin:0 0 10px}
