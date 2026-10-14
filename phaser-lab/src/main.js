@@ -6,6 +6,7 @@ import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
 import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
 import {hubViewModel,applyHubViewModel} from './ui-hub.js';
+import {createInventoryScreen} from './ui-inventory.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -16,6 +17,7 @@ for(const name of ['itens','receitas','magias','monstros','cidades']){
 }
 const catalogs=buildCatalogs(data);
 const bridge=createProgressBridge(localStorage,catalogs);
+const inventory=createInventoryScreen({document,bridge,catalogs});
 
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
@@ -116,7 +118,7 @@ function toggleBag(show){
   $('bagPanel').hidden=!show;
   if(show){$('bagContents').textContent=inventoryText();}
 }
-$('openBagHub').addEventListener('click',()=>toggleBag(true));
+$('openBagHub').addEventListener('click',()=>inventory.open());
 const originalHub=hub;
 // Wrap the existing hub transition so pause, controller selection and bag agree.
 hub=function(show){originalHub(show);if(show){toggleBag(false);selectHubChoice(0);}else forestVisited=true;};
@@ -138,11 +140,22 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(inventory.isOpen()){
+    if(key.b||key.y||key.menu){inventory.close();return;}
+    if(key.x){inventory.cycleTab(1);return;}
+    if(key.up)inventory.move(0,-1);
+    else if(key.down)inventory.move(0,1);
+    else if(key.left)inventory.move(-1,0);
+    else if(key.right)inventory.move(1,0);
+    else if(key.a)inventory.move(0,0);
+    return;
+  }
   if(!$('bagPanel').hidden){
     if(key.b||key.y||key.view||key.menu)toggleBag(false);
     return;
   }
   if(!$('hub').hidden){
+    if(key.y||key.view){inventory.open();return;}
     if(key.down)selectHubChoice(hubChoice+1);
     if(key.up)selectHubChoice(hubChoice-1);
     if(key.a)hubButtons[hubChoice].click();
@@ -158,6 +171,7 @@ window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
+  if(inventory.isOpen()){inventory.close();return;}
   if(!$('bagPanel').hidden){toggleBag(false);return;}
   hub($('hub').hidden);
 });
@@ -260,6 +274,7 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
   }
  }else{title.textContent='Armazém de Portomonte';panel.textContent='Peren pode coletar ingredientes em Mürin, voltar para a cidade, fabricar itens, negociar e guardar o progresso nesta versão de desenvolvimento.';}
  if(hubTab!=='intro')panel.append(wrapper);
+ if(inventory.isOpen())inventory.render();
 }
 for(const [id,tab] of [['showCraft','craft'],['showShop','shop'],['showInventory','bag']])$(id).addEventListener('click',()=>{hubTab=hubTab===tab?'intro':tab;renderHub()});
 $('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
