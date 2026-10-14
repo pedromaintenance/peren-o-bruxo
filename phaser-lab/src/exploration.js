@@ -137,7 +137,7 @@ export class ExplorationScene extends Phaser.Scene {
   }
   retreatEncounter(){
     const beast=this.activeEncounter;if(!beast)return false;
-    const safe=safeRetreat(this.world,{x:this.player.x,y:this.player.y},beast);
+    const safe=safeRetreat(this.world,{x:this.player.x,y:this.player.y},beast,this.beasts.filter(b=>b!==beast));
     this.player.body.reset(safe.x,safe.y);
     beast.cooldown=10000;beast.state='retirada';beast.lastSeen=null;
     beast.sprite.body.reset(beast.sprite.x,beast.sprite.y);
