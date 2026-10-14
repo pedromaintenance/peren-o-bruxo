@@ -35,7 +35,8 @@ jobs:
         run: |
           set -euo pipefail
           test -s dist/index.html
-          test -s dist/ui-inventory.css
+          ls dist/assets/*.css >/dev/null
+          grep -lq "inv-screen" dist/assets/*.css
           test -s dist/art/characters/peren/portrait.png
           test -s dist/art/characters/peren/peren-atlas.png
           test -s dist/demo-sw.js
