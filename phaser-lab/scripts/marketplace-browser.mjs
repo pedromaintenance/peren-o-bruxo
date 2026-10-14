@@ -54,8 +54,9 @@ try{
   assert.equal(await page.locator('#tradeMerchantName').textContent(),'Alina das Conchas');
 
   await page.locator('[data-item-id="mat-agua-purificada"]').click();
+  await page.locator('#tradeQuantity').fill('0');
+  assert.equal(await page.locator('#tradeConfirm').isDisabled(),true);
   await page.locator('#tradeQuantity').fill('3');
-  await page.locator('#tradeQuantity').dispatchEvent('change');
   const before=await page.evaluate(()=>window.__perenProgress.save);
   const quoted=await page.locator('#tradeTotal').textContent();
   assert.match(quoted,/Total: \d+/);
@@ -76,7 +77,6 @@ try{
   assert.match(await page.locator('#tradeReason').textContent(),/equipado/);
   await page.locator('[data-item-id="mat-agua-purificada"]').click();
   await page.locator('#tradeQuantity').fill('3');
-  await page.locator('#tradeQuantity').dispatchEvent('change');
   assert.equal(await page.locator('#tradeConfirm').isDisabled(),false);
   await page.locator('#tradeConfirm').click();
   const afterSell=await page.evaluate(()=>window.__perenProgress.save);
