@@ -44,7 +44,11 @@ try {
   });
   assert.equal(report.level,'Nível 2');assert.equal(report.gold,'917');assert.equal(report.day,'Dia 4');
   assert.equal(report.className,'m1g-shell');assert.equal(report.heroImage,true);
-  assert.ok(report.scene.includes('visao-carcaca.webp'),'Cenário clássico não foi copiado');
+  assert.ok(report.scene.includes('visao-carcaca.webp'),'Cenário clássico não foi aplicado');
+  const backdrop=await page.evaluate(async()=>{const img=new Image();img.src='./art/regions/portomonte/visao-carcaca.webp';await img.decode();return {w:img.naturalWidth,h:img.naturalHeight}});
+  assert.ok(backdrop.w>500&&backdrop.h>250,'Arte do cenário não carregou: '+JSON.stringify(backdrop));
+  const sceneImage=await page.locator('.m1g-scenery').evaluate(el=>getComputedStyle(el).backgroundImage);
+  assert.match(sceneImage,/visao-carcaca\.webp/);
   assert.equal(report.nav,6);assert.equal(report.disabled,true);
   assert.ok(report.overflow<=2,'Layout M1g ultrapassa viewport: '+report.overflow);
   assert.deepEqual(report.classic,original);
