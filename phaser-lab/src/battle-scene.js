@@ -104,14 +104,24 @@ export class BattleScene extends Phaser.Scene {
     if(this.busy||this.resolved||this.state.status==='active')return false;
     this.resolved=true;
     const profile=this.registry.get('combatProfile')||defaultProfile();
-    const win=settleBattle(profile,this.state);
-    const next=win.applied?win.profile:settleEscape(profile,this.state);
-    this.reward=win.reward||null;
+    const bridge=this.registry.get('progressBridge');
+    let next,applied,reward;
+    if(bridge){
+      let done;
+      try{done=bridge.finishBattle(this.state)}
+      catch(err){this.resolved=false;this.game.events.emit('peren-battle-error',`Não foi possível salvar: ${err.message}. Exporte ou libere armazenamento e tente novamente.`);return false;}
+      next=bridge.combatProfile();applied=done.applied;reward=this.state.status==='won'?done.result:null;
+    }else{
+      const done=settleBattle(profile,this.state);
+      next=done.applied?done.profile:settleEscape(profile,this.state);
+      applied=done.applied;reward=done.reward||null;
+    }
+    this.reward=reward;
     this.registry.set('combatProfile',next);
     this.registry.set('battleState',null);
     const explorer=this.scene.get('ExplorationScene');
     explorer.finishCombat(this.state.status);
-    this.game.events.emit('peren-battle-end',{result:this.state.status,reward:this.reward,applied:win.applied,profile:next});
+    this.game.events.emit('peren-battle-end',{result:this.state.status,reward:this.reward,applied,profile:next});
     this.scene.stop();
     return true;
   }

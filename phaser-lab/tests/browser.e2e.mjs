@@ -1,6 +1,7 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdir} from 'node:fs/promises';
+import {newClassicState,CLASSIC_KEY,PHASER_KEY} from '../src/progress.js';
 const base=process.env.PEREN_PREVIEW_URL||'http://127.0.0.1:4173/';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const errors=[];
@@ -14,7 +15,16 @@ for(const [w,h] of [[390,844],[360,800]]){
    window.__mockXbox={id:'Xbox Wireless Controller (mock)',index:0,connected:true,mapping:'standard',axes:[0,0,0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};
    Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[window.__mockXbox]});
  });
+ const classic={...newClassicState(),gold:751,day:6};
+ await page.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key:CLASSIC_KEY,value:classic});
  await page.goto(base,{waitUntil:'networkidle',timeout:30000});
+ await page.waitForFunction(()=>!!window.__perenProgress?.save,{timeout:30000});
+ const importState=await page.evaluate(({classicKey})=>({phaser:window.__perenProgress.save,
+   untouched:JSON.parse(localStorage.getItem(classicKey))}),{classicKey:CLASSIC_KEY});
+ assert.equal(importState.phaser.character.gold,classic.gold);
+ assert.equal(importState.phaser.character.day,6);
+ assert.deepEqual(importState.untouched,classic);
+
  if(w===390){
    await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready'),{timeout:30000});
    await page.waitForFunction(()=>document.querySelector('#gamepad-status').textContent.includes('Xbox Wireless'));
@@ -29,6 +39,37 @@ for(const [w,h] of [[390,844],[360,800]]){
  assert.equal(stats.valid,true);
  const creatures=await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),g=window.__perenLab;return {n:s.beasts.length,types:s.beasts.map(b=>b.type),atlas:s.beasts.map(b=>g.textures.get(b.type).frameTotal)};});
  assert.equal(creatures.n,6);assert.equal(new Set(creatures.types).size,3);assert.ok(creatures.atlas.every(n=>n>=28));assert.equal(stats.texture,true);assert.ok(stats.frames>=128,JSON.stringify(stats));assert.ok(stats.anims>=32,JSON.stringify(stats));
+ // Regression: foliage is visual only; only the tree's narrow trunk is solid.
+ const trunkStatus=await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene');
+   const trees=s.world.obstacles.filter(o=>o.kind==='tree');
+   const t=s.treeTrunks?.[0],body=t?.collider.body;
+   if(!t||!body)throw Error('Missing separated tree trunk collider');
+   return {n:s.treeTrunks.length,expected:trees.length,x:t.x,y:t.y,
+     width:body.width,height:body.height,cx:body.center.x,cy:body.center.y};
+ });
+ assert.equal(trunkStatus.n,trunkStatus.expected);
+ assert.ok(trunkStatus.n>=80,'Too few tree colliders: '+trunkStatus.n);
+ assert.ok(trunkStatus.width<=16&&trunkStatus.height<=16,
+   'Tree canopy has a giant physical body: '+JSON.stringify(trunkStatus));
+ assert.ok(Math.abs(trunkStatus.cx-trunkStatus.x)<=2&&Math.abs(trunkStatus.cy-trunkStatus.y)<=6,
+   'Tree trunk physical body is misplaced: '+JSON.stringify(trunkStatus));
+ const startUnderCanopy=await page.evaluate(()=>{
+   const s=window.__perenLab.scene.getScene('ExplorationScene'),world=s.world;
+   const free=(x,y)=>!world.blocked.has(x+','+y);
+   for(const tree of s.treeTrunks){
+     const x=Math.floor(tree.x/32),y=Math.floor(tree.y/32);
+     if(x<4||x>world.width-5||y<5||y>world.height-5)continue;
+     if(!free(x,y-1)||!free(x,y-2)||!free(x,y-3))continue;
+     s.player.body.reset(tree.x,tree.y-78);s.player.setVelocity(0,0);
+     return s.player.y;
+   }
+   throw Error('Unable to find a canopy test position');
+ });
+ await page.keyboard.down('ArrowDown');await page.waitForTimeout(330);await page.keyboard.up('ArrowDown');
+ const afterUnderCanopy=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.y);
+ assert.ok(afterUnderCanopy>startUnderCanopy+12,
+   'Green canopy blocked walking: '+afterUnderCanopy+' <= '+startUnderCanopy);
  await page.keyboard.down('ArrowRight');await page.waitForTimeout(700);await page.keyboard.up('ArrowRight');
  const moved=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.x);
  assert.ok(moved>stats.startX+12,`player did not move: ${moved} <= ${stats.startX}`);
@@ -73,6 +114,10 @@ for(const [w,h] of [[390,844],[360,800]]){
    await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:false,value:0}});
  }else await page.locator('#gatherBtn').click();
  await page.waitForFunction(()=>{const x=window.__perenLab.registry.get('collected');return x&&Object.values(x).some(n=>n>0)},{timeout:8000});
+ const afterGather=await page.evaluate(key=>({save:JSON.parse(localStorage.getItem(key)),id:window.__perenLab.scene.getScene('ExplorationScene').world.nodes[0].itemId}),PHASER_KEY);
+ assert.ok(afterGather.save.ledger&&Object.keys(afterGather.save.ledger).some(k=>k.startsWith('collect:')));
+ assert.ok(afterGather.save.character.bag[afterGather.id]>=(classic.bag[afterGather.id]||0)+1);
+
  if(w===390){
    await page.evaluate(()=>{window.__mockXbox.buttons[3]={pressed:true,value:1}}); // Y opens bag
    await page.locator('#bagPanel').waitFor({state:'visible'});
@@ -145,7 +190,13 @@ for(const [w,h] of [[390,844],[360,800]]){
    const a=window.__perenLab,p=a.registry.get('combatProfile'),s=a.scene.getScene('ExplorationScene');
    return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss'],remaining:s.beasts.length,paused:s.scene.isPaused()};
  });
- assert.deepEqual(win,{gold:8,xp:13,kills:1,moss:1,remaining:5,paused:false});
+ assert.equal(win.gold,classic.gold+8);assert.equal(win.xp,13);assert.equal(win.kills,1);
+ assert.equal(win.moss,(classic.bag['ing-hanging-moss']||0)+1);
+ assert.equal(win.remaining,5);assert.equal(win.paused,false);
+ const storedVictory=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
+ assert.equal(storedVictory.character.gold,win.gold);
+ assert.ok(Object.keys(storedVictory.ledger).some(k=>k.startsWith('battle:')));
+
  await page.waitForTimeout(200);
  assert.equal(await page.locator('#encounterModal').isVisible(),false);
  // A second encounter can be fled; this must not add loot, experience or gold.
@@ -171,12 +222,36 @@ for(const [w,h] of [[390,844],[360,800]]){
    await page.locator('#battleUI').waitFor({state:'hidden',timeout:8000});
  }
  const afterFlee=await page.evaluate(()=>{const p=window.__perenLab.registry.get('combatProfile');return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss']}});
- assert.deepEqual(afterFlee,{gold:8,xp:13,kills:1,moss:1});
+ assert.deepEqual(afterFlee,{gold:win.gold,xp:win.xp,kills:win.kills,moss:win.moss});
+ const afterFleePersist=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
+ assert.equal(afterFleePersist.character.gold,win.gold);
+ assert.equal(afterFleePersist.character.kills,1);
+
  // Return to hub from exit marker.
  await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),n=s.world.exit;s.player.setPosition((n.x+.5)*32,(n.y+.5)*32);s.player.body.reset(s.player.x,s.player.y)});
  await page.waitForTimeout(250);
  await page.locator('#returnBtn').click();await page.locator('#hub').waitFor({state:'visible'});
  await page.screenshot({path:`screenshots/murin-${w}.png`,fullPage:true});
+ // Real workshop action (original recipe ID) and commercial transaction.
+ await page.locator('#showCraft').click();
+ const craftsBefore=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
+ await page.locator('.market-line button').first().click();
+ const craftsAfter=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
+ assert.equal(craftsAfter,craftsBefore+1);
+ await page.locator('#showShop').click();
+ const tradeBefore=await page.evaluate(()=>window.__perenProgress.save.character.gold);
+ await page.locator('.market-line button').first().click();
+ assert.ok(await page.evaluate(()=>window.__perenProgress.save.character.gold)<tradeBefore);
+ const ledgerBefore=await page.evaluate(()=>Object.keys(window.__perenProgress.save.ledger).length);
+ const classicPersist=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),CLASSIC_KEY);
+ assert.deepEqual(classicPersist,classic,'Original save must never change');
+ // Reload on a fresh session: map collectibles and combat loot must persist.
+ await page.reload({waitUntil:'networkidle'});
+ await page.waitForFunction(()=>!!window.__perenProgress?.save&&window.__perenLab?.registry?.get('ready'));
+ assert.equal(await page.evaluate(()=>window.__perenProgress.save.character.kills),1);
+ assert.equal(await page.evaluate(()=>Object.keys(window.__perenProgress.save.ledger).length),ledgerBefore);
+ assert.equal(await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').collected.size),1);
+ assert.equal(await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').beasts.length),5);
  await page.close();
  console.log(`BROWSER OK ${w}x${h}: animated character, Xbox/keyboard/touch movement, gather, hub, 32 clips`);
 }

@@ -1,0 +1,45 @@
+name: Phaser M1d - progresso e economia reais
+on:
+  push:
+    branches: ["feature/phaser-m1d-progresso"]
+    paths: ["phaser-lab/**", "data/**", ".github/workflows/phaser-m1d.yml"]
+  pull_request:
+    paths: ["phaser-lab/**", "data/**", ".github/workflows/phaser-m1d.yml"]
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install dependencies
+        working-directory: phaser-lab
+        run: npm install --no-audit --no-fund
+      - name: Validate canonical data files
+        working-directory: phaser-lab
+        run: node -e "const fs=require('fs');for(const n of ['itens','receitas','monstros','magias','cidades']){const d=JSON.parse(fs.readFileSync('data/'+n+'.json')); if(!Array.isArray(d)||!d.length)throw Error(n);}"
+      - name: Test RPG economy, save migration and regression
+        working-directory: phaser-lab
+        run: npm test
+      - name: Build Phaser and embedded catalog for offline
+        working-directory: phaser-lab
+        run: npm run build
+      - name: Install Chromium
+        working-directory: phaser-lab
+        run: npx playwright install --with-deps chromium
+      - name: "E2E mobile: original save protected; gathering, combat, crafting and reload"
+        working-directory: phaser-lab
+        run: |
+          (npm run preview -- --host 127.0.0.1 > /tmp/peren-m1d-preview.log 2>&1 &)
+          for i in $(seq 1 45); do curl -fsS http://127.0.0.1:4173/ >/dev/null && break || sleep 1; done
+          npm run test:e2e
+      - name: Upload M1d screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1d-qa
+          path: phaser-lab/screenshots/*.png
+          if-no-files-found: ignore

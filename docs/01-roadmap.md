@@ -102,3 +102,14 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [ ] Adapter do save/economia real — a ser feito em M1d, sem alterar o Peren estável até ser aprovado.
 
 Detalhes: `docs/11-m1c-combate.md`.
+
+## M1d — Economia e progresso persistente no Phaser [EM VALIDAÇÃO]
+
+- [x] Núcleo compartilhado puro `src/progress.js`: importa o save clássico (cópia), mantém os atributos/equipamento e salva numa chave versionada independente.
+- [x] Coleta, combate, crafting, bolsa, mercados e descanso atuam sobre a mesma cópia persistente.
+- [x] Registro de vitórias e coletas sem duplicação, restauração de backup e testes contra erro de disco/duas abas.
+- [x] Testes de regressão e E2E de importação, jogo, craft, comércio e recarregamento preparados.
+- [ ] Aprovar visualmente, concluir CI e playtest Android/Xbox físico.
+- [ ] Não fazer merge na `main` ou sincronização bidirecional até a etapa de release.
+
+Detalhes: `docs/12-m1d-progresso.md`.

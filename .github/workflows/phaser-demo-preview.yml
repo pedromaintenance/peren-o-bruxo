@@ -1,0 +1,78 @@
+name: Peren Phaser - preparar demo isolada
+on:
+  push:
+    branches:
+      - feature/phaser-m1d-progresso
+    paths:
+      - .github/workflows/phaser-demo-preview.yml
+      - phaser-lab/**
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: peren-phaser-demo-prepare
+  cancel-in-progress: false
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Obter projeto Phaser
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        working-directory: phaser-lab
+        run: npm install --no-audit --no-fund
+      - name: Testar economia, combate e integridade do save
+        working-directory: phaser-lab
+        run: npm test
+      - name: Compilar Phaser
+        working-directory: phaser-lab
+        run: npm run build
+      - name: Preparar PWA com escopo exclusivo da demo
+        working-directory: phaser-lab
+        run: node scripts/prepare-demo.mjs
+      - name: Verificar entrega
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f phaser-lab/dist/index.html
+          test -f phaser-lab/dist/demo-sw.js
+          test -f phaser-lab/dist/manifest.webmanifest
+          grep -q 'DEMONSTRAÇÃO PHASER M1d' phaser-lab/dist/index.html
+          test -f phaser-lab/dist/data/itens.json
+          test -f phaser-lab/dist/data/receitas.json
+          test -f phaser-lab/dist/data/magias.json
+          echo "PWA pronto para publicar em /phaser-demo/"
+      - name: Publicar SOMENTE phaser-demo na branch de previa
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin preview/phaser-demo
+          TARGET="$RUNNER_TEMP/peren-pages-preview"
+          git worktree add --detach "$TARGET" origin/preview/phaser-demo
+          mkdir -p "$TARGET/phaser-demo"
+          rsync -a --delete phaser-lab/dist/ "$TARGET/phaser-demo/"
+          git -C "$TARGET" add -A -- phaser-demo
+          if git -C "$TARGET" diff --cached --quiet; then
+            echo "Nenhuma alteracao no bundle da demo"
+          else
+            git -C "$TARGET" config user.name "github-actions[bot]"
+            git -C "$TARGET" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C "$TARGET" commit -m "build(phaser-demo): pacote M1d isolado do Peren classico"
+            git -C "$TARGET" push origin HEAD:preview/phaser-demo
+          fi
+          echo "Branch de previa atualizada. A main e a versao classica NAO foram modificadas."
+      - name: Resumo e proximo passo
+        run: |
+          echo "### Peren Phaser M1d" >> "$GITHUB_STEP_SUMMARY"
+          echo "Bundle compilado e enviado a **preview/phaser-demo**." >> "$GITHUB_STEP_SUMMARY"
+          echo "Mesclar a PR de **preview/phaser-demo -> main** para publicar em" >> "$GITHUB_STEP_SUMMARY"
+          echo "https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo/" >> "$GITHUB_STEP_SUMMARY"
+          echo "Apenas o diretorio phaser-demo/ sera acrescentado ao site classico." >> "$GITHUB_STEP_SUMMARY"

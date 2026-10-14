@@ -1,0 +1,42 @@
+name: Peren Phaser - live Pages smoke
+on:
+  push:
+    branches:
+      - feature/phaser-m1d-progresso
+    paths:
+      - .github/workflows/phaser-demo-live-smoke.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Conferir rota publica e assets reais
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE="https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo/"
+          ok=0
+          for i in $(seq 1 18); do
+            if curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "$BASE?qa=$GITHUB_SHA" -o /tmp/peren-demo.html &&
+               grep -q 'DEMONSTRAÇÃO PHASER M1d' /tmp/peren-demo.html; then
+              ok=1
+              break
+            fi
+            sleep 8
+          done
+          test "$ok" -eq 1
+          JSFILE=$(grep -oE '\./assets/[^"]+\.js' /tmp/peren-demo.html | head -1 | cut -c3-)
+          test -n "$JSFILE"
+          curl -fsSL --max-time 30 "$BASE$JSFILE" -o /tmp/peren-demo.js
+          test -s /tmp/peren-demo.js
+          for FILE in "manifest.webmanifest" "demo-sw.js" "data/itens.json" "data/receitas.json" "art/characters/peren/peren-atlas.png"; do
+            curl -fsSL --max-time 30 "$BASE$FILE" -o "/tmp/qa-$(basename "$FILE")"
+            test -s "/tmp/qa-$(basename "$FILE")"
+            echo "OK $FILE"
+          done
+          node -e "const fs=require('fs');const d=JSON.parse(fs.readFileSync('/tmp/qa-itens.json'));if(d.length!==2785)throw Error('Incomplete catalog '+d.length);console.log('ONLINE: '+d.length+' item records')"
+          grep -q 'peren-phaser-demo-' /tmp/qa-demo-sw.js
+          echo "ONLINE OK: $BASE"

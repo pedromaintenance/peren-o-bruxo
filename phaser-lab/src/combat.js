@@ -21,7 +21,7 @@ export function newBattle(beast,profile,key){
  const m=BATTLE_MONSTERS[beast.type];if(!m)throw Error('Monster not supported: '+beast.type);
  if(!key||typeof key!=='string')throw Error('Battle requires a stable encounter key');
  return {key,enemyId:beast.type,enemyName:beast.name,maxHp:m.hp,hp:m.hp,attack:m.attack,defense:m.defense,
-   playerHp:clamp(profile.hp,1,maxHp(profile.level)),playerMp:clamp(profile.mp,0,maxMp(profile.level)),playerMaxHp:maxHp(profile.level),playerMaxMp:maxMp(profile.level),potions:profile.potions,
+   playerHp:clamp(profile.hp,1,profile.playerMaxHp||maxHp(profile.level)),playerMp:clamp(profile.mp,0,profile.playerMaxMp||maxMp(profile.level)),playerMaxHp:profile.playerMaxHp||maxHp(profile.level),playerMaxMp:profile.playerMaxMp||maxMp(profile.level),potions:profile.potions,playerAttack:profile.attack||null,playerDefense:profile.defense||null,learned:Array.isArray(profile.learned)?[...profile.learned]:null,
    round:1,defending:false,frozen:0,burning:0,status:'active',log:['As sombras de Mürin se fecham.'],lastEvent:'start'};
 }
 const sample=rng=>clamp(Number(rng()),0,0.999999);
@@ -31,10 +31,11 @@ export function stepBattle(battle,action,rng=Math.random){
  let damage=0,effect='attack';const events=[];
  const roll=()=>sample(rng);
  if(action==='attack'){
-   damage=11+Math.floor((b.round%3)*2)+Math.floor(roll()*7);effect='physical';
+   damage=(b.playerAttack?Math.max(8,Math.round(b.playerAttack*.62)):11)+Math.floor((b.round%3)*2)+Math.floor(roll()*7);effect='physical';
  }else if(action.startsWith('spell:')){
    const sp=SPELLS.find(x=>x.id===action.slice(6));
    if(!sp)return {state:battle,events:[],error:'Magia desconhecida'};
+   if(b.learned&&!b.learned.includes(sp.id))return {state:battle,events:[],error:'Peren ainda não aprendeu esta magia'};
    if(b.playerMp<sp.mana)return {state:battle,events:[],error:'Mana insuficiente'};
    b.playerMp-=sp.mana;
    damage=sp.power+7+Math.floor(roll()*6);effect=sp.effect;
@@ -54,7 +55,7 @@ export function stepBattle(battle,action,rng=Math.random){
  if(b.hp===0){b.status='won';events.push({kind:'victory'});b.log.unshift('A ameaça caiu.');return {state:b,events};}
  if(b.burning>0){const burn=3;b.hp=Math.max(0,b.hp-burn);b.burning--;events.push({kind:'burn',damage:burn});if(b.hp===0){b.status='won';events.push({kind:'victory'});return {state:b,events}}}
  if(b.frozen>0){b.frozen--;b.log.unshift(`${b.enemyName} não consegue reagir ao gelo.`);events.push({kind:'frozen'});}
- else{const strike=Math.max(2,Math.floor(b.attack*.48)+2+Math.floor(roll()*4));const actual=b.defending?Math.ceil(strike*.48):strike;b.playerHp=Math.max(0,b.playerHp-actual);b.log.unshift(`${b.enemyName} ataca: ${actual} PV.`);events.push({kind:'hit',source:'enemy',damage:actual,effect:'physical'});}
+ else{const strike=Math.max(2,Math.floor(b.attack*.48)+2+Math.floor(roll()*4));const protectedStrike=b.playerDefense?Math.max(2,strike-Math.floor(b.playerDefense*.22)):strike;const actual=b.defending?Math.ceil(protectedStrike*.48):protectedStrike;b.playerHp=Math.max(0,b.playerHp-actual);b.log.unshift(`${b.enemyName} ataca: ${actual} PV.`);events.push({kind:'hit',source:'enemy',damage:actual,effect:'physical'});}
  b.round++;
  if(b.playerHp===0){b.status='lost';events.push({kind:'defeat'});b.log.unshift('Peren cai entre as raízes de Mürin.');}
  return {state:b,events};
