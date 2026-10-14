@@ -96,9 +96,14 @@ for(const [w,h] of [[390,844],[360,800]]){
  await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),b=s.beasts[0];s.player.body.reset(b.sprite.x,b.sprite.y);});
  await page.locator('#encounterModal').waitFor({state:'visible',timeout:8000});
  assert.equal(await page.locator('#beastName').textContent(),'Galho Infectado');
+ await page.screenshot({path:`screenshots/murin-encontro-${w}.png`,fullPage:true});
  const bagBefore=await page.evaluate(()=>JSON.stringify(window.__perenLab.registry.get('collected')));
- await page.locator('#retreatBeast').click();
- await page.locator('#encounterModal').waitFor({state:'hidden'});
+ if(w===390){
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:true,value:1}});
+   await page.locator('#encounterModal').waitFor({state:'hidden',timeout:8000});
+   await page.evaluate(()=>{window.__mockXbox.buttons[1]={pressed:false,value:0}});
+ }else{await page.locator('#retreatBeast').click();await page.locator('#encounterModal').waitFor({state:'hidden'});}
+ assert.equal(await page.evaluate(()=>window.__perenLab.registry.get('encounter')),null);
  assert.equal(await page.evaluate(()=>JSON.stringify(window.__perenLab.registry.get('collected'))),bagBefore);
  await page.waitForTimeout(500);
  assert.equal(await page.locator('#encounterModal').isVisible(),false,'repeated instant encounter softlock');
