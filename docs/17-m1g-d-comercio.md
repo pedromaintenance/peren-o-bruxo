@@ -32,7 +32,7 @@
 - [x] Transações de lote consistentes com transações unitárias e com commit único.
 - [x] Bloqueios para item equipado, dinheiro/estoque insuficientes, zero, negativos e quantidade excessiva.
 - [x] Testes Node, CI Chromium em 360×800, 390×844 e 1280×800, regressões e capturas incluídos.
-- [ ] CI final completamente verde e inspeção das capturas na PR.
+- [x] [CI completo 38624579294](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38624579294) passou, com três screenshots anexadas; inspeção artística continua pendente.
 - [ ] Aprovação visual pelo usuário; Android e Xbox físicos.
 - [ ] Inventário de assets aprovados para retratos e ícones individualizados.
 
