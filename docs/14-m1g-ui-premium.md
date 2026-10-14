@@ -60,12 +60,14 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Node, build PWA, Chromium 360×800 / 390×844 / 1280×800, Xbox simulado, comércio em lote e regressões M1g-A/B/C + exploração/combate aprovados. [Run 38624579294](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38624579294).
 - [ ] Aprovação visual das capturas, Android/Xbox físicos e arte definitiva pendentes.
 
-### M1g-E — HUD / Encontros / Batalha
+### M1g-E — HUD / Encontros / Batalha [IMPLEMENTAÇÃO CONCLUÍDA, QA/ARTE EM REVISÃO]
 
-- [ ] HUD compacto PV/PM/área, feedback de coleta e controles touch sem obstruir o cenário.
-- [ ] Janela de encontro com retrato, decisão e navegação consistente.
-- [ ] Painéis JRPG de batalha: comandos, seleção e descrições por IDs reais.
-- [ ] Preservar transições, Xbox B e estado ocupado; evitar dupla ação.
+- [x] HUD compacto PV/PM/área, feedback de coleta e controles touch sem obstruir o cenário.
+- [x] Janela de encontro com retrato, descrição canônica e decisões reais.
+- [x] Painéis JRPG de batalha: comandos, seleção e descrições por IDs reais.
+- [x] Preservar transições, Xbox B e estado ocupado; evitar dupla ação.
+- [x] Testes Node e Playwright com capturas 360×800 / 390×844 / 1280×800 adicionados.
+- [ ] Validar CI integral, screenshots, Android e Xbox físicos; revisão de arte final.
 
 ### M1g-F — Aceite da vertical slice visual
 
@@ -92,7 +94,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. Próximo recorte: M1g-E, HUD/Encontros/Combate. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. M1g-E implementado em branch empilhada, aguardando QA/arte. Próximo recorte: M1g-F, auditoria da vertical slice e qualidade visual. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 
