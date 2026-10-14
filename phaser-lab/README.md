@@ -1,17 +1,35 @@
-# Laboratório Phaser — isolado da main
+# Laboratório M1a — Mürin e movimento de Peren (Phaser 3)
 
-Isto **não substitui** `index.html` ou `game.js` do Peren 0.1.2. É um ensaio técnico para caminhar em um bioma com teclado/joystick e física Arcade, com texturas geométricas **temporárias**. Todos os assets finais serão produzidos e registrados separadamente.
+**Isolado do Peren publicado:** este laboratório não lê nem grava `peren_carcaca_save_v1`. Ele testa apenas movimentação/colheita/colisão/retorno ao menu Portomonte com inventário **temporário**. Não é o M1 inteiro; combate, missões, monstros e economia compartilhada ficam para fases seguintes.
 
-Localmente, com Node e npm instalados:
+## Executar
 
 ```bash
 cd phaser-lab
-npm install
-npm run dev
-# e, para produzir arquivos estáticos:
-npm run build
+npm install          # conexão necessária só durante instalação
+npm test             # seeds/rotas/colheita: sem navegador
+npm run dev          # copia os sprites autorais e inicia Vite
+npm run build        # empacota a dependência Phaser no bundle, sem CDN
+npm run preview
 ```
 
-Phaser e Vite são dependências de build: a versão publicada será empacotada com a biblioteca local, sem CDN em tempo de execução. Este protótipo **ainda não está integrado ao save nem ao PWA principal** e não deve ser publicado no Pages padrão.
+Os assets do build são copiados pelo script Node `scripts/sync-assets.mjs`, da pasta canônica `phaser/assets` para `phaser-lab/public/art` (temporário e ignorado pelo Git). Basta Node instalado; não exige Python para jogar. Na versão distribuída, o bundle do Phaser precisa ser disponibilizado **localmente**, pois não é CDN.
 
-Objetivo deste teste: medir sensação de movimento contínuo, colisão, câmera e toque num celular antes de produzir dezenas de sprites finais.
+## Controles
+
+- PC: `WASD`/setas, `Shift` para correr, `E` ou `Espaço` para colher.
+- Celular: arrastar no círculo inferior esquerdo, botões **Correr** e **Colher** à direita.
+- **Gamepad Xbox (USB ou Bluetooth, mapeamento padrão do navegador):** analógico esquerdo ou direcional para andar; **RT**, **RB** ou **L3** para correr; **A/X** para colher/interagir; **Y** ou **View** abre a bolsa; **B** ou **Menu (☰)** pausa/retorna a Portomonte. Na cidade, direcional para escolher opções, **A** para confirmar, **B/Menu** para retomar a última expedição. Não necessita teclado depois da primeira ativação do controle.
+- O navegador pode exigir apertar qualquer botão físico após conectar; alguns navegadores/dispositivos não expõem o controle pela Gamepad API. Desconectar zera o comando imediatamente, e uma zona morta de 20% evita deriva.
+- Exibir a **Portomonte** pelo marco da saída, ou gerar outra floresta pelo menu.
+- Cada mapa tem seed determinística (`?seed=murin-001`) e rota entre entrada e saída. Recursos são IDs de ingredientes oficiais do catálogo adaptado de Peren.
+
+## Qualidade e limitações
+
+- Peren: 4 direções × 8 ações × 4 frames = **128 frames**, atlas PNG com animações separadas. Visuais são **arte autoral de prova de conceito**, não aprovação artística final.
+- Floresta: 8 pisos, 3 árvores, 6 props, rio, ponte, colisões estáticas, 33 nós de coleta e marcador de saída.
+- Sistema atual da `main`: intocado. O inventário provisório não modifica o save existente.
+- Sem monstros nem combate neste recorte M1a; incluir na próxima fatia quando a experiência de movimento estiver aprovada.
+- Aprovado no script de QA de geração e rotas; execução em navegador/celular só marcada após Playwright e teste físico.
+
+Documentação de contrato de controles, incluindo combate planejado: [`docs/09-gamepad-xbox.md`](../docs/09-gamepad-xbox.md).

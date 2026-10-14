@@ -1,6 +1,6 @@
 [
   {"id":"costa-sangue","name":"Recifes do Mar de Sangue","status":"planejado","city":"portomonte"},
-  {"id":"floresta-murin","name":"Floresta de Mürin","status":"planejado","city":"portomonte"},
+  {"id":"floresta-murin","name":"Floresta de Mürin","status":"em_producao","city":"portomonte","artist":"arte procedural autoral · Carcaça","license":"arte original para RPG Carcaça","tileset":"phaser/assets/regions/floresta-murin/ground-tiles.png","props":"phaser/assets/regions/floresta-murin/","qa":"geração determinística/alcance 86 testes; renderização Phaser e Android pendentes"},
   {"id":"minas-thargrid","name":"Minas de Thargrid","status":"planejado","city":"thargrid"},
   {"id":"trilha-ironwood","name":"Caminhos de Ironwood","status":"planejado","city":"ironwood"},
   {"id":"ruinas-vandar","name":"Ruínas de Vandar","status":"planejado","city":"eldroth"},
