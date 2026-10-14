@@ -24,3 +24,5 @@ await import('./peren-m1h-generator.mjs');
 await import('./peren-m1hb-generator.mjs');
 // M1h-C is an optional refinement, generated last; never overwrite earlier art.
 await import('./peren-m1hc-generator.mjs');
+// M1h-D builds the optional severe-expression candidate after M1h-C.
+await import('./peren-m1hd-generator.mjs');

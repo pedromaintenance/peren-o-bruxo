@@ -1,0 +1,75 @@
+name: Peren M1h-D - expressao austera e bigode
+on:
+  push:
+    branches: [feature/phaser-m1h-d-expressao]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1h-d.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1h-d.yml"
+permissions:
+  contents: read
+jobs:
+  canonical-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar 128 sprites, retratos e regras
+        run: npm test
+      - name: Compilar Peren e 5 variantes
+        run: npm run build
+      - name: Preparar PWA isolada
+        run: node scripts/prepare-demo.mjs
+      - name: Auditar escopo de cache e pacote
+        run: node scripts/audit-package.mjs
+      - name: Garantir imagens reais por variante
+        run: |
+          set -euo pipefail
+          for folder in art art-m1h art-m1hb art-m1hc art-m1hd; do
+            for file in peren-atlas.png portrait.png portrait-cast.png portrait-hurt.png; do
+              test -s "dist/$folder/characters/peren/$file"
+            done
+          done
+          test -s dist/art-m1hd/characters/peren/report.json
+          test -s dist/review.html
+      - name: Gerar prancha de revisao (3 retratos e 4 direcoes)
+        env:
+          PEREN_PREVIEW_B64: "1"
+        run: node scripts/peren-m1hd-preview.mjs
+      - name: Preparar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validar galeria, exploracao, combate e saves em 3 resolucoes
+        run: node scripts/peren-m1hd-browser.mjs
+      - name: Regressao visual das 35 telas M1g-F
+        run: node scripts/vertical-slice-audit.mjs
+      - name: Jornada completa de movimento Xbox e combate
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort >/tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Capturas e prancha de revisao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1h-d-refino
+          path: |
+            phaser-lab/screenshots/m1h-d-*.png
+            phaser-lab/public/art-m1hd/characters/peren/report.json
+          if-no-files-found: warn

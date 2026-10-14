@@ -116,6 +116,20 @@ Referências: [M1h-A](20-m1h-a-peren-palette.md) e [M1h-B](21-m1h-b-peren-silhue
 
 Detalhes: [docs/22-m1h-c-peren-refino.md](22-m1h-c-peren-refino.md).
 
+### M1h-D — Expressão austera e correção da boca [CANDIDATO EM QA]
+
+- [x] Reconstruir bigode, lábios e queixo para eliminar a leitura de sorriso.
+- [x] Reforçar sobrancelhas e vincos de idade nos retratos sem inventar cicatrizes canônicas.
+- [x] Manter 128 frames/48×64, três retratos 256×256 e versões anteriores intocadas.
+- [x] Expor `?art=m1hd` e comparação entre cinco variantes no ateliê.
+- [x] Adicionar testes PNG + navegador para mudanças da expressão.
+- [x] [CI integral #38653803218](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38653803218) verde: sprites, cinco variantes, 35 telas e regressões.
+- [x] Corrigir bigode cinza exagerado identificado em prancha da primeira iteração.
+- [ ] Aprovação estética (rosto-base ainda jovial), Android e Xbox físicos e autorização de publicação.
+
+Detalhes: [docs/23-m1h-d-expressao.md](23-m1h-d-expressao.md).
+
+
 
 ## Design system: primeiros tokens
 

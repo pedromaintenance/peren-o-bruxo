@@ -5,7 +5,7 @@ import {encounterKey,defaultProfile} from './combat.js';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
-const PEREN=({'m1h':'./art-m1h/characters/peren/','m1hb':'./art-m1hb/characters/peren/','m1hc':'./art-m1hc/characters/peren/'})[artVariant]||`${ASSET}characters/peren/`;
+const PEREN=({'m1h':'./art-m1h/characters/peren/','m1hb':'./art-m1hb/characters/peren/','m1hc':'./art-m1hc/characters/peren/','m1hd':'./art-m1hd/characters/peren/'})[artVariant]||`${ASSET}characters/peren/`;
 const MURIN = `${ASSET}regions/floresta-murin/`;
 const directions={down:0,left:1,right:2,up:3};
 const actions=['idle','walk','run','interact','gather','hurt','cast','attack'];

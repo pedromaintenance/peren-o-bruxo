@@ -45,7 +45,7 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 <section class="panel">
 <h2>Selecionar animação</h2><p><a href="./?art=m1h" id="m1hGameLink">Abrir a variante selecionada no jogo →</a></p>
 <div class="controls">
-<label>Versão da arte de Peren<select id="perenVariant"><option value="m1e">M1e · Original</option><option value="m1h">M1h-A · Prateado (em produção)</option><option value="m1hb">M1h-B · Sem chapéu, rosto maduro (candidato)</option><option value="m1hc">M1h-C · Cabelo e barba refinados (candidato)</option></select></label>
+<label>Versão da arte de Peren<select id="perenVariant"><option value="m1e">M1e · Original</option><option value="m1h">M1h-A · Prateado (em produção)</option><option value="m1hb">M1h-B · Sem chapéu, rosto maduro (candidato)</option><option value="m1hc">M1h-C · Cabelo e barba refinados (candidato)</option><option value="m1hd">M1h-D · Expressão austera e boca (candidato)</option></select></label>
 <label>Personagem ou criatura
 <select id="entity"><option value="peren">Peren, o Bruxo</option><option value="mob-galho-infectado">Galho Infectado</option><option value="mob-fungo-violeta">Fungo Violeta</option><option value="mob-ettercap">Ettercap</option></select>
 </label>
@@ -106,9 +106,13 @@ peren:{w:48,h:64,columns:32,rows:4,path:'./art/characters/peren/peren-atlas.png'
 };
 let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
 const artValue=new URLSearchParams(location.search).get('art');
-$('perenVariant').value=['m1h','m1hb','m1hc'].includes(artValue)?artValue:'m1e';
+$('perenVariant').value=['m1h','m1hb','m1hc','m1hd'].includes(artValue)?artValue:'m1e';
 function applyVariant(){
- if($('perenVariant').value==='m1hc'){
+ if($('perenVariant').value==='m1hd'){
+  ents.peren.path='./art-m1hd/characters/peren/peren-atlas.png';
+  ents.peren.portrait='./art-m1hd/characters/peren/';
+  $('m1hGameLink').href='./?art=m1hd';
+ }else if($('perenVariant').value==='m1hc'){
   ents.peren.path='./art-m1hc/characters/peren/peren-atlas.png';
   ents.peren.portrait='./art-m1hc/characters/peren/';
   $('m1hGameLink').href='./?art=m1hc';
