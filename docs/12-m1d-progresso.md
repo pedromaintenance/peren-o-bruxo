@@ -28,7 +28,7 @@
 - [x] XP, ouro, HP, MP, itens e ofícios vinculados à cópia de save real.
 - [x] Oficina/mercado/bolsa no hub usando catálogo e preços existentes.
 - [x] Exportação/importação e testes puros para migração de save.
-- [ ] Compilação e E2E no CI da PR concluídos; imagens inspecionadas.
+- [x] Compilação e E2E no CI da PR concluídos; imagens inspecionadas: 312 testes Node, Phaser/Vite e Playwright Chromium em 390×844 e 360×800 passaram. [GitHub Actions M1d](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38498776102).
 - [ ] Teste de 30 minutos em Android real, XP em níveis altos e controle Xbox físico.
 - [ ] Mapeamento completo de transações de missões, tutores, encantamento, lojas de todas as cidades.
 - [ ] Estratégia aprovada para unificar chaves de save no lançamento futuro.
