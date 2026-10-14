@@ -110,7 +110,9 @@ Referências: [M1h-A](20-m1h-a-peren-palette.md) e [M1h-B](21-m1h-b-peren-silhue
 - [x] Retratos normal, conjuração e ferimento refinados em 256×256.
 - [x] Habilitar variante `?art=m1hc`, sem alterar a arte padrão M1e.
 - [x] Adicionar testes por pixel e comparação de quatro variantes em navegador/ateliê.
-- [ ] Validar CI final, revisar capturas e obter aprovação estética, Android e Xbox físicos.
+- [x] [CI #38652044683](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38652044683) aprovado, com quatro variantes, 35 telas, save e Xbox simulado.
+- [x] Corrigir hachuras excessivas após inspeção da prancha real.
+- [ ] Obter aprovação estética, revisar a boca/expressão e testar Android e Xbox físicos.
 
 Detalhes: [docs/22-m1h-c-peren-refino.md](22-m1h-c-peren-refino.md).
 
