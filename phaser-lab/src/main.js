@@ -72,7 +72,11 @@ app.events.on('peren-encounter',info=>{
 });
 function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){$('encounterModal').hidden=true;}}
 $('retreatBeast').addEventListener('click',retreatBeast);
-$('observeBeast').addEventListener('click',()=>{$('encounterHint').textContent='A batalha Phaser ainda está em desenvolvimento. Use RECUAR para retomar a coleta sem risco de loop.'});
+$('observeBeast').addEventListener('click',()=>{
+  const scene=joyScene();if(!scene?.fightEncounter())return;
+  $('encounterModal').hidden=true;$('controls').hidden=true;$('battleUI').hidden=false;
+  selectedBattleIndex=0;syncBattleButtons();
+});
 // Standalone hub shown first. Real Peren HTML hub remains untouched in main.
 $('hub').hidden=false;$('controls').hidden=true;
 // Expedition pause is applied inside the scene after assets have loaded.
