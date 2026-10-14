@@ -77,7 +77,8 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Auditoria automática de 7 telas em 5 resoluções, 35 screenshots, hitboxes, overflow, foco modal e save.
 - [x] Auditoria de PWA, escopo do cache, presença de assets, tamanho do bundle e orientação; orçamento registrado em JSON.
 - [x] Corrigir gradiente EXP, tamanho mínimo de comandos de batalha, restauração de foco e orientação PWA.
-- [ ] Validar workflow GitHub Actions no último commit, revisar capturas com o usuário e corrigir diferenças artísticas.
+- [x] [Workflow completo #38631438717](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38631438717) aprovado: 35 capturas, 35 métricas, Node, Chromium, PWA e regressões da vertical slice.
+- [ ] Revisar capturas com o usuário, corrigir diferenças artísticas e repetir QA em hardware físico.
 - [ ] Playtest em Android físico + Xbox real; só então considerar pronto.
 - [ ] Revisão artística explícita antes de publicar a demo.
 
