@@ -30,9 +30,15 @@
 - CI próprio `.github/workflows/phaser-m1g-f.yml`: executa ambas auditorias e todas as regressões anteriores de Portomonte, Inventário, Alquimia, Comércio, Encontros e Combate, inclusive o teste Xbox simulado.
 - Capturas e métricas são publicadas no artifact **`peren-m1g-f-auditoria`** da PR.
 
+## Medidas do primeiro CI aprovado
+
+- **48 arquivos**, **4.789 KiB** no pacote offline; **JavaScript 1.531 KiB**, **CSS 49 KiB**. Referência: [logs #38631438717](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38631438717).
+- **35 capturas reais** e 35 medições de viewport, distribuídas em sete telas e cinco resoluções (mobile, tablet, desktop e landscape).
+- Contraste dos tokens de texto (4,5:1) passou na suíte `npm test`. Não equivale a uma auditoria de contraste pixel a pixel das telas.
+
 ## Gates para publicação
 
-- [ ] GitHub Actions verde no último commit e relatórios anexados.
+- [x] [CI funcional #38631438717](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38631438717) aprovado com 35 screenshots, métricas e regressões. Artefato: `peren-m1g-f-auditoria`.
 - [ ] Comparação visual manual das capturas com os quatro conceitos.
 - [ ] Verificação final de contraste/foco por leitor de tela; automação não substitui testes assistivos.
 - [ ] Playtest Android físico e Xbox físico.
