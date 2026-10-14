@@ -78,3 +78,9 @@ Para QA: npm test, npm run build, node scripts/prepare-demo.mjs, node scripts/po
 ## M1g-B — Inventário e equipamentos (branch de revisão)
 
 A nova tela `#inventoryUI` abre pelo botão **Inventário** em Portomonte (tecla Y no Xbox conectado), separado de **Vender**. Lista itens reais do save Phaser por categoria, mostra descrições/quantidades, retrato, PV/PM/EXP e os únicos slots suportados — arma, armadura e relíquia. Nada é equipado, criado, vendido ou gravado por essa tela. X alterna categorias no Xbox, B fecha; Tab/setas/Esc no teclado e toque no celular. QA: `npm test`, `npm run build` e `node scripts/inventory-browser.mjs` com Chromium. Mais detalhes em [docs/15-m1g-b-inventario.md](../docs/15-m1g-b-inventario.md).
+
+## M1g-C — Oficina de Alquimia e Criação
+
+Em Portomonte, **Alquimia e Criação** abre uma tela própria que mostra receitas reais por estação, requisitos de proficiência, materiais possuídos e necessários, saída e contagem por lote. Criar executa exatamente uma transação do motor existente; ações e inventário persistem apenas no save Phaser. Arte vetorial provisória sem interface embutida: `public/scenes/portomonte-workshop.svg`.
+
+Teclado (setas/Esc), Xbox (D-pad / A / B / X) e touchscreen. Veja [docs/16-m1g-c-alquimia.md](../docs/16-m1g-c-alquimia.md). Testes: `npm test`, `npm run build`, `node scripts/workshop-browser.mjs`.

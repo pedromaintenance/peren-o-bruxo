@@ -1,0 +1,66 @@
+name: Peren M1g-C - alquimia e criacao
+on:
+  push:
+    branches: [feature/phaser-m1g-c-alquimia]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-c.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-c.yml"
+permissions:
+  contents: read
+jobs:
+  workshop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar regras e UI pura
+        run: npm test
+      - name: Compilar jogo e interface
+        run: npm run build
+      - name: Preparar PWA isolado
+        run: node scripts/prepare-demo.mjs
+      - name: Conferir paginas e arte
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/scenes/portomonte-workshop.svg
+          test -s dist/demo-sw.js
+          grep -lq "craft-screen" dist/assets/*.css
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Testar arte e criacao em 360, 390 e 1280
+        run: node scripts/workshop-browser.mjs
+      - name: Regressao do Portomonte
+        run: node scripts/portomonte-browser.mjs
+      - name: Regressao de inventario
+        run: node scripts/inventory-browser.mjs
+      - name: Regressao da exploracao e combate
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Salvar screenshots do novo menu
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-c-alquimia
+          path: phaser-lab/screenshots/alquimia-m1g-*.png
+          if-no-files-found: warn
