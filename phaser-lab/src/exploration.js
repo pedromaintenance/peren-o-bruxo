@@ -4,7 +4,8 @@ import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmen
 import {encounterKey,defaultProfile} from './combat.js';
 
 const ASSET = './art/';
-const PEREN = new URLSearchParams(location.search).get('art')==='m1h'?'./art-m1h/characters/peren/':`${ASSET}characters/peren/`;
+const artVariant=new URLSearchParams(location.search).get('art');
+const PEREN=artVariant==='m1hb'?'./art-m1hb/characters/peren/':artVariant==='m1h'?'./art-m1h/characters/peren/':`${ASSET}characters/peren/`;
 const MURIN = `${ASSET}regions/floresta-murin/`;
 const directions={down:0,left:1,right:2,up:3};
 const actions=['idle','walk','run','interact','gather','hurt','cast','attack'];
