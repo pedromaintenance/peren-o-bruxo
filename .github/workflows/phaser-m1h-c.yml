@@ -1,7 +1,7 @@
-name: Peren M1h-C - rosto e silhueta sem chapeu
+name: Peren M1h-C - refino facial e barba
 on:
   push:
-    branches: [feature/phaser-m1h-c-peren-silhueta]
+    branches: [feature/phaser-m1h-c-peren-refino]
     paths:
       - "phaser-lab/**"
       - ".github/workflows/phaser-m1h-c.yml"
@@ -27,7 +27,7 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Testar 128 sprites, retratos e regras
         run: npm test
-      - name: Compilar Peren e 3 variantes
+      - name: Compilar Peren e 4 variantes
         run: npm run build
       - name: Preparar PWA isolada
         run: node scripts/prepare-demo.mjs
@@ -68,7 +68,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: peren-m1h-c-silhueta
+          name: peren-m1h-c-refino
           path: |
             phaser-lab/screenshots/m1h-c-*.png
             phaser-lab/public/art-m1hc/characters/peren/report.json
