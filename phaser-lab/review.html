@@ -157,7 +157,7 @@ function load(){
   $('assetSize').textContent='Atlas '+m.columns*m.w+'×'+m.rows*m.h;
   $('modeInfo').textContent=selected==='peren'?'4 direções × 8 ações':'7 ações';
   const thisLoad=++token;
-  img=new Image();ready=false;frame=0;last=0;
+  img=new Image();ready=false;frame=0;last=0;$('status').textContent='Carregando atlas de animações…';
   img.onload=()=>{if(thisLoad!==token)return;ready=true;$('status').textContent='Atlas carregado: textura original, sem interpolação.';paintAll()};
   img.onerror=()=>{if(thisLoad!==token)return;$('status').textContent='Não foi possível abrir a imagem. Rode npm run dev a partir de phaser-lab.';paintAll()};
   img.src=m.path;
