@@ -9,6 +9,7 @@ import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
 import {createMarketplaceScreen} from './ui-marketplace.js';
+import {expeditionViewModel,battleViewModel,fillGauge,actionDetails} from './ui-adventure.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -47,12 +48,27 @@ function updateHud(){
   const signature=total+msg;
   if(last!==signature){last=signature;$('inventory-count').textContent=total;$('feedback').textContent=msg;
     $('collected').textContent=HERBS.filter(h=>bag[h.id]).map(h=>`${h.name}: ${bag[h.id]}`).join(' · ')||'Nenhum ingrediente coletado';}
-  $('returnBtn').hidden=!app.registry.get('atExit');
+  const ui=expeditionViewModel(bridge.state,catalogs,{
+    collected:bag,weather:app.registry.get('weather'),threat:app.registry.get('threat'),
+    status:msg,atExit:app.registry.get('atExit')});
+  const sig=[ui.hp,ui.maxHp,ui.mp,ui.maxMp,ui.gold,ui.level,ui.day].join(':');
+  if($('status').dataset.profileSig!==sig){
+    $('status').dataset.profileSig=sig;
+    $('hudHp').textContent=ui.hp+' / '+ui.maxHp;
+    $('hudMp').textContent=ui.mp+' / '+ui.maxMp;
+    $('hudLevel').textContent='Nível '+ui.level;
+    $('hudGold').textContent=ui.gold.toLocaleString('pt-BR');
+    $('hudDay').textContent='Dia '+ui.day;
+    fillGauge(document,'hudHpFill',ui.hp,ui.maxHp);
+    fillGauge(document,'hudMpFill',ui.mp,ui.maxMp);
+  }
+  $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
   if(!$('bagPanel').hidden)$('bagContents').textContent=inventoryText();
 }
 app.events.on('step',updateHud);
+app.events.on('peren-progress-change',updateHud);
 // Touch joystick lives in DOM so camera zoom and map scrolling never crop it.
 const pad=$('joystick'),knob=$('joystick-knob');
 function joyScene(){return app.scene.getScene('ExplorationScene')}
@@ -98,6 +114,7 @@ app.events.on('peren-encounter',info=>{
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
+ $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura de Mürin');
 });
 function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){$('encounterModal').hidden=true;}}
 $('retreatBeast').addEventListener('click',retreatBeast);
@@ -211,7 +228,10 @@ $('bagClose').addEventListener('click',()=>toggleBag(false));
 let selectedBattleIndex=0;
 const battleOptions=[...document.querySelectorAll('[data-battle]')];
 function selectBattleChoice(i){selectedBattleIndex=(i+battleOptions.length)%battleOptions.length;syncBattleButtons();}
-function syncBattleButtons(){battleOptions.forEach((b,i)=>b.classList.toggle('pad-selected',i===selectedBattleIndex));}
+function syncBattleButtons(){battleOptions.forEach((b,i)=>b.classList.toggle('pad-selected',i===selectedBattleIndex));
+ const selected=battleOptions[selectedBattleIndex];
+ if(selected)$('battleCommandHint').textContent=actionDetails(selected.dataset.battle);
+}
 function activateBattleChoice(){const b=battleOptions[selectedBattleIndex];if(b&&!b.disabled)battleAction(b.dataset.battle);}
 function battleScene(){try{return app.scene.getScene('BattleScene')}catch{return null}}
 async function battleAction(action){
@@ -219,14 +239,28 @@ async function battleAction(action){
   if(action==='finish'){if(scene.endBattle())$('battleUI').hidden=true;return;}
   await scene.takeTurn(action);
 }
-for(const button of battleOptions)button.addEventListener('click',()=>battleAction(button.dataset.battle));
+for(const button of battleOptions){
+ button.addEventListener('click',()=>battleAction(button.dataset.battle));
+ button.addEventListener('focus',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
+ button.addEventListener('pointerenter',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
+}
+for(const button of battleOptions.filter(button=>button.dataset.battle.startsWith('spell:'))){
+ const spell=SPELLS.find(spell=>spell.id===button.dataset.battle.slice(6));
+ if(spell){button.title=actionDetails(button.dataset.battle);button.setAttribute('aria-label',spell.name+', '+spell.mana+' pontos de mana');}
+}
 $('battleFinish').addEventListener('click',()=>battleAction('finish'));
 function renderBattleState(state){
   if(!state)return;
   $('battleRound').textContent=state.status==='active'?`RODADA ${state.round}`:'DESFECHO';
-  $('battleMonster').textContent=`${state.monster} · ${state.enemyHp}/${state.enemyMaxHp} PV`;
-  $('battleStats').textContent=`Peren ${state.hp}/${state.maxHp} PV · ${state.mp}/${state.maxMp} PM · ${state.potions} poções`;
-  $('battleJournal').textContent=state.log.join(' · ');
+  const ui=battleViewModel(state);
+  $('battleMonster').textContent=ui.monster+' · '+ui.enemyHp+'/'+ui.enemyMaxHp+' PV';
+  $('battleStats').textContent=ui.hp+'/'+ui.maxHp+' PV · '+ui.mp+'/'+ui.maxMp+' PM';
+  $('battlePotionCount').textContent='Poções: '+ui.potions;
+  $('battleJournal').textContent=ui.log;
+  $('battleStatusLabel').textContent=ui.busy?'Ação em andamento…':ui.finished?'Combate encerrado':'Sua vez';
+  fillGauge(document,'battleEnemyFill',ui.enemyHp,ui.enemyMaxHp);
+  fillGauge(document,'battleHpFill',ui.hp,ui.maxHp);
+  fillGauge(document,'battleMpFill',ui.mp,ui.maxMp);
   const finished=state.status!=='active';
   $('battleCommands').hidden=finished;
   $('battleFinish').hidden=!finished;
@@ -242,7 +276,7 @@ app.events.on('peren-battle-end',({result,reward,profile})=>{
   $('battleUI').hidden=true;$('controls').hidden=false;
   const itemLabel=reward?Object.keys(reward.items).join(', '):'nenhum material';
   $('feedback').textContent=result==='won'?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`:'Retorno à floresta sem recompensa.';
-  $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;renderHub();
+  $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;renderHub();updateHud();
 });
 window.addEventListener('keydown',event=>{
   if($('battleUI').hidden)return;
