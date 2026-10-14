@@ -17,6 +17,12 @@
 5. A demonstração aceita `?art=m1hb` para habilitar apenas a nova aparência, além de `?art=m1h` (recoloração anterior) e padrão M1e. `review.html` permite alternar entre as três e percorrer **todas as 32 animações**.
 6. `scripts/peren-m1hb-preview.mjs` monta a prancha `m1h-b-contact-sheet.png` com retrato M1h-A, retrato M1h-B, conjuração M1h-B e as quatro direções do novo sprite para revisão real.
 
+## Primeiro resultado de QA
+
+- [CI funcional aprovado #38646248645](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38646248645): build, PNG de 128 quadros, 3 retratos, 3 modos em navegador, 35 capturas antigas, viagem/combate e Xbox simulado. O artifact **`peren-m1h-b-silhueta`** contém a prancha e capturas.
+- A prancha real foi examinada: **M1h-B elimina o chapéu perceptível**, preserva o cajado e apresenta cabelo claro e barba legíveis nos quatro ângulos. A imagem comparativa também mostra que a nova massa de cabelo ainda pode precisar de suavização e o rosto do retrato de mais marcas de idade; esses refinamentos são um trabalho artístico posterior, não uma falha mecânica.
+- **Aceite artístico ainda pendente**; teste automatizado não substitui avaliação do jogador ou hardware real.
+
 ## QA e limites
 
 - Testes PNG validam estrutura dos 128 quadros, modificações na região da cabeça, integridade total do corpo abaixo da linha 43, dimensões dos três retratos, isolamento dos motores e saves.
