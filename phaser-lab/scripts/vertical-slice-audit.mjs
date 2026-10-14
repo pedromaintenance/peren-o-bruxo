@@ -61,7 +61,7 @@ try{
   await inspect('hub','portomonte',{primaryButtons:['goForest','showCraft','showShop','openBagHub','endDayBtn']});
   await page.locator('#openBagHub').click();
   await page.locator('#inventoryUI').waitFor({state:'visible'});
-  assert.equal(await page.locator('#invClose').isFocused(),true);
+  assert.equal(await page.locator('#invClose').evaluate(el=>document.activeElement===el),true);
   await inspect('inventoryUI','inventario',{primaryButtons:['invClose']});
   await page.keyboard.press('Escape');
   await page.locator('#inventoryUI').waitFor({state:'hidden'});
@@ -85,12 +85,12 @@ try{
    scene.openEncounter(scene.beasts.find(b=>b.type==='mob-galho-infectado'));
   });
   await page.locator('#encounterModal').waitFor({state:'visible'});
-  assert.equal(await page.locator('#observeBeast').isFocused(),true,'Foco inicial do encontro incorreto');
+  assert.equal(await page.locator('#observeBeast').evaluate(el=>document.activeElement===el),true,'Foco inicial do encontro incorreto');
   // A modal cannot leak keyboard focus into the map.
   await page.keyboard.press('Shift+Tab');
-  assert.equal(await page.locator('#retreatBeast').isFocused(),true);
+  assert.equal(await page.locator('#retreatBeast').evaluate(el=>document.activeElement===el),true);
   await page.keyboard.press('Tab');
-  assert.equal(await page.locator('#observeBeast').isFocused(),true);
+  assert.equal(await page.locator('#observeBeast').evaluate(el=>document.activeElement===el),true);
   await inspect('encounterModal','encontro',{primaryButtons:['observeBeast','retreatBeast']});
   await page.locator('#observeBeast').click();
   await page.locator('#battleUI').waitFor({state:'visible'});
@@ -110,7 +110,7 @@ try{
   await page.locator('#battleFinish').click();
   await page.locator('#battleUI').waitFor({state:'hidden'});
   await page.waitForTimeout(130);
-  assert.equal(await page.locator('#gatherBtn').isFocused(),true,'Foco não restaurado após batalha');
+  assert.equal(await page.locator('#gatherBtn').evaluate(el=>document.activeElement===el),true,'Foco não restaurado após batalha');
   const after=await page.evaluate(()=>window.__perenProgress.save.character);
   assert.equal(after.gold,before.gold);assert.equal(after.exp,before.exp);assert.equal(after.kills,before.kills);
   assert.deepEqual(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),CLASSIC_KEY),original);
