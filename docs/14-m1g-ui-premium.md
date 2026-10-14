@@ -98,7 +98,8 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Gerador que redesenha cabelo e barba em todos os 128 quadros; revisão **manual** das 4 direções ainda pendente.
 - [x] Variante visual sem chapéu e com sobrancelhas e barba; inspeção de pixel art e ajustes finos ainda pendentes.
 - [x] Três retratos redesenhados por PNGJS; capturas em cidade, floresta e batalha incluídas no QA.
-- [ ] Aceite pelo usuário de artes específicas antes de canonizar como padrão (M1h-C).
+- [x] [CI #38646248645](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38646248645) aprovado: PNGs, galeria, 35 capturas, combate/Xbox simulado e saves.
+- [ ] Aceite pelo usuário da arte de M1h-B antes de canonizar como padrão (refino M1h-C, Android/Xbox físicos).
 
 Referências: [M1h-A](20-m1h-a-peren-palette.md) e [M1h-B](21-m1h-b-peren-silhueta.md).
 
