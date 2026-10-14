@@ -187,7 +187,7 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
    render();doc.getElementById('tradeClose').focus({preventScroll:true});
  }
  doc.getElementById('tradeClose').addEventListener('click',close);
- confirm.addEventListener('click',transact);
+ confirm.addEventListener('click',event=>{root.dataset.confirmClicks=String(1+Number(root.dataset.confirmClicks||0));transact()});
  search.addEventListener('input',()=>{selectedId=null;limit=72;render()});
  amount.addEventListener('change',()=>{
    const max=Math.min(99,mode==='sell'?(model?.selected?.owned||1):99);
