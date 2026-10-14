@@ -36,7 +36,7 @@
 .ui-gauge {height:8px;overflow:hidden;background:#06121b;border:1px solid #647580;border-radius:3px}
 .ui-gauge > i {display:block;width:0;height:100%;background:linear-gradient(90deg,#3e985f,var(--ui-green));transition:width .2s}
 .ui-gauge--mana > i {background:linear-gradient(90deg,#3973be,var(--ui-blue))}
-.ui-gauge--xp > i {background:linear-gradient(90deg,#896336,#edbe76))}
+.ui-gauge--xp > i {background:linear-gradient(90deg,#896336,#edbe76)}
 .ui-field {border:1px solid #738080;border-radius:5px;padding:10px;color:var(--ui-ivory);background:var(--ui-deep);font:12px var(--ui-font-sans)}
 .ui-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(prefers-reduced-motion:reduce) {
