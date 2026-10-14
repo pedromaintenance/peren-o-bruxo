@@ -57,7 +57,8 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] UI distingue compra, venda e inventário sem reuso ambíguo da navegação.
 - [x] Não inventa estoques individuais, preços e comerciantes: suprimentos comuns de Portomonte (IDs usados pela M1d), estoque indisponível em outras cidades.
 - [x] Regressões Node/Chromium e capturas em 360×800, 390×844 e 1280×800 implementadas.
-- [ ] Validar CI final e revisar capturas visuais; Android/Xbox físicos e arte definitiva pendentes.
+- [x] Node, build PWA, Chromium 360×800 / 390×844 / 1280×800, Xbox simulado, comércio em lote e regressões M1g-A/B/C + exploração/combate aprovados. [Run 38624579294](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38624579294).
+- [ ] Aprovação visual das capturas, Android/Xbox físicos e arte definitiva pendentes.
 
 ### M1g-E — HUD / Encontros / Batalha
 
@@ -91,7 +92,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, pendente de QA final e revisão artística. Próximo recorte: M1g-E, HUD/Encontros/Combate. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. M1g-C validado por CI; M1g-D implementado em branch empilhada, validado funcionalmente por CI e pendente de revisão artística. Próximo recorte: M1g-E, HUD/Encontros/Combate. Nenhuma dessas PRs foi mesclada à main. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 
