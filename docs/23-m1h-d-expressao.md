@@ -17,6 +17,10 @@ O gerador `scripts/peren-m1hd-generator.mjs` usa PNGJS e a M1h-C como base, pres
 - Resultado em `public/art-m1hd/characters/peren/`, com `report.json` explicitamente `em_producao` e `pendente`.
 - A prévia é **opt-in** por `?art=m1hd` no Phaser; `review.html?art=m1hd` permite comparar M1e, M1h-A, M1h-B, M1h-C e M1h-D.
 
+## Revisão visual preliminar
+
+A primeira prancha produzida pelo CI revelou uma faixa cinza larga ao redor da boca. O código foi ajustado para reduzir as áreas chapadas do bigode e remover o crescente claro remanescente no centro da barba. A revisão visual desta nova iteração é um *gate* explícito: não basta que os testes de PNGs e navegador estejam verdes.
+
 ## Verificação e critérios de aceite
 
 - Testes unitários: alterações efetivas nos 128 frames, canal alfa preservado, corpo inalterado, todos os retratos com mudanças **somente no retângulo facial**, e isolamento da lógica/save.
