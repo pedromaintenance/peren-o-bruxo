@@ -118,3 +118,11 @@ A prévia de silhueta atualizada é ativada com `?art=m1hb`. O modo padrão mant
 O gerador `scripts/peren-m1hb-generator.mjs` produz os PNGs em `public/art-m1hb/` depois de gerar os assets M1e e M1h-A, mantendo todas as versões anteriores intactas. O teste `npm test` valida o alinhamento dos quadros e a preservação do corpo abaixo da linha 43; após `npm run build`, `node scripts/peren-m1hb-browser.mjs` testa as três variantes no navegador e `node scripts/peren-m1hb-preview.mjs` gera uma prancha com retratos e quatro direções.
 
 A arte é um **candidato**, não um aceite final; consulte [docs/21-m1h-b-peren-silhueta.md](../docs/21-m1h-b-peren-silhueta.md) para a revisão manual pendente.
+
+## M1h-C — acabamento de cabelo e barba de Peren
+
+A nova variante **em revisão** pode ser testada sem afetar a arte padrão com `?art=m1hc` (jogo) ou `review.html?art=m1hc` (ateliê). O seletor oferece quatro estados: M1e original, M1h-A prateado, M1h-B sem chapéu e M1h-C refinado. Peren mantém manto escuro, cabelo/barba grisalhos, expressão austera e todas as 32 animações.
+
+`scripts/peren-m1hc-generator.mjs` gera a pasta `public/art-m1hc/` a partir da candidata M1h-B, preservando os outros atlases e PNGs. O script altera apenas cor dos pixels já opacos na cabeça, e mantém cada pixel do corpo abaixo da linha 43, bem como o alfa do sprite inteiro.
+
+Validação: `npm test`, `node scripts/peren-m1hc-preview.mjs` para uma prancha do antes/depois, `node scripts/peren-m1hc-browser.mjs` após build e CI da branch M1h-C. Documentação de aceite: [docs/22-m1h-c-peren-refino.md](../docs/22-m1h-c-peren-refino.md). Esta arte **não** está aprovada como padrão.

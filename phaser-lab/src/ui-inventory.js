@@ -193,7 +193,7 @@ export function createInventoryScreen({document:doc,bridge,catalogs}){
   if(ctx){
     const atlas=new Image();
     atlas.onload=()=>{ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,48,64);ctx.drawImage(atlas,0,0,48,64,0,0,48,64)};
-    atlas.src=({'m1h':'./art-m1h/characters/peren/peren-atlas.png','m1hb':'./art-m1hb/characters/peren/peren-atlas.png'})[new URLSearchParams(location.search).get('art')]||'./art/characters/peren/peren-atlas.png';
+    atlas.src=({'m1h':'./art-m1h/characters/peren/peren-atlas.png','m1hb':'./art-m1hb/characters/peren/peren-atlas.png','m1hc':'./art-m1hc/characters/peren/peren-atlas.png'})[new URLSearchParams(location.search).get('art')]||'./art/characters/peren/peren-atlas.png';
   }
   return {open,close,isOpen,move,cycleTab,render,get view(){return model},get category(){return category}};
 }
