@@ -1,0 +1,71 @@
+name: Peren M1g-E - HUD encontro batalha
+on:
+  push:
+    branches: [feature/phaser-m1g-e-hud-combate]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-e.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-e.yml"
+permissions:
+  contents: read
+jobs:
+  presentation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar motor, dados canonicos e interface
+        run: npm test
+      - name: Compilar Vite e Phaser
+        run: npm run build
+      - name: Gerar pacote PWA isolado
+        run: node scripts/prepare-demo.mjs
+      - name: Validar assets e CSS compilados
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/demo-sw.js
+          test -s dist/art/characters/peren/portrait.png
+          test -s dist/art/monsters/mob-galho-infectado/portrait.png
+          grep -lq "m1g-expedition" dist/assets/*.css
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Inspecao visual M1g-E 360 390 1280
+        run: node scripts/adventure-browser.mjs
+      - name: Regressao Portomonte
+        run: node scripts/portomonte-browser.mjs
+      - name: Regressao Inventario
+        run: node scripts/inventory-browser.mjs
+      - name: Regressao Alquimia
+        run: node scripts/workshop-browser.mjs
+      - name: Regressao Comercio
+        run: node scripts/marketplace-browser.mjs
+      - name: Regressao do ciclo completo exploracao batalha e save
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Screenshots da exploracao encontro e batalha
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-e-aventura
+          path: phaser-lab/screenshots/m1g-e-*.png
+          if-no-files-found: warn

@@ -90,3 +90,9 @@ Teclado (setas/Esc), Xbox (D-pad / A / B / X) e touchscreen. Veja [docs/16-m1g-c
 **Comércio** abre a nova tela de mercado na aba **Comprar**; **Vender itens da bolsa** abre a aba **Vender**. O usuário pode consultar os mercadores oficiais Sofia, Jonathan e Alina, mas os produtos da tela correspondem aos suprimentos **comuns de Portomonte** já disponibilizados no M1d — o catálogo ainda não informa estoque individual. Preço, habilidades e transações usam `src/progress.js`. Quantidade de 1–99 (respeitando ouro e bolsa) é registrada como um batch atômico, conservando os mesmos preços progressivos por unidade.
 
 Retratos e cenário vetoriais provisórios, sem textos/controles embutidos. Xbox D-pad navega, X alterna compra/venda, A confirma, B volta; toque e teclado também funcionam. Detalhes em [docs/17-m1g-d-comercio.md](../docs/17-m1g-d-comercio.md). QA adicional: `node scripts/marketplace-browser.mjs` após build com Chromium.
+
+## M1g-E — HUD, encontros e batalha JRPG
+
+O HUD da exploração agora exibe valores canônicos de Peren (PV/PM, nível, ouro), informações ambientais e coleta, sem bloquear o mapa. Os encontros usam retratos reais das criaturas de Mürin com opções Enfrentar e Recuar. A batalha usa painéis azul-petróleo/dourado, barras do jogador e inimigo, log e nomes/custos das três magias de `SPELLS`; a lógica continua em `combat.js` e `BattleScene`.
+
+Os sete botões de combate conservam IDs e atalhos. Testes e capturas: `node scripts/adventure-browser.mjs` após build; `npm test` cobre os dados puros. Documentação: [docs/18-m1g-e-hud-combate.md](../docs/18-m1g-e-hud-combate.md). Arte M1e ainda provisória e sujeita à revisão visual.

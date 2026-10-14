@@ -1,0 +1,145 @@
+/* M1g-E: Premium expedition / encounter / JRPG battle visual skin.
+   Works with existing Phaser scenes, real buttons and canonical numeric state. */
+#controls.m1g-expedition{z-index:8;isolation:isolate;font-family:var(--ui-font-sans);color:var(--ui-ivory)}
+#controls.m1g-expedition #status.m1g-expedition-hud{position:absolute;top:calc(10px + env(safe-area-inset-top));left:calc(10px + env(safe-area-inset-left));right:auto;
+  width:min(355px,calc(100vw - 20px - env(safe-area-inset-left) - env(safe-area-inset-right)));max-width:none;margin:0;padding:11px 13px 9px;
+  border:1px solid #b19765;border-radius:5px;box-shadow:inset 0 0 0 1px #d5b17f22,0 11px 35px #03070bb8;
+  background:linear-gradient(155deg,#102634f2,#071522e9);pointer-events:none;overflow:hidden}
+#controls .m1g-hud-head{display:grid;grid-template-columns:1fr auto;gap:0 7px;align-items:center;padding-bottom:7px;border-bottom:1px solid #a18b584a}
+#controls .m1g-hud-head .ui-kicker{grid-column:1/-1;font-size:9px;letter-spacing:.19em;color:var(--ui-gold)}
+#controls .m1g-hud-head strong{font:600 18px/1.1 var(--ui-font-fantasy);color:var(--ui-gold-bright);letter-spacing:.05em}
+#controls #hudDay{font-size:10px;color:var(--ui-muted);white-space:nowrap}
+#controls .m1g-hud-body{display:grid;grid-template-columns:51px 1fr;gap:11px;padding:9px 0 7px}
+#controls .m1g-hud-portrait{display:flex;flex-direction:column;gap:3px;text-align:center;color:var(--ui-gold)}
+#controls .m1g-hud-portrait img{width:51px;height:57px;object-fit:cover;image-rendering:pixelated;border:1px solid #96805e}
+#controls .m1g-hud-portrait small{font-size:9px;white-space:nowrap}
+#controls .m1g-hud-bars{display:flex;flex-direction:column;justify-content:center;gap:5px}
+#controls .m1g-hud-readout{display:flex;justify-content:space-between;gap:8px;font-size:10px;line-height:1.2;font-variant-numeric:tabular-nums}
+#controls .m1g-hud-readout output{color:#f6edda}
+.m1g-hud-track{height:10px;overflow:hidden;border:1px solid #6c7b7c;border-radius:2px;box-shadow:inset 0 2px 4px #000c;background:#0a1520}
+.m1g-hud-track>i{display:block;width:100%;height:100%;border-right:1px solid #ffffff40;transition:width 140ms ease}
+.m1g-hud-track--hp>i{background:linear-gradient(180deg,#a7dfb0,#5fae72)}
+.m1g-hud-track--mp>i{background:linear-gradient(180deg,#9dd4f4,#4c9cc9)}
+.m1g-hud-track--enemy>i{background:linear-gradient(180deg,#f6b2a2,#a84d55)}
+#controls .m1g-hud-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 0;border-top:1px solid #a18b584a;font-size:10px;color:#dbc39b}
+#controls .m1g-hud-feedback{margin-top:5px;padding:6px 8px;border-left:2px solid #dfbb7c;background:#0a1b29;color:#e8e1d3;font-size:11px;line-height:1.4;max-height:61px;overflow:hidden}
+#controls .m1g-hud-collected{color:#b6c8b8;font-size:9px;margin-top:4px;max-height:25px;overflow:hidden}
+#controls .m1g-hud-weather{display:flex;flex-wrap:wrap;gap:3px 12px;margin-top:4px;font-size:10px;color:#cfb88c}
+#controls #gamepad-hud:empty{display:none}
+#controls #gamepad-hud{color:#add1b4;font-size:9px}
+#controls #joystick{width:112px;height:112px;left:calc(18px + env(safe-area-inset-left));bottom:calc(18px + env(safe-area-inset-bottom));
+ border-radius:50%;border:2px solid #c5a875b8;background:radial-gradient(circle,#1f4146b5,#0b1c2bae 70%);box-shadow:0 0 0 7px #0a162b2c,inset 0 0 20px #091720}
+#controls #joystick:before{content:"✥";color:#a9bea77f;font-size:49px;position:absolute;left:0;right:0;text-align:center}
+#controls #joystick-knob{position:relative;z-index:2;background:linear-gradient(145deg,#f2dbab,#a58a68);border-color:#ffffffc4;box-shadow:0 3px 10px #0007}
+#controls #actions.m1g-touch-actions{right:calc(13px + env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));gap:8px}
+#controls #actions.m1g-touch-actions button{border-radius:5px;border:1px solid #b79d70;min-width:100px;min-height:51px;
+ background:linear-gradient(160deg,#1b4251ed,#102839f5);box-shadow:inset 0 0 0 1px #fff2cc18,0 4px 15px #0009;
+ color:#f3dfba;font:700 11px var(--ui-font-sans);letter-spacing:.07em}
+#controls #actions #gatherBtn{background:linear-gradient(160deg,#315d4be8,#183c3ce8);border-color:#a6c099}
+#controls #actions #returnBtn{border-color:var(--ui-gold-bright);color:var(--ui-gold-bright)}
+#controls #actions button:focus-visible{outline:3px solid var(--ui-focus);outline-offset:2px}
+
+/* Enemy encounter: original decisions with premium hierarchy and independent art. */
+#encounterModal.m1g-encounter{background:radial-gradient(ellipse at center,#0b182ed9,#040910eb);padding:clamp(10px,3vw,24px);z-index:40}
+#encounterModal #encounterBox{width:min(100%,760px);max-width:760px;max-height:calc(100dvh - 25px);overflow-y:auto;overscroll-behavior:contain;
+ touch-action:pan-y;padding:clamp(13px,2vw,25px);border:1px solid #bca271;border-radius:5px;
+ background:linear-gradient(145deg,#193341,#081723);box-shadow:0 25px 90px #000e,inset 0 0 0 1px #baa06f3e;text-align:left}
+#encounterModal .m1g-encounter-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:10px;
+ border-bottom:1px solid #a18b5877}
+#encounterModal .m1g-encounter-heading .ui-kicker{font-size:10px;letter-spacing:.1em}
+#encounterModal .m1g-encounter-warning{color:#f1a9a2;font-size:10px;letter-spacing:.16em}
+#encounterModal .m1g-encounter-body{display:grid;grid-template-columns:minmax(130px,210px) 1fr;gap:22px;align-items:center;margin:18px 0}
+#encounterModal .m1g-encounter-portrait{background:radial-gradient(circle at 50% 52%,#40565b,#0b1a29 76%);
+ border:1px solid #a08b6f;padding:10px;display:grid;place-items:center}
+#encounterModal #beastPortrait{width:100%;height:auto;max-width:185px;aspect-ratio:1;border:0;border-radius:0;background:transparent;object-fit:contain}
+#encounterModal .m1g-encounter-description small{color:#bac9c8;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
+#encounterModal #beastName{font:500 clamp(23px,3vw,38px)/1.1 var(--ui-font-fantasy);color:var(--ui-gold-bright);margin:5px 0 11px}
+#encounterModal #beastDescription{color:#f0e0c7;line-height:1.65;font-size:13px}
+#encounterModal #encounterHint{font-size:12px;color:#e4bb85;min-height:0;margin-top:15px}
+#encounterModal #encounterBox .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#encounterModal #encounterBox button{min-height:55px;text-align:center;font:700 13px var(--ui-font-sans);letter-spacing:.07em;
+ border-radius:3px;outline-offset:2px}
+#encounterModal #encounterBox button small{font-size:10px;opacity:.9}
+#encounterModal #combatNote{font-size:10px;color:var(--ui-muted);margin-top:12px;text-align:center}
+
+/* Battle UI leaves central sprites/animations completely unobstructed. */
+#battleUI.m1g-battle{pointer-events:none;font-family:var(--ui-font-sans)}
+#battleUI #battleHeader{position:absolute;top:calc(9px + env(safe-area-inset-top));left:calc(10px + env(safe-area-inset-left));
+ right:calc(10px + env(safe-area-inset-right));width:min(810px,calc(100vw - 20px));max-width:810px;margin:auto;
+ border:1px solid #b69c6b;border-radius:4px;padding:9px 14px 11px;background:linear-gradient(145deg,#10222fec,#081725f4);
+ box-shadow:0 8px 30px #000a}
+#battleUI .m1g-battle-heading{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid #a18b585a;padding-bottom:7px}
+#battleUI .m1g-battle-heading strong{font:600 20px var(--ui-font-fantasy);color:var(--ui-gold-bright);letter-spacing:.08em}
+#battleUI #battleRound{float:none;margin-left:auto;font-size:11px;color:#f1d09a;white-space:nowrap}
+#battleUI .m1g-battle-vitals{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:9px}
+#battleUI .m1g-battle-foe,#battleUI .m1g-battle-hero{display:grid;gap:5px;min-width:0}
+#battleUI #battleMonster{margin:0;color:#f2dad0;font:600 12px var(--ui-font-sans);text-overflow:ellipsis;overflow:hidden;white-space:nowrap}
+#battleUI .m1g-battle-hero>strong{font:700 12px var(--ui-font-sans);color:#e5dfc3}
+#battleUI .m1g-battle-hero-row{display:flex;justify-content:space-between;gap:9px;align-items:baseline;color:var(--ui-muted);font-size:10px}
+#battleUI #battleStats{color:var(--ui-ivory);font-size:10px;padding:0;white-space:normal}
+#battleUI #battlePotionCount{color:#dfbf8e;white-space:nowrap}
+#battleUI #battleJournal{background:#0b1e2eaa;border-left:2px solid #ba9763;padding:6px 8px;margin:10px 0 0;
+ font:11px/1.45 var(--ui-font-sans);color:#efdfbd;min-height:0;max-height:39px;overflow:hidden}
+#battleUI #battlePanel{bottom:calc(10px + env(safe-area-inset-bottom));left:calc(10px + env(safe-area-inset-left));
+ right:calc(10px + env(safe-area-inset-right));width:min(810px,calc(100vw - 20px));max-width:810px;margin:auto;
+ padding:11px 14px;border-radius:4px;border:1px solid #c1a06a;background:linear-gradient(140deg,#132d3cf5,#081524f7);
+ box-shadow:0 8px 35px #000a;pointer-events:auto}
+#battleUI .m1g-battle-panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+#battleUI #battleStatusLabel{font-size:11px;color:#b5dabe}
+#battleUI #battleCommands .battle-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+#battleUI #battleCommands button{min-height:48px;min-width:0;cursor:pointer;
+ background:linear-gradient(135deg,#254452,#122b3c);border:1px solid #708e94;color:#f4e5c9;border-radius:3px;
+ padding:7px;font:700 11px/1.3 var(--ui-font-sans);letter-spacing:.055em}
+#battleUI #battleCommands button:is(:hover,:focus-visible,.pad-selected){background:linear-gradient(140deg,#406275,#1a3852);
+ border-color:var(--ui-gold-bright);outline:2px solid #ecc88d;outline-offset:-3px;box-shadow:0 0 17px #e3be784d}
+#battleUI #battleCommands button:disabled{opacity:.43;cursor:not-allowed;outline:0;box-shadow:none}
+#battleUI .battle-spells{border-top:1px solid #c1a56d66;margin-top:9px;padding-top:7px}
+#battleUI .battle-spells small{font:700 10px var(--ui-font-sans);letter-spacing:.13em;color:var(--ui-gold);display:block;margin-bottom:6px}
+#battleUI .battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr))}
+#battleUI .m1g-battle-hint{font:11px/1.4 var(--ui-font-sans);color:#d9cbae;background:#0b1a28;
+ border-left:2px solid #a18b5a;padding:5px 9px;min-height:25px;margin:8px 0 0}
+#battleUI #battleFinish{width:100%;min-height:50px;border-radius:3px;margin:6px 0}
+#battleUI #battleEndHint{font:13px/1.4 var(--ui-font-sans);color:#f3d6ae}
+#battleUI .battle-note{color:#b8bfba;font:9px/1.4 var(--ui-font-sans);margin-top:6px}
+@media(max-width:690px){
+ #battleUI #battleHeader{padding:8px 10px;max-width:none}
+ #battleUI .m1g-battle-heading strong{font-size:16px}
+ #battleUI .m1g-battle-heading .ui-kicker{font-size:9px}
+ #battleUI #battleRound{font-size:10px}
+ #battleUI .m1g-battle-vitals{grid-template-columns:1fr 1fr;gap:8px;margin-top:5px}
+ #battleUI #battleJournal{font-size:10px;max-height:31px;padding:3px 6px}
+ #battleUI #battlePanel{padding:8px 9px}
+ #battleUI #battleCommands .battle-actions{grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+ #battleUI #battleCommands button{min-height:44px;padding:5px;font-size:11px}
+ #battleUI .battle-spells{margin-top:5px;padding-top:5px}
+ #battleUI .battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+ #battleUI .battle-spells .battle-actions button{min-height:44px;font-size:10px}
+ #battleUI .m1g-battle-hint{font-size:10px;margin-top:5px;padding:4px 6px}
+ #battleUI .battle-note{font-size:9px}
+ #battleUI #battleStats{font-size:9px}
+ #encounterModal .m1g-encounter-body{grid-template-columns:105px 1fr;gap:10px}
+ #encounterModal #beastDescription{font-size:12px}
+ #encounterModal #encounterBox button{min-height:50px;font-size:11px}
+}
+@media(max-width:390px){
+ #controls.m1g-expedition #status.m1g-expedition-hud{top:calc(5px + env(safe-area-inset-top));left:6px;width:min(318px,calc(100vw - 12px));padding:7px 9px}
+ #controls .m1g-hud-head strong{font-size:15px}
+ #controls .m1g-hud-body{grid-template-columns:38px 1fr;gap:7px;padding:5px 0}
+ #controls .m1g-hud-portrait img{width:38px;height:43px}
+ #controls .m1g-hud-portrait small{font-size:8px}
+ #controls .m1g-hud-footer{padding:5px 0}
+ #controls .m1g-hud-feedback{max-height:35px;padding:3px 6px;font-size:10px}
+ #controls .m1g-hud-collected{display:none}
+ #controls .m1g-hud-weather{font-size:9px}
+ #battleUI #battlePanel{bottom:calc(5px + env(safe-area-inset-bottom))}
+ #battleUI .m1g-battle-panelhead{margin-bottom:4px}
+ #battleUI #battleCommands button{min-height:42px}
+}
+@media(max-height:610px) and (orientation:landscape){
+ #controls #status.m1g-expedition-hud{max-height:calc(100dvh - 10px);overflow:hidden}
+ #battleUI #battleHeader{top:4px;max-width:490px;left:5px;right:auto}
+ #battleUI #battlePanel{bottom:4px;max-width:490px;right:5px;left:auto}
+ #battleUI .m1g-battle-vitals{gap:5px}
+ #battleUI .battle-note{display:none}
+}
+@media(prefers-reduced-motion:reduce){.m1g-hud-track>i{transition:none!important}}
