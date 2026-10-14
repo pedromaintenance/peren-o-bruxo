@@ -20,3 +20,5 @@ for(const file of ['visao-carcaca.webp']){
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
 // M1h is opt-in: derive comparison files from M1e source without overwriting it.
 await import('./peren-m1h-generator.mjs');
+// M1h-B derives a third, optional head/silhouette candidate. Never overwrite M1e/M1h-A.
+await import('./peren-m1hb-generator.mjs');

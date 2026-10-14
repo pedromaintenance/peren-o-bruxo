@@ -110,3 +110,11 @@ O relatório de lacunas entre conceito e jogo está em [docs/19-m1g-f-auditoria.
 Depois de `npm install`, rode `npm run build`. Isso mantém o M1e intacto em `public/art/` e produz uma segunda versão do atlas completo (128 frames, 48×64) e dos três retratos em `public/art-m1h/`. Compare ambos em `/review.html?art=m1h`; para jogar com a nova paleta use `/?art=m1h`. Sem o parâmetro, mantém-se a versão anterior. Os saves e as regras não são modificados.
 
 QA: `npm test` para preservação de PNG/canal alfa; `node scripts/peren-art-browser.mjs` após build; CI com regressões M1g-F. Veja [docs/20-m1h-a-peren-palette.md](../docs/20-m1h-a-peren-palette.md) para o que ainda impede essa arte de ser aprovada como definitiva (silhueta/chapéu, retratos e inspeção física).
+
+## M1h-B — Peren sem chapéu (variante candidata)
+
+A prévia de silhueta atualizada é ativada com `?art=m1hb`. O modo padrão mantém M1e, e `?art=m1h` mantém M1h-A. Use `review.html?art=m1hb` para inspecionar os 128 quadros, o cabelo prateado, a barba e os três retratos; o seletor do ateliê alterna as três versões.
+
+O gerador `scripts/peren-m1hb-generator.mjs` produz os PNGs em `public/art-m1hb/` depois de gerar os assets M1e e M1h-A, mantendo todas as versões anteriores intactas. O teste `npm test` valida o alinhamento dos quadros e a preservação do corpo abaixo da linha 43; após `npm run build`, `node scripts/peren-m1hb-browser.mjs` testa as três variantes no navegador e `node scripts/peren-m1hb-preview.mjs` gera uma prancha com retratos e quatro direções.
+
+A arte é um **candidato**, não um aceite final; consulte [docs/21-m1h-b-peren-silhueta.md](../docs/21-m1h-b-peren-silhueta.md) para a revisão manual pendente.

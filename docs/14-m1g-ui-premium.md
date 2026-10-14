@@ -93,14 +93,15 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Testes PNG do canal alfa e dimensões, comparações visuais Chromium e regressões de jogo.
 - [ ] Aprovação do visual da variante, revisão de silhueta e remoção completa do chapéu antigo.
 
-### M1h-B — Silhueta, cabelo e expressão canônicos [PENDENTE]
+### M1h-B — Silhueta, cabelo e expressão canônicos [CANDIDATO IMPLEMENTADO, QA/ARTE EM REVISÃO]
 
-- [ ] Revisão quadro a quadro do cabelo e barba prateados, especialmente 4 direções e perfis.
-- [ ] Substituir acessórios de cabeça antigos por cabelos canônicos sem chapéu pontudo.
-- [ ] Polir retratos e leitura em miniatura do sprite nas cenas reais de batalha/floresta.
-- [ ] Aceite pelo usuário de artes específicas antes de canonizar como padrão.
+- [x] Gerador que redesenha cabelo e barba em todos os 128 quadros; revisão **manual** das 4 direções ainda pendente.
+- [x] Variante visual sem chapéu e com sobrancelhas e barba; inspeção de pixel art e ajustes finos ainda pendentes.
+- [x] Três retratos redesenhados por PNGJS; capturas em cidade, floresta e batalha incluídas no QA.
+- [x] [CI #38646248645](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38646248645) aprovado: PNGs, galeria, 35 capturas, combate/Xbox simulado e saves.
+- [ ] Aceite pelo usuário da arte de M1h-B antes de canonizar como padrão (refino M1h-C, Android/Xbox físicos).
 
-Referência técnica e lacunas de M1h-A: [docs/20-m1h-a-peren-palette.md](20-m1h-a-peren-palette.md).
+Referências: [M1h-A](20-m1h-a-peren-palette.md) e [M1h-B](21-m1h-b-peren-silhueta.md).
 
 ## Design system: primeiros tokens
 
