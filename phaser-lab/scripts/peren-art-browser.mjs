@@ -22,7 +22,8 @@ try{
  for(const [width,height] of [[360,800],[390,844],[1280,800]]){
   for(const variant of ['m1e','m1h']){
    const page=await browser.newPage({viewport:{width,height},hasTouch:width<500,isMobile:width<500});
-   const errors=[];page.on('pageerror',e=>errors.push(e.message));
+   const errors=[],loadedAssets=[];page.on('pageerror',e=>errors.push(e.message));
+   page.on('request',request=>{if(request.url().includes('peren-atlas.png'))loadedAssets.push(request.url());});
    const classic={...newClassicState(),gold:412};
    await page.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key:CLASSIC_KEY,value:classic});
    await page.goto(base+(variant==='m1h'?'?art=m1h':''),{waitUntil:'networkidle'});
@@ -37,8 +38,8 @@ try{
    await page.locator('#goForest').click();
    await page.locator('#hub').waitFor({state:'hidden'});
    await page.waitForFunction(()=>window.__perenLab.scene.getScene('ExplorationScene').scene.isActive());
-   const src=await page.evaluate(()=>window.__perenLab.textures.get('peren').getSourceImage().src);
-   assert.match(src,original?/\/art\/characters\/peren\/peren-atlas\.png/:/\/art-m1h\/characters\/peren\/peren-atlas\.png/);
+   assert.ok(loadedAssets.some(url=>url.includes('/'+imageRoot+'peren-atlas.png')),
+     'Texture must fetch '+imageRoot+'peren-atlas.png. Actual requests: '+loadedAssets.join(', '));
    await page.screenshot({path:'screenshots/m1h-a-floresta-'+variant+'-'+width+'.png',fullPage:true});
    assert.deepEqual(await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),CLASSIC_KEY),classic);
    assert.deepEqual(errors,[]);
