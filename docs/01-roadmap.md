@@ -17,7 +17,6 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [x] Criar sprite **autoral provisório** de Peren: 4 direções × 8 estados × 4 frames; validar atlas e clips por dados.
 - [x] Criar o primeiro tileset original de Mürin e seus props; geração por seed, rio, ponte, saída alcançável, nós de coleta.
 - [x] Integrar movimento direcional/Arcade Physics, joystick, corrida, câmera e coleta no laboratório Phaser isolado.
-- [x] Controle Xbox via Gamepad API: movimento analógico/direcional, RT/RB para correr, A/X para colher, Y para bolsa e botões de navegação no menu; testes de gamepad simulado. **Dispositivo físico pendente.**
 - [x] Testar geração determinística e alcance: 86 cenários/validações Node passaram localmente.
 - [x] Criar workflow de build e teste visual Playwright para navegador remoto no GitHub Actions.
 - [ ] Confirmar compilação Vite e Phaser empacotado no CI (dependências npm inacessíveis no container de desenvolvimento).
@@ -25,6 +24,19 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [ ] Validar fps, toque e responsividade em dispositivo Android físico.
 
 **Atenção:** M1a não encerra M1. Não inclui ainda inimigos, combate Phaser, magias animadas, crafting/economia integrada ou saves migrados. Detalhes: `docs/08-m1a-movimento.md`.
+
+## M1b — Criaturas e encontros (feature/phaser-m1b-criaturas) [EM EXECUÇÃO]
+
+- [x] Criar sprites e retratos únicos para Galho Infectado, Fungo Violeta e Ettercap (7 clips / 28 frames por criatura).
+- [x] Distribuir seis patrulhas por seed, em locais acessíveis e longe da chegada/saída.
+- [x] IA de patrulha, percepção com linha de visão, investigação, perseguição e recuo.
+- [x] Névoa e vegetação alteram a detecção; terreno úmido altera deslocamento.
+- [x] Encontro de observação e recuo seguro, sem economia, recompensas ou combate inventado.
+- [x] Testes determinísticos e atlas verificados localmente.
+- [ ] Compilação e teste real no Chromium pelo CI da branch M1b.
+- [ ] Aprovação visual das criaturas e Playtest em dispositivo Android.
+
+**Próxima PR M1c:** combate JRPG integrado às regras, três magias com FX e resolução idempotente de encontros. Detalhes: `docs/10-m1b-criaturas.md`.
 
 ## M1 — Portomonte + Floresta de Mürin (vertical slice)
 

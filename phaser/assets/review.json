@@ -15,5 +15,32 @@
     "tileset": "phaser/assets/regions/floresta-murin/ground-tiles.png",
     "props": "phaser/assets/regions/floresta-murin/",
     "qa": "geração determinística/alcance 86 testes; renderização Phaser e Android pendentes"
+  },
+  "mob-galho-infectado": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-galho-infectado/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-galho-infectado/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-galho-infectado/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
+  },
+  "mob-fungo-violeta": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-fungo-violeta/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-fungo-violeta/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-fungo-violeta/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
+  },
+  "mob-ettercap": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-ettercap/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-ettercap/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-ettercap/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
   }
 }

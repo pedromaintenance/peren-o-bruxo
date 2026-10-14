@@ -26,21 +26,25 @@ for(const [w,h] of [[390,844],[360,800]]){
  await page.waitForFunction(()=>!!window.__perenLab?.registry?.get('ready'),{timeout:30000});
  await page.waitForTimeout(350);
  const stats=await page.evaluate(()=>{const game=window.__perenLab,s=game.scene.getScene('ExplorationScene');return {valid:game.registry.get('worldValid'),texture:game.textures.exists('peren'),frames:game.textures.get('peren').frameTotal,anims:game.anims.anims.size,startX:s.player.x,startY:s.player.y}});
- assert.equal(stats.valid,true);assert.equal(stats.texture,true);assert.ok(stats.frames>=128,JSON.stringify(stats));assert.ok(stats.anims>=32,JSON.stringify(stats));
+ assert.equal(stats.valid,true);
+ const creatures=await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),g=window.__perenLab;return {n:s.beasts.length,types:s.beasts.map(b=>b.type),atlas:s.beasts.map(b=>g.textures.get(b.type).frameTotal)};});
+ assert.equal(creatures.n,6);assert.equal(new Set(creatures.types).size,3);assert.ok(creatures.atlas.every(n=>n>=28));assert.equal(stats.texture,true);assert.ok(stats.frames>=128,JSON.stringify(stats));assert.ok(stats.anims>=32,JSON.stringify(stats));
  await page.keyboard.down('ArrowRight');await page.waitForTimeout(700);await page.keyboard.up('ArrowRight');
  const moved=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.x);
  assert.ok(moved>stats.startX+12,`player did not move: ${moved} <= ${stats.startX}`);
  if(w===390){
-   // Move to an obstacle-free strip; collisions are correctly enabled on real maps.
+   // Choose a wide, obstacle-free part of the trail. Otherwise a correct
+   // Arcade collision can make this movement test fail at a tree/water edge.
    const before=await page.evaluate(()=>{
      const s=window.__perenLab.scene.getScene('ExplorationScene'),w=s.world;
      for(let y=3;y<w.height-3;y++)for(let x=3;x<w.width-8;x++){
-       const clear=Array.from({length:7},(_,dx)=>x+dx).every(xx=>[y-1,y,y+1].every(yy=>!w.blocked.has(`${xx},${yy}`)));
+       const clear=Array.from({length:7},(_,dx)=>x+dx).every(xx=>
+         [y-1,y,y+1].every(yy=>!w.blocked.has(`${xx},${yy}`)));
        if(!clear)continue;
        s.player.body.reset((x+.5)*32,(y+.5)*32);
        return s.player.x;
      }
-     throw Error('No suitable clear corridor for Xbox input QA');
+     throw Error('No suitable clear corridor found for Xbox input QA');
    });
    await page.evaluate(()=>{window.__mockXbox.axes[0]=1;window.__mockXbox.buttons[7]={pressed:true,value:1}});
    await page.waitForTimeout(430);
@@ -88,6 +92,16 @@ for(const [w,h] of [[390,844],[360,800]]){
    await page.waitForTimeout(100);
  }
  await page.screenshot({path:`screenshots/murin-forest-${w}.png`,fullPage:true});
+ // Real Phaser encounter preview and retreat: no XP, no loot, no stuck dialog.
+ await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),b=s.beasts[0];s.player.body.reset(b.sprite.x,b.sprite.y);});
+ await page.locator('#encounterModal').waitFor({state:'visible',timeout:8000});
+ assert.equal(await page.locator('#beastName').textContent(),'Galho Infectado');
+ const bagBefore=await page.evaluate(()=>JSON.stringify(window.__perenLab.registry.get('collected')));
+ await page.locator('#retreatBeast').click();
+ await page.locator('#encounterModal').waitFor({state:'hidden'});
+ assert.equal(await page.evaluate(()=>JSON.stringify(window.__perenLab.registry.get('collected'))),bagBefore);
+ await page.waitForTimeout(500);
+ assert.equal(await page.locator('#encounterModal').isVisible(),false,'repeated instant encounter softlock');
  // Return to hub from exit marker.
  await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),n=s.world.exit;s.player.setPosition((n.x+.5)*32,(n.y+.5)*32);s.player.body.reset(s.player.x,s.player.y)});
  await page.waitForTimeout(250);
