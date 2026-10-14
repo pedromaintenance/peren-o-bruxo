@@ -68,7 +68,7 @@ try{
   assert.ok(afterBuy.character.gold<before.character.gold);
   assert.match(await page.locator('#tradeFeedback').textContent(),/Comprado: 3/);
 
-  await page.waitForTimeout(510);
+  // Switching to Sell immediately must not inherit Buy's double-tap guard.
   await page.locator('[data-trade-mode="sell"]').click();
   assert.equal(await page.locator('[data-trade-mode="sell"]').getAttribute('aria-pressed'),'true');
   await page.locator('[data-item-id="eq-adaga-de-ferrugem"]').click();
