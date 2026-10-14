@@ -37,3 +37,9 @@ test('cada inimigo usa IDs existentes e comportamentos específicos',()=>{
  const ids=MURIN_BEASTS.map(x=>x.id);assert.deepEqual(ids,['mob-galho-infectado','mob-fungo-violeta','mob-ettercap']);
  assert.deepEqual(new Set(MURIN_BEASTS.map(x=>x.behavior)).size,3);
 });
+test('recuo evita outras criaturas próximas',()=>{
+ const w=buildForest('many-beasts'),beasts=spawnMurinCreatures(w);
+ const safe=safeRetreat(w,{x:beasts[0].x,y:beasts[0].y},beasts[0],beasts.slice(1));
+ assert.equal(environmentAt(w,safe.x,safe.y).walkable,true);
+ for(const b of beasts)assert.ok(Math.hypot(safe.x-b.x,safe.y-b.y)>=TILE*5);
+});
