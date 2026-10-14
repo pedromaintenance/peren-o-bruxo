@@ -6,14 +6,77 @@
 #battleUI{position:fixed;inset:0;z-index:30;pointer-events:none;color:#f4e1b9;font-family:Georgia,serif}#battleUI[hidden]{display:none}#battleHeader{position:absolute;top:calc(10px + env(safe-area-inset-top));left:10px;right:10px;background:#08151bee;border:1px solid #a88d5b;border-radius:12px;padding:10px;max-width:560px;margin:auto;box-shadow:0 5px 24px #0009}#battleHeader strong{color:#f1ce90;letter-spacing:1px;font-size:14px}#battleRound{float:right;color:#d9ab6c;font-size:12px}#battleMonster{margin-top:6px;font-size:14px}#battleStats{font-size:12px;color:#b8d1c6;padding-top:4px}#battleJournal{margin:7px 0 0;min-height:28px;line-height:1.4;color:#d4c5b7;font:11px system-ui}
 #battlePanel{position:absolute;bottom:calc(12px + env(safe-area-inset-bottom));left:10px;right:10px;padding:10px;border:2px solid #bb965f;border-radius:16px;background:#0c1720f5;box-shadow:0 8px 26px #000a;max-width:560px;margin:auto;pointer-events:auto}#battlePanel button{font:700 12px system-ui;background:#30463c;border-color:#aa9267;padding:9px 5px;min-height:43px;border-radius:9px;white-space:normal}#battlePanel button:disabled{opacity:.43}#battlePanel button.pad-selected{outline:2px solid #e7d19e;background:#57644e}#battlePanel .battle-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.battle-spells{border-top:1px solid #98846477;margin-top:8px;padding-top:6px}.battle-spells small{font-size:9px;letter-spacing:.08em;color:#bda77c}.battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px}#battleFinish{display:block;width:100%;background:#7a6240!important;font:700 14px Georgia,serif!important}#battleFinish[hidden],#battleCommands[hidden]{display:none}.battle-note{display:block;margin-top:6px;color:#bba98b;font:10px system-ui}#battleEndHint{font-size:13px;line-height:1.4;margin:6px 0;color:#e5cdab}
 @media(max-width:360px){#battleHeader{padding:7px}#battlePanel{padding:7px}#battlePanel button{min-height:40px;font-size:11px}#battleJournal{font-size:10px}}
-</style></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
+</style><link rel="stylesheet" href="./ui-theme.css"><link rel="stylesheet" href="./ui-portomonte.css"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
 <div id="controls" hidden><div id="status"><b>PEREN · FLORESTA DE MÜRIN</b>　<span id="inventory-count">0</span> materiais<div id="feedback">Procure recursos na mata.</div><div id="collected">Nenhum ingrediente coletado</div><div id="forestInfo"><span id="weather">Tempo: sereno</span> · <span id="threat">Patrulhas distantes</span></div><div id="gamepad-hud"></div></div><div id="joystick" role="application" aria-label="Joystick para mover Peren"><div id="joystick-knob"></div></div><div id="actions"><button id="sprintBtn" type="button" aria-label="Correr">CORRER</button><button id="gatherBtn" type="button" aria-label="Colher ingrediente">COLHER</button><button id="returnBtn" type="button" hidden>PORTOMONTE</button></div></div>
 <div id="encounterModal" hidden role="dialog" aria-modal="true" aria-label="Encontro na floresta"><section id="encounterBox"><small>FLORESTA DE MÜRIN · CONTATO HOSTIL</small><h2 id="beastName">Criatura</h2><img id="beastPortrait" src="" alt="Retrato da criatura"><p id="beastDescription"></p><div id="encounterHint">Encontro com criatura hostil. Escolha lutar ou recuar.</div><div class="actions"><button id="observeBeast" type="button">⚔️ ENFRENTAR (A)</button><button id="retreatBeast" type="button">RECUAR EM SEGURANÇA (B)</button></div><small id="combatNote">M1d: XP, ouro e loot salvos na cópia Phaser. O save clássico não será alterado.</small></section></div>
-<div id="hub"><section id="city"><small>CARCAÇA · LABORATÓRIO PHASER</small><div style="margin:12px 0;padding:10px;border:1px solid #d5aa69;border-radius:10px;background:#302c2499;font:12px/1.6 system-ui"><strong>DEMONSTRAÇÃO PHASER M1d</strong><div>Versão de testes: seu save clássico não será sobrescrito.</div><a href="../" style="color:#f4d398;text-decoration:underline">← Voltar ao Peren clássico</a></div><h1>PORTOMONTE</h1><p>As trilhas da Floresta de Mürin guardam ervas de alquimia. Peren parte para reconhecer a região e retorna pelo marco da estrada.</p><p id="progressSource"></p><p class="meta" id="cityMeta"></p>
-<div id="hubNav"><button id="showCraft" type="button">OFICINAS</button><button id="showShop" type="button">COMÉRCIO</button><button id="showInventory" type="button">VENDER</button></div>
-<h3 id="hubTitle"></h3><div id="hubPanel"></div>
-<div class="buttons"><button id="goForest" type="button">ENTRAR NA FLORESTA</button><button id="resetForest" type="button">GERAR NOVA FLORESTA</button><button id="endDayBtn" type="button">DESCANSAR · NOVO DIA</button><button id="exportProgress" type="button">EXPORTAR SAVE PHASER</button><label class="upload-label">IMPORTAR BACKUP PHASER<input id="importProgress" type="file" accept=".json,application/json" style="display:block;width:100%;max-width:100%;margin:8px 0;color:#f0d69e;font:11px system-ui"></label></div><p class="meta">Mover: WASD / setas / joystick / analógico Xbox / direcional. Correr: Shift ou RT/RB. Colher: E, Espaço, A ou X. Bolsa: Y. Menu: B ou ☰.</p><p id="gamepad-status" role="status" aria-live="polite">🎮 Xbox: conecte o controle e pressione um botão</p><p class="meta" id="combatWallet">Vitórias: 0 · Ouro: 0 · Nível: 1</p><small id="hubStatus">M1d: progresso salvo separadamente; seu save original do Peren 0.1.2 não será modificado.</small></section></div>
-<div id="bagPanel" hidden role="dialog" aria-label="Bolsa de ingredientes"><h2>Bolsa de Mürin</h2><p id="bagContents">Nenhum ingrediente coletado</p><p>Inventário real da cópia de desenvolvimento. Y / B para fechar.</p><button id="bagClose" type="button">FECHAR</button></div>
+<div id="hub" class="m1g-shell">
+ <section id="city" class="m1g-city">
+  <header class="m1g-masthead ui-panel">
+   <div class="m1g-brand"><b>PEREN</b><small>O BRUXO · CARCAÇA</small></div>
+   <div class="m1g-masthead-right">
+    <span class="ui-kicker" id="hubDay">Dia 1</span>
+    <span class="m1g-topstat" aria-label="Ouro disponível">◈ <strong id="hubGold">180</strong> <small>ouro</small></span>
+   </div>
+  </header>
+  <div class="m1g-city-title">
+    <div><span class="ui-kicker">Refúgio dos viajantes · Costa Sul</span><h1>PORTOMONTE</h1><span class="m1g-subtitle">A CIDADE ONDE COMEÇA A JORNADA</span></div>
+    <p>Entre o mar e as montanhas, cada viagem começa com uma escolha.</p>
+  </div>
+  <div class="m1g-stage">
+   <aside class="m1g-portrait ui-panel" aria-label="Estado de Peren">
+    <img class="m1g-portrait-image" src="./art/characters/peren/portrait.png" alt="Retrato em pixel art de Peren, de cabelos grisalhos e manto escuro">
+    <div><h2 class="m1g-portrait-title">Peren, o Bruxo</h2><small id="hubLevel">Nível 1</small></div>
+    <div class="m1g-metrics">
+     <div><div class="m1g-metric-head"><span>EXP</span><output id="hubXpValue">0 / 62</output></div><div class="ui-gauge ui-gauge--xp" role="meter" aria-label="Experiência"><i id="hubXpFill"></i></div></div>
+     <div><div class="m1g-metric-head"><span>PV · Vida</span><output id="hubHpValue">114 / 114</output></div><div class="ui-gauge" role="meter" aria-label="Vida"><i id="hubHpFill"></i></div></div>
+     <div><div class="m1g-metric-head"><span>PM · Mana</span><output id="hubMpValue">68 / 68</output></div><div class="ui-gauge ui-gauge--mana" role="meter" aria-label="Mana"><i id="hubMpFill"></i></div></div>
+     <div class="m1g-bag-count"><span id="hubBagCount">0 itens na bolsa</span><small id="hubAvailableActions">3 ações disponíveis</small></div>
+    </div>
+   </aside>
+   <section class="m1g-scenery ui-panel" style="background-image:linear-gradient(0deg,#061017ed 1%,#09202d50 60%,#0a1b2433 100%),url(&quot;./art/regions/portomonte/visao-carcaca.webp&quot;)" aria-label="Visão da cidade de Portomonte">
+    <div class="m1g-scene-caption">
+     <span class="ui-kicker">Aventura · Refúgio · Conhecimento</span>
+     <strong>O chamado de Mürin</strong>
+     <p>Das tavernas aos cais, Peren reúne provisões e conhecimento antes de caminhar pelas trilhas da floresta. Recolha recursos, enfrente criaturas e retorne à cidade para aperfeiçoar sua arte.</p>
+    </div>
+   </section>
+   <nav id="hubNav" class="m1g-hubnav ui-panel" aria-label="Ações de Portomonte">
+    <button id="goForest" class="ui-button" type="button" data-visual="explore" style="background-image:linear-gradient(90deg,#0d2230f0,#0d22309d),url(&quot;./art/regions/floresta-murin/tree-0.png&quot;)"><b>✦ Explorar</b><small>Floresta de Mürin</small></button>
+    <button id="showCraft" class="ui-button" type="button" data-visual="craft"><b>⚗ Alquimia e Criação</b><small>Oficinas e receitas reais</small></button>
+    <button id="showShop" class="ui-button" type="button" data-visual="shop"><b>◈ Comércio</b><small>Comprar suprimentos</small></button>
+    <button id="openBagHub" class="ui-button" type="button"><b>▣ Inventário</b><small>Consultar a bolsa de Peren</small></button>
+    <button id="endDayBtn" class="ui-button" type="button"><b>☾ Descansar</b><small>Iniciar um novo dia</small></button>
+    <button id="tutorsUnavailable" class="ui-button" type="button" data-unavailable disabled aria-disabled="true" title="Tutores ainda não integrados ao Phaser"><b>⌘ Tutores</b><small>Em integração · jogo clássico</small></button>
+   </nav>
+  </div>
+  <div class="m1g-console">
+   <section class="m1g-content ui-panel" aria-label="Detalhes e ações selecionadas">
+    <span class="ui-kicker">Portomonte · serviços</span>
+    <h3 id="hubTitle">Armazém de Portomonte</h3>
+    <div id="hubPanel"></div>
+    <p id="progressSource">Carregando progresso…</p>
+    <p id="cityMeta" class="meta"></p>
+    <p id="combatWallet" class="meta"></p>
+   </section>
+   <section class="m1g-tools ui-panel" aria-label="Ferramentas da demonstração">
+    <span class="ui-kicker">Expedições &amp; progresso</span>
+    <button id="showInventory" class="ui-button" type="button">Vender itens da bolsa</button>
+    <button id="resetForest" class="ui-button" type="button">Gerar nova floresta</button>
+    <button id="exportProgress" class="ui-button" type="button">Exportar backup Phaser</button>
+    <label class="upload-label">Restaurar backup Phaser<input id="importProgress" type="file" accept=".json,application/json"></label>
+    <small id="hubOriginCity">Origem do save: Portomonte</small>
+    <small id="hubSaveOrigin">Progresso Phaser independente</small>
+    <small id="hubStatus">DEMONSTRAÇÃO PHASER M1d · seu save clássico não será modificado.</small>
+   </section>
+  </div>
+  <footer class="m1g-footer">
+   <span id="gamepad-status" role="status" aria-live="polite">🎮 Xbox: conecte o controle e pressione um botão</span>
+   <span>WASD / setas · A selecionar · B voltar · Y inventário</span>
+   <a href="../">Voltar ao Peren clássico</a>
+  </footer>
+ </section>
+</div>
+<div id="bagPanel" class="m1g-inventory-preview ui-panel" hidden role="dialog" aria-label="Bolsa de ingredientes"><h2>Bolsa de Peren</h2><p id="bagContents">Nenhum ingrediente coletado</p><p>Inventário real da cópia de desenvolvimento. Y / B para fechar.</p><button id="bagClose" type="button">FECHAR</button></div>
 <div id="battleUI" hidden role="region" aria-label="Combate de Peren">
  <div id="battleHeader"><strong>⚔️ BATALHA EM MÜRIN</strong><span id="battleRound">RODADA 1</span><div id="battleMonster">Criatura</div><div id="battleStats">Peren</div><p id="battleJournal" role="status" aria-live="polite">Peren ergue o cajado.</p></div>
  <div id="battlePanel"><div id="battleCommands">

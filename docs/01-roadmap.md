@@ -113,3 +113,18 @@ Detalhes: `docs/11-m1c-combate.md`.
 - [ ] Não fazer merge na `main` ou sincronização bidirecional até a etapa de release.
 
 Detalhes: `docs/12-m1d-progresso.md`.
+
+
+## M1g — UI Premium + Portomonte (revisão visual incremental)
+
+Direção artística: interfaces de JRPG pixel art, molduras douradas, painéis em azul-petróleo, retratos, HUD e cenas que reutilizam materiais do Peren clássico. As imagens conceituais aprovadas são metas, não assets prontos para usar como páginas estáticas.
+
+- **M1g-A:** design system, hub funcional de Portomonte e QA visual mobile/desktop.
+- **M1g-B:** inventário por categoria, equipamento com slots reais, seleção de itens.
+- **M1g-C:** alquimia e oficinas com receitas/requisitos reais e feedback.
+- **M1g-D:** comércio com retrato, comprar/vender, preços reais e controle por quantidade.
+- **M1g-E:** HUD, modais de encontro e menu JRPG de batalha.
+- **M1g-F:** integração, screenshot review, Android e Xbox reais, desempenho/PWA.
+
+**Não juntar toda a milestone em uma PR:** fatias empilhadas, cada uma revisável.
+O escopo operacional e critérios de aceite estão em [docs/14-m1g-ui-premium.md](14-m1g-ui-premium.md).

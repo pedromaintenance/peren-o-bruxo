@@ -1,4 +1,4 @@
-/** Copies only M1a art into local Vite public files before build and dev. */
+/** Copies artwork and classic environment references into the standalone Phaser bundle. */
 import { cp, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { join, resolve } from 'node:path';
@@ -10,4 +10,11 @@ for(const path of ['characters/peren','regions/floresta-murin','monsters/mob-gal
   await mkdir(join(dest,path),{recursive:true});
   await cp(join(source,path),join(dest,path),{recursive:true,force:true});
 }
-console.log('Assets autorais M1c sincronizados de phaser/assets -> public/art');
+// The classic Peren already ships these self-contained ambience paintings.
+const classic=resolve(lab,'..','assets');
+const town=join(dest,'regions','portomonte');
+await mkdir(town,{recursive:true});
+for(const file of ['visao-carcaca.webp']){
+  await cp(join(classic,file),join(town,file),{force:true});
+}
+console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');

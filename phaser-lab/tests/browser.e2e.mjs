@@ -66,7 +66,9 @@ for(const [w,h] of [[390,844],[360,800]]){
    }
    throw Error('Unable to find a canopy test position');
  });
- await page.keyboard.down('ArrowDown');await page.waitForTimeout(330);await page.keyboard.up('ArrowDown');
+ await page.keyboard.down('ArrowDown');
+ try{await page.waitForFunction(start=>window.__perenLab.scene.getScene('ExplorationScene').player.y>start+12,startUnderCanopy,{timeout:2200,polling:50});}
+ finally{await page.keyboard.up('ArrowDown');}
  const afterUnderCanopy=await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').player.y);
  assert.ok(afterUnderCanopy>startUnderCanopy+12,
    'Green canopy blocked walking: '+afterUnderCanopy+' <= '+startUnderCanopy);
