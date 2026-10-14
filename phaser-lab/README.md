@@ -126,3 +126,9 @@ A nova variante **em revisão** pode ser testada sem afetar a arte padrão com `
 `scripts/peren-m1hc-generator.mjs` gera a pasta `public/art-m1hc/` a partir da candidata M1h-B, preservando os outros atlases e PNGs. O script altera apenas cor dos pixels já opacos na cabeça, e mantém cada pixel do corpo abaixo da linha 43, bem como o alfa do sprite inteiro.
 
 Validação: `npm test`, `node scripts/peren-m1hc-preview.mjs` para uma prancha do antes/depois, `node scripts/peren-m1hc-browser.mjs` após build e CI da branch M1h-C. Documentação de aceite: [docs/22-m1h-c-peren-refino.md](../docs/22-m1h-c-peren-refino.md). Esta arte **não** está aprovada como padrão.
+
+## M1h-D — Peren austero: bigode, boca e sobrancelhas
+
+A nova candidata artística se testa com `?art=m1hd` na demonstração ou `review.html?art=m1hd` no ateliê. A interface de revisão permite alternar entre M1e, M1h-A, M1h-B, M1h-C e M1h-D.
+
+O gerador determinístico `scripts/peren-m1hd-generator.mjs` produz três retratos e um atlas de 128 frames a partir da M1h-C, reconstruindo expressão, bigode e lábios sem afetar alfa, corpo, sprites anteriores, regras ou saves. QA: `npm test`, `node scripts/peren-m1hd-preview.mjs` e `node scripts/peren-m1hd-browser.mjs` após build; workflow `phaser-m1h-d.yml`. Veja [docs/23-m1h-d-expressao.md](../docs/23-m1h-d-expressao.md) para pendências de aprovação estética e hardware real.
