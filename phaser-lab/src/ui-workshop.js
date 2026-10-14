@@ -50,7 +50,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     search=doc.getElementById('craftSearch'),stations=doc.getElementById('craftStations'),
     button=doc.getElementById('craftMake'),more=doc.getElementById('craftMore');
   if(!root||!list||!search||!stations||!button||!more)throw Error('Interface M1g-C incompleta');
-  let station='all',selectedId=null,limit=48,model=null,lastFocus=null,busy=false;
+  let station='all',selectedId=null,limit=48,model=null,lastFocus=null,busy=false,lastCommittedAt=-Infinity;
   const isOpen=()=>!root.hidden;
   function select(id,{focus=false}={}){
     selectedId=id;render();
@@ -122,13 +122,15 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     return model;
   }
   function make(){
-    if(busy||!isOpen())return false;
+    // Mobile double taps and repeated controller A must never charge for two batches.
+    if(busy||!isOpen()||performance.now()-lastCommittedAt<450)return false;
     const current=workshopViewModel(bridge.state,catalogs,{station,search:search.value,selectedId}).selected;
     if(!current?.eligible||current.id!==selectedId){render();return false;}
     busy=true;button.disabled=true;
     try{
       // One and only one canonical transaction. Quantity is defined by the catalog.
       const txResult=bridge.execute({type:'craft',id:current.id});
+      lastCommittedAt=performance.now();
       put(doc,'craftFeedback','Criado: '+current.outputCount+' × '+current.resultName+' — progresso salvo.');
       doc.getElementById('craftFeedback').dataset.state='success';
       onChange(txResult);
