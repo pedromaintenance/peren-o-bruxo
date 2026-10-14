@@ -249,9 +249,12 @@ for(const [w,h] of [[390,844],[360,800]]){
  assert.equal(craftsAfter,craftsBefore+1);
  await page.locator('#craftClose').click();
  await page.locator('#showShop').click();
+ await page.locator('#tradeUI').waitFor({state:'visible'});
  const tradeBefore=await page.evaluate(()=>window.__perenProgress.save.character.gold);
- await page.locator('.market-line button').first().click();
+ await page.locator('[data-item-id="mat-agua-purificada"]').click();
+ await page.locator('#tradeConfirm').click();
  assert.ok(await page.evaluate(()=>window.__perenProgress.save.character.gold)<tradeBefore);
+ await page.locator('#tradeClose').click();
  const ledgerBefore=await page.evaluate(()=>Object.keys(window.__perenProgress.save.ledger).length);
  const classicPersist=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),CLASSIC_KEY);
  assert.deepEqual(classicPersist,classic,'Original save must never change');

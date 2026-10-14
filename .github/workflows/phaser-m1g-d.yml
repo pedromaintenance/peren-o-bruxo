@@ -1,0 +1,71 @@
+name: Peren M1g-D - comercio premium
+on:
+  push:
+    branches: [feature/phaser-m1g-d-comercio]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-d.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-d.yml"
+permissions:
+  contents: read
+jobs:
+  marketplace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar motor canonico e mercado
+        run: npm test
+      - name: Compilar Phaser e telas
+        run: npm run build
+      - name: Preparar PWA offline separado
+        run: node scripts/prepare-demo.mjs
+      - name: Conferir artes e paginas
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/scenes/portomonte-market.svg
+          test -s dist/scenes/merchants/sofia.svg
+          test -s dist/scenes/merchants/jonathan.svg
+          test -s dist/scenes/merchants/alina.svg
+          test -s dist/demo-sw.js
+          grep -lq 'trade-screen' dist/assets/*.css
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Validar comercio e capturas mobile/desktop
+        run: node scripts/marketplace-browser.mjs
+      - name: Regressao Portomonte
+        run: node scripts/portomonte-browser.mjs
+      - name: Regressao Inventario
+        run: node scripts/inventory-browser.mjs
+      - name: Regressao Alquimia
+        run: node scripts/workshop-browser.mjs
+      - name: Regressao Exploracao e Combate
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Capturas do comercio
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-d-comercio
+          path: phaser-lab/screenshots/comercio-m1g-*.png
+          if-no-files-found: warn

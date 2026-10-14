@@ -6,7 +6,7 @@
 #battleUI{position:fixed;inset:0;z-index:30;pointer-events:none;color:#f4e1b9;font-family:Georgia,serif}#battleUI[hidden]{display:none}#battleHeader{position:absolute;top:calc(10px + env(safe-area-inset-top));left:10px;right:10px;background:#08151bee;border:1px solid #a88d5b;border-radius:12px;padding:10px;max-width:560px;margin:auto;box-shadow:0 5px 24px #0009}#battleHeader strong{color:#f1ce90;letter-spacing:1px;font-size:14px}#battleRound{float:right;color:#d9ab6c;font-size:12px}#battleMonster{margin-top:6px;font-size:14px}#battleStats{font-size:12px;color:#b8d1c6;padding-top:4px}#battleJournal{margin:7px 0 0;min-height:28px;line-height:1.4;color:#d4c5b7;font:11px system-ui}
 #battlePanel{position:absolute;bottom:calc(12px + env(safe-area-inset-bottom));left:10px;right:10px;padding:10px;border:2px solid #bb965f;border-radius:16px;background:#0c1720f5;box-shadow:0 8px 26px #000a;max-width:560px;margin:auto;pointer-events:auto}#battlePanel button{font:700 12px system-ui;background:#30463c;border-color:#aa9267;padding:9px 5px;min-height:43px;border-radius:9px;white-space:normal}#battlePanel button:disabled{opacity:.43}#battlePanel button.pad-selected{outline:2px solid #e7d19e;background:#57644e}#battlePanel .battle-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.battle-spells{border-top:1px solid #98846477;margin-top:8px;padding-top:6px}.battle-spells small{font-size:9px;letter-spacing:.08em;color:#bda77c}.battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px}#battleFinish{display:block;width:100%;background:#7a6240!important;font:700 14px Georgia,serif!important}#battleFinish[hidden],#battleCommands[hidden]{display:none}.battle-note{display:block;margin-top:6px;color:#bba98b;font:10px system-ui}#battleEndHint{font-size:13px;line-height:1.4;margin:6px 0;color:#e5cdab}
 @media(max-width:360px){#battleHeader{padding:7px}#battlePanel{padding:7px}#battlePanel button{min-height:40px;font-size:11px}#battleJournal{font-size:10px}}
-</style><link rel="stylesheet" href="./ui-theme.css"><link rel="stylesheet" href="./ui-portomonte.css"><link rel="stylesheet" href="./ui-inventory.css"><link rel="stylesheet" href="./ui-workshop.css"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
+</style><link rel="stylesheet" href="./ui-theme.css"><link rel="stylesheet" href="./ui-portomonte.css"><link rel="stylesheet" href="./ui-inventory.css"><link rel="stylesheet" href="./ui-workshop.css"><link rel="stylesheet" href="./ui-marketplace.css"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
 <div id="controls" hidden><div id="status"><b>PEREN · FLORESTA DE MÜRIN</b>　<span id="inventory-count">0</span> materiais<div id="feedback">Procure recursos na mata.</div><div id="collected">Nenhum ingrediente coletado</div><div id="forestInfo"><span id="weather">Tempo: sereno</span> · <span id="threat">Patrulhas distantes</span></div><div id="gamepad-hud"></div></div><div id="joystick" role="application" aria-label="Joystick para mover Peren"><div id="joystick-knob"></div></div><div id="actions"><button id="sprintBtn" type="button" aria-label="Correr">CORRER</button><button id="gatherBtn" type="button" aria-label="Colher ingrediente">COLHER</button><button id="returnBtn" type="button" hidden>PORTOMONTE</button></div></div>
 <div id="encounterModal" hidden role="dialog" aria-modal="true" aria-label="Encontro na floresta"><section id="encounterBox"><small>FLORESTA DE MÜRIN · CONTATO HOSTIL</small><h2 id="beastName">Criatura</h2><img id="beastPortrait" src="" alt="Retrato da criatura"><p id="beastDescription"></p><div id="encounterHint">Encontro com criatura hostil. Escolha lutar ou recuar.</div><div class="actions"><button id="observeBeast" type="button">⚔️ ENFRENTAR (A)</button><button id="retreatBeast" type="button">RECUAR EM SEGURANÇA (B)</button></div><small id="combatNote">M1d: XP, ouro e loot salvos na cópia Phaser. O save clássico não será alterado.</small></section></div>
 <div id="hub" class="m1g-shell">
@@ -172,6 +172,55 @@
    </aside>
   </div>
   <footer class="craft-footer">Criação salva apenas no Phaser · Teclado: setas / Enter / Esc · Xbox: direcional navega, X troca estação, A cria, B volta</footer>
+ </div>
+</section>
+
+
+<section id="tradeUI" class="trade-screen" hidden role="dialog" aria-modal="true" aria-labelledby="tradeTitle">
+ <div class="trade-shell">
+  <header class="trade-masthead ui-panel">
+   <div><span class="ui-kicker">Mercadores · Costa Sul</span><h2 id="tradeTitle">COMÉRCIO</h2><p id="tradeCity">Portomonte</p></div>
+   <div class="trade-wallet"><span>◈ <strong id="tradeGold">180</strong> ouro</span><button id="tradeClose" class="ui-button" type="button">← Voltar</button></div>
+  </header>
+  <div class="trade-layout">
+   <aside class="trade-merchant-panel ui-panel" aria-label="Mercador da cidade">
+    <div class="ui-kicker">Os rostos de Portomonte</div>
+    <div class="trade-portrait-stage" aria-label="Cena pixelada do comércio de Portomonte">
+     <img id="tradePortrait" alt="Retrato provisório do mercador" src="" hidden>
+    </div>
+    <h3 id="tradeMerchantName">Mercador</h3>
+    <span id="tradeMerchantProfile" class="trade-profile"></span>
+    <p id="tradeMerchantDescription">Converse com os comerciantes do refúgio.</p>
+    <nav id="tradeMerchants" class="trade-merchants" aria-label="Mercadores locais"></nav>
+    <p class="trade-merchant-note">Os comerciantes e perfis são oficiais do catálogo. Seus estoques individuais ainda não são definidos no motor.</p>
+   </aside>
+   <section class="trade-goods-panel ui-panel" aria-label="Lista de itens negociáveis">
+    <div class="trade-goods-head"><div><span class="ui-kicker">Mercado local</span><h3>MERCADORIAS</h3></div><span id="tradeCount">0 itens</span></div>
+    <div class="trade-mode" role="group" aria-label="Tipo de negociação">
+     <button type="button" class="ui-button trade-mode-button is-active" data-trade-mode="buy" aria-pressed="true">◈ Comprar</button>
+     <button type="button" class="ui-button trade-mode-button" data-trade-mode="sell" aria-pressed="false">◇ Vender</button>
+    </div>
+    <p id="tradeStockNotice" class="trade-stock-notice">Mercadorias disponíveis no mercado da cidade.</p>
+    <label class="trade-search-label" for="tradeSearch">Buscar mercadoria<input id="tradeSearch" class="ui-field" type="search" placeholder="Item, tipo ou categoria..." autocomplete="off"></label>
+    <div id="tradeItems" class="trade-items" aria-label="Mercadorias e preços"></div>
+    <button id="tradeMore" type="button" class="ui-button trade-more" hidden>Mostrar mais</button>
+   </section>
+   <aside class="trade-checkout-panel ui-panel" aria-label="Detalhes e confirmação">
+    <span class="ui-kicker">Detalhes do item</span>
+    <div class="trade-item-preview"><span id="tradeDetailIcon" aria-hidden="true">◇</span></div>
+    <h3 id="tradeDetailName">Selecione um item</h3>
+    <span id="tradeDetailType" class="trade-detail-type">—</span>
+    <p id="tradeDetailDescription">Escolha um item para consultar preço e quantidade.</p>
+    <div class="trade-checkout-values"><span id="tradeOwned"></span><span id="tradeUnitPrice"></span></div>
+    <label class="trade-amount-label" for="tradeQuantity">Quantidade<input id="tradeQuantity" class="ui-field" type="number" min="1" max="99" step="1" value="1" inputmode="numeric"></label>
+    <strong id="tradeTotal" class="trade-total">Total: —</strong>
+    <p id="tradeReason" class="trade-reason" data-ready="false"></p>
+    <button id="tradeConfirm" type="button" class="ui-button ui-button--primary" disabled>Negociação indisponível</button>
+    <div id="tradeFeedback" class="trade-feedback" role="status" aria-live="polite">Selecione um item para negociar.</div>
+    <p class="trade-meta">Compra e venda reais; nenhum estoque fictício foi criado. Negociações por lote são registradas numa única transação.</p>
+   </aside>
+  </div>
+  <footer class="trade-footer">Teclado: Tab / setas / Esc · Xbox: A confirma, X alterna comprar/vender, esquerda/direita ajusta quantidade, B volta</footer>
  </div>
 </section>
 

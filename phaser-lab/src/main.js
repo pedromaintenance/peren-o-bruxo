@@ -8,6 +8,7 @@ import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePric
 import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
+import {createMarketplaceScreen} from './ui-marketplace.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -29,6 +30,9 @@ const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#10
   scene:[ExplorationScene,BattleScene]});
 window.__perenLab=app;
 const workshop=createWorkshopScreen({document,bridge,catalogs,onChange:()=>{
+  app.registry.set('combatProfile',bridge.combatProfile());renderHub();
+}});
+const marketplace=createMarketplaceScreen({document,bridge,catalogs,onChange:()=>{
   app.registry.set('combatProfile',bridge.combatProfile());renderHub();
 }});
 const seed=String(new URLSearchParams(location.search).get('seed')||bridge.read().worlds.activeSeed||'murin-001').slice(0,60);
@@ -144,6 +148,16 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(marketplace.isOpen()){
+    if(key.b||key.menu){marketplace.close();return;}
+    if(key.x){marketplace.setMode(marketplace.mode==='buy'?'sell':'buy');return;}
+    if(key.up)marketplace.move(-1);
+    else if(key.down)marketplace.move(1);
+    else if(key.left)marketplace.adjustQuantity(-1);
+    else if(key.right)marketplace.adjustQuantity(1);
+    else if(key.a)marketplace.transact();
+    return;
+  }
   if(workshop.isOpen()){
     if(key.b||key.menu){workshop.close();return;}
     if(key.x){workshop.cycleStation(1);return;}
@@ -183,6 +197,7 @@ window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
+  if(marketplace.isOpen()){marketplace.close();return;}
   if(workshop.isOpen()){workshop.close();return;}
   if(inventory.isOpen()){inventory.close();return;}
   if(!$('bagPanel').hidden){toggleBag(false);return;}
@@ -270,23 +285,19 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
   panel.textContent='Alquimia e Criação agora têm uma oficina própria. Selecione a opção no menu de Portomonte para preparar receitas reais, conferir ingredientes e nível de ofício.';
  }else if(hubTab==='shop'){
   title.textContent='Comércio de Portomonte';
-  const stock=['ing-blue-mountain-flower','ing-red-mountain-flower','ing-mudcrab-chitin','mat-agua-purificada','ger-pocao-restauradora','mat-couro-curtido','mat-carvao-de-forja','ger-racoes-de-viagem'];
-  for(const id of stock){const item=catalogs.itensById[id];if(!item)continue;
-   addButton(`COMPRAR ${purchasePrice(s,item,city)}`,item.nome,`Suprimento local · ${s.bag[id]||0} na bolsa`,'buy',id,s.gold<purchasePrice(s,item,city));
-  }
+  panel.textContent='Na nova banca mercantil, negocie os suprimentos reais da cidade com cotação e quantidade, ou venda os itens da mochila.';
  }else if(hubTab==='bag'){
   title.textContent='Vender itens da mochila';
-  for(const [id,count] of Object.entries(s.bag).filter(([,n])=>n>0).slice(0,24)){
-   const item=catalogs.itensById[id];if(!item)continue;
-   addButton(`VENDER +${salePrice(s,item,city)}`,`${count}× ${item.nome}`,`${item.categoria} · ${salePrice(s,item,city)} moedas/unidade`,'sell',id,[s.equip.weapon,s.equip.armor,s.equip.relic].includes(id));
-  }
+  panel.textContent='O comércio possui uma aba específica para vender. Seu inventário permanece separado das transações.';
  }else{title.textContent='Armazém de Portomonte';panel.textContent='Peren pode coletar ingredientes em Mürin, voltar para a cidade, fabricar itens, negociar e guardar o progresso nesta versão de desenvolvimento.';}
  if(hubTab!=='intro')panel.append(wrapper);
  if(inventory.isOpen())inventory.render();
  if(workshop.isOpen())workshop.render();
+ if(marketplace.isOpen())marketplace.render();
 }
 $('showCraft').addEventListener('click',()=>{hubTab='craft';renderHub();workshop.open()});
-for(const [id,tab] of [['showShop','shop'],['showInventory','bag']])$(id).addEventListener('click',()=>{hubTab=hubTab===tab?'intro':tab;renderHub()});
+$('showShop').addEventListener('click',()=>{hubTab='shop';renderHub();marketplace.open('buy')});
+$('showInventory').addEventListener('click',()=>{hubTab='bag';renderHub();marketplace.open('sell')});
 $('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
 $('exportProgress').addEventListener('click',()=>{
  const blob=new Blob([bridge.export()],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');

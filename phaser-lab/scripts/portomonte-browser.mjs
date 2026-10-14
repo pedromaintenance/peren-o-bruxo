@@ -58,6 +58,8 @@ try {
   await page.locator('#craftClose').click();
   await page.locator('#showShop').click();
   assert.match(await page.locator('#hubTitle').textContent(),/Comércio/);
+  assert.equal(await page.locator('#tradeUI').isVisible(),true);
+  await page.locator('#tradeClose').click();
   await page.locator('#openBagHub').click();
   assert.equal(await page.locator('#inventoryUI').isVisible(),true);
   assert.equal(await page.locator('#bagPanel').isVisible(),false);

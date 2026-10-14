@@ -84,3 +84,9 @@ A nova tela `#inventoryUI` abre pelo botão **Inventário** em Portomonte (tecla
 Em Portomonte, **Alquimia e Criação** abre uma tela própria que mostra receitas reais por estação, requisitos de proficiência, materiais possuídos e necessários, saída e contagem por lote. Criar executa exatamente uma transação do motor existente; ações e inventário persistem apenas no save Phaser. Arte vetorial provisória sem interface embutida: `public/scenes/portomonte-workshop.svg`.
 
 Teclado (setas/Esc), Xbox (D-pad / A / B / X) e touchscreen. Veja [docs/16-m1g-c-alquimia.md](../docs/16-m1g-c-alquimia.md). Testes: `npm test`, `npm run build`, `node scripts/workshop-browser.mjs`.
+
+## M1g-D — Comércio de Portomonte
+
+**Comércio** abre a nova tela de mercado na aba **Comprar**; **Vender itens da bolsa** abre a aba **Vender**. O usuário pode consultar os mercadores oficiais Sofia, Jonathan e Alina, mas os produtos da tela correspondem aos suprimentos **comuns de Portomonte** já disponibilizados no M1d — o catálogo ainda não informa estoque individual. Preço, habilidades e transações usam `src/progress.js`. Quantidade de 1–99 (respeitando ouro e bolsa) é registrada como um batch atômico, conservando os mesmos preços progressivos por unidade.
+
+Retratos e cenário vetoriais provisórios, sem textos/controles embutidos. Xbox D-pad navega, X alterna compra/venda, A confirma, B volta; toque e teclado também funcionam. Detalhes em [docs/17-m1g-d-comercio.md](../docs/17-m1g-d-comercio.md). QA adicional: `node scripts/marketplace-browser.mjs` após build com Chromium.
