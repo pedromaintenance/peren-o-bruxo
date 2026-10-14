@@ -104,3 +104,9 @@ A revisão de interface inclui correções no design system (barra EXP), nos alv
 Após `npm run build` e `node scripts/prepare-demo.mjs`, executar `node scripts/audit-package.mjs` para conferir manifesto, assets/offline, escopo do service worker e peso do pacote. Executar `node scripts/vertical-slice-audit.mjs` com Chromium instalado para obter 35 capturas (sete cenas, cinco resoluções incluindo paisagem) e métricas JSON de overflow, foco e alvos touch. `npm test` também verifica a razão de contraste dos tokens CSS pelo critério 4,5:1 para texto sobre os fundos definidos. O workflow `.github/workflows/phaser-m1g-f.yml` executa tudo e todas as regressões anteriores.
 
 O relatório de lacunas entre conceito e jogo está em [docs/19-m1g-f-auditoria.md](../docs/19-m1g-f-auditoria.md). A direção artística e o hardware real precisam de aceite separado antes de qualquer merge/publicação.
+
+## M1h-A — Peren grisalho, candidato artístico isolado
+
+Depois de `npm install`, rode `npm run build`. Isso mantém o M1e intacto em `public/art/` e produz uma segunda versão do atlas completo (128 frames, 48×64) e dos três retratos em `public/art-m1h/`. Compare ambos em `/review.html?art=m1h`; para jogar com a nova paleta use `/?art=m1h`. Sem o parâmetro, mantém-se a versão anterior. Os saves e as regras não são modificados.
+
+QA: `npm test` para preservação de PNG/canal alfa; `node scripts/peren-art-browser.mjs` após build; CI com regressões M1g-F. Veja [docs/20-m1h-a-peren-palette.md](../docs/20-m1h-a-peren-palette.md) para o que ainda impede essa arte de ser aprovada como definitiva (silhueta/chapéu, retratos e inspeção física).
