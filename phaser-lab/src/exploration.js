@@ -34,13 +34,19 @@ export class ExplorationScene extends Phaser.Scene {
     this.physics.world.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
     const terrain=this.add.group();
     for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++)terrain.add(this.add.image(x*TILE,y*TILE,'forest-ground',world.ground[y][x]).setOrigin(0).setDepth(-10));
+    // Foliage is visual only. Physics colliders are small trunk footprints.
+    // Keeping images separate avoids StaticBody offsets turning crowns into walls.
     const colliders=this.physics.add.staticGroup();
+    this.treeTrunks=[];
     for(const obj of world.obstacles){
-      const spr=colliders.create((obj.x+.5)*TILE,(obj.y+.5)*TILE,obj.kind==='tree'?`tree-${obj.variant}`:'stone');
-      spr.setOrigin(.5,obj.kind==='tree'?.91:.88);spr.setDepth(spr.y);
-      spr.body.setSize(obj.kind==='tree'?22:22,obj.kind==='tree'?14:12);
-      spr.body.setOffset(obj.kind==='tree'?21:5,obj.kind==='tree'?70:20);
-      spr.refreshBody();
+      const x=(obj.x+.5)*TILE,y=(obj.y+.5)*TILE;
+      const tree=obj.kind==='tree';
+      this.add.image(x,y,tree?`tree-${obj.variant}`:'stone')
+        .setOrigin(.5,tree?.91:.88).setDepth(y+(tree?6:0));
+      const trunk=colliders.create(x,y+(tree?-2:-5),'stone');
+      trunk.setDisplaySize(tree?14:22,tree?14:14).setVisible(false);
+      trunk.refreshBody();
+      if(tree)this.treeTrunks.push({id:obj.id,x,y,collider:trunk});
     }
     // Static blockers over water, invisible. Sprite art remains in the ground layer.
     const blockers=this.physics.add.staticGroup();
