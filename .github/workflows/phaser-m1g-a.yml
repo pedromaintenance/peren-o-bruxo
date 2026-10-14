@@ -1,0 +1,53 @@
+name: Peren M1g-A - Portomonte premium
+on:
+  push:
+    branches: [feature/phaser-m1g-a-portomonte-ui]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-a.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-a.yml"
+permissions:
+  contents: read
+jobs:
+  portomonte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar regras e renderizador puro
+        run: npm test
+      - name: Compilar o jogo e o atelie
+        run: npm run build
+      - name: Preparar o pacote offline isolado
+        run: node scripts/prepare-demo.mjs
+      - name: Conferir imagens e paginas reais
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/review.html
+          test -s dist/art/regions/portomonte/visao-carcaca.webp
+          test -s dist/art/regions/portomonte/laboratorio.webp
+          test -s dist/art/regions/portomonte/mercado.webp
+          test -s dist/demo-sw.js
+      - name: Preparar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Testar UI em 360, 390 e 1280 pixels
+        run: node scripts/portomonte-browser.mjs
+      - name: Salvar capturas de revisao
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-a-portomonte
+          path: phaser-lab/screenshots/portomonte-m1g-*.png
+          if-no-files-found: warn
