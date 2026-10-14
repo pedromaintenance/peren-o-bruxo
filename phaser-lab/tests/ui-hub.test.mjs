@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {hubViewModel,applyHubViewModel} from '../src/ui-hub.js';
-import {buildCatalogs,newClassicState} from '../src/progress.js';
+import {buildCatalogs,newClassicState,maxClassicHp,maxClassicMp} from '../src/progress.js';
 import {readFileSync} from 'node:fs';
 const data={};for(const key of ['itens','receitas','magias','monstros','cidades'])data[key]=JSON.parse(readFileSync(new URL('../data/'+key+'.json',import.meta.url)));
 const catalogs=buildCatalogs(data);
 test('Portomonte view reads real level, HP/MP maxima and EXP progression',()=>{
  const s=newClassicState(),vm=hubViewModel(s,catalogs);
  assert.equal(vm.day,'Dia 1');assert.equal(vm.gold,'180');
- assert.equal(vm.hp,'114 / 114');assert.equal(vm.mp,'68 / 68');
+ assert.equal(vm.hp,'114 / '+maxClassicHp(s,catalogs));assert.equal(vm.mp,'68 / '+maxClassicMp(s));
  assert.equal(vm.xp,'0 / 62');assert.equal(vm.xpPct,0);
  assert.equal(vm.origin,'Portomonte');
  assert.match(vm.bag,/itens na bolsa/);
@@ -24,7 +24,7 @@ test('DOM binder updates only visible fields and never touches storage',()=>{
  const vm=hubViewModel(newClassicState(),catalogs);
  applyHubViewModel(doc,vm);
  assert.equal(records.hubGold.textContent,'180');
- assert.equal(records.hubHpFill.style.width,'100%');
+ assert.equal(records.hubHpFill.style.width,Math.round(newClassicState().hp/maxClassicHp(newClassicState(),catalogs)*100)+'%');
  assert.equal(records.hubOriginCity.textContent,'Origem do save: Portomonte');
 });
 test('M1g layout keeps legacy behavior hooks wired to buttons',()=>{
