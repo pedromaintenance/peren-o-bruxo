@@ -16,7 +16,7 @@
         2,
         3
       ],
-      "fps": 3,
+      "fps": 4,
       "repeat": true
     },
     "down-walk": {
@@ -46,7 +46,7 @@
         14,
         15
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "down-gather": {
@@ -56,7 +56,7 @@
         18,
         19
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "down-hurt": {
@@ -66,7 +66,7 @@
         22,
         23
       ],
-      "fps": 6,
+      "fps": 8,
       "repeat": false
     },
     "down-cast": {
@@ -76,7 +76,7 @@
         26,
         27
       ],
-      "fps": 8,
+      "fps": 9,
       "repeat": false
     },
     "down-attack": {
@@ -86,7 +86,7 @@
         30,
         31
       ],
-      "fps": 10,
+      "fps": 11,
       "repeat": false
     },
     "left-idle": {
@@ -96,7 +96,7 @@
         34,
         35
       ],
-      "fps": 3,
+      "fps": 4,
       "repeat": true
     },
     "left-walk": {
@@ -126,7 +126,7 @@
         46,
         47
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "left-gather": {
@@ -136,7 +136,7 @@
         50,
         51
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "left-hurt": {
@@ -146,7 +146,7 @@
         54,
         55
       ],
-      "fps": 6,
+      "fps": 8,
       "repeat": false
     },
     "left-cast": {
@@ -156,7 +156,7 @@
         58,
         59
       ],
-      "fps": 8,
+      "fps": 9,
       "repeat": false
     },
     "left-attack": {
@@ -166,7 +166,7 @@
         62,
         63
       ],
-      "fps": 10,
+      "fps": 11,
       "repeat": false
     },
     "right-idle": {
@@ -176,7 +176,7 @@
         66,
         67
       ],
-      "fps": 3,
+      "fps": 4,
       "repeat": true
     },
     "right-walk": {
@@ -206,7 +206,7 @@
         78,
         79
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "right-gather": {
@@ -216,7 +216,7 @@
         82,
         83
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "right-hurt": {
@@ -226,7 +226,7 @@
         86,
         87
       ],
-      "fps": 6,
+      "fps": 8,
       "repeat": false
     },
     "right-cast": {
@@ -236,7 +236,7 @@
         90,
         91
       ],
-      "fps": 8,
+      "fps": 9,
       "repeat": false
     },
     "right-attack": {
@@ -246,7 +246,7 @@
         94,
         95
       ],
-      "fps": 10,
+      "fps": 11,
       "repeat": false
     },
     "up-idle": {
@@ -256,7 +256,7 @@
         98,
         99
       ],
-      "fps": 3,
+      "fps": 4,
       "repeat": true
     },
     "up-walk": {
@@ -286,7 +286,7 @@
         110,
         111
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "up-gather": {
@@ -296,7 +296,7 @@
         114,
         115
       ],
-      "fps": 6,
+      "fps": 7,
       "repeat": false
     },
     "up-hurt": {
@@ -306,7 +306,7 @@
         118,
         119
       ],
-      "fps": 6,
+      "fps": 8,
       "repeat": false
     },
     "up-cast": {
@@ -316,7 +316,7 @@
         122,
         123
       ],
-      "fps": 8,
+      "fps": 9,
       "repeat": false
     },
     "up-attack": {
@@ -326,10 +326,40 @@
         126,
         127
       ],
-      "fps": 10,
+      "fps": 11,
       "repeat": false
     }
   },
   "author": "Projeto Carcaça",
-  "origin": "autoral procedural"
+  "origin": "pixel art procedural original M1e; 128 frames; 32 directional clips",
+  "palette": {
+    "outline": "#10121d",
+    "dark": "#1b1b2d",
+    "cloth": "#302c48",
+    "cloth2": "#44405f",
+    "clothlit": "#615477",
+    "coat": "#24283f",
+    "coatlit": "#394260",
+    "trim": "#bd895a",
+    "gold": "#e2b879",
+    "hat": "#22233a",
+    "hatlit": "#49405d",
+    "band": "#844655",
+    "wine": "#8f434d",
+    "scarflit": "#b35f63",
+    "skin": "#d19a74",
+    "skinlit": "#efbe91",
+    "shadow": "#985e53",
+    "hair": "#27242f",
+    "grey": "#a8a4b6",
+    "beard": "#302734",
+    "boots": "#1a1b28",
+    "bootrim": "#77635a",
+    "wood": "#574032",
+    "woodlit": "#a17a51",
+    "core": "#b8a0ff",
+    "magic": "#aa64ff",
+    "glow": "#e4c4ff",
+    "rune": "#6e57bd"
+  }
 }
