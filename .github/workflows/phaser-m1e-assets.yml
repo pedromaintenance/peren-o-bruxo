@@ -1,0 +1,97 @@
+name: Peren Phaser M1e - gerar assets do protagonista
+on:
+  push:
+    branches:
+      - feature/phaser-m1e-assets-peren
+    paths:
+      - tools/peren-m1e-source.z64
+permissions:
+  contents: write
+jobs:
+  generate-and-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow
+        run: python -m pip install 'Pillow>=10,<12'
+      - name: Restore editable original generator from transfer bootstrap
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64,zlib
+          payload=Path('tools/peren-m1e-source.z64')
+          Path('tools/make_peren_m1e.py').write_bytes(zlib.decompress(base64.b64decode(payload.read_text().strip())))
+          payload.unlink()
+          PY
+      - name: Generate Peren-only sprites and portraits
+        run: python tools/make_peren_m1e.py
+      - name: Validate frames, source alpha and animation contracts
+        run: |
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          import json
+          base=Path('phaser/assets/characters/peren')
+          png=Image.open(base/'peren-atlas.png').convert('RGBA')
+          meta=json.loads((base/'atlas.json').read_text(encoding='utf-8'))
+          assert png.size==(1536,256),png.size
+          assert meta['frameWidth']==48 and meta['frameHeight']==64
+          assert len(meta['animations'])==32
+          assert set(meta['directions'])=={'down','up','left','right'}
+          actions=['idle','walk','run','interact','gather','hurt','cast','attack']
+          for dindex,direction in enumerate(meta['directions']):
+            for aindex,action in enumerate(actions):
+              clip=meta['animations'][f'{direction}-{action}']
+              expected=[dindex*32+aindex*4+i for i in range(4)]
+              assert clip['frames']==expected,(direction,action,clip)
+              for frame in expected:
+                x=frame%32*48;y=frame//32*64
+                assert png.crop((x,y,x+48,y+64)).getbbox(),frame
+          for filename in ('portrait.png','portrait-cast.png','portrait-hurt.png'):
+            pic=Image.open(base/filename)
+            assert pic.size==(256,256),(filename,pic.size)
+          print('OK: 128 frames, 32 animations, 3 portraits')
+          PY
+      - name: Update honest work-in-progress art manifest
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          path=Path('phaser/assets/review.json')
+          d=json.loads(path.read_text(encoding='utf-8'))
+          d['peren']['status']='em_producao'
+          d['peren']['artist']='Pixel art autoral procedural M1e · Projeto Carcaça'
+          d['peren']['license']='arte original para RPG Carcaça'
+          d['peren']['qa']='M1e: 128 frames, 32 clips e 3 retratos verificados no CI; aprovação visual e Android físico pendentes'
+          path.write_text(json.dumps(d,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+          PY
+          python tools/generate_visual_manifest.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test existing combat, crafting and persistence
+        working-directory: phaser-lab
+        run: |
+          npm install --no-audit --no-fund
+          npm test
+          npm run build
+      - name: Commit only new art and generator to M1e branch
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- tools/make_peren_m1e.py tools/peren-m1e-source.z64 \
+            phaser/assets/characters/peren phaser/assets/review.json \
+            phaser/assets/catalog/characters.json
+          if git diff --cached --quiet; then
+            echo 'No generated asset differences'
+          else
+            git commit -m 'art(peren): replace placeholder sprites with M1e pixel animation set'
+            git push origin HEAD:feature/phaser-m1e-assets-peren
+          fi
