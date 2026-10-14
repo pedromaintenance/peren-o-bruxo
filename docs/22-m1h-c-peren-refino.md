@@ -22,9 +22,17 @@ Reduzir o aspecto de **cabelo branco blocado** da M1h-B, reforçar o rosto envel
 - `node scripts/peren-m1hc-browser.mjs`: compara quatro versões na cidade, na floresta, em combate e no ateliê em 360×800, 390×844 e 1280×800, inclusive foco/seleção de todas as 32 animações.
 - Workflow dedicado executa QA anterior: 35 telas da vertical slice, auditoria da PWA, fuga sem recompensas e Xbox simulado.
 
+## Resultado do QA
+
+- ✅ [GitHub Actions #38652044683](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38652044683) aprovado após o polimento da geração: PNGJS, 128 frames, 3 retratos, 4 variantes no navegador em três resoluções, regressão das 35 telas e simulação Xbox.
+- ✅ [Execução independente #38652039305](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38652039305) aprovada.
+- 🎨 Prancha real inspecionada: primeira tentativa de sombreamento apresentava hachuras repetitivas; substituída por agrupamentos de mechas maiores e barba em volumes. A direção final de expressão e boca ainda merece avaliação do usuário. O teste funcional não aprova a arte.
+- 📸 Arquivo `peren-m1h-c-refino` nos **Artifacts** do workflow #38652044683: prancha PNG, capturas das quatro variantes e relatório.
+
 ### Critérios ainda abertos
 
-- [ ] Inspecionar as capturas realmente geradas e refinar blocos ou linhas que ainda pareçam artificiais.
+- [x] Inspeção preliminar da prancha feita; hachuras repetitivas corrigidas.
+- [ ] Revisão artística final da face/boca e leitura do sprite no hardware real.
 - [ ] Avaliação estética do usuário, incluindo visual 2×/3× em tela física.
 - [ ] Testar Android e controle Xbox reais.
 - [ ] Canonizar o sprite apenas depois de aprovação explícita; até lá **o parâmetro experimental é obrigatório**.
