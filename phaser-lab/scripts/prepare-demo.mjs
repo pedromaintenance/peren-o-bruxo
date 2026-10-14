@@ -23,7 +23,7 @@ const manifest={
   id:'./',name:'Peren, o Bruxo — Demonstração Phaser',
   short_name:'Peren Phaser',
   description:'Exploração, combate e crafting da Floresta de Mürin. Save de testes isolado.',
-  start_url:'./',scope:'./',display:'standalone',orientation:'portrait',
+  start_url:'./',scope:'./',display:'standalone',orientation:'any',
   background_color:'#0c151b',theme_color:'#172b29',
   icons:[192,512].map(size=>({src:'./icons/icon-'+size+'.png',sizes:size+'x'+size,type:'image/png'}))
 };
