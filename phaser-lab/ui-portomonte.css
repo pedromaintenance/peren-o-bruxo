@@ -1,0 +1,105 @@
+/* M1g-A — responsive Portomonte, built from functional DOM controls. */
+#hub.m1g-shell {padding:0;display:block;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;background:var(--ui-night);color:var(--ui-ivory)}
+#hub.m1g-shell[hidden] {display:none}
+#hub #city.m1g-city {
+  width:min(100%,1500px);max-width:none;margin:0 auto;padding:14px;
+  border:none;border-radius:0;box-shadow:none;background:transparent;text-align:left;
+  min-height:100dvh;display:flex;flex-direction:column;gap:12px;
+}
+#hub .m1g-masthead {display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 17px}
+#hub .m1g-brand {display:flex;align-items:baseline;gap:16px;min-width:0}
+#hub .m1g-brand b {font:500 clamp(26px,4vw,43px)/1 Georgia,serif;letter-spacing:.08em;color:var(--ui-gold-bright)}
+#hub .m1g-brand small {color:var(--ui-muted);font:600 10px var(--ui-font-sans);letter-spacing:.14em}
+#hub .m1g-masthead-right {display:flex;gap:15px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+#hub .m1g-masthead-right .ui-kicker {white-space:nowrap}
+#hub .m1g-topstat {font-size:14px;color:var(--ui-gold-bright);font-variant-numeric:tabular-nums}
+#hub .m1g-city-title {display:flex;justify-content:space-between;gap:12px;align-items:end;padding:0 5px}
+#hub .m1g-city-title h1 {margin:0;font:500 clamp(29px,4.5vw,51px)/1.08 var(--ui-font-fantasy);letter-spacing:.09em;color:var(--ui-gold-bright)}
+#hub .m1g-city-title .m1g-subtitle {display:block;font:700 10px var(--ui-font-sans);letter-spacing:.21em;color:var(--ui-muted);margin-top:4px}
+#hub .m1g-city-title p {max-width:42ch;text-align:right;font:italic 14px/1.45 Georgia,serif;color:#d9c6a5}
+#hub .m1g-stage {display:grid;grid-template-columns:minmax(190px,.8fr) minmax(280px,2.1fr) minmax(230px,1fr);gap:12px;align-items:stretch;min-height:500px}
+#hub .m1g-portrait {min-width:0;display:flex;flex-direction:column;gap:11px;padding:12px}
+#hub .m1g-portrait-image {display:block;width:100%;height:clamp(180px,24vw,340px);object-fit:cover;image-rendering:pixelated;border:1px solid #6c6770;background:#0b1821}
+#hub .m1g-portrait-title {font:22px Georgia,serif;color:var(--ui-gold-bright);margin:0}
+#hub .m1g-portrait small {font-size:11px;color:var(--ui-muted)}
+#hub .m1g-metrics {display:grid;gap:10px;padding:2px 0 4px}
+#hub .m1g-metric-head {display:flex;align-items:baseline;justify-content:space-between;font-size:12px;gap:6px;font-variant-numeric:tabular-nums}
+#hub .m1g-metric-head output {color:#eddec5}
+#hub .m1g-bag-count {font-size:12px;padding-top:8px;border-top:1px solid #63727b66}
+#hub .m1g-scenery {min-width:0;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:
+  linear-gradient(0deg,#061017f7 1%,#09202d63 55%,#0a1b2440 100%),
+  url("./art/regions/portomonte/visao-carcaca.webp") center 46%/cover no-repeat,#142937}
+#hub .m1g-scene-caption {padding:18px 20px;background:linear-gradient(0deg,#091622e9,#0916227c);border-top:1px solid #bca37188}
+#hub .m1g-scene-caption strong {display:block;font:26px Georgia,serif;color:var(--ui-gold-bright);margin-bottom:5px}
+#hub .m1g-scene-caption p {font:13px/1.6 var(--ui-font-sans);color:#eddfc8;max-width:65ch;margin:5px 0 0}
+#hub #hubNav.m1g-hubnav {display:flex;flex-direction:column;gap:7px;margin:0;padding:10px;min-width:0;background:linear-gradient(150deg,#142936,#0c1925)}
+#hub .m1g-hubnav .ui-button {position:relative;display:grid;align-content:center;gap:4px;padding:10px 24px 10px 14px;width:100%;min-height:62px;flex:1;overflow:hidden}
+#hub .m1g-hubnav .ui-button::after {content:"›";position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--ui-gold);font:30px Georgia,serif}
+#hub .m1g-hubnav .ui-button b {display:block;font:17px Georgia,serif;color:var(--ui-gold-bright)}
+#hub .m1g-hubnav .ui-button small {display:block;font:11px/1.2 var(--ui-font-sans);color:#b8cbd0}
+#hub .m1g-hubnav .ui-button[data-visual="explore"] {background:linear-gradient(90deg,#0f2839e8,#0b2330cf),url("./art/regions/floresta-murin/tree-0.png") center/cover}
+#hub .m1g-hubnav .ui-button[data-visual="craft"] {background:linear-gradient(90deg,#0d2230ef,#0d2230dc),url("./art/regions/portomonte/laboratorio.webp") center/cover}
+#hub .m1g-hubnav .ui-button[data-visual="shop"] {background:linear-gradient(90deg,#0d2230f2,#0d2230d7),url("./art/regions/portomonte/mercado.webp") center/cover}
+#hub .m1g-console {display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.38fr);gap:12px;min-width:0;align-items:stretch}
+#hub .m1g-content {padding:14px;min-width:0}
+#hub #hubTitle {font:24px/1.25 var(--ui-font-fantasy);color:var(--ui-gold-bright);margin:0 0 10px}
+#hub #hubPanel {max-height:360px;min-height:110px;overflow-y:auto;overscroll-behavior:contain;padding-right:3px;font-size:13px;line-height:1.7;color:#dbe2d8}
+#hub #hubPanel .market-line {border-bottom:1px solid #71818a55;padding:9px 3px;gap:12px}
+#hub #hubPanel .market-line b {font:600 13px var(--ui-font-sans);color:#eed5aa}
+#hub #hubPanel .market-line small {color:#b8c5c4;font:11px/1.5 var(--ui-font-sans)}
+#hub #hubPanel .market-line button {min-width:102px;min-height:44px;padding:7px 10px;background:linear-gradient(135deg,#29475c,#172b3e);border:1px solid var(--ui-gold);border-radius:4px;font:650 11px var(--ui-font-sans);color:var(--ui-ivory)}
+#hub #hubPanel .market-line button:focus-visible {outline:3px solid var(--ui-focus);outline-offset:2px}
+#hub .m1g-tools {padding:15px;display:flex;flex-direction:column;gap:9px}
+#hub .m1g-tools .ui-button {width:100%;text-align:center;min-height:45px;padding:9px}
+#hub .m1g-tools .ui-kicker {margin:0}
+#hub .m1g-tools small,#hub .m1g-tools label {color:#c2c9c1;font-size:11px}
+#hub .m1g-tools input[type=file] {margin:5px 0 0;width:100%;min-width:0;color:var(--ui-ivory);font:11px var(--ui-font-sans)}
+#hub #hubStatus {display:block;border-top:1px solid #62747d66;padding-top:9px;line-height:1.5}
+#hub .m1g-footer {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 5px 2px;font-size:11px;color:var(--ui-muted);flex-wrap:wrap}
+#hub .m1g-footer a {color:var(--ui-gold-bright)}
+#hub #progressSource {font-size:11px;color:#b6debe}
+#hub #cityMeta, #hub #combatWallet {font-size:11px;color:#cbd2c4;line-height:1.45}
+#hub [data-unavailable] {opacity:.5!important;cursor:not-allowed!important}
+#hub [data-unavailable]::after {content:""!important}
+#bagPanel.m1g-inventory-preview {position:fixed;inset:50% auto auto 50%;transform:translate(-50%,-50%);
+  width:min(92vw,550px);max-height:78dvh;overflow:auto;z-index:45;box-shadow:0 0 0 120vmax #000b,0 28px 60px #000b}
+@media(max-width:1000px) {
+  #hub .m1g-stage {grid-template-columns:minmax(170px,.75fr) minmax(260px,1.55fr)}
+  #hub #hubNav.m1g-hubnav {grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+  #hub .m1g-hubnav .ui-button {min-height:65px}
+}
+@media(max-width:680px) {
+  #hub #city.m1g-city {padding:7px;gap:9px}
+  #hub .m1g-masthead {padding:9px 10px;align-items:flex-start}
+  #hub .m1g-brand {display:block}
+  #hub .m1g-brand b {font-size:28px}
+  #hub .m1g-brand small {display:block;margin-top:2px;font-size:8px}
+  #hub .m1g-masthead-right {gap:8px}
+  #hub .m1g-topstat {font-size:12px}
+  #hub .m1g-city-title {padding:2px 8px}
+  #hub .m1g-city-title h1 {font-size:32px}
+  #hub .m1g-city-title p {display:none}
+  #hub .m1g-stage {grid-template-columns:1fr;min-height:0}
+  #hub .m1g-portrait {display:grid;grid-template-columns:92px 1fr;gap:9px;padding:9px}
+  #hub .m1g-portrait-image {width:92px;height:120px;grid-row:1/4}
+  #hub .m1g-portrait-title {font-size:19px}
+  #hub .m1g-metrics {display:grid;grid-template-columns:1fr 1fr;gap:6px 9px}
+  #hub .m1g-metric-head {font-size:10px}
+  #hub .m1g-bag-count {grid-column:1/-1;border-top:none;padding:0}
+  #hub .m1g-scenery {min-height:194px;max-height:265px}
+  #hub .m1g-scene-caption {padding:11px}
+  #hub .m1g-scene-caption strong {font-size:18px}
+  #hub .m1g-scene-caption p {font-size:11px;line-height:1.45}
+  #hub #hubNav.m1g-hubnav {grid-template-columns:repeat(2,minmax(0,1fr));padding:7px;gap:6px}
+  #hub .m1g-hubnav .ui-button {min-height:64px;padding:8px 17px 8px 9px}
+  #hub .m1g-hubnav .ui-button b {font-size:14px}
+  #hub .m1g-hubnav .ui-button small {font-size:10px}
+  #hub .m1g-console {grid-template-columns:1fr}
+  #hub .m1g-footer {font-size:10px;padding:6px}
+}
+@media(max-width:360px) {
+  #hub .m1g-brand b {font-size:23px}
+  #hub .m1g-topstat {font-size:11px}
+  #hub .m1g-metrics {gap:5px}
+  #hub .m1g-hubnav .ui-button b {font-size:13px}
+}
