@@ -18,3 +18,5 @@ for(const file of ['visao-carcaca.webp']){
   await cp(join(classic,file),join(town,file),{force:true});
 }
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
+// M1h is opt-in: derive comparison files from M1e source without overwriting it.
+await import('./peren-m1h-generator.mjs');
