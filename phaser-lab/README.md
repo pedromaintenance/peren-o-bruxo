@@ -1,6 +1,6 @@
 # Laboratório M1a — Mürin e movimento de Peren (Phaser 3)
 
-**Isolado do Peren publicado:** este laboratório não lê nem grava `peren_carcaca_save_v1`. Ele testa apenas movimentação/colheita/colisão/retorno ao menu Portomonte com inventário **temporário**. Não é o M1 inteiro; combate, missões, monstros e economia compartilhada ficam para fases seguintes.
+**Isolado do Peren publicado:** o laboratório M1d pode ler uma cópia inicial de `peren_carcaca_save_v1`, mas nunca grava nessa chave. Combate, coleta, crafting e comércio já persistem em `peren_phaser_save_m1d_v1`, sem sincronização de volta ao jogo clássico. A evolução M1e substitui somente a arte do protagonista; M1f acrescenta uma galeria independente de revisão visual.
 
 ## Executar
 
@@ -60,3 +60,7 @@ No hub de Portomonte, **Oficinas** oferece receitas vinculadas ao catálogo real
 Os catálogos de dados são copiados de `data/` para `phaser-lab/public/data/` na branch de integração e ficam empacotados com o build, sem dependência de API em runtime. `npm test` cobre 312 cenários, e a execução Playwright da M1d confirmou importação, coleta, vitória, fuga, crafting, compra, reload e preservação do save clássico em 390 e 360 px.
 
 **Limites:** três monstros, três magias e uma zona ilustrada; não existe sincronização bidirecional com o PWA antigo. O Playwright não substitui Android e Xbox reais. As PRs são empilhadas; não mesclar esta branch diretamente em `main`. Veja [docs/12-m1d-progresso.md](../docs/12-m1d-progresso.md).
+
+## M1f — Ateliê de sprites (PR empilhada sobre M1e)
+
+Ao executar `npm run dev`, abra **http://localhost:5173/review.html** para comparar as animações reais do Peren e das três criaturas: direção, ação, quatro frames, escala e velocidade. `npm run build` também inclui `dist/review.html` no bundle, sem tocar no save. O site público somente receberá a galeria após revisão e publicação deliberada. Detalhes: `docs/13-m1f-galeria-sprites.md`.

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b20">
+<title>Peren — Ateliê de Sprites · Revisão M1f</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0c151b;color:#e7dac4;font:14px/1.5 system-ui,sans-serif}
+header{padding:24px clamp(14px,4vw,42px);border-bottom:1px solid #827252;background:linear-gradient(110deg,#192735,#0e191d)}
+h1{font:clamp(26px,4vw,39px) Georgia,serif;letter-spacing:.05em;color:#eed5a4;margin:0}
+h2{font:23px Georgia,serif;color:#ebcb92;margin:0 0 8px}
+p{margin:7px 0;color:#c5cfc7}small{color:#aabbb5}a{color:#e9c88c}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #f1ca78}
+main{width:min(1150px,100%);margin:auto;padding:18px}
+.grid{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1.1fr);gap:16px}
+.panel{padding:18px;background:#152329;border:1px solid #657260;border-radius:13px}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#c4bc9e}
+button,select,input{accent-color:#d1a967;min-height:42px;color:#f8e6c9;background:#283d3e;border:1px solid #8d855f;border-radius:7px;font:inherit;padding:8px}
+input[type=range]{width:100%;padding:0}
+button{cursor:pointer;font-weight:700}
+button:hover{background:#3f5a52}
+button:disabled{opacity:.5}
+#stage{min-height:355px;display:grid;place-items:center;position:relative;overflow:hidden;border-radius:9px;border:1px solid #56675e;background:radial-gradient(ellipse at 50% 72%,#29433d,#132a2f 59%,#11191f)}
+#stage:before{content:'';position:absolute;bottom:50px;width:80%;height:24px;border-radius:50%;background:#03070733;filter:blur(10px)}
+#frame{image-rendering:pixelated;object-fit:contain;position:relative}
+#strip{display:flex;gap:10px;justify-content:space-evenly;align-items:center;flex-wrap:wrap;min-height:91px}
+.frame-wrap{display:grid;gap:3px;justify-items:center;font-size:10px;color:#a6ad9d}
+.frame-wrap canvas{image-rendering:pixelated}
+#portrait{width:176px;height:176px;object-fit:contain;image-rendering:pixelated;background:#0c161a;border:1px solid #7c7659;border-radius:6px}
+#status{font-size:12px;color:#d7ccac;min-height:21px}
+.kpis{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+.kpis span{padding:5px 9px;border-radius:5px;border:1px solid #74694d;font-size:11px;color:#d6cdb6}
+.notes{margin:14px 0 0;padding-left:18px;color:#c1cfc6}
+.notes li{margin:5px 0}
+footer{padding:16px 24px;text-align:center;color:#a9b9b0}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.panel{padding:13px}#stage{min-height:305px}#portrait{width:144px;height:144px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1f</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a></header>
+<main>
+<div class="grid">
+<section class="panel">
+<h2>Selecionar animação</h2>
+<div class="controls">
+<label>Personagem ou criatura
+<select id="entity"><option value="peren">Peren, o Bruxo</option><option value="mob-galho-infectado">Galho Infectado</option><option value="mob-fungo-violeta">Fungo Violeta</option><option value="mob-ettercap">Ettercap</option></select>
+</label>
+<label id="directionLabel">Direção
+<select id="direction"><option value="down">Frente ↓</option><option value="left">Esquerda ←</option><option value="right">Direita →</option><option value="up">Costas ↑</option></select>
+</label>
+<label>Ação
+<select id="action"></select>
+</label>
+<label>Retrato
+<select id="portraitMode"><option value="neutral">Normal</option><option value="cast">Conjurando</option><option value="hurt">Ferido</option></select>
+</label>
+<label>Ampliação <output id="zoomValue">4×</output>
+<input id="zoom" type="range" min="2" max="6" step="1" value="4">
+</label>
+<label>Quadros por segundo <output id="fpsValue">8 fps</output>
+<input id="fps" type="range" min="1" max="16" step="1" value="8">
+</label>
+<button id="toggle" type="button" aria-pressed="true">⏸ Pausar</button>
+<button id="next" type="button">Próximo quadro →</button>
+</div>
+<div class="kpis"><span id="assetSize">Atlas</span><span id="frameInfo">Quadro 1 / 4</span><span id="modeInfo">Em produção</span></div>
+<p id="status" role="status" aria-live="polite">Carregando atlas de animações…</p>
+<h2>Retrato em pixel art</h2>
+<img id="portrait" src="./art/characters/peren/portrait.png" alt="Retrato do personagem selecionado">
+<p><small>Os três retratos alternativos de Peren só existem na branch M1e. Para criaturas, apenas o retrato principal está previsto.</small></p>
+</section>
+<section class="panel">
+<h2>Prévia animada</h2>
+<div id="stage"><canvas id="frame" width="48" height="64" aria-label="Quadro ampliado do sprite"></canvas></div>
+<h2 style="margin-top:18px">Os quatro quadros reais</h2>
+<div id="strip" aria-label="Sequência da animação"></div>
+<h2 style="margin-top:22px">Critérios de revisão</h2>
+<ul class="notes">
+<li><strong>Identidade:</strong> Peren deve ser reconhecível por seus cabelos grisalhos, rosto maduro, capa e equipamento, mesmo em miniatura.</li>
+<li><strong>Silhueta:</strong> botas, mãos e arma devem permanecer legíveis a 2× e 3× no celular.</li>
+<li><strong>Movimento:</strong> não basta deslocar o corpo inteiro: pés, capa, braços e efeito mágico devem mudar de pose.</li>
+<li><strong>Consistência:</strong> proporção, equipamento e paleta devem se manter nas quatro direções.</li>
+<li><strong>Aprovação:</strong> a arte continua provisória até feedback visual e teste no aparelho real.</li>
+</ul>
+</section>
+</div>
+</main>
+<footer>Esta página só lê imagens do projeto. Não acessa, altera nem exporta os saves.</footer>
+<script>
+(() => {
+'use strict';
+const $=id=>document.getElementById(id);
+const actionsHero=['idle','walk','run','interact','gather','hurt','cast','attack'];
+const actionsMob=['idle','walk','alert','attack','hurt','retreat','death'];
+const directions=['down','left','right','up'];
+const actionNames={idle:'Parado',walk:'Andando',run:'Correndo',interact:'Interagir',gather:'Coletar',hurt:'Dano',cast:'Conjuração',attack:'Ataque',alert:'Alerta',retreat:'Recuar',death:'Morte'};
+const ents={
+peren:{w:48,h:64,columns:32,rows:4,path:'./art/characters/peren/peren-atlas.png',portrait:'./art/characters/peren/'},
+'mob-galho-infectado':{w:64,h:64,columns:4,rows:7,path:'./art/monsters/mob-galho-infectado/atlas.png',portrait:'./art/monsters/mob-galho-infectado/'},
+'mob-fungo-violeta':{w:64,h:64,columns:4,rows:7,path:'./art/monsters/mob-fungo-violeta/atlas.png',portrait:'./art/monsters/mob-fungo-violeta/'},
+'mob-ettercap':{w:64,h:64,columns:4,rows:7,path:'./art/monsters/mob-ettercap/atlas.png',portrait:'./art/monsters/mob-ettercap/'}
+};
+let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
+const ctx=$('frame').getContext('2d',{alpha:true});ctx.imageSmoothingEnabled=false;
+function entity(){return $('entity').value}
+function meta(){return ents[entity()]}
+function count(){return 4}
+function actionIndex(){return (entity()==='peren'?actionsHero:actionsMob).indexOf($('action').value)}
+function sourceFrame(n){
+  const m=meta();
+  const col=entity()==='peren'?actionIndex()*4+n:n;
+  const row=entity()==='peren'?directions.indexOf($('direction').value):actionIndex();
+  return {x:col*m.w,y:row*m.h};
+}
+function paint(canvas,n){
+  const m=meta();const c=canvas.getContext('2d',{alpha:true});
+  c.imageSmoothingEnabled=false;c.clearRect(0,0,m.w,m.h);
+  if(!ready)return;
+  const p=sourceFrame(n);c.drawImage(img,p.x,p.y,m.w,m.h,0,0,m.w,m.h);
+}
+function portrait(){
+  const m=meta();const prefix=m.portrait;
+  const variant=entity()==='peren'&&$('portraitMode').value!=='neutral'?'-'+$('portraitMode').value:'';
+  const pic=$('portrait');
+  pic.onerror=()=>{pic.onerror=null;pic.src=prefix+'portrait.png';};
+  pic.src=prefix+'portrait'+variant+'.png';
+  $('portraitMode').disabled=entity()!=='peren';
+}
+function paintAll(){
+  const m=meta(),canvas=$('frame'),scale=Number($('zoom').value);
+  canvas.width=m.w;canvas.height=m.h;ctx.imageSmoothingEnabled=false;
+  canvas.style.width=m.w*scale+'px';canvas.style.height=m.h*scale+'px';
+  paint(canvas,frame);
+  $('frameInfo').textContent='Quadro '+(frame+1)+' / '+count();
+  $('zoomValue').value=scale+'×';
+  $('fpsValue').value=$('fps').value+' fps';
+  $('toggle').textContent=playing?'⏸ Pausar':'▶ Reproduzir';
+  $('toggle').setAttribute('aria-pressed',String(playing));
+  const strip=$('strip');strip.replaceChildren();
+  for(let i=0;i<4;i++){
+    const wrap=document.createElement('div');wrap.className='frame-wrap';
+    const c=document.createElement('canvas');c.width=m.w;c.height=m.h;c.style.width=m.w*1.25+'px';c.style.height=m.h*1.25+'px';
+    c.style.outline=i===frame?'2px solid #e4bd76':'1px solid #56685e';paint(c,i);
+    const lbl=document.createElement('span');lbl.textContent='FRAME '+(i+1);
+    wrap.append(c,lbl);strip.append(wrap);
+  }
+}
+function load(){
+  const selected=entity(),m=meta(),act=$('action'),old=act.value;
+  const options=selected==='peren'?actionsHero:actionsMob;
+  act.replaceChildren(...options.map(id=>{const option=document.createElement('option');option.value=id;option.textContent=actionNames[id];return option}));
+  act.value=options.includes(old)?old:'idle';
+  $('directionLabel').style.visibility=selected==='peren'?'visible':'hidden';
+  $('assetSize').textContent='Atlas '+m.columns*m.w+'×'+m.rows*m.h;
+  $('modeInfo').textContent=selected==='peren'?'4 direções × 8 ações':'7 ações';
+  const thisLoad=++token;
+  img=new Image();ready=false;frame=0;last=0;$('status').textContent='Carregando atlas de animações…';
+  img.onload=()=>{if(thisLoad!==token)return;ready=true;$('status').textContent='Atlas carregado: textura original, sem interpolação.';paintAll()};
+  img.onerror=()=>{if(thisLoad!==token)return;$('status').textContent='Não foi possível abrir a imagem. Rode npm run dev a partir de phaser-lab.';paintAll()};
+  img.src=m.path;
+  portrait();paintAll();
+}
+$('entity').addEventListener('change',load);
+$('direction').addEventListener('change',()=>{frame=0;paintAll()});
+$('action').addEventListener('change',()=>{frame=0;paintAll()});
+$('portraitMode').addEventListener('change',portrait);
+$('zoom').addEventListener('input',paintAll);
+$('fps').addEventListener('input',paintAll);
+$('toggle').addEventListener('click',()=>{playing=!playing;last=0;paintAll()});
+$('next').addEventListener('click',()=>{playing=false;frame=(frame+1)%4;paintAll()});
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)playing=false;
+function animate(t){if(ready&&playing&&(!last||t-last>=1000/Number($('fps').value))){last=t;frame=(frame+1)%4;paintAll()}requestAnimationFrame(animate)}
+load();requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
