@@ -54,6 +54,8 @@ try {
   assert.deepEqual(report.classic,original);
   await page.locator('#showCraft').click();
   assert.match(await page.locator('#hubTitle').textContent(),/Oficinas/);
+  assert.equal(await page.locator('#craftUI').isVisible(),true);
+  await page.locator('#craftClose').click();
   await page.locator('#showShop').click();
   assert.match(await page.locator('#hubTitle').textContent(),/Comércio/);
   await page.locator('#openBagHub').click();
