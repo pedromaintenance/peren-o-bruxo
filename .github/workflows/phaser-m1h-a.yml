@@ -1,0 +1,70 @@
+name: Peren M1h-A - Peren prateado candidato
+on:
+  push:
+    branches: [feature/phaser-m1h-a-peren-palette]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1h-a.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1h-a.yml"
+permissions:
+  contents: read
+jobs:
+  peren-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependencias
+        run: npm install --no-audit --no-fund
+      - name: Validar atlas, regras e UI
+        run: npm test
+      - name: Compilar variante opt-in
+        run: npm run build
+      - name: Empacotar demo isolada
+        run: node scripts/prepare-demo.mjs
+      - name: Auditar cache e pacote
+        run: node scripts/audit-package.mjs
+      - name: Conferir sprites completos M1e e M1h-A
+        run: |
+          set -euo pipefail
+          for variant in art art-m1h; do
+            for sprite in peren-atlas.png portrait.png portrait-cast.png portrait-hurt.png; do
+              test -s "dist/$variant/characters/peren/$sprite"
+            done
+          done
+          test -s dist/review.html
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Comparar M1e e M1h-A no jogo e atelier
+        run: node scripts/peren-art-browser.mjs
+      - name: Regressoes da vertical slice e 35 capturas
+        run: node scripts/vertical-slice-audit.mjs
+      - name: Compatibilidade Xbox / movimento e progresso
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Capturas antes e depois
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1h-a-comparacao
+          path: |
+            phaser-lab/screenshots/m1h-a-*.png
+            phaser-lab/public/art-m1h/characters/peren/report.json
+          if-no-files-found: warn
