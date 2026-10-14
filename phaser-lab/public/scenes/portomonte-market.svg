@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" width="1100" height="720" shape-rendering="crispEdges">
+<defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#152736"/><stop offset=".7" stop-color="#354047"/><stop offset="1" stop-color="#16252a"/></linearGradient><radialGradient id="light"><stop stop-color="#f7c97b" stop-opacity=".85"/><stop offset="1" stop-color="#ffc678" stop-opacity="0"/></radialGradient></defs>
+<rect width="1100" height="720" fill="url(#wall)"/><path d="M0 530H1100V720H0Z" fill="#44332d"/>
+<g fill="none" stroke="#59605b" stroke-width="4" opacity=".55"><path d="M0 120H1100M0 245H1100M0 360H1100M0 481H1100"/><path d="M100 0V120M360 0V120M630 0V120M900 0V120M220 120V245M490 120V245M770 120V245M1000 120V245M105 245V360M395 245V360M635 245V360M940 245V360"/></g>
+<!-- a view of the Portomonte piers -->
+<path d="M540 100H1030V450H540Z" fill="#071925" stroke="#6e5740" stroke-width="24"/>
+<path d="M550 111H1020V440H550Z" fill="#153d53"/>
+<path d="M550 340L634 285L720 320L830 267L947 310L1020 300V440H550Z" fill="#203b40"/>
+<path d="M565 360H1010V440H565Z" fill="#275864"/>
+<path d="M670 300V441M812 301V443M946 304V443" stroke="#9f7750" stroke-width="15"/>
+<path d="M578 345H993" stroke="#986a45" stroke-width="9"/>
+<!-- awning -->
+<path d="M0 80L513 80L570 200H0Z" fill="#4d3a41"/><path d="M0 82H508L523 117H0Z" fill="#b18b60"/>
+<path d="M0 200L45 200L73 168L106 200L143 167L175 200L213 166L246 200L288 167L323 200L357 165L391 200L427 166L466 200L506 165L545 200H0Z" fill="#8d6061"/>
+<!-- hanging baskets and ropes -->
+<path d="M150 0V305M293 0V315M410 0V295" stroke="#745e44" stroke-width="7"/>
+<path d="M96 290H209L193 355H112Z M252 312H332L320 357H264Z M371 290H455L437 338H383Z" fill="#876344" stroke="#302329" stroke-width="8"/>
+<g fill="#849c65"><circle cx="138" cy="295" r="23"/><circle cx="177" cy="299" r="28"/><circle cx="275" cy="305" r="18"/><circle cx="305" cy="306" r="20"/></g>
+<!-- shelves -->
+<path d="M20 410H455V439H20Z M28 380H447V390H28Z" fill="#99714d" stroke="#312b2a" stroke-width="9"/>
+<g stroke="#12212a" stroke-width="6"><rect x="62" y="313" width="37" height="68" fill="#4c8790"/><rect x="120" y="333" width="45" height="49" fill="#a57666"/><rect x="189" y="308" width="33" height="73" fill="#7970a1"/><rect x="253" y="318" width="46" height="63" fill="#9a5b3d"/><rect x="328" y="305" width="35" height="76" fill="#608c70"/><rect x="391" y="329" width="36" height="52" fill="#a27e53"/></g>
+<circle cx="477" cy="230" r="152" fill="url(#light)"/>
+<!-- counter -->
+<path d="M0 474L1100 474V535H0Z" fill="#9a714e" stroke="#251f23" stroke-width="11"/>
+<path d="M0 530H1100V720H0Z" fill="#513729"/>
+<path d="M0 554H1100M0 610H1100M0 674H1100" stroke="#81553e" stroke-width="8"/>
+<g><rect x="150" y="434" width="95" height="44" fill="#85765f" stroke="#3b3131" stroke-width="6"/><rect x="300" y="438" width="122" height="39" fill="#59736d" stroke="#2c312b" stroke-width="6"/><rect x="690" y="425" width="105" height="51" fill="#9c644a" stroke="#373032" stroke-width="7"/><rect x="850" y="415" width="74" height="60" fill="#606f7b" stroke="#252b2d" stroke-width="7"/></g>
+<path d="M520 450L587 380L620 462L552 469Z" fill="#aa8d63" stroke="#363332" stroke-width="7"/>
+<circle cx="590" cy="386" r="19" fill="#ecbd74"/><circle cx="592" cy="387" r="10" fill="#a6814c"/>
+<rect x="14" y="14" width="1072" height="692" fill="none" stroke="#11151c" stroke-width="28"/>
+</svg>
