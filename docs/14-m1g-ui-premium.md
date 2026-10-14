@@ -82,6 +82,26 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [ ] Playtest em Android físico + Xbox real; só então considerar pronto.
 - [ ] Revisão artística explícita antes de publicar a demo.
 
+## M1h — Arte definitiva (execução incremental)
+
+### M1h-A — Identidade de Peren, paleta prateada [CANDIDATO EM REVISÃO]
+
+- [x] Criar uma variante isolada para comparação com o atlas M1e original, sem alterar sprites e saves existentes.
+- [x] Recolorir os 128 quadros de Peren (48×64), com cabelos e barba prateados, manto grafite e detalhes em ouro envelhecido.
+- [x] Preparar três retratos correlatos (normal, conjuração e ferimento), preservando alpha e dimensões do original.
+- [x] Adicionar modo experimental `?art=m1h` no jogo e seletor M1e/M1h no ateliê.
+- [x] Testes PNG do canal alfa e dimensões, comparações visuais Chromium e regressões de jogo.
+- [ ] Aprovação do visual da variante, revisão de silhueta e remoção completa do chapéu antigo.
+
+### M1h-B — Silhueta, cabelo e expressão canônicos [PENDENTE]
+
+- [ ] Revisão quadro a quadro do cabelo e barba prateados, especialmente 4 direções e perfis.
+- [ ] Substituir acessórios de cabeça antigos por cabelos canônicos sem chapéu pontudo.
+- [ ] Polir retratos e leitura em miniatura do sprite nas cenas reais de batalha/floresta.
+- [ ] Aceite pelo usuário de artes específicas antes de canonizar como padrão.
+
+Referência técnica e lacunas de M1h-A: [docs/20-m1h-a-peren-palette.md](20-m1h-a-peren-palette.md).
+
 ## Design system: primeiros tokens
 
 - **Profundidade e fundo:** `#08131c`, `#101f2a`, `#1b3039`; superfícies com translucidez controlada.

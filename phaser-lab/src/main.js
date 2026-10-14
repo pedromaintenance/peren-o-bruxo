@@ -20,6 +20,11 @@ for(const name of ['itens','receitas','magias','monstros','cidades']){
 }
 const catalogs=buildCatalogs(data);
 const bridge=createProgressBridge(localStorage,catalogs);
+// Experimental visual flag only. Existing game and save remain unchanged by default.
+if(new URLSearchParams(location.search).get('art')==='m1h'){
+  for(const img of document.querySelectorAll('img[src*="art/characters/peren/portrait"]'))
+    img.src=img.getAttribute('src').replace('./art/characters/peren/','./art-m1h/characters/peren/');
+}
 const inventory=createInventoryScreen({document,bridge,catalogs});
 
 
