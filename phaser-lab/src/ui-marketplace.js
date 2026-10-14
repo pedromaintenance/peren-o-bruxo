@@ -39,10 +39,12 @@ export function marketplaceViewModel(state,catalogs,{mode='buy',merchantId=null,
  const filtered=items.filter(item=>!needle||fold(item.name+' '+item.type+' '+item.id).includes(needle))
   .sort((a,b)=>Number(a.equipped)-Number(b.equipped)||a.name.localeCompare(b.name,'pt-BR'));
  const selected=filtered.find(i=>i.id===selectedId)||filtered[0]||null;
- const count=Number.isSafeInteger(quantity)?Math.max(1,Math.min(99,quantity)):1;
+ const validQuantity=Number.isSafeInteger(quantity)&&quantity>=1&&quantity<=99;
+ const count=validQuantity?quantity:0;
  let quote=null,problem='';
  if(selected){
-   if(mode==='sell'&&selected.equipped)problem='Item equipado: não pode ser vendido.';
+   if(!validQuantity)problem='Quantidade inválida: escolha de 1 a 99 unidades.';
+   else if(mode==='sell'&&selected.equipped)problem='Item equipado: não pode ser vendido.';
    else if(mode==='sell'&&count>selected.owned)problem='Quantidade maior que a disponível na bolsa.';
    else{
      try{quote=tradeQuote(state,catalogs.itensById[selected.id],city,mode,count);}
@@ -189,11 +191,10 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
  doc.getElementById('tradeClose').addEventListener('click',close);
  confirm.addEventListener('click',event=>{root.dataset.confirmClicks=String(1+Number(root.dataset.confirmClicks||0));transact()});
  search.addEventListener('input',()=>{selectedId=null;limit=72;render()});
- amount.addEventListener('change',()=>{
-   const max=Math.min(99,mode==='sell'?(model?.selected?.owned||1):99);
-   amount.value=String(Math.max(1,Math.min(max,Math.trunc(Number(amount.value)||1))));
-   render();
- });
+ // Keep the quote current while typing. Do not rerender on blur/change:
+ // replacing button text during a pointerdown→pointerup click can cancel it
+ // on mobile Chromium and make a valid trade appear to do nothing.
+ amount.addEventListener('input',()=>render());
  more.addEventListener('click',()=>{limit+=72;render()});
  for(const tab of root.querySelectorAll('[data-trade-mode]'))tab.addEventListener('click',()=>setMode(tab.dataset.tradeMode));
  root.addEventListener('keydown',event=>{
