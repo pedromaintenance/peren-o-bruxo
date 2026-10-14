@@ -41,12 +41,14 @@ As telas de referência aprovadas (Portomonte, Inventário, Alquimia e Criação
 - [x] Node, Vite, PWA e Chromium em 360×800, 390×844 e 1280×800; Xbox simulado e integridade dos saves aprovados. [Run 38594839312](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38594839312).
 - [ ] Aprovação visual pelo usuário, Android/Xbox físicos e ícones individuais finais.
 
-### M1g-C — Alquimia / criação
+### M1g-C — Alquimia / criação [CÓDIGO IMPLEMENTADO, ARTE EM REVISÃO]
 
-- [ ] Retrabalhar lista de receitas a partir de `catalogs.receitas` por `city.estacoes`, pré-requisitos e quantidades.
-- [ ] Painel de ingredientes disponíveis vs necessários e produção, refletindo `craftable` e ações.
-- [ ] Arte própria da oficina: fundo decorativo **sem** texto/button baked-in, sprites/imagens com autoria.
-- [ ] Criar pelo bridge; mostrar estados sucesso/erro, sem transação duplicada.
+- [x] Retrabalhar lista de receitas a partir de `catalogs.receitas` por `city.estacoes`, pré-requisitos e quantidades.
+- [x] Painel de ingredientes disponíveis vs necessários e produção, refletindo `craftable` e ações.
+- [x] Arte própria provisória da oficina em SVG editável: cenário **sem** texto/button baked-in; arte final em pixel art ainda pendente.
+- [x] Criar pelo bridge; mostrar estados sucesso/erro, com bloqueio de comandos duplicados.
+- [x] Integrar controles teclado, touchscreen e Xbox simulado; testes automatizados incluídos.
+- [ ] Aprovação visual, CI de navegador completo e teste Android/Xbox físicos.
 
 ### M1g-D — Comércio
 
@@ -87,7 +89,7 @@ A funcionalidade antiga continua executável no navegador, testes Node e Chromiu
 
 ## Próxima ação
 
-M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. Próximo recorte de código: M1g-C, Alquimia e Criação, mantendo transações canônicas. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
+M1g-B implementado em branch empilhada sobre M1g-A (PR independente); revisar as capturas do inventário e o fluxo em Android. Próximo recorte após revisão do M1g-C: M1g-D, Comércio, mantendo transações canônicas. M1g-A e M1g-B aguardam aprovação visual; nada de merge na main.
 
 ### Revisão do primeiro lote de screenshots
 
