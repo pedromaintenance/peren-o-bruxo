@@ -6,6 +6,7 @@ import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
 import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
+async function bootstrap(){
 const data={};
 for(const name of ['itens','receitas','magias','monstros','cidades']){
   const response=await fetch(`./data/${name}.json`);
@@ -274,3 +275,6 @@ app.events.on('peren-progress-change',()=>{if(!$('hub').hidden)renderHub()});
 app.events.on('peren-progress-error',message=>notifyProgressError({message}));
 window.__perenProgress={get save(){return bridge.read()},get key(){return PHASER_KEY},get classicKey(){return CLASSIC_KEY}};
 renderHub();
+
+}
+bootstrap().catch(error=>{console.error('Falha na inicialização Phaser M1d',error);const hub=document.getElementById('hubStatus');if(hub)hub.textContent='Falha ao iniciar: '+error.message+' — recarregue a página ou restaure seu backup.';});
