@@ -156,7 +156,6 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
  }
  function transact(){
    const signature=mode+':'+selectedId+':'+amount.value;
-   root.dataset.tradeAttempt=JSON.stringify({busy,open:isOpen(),signature,lastCommittedSignature,elapsed:performance.now()-lastCommittedAt});
    // Suppress only the *same* double-tap, never a distinct buy→sell operation.
    if(busy||!isOpen()||(performance.now()-lastCommittedAt<450&&signature===lastCommittedSignature))return false;
    // Recalculate against the current bridge state; never trust cached prices.
@@ -189,7 +188,7 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
    render();doc.getElementById('tradeClose').focus({preventScroll:true});
  }
  doc.getElementById('tradeClose').addEventListener('click',close);
- confirm.addEventListener('click',event=>{root.dataset.confirmClicks=String(1+Number(root.dataset.confirmClicks||0));transact()});
+ confirm.addEventListener('click',transact);
  search.addEventListener('input',()=>{selectedId=null;limit=72;render()});
  // Keep the quote current while typing. Do not rerender on blur/change:
  // replacing button text during a pointerdown→pointerup click can cancel it
