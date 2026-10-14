@@ -22,3 +22,5 @@ console.log('Sprites M1e e cenários de referência clássicos sincronizados par
 await import('./peren-m1h-generator.mjs');
 // M1h-B derives a third, optional head/silhouette candidate. Never overwrite M1e/M1h-A.
 await import('./peren-m1hb-generator.mjs');
+// M1h-C is an optional refinement, generated last; never overwrite earlier art.
+await import('./peren-m1hc-generator.mjs');
