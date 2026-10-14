@@ -14,7 +14,7 @@ for(const path of ['characters/peren','regions/floresta-murin','monsters/mob-gal
 const classic=resolve(lab,'..','assets');
 const town=join(dest,'regions','portomonte');
 await mkdir(town,{recursive:true});
-for(const file of ['visao-carcaca.webp','laboratorio.webp','mercado.webp']){
+for(const file of ['visao-carcaca.webp']){
   await cp(join(classic,file),join(town,file),{force:true});
 }
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
