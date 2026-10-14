@@ -59,6 +59,6 @@ test('M1g-B browser structure is separate from selling and preserves independent
  assert.match(html,/ui-inventory\.css/);
  assert.match(main,/createInventoryScreen/);
  assert.match(main,/if\(inventory\.isOpen\(\)\)/);
- assert.match(main,/showInventory','bag'/);
+ assert.match(main,/\$\('showInventory'\).*marketplace\.open\('sell'\)/);
  assert.doesNotMatch(ui,/bridge\.execute|setItem\(|removeItem\(|localStorage|sessionStorage/);
 });
