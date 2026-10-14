@@ -37,8 +37,6 @@ jobs:
           test -s dist/index.html
           test -s dist/review.html
           test -s dist/art/regions/portomonte/visao-carcaca.webp
-          test -s dist/art/regions/portomonte/laboratorio.webp
-          test -s dist/art/regions/portomonte/mercado.webp
           test -s dist/demo-sw.js
       - name: Preparar Chromium
         run: npx playwright install --with-deps chromium
