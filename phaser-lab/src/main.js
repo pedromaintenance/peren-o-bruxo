@@ -1,12 +1,13 @@
 import Phaser from 'phaser';
 import { ExplorationScene } from './exploration.js';
 import {HERBS} from './world.js';
+import {XboxPadTracker} from './gamepad.js';
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
 const $=id=>document.getElementById(id);
 const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#101b1b',
   scale:{mode:Phaser.Scale.RESIZE,autoCenter:Phaser.Scale.CENTER_BOTH,width:390,height:844},
-  render:{pixelArt:true,antialias:false},physics:{default:'arcade',arcade:{debug:false}},
+  render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
   scene:[ExplorationScene]});
 window.__perenLab=app;
 const seed=String(new URLSearchParams(location.search).get('seed')||'murin-001').slice(0,60);
@@ -20,6 +21,7 @@ function updateHud(){
   if(last!==signature){last=signature;$('inventory-count').textContent=total;$('feedback').textContent=msg;
     $('collected').textContent=HERBS.filter(h=>bag[h.id]).map(h=>`${h.name}: ${bag[h.id]}`).join(' · ')||'Nenhum ingrediente coletado';}
   $('returnBtn').hidden=!app.registry.get('atExit');
+  $('bagContents').textContent=$('collected').textContent;
 }
 app.events.on('step',updateHud);
 // Touch joystick lives in DOM so camera zoom and map scrolling never crop it.
@@ -52,3 +54,53 @@ $('resetForest').addEventListener('click',()=>{app.registry.set('seed',String(Da
 // Standalone hub shown first. Real Peren HTML hub remains untouched in main.
 $('hub').hidden=false;$('controls').hidden=true;
 // Expedition pause is applied inside the scene after assets have loaded.
+
+
+// A standard Xbox controller drives *both* paused HTML menus and the Phaser scene.
+// Poll from the game clock: scene.update() stops when the city hub pauses exploration.
+// Browsers generally reveal a new controller only after the user presses a button.
+const xbox=new XboxPadTracker();
+let lastPadLabel='', hubChoice=0, forestVisited=false;
+const hubButtons=[$('goForest'),$('resetForest')];
+function selectHubChoice(index){
+  hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
+  hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
+}
+selectHubChoice(0);
+function toggleBag(show){
+  $('bagPanel').hidden=!show;
+  if(show)$('bagContents').textContent=$('collected').textContent;
+}
+const originalHub=hub;
+// Wrap the existing hub transition so pause, controller selection and bag agree.
+hub=function(show){originalHub(show);if(show){toggleBag(false);selectHubChoice(0);}else forestVisited=true;};
+function pollXbox(){
+  const state=xbox.poll(()=>navigator.getGamepads?.()||[]);
+  const label=state.connected?`🎮 Xbox / gamepad conectado: ${state.id}`:'🎮 Xbox: conecte o controle e pressione um botão';
+  if(label!==lastPadLabel){lastPadLabel=label;$('gamepad-status').textContent=label;$('gamepad-hud').textContent=state.connected?'🎮 Xbox conectado':'';}
+  const scene=joyScene();
+  if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint};
+  if(!state.connected)return;
+  const key=state.justPressed;
+  if(!$('hub').hidden){
+    if(key.down)selectHubChoice(hubChoice+1);
+    if(key.up)selectHubChoice(hubChoice-1);
+    if(key.a)hubButtons[hubChoice].click();
+    else if((key.b||key.menu)&&forestVisited)hub(false);
+    return;
+  }
+  if(!$('bagPanel').hidden){
+    if(key.b||key.y||key.view||key.menu)toggleBag(false);
+    return;
+  }
+  if(key.a||key.x)scene?.command('gather');
+  if(key.y||key.view)toggleBag(true);
+  else if(key.b||key.menu)hub(true);
+}
+app.events.on('step',pollXbox);
+window.addEventListener('keydown',event=>{
+  if(event.code!=='Escape')return;
+  if(!$('bagPanel').hidden){toggleBag(false);return;}
+  hub($('hub').hidden);
+});
+$('bagClose').addEventListener('click',()=>toggleBag(false));

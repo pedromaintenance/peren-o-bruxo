@@ -19,6 +19,8 @@ Os assets do build são copiados pelo script Node `scripts/sync-assets.mjs`, da 
 
 - PC: `WASD`/setas, `Shift` para correr, `E` ou `Espaço` para colher.
 - Celular: arrastar no círculo inferior esquerdo, botões **Correr** e **Colher** à direita.
+- **Gamepad Xbox (USB ou Bluetooth, mapeamento padrão do navegador):** analógico esquerdo ou direcional para andar; **RT**, **RB** ou **L3** para correr; **A/X** para colher/interagir; **Y** ou **View** abre a bolsa; **B** ou **Menu (☰)** pausa/retorna a Portomonte. Na cidade, direcional para escolher opções, **A** para confirmar, **B/Menu** para retomar a última expedição. Não necessita teclado depois da primeira ativação do controle.
+- O navegador pode exigir apertar qualquer botão físico após conectar; alguns navegadores/dispositivos não expõem o controle pela Gamepad API. Desconectar zera o comando imediatamente, e uma zona morta de 20% evita deriva.
 - Exibir a **Portomonte** pelo marco da saída, ou gerar outra floresta pelo menu.
 - Cada mapa tem seed determinística (`?seed=murin-001`) e rota entre entrada e saída. Recursos são IDs de ingredientes oficiais do catálogo adaptado de Peren.
 
@@ -29,3 +31,5 @@ Os assets do build são copiados pelo script Node `scripts/sync-assets.mjs`, da 
 - Sistema atual da `main`: intocado. O inventário provisório não modifica o save existente.
 - Sem monstros nem combate neste recorte M1a; incluir na próxima fatia quando a experiência de movimento estiver aprovada.
 - Aprovado no script de QA de geração e rotas; execução em navegador/celular só marcada após Playwright e teste físico.
+
+Documentação de contrato de controles, incluindo combate planejado: [`docs/09-gamepad-xbox.md`](../docs/09-gamepad-xbox.md).

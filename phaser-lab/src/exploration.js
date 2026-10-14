@@ -50,7 +50,7 @@ export class ExplorationScene extends Phaser.Scene {
     this.cameras.main.setZoom(1.4);
     this.key=this.input.keyboard.addKeys('W,A,S,D,UP,DOWN,LEFT,RIGHT,SHIFT,E,SPACE,ESC');
     // A joystick is drawn in fixed HTML, outside the zoomed camera.
-    this.joy={x:0,y:0,active:false};
+    this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false};
     this.registry.set('collected',{});this.registry.set('status','Procure uma erva e toque em COLHER.');
     this.registry.set('ready',true);
     // a few subtle environmental motes, spatial and not interactive
@@ -89,7 +89,8 @@ export class ExplorationScene extends Phaser.Scene {
     if(this.key.A.isDown||this.key.LEFT.isDown)x--;if(this.key.D.isDown||this.key.RIGHT.isDown)x++;
     if(this.key.W.isDown||this.key.UP.isDown)y--;if(this.key.S.isDown||this.key.DOWN.isDown)y++;
     x+=this.joy.active?this.joy.x:0;y+=this.joy.active?this.joy.y:0;
-    const n=Math.hypot(x,y);const sprint=this.sprintTouch||this.key.SHIFT.isDown;
+    x+=this.gamepadInput?.move?.x||0;y+=this.gamepadInput?.move?.y||0;
+    const n=Math.hypot(x,y);const sprint=this.sprintTouch||this.key.SHIFT.isDown||this.gamepadInput?.sprint;
     const speed=sprint?205:135;
     const vx=n>0?x/n*speed:0,vy=n>0?y/n*speed:0;
     // Accelerator keeps movement fluid without grid snapping.

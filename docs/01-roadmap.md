@@ -17,6 +17,7 @@ O objetivo é entregar **qualidade e cobertura total, progressivamente**. O que 
 - [x] Criar sprite **autoral provisório** de Peren: 4 direções × 8 estados × 4 frames; validar atlas e clips por dados.
 - [x] Criar o primeiro tileset original de Mürin e seus props; geração por seed, rio, ponte, saída alcançável, nós de coleta.
 - [x] Integrar movimento direcional/Arcade Physics, joystick, corrida, câmera e coleta no laboratório Phaser isolado.
+- [x] Controle Xbox via Gamepad API: movimento analógico/direcional, RT/RB para correr, A/X para colher, Y para bolsa e botões de navegação no menu; testes de gamepad simulado. **Dispositivo físico pendente.**
 - [x] Testar geração determinística e alcance: 86 cenários/validações Node passaram localmente.
 - [x] Criar workflow de build e teste visual Playwright para navegador remoto no GitHub Actions.
 - [ ] Confirmar compilação Vite e Phaser empacotado no CI (dependências npm inacessíveis no container de desenvolvimento).
