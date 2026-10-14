@@ -21,7 +21,7 @@
 - `phaser-lab/tests/ui-adventure.test.mjs` valida dados e percentuais de HUD, estados de combate, catálogo de magias e marcadores DOM.
 - `phaser-lab/scripts/adventure-browser.mjs` gera 9 capturas reais de exploração/encontro/combate em 360×800, 390×844 e 1280×800; valida barras, arte, fuga sem recompensa e save clássico intocado.
 - `.github/workflows/phaser-m1g-e.yml` roda Node, Vite, PWA, Chromium e regressões de Portomonte, Inventário, Alquimia, Comércio, coleta, batalha, Xbox simulado e persistência.
-- **Pendente:** validação completa da execução GitHub Actions, verificação artística das capturas, Android e Xbox físicos, troca de sprites provisórios do M1e. Teste funcional não implica equivalência visual com os conceitos.
+- **CI funcional aprovado:** [workflow #38629438749](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38629438749), incluindo capturas mobile/desktop e regressões da vertical slice. **Pendente:** aprovação artística das capturas, Android e Xbox físicos, troca de sprites provisórios do M1e. Teste funcional não implica equivalência visual com os conceitos.
 - **Proibido:** alterar o save clássico `peren_carcaca_save_v1`, criar golpes/magias/recompensas fictícias ou publicar automaticamente na `main`.
 
 ## Próxima etapa
