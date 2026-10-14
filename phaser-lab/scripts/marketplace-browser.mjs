@@ -86,7 +86,8 @@ try{
     reason:document.getElementById('tradeReason').textContent,
     quantity:document.getElementById('tradeQuantity').value,disabled:document.getElementById('tradeConfirm').disabled,
     active:document.querySelector('.trade-item.is-selected')?.dataset.itemId,
-    attempt:document.getElementById('tradeUI').dataset.tradeAttempt
+    attempt:document.getElementById('tradeUI').dataset.tradeAttempt,
+    clickCount:document.getElementById('tradeUI').dataset.confirmClicks
   })));
   assert.equal(afterSell.revision,afterBuy.revision+1);
   assert.equal(afterSell.character.bag['mat-agua-purificada'],before.character.bag['mat-agua-purificada']);
