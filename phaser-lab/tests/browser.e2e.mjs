@@ -1,6 +1,7 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
 import {mkdir} from 'node:fs/promises';
+import {newClassicState,CLASSIC_KEY,PHASER_KEY} from '../src/progress.js';
 const base=process.env.PEREN_PREVIEW_URL||'http://127.0.0.1:4173/';
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const errors=[];
@@ -14,7 +15,16 @@ for(const [w,h] of [[390,844],[360,800]]){
    window.__mockXbox={id:'Xbox Wireless Controller (mock)',index:0,connected:true,mapping:'standard',axes:[0,0,0,0],buttons:Array.from({length:17},()=>({pressed:false,value:0}))};
    Object.defineProperty(navigator,'getGamepads',{configurable:true,value:()=>[window.__mockXbox]});
  });
+ const classic={...newClassicState(),gold:751,day:6};
+ await page.addInitScript(({key,value})=>localStorage.setItem(key,JSON.stringify(value)),{key:CLASSIC_KEY,value:classic});
  await page.goto(base,{waitUntil:'networkidle',timeout:30000});
+ await page.waitForFunction(()=>!!window.__perenProgress?.save,{timeout:30000});
+ const importState=await page.evaluate(({classicKey})=>({phaser:window.__perenProgress.save,
+   untouched:JSON.parse(localStorage.getItem(classicKey))}),{classicKey:CLASSIC_KEY});
+ assert.equal(importState.phaser.character.gold,classic.gold);
+ assert.equal(importState.phaser.character.day,6);
+ assert.deepEqual(importState.untouched,classic);
+
  if(w===390){
    await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready'),{timeout:30000});
    await page.waitForFunction(()=>document.querySelector('#gamepad-status').textContent.includes('Xbox Wireless'));
@@ -73,6 +83,10 @@ for(const [w,h] of [[390,844],[360,800]]){
    await page.evaluate(()=>{window.__mockXbox.buttons[0]={pressed:false,value:0}});
  }else await page.locator('#gatherBtn').click();
  await page.waitForFunction(()=>{const x=window.__perenLab.registry.get('collected');return x&&Object.values(x).some(n=>n>0)},{timeout:8000});
+ const afterGather=await page.evaluate(key=>({save:JSON.parse(localStorage.getItem(key)),id:window.__perenLab.scene.getScene('ExplorationScene').world.nodes[0].itemId}),PHASER_KEY);
+ assert.ok(afterGather.save.ledger&&Object.keys(afterGather.save.ledger).some(k=>k.startsWith('collect:')));
+ assert.ok(afterGather.save.character.bag[afterGather.id]>=(classic.bag[afterGather.id]||0)+1);
+
  if(w===390){
    await page.evaluate(()=>{window.__mockXbox.buttons[3]={pressed:true,value:1}}); // Y opens bag
    await page.locator('#bagPanel').waitFor({state:'visible'});
@@ -145,7 +159,13 @@ for(const [w,h] of [[390,844],[360,800]]){
    const a=window.__perenLab,p=a.registry.get('combatProfile'),s=a.scene.getScene('ExplorationScene');
    return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss'],remaining:s.beasts.length,paused:s.scene.isPaused()};
  });
- assert.deepEqual(win,{gold:8,xp:13,kills:1,moss:1,remaining:5,paused:false});
+ assert.equal(win.gold,classic.gold+8);assert.equal(win.xp,13);assert.equal(win.kills,1);
+ assert.equal(win.moss,(classic.bag['ing-hanging-moss']||0)+1);
+ assert.equal(win.remaining,5);assert.equal(win.paused,false);
+ const storedVictory=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
+ assert.equal(storedVictory.character.gold,win.gold);
+ assert.ok(Object.keys(storedVictory.ledger).some(k=>k.startsWith('battle:')));
+
  await page.waitForTimeout(200);
  assert.equal(await page.locator('#encounterModal').isVisible(),false);
  // A second encounter can be fled; this must not add loot, experience or gold.
@@ -171,12 +191,36 @@ for(const [w,h] of [[390,844],[360,800]]){
    await page.locator('#battleUI').waitFor({state:'hidden',timeout:8000});
  }
  const afterFlee=await page.evaluate(()=>{const p=window.__perenLab.registry.get('combatProfile');return {gold:p.gold,xp:p.xp,kills:p.kills,moss:p.bag['ing-hanging-moss']}});
- assert.deepEqual(afterFlee,{gold:8,xp:13,kills:1,moss:1});
+ assert.deepEqual(afterFlee,{gold:win.gold,xp:win.xp,kills:win.kills,moss:win.moss});
+ const afterFleePersist=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
+ assert.equal(afterFleePersist.character.gold,win.gold);
+ assert.equal(afterFleePersist.character.kills,1);
+
  // Return to hub from exit marker.
  await page.evaluate(()=>{const s=window.__perenLab.scene.getScene('ExplorationScene'),n=s.world.exit;s.player.setPosition((n.x+.5)*32,(n.y+.5)*32);s.player.body.reset(s.player.x,s.player.y)});
  await page.waitForTimeout(250);
  await page.locator('#returnBtn').click();await page.locator('#hub').waitFor({state:'visible'});
  await page.screenshot({path:`screenshots/murin-${w}.png`,fullPage:true});
+ // Real workshop action (original recipe ID) and commercial transaction.
+ await page.locator('#showCraft').click();
+ const craftsBefore=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
+ await page.locator('.market-line button').first().click();
+ const craftsAfter=await page.evaluate(()=>window.__perenProgress.save.character.crafted);
+ assert.equal(craftsAfter,craftsBefore+1);
+ await page.locator('#showShop').click();
+ const tradeBefore=await page.evaluate(()=>window.__perenProgress.save.character.gold);
+ await page.locator('.market-line button').first().click();
+ assert.ok(await page.evaluate(()=>window.__perenProgress.save.character.gold)<tradeBefore);
+ const ledgerBefore=await page.evaluate(()=>Object.keys(window.__perenProgress.save.ledger).length);
+ const classicPersist=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),CLASSIC_KEY);
+ assert.deepEqual(classicPersist,classic,'Original save must never change');
+ // Reload on a fresh session: map collectibles and combat loot must persist.
+ await page.reload({waitUntil:'networkidle'});
+ await page.waitForFunction(()=>!!window.__perenProgress?.save&&window.__perenLab?.registry?.get('ready'));
+ assert.equal(await page.evaluate(()=>window.__perenProgress.save.character.kills),1);
+ assert.equal(await page.evaluate(()=>Object.keys(window.__perenProgress.save.ledger).length),ledgerBefore);
+ assert.equal(await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').collected.size),1);
+ assert.equal(await page.evaluate(()=>window.__perenLab.scene.getScene('ExplorationScene').beasts.length),5);
  await page.close();
  console.log(`BROWSER OK ${w}x${h}: animated character, Xbox/keyboard/touch movement, gather, hub, 32 clips`);
 }

@@ -23,6 +23,8 @@ export class ExplorationScene extends Phaser.Scene {
   }
   create(){
     this.world=buildForest(this.registry.get('seed')||'murin-001');
+    const bridge=this.registry.get('progressBridge');
+    this.collected=new Set(bridge?.collectedIds(this.world.seed)||[]);
     if(!this.registry.get('combatProfile'))this.registry.set('combatProfile',defaultProfile());
     this.weather=worldWeather(this.world.seed);
     this.activeEncounter=null;this.enemyClock=0;
@@ -47,7 +49,7 @@ export class ExplorationScene extends Phaser.Scene {
       obj.body.setSize(TILE,TILE);obj.refreshBody();
     }
     this.resources=new Map();
-    for(const node of world.nodes){const s=this.add.image((node.x+.5)*TILE,(node.y+.5)*TILE,node.sprite).setDepth(node.y*TILE+16);this.resources.set(node.id,s)}
+    for(const node of world.nodes){if(this.collected.has(node.id))continue;const s=this.add.image((node.x+.5)*TILE,(node.y+.5)*TILE,node.sprite).setDepth(node.y*TILE+16);this.resources.set(node.id,s)}
     const ex=world.exit;const marker=this.add.image((ex.x+.5)*TILE,(ex.y+.5)*TILE,'exit').setDepth(ex.y*TILE+15);
     this.tweens.add({targets:marker,alpha:.55,duration:850,yoyo:true,repeat:-1});
     this.animsForPeren();
@@ -153,7 +155,7 @@ export class ExplorationScene extends Phaser.Scene {
       beast.sprite?.destroy();beast.bar?.destroy();
       this.beasts=this.beasts.filter(b=>b!==beast);
       this.registry.set('beastCount',this.beasts.length);
-      this.registry.set('status',`${beast.name} foi derrotado. Os materiais estão na bolsa provisória.`);
+      this.registry.set('status',`${beast.name} foi derrotado. Os materiais estão no inventário de Peren.`);
     }else{
       const safe=safeRetreat(this.world,{x:this.player.x,y:this.player.y},beast,this.beasts.filter(b=>b!==beast));
       this.player.body.reset(safe.x,safe.y);
@@ -183,6 +185,10 @@ export class ExplorationScene extends Phaser.Scene {
     this.isGathering=true;this.player.setVelocity(0,0);this.playState('gather');
     this.player.once(Phaser.Animations.Events.ANIMATION_COMPLETE,()=>{
       if(this.collected.has(n.id)){this.isGathering=false;return}
+      const bridge=this.registry.get('progressBridge');
+      if(bridge){try{bridge.execute({type:'collect',seed:this.world.seed,nodeId:n.id,world:this.world});
+         this.registry.set('combatProfile',bridge.combatProfile());this.game.events.emit('peren-progress-change',bridge.read());
+       }catch(err){this.registry.set('status','Coleta não salva: '+err.message);this.game.events.emit('peren-progress-error',err.message);this.isGathering=false;return}}
       this.collected.add(n.id);
       const bag={...this.registry.get('collected')};bag[n.itemId]=(bag[n.itemId]||0)+n.count;
       this.registry.set('collected',bag);
