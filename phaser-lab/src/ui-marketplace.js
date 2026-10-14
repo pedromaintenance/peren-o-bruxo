@@ -65,7 +65,7 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
        search=doc.getElementById('tradeSearch'),amount=doc.getElementById('tradeQuantity'),confirm=doc.getElementById('tradeConfirm'),
        more=doc.getElementById('tradeMore');
  if(!root||!list||!seller||!search||!amount||!confirm||!more)throw Error('Estrutura do comércio M1g-D incompleta.');
- let mode='buy',merchantId=null,selectedId=null,limit=72,busy=false,lastCommittedAt=-Infinity,priorFocus=null,model=null;
+ let mode='buy',merchantId=null,selectedId=null,limit=72,busy=false,lastCommittedAt=-Infinity,lastCommittedSignature='',priorFocus=null,model=null;
  const isOpen=()=>!root.hidden;
  function render({focusItem=false}={}){
    model=marketplaceViewModel(bridge.state,catalogs,{mode,merchantId,query:search.value,
@@ -153,14 +153,16 @@ export function createMarketplaceScreen({document:doc,bridge,catalogs,onChange=(
    selectedId=model.items[next].id;amount.value='1';render({focusItem:true});
  }
  function transact(){
-   if(busy||!isOpen()||performance.now()-lastCommittedAt<450)return false;
+   const signature=mode+':'+selectedId+':'+amount.value;
+   // Suppress only the *same* double-tap, never a distinct buy→sell operation.
+   if(busy||!isOpen()||(performance.now()-lastCommittedAt<450&&signature===lastCommittedSignature))return false;
    // Recalculate against the current bridge state; never trust cached prices.
    const fresh=marketplaceViewModel(bridge.state,catalogs,{mode,merchantId,query:search.value,selectedId,quantity:Number(amount.value),limit});
    if(!fresh.selected||!fresh.quote||fresh.selected.id!==selectedId){render();return false;}
    busy=true;confirm.disabled=true;
    try{
      const result=bridge.execute({type:mode,id:selectedId,quantity:fresh.quantity});
-     lastCommittedAt=performance.now();
+     lastCommittedAt=performance.now();lastCommittedSignature=signature;
      put(doc,'tradeFeedback',(mode==='buy'?'Comprado: ':'Vendido: ')+fresh.quantity+' × '+fresh.selected.name+
        ' · '+fmt(result.result.gold)+' moedas. Progresso salvo.');
      doc.getElementById('tradeFeedback').dataset.state='success';
