@@ -1,0 +1,52 @@
+name: Peren M1g-B - inventario premium
+on:
+  push:
+    branches: [feature/phaser-m1g-b-inventario]
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-b.yml"
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1g-b.yml"
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar regras e inventario read-only
+        run: npm test
+      - name: Compilar UI, jogo e galeria
+        run: npm run build
+      - name: Gerar pacote PWA isolado
+        run: node scripts/prepare-demo.mjs
+      - name: Conferir CSS e assets do inventario
+        run: |
+          set -euo pipefail
+          test -s dist/index.html
+          test -s dist/ui-inventory.css
+          test -s dist/art/characters/peren/portrait.png
+          test -s dist/art/characters/peren/peren-atlas.png
+          test -s dist/demo-sw.js
+      - name: Preparar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verificar inventario 360, 390, 1280 e gamepad
+        run: node scripts/inventory-browser.mjs
+      - name: Salvar capturas do inventario
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1g-b-inventario
+          path: phaser-lab/screenshots/inventario-m1g-*.png
+          if-no-files-found: warn
