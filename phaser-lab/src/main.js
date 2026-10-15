@@ -22,7 +22,7 @@ const catalogs=buildCatalogs(data);
 const bridge=createProgressBridge(localStorage,catalogs);
 // Experimental visual flag only. Existing game and save remain unchanged by default.
 const chosenArt=new URLSearchParams(location.search).get('art');
-if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
+if(['m1h','m1hb','m1hc','m1hd','m1he'].includes(chosenArt)){
   const dir=({'m1h':'art-m1h','m1hb':'art-m1hb','m1hc':'art-m1hc','m1hd':'art-m1hd'})[chosenArt];
   for(const img of document.querySelectorAll('img[src*="art/characters/peren/portrait"]'))
     img.src=img.getAttribute('src').replace('./art/characters/peren/','./'+dir+'/characters/peren/');
