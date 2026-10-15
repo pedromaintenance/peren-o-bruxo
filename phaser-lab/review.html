@@ -108,6 +108,12 @@ let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
 const artValue=new URLSearchParams(location.search).get('art');
 $('perenVariant').value=['m1h','m1hb','m1hc','m1hd'].includes(artValue)?artValue:'m1e';
 function applyVariant(){
+ const monsterVariant=new URLSearchParams(location.search).get('art')==='m1he';
+ for(const id of ['mob-galho-infectado','mob-fungo-violeta','mob-ettercap']){
+  const dir=monsterVariant?'./art-m1he/monsters/':'./art/monsters/';
+  ents[id].path=dir+id+'/atlas.png';ents[id].portrait=dir+id+'/';
+ }
+
  if($('perenVariant').value==='m1hd'){
   ents.peren.path='./art-m1hd/characters/peren/peren-atlas.png';
   ents.peren.portrait='./art-m1hd/characters/peren/';
