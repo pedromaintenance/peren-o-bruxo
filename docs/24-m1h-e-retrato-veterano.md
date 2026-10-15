@@ -25,6 +25,7 @@ O **atlas de animação foi copiado sem qualquer modificação, byte a byte**, d
 ## Reversibilidade e implementação
 
 - Sexta variante no ateliê de sprites, `review.html?art=m1he`, e prévia jogável `?art=m1he`.
+- Nova página **`portrait-review.html`**, incluída no build Vite/PWA, compara M1h-D e M1h-E lado a lado. Possui seleção de três expressões, close-up pixelado com escalas de 2×, 3× e 4× e carregamento de PNGs reais; não acessa os saves.
 - Diretório exclusivo `phaser-lab/public/art-m1he/characters/peren/`.
 - M1e (padrão) e M1h-A/B/C/D permanecem acessíveis e intactos.
 - Sem mudanças em `combat.js`, progressão, save, economia ou mecânica.
