@@ -138,3 +138,11 @@ O gerador determinístico `scripts/peren-m1hd-generator.mjs` produz três retrat
 A prévia `?art=m1he` usa retratos redesenhados (256×256), com rosto anguloso, bigode caído e expressão austera. Diferentemente dos passes anteriores, **o atlas inteiro de 128 quadros é copiado byte a byte da M1h-D**, sem retocar animações. A pasta de arte original continua em `public/art/`, e a prévia é opt-in.
 
 O ateliê em `review.html?art=m1he` alterna seis candidatos. Com `npm run build` e `node scripts/peren-m1he-preview.mjs` é gerada uma prancha 1024×768 que aproxima os rostos e compara a antiga face com as três novas expressões. Depois do build, `node scripts/peren-m1he-browser.mjs` verifica funcionamento em três resoluções. Consulte [docs/24-m1h-e-retrato-veterano.md](../docs/24-m1h-e-retrato-veterano.md) para os critérios de aprovação humana.
+
+## M1i-A — Galho Infectado sombrio, candidato opcional
+
+O novo desenho do Galho usa o **mesmo ID e as mesmas sete animações** do original: 28 quadros 64×64 e retrato 160×160. A arte é gerada por `node scripts/galho-m1i-generator.mjs` em `public/art-m1i/`, a partir de `npm run build` / `npm test`, sem tocar nos PNGs antigos. Para experimentar, use `?monsters=m1i`; sem parâmetro, a criatura permanece original. O Fungo Violeta e o Ettercap continuam inalterados.
+
+Compare original e candidato no `review.html?monsters=m1i`, escolhendo **Galho Infectado** e o seletor **Arte do Galho Infectado**. `node scripts/m1i-galho-preview.mjs` gera a prancha antes/depois, e `node scripts/m1i-galho-browser.mjs` valida exploração, encontro, combate, fuga, retratos, alfa e save clássico. Consulte [docs/25-m1i-a-galho-infectado.md](../docs/25-m1i-a-galho-infectado.md) antes de aprovar o estilo.
+
+A candidata ainda está **em produção**: não há mudanças em mecânicas ou publicação automática.
