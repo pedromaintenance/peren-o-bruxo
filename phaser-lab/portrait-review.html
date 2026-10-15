@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10212b">
+<title>Peren — Estudo do Retrato Veterano M1h-E</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#08131b;color:#e9e0cc;font:15px/1.5 system-ui,sans-serif}
+a{color:#f0ce92}a:focus-visible,select:focus-visible{outline:3px solid #ffdb92;outline-offset:3px}
+header{background:linear-gradient(115deg,#162d38,#0b1b26);border-bottom:1px solid #ae9067;padding:22px clamp(14px,4vw,40px)}
+small{color:#cbb587;letter-spacing:.13em;text-transform:uppercase;font-size:10px}
+h1,h2{font-family:Georgia,serif;color:#f0d3a0;font-weight:500}
+h1{font-size:clamp(25px,4vw,38px);margin:5px 0}
+header p{max-width:810px;color:#cbd2cd}
+main{max-width:1140px;margin:auto;padding:20px clamp(12px,3vw,30px)}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+.controls{display:flex;gap:15px;flex-wrap:wrap;align-items:end;margin:18px 0 20px}
+label{display:grid;gap:7px;font-size:13px;color:#e4d3b5}
+select{border:1px solid #bca172;border-radius:5px;background:#182f3c;color:#f6e9d0;min-height:46px;padding:8px 11px;font:inherit}
+.study{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+article{border:1px solid #917957;background:linear-gradient(130deg,#162934,#0a1c29);border-radius:6px;overflow:hidden;min-width:0}
+article h2{margin:0;padding:12px 15px;border-bottom:1px solid #776a55;font-size:20px}
+article p{margin:8px 16px 12px;font-size:12px;color:#c4cdc5}
+.plate{display:grid;place-items:center;min-height:220px;background:radial-gradient(circle at 50% 55%,#233c40,#101a26 67%);padding:9px}
+.plate img{width:min(100%,300px);height:auto;aspect-ratio:1/1;image-rendering:pixelated;object-fit:contain}
+.plate canvas{display:block;max-width:100%;width:min(100%,340px);height:auto;image-rendering:pixelated;background:#101d29}
+h3{margin:0;padding:9px 14px;font-size:12px;color:#d9c292;text-transform:uppercase;letter-spacing:.12em}
+.info{margin:20px 0;padding:13px 17px;border-left:3px solid #c9aa71;background:#122634;color:#d5dfd6}
+.info p{margin:0 0 7px}.info p:last-child{margin-bottom:0}
+#status{font-size:12px;color:#acc8b2}
+@media(max-width:580px){.study{grid-template-columns:1fr}main{padding:12px}article h2{font-size:18px}.plate{min-height:200px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header>
+<small>Carcaça · Peren, o Bruxo · M1h-E</small>
+<h1>Estudo do Rosto Veterano</h1>
+<p>Comparação real entre os retratos M1h-D e M1h-E, sem alterar sprites, animações ou o jogo padrão. A nova face é uma candidata artística, não uma versão aprovada.</p>
+<nav><a href="./review.html?art=m1he">Ver todas as animações</a>
+<a href="./?art=m1he">Experimentar M1h-E no Phaser</a></nav>
+</header>
+<main>
+<div class="controls">
+<label>Expressão
+<select id="expression" aria-label="Expressão do retrato">
+<option value="">Neutro</option><option value="-cast">Conjurando</option><option value="-hurt">Ferido</option>
+</select></label>
+<label>Ampliação do rosto
+<select id="zoom" aria-label="Escala da ampliação facial">
+<option value="2">2×</option><option value="3">3×</option><option value="4">4×</option>
+</select></label>
+<span id="status" role="status" aria-live="polite">Carregando os retratos…</span>
+</div>
+<div class="study">
+<article><h2>M1h-D · Anterior</h2>
+<div class="plate"><img id="before" src="./art-m1hd/characters/peren/portrait.png" alt="Retrato anterior de Peren, versão M1h-D"></div>
+<h3>Rosto ampliado</h3><div class="plate"><canvas width="128" height="128" id="beforeCrop" role="img" aria-label="Ampliação pixelada do rosto anterior"></canvas></div>
+<p>Candidato de expressão anterior. Compare maçãs do rosto, sobrancelhas, nariz, boca e barba.</p></article>
+<article><h2>M1h-E · Redesenho</h2>
+<div class="plate"><img id="after" src="./art-m1he/characters/peren/portrait.png" alt="Retrato redesenhado de Peren, versão M1h-E"></div>
+<h3>Rosto ampliado</h3><div class="plate"><canvas width="128" height="128" id="afterCrop" role="img" aria-label="Ampliação pixelada do rosto redesenhado"></canvas></div>
+<p>Rosto mais estreito e envelhecido, olhos profundos e boca comprimida. Ainda exige aprovação humana.</p></article>
+</div>
+<section class="info"><p><strong>O que foi preservado:</strong> o atlas de 128 quadros da M1h-D, suas 32 animações, a silhueta do corpo e o cajado. Os retratos são os únicos arquivos gráficos alterados.</p>
+<p><strong>O que avaliar:</strong> se o rosto realmente transmite a idade e austeridade de Peren, se o bigode não parece uma máscara e se os três estados representam a mesma pessoa. A comparação não modifica saves.</p></section>
+</main>
+<script>
+(()=>{
+ const byId=id=>document.getElementById(id);
+ const expression=byId('expression'),zoom=byId('zoom');
+ let images=[];
+ async function render(){
+  const variant=expression.value;
+  const pairs=[['before','art-m1hd'],['after','art-m1he']];
+  try{
+   images=await Promise.all(pairs.map(async([id,path])=>{
+    const src='./'+path+'/characters/peren/portrait'+variant+'.png';
+    const img=byId(id);img.src=src;
+    await img.decode();
+    return img;
+   }));
+   for(const [i,name] of ['beforeCrop','afterCrop'].entries()){
+    const cvs=byId(name),ctx=cvs.getContext('2d',{alpha:false});
+    ctx.imageSmoothingEnabled=false;
+    ctx.fillStyle='#101d29';ctx.fillRect(0,0,128,128);
+    ctx.drawImage(images[i],65,90,128,128,0,0,128,128);
+    cvs.style.width=Math.min(128*Number(zoom.value),512)+'px';
+    cvs.style.height='auto';
+   }
+   byId('status').textContent='Duas imagens reais carregadas — '+({ '':'neutro','-cast':'conjurando','-hurt':'ferido'})[variant];
+  }catch(e){
+   byId('status').textContent='Não foi possível carregar os PNGs: '+e.message;
+  }
+ }
+ expression.addEventListener('change',render);
+ zoom.addEventListener('change',render);
+ render();
+})();
+</script></body></html>
