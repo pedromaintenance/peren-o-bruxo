@@ -26,3 +26,6 @@ await import('./peren-m1hb-generator.mjs');
 await import('./peren-m1hc-generator.mjs');
 // M1h-D builds the optional severe-expression candidate after M1h-C.
 await import('./peren-m1hd-generator.mjs');
+
+// M1h-E optional monster art, generated after legacy source synchronization.
+await import('./murin-m1he-generator.mjs');
