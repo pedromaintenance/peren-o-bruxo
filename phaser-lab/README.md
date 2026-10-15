@@ -132,3 +132,9 @@ Validação: `npm test`, `node scripts/peren-m1hc-preview.mjs` para uma prancha 
 A nova candidata artística se testa com `?art=m1hd` na demonstração ou `review.html?art=m1hd` no ateliê. A interface de revisão permite alternar entre M1e, M1h-A, M1h-B, M1h-C e M1h-D.
 
 O gerador determinístico `scripts/peren-m1hd-generator.mjs` produz três retratos e um atlas de 128 frames a partir da M1h-C, reconstruindo expressão, bigode e lábios sem afetar alfa, corpo, sprites anteriores, regras ou saves. QA: `npm test`, `node scripts/peren-m1hd-preview.mjs` e `node scripts/peren-m1hd-browser.mjs` após build; workflow `phaser-m1h-d.yml`. Veja [docs/23-m1h-d-expressao.md](../docs/23-m1h-d-expressao.md) para pendências de aprovação estética e hardware real.
+
+## M1h-E — Retrato veterano (revisão estrutural)
+
+A prévia `?art=m1he` usa retratos redesenhados (256×256), com rosto anguloso, bigode caído e expressão austera. Diferentemente dos passes anteriores, **o atlas inteiro de 128 quadros é copiado byte a byte da M1h-D**, sem retocar animações. A pasta de arte original continua em `public/art/`, e a prévia é opt-in.
+
+O ateliê em `review.html?art=m1he` alterna seis candidatos. Com `npm run build` e `node scripts/peren-m1he-preview.mjs` é gerada uma prancha 1024×768 que aproxima os rostos e compara a antiga face com as três novas expressões. Depois do build, `node scripts/peren-m1he-browser.mjs` verifica funcionamento em três resoluções. Consulte [docs/24-m1h-e-retrato-veterano.md](../docs/24-m1h-e-retrato-veterano.md) para os critérios de aprovação humana.

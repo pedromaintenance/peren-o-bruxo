@@ -129,6 +129,18 @@ Detalhes: [docs/22-m1h-c-peren-refino.md](22-m1h-c-peren-refino.md).
 
 Detalhes: [docs/23-m1h-d-expressao.md](23-m1h-d-expressao.md).
 
+### M1h-E — Redesenho estrutural do rosto veterano [CANDIDATO EM QA]
+
+- [x] Substituir o método de remendos de cor por redesenho da anatomia no retrato.
+- [x] Refinar têmporas, maçãs do rosto, olhos, nariz, sobrancelhas, boca e barba.
+- [x] Três retratos 256×256 e atlas de 128 quadros copiado byte a byte, sem mexer no movimento.
+- [x] Expor `?art=m1he` como sexta variante e ateliê de comparação.
+- [x] Testes de alfa, composição facial e identidade do atlas, mais prancha ampliada.
+- [ ] Inspecionar a prancha gerada, CI completo, aprovação estética e playtest físico.
+
+Documento de revisão: [docs/24-m1h-e-retrato-veterano.md](24-m1h-e-retrato-veterano.md).
+
+
 
 
 ## Design system: primeiros tokens
