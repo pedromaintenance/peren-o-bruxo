@@ -120,7 +120,7 @@ app.events.on('peren-encounter',info=>{
  $('encounterModal').hidden=false;
  $('controls').inert=true;
  $('beastName').textContent=info.name;
- $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
+ $('beastPortrait').src=new URLSearchParams(location.search).get('monsters')==='m1i'&&info.type==='mob-galho-infectado'?`./art-m1i/monsters/${info.type}/portrait.png`:`./art/monsters/${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
