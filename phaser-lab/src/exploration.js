@@ -21,7 +21,7 @@ export class ExplorationScene extends Phaser.Scene {
     ['tree-0','tree-1','tree-2','herb','mushroom','stone','rune','exit','bush'].forEach(n=>this.load.image(n,MURIN+n+'.png'));
     for(const beast of MURIN_BEASTS){
       this.load.spritesheet(beast.id,`${monsterAsset(beast.id)}atlas.png`,{frameWidth:64,frameHeight:64});
-      this.load.image(`${beast.id}-portrait`,`${ASSET}monsters/${beast.id}/portrait.png`);
+      this.load.image(`${beast.id}-portrait`,`${monsterAsset(beast.id)}portrait.png`);
     }
   }
   create(){
