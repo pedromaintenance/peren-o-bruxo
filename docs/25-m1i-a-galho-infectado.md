@@ -28,6 +28,13 @@ A prévia é ativada somente com `?monsters=m1i`; sem o parâmetro, a sprite e o
 - `node scripts/m1i-galho-browser.mjs` valida atlas realmente requisitado pelo Phaser, retrato do encontro, batalha, fuga sem recompensa e save clássico inalterado em 360×800, 390×844 e 1280×800.
 - CI dedicado repete regressão da vertical slice, 35 capturas, PWA e movimentação/Xbox simulado.
 
+## Primeira validação concluída
+
+- ✅ [Workflow #38666139096](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38666139096) terminou com sucesso: Node, PNG, build, PWA, 3 resoluções, 35 capturas históricas, Xbox simulado e saves intactos.
+- 🖼️ Artefato do workflow: **`peren-m1i-a-galho`**, com prancha **`m1i-a-galho-contact-sheet.png`** e screenshots de Mürin, encontro, combate e ateliê.
+- Inspeção artística da prancha: o novo Galho tem silhueta mais irregular e ameaçadora; olhos âmbar e resina central são visíveis. O retrato é propositalmente escuro, mas sua legibilidade no celular real ainda precisa ser avaliada.
+- **Aprovação estética ainda pendente.** Verificação funcional não substitui julgamento do usuário.
+
 ## Critérios de revisão artística
 
 - [ ] Ver a prancha real e a criatura no contexto sombrio da Floresta de Mürin.
