@@ -1,0 +1,53 @@
+name: Peren M1h-E - sprites de Murin
+on:
+  push:
+    branches: [feature/phaser-m1h-e-criaturas-murin]
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - "docs/24-m1h-e-criaturas-murin.md"
+      - ".github/workflows/phaser-m1h-e.yml"
+permissions:
+  contents: read
+jobs:
+  artwork:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependencias
+        run: npm install --no-audit --no-fund
+      - name: PNG e testes de regressao
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Verificar atlas alternativos
+        run: |
+          set -euo pipefail
+          for id in mob-galho-infectado mob-fungo-violeta mob-ettercap; do
+            test -s "dist/art-m1he/monsters/$id/atlas.png"
+            test -s "dist/art-m1he/monsters/$id/portrait.png"
+          done
+      - name: Preparar demo offline
+        run: node scripts/prepare-demo.mjs
+      - name: Auditar pacote
+        run: node scripts/audit-package.mjs
+      - name: Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Regressao visual e funcional
+        run: node scripts/vertical-slice-audit.mjs
+      - name: Entrega de evidencias
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1h-e-murin
+          path: |
+            phaser-lab/public/art-m1he/monsters/report.json
+            phaser-lab/screenshots/*.png
+          if-no-files-found: warn
