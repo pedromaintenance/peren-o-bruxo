@@ -1,0 +1,69 @@
+name: Peren M1i-A - Galho Infectado sombrio
+on:
+  push:
+    branches: [feature/phaser-m1i-a-galho-infectado]
+    paths: ["phaser-lab/**", ".github/workflows/phaser-m1i-a.yml"]
+  pull_request:
+    paths: ["phaser-lab/**", ".github/workflows/phaser-m1i-a.yml"]
+permissions:
+  contents: read
+jobs:
+  monster-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependencias
+        run: npm install --no-audit --no-fund
+      - name: Testar arte, motor e saves
+        run: npm test
+      - name: Compilar jogo e gerar atlas novo
+        run: npm run build
+      - name: Preparar PWA isolada
+        run: node scripts/prepare-demo.mjs
+      - name: Auditar cache PWA, catálogos e limite do pacote
+        run: node scripts/audit-package.mjs
+      - name: Garantir arte original e candidata no bundle
+        run: |
+          set -euo pipefail
+          for folder in art art-m1i; do
+            test -s "dist/$folder/monsters/mob-galho-infectado/atlas.png"
+            test -s "dist/$folder/monsters/mob-galho-infectado/portrait.png"
+          done
+          test -s dist/art-m1i/monsters/mob-galho-infectado/report.json
+      - name: Gerar prancha real antes/depois
+        env:
+          PEREN_PREVIEW_B64: "1"
+        run: node scripts/m1i-galho-preview.mjs
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Comparar artes no Phaser e atelier
+        run: node scripts/m1i-galho-browser.mjs
+      - name: Regressao da vertical slice com 35 capturas
+        run: node scripts/vertical-slice-audit.mjs
+      - name: Movimento, combate, save e Xbox simulado
+        run: |
+          set -euo pipefail
+          npx vite preview --host 127.0.0.1 --port 4173 --strictPort > /tmp/peren-preview.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then break; fi
+            sleep .5
+          done
+          npm run test:e2e
+      - name: Screenshots e prancha da criatura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1i-a-galho
+          path: |
+            phaser-lab/screenshots/m1i-a-*.png
+            phaser-lab/public/art-m1i/monsters/mob-galho-infectado/report.json
+          if-no-files-found: warn

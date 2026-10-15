@@ -28,3 +28,5 @@ await import('./peren-m1hc-generator.mjs');
 await import('./peren-m1hd-generator.mjs');
 // Portrait-focused fifth candidate: atlas copied unchanged, faces redrawn.
 await import('./peren-m1he-generator.mjs');
+// M1i-A is an optional monster art candidate; never overwrite existing M1e files.
+await import('./galho-m1i-generator.mjs');

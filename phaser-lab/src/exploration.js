@@ -7,6 +7,8 @@ const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
 const PEREN=({'m1h':'./art-m1h/characters/peren/','m1hb':'./art-m1hb/characters/peren/','m1hc':'./art-m1hc/characters/peren/','m1hd':'./art-m1hd/characters/peren/','m1he':'./art-m1he/characters/peren/'})[artVariant]||`${ASSET}characters/peren/`;
 const MURIN = `${ASSET}regions/floresta-murin/`;
+const M1I_GALHO=new URLSearchParams(location.search).get('monsters')==='m1i';
+const monsterAsset=id=>M1I_GALHO&&id==='mob-galho-infectado'?`./art-m1i/monsters/${id}/`:`${ASSET}monsters/${id}/`;
 const directions={down:0,left:1,right:2,up:3};
 const actions=['idle','walk','run','interact','gather','hurt','cast','attack'];
 const directionsList=Object.keys(directions);
@@ -18,8 +20,8 @@ export class ExplorationScene extends Phaser.Scene {
     this.load.spritesheet('forest-ground',MURIN+'ground-tiles.png',{frameWidth:32,frameHeight:32});
     ['tree-0','tree-1','tree-2','herb','mushroom','stone','rune','exit','bush'].forEach(n=>this.load.image(n,MURIN+n+'.png'));
     for(const beast of MURIN_BEASTS){
-      this.load.spritesheet(beast.id,`${ASSET}monsters/${beast.id}/atlas.png`,{frameWidth:64,frameHeight:64});
-      this.load.image(`${beast.id}-portrait`,`${ASSET}monsters/${beast.id}/portrait.png`);
+      this.load.spritesheet(beast.id,`${monsterAsset(beast.id)}atlas.png`,{frameWidth:64,frameHeight:64});
+      this.load.image(`${beast.id}-portrait`,`${monsterAsset(beast.id)}portrait.png`);
     }
   }
   create(){

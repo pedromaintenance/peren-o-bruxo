@@ -143,6 +143,20 @@ Documento de revisão: [docs/24-m1h-e-retrato-veterano.md](24-m1h-e-retrato-vete
 
 
 
+## M1i — Criaturas de Mürin: produção incremental de arte
+
+### M1i-A — Galho Infectado [CANDIDATO EM QA]
+
+- [x] Auditar as três criaturas já existentes e seus atlas canônicos.
+- [x] Desenhar variante mais sombria e legível do Galho (28 quadros, sete ações e retrato 160×160).
+- [x] Ativar opt-in `?monsters=m1i`, mantendo arte M1e como padrão e outros monstros intactos.
+- [x] Adicionar ateliê de comparação, testes PNG e testes de encontro/combate/saves em Chromium.
+- [x] [CI #38666139096](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38666139096) passou: 28 quadros, retratos, jornada, 35 telas, Xbox simulado, PWA e saves.
+- [x] Inspecionar prancha real para consistência de silhueta e material visual.
+- [ ] Aprovação visual do Galho e playtest físico antes de expandir a direção para Fungo Violeta e Ettercap.
+
+Documentação: [docs/25-m1i-a-galho-infectado.md](25-m1i-a-galho-infectado.md).
+
 ## Design system: primeiros tokens
 
 - **Profundidade e fundo:** `#08131c`, `#101f2a`, `#1b3039`; superfícies com translucidez controlada.
