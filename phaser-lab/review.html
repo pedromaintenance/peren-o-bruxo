@@ -108,7 +108,11 @@ let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
 const artValue=new URLSearchParams(location.search).get('art');
 $('perenVariant').value=['m1h','m1hb','m1hc','m1hd','m1he'].includes(artValue)?artValue:'m1e';
 function applyVariant(){
- if($('perenVariant').value==='m1hd'){
+ if($('perenVariant').value==='m1he'){
+  ents.peren.path='./art-m1he/characters/peren/peren-atlas.png';
+  ents.peren.portrait='./art-m1he/characters/peren/';
+  $('m1hGameLink').href='./?art=m1he';
+ }else if($('perenVariant').value==='m1hd'){
   ents.peren.path='./art-m1hd/characters/peren/peren-atlas.png';
   ents.peren.portrait='./art-m1hd/characters/peren/';
   $('m1hGameLink').href='./?art=m1hd';
