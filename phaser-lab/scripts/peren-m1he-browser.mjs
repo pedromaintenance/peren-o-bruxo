@@ -76,6 +76,26 @@ try{
   await gallery.screenshot({path:'screenshots/m1h-e-atelie-'+width+'.png',fullPage:true});
   assert.deepEqual(errs,[]);
   await gallery.close();
+  const compare=await browser.newPage({viewport:{width,height}});
+  const compareErrors=[];compare.on('pageerror',e=>compareErrors.push(e.message));
+  await compare.goto(base+'portrait-review.html',{waitUntil:'networkidle'});
+  await compare.waitForFunction(()=>document.getElementById('status').textContent.startsWith('Duas imagens'));
+  const before=await compare.locator('#before').getAttribute('src');
+  const after=await compare.locator('#after').getAttribute('src');
+  assert.match(before,/art-m1hd\/characters\/peren/);
+  assert.match(after,/art-m1he\/characters\/peren/);
+  await compare.locator('#expression').selectOption('-cast');
+  await compare.waitForFunction(()=>document.getElementById('status').textContent.includes('conjurando'));
+  assert.match(await compare.locator('#after').getAttribute('src'),/portrait-cast\.png$/);
+  await compare.locator('#expression').selectOption('-hurt');
+  await compare.waitForFunction(()=>document.getElementById('status').textContent.includes('ferido'));
+  assert.match(await compare.locator('#after').getAttribute('src'),/portrait-hurt\.png$/);
+  await compare.locator('#zoom').selectOption('3');
+  const crop=await compare.locator('#afterCrop').evaluate(el=>el.getBoundingClientRect().width);
+  assert.ok(crop>128,'Close-up zoom should enlarge pixel art');
+  await compare.screenshot({path:'screenshots/m1h-e-face-compare-'+width+'.png',fullPage:true});
+  assert.deepEqual(compareErrors,[]);
+  await compare.close();
   console.log('M1h-E '+width+'x'+height+' OK: 6 modos, floresta, batalha, 32 clips, retratos, save');
  }
 }finally{await browser?.close();server.kill('SIGTERM');}
