@@ -71,11 +71,11 @@ try{
   for(const portrait of ['neutral','cast','hurt']){
    await gallery.locator('#portraitMode').selectOption(portrait);
    const expected='portrait'+(portrait==='neutral'?'':'-'+portrait)+'.png';
-   assert.match(await gallery.locator('#portrait').getAttribute('src'),new RegExp('art-m1hd/.+'+expected.replace('.','\\.')+'$'));
+   assert.match(await gallery.locator('#portrait').getAttribute('src'),new RegExp('art-m1he/.+'+expected.replace('.','\\.')+'$'));
   }
   await gallery.screenshot({path:'screenshots/m1h-e-atelie-'+width+'.png',fullPage:true});
   assert.deepEqual(errs,[]);
   await gallery.close();
-  console.log('M1h-E '+width+'x'+height+' OK: 3 modos, floresta, batalha, 32 clips, retratos, save');
+  console.log('M1h-E '+width+'x'+height+' OK: 6 modos, floresta, batalha, 32 clips, retratos, save');
  }
 }finally{await browser?.close();server.kill('SIGTERM');}
