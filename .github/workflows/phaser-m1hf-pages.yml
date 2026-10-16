@@ -43,6 +43,7 @@ jobs:
           test -s phaser-lab/dist/index.html
           test -s phaser-lab/dist/review.html
           test -s phaser-lab/dist/asset-audition.html
+          test -s phaser-lab/dist/compare.html
           test -s phaser-lab/dist/manifest.webmanifest
           test -s phaser-lab/dist/demo-sw.js
           grep -q 'PRÉVIA M1h-F' phaser-lab/dist/index.html

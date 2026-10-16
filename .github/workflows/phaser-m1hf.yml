@@ -36,6 +36,7 @@ jobs:
           test -s dist/art-m1hf/monsters/report.json
           test -s dist/review.html
           test -s dist/asset-audition.html
+          test -s dist/compare.html
       - name: Instalar Chromium
         run: npx playwright install --with-deps chromium
       - name: Smoke de navegador no mobile e desktop

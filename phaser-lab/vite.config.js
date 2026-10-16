@@ -6,6 +6,7 @@ export default defineConfig({
   build:{rollupOptions:{input:{
     game:fileURLToPath(new URL('./index.html',import.meta.url)),
     review:fileURLToPath(new URL('./review.html',import.meta.url)),
-    audition:fileURLToPath(new URL('./asset-audition.html',import.meta.url))
+    audition:fileURLToPath(new URL('./asset-audition.html',import.meta.url)),
+    compare:fileURLToPath(new URL('./compare.html',import.meta.url))
   }}}
 });
