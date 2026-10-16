@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import {buildForest,nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.js';
 import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
 import {encounterKey,defaultProfile} from './combat.js';
+import {harvestProximity} from './harvest-proximity.js';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
@@ -30,6 +31,8 @@ export class ExplorationScene extends Phaser.Scene {
     if(!this.registry.get('combatProfile'))this.registry.set('combatProfile',defaultProfile());
     this.weather=worldWeather(this.world.seed);
     this.activeEncounter=null;this.enemyClock=0;
+    this.harvestCueSignature=undefined;
+    this.registry.set('harvestCue',null);
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
     this.cameras.main.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
@@ -195,6 +198,15 @@ export class ExplorationScene extends Phaser.Scene {
     this.registry.set('status',`Você recuou de ${beast.name}. Nenhum XP, ouro ou loot foi concedido.`);
     this.scene.resume();return true;
   }
+  updateHarvestCue(){
+    // Match collect() exactly: one nearest uncollected resource within 57px.
+    const cue=harvestProximity(this.world,this.player?.x,this.player?.y,this.collected,this.isGathering);
+    const signature=cue?`${cue.nodeId}:${cue.name}:${cue.count}`:'';
+    if(this.harvestCueSignature!==signature){
+      this.harvestCueSignature=signature;
+      this.registry.set('harvestCue',cue);
+    }
+  }
   collect(){
     if(this.isGathering)return;
     const n=nearestResource(this.world,this.player.x,this.player.y,this.collected);
@@ -216,7 +228,9 @@ export class ExplorationScene extends Phaser.Scene {
   }
   command(action){if(action==='gather')this.collect();if(action==='sprint')this.sprintTouch=true;if(action==='walk')this.sprintTouch=false;}
   update(_t,delta){
-    if(!this.player||this.isGathering||this.activeEncounter)return;
+    if(!this.player)return;
+    this.updateHarvestCue();
+    if(this.isGathering||this.activeEncounter)return;
     if(Phaser.Input.Keyboard.JustDown(this.key.E)||Phaser.Input.Keyboard.JustDown(this.key.SPACE)){this.collect();return}
     let x=0,y=0;
     if(this.key.A.isDown||this.key.LEFT.isDown)x--;if(this.key.D.isDown||this.key.RIGHT.isDown)x++;
