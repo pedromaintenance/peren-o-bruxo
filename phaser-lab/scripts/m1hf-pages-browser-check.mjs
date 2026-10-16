@@ -50,6 +50,20 @@ try{
   assert.ok(stage.sandbox,'No separate test save was produced');
   assert.equal(JSON.parse(stage.sandbox).worlds.activeSeed,'qa-m1hf-pages');
   assert.ok(stage.monsters.every(x=>x.frames>=28),'Three 28-frame monster atlases required');
+  // M1h-F.7: real in-game manual is a read-only preview screen.
+  assert.equal(await page.locator('#showGuide').isVisible(),true);
+  const saveBeforeGuide=await page.evaluate(()=>localStorage.getItem('peren_phaser_save_m1hf_preview_v1'));
+  await page.locator('#showGuide').click();
+  assert.equal(await page.locator('#guideUI').isVisible(),true);
+  assert.equal(await page.locator('#hub').getAttribute('inert'),'');
+  assert.equal(await page.locator('#guideTabs button').count(),4);
+  await page.locator('#guideTabs [data-guide-section="seguranca"]').click();
+  assert.match(await page.locator('#guideContent').textContent(),/Backup/);
+  assert.equal(await page.locator('#guideContent a[href="./teste.html"]').count(),1);
+  await page.keyboard.press('Escape');
+  assert.equal(await page.locator('#guideUI').isVisible(),false);
+  assert.equal(await page.locator('#hub').getAttribute('inert'),null);
+  assert.equal(await page.evaluate(()=>localStorage.getItem('peren_phaser_save_m1hf_preview_v1')),saveBeforeGuide,'Manual alterou progresso');
   const link=await page.locator('#m1hfPreviewNote').getAttribute('href');
   assert.equal(link,'./review.html?art=m1hf');
   await page.locator('#goForest').click();
