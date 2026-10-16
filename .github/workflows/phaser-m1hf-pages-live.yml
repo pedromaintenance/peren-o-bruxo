@@ -22,7 +22,9 @@ jobs:
           READY=0
           for i in $(seq 1 48); do
             if curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}?check=${GITHUB_SHA}&attempt=$i" -o /tmp/peren-m1hf-index.html &&
-               grep -q 'PRÉVIA M1h-F' /tmp/peren-m1hf-index.html; then
+               grep -q 'PRÉVIA M1h-F' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="m1hfDiagCopy"' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="battleRewardPreview"' /tmp/peren-m1hf-index.html; then
               READY=1
               echo "Pages atualizado na tentativa $i"
               break
@@ -76,7 +78,7 @@ jobs:
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-browser-check.mjs
       - name: Conferir seis vitórias completas no site público
         working-directory: phaser-lab
-        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-combat-qa.mjs
+        run: PEREN_QA_REQUIRE_M1HF2=1 PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-combat-qa.mjs
       - name: Conferir recuperação após erro, derrota, fuga e clique duplicado
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-combat-resilience-qa.mjs
