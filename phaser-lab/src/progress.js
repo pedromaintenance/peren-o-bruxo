@@ -4,8 +4,12 @@
  * All mutations return new immutable snapshots and commit through a single gate.
  */
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
+// The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
+// Use a private staging key and disable classic-save import for that BUILD only.
+// import.meta.env is provided by Vite; Node tests use the stable defaults.
+export const M1HF_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
 export const CLASSIC_KEY='peren_carcaca_save_v1';
-export const PHASER_KEY='peren_phaser_save_m1d_v1';
+export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_preview_v1':'peren_phaser_save_m1d_v1';
 export const PHASER_SCHEMA=2;
 const MAX_GOLD=1e10, MAX_COUNT=1000000;
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -200,8 +204,9 @@ export function createProgressBridge(storage,c){
  let env;const staged=storage.getItem(PHASER_KEY);
  if(staged){env=checkEnvelope(JSON.parse(staged),c)}
  else{
-  const classic=storage.getItem(CLASSIC_KEY);
-  env=classic?stageFromClassic(JSON.parse(classic),c):newEnvelope(newClassicState(),c,'new-game');
+  // Never read a user's classic save from the public experimental Pages preview.
+  const classic=M1HF_PREVIEW?null:storage.getItem(CLASSIC_KEY);
+  env=classic?stageFromClassic(JSON.parse(classic),c):newEnvelope(newClassicState(),c,M1HF_PREVIEW?'m1hf-preview':'new-game');
  }
  const read=()=>jsonCopy(env);
  const sync=()=>{const latest=storage.getItem(PHASER_KEY);
