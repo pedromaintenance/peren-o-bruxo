@@ -1,0 +1,73 @@
+{
+  "stage": "M1h-A",
+  "status": "em_producao",
+  "approval": "pendente",
+  "goal": "cabelo e barba prateados; traje grafite; realces ouro envelhecido; magia azul-aciano",
+  "base": "M1e 128 quadros / 32 clips de animação",
+  "sources": [
+    "peren-atlas.png",
+    "portrait.png",
+    "portrait-cast.png",
+    "portrait-hurt.png"
+  ],
+  "palette": {
+    "302734": "b3b7bc",
+    "394260": "3f5057",
+    "615477": "5a626d",
+    "844655": "43515a",
+    "302c48": "242a35",
+    "44405f": "3a424e",
+    "24283f": "202a30",
+    "bd895a": "a68c67",
+    "e2b879": "c8b28a",
+    "22233a": "323a44",
+    "49405d": "697986",
+    "8f434d": "48525d",
+    "b35f63": "77838b",
+    "27242f": "adb6c1",
+    "a8a4b6": "e1e2dc",
+    "1b1b2d": "1c222b",
+    "10121d": "10171e",
+    "1a1b28": "161d25",
+    "77635a": "776d68",
+    "985e53": "a17872",
+    "b8a0ff": "a8d6f0",
+    "aa64ff": "6aa9d2",
+    "e4c4ff": "c8e9f7",
+    "6e57bd": "4e749a"
+  },
+  "report": [
+    {
+      "filename": "peren-atlas.png",
+      "width": 1536,
+      "height": 256,
+      "opaque": 184910,
+      "recolored": 160576,
+      "recoloredPercent": 87
+    },
+    {
+      "filename": "portrait.png",
+      "width": 256,
+      "height": 256,
+      "opaque": 65536,
+      "recolored": 29740,
+      "recoloredPercent": 45
+    },
+    {
+      "filename": "portrait-cast.png",
+      "width": 256,
+      "height": 256,
+      "opaque": 65536,
+      "recolored": 30556,
+      "recoloredPercent": 47
+    },
+    {
+      "filename": "portrait-hurt.png",
+      "width": 256,
+      "height": 256,
+      "opaque": 65536,
+      "recolored": 29784,
+      "recoloredPercent": 45
+    }
+  ]
+}

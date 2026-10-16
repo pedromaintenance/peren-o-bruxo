@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1152" height="704" viewBox="0 0 1152 704" shape-rendering="crispEdges" role="img" aria-label="Oficina de Peren, arte vetorial pixelada original de produção provisória">
+ <defs>
+  <linearGradient id="wall" x2=".8" y2="1"><stop stop-color="#182b36"/><stop offset=".67" stop-color="#20302f"/><stop offset="1" stop-color="#091c2a"/></linearGradient>
+  <linearGradient id="cauldron" x2="1" y2="1"><stop stop-color="#536367"/><stop offset=".5" stop-color="#192a33"/><stop offset="1" stop-color="#0b151f"/></linearGradient>
+  <radialGradient id="flare"><stop stop-color="#c8ffca" stop-opacity=".9"/><stop offset=".28" stop-color="#41bcab" stop-opacity=".53"/><stop offset="1" stop-color="#399f9a" stop-opacity="0"/></radialGradient>
+  <radialGradient id="lamp"><stop stop-color="#ffc177" stop-opacity=".8"/><stop offset="1" stop-color="#d88330" stop-opacity="0"/></radialGradient>
+ </defs>
+ <rect width="1152" height="704" fill="#0b1620"/>
+ <rect x="0" y="0" width="1152" height="565" fill="url(#wall)"/>
+ <!-- blocks and mortar --><g fill="none" stroke="#465052" stroke-width="3" opacity=".32">
+ <path d="M0 96H1152M0 195H1152M0 300H1152M0 405H1152M0 503H1152"/>
+ <path d="M120 0V96M355 0V96M575 0V96M810 0V96M1024 0V96M230 96V195M490 96V195M700 96V195M986 96V195M90 195V300M350 195V300M620 195V300M895 195V300M225 300V405M520 300V405M781 300V405M1030 300V405"/>
+ </g>
+ <!-- open port window --> <path d="M810 110L810 406H1092V110Q960 0 810 110Z" fill="#101d2c" stroke="#715c3e" stroke-width="22"/>
+ <path d="M830 123V390H1070V124Q958 25 830 123Z" fill="#174052"/>
+ <path d="M830 272L890 230L930 258L991 216L1070 277V390H830Z" fill="#244653"/>
+ <path d="M834 326L877 309L922 332L973 301L1066 336V390H834Z" fill="#1c323c"/>
+ <path d="M838 365H1059V391H838Z" fill="#28535b"/>
+ <path d="M864 350L892 338V382H864ZM941 351L970 340V382H941ZM1020 353L1044 342V382H1020Z" fill="#bd8753"/>
+ <path d="M951 81V395M811 264H1090" stroke="#6b5036" stroke-width="15"/>
+ <!-- shelf left -->
+ <path d="M45 107H326V121H45Z M45 246H326V259H45Z M54 110V264M319 110V264" fill="#68462e" stroke="#261f1f" stroke-width="5"/>
+ <g stroke="#121c24" stroke-width="5">
+ <rect x="66" y="134" width="31" height="69" fill="#567b75"/><rect x="117" y="150" width="27" height="52" fill="#6a3b4b"/>
+ <rect x="153" y="124" width="34" height="77" fill="#526b7f"/><rect x="211" y="149" width="44" height="54" fill="#9d7750"/>
+ <rect x="267" y="140" width="30" height="60" fill="#447a6a"/>
+ <rect x="80" y="212" width="55" height="29" fill="#a66c42"/><rect x="150" y="212" width="45" height="29" fill="#66848a"/><rect x="214" y="213" width="77" height="28" fill="#714d3c"/>
+ </g>
+ <g fill="#d9b377"><rect x="70" y="130" width="22" height="6"/><rect x="160" y="121" width="20" height="7"/><rect x="266" y="135" width="26" height="7"/></g>
+ <!-- hanging herbs -->
+ <g stroke="#769268" stroke-width="5" fill="none"><path d="M387 0L390 168M425 0L428 205M464 0L464 130M507 0L504 193"/></g>
+ <g fill="#65896c" stroke="#385545" stroke-width="4">
+  <path d="M388 81Q344 111 365 151Q396 151 388 81ZM390 110Q424 115 413 155Q391 161 390 110Z"/>
+  <path d="M424 119Q384 154 412 185Q429 181 424 119ZM430 153Q469 157 452 192Q427 185 430 153Z"/>
+  <path d="M465 54Q431 84 450 116Q471 111 465 54ZM465 81Q493 78 482 121Q459 125 465 81Z"/>
+  <path d="M503 98Q469 136 492 171Q515 162 503 98Z"/>
+ </g>
+ <!-- copper pipe and wall candle -->
+ <path d="M596 0V110H696V190H754" fill="none" stroke="#ad7145" stroke-width="18"/>
+ <path d="M594 0V107H691V189H756" fill="none" stroke="#d5a56a" stroke-width="5"/>
+ <circle cx="731" cy="220" r="145" fill="url(#lamp)"/>
+ <path d="M721 211H755V259H721Z" fill="#8b5936" stroke="#2c2321" stroke-width="8"/>
+ <rect x="726" y="219" width="22" height="20" fill="#ffd99a"/>
+ <!-- Peren silhouette: portrait-quality world figure, large robe, silver hair -->
+ <path d="M359 487L376 341L420 292L494 289L534 342L560 545L351 549Z" fill="#101720" stroke="#ac906c" stroke-width="8"/>
+ <path d="M378 475L394 331L431 305L483 310L521 343L545 541L381 541Z" fill="#242c3d"/>
+ <path d="M383 437L405 351L419 341L424 505L390 531Z" fill="#465065"/>
+ <path d="M484 354L519 355L528 517L503 535Z" fill="#383344"/>
+ <path d="M426 302L435 274L474 273L485 317L457 348Z" fill="#694a4b"/>
+ <path d="M415 186Q437 153 477 170L510 198L510 275L485 326L440 326L406 282Z" fill="#ccd4d5" stroke="#20222a" stroke-width="7"/>
+ <path d="M426 219L494 212L489 285L459 303L422 280Z" fill="#b68e7d"/>
+ <path d="M427 233H447V239H427Z M473 233H492V239H473Z" fill="#222532"/>
+ <path d="M457 241L450 264L465 263" fill="none" stroke="#805e5a" stroke-width="5"/>
+ <path d="M423 273L438 296L461 309L490 285L477 319L455 334L429 316Z" fill="#acb5b7"/>
+ <path d="M407 213Q411 164 437 157L451 170L428 202L424 291L403 301Z" fill="#d3d4d0"/>
+ <path d="M489 172L512 203L521 292L502 304L489 230Z" fill="#9eaeb5"/>
+ <path d="M405 314L454 342L501 313L495 338L461 358L416 340Z" fill="#904f57"/>
+ <path d="M389 360L357 406L329 484L353 493L407 433Z" fill="#363a4e" stroke="#101721" stroke-width="8"/>
+ <path d="M508 359L552 393L579 474L555 499L500 434Z" fill="#3f3c51" stroke="#151920" stroke-width="8"/>
+ <path d="M325 481L341 459L359 480L349 510L329 506Z" fill="#b98c78" stroke="#20232a" stroke-width="5"/>
+ <path d="M557 478L575 462L588 483L572 510L550 500Z" fill="#b98c78" stroke="#20232a" stroke-width="5"/>
+ <!-- spell staff -->
+ <path d="M317 522L298 250" fill="none" stroke="#241e24" stroke-width="17"/><path d="M315 518L296 255" stroke="#96734b" stroke-width="8"/>
+ <path d="M298 206L266 247L300 294L327 246Z" fill="#3e719d" stroke="#151d2c" stroke-width="9"/>
+ <path d="M295 214L282 247L299 271L312 247Z" fill="#9bd1e4"/>
+ <!-- wooden workbench -->
+ <path d="M0 536L1152 536V704H0Z" fill="#402e28"/>
+ <path d="M0 541H1152V572H0Z" fill="#8b5a35" stroke="#1b1e24" stroke-width="11"/>
+ <g stroke="#523526" stroke-width="5"><path d="M0 596H1152M0 641H1152M0 683H1152"/><path d="M120 583V695M375 583V695M670 583V695M940 583V695"/></g>
+ <!-- cauldron glow -->
+ <ellipse cx="735" cy="478" rx="240" ry="165" fill="url(#flare)"/>
+ <path d="M616 499L631 600Q734 657 844 598L858 501Z" fill="url(#cauldron)" stroke="#0b111a" stroke-width="16"/>
+ <ellipse cx="737" cy="502" rx="145" ry="53" fill="#152630" stroke="#8ba39d" stroke-width="14"/>
+ <ellipse cx="737" cy="492" rx="127" ry="35" fill="#4bdeba"/>
+ <path d="M632 499Q703 452 754 505Q800 530 843 480" fill="none" stroke="#b9f5cc" stroke-width="9"/>
+ <g fill="#d3f7c7"><rect x="703" y="416" width="9" height="9"/><rect x="767" y="386" width="7" height="7"/><rect x="823" y="415" width="11" height="11"/><rect x="657" y="435" width="6" height="6"/></g>
+ <path d="M649 628L638 673H665L695 630ZM792 629L813 673H845L829 624Z" fill="#1a252a" stroke="#9a896c" stroke-width="5"/>
+ <!-- candles, reagents, mortar -->
+ <g stroke="#1b2228" stroke-width="6"><rect x="83" y="479" width="48" height="61" fill="#759890"/><rect x="165" y="490" width="62" height="52" fill="#816a9b"/><rect x="957" y="461" width="56" height="80" fill="#8f4b51"/><rect x="1040" y="471" width="45" height="70" fill="#7192a3"/></g>
+ <path d="M80 491H132M164 502H226M955 477H1016M1035 481H1086" stroke="#d0c9a8" stroke-width="6"/>
+ <path d="M910 543H1057L1022 600H940Z" fill="#6f685a" stroke="#272b2b" stroke-width="7"/>
+ <path d="M974 488L1060 590" stroke="#ab8a69" stroke-width="12"/>
+ <!-- herbs on counter --> <path d="M145 559Q235 533 290 577L292 597L179 594Z" fill="#3d644c"/>
+ <g fill="#8aae71"><path d="M210 568L233 539L242 560Z"/><path d="M244 578L281 546L282 580Z"/><path d="M179 578L157 548L195 555Z"/></g>
+ <!-- light -->
+ <rect width="1152" height="704" fill="none" stroke="#080e15" stroke-width="28"/>
+</svg>

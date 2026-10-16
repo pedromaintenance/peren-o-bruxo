@@ -1,0 +1,25 @@
+{
+  "stage": "M1h-D",
+  "status": "em_producao",
+  "approval": "pendente",
+  "base": "M1h-C",
+  "focus": "severe brows, compressed mouth, silver moustache, age lines",
+  "atlas": {
+    "width": 1536,
+    "height": 256,
+    "frames": 128
+  },
+  "portraits": [
+    "portrait.png",
+    "portrait-cast.png",
+    "portrait-hurt.png"
+  ],
+  "unchanged": [
+    "M1e",
+    "M1h-A",
+    "M1h-B",
+    "M1h-C",
+    "gameplay",
+    "saves"
+  ]
+}

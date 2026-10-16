@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "Peren, o Bruxo — Teste M1h-F",
+  "short_name": "Peren M1h-F",
+  "description": "Prévia visual experimental do bestiário CC0 de Mürin. Save separado do Phaser estável.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c151b",
+  "theme_color": "#172b29",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "stage": "M1h-B",
+  "candidate": true,
+  "approval": "pendente",
+  "parent": "M1h-A",
+  "canonical": "older silver-haired silver-bearded hatless warlock",
+  "changes": "128 head-silhouette frames + 3 portraits; original body and animations retained",
+  "report": [
+    {
+      "file": "peren-atlas.png",
+      "width": 1536,
+      "height": 256,
+      "frames": 128
+    },
+    {
+      "file": "portrait.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-cast.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-hurt.png",
+      "width": 256,
+      "height": 256
+    }
+  ]
+}
