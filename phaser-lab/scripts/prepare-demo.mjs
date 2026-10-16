@@ -24,7 +24,7 @@ if(isolated){
   html=html.replace('DEMONSTRAÇÃO PHASER M1d · seu save clássico não será modificado.',
     'PRÉVIA M1h-F · 3 criaturas CC0 · save de teste independente e sem importação do clássico.');
   html=html.replace('<footer class="m1g-footer">',
-    '<footer class="m1g-footer"><div class="m1hf-diagnostic-controls" aria-label="Ferramentas de testes"><span>PRÉVIA M1h-F · RELATAR FALHA</span><button type="button" id="m1hfDiagCopy">Copiar diagnóstico</button><button type="button" id="m1hfDiagSave">Baixar diagnóstico</button><small id="m1hfDiagStatus" role="status">Sem envio automático: nenhum save ou inventário é exportado.</small></div><a id="m1hfPreviewNote" href="./review.html?art=m1hf">🧪 REVISÃO M1h-F · VER SPRITES ANIMADOS</a><a id="m1hfCompareLink" href="./compare.html">⚖ COMPARAR M1h-E × M1h-F</a>');
+    '<footer class="m1g-footer"><div class="m1hf-diagnostic-controls" aria-label="Ferramentas de testes"><span>PRÉVIA M1h-F · RELATAR FALHA</span><button type="button" id="m1hfDiagCopy">Copiar diagnóstico</button><button type="button" id="m1hfDiagSave">Baixar diagnóstico</button><small id="m1hfDiagStatus" role="status">Sem envio automático: nenhum save ou inventário é exportado.</small></div><a id="m1hfPreviewNote" href="./review.html?art=m1hf">🧪 REVISÃO M1h-F · VER SPRITES ANIMADOS</a><a id="m1hfCompareLink" href="./compare.html">⚖ COMPARAR M1h-E × M1h-F</a><a id="m1hfPlaytestLink" href="./teste.html">📋 TESTE NO CELULAR · RELATÓRIO</a>');
   html=html.replace('<small class="battle-note">',
     '<button id="m1hfDiagCopyBattle" type="button" class="m1hf-battle-diag">Copiar diagnóstico técnico</button><small id="m1hfDiagBattleStatus" role="status"></small><small class="battle-note">');
   html=html.replace('</head>',
@@ -48,6 +48,7 @@ await writeFile(join(dist,'.nojekyll'),'');
 html=html.replace(/<\/head>/i,'<link rel="manifest" href="./manifest.webmanifest"></head>');
 html=html.replace(/<\/body>/i,`<script>if('serviceWorker' in navigator && location.pathname.includes('/${pagePath}/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(err=>console.warn('Cache offline indisponível:',err)))}</script></body>`);
 await writeFile(join(dist,'index.html'),html);
+if(isolated)await copyFile(join(lab,'teste.html'),join(dist,'teste.html'));
 const all=await list(dist);
 if(!all.some(p=>p.startsWith('assets/')&&p.endsWith('.js')))throw Error('Missing compiled JS bundle');
 for(const n of ['itens','receitas','magias','monstros','cidades']){
