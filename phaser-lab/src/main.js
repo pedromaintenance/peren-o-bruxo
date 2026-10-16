@@ -165,6 +165,15 @@ function updateHud(){
   $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
+  if(M1HF_PREVIEW){
+    const mark=$('trailOrientation'),cue=app.registry.get('trailCue');
+    const next=cue?`${cue.phase}:${cue.label}:${cue.hint}`:'';
+    if(mark.dataset.signature!==next){
+      mark.dataset.signature=next;mark.hidden=!cue;
+      mark.dataset.phase=cue?.phase||'';
+      mark.textContent=cue?`⌁ ${cue.label} · ${cue.hint}`:'';
+    }
+  }
   // M1h-F.8: awareness is a read-only view of the SAME cover/sprint/weather
   // and detected/investigating flags already produced by the enemy AI.
   if(M1HF_PREVIEW){
