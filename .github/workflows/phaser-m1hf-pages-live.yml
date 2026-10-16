@@ -1,0 +1,88 @@
+name: Peren M1h-F - verificar prototipo online no Pages
+on:
+  push:
+    branches: [feature/phaser-m1h-f-free-assets]
+    paths:
+      - ".github/workflows/phaser-m1hf-pages-live.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  live-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    env:
+      PAGES_BASE: https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/
+    steps:
+      - uses: actions/checkout@v4
+      - name: Aguardar publicação real do GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          READY=0
+          for i in $(seq 1 48); do
+            if curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}?check=${GITHUB_SHA}&attempt=$i" -o /tmp/peren-m1hf-index.html &&
+               grep -q 'PRÉVIA M1h-F' /tmp/peren-m1hf-index.html; then
+              READY=1
+              echo "Pages atualizado na tentativa $i"
+              break
+            fi
+            echo "Aguardando Pages, tentativa $i/48 ..."
+            sleep 10
+          done
+          test "$READY" -eq 1
+      - name: Verificar recursos públicos, três monstros e PWA isolada
+        shell: bash
+        run: |
+          set -euo pipefail
+          for id in mob-galho-infectado mob-fungo-violeta mob-ettercap; do
+            curl -fsSL --max-time 25 "${PAGES_BASE}art-m1hf/monsters/$id/atlas.png" -o "/tmp/$id-atlas.png"
+            curl -fsSL --max-time 25 "${PAGES_BASE}art-m1hf/monsters/$id/portrait.png" -o "/tmp/$id-portrait.png"
+            ID="$id" python - <<'PY'
+          import os,struct
+          p='/tmp/'+os.environ['ID']
+          for suffix,expected in [('atlas',(256,448)),('portrait',(160,160))]:
+              data=open(p+'-'+suffix+'.png','rb').read()
+              assert data[:8]==b'\x89PNG\r\n\x1a\n'
+              assert struct.unpack('>II',data[16:24])==expected, (p,suffix)
+              print('PAGES:',os.environ['ID'],suffix,expected)
+          PY
+          done
+          curl -fsSL "${PAGES_BASE}review.html?art=m1hf" -o /tmp/peren-m1hf-review.html
+          curl -fsSL "${PAGES_BASE}asset-audition.html" -o /tmp/peren-m1hf-audition.html
+          curl -fsSL "${PAGES_BASE}manifest.webmanifest" -o /tmp/peren-m1hf-manifest.json
+          curl -fsSL "${PAGES_BASE}demo-sw.js" -o /tmp/peren-m1hf-serviceworker.js
+          curl -fsSL "${PAGES_BASE}art-m1hf/monsters/report.json" -o /tmp/peren-m1hf-report.json
+          test -s /tmp/peren-m1hf-review.html
+          test -s /tmp/peren-m1hf-audition.html
+          grep -q 'peren-phaser-m1hf-preview-' /tmp/peren-m1hf-serviceworker.js
+          node -e "const fs=require('fs');const a=JSON.parse(fs.readFileSync('/tmp/peren-m1hf-report.json'));if(a.playable.length!==3||a.fallingBackToM1hE.length)throw Error('Incomplete bestiary');console.log('PAGES bestiary:',a.playable.join(', '))"
+          curl -fsSL --max-time 20 https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo/ -o /tmp/peren-old-demo.html
+          test -s /tmp/peren-old-demo.html
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Instalar Playwright e Chromium
+        working-directory: phaser-lab
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Testar salvamento isolado no site real
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-pages-browser-check.mjs
+      - name: Testar Phaser e sprites no site real
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-browser-check.mjs
+      - name: Salvar capturas do site online
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1hf-pages-live-screenshots
+          path: phaser-lab/screenshots/m1hf-*.png
+          if-no-files-found: warn
+      - name: Link confirmado
+        run: |
+          echo "### Protótipo M1h-F confirmado no Pages" >> "$GITHUB_STEP_SUMMARY"
+          echo "$PAGES_BASE?art=m1hf" >> "$GITHUB_STEP_SUMMARY"
+          echo "Galeria: ${PAGES_BASE}review.html?art=m1hf" >> "$GITHUB_STEP_SUMMARY"
