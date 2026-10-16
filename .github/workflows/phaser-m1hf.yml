@@ -1,0 +1,55 @@
+name: Peren M1h-F - Kenney art e smoke no navegador
+on:
+  push:
+    branches: [feature/phaser-m1h-f-free-assets]
+  pull_request:
+    paths:
+      - "phaser-lab/**"
+      - ".github/workflows/phaser-m1hf.yml"
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências
+        run: npm install --no-audit --no-fund
+      - name: Testes PNG / integração
+        run: npm test
+      - name: Empacotar variante jogável e bancada
+        run: npm run build
+      - name: Verificar arte, relatório e páginas entregues
+        run: |
+          set -euo pipefail
+          test -s dist/art-m1hf/monsters/mob-ettercap/atlas.png
+          test -s dist/art-m1hf/monsters/mob-ettercap/portrait.png
+          test -s dist/art-m1hf/monsters/report.json
+          test -s dist/review.html
+          test -s dist/asset-audition.html
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Smoke de navegador no mobile e desktop
+        run: |
+          npm run preview -- --port 4173 --strictPort > /tmp/peren-m1hf-vite.log 2>&1 &
+          for i in $(seq 1 35); do
+            if curl -fsS http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/m1hf-browser-check.mjs
+      - name: Evidências para revisão visual
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1hf-kenney-review
+          path: |
+            phaser-lab/screenshots/m1hf-*.png
+            phaser-lab/public/art-m1hf/monsters/report.json
+          if-no-files-found: warn
