@@ -20,7 +20,7 @@ try{
    await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready')===true,null,{timeout:30000});
    await page.locator('#goForest').click();
    const cue=page.locator('#fieldAwareness');
-   assert.equal(await cue.isVisible(),true);
+   await cue.waitFor({state:'visible',timeout:7000});
    // Freeze AI only inside this synthetic HUD test to avoid frame races.
    await page.evaluate(()=>window.__perenLab.scene.pause('ExplorationScene'));
    const original=await page.evaluate(()=>({
