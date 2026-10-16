@@ -149,6 +149,19 @@ function updateHud(){
     fillGauge(document,'hudHpFill',ui.hp,ui.maxHp);
     fillGauge(document,'hudMpFill',ui.mp,ui.maxMp);
   }
+  if(M1HF_PREVIEW){
+    const hint=$('harvestProximity'),button=$('gatherBtn');
+    const node=app.registry.get('harvestCue');
+    const signature=node?`${node.nodeId}:${node.name}:${node.count}`:'';
+    if(hint.dataset.signature!==signature){
+      hint.dataset.signature=signature;
+      hint.hidden=!node;
+      hint.textContent=node?`❧ Ao alcance: ${node.name} · ${node.count}×`:'';
+      button.dataset.ready=node?'true':'false';
+      button.setAttribute('aria-label',node?`Colher ${node.name}, ${node.count} unidades`:'Colher ingrediente');
+      button.title=node?`${node.name} ao alcance — E / Espaço / toque / Xbox A ou X`:'Aproxime-se de um recurso para colher';
+    }
+  }
   $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
