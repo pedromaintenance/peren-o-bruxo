@@ -28,10 +28,10 @@
 | ID | Prioridade | Item e critério de aceite | Estado |
 | --- | --- | --- | --- |
 | F2-01 | P0 | Encerrar vitória, derrota e fuga sem travar; XP/loot registrados só uma vez; voltar à floresta e continuar após reload | **Publicado** — [PR #26](https://github.com/pedromaintenance/peren-o-bruxo/pull/26). [11 cenários de navegador passaram](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38835950801) |
-| F2-02 | P0 | Relatórios de erros no próprio protótipo, exportados pelo jogador **voluntariamente**; somente metadados técnicos, **sem exportar inventário, save completo, jornal ou seed** | **Implementado na branch, aguardando QA/Pages** — PR #24 |
-| F2-03 | P1 | Retrato de encontro coerente com `?art=m1hf`, e resumo antes de confirmar XP, ouro e item reais da criatura | **Implementado na branch, aguardando QA/Pages** — PR #24 |
-| F2-04 | P1 | Feedback de vitória visível depois de voltar ao mapa, sem ser sobrescrito pelo próximo frame do HUD | **Implementado na branch, aguardando QA/Pages** — PR #24 |
-| F2-05 | P0 | Reproduzir vitória, derrota, fuga, clique duplicado e erros de interface; confirmar isolamento de saves em **390×844** e **1280×800** | **Em validação contínua** — GitHub Actions e Playwright |
+| F2-02 | P0 | Relatórios de erros no próprio protótipo, exportados pelo jogador **voluntariamente**; somente metadados técnicos, **sem exportar inventário, save completo, jornal ou seed** | **Publicado no Pages (M1h-F.2)** — [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27), [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413) |
+| F2-03 | P1 | Retrato de encontro coerente com `?art=m1hf`, e resumo antes de confirmar XP, ouro e item reais da criatura | **Publicado no Pages (M1h-F.2)** — [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27), [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413) |
+| F2-04 | P1 | Feedback de vitória visível depois de voltar ao mapa, sem ser sobrescrito pelo próximo frame do HUD | **Publicado no Pages (M1h-F.2)** — [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27), [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413) |
+| F2-05 | P0 | Reproduzir vitória, derrota, fuga, clique duplicado e erros de interface; confirmar isolamento de saves em **390×844** e **1280×800** | **11 cenários passaram no Pages** (6 vitórias + 5 cenários de resiliência), em 390×844 e 1280×800. CI contínuo permanece obrigatório — [execução online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413) |
 | F2-06 | P0 | Confirmar PWA/Pages em **Android físico**: navegação, controle touch, reload, modo avião, atualização de SW, desempenho e preservação do save | **Pendente de playtest real** |
 
 ### Entrega F2 — definition of done
@@ -41,7 +41,16 @@
 - Nenhuma modificação de `peren_carcaca_save_v1` ou `peren_phaser_save_m1d_v1`. A prévia usa `peren_phaser_save_m1hf_preview_v1`.
 - Service worker e manifesto permanecem dentro do diretório `phaser-demo-m1hf/`; atualização não apaga caches de outros jogos.
 - Registrar o resultado do playtest manual ou a pendência correspondente. **Não limpar dados de navegador como etapa padrão de atualização.**
-- Código na PR #24; publicar **somente** o bundle isolado por PR de `preview/phaser-m1hf-pages` → `main` após comparar o diff.
+- Código-fonte na PR #24; publicar **somente** o bundle isolado por PR de release (ex.: `release/phaser-m1hf2-pages`) → `main`, após comparar o diff e confirmar que apenas `phaser-demo-m1hf/` mudou.
+
+## Release M1h-F.2 — entregue no Pages
+
+- **Pacote publicado:** [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27), contendo apenas alterações em `phaser-demo-m1hf/`; o jogo clássico segue separado.
+- **QA no endereço público:** [GitHub Actions (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413). Incluiu as três criaturas, seis vitórias completas (dois tamanhos), cinco cenários de resistência, save/reload e botões de diagnóstico.
+- **Melhorias visíveis:** retratos M1h-F nos encontros; saque/XP/moedas da tabela real de monstros na tela de desfecho; mensagem de recompensa preservada ao voltar à floresta; aviso de versão correta na cidade.
+- **Suporte a bugs:** copiar/baixar relatório JSON com metadados técnicos limitados; sem envio automático nem exportação do save completo. O jogador decide se compartilha o relatório.
+- **Pendente:** verificação em Android físico, offline/PWA instalada, desempenho e aprovação artística. Portanto, **a prévia está publicada, mas não é uma release definitiva do Phaser**.
+- **Acesso:** [jogar M1h-F.2](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [revisar arte](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/review.html?art=m1hf).
 
 ## Próxima prioridade — M1h-F.3 (identidade artística da Carcaça)
 
@@ -91,6 +100,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24) — M1h-F, sprites CC0, QA e desenvolvimento dos próximos incrementos.
 - [PR #25](https://github.com/pedromaintenance/peren-o-bruxo/pull/25) — primeiro pacote isolado do Phaser para Pages.
 - [PR #26](https://github.com/pedromaintenance/peren-o-bruxo/pull/26) — correção do encerramento de combate, já publicada.
+- [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27) — M1h-F.2: recompensas, retratos e diagnóstico no Pages; [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413).
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
