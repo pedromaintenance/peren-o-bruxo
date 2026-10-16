@@ -57,12 +57,24 @@ try {
   }
   const optional=report.navButtons.find(b=>b.id==='showJournal');
   assert.ok(optional,'Diário deve existir na estrutura da cidade');
-  assert.equal(report.navButtons.filter(b=>!b.hidden&&!b.disabled).length,optional.hidden?5:6);
+  const manual=report.navButtons.find(b=>b.id==='showGuide');
+  assert.ok(manual,'Manual deve existir na estrutura de Portomonte');
+  assert.equal(report.navButtons.filter(b=>!b.hidden&&!b.disabled).length,5+Number(!optional.hidden)+Number(!manual.hidden));
   if(!optional.hidden){
     await page.locator('#showJournal').click();
     assert.equal(await page.locator('#journalUI').isVisible(),true);
     await page.locator('#journalClose').click();
     assert.equal(await page.locator('#journalUI').isVisible(),false);
+  }
+  if(!manual.hidden){
+    await page.locator('#showGuide').click();
+    assert.equal(await page.locator('#guideUI').isVisible(),true);
+    assert.equal(await page.locator('#guideTabs button').count(),4);
+    await page.locator('[data-guide-section="seguranca"]').click();
+    assert.match(await page.locator('#guideContent').textContent(),/Backup/);
+    assert.equal(await page.locator('#guideContent a[href="./teste.html"]').count(),1);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#guideUI').isVisible(),false);
   }
   assert.ok(report.overflow<=2,'Layout M1g ultrapassa viewport: '+report.overflow);
   assert.deepEqual(report.classic,original);
