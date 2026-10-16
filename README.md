@@ -8,6 +8,7 @@ O jogo clássico permanece publicado na raiz deste site. A nova versão Phaser e
 
 - [**ROADMAP.md — prioridades, entregas, testes e pendências**](ROADMAP.md)
 - [**Jogar o protótipo Phaser M1h-F no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
+- **Novo: Diário de Peren em Portomonte** — crônicas e transações reais, filtros, busca e exportação `.md` no protótipo M1h-F.5 ([PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31))
 - [**Comparar Galho, Fungo e Ettercap (M1h-E × M1h-F)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html) — comparador em pixel art, sincronização de frames e parecer artístico exportável
 - [**PR de desenvolvimento M1h-F**](https://github.com/pedromaintenance/peren-o-bruxo/pull/24), ainda em rascunho
 

@@ -92,23 +92,23 @@ A versão M1h-F.4 está **publicada no Pages** via [PR #30](https://github.com/p
 
 **Gate de publicação cumprido:** Node/Vite/Chromium verde, [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) modificou apenas 3 arquivos em `phaser-demo-m1hf/`, e o [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) repetiu combates, PWA offline, comparador e resgate. **A fonte da PR #24 permanece em draft**. Nenhum save real de jogador foi usado no QA.
 
-## M1h-F.5 — Diário de Peren [IMPLEMENTADO NA FONTE · QA EM ANDAMENTO]
+## M1h-F.5 — Diário de Peren [PUBLICADO · QA ONLINE APROVADO]
 
 Esta entrega dá significado aos acontecimentos de Portomonte e Mürin sem fabricar conteúdo narrativo, inventário, recompensas ou missões.
 
 | ID | Entrega e critério verificável | Estado |
 | --- | --- | --- |
-| F5-01 | **Diário de Peren**, aberto a partir de Portomonte apenas na prévia M1h-F, com dia, nível, vitórias, ofícios e localização atuais | **Implementado** na PR #24; aguarda testes e publicação |
-| F5-02 | Crônicas originais do save (até 90) e transações recentes (até 80), com nome real de item/monstro e revisão; não inventar horário nem contagem integral | **Implementado**; testes de modelo em CI |
-| F5-03 | Filtros Combates, Coletas, Ofícios, Comércio e Outros; busca insensível a acentos e caixa; acessível em celular e desktop | **Implementado**; teste Chromium em 390×844 e 1280×800 pendente |
-| F5-04 | Exportar o diário como Markdown `.md` **somente por iniciativa do jogador**; abrir, filtrar, baixar e fechar **não altera o save** | **Implementado**; isolamento clássico/estável previsto no QA |
-| F5-05 | Teclado Escape, foco acessível e controle Xbox B/Start para fechar, esquerda/direita para alternar aba; retorno seguro a Portomonte | **Implementado**; QA e teste físico pendentes |
-| F5-06 | Repetir os testes de batalha, inventário, PWA offline e recuperação de save antes de publicar bundle isolado | **Aguardando CI** |
+| F5-01 | **Diário de Peren**, aberto a partir de Portomonte apenas na prévia M1h-F, com dia, nível, vitórias, ofícios e localização atuais | **Publicado** — [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) |
+| F5-02 | Crônicas originais do save (até 90) e transações recentes (até 80), com nome real de item/monstro e revisão; não inventar horário nem contagem integral | **Publicado** — testes do modelo aprovados |
+| F5-03 | Filtros Combates, Coletas, Ofícios, Comércio e Outros; busca insensível a acentos e caixa; acessível em celular e desktop | **Publicado**, [QA no Pages aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) em 390×844 e 1280×800 |
+| F5-04 | Exportar o diário como Markdown `.md` **somente por iniciativa do jogador**; abrir, filtrar, baixar e fechar **não altera o save** | **Publicado**, download Markdown e isolamento das chaves confirmados no QA |
+| F5-05 | Teclado Escape, foco acessível e controle Xbox B/Start para fechar, esquerda/direita para alternar aba; retorno seguro a Portomonte | **Publicado**, Escape e foco aprovados em Chromium; controle físico pendente |
+| F5-06 | Repetir os testes de batalha, inventário, PWA offline e recuperação de save antes de publicar bundle isolado | **Aprovado** — [CI de build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361) + [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) |
 | F5-07 | Teste **Android físico**: rolagem, busca com teclado virtual, exportação Markdown, instalação PWA e uso do controle real | **Pendente de playtest** |
 
 **Fonte/documentação:** [docs/29-m1h-f-5-diario.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/29-m1h-f-5-diario.md) · [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24).
 
-**Gate de lançamento:** `npm test` + build PWA + Playwright do Diário + regressão completa do jogo; publicar **somente** `phaser-demo-m1hf/` em PR de release própria, validar a URL pública e atualizar este roadmap. A arte não é promovida automaticamente.
+**Gate de publicação cumprido:** [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31), com apenas **4 arquivos em `phaser-demo-m1hf/`**; [CI do bundle aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361); [QA online aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) para Diário, seis vitórias, resiliência, recuperação de saves, comparador e PWA offline. O código-fonte continua na PR #24 em *draft*. A arte não foi promovida automaticamente. **Playtest Android físico e gamepad real pendentes.**
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -118,7 +118,7 @@ Esta entrega dá significado aos acontecimentos de Portomonte e Mürin sem fabri
 | Encontros e IA | Galho, Fungo, Ettercap; névoa, recuo e perseguição | Tunar detecção, feedback de ameaça, prevenção de encontro imediato após fuga |
 | Combate JRPG | Ataque, defesa, poção, fuga, três magias e FX | UX, balanceamento, status, travamentos em dispositivo |
 | Persistência | Bridge transacional, IDs canônicos, ledger idempotente e backup | Recuperação amigável quando `localStorage` estiver cheio/corrompido, migração formal |
-| Portomonte, bolsa e economia | Interfaces Phaser em teste: oficina, comércio e inventário | Auditoria do fluxo completo, acessibilidade mobile/teclado/controle |
+| Portomonte, bolsa e economia | Oficina, comércio, inventário e **Diário de Peren** com filtros e exportação de registros reais no Pages | Auditoria de acessibilidade mobile, controle físico e economia ponta a ponta |
 | Arte | Três inimigos alternativos e variantes de Peren | Aprovação de retratos/animações, otimização e direção única |
 | PWA | Protótipo Pages isolado, manifesto e cache próprio | Testar instalação e offline em dispositivos reais e atualização sem perda de progresso |
 
@@ -150,6 +150,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28) — M1h-F.3: comparador visual sincronizado de monstros, checklist e parecer Markdown. Publicado na pasta experimental.
 - [PR #29](https://github.com/pedromaintenance/peren-o-bruxo/pull/29) — roteamento offline corrigido para as páginas da PWA; [QA real online/offline](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864) aprovado no Chromium.
 - [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) — M1h-F.4: resgate seguro de save danificado no protótipo experimental. [Build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951389055) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) aprovados; Android físico pendente.
+- [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — M1h-F.5: Diário de Peren, filtros, registros reais e exportação Markdown. [CI](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) aprovados; Android físico pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
