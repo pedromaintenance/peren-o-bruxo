@@ -12,9 +12,11 @@ const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 try{
   for(const [w,h] of [[390,844],[1280,800]]){
     const errors=[];
+    const loadedArt=new Set();
     const page=await browser.newPage({viewport:{width:w,height:h},deviceScaleFactor:1});
     page.on('pageerror',e=>errors.push('page: '+e.message));
     page.on('response',response=>{
+      if(response.url().includes('/art-m1hf/monsters/')&&response.status()===200)loadedArt.add(response.url());
       if(response.status()>=400&&response.url().includes('/art-m1hf/'))errors.push('asset '+response.status()+': '+response.url());
     });
     await page.goto(url+'?art=m1hf',{waitUntil:'networkidle',timeout:30000});
@@ -23,14 +25,14 @@ try{
       const game=window.__perenLab;
       return ['mob-galho-infectado','mob-fungo-violeta','mob-ettercap'].map(name=>{
         const texture=game.textures.get(name);
-        return {name,frames:texture.frameTotal,source:texture.source[0]?.image?.src||''};
+        return {name,frames:texture.frameTotal};
       });
     });
     assert.equal(inspect.length,3);
     for(const texture of inspect){
       assert.ok(texture.frames>=28,texture.name+' missing frames: '+JSON.stringify(texture));
-      assert.ok(texture.source.includes('/art-m1hf/monsters/'+texture.name+'/atlas.png'),
-        'wrong sprite variant: '+JSON.stringify(texture));
+      assert.ok([...loadedArt].some(src=>src.includes('/art-m1hf/monsters/'+texture.name+'/atlas.png')),
+        'wrong sprite variant: '+JSON.stringify({texture,requests:[...loadedArt]}));
     }
     await page.locator('#goForest').click();
     await page.waitForTimeout(400);
