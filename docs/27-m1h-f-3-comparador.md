@@ -28,3 +28,9 @@ https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html
 ## Restrições
 
 **Não substituir nem mesclar sprites automaticamente.** Sem editar mapas, combate, inventário, progressão, save do Peren clássico ou save da prévia. Não carregar dependências gráficas ou dados externos; usar apenas os PNGs já incluídos e auditados na M1h-F.
+
+## M1h-F.3 — Cache offline de múltiplas páginas
+
+O primeiro protótipo armazenava todos os HTMLs em cache, mas seu service worker recuperava **sempre `index.html`** em navegações offline. Isso fazia o usuário ver o jogo no lugar do comparador ou do ateliê. O tratamento da navegação foi corrigido para consultar primeiro `caches.match(req,{ignoreSearch:true})` e só usar `index.html` como fallback para a **rota raiz do jogo**. Outras rotas ausentes não são disfarçadas como a tela principal.
+
+Testes adicionados: `tests/m1hf-offline.test.mjs` e `scripts/m1hf-offline-browser.mjs`. O teste de navegador deve ser executado **no Pages publicado** em 390×844 e 1280×800, com Chromium offline e `PEREN_QA_REQUIRE_COMPARISON=1`. Confirma jogo, três atlas, seed salva, comparador, ateliê e bancada CC0 disponíveis offline e preservação dos saves clássico/Phaser estável. Ainda não substitui o teste em Android físico.

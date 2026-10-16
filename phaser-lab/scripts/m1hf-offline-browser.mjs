@@ -70,6 +70,11 @@ try{
      return pixels;
     });
     assert.ok(readable>50,'Offline compare view is blank');
+    await page.goto(base+'review.html?art=m1hf',{waitUntil:'domcontentloaded',timeout:30000});
+    await page.locator('#entity').selectOption('mob-fungo-violeta');
+    await page.waitForFunction(()=>document.getElementById('status')?.textContent.includes('Atlas carregado'),null,{timeout:20000});
+    await page.goto(base+'asset-audition.html',{waitUntil:'domcontentloaded',timeout:30000});
+    assert.match(await page.locator('h1').textContent(),/Audição de assets CC0/);
    }
    await context.setOffline(false);
    const cached=await page.evaluate(()=>caches.keys());
