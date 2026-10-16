@@ -11,6 +11,7 @@
 | **Peren clássico (HTML/JS)** | [Peren, o Bruxo](https://pedromaintenance.github.io/peren-o-bruxo/) | Publicado; referência estável, não substituir automaticamente |
 | **Phaser M1h-F — protótipo** | [Jogar na Floresta de Mürin](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) | Testável no Pages; **experimental**, save e cache próprios |
 | **Ateliê M1h-F** | [Comparar animações](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/review.html?art=m1hf) | Teste visual dos três monstros |
+| **Bancada de Teste M1h-F.6** | [Teste de Campo (Android / PWA / Xbox)](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) | PR #32 mesclada na `main`; propagação e QA do Pages a verificar | 
 | **Código-fonte M1h-F** | [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24) | Aberta em *draft*, sobre a [PR #23 M1h-E](https://github.com/pedromaintenance/peren-o-bruxo/pull/23) |
 | **Publicação Pages** | [PR #25](https://github.com/pedromaintenance/peren-o-bruxo/pull/25) · [Hotfix #26](https://github.com/pedromaintenance/peren-o-bruxo/pull/26) | Publicações estáticas isoladas dentro de `phaser-demo-m1hf/` |
 
@@ -110,6 +111,24 @@ Esta entrega dá significado aos acontecimentos de Portomonte e Mürin sem fabri
 
 **Gate de publicação cumprido:** [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31), com apenas **4 arquivos em `phaser-demo-m1hf/`**; [CI do bundle aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361); [QA online aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) para Diário, seis vitórias, resiliência, recuperação de saves, comparador e PWA offline. O código-fonte continua na PR #24 em *draft*. A arte não foi promovida automaticamente. **Playtest Android físico e gamepad real pendentes.**
 
+## M1h-F.6 — Bancada de Teste de Campo [PUBLICADA NO REPOSITÓRIO · PLAYTEST FÍSICO PENDENTE]
+
+Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32). O diff foi conferido: **somente** `phaser-demo-m1hf/index.html`, `phaser-demo-m1hf/demo-sw.js` e o novo `phaser-demo-m1hf/teste.html` foram alterados. **Não** substitui o jogo clássico nem modifica o motor, saves ou catálogos.
+
+| ID | Entrega e critério de aceite | Estado |
+| --- | --- | --- |
+| F6-01 | Checklist responsivo com nove cenários (cidade, toque, combate, backup, diário, recuperação, PWA offline, Xbox e arte), marcação **Passou / Falhou / Não testado** | **Código publicado em `main`** — PR #32 |
+| F6-02 | Copiar/baixar relatório Markdown mediante clique; sem envio, armazenamento local, coleta de save ou telemetria | **Implementado**; sintaxe JS e fluxos de marcação, cópia e download verificados em teste de DOM simulado |
+| F6-03 | Link visível no rodapé de Portomonte; abrir jogo, comparador e ateliê em outra aba para preservar respostas não exportadas | **Implementado** — somente prévia M1h-F |
+| F6-04 | Precache de `teste.html` e nova versão do cache de SW **com prefixo exclusivo M1h-F**, sem excluir caches de outros aplicativos | **Implementado** — resta validar modo avião em aparelho físico |
+| F6-05 | Fonte do guia mantida em `phaser-lab/teste.html`, build isolado via `prepare-demo.mjs`, teste Node e documento técnico | **Implementado na branch fonte** — [docs/30-m1h-f-6-playtest.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/30-m1h-f-6-playtest.md) |
+| F6-06 | CI de Node/Vite/Chromium e verificação da página publicada (inclusive offline), em 390×844 e 1280×800 | **Pendente de confirmação**; não declarar QA público aprovado somente porque houve merge |
+| F6-07 | Android físico: touch, teclado virtual, downloads/cópia, PWA instalada, backup e controle Xbox físico | **Pendente de teste humano** |
+
+**Abrir para teste:** [Jogar M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html).
+
+**Regra para o usuário:** manter a bancada aberta em outra aba, preencher o formulário e exportar antes de recarregar/fechar (as respostas não persistem por decisão de privacidade). **Não limpar dados do site**; saves do jogo ficam no dispositivo. A bancada **não certifica** a instalação/PWA/arte: reúne evidência para avaliação.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
@@ -151,6 +170,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #29](https://github.com/pedromaintenance/peren-o-bruxo/pull/29) — roteamento offline corrigido para as páginas da PWA; [QA real online/offline](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864) aprovado no Chromium.
 - [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) — M1h-F.4: resgate seguro de save danificado no protótipo experimental. [Build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951389055) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) aprovados; Android físico pendente.
 - [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — M1h-F.5: Diário de Peren, filtros, registros reais e exportação Markdown. [CI](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) aprovados; Android físico pendente.
+- [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32) — M1h-F.6: Bancada de Teste de Campo e precache isolado; fonte em #24, QA Android ainda pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
