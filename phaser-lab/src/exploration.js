@@ -73,6 +73,9 @@ export class ExplorationScene extends Phaser.Scene {
     this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false};
     this.registry.set('collected',{});this.registry.set('status',this.weather==='neblina'?'A névoa esconde predadores. Observe antes de avançar.':'Siga a trilha: ervas e criaturas estão à espreita.');
     this.registry.set('beastCount',this.beasts.length);this.registry.set('weather',this.weather);this.registry.set('threat','Patrulhas distantes');
+    // M1h-F.8: display-only conditions, never persisted or used as AI input.
+    this.fieldSignature='';
+    this.registry.set('fieldSignals',{cover:false,wet:false,sprint:false,weather:this.weather,detected:0,investigating:0});
     this.registry.set('ready',true);
     // a few subtle environmental motes, spatial and not interactive
     const motes=this.add.particles(0,0,'rune',{x:{min:0,max:WIDTH*TILE},y:{min:0,max:HEIGHT*TILE},scale:{start:.08,end:0},alpha:{start:.32,end:0},lifespan:1800,frequency:400,quantity:1,blendMode:'ADD'}).setDepth(1000);
@@ -113,12 +116,13 @@ export class ExplorationScene extends Phaser.Scene {
     if(!this.beasts||this.activeEncounter)return;
     const player={x:this.player.x,y:this.player.y};
     const running=this.key.SHIFT.isDown||this.sprintTouch||this.gamepadInput?.sprint;
-    let highest=0;
+    let highest=0,investigating=0;
     for(let i=0;i<this.beasts.length;i++){
       const beast=this.beasts[i];const spr=beast.sprite;
       const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,weather:this.weather,time});
       Object.assign(beast,decision.next);
       if(decision.detected)highest++;
+      if(beast.state==='investigacao')investigating++;
       if(decision.encounter){this.openEncounter(beast);return;}
       const target=beast.target;
       const walk=target?Math.hypot(target.x-spr.x,target.y-spr.y):0;
@@ -138,6 +142,11 @@ export class ExplorationScene extends Phaser.Scene {
     }
     const label=highest?`${highest} criatura(s) perceberam Peren`:'Patrulhas distantes';
     if(this.registry.get('threat')!==label)this.registry.set('threat',label);
+    // Uses precisely the environment and sprint boolean passed to canDetect().
+    const env=environmentAt(this.world,player.x,player.y);
+    const signals={cover:env.cover,wet:env.wet,sprint:Boolean(running),weather:this.weather,detected:highest,investigating};
+    const signature=JSON.stringify(signals);
+    if(signature!==this.fieldSignature){this.fieldSignature=signature;this.registry.set('fieldSignals',signals);}
   }
   openEncounter(beast){
     if(this.activeEncounter)return;
