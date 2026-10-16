@@ -41,7 +41,7 @@ export class BattleScene extends Phaser.Scene {
     this.foe.setPosition(w*.735,h*.56).setScale(Math.max(1.65,w/260));
     this.nameText.setPosition(w*.74,h*.41);this.updateBar();
   }
-  publicState(){if(!this.state)return null;const b=this.state,p=this.registry.get('combatProfile')||defaultProfile();return {status:b.status,round:b.round,monster:b.enemyName,enemyHp:b.hp,enemyMaxHp:b.maxHp,hp:b.playerHp,maxHp:b.playerMaxHp,mp:b.playerMp,maxMp:b.playerMaxMp,potions:b.potions,log:b.log.slice(0,3),busy:this.busy,level:p.level,gold:p.gold,xp:p.xp,bag:p.bag,key:b.key,reward:this.reward||null};}
+  publicState(){if(!this.state)return null;const b=this.state,p=this.registry.get('combatProfile')||defaultProfile();return {status:b.status,round:b.round,enemyId:b.enemyId,monster:b.enemyName,enemyHp:b.hp,enemyMaxHp:b.maxHp,hp:b.playerHp,maxHp:b.playerMaxHp,mp:b.playerMp,maxMp:b.playerMaxMp,potions:b.potions,log:b.log.slice(0,3),busy:this.busy,level:p.level,gold:p.gold,xp:p.xp,bag:p.bag,key:b.key,reward:this.reward||null};}
   updateBar(){if(!this.hpBar||!this.foe)return;const f=this.state;
     this.hpBar.clear();const x=this.foe.x-56,y=this.foe.y-95;
     this.hpBar.fillStyle(0x090f13,.93);this.hpBar.fillRoundedRect(x,y,112,11,3);
