@@ -1,6 +1,6 @@
 # M1h-F.6 — Teste de Campo (celular, PWA e controle físico)
 
-**Data:** 16/10/2026 · **Escopo:** prévia isolada de Peren M1h-F (não substituir jogo clássico).
+**Data:** 16/10/2026 · **Escopo:** prévia isolada de Peren M1h-F (não substituir jogo clássico). **Publicada na main via [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32)**; Android e gamepad físico não validados.
 
 ## Necessidade
 
@@ -18,8 +18,8 @@ O protótipo já passou por testes automatizados com Chromium em viewport móvel
 ## Aceite técnico e limites
 
 - [x] Código-fonte e teste Node implementados na branch experimental.
-- [x] Página preparada para publicação em `phaser-demo-m1hf/teste.html`, mantendo cache M1h-F com prefixo próprio.
-- [ ] `npm test`, `npm run build` e Playwright no candidato: verificar resultados na execução do CI.
+- [x] Página publicada no repositório na PR #32 em `phaser-demo-m1hf/teste.html`, mantendo cache M1h-F com prefixo próprio.
+- [x] `npm test`, compilação Vite e empacotamento de PWA concluídos no [CI de código-fonte](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38961594441); testes Playwright ainda em andamento no momento desta atualização.
 - [ ] Teste na rota pública após o merge: `teste.html` carrega, formulário e arquivos de saída funcionam, PWA tem página offline.
 - [ ] **Android físico**: toque, teclado virtual e download/cópia Markdown.
 - [ ] **Gamepad Xbox físico**: comandos no jogo; checklists não detectam controle, apenas registram o parecer humano.
