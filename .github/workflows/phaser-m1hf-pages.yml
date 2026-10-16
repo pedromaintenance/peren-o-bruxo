@@ -66,6 +66,7 @@ jobs:
           done
           node scripts/m1hf-pages-browser-check.mjs
           node scripts/m1hf-awareness-browser.mjs
+          node scripts/m1hf-harvest-browser.mjs
           node scripts/m1hf-browser-check.mjs
           node scripts/m1hf-compare-browser.mjs
           node scripts/m1hf-journal-browser.mjs
