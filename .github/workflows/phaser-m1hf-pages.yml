@@ -1,0 +1,101 @@
+name: Peren M1h-F - gerar previa GitHub Pages
+on:
+  push:
+    branches: [feature/phaser-m1h-f-free-assets]
+    paths:
+      - ".github/workflows/phaser-m1hf-pages.yml"
+      - "phaser-lab/**"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: peren-m1hf-pages-preview-branch
+  cancel-in-progress: false
+jobs:
+  build-and-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Obter source M1h-F e refs de publicação
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Dependências
+        working-directory: phaser-lab
+        run: npm install --no-audit --no-fund
+      - name: Testar lógica, saves e sprites
+        working-directory: phaser-lab
+        run: npm test
+      - name: Compilar com chave de save PRIVADA para o Pages
+        working-directory: phaser-lab
+        run: VITE_PEREN_M1HF_PREVIEW=1 npm run build
+      - name: Gerar PWA isolada, revisão de arte e cache próprio
+        working-directory: phaser-lab
+        run: PEREN_M1HF_PAGES_PREVIEW=1 node scripts/prepare-demo.mjs
+      - name: Verificar pacote estático
+        run: |
+          set -euo pipefail
+          test -s phaser-lab/dist/index.html
+          test -s phaser-lab/dist/review.html
+          test -s phaser-lab/dist/asset-audition.html
+          test -s phaser-lab/dist/manifest.webmanifest
+          test -s phaser-lab/dist/demo-sw.js
+          grep -q 'PRÉVIA M1h-F' phaser-lab/dist/index.html
+          grep -q 'peren-phaser-m1hf-preview-' phaser-lab/dist/demo-sw.js
+          for id in mob-galho-infectado mob-fungo-violeta mob-ettercap; do
+            test -s "phaser-lab/dist/art-m1hf/monsters/$id/atlas.png"
+            test -s "phaser-lab/dist/art-m1hf/monsters/$id/portrait.png"
+          done
+          test -s phaser-lab/dist/art-m1hf/monsters/report.json
+      - name: Instalar Chromium
+        working-directory: phaser-lab
+        run: npx playwright install --with-deps chromium
+      - name: Smoke de navegador com saves clássicos intencionalmente inválidos
+        working-directory: phaser-lab
+        run: |
+          npm run preview -- --port 4173 --strictPort > /tmp/peren-pages-m1hf.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/m1hf-pages-browser-check.mjs
+          node scripts/m1hf-browser-check.mjs
+      - name: Armazenar pacote testável para recuperação manual
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1hf-pages-bundle
+          path: phaser-lab/dist/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 14
+      - name: Publicar SOMENTE phaser-demo-m1hf na branch de prévia
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin preview/phaser-m1hf-pages
+          DEST="$RUNNER_TEMP/peren-m1hf-pages"
+          git worktree add --detach "$DEST" origin/preview/phaser-m1hf-pages
+          mkdir -p "$DEST/phaser-demo-m1hf"
+          rsync -a --delete phaser-lab/dist/ "$DEST/phaser-demo-m1hf/"
+          git -C "$DEST" add -A -- phaser-demo-m1hf
+          if git -C "$DEST" diff --cached --quiet; then
+            echo "Sem mudanças no pacote de prévia."
+          else
+            git -C "$DEST" config user.name "github-actions[bot]"
+            git -C "$DEST" config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git -C "$DEST" commit -m "build(pages): Peren M1h-F prototipo isolado"
+            git -C "$DEST" push origin HEAD:preview/phaser-m1hf-pages
+          fi
+          echo "Source original e main permanecem inalteradas nesta etapa."
+      - name: Resumo da publicação
+        run: |
+          echo "### Teste Phaser M1h-F" >> "$GITHUB_STEP_SUMMARY"
+          echo "Branch prévia: preview/phaser-m1hf-pages" >> "$GITHUB_STEP_SUMMARY"
+          echo "Diretório isolado: phaser-demo-m1hf/" >> "$GITHUB_STEP_SUMMARY"
+          echo "Após mesclar SOMENTE essa branch de preview em main, abrir:" >> "$GITHUB_STEP_SUMMARY"
+          echo "https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf" >> "$GITHUB_STEP_SUMMARY"
