@@ -187,3 +187,15 @@
  #controls #harvestProximity{width:min(160px,calc(100vw - 24px));font-size:10px;padding:5px 6px}
 }
 @media(prefers-reduced-motion:reduce){#controls #actions #gatherBtn{animation:none!important;transition:none!important}}
+
+/* M1h-F.10: landmark hints, not a minimap, solely in preview mode. */
+#controls #trailOrientation[hidden]{display:none!important}
+#controls #trailOrientation{
+  display:block;flex-basis:100%;padding:4px 6px;margin-top:2px;
+  border-left:2px solid #a9a37d;background:#10252bcf;color:#ddcead;
+  font:600 10px/1.4 system-ui,sans-serif;overflow-wrap:anywhere;
+}
+#controls #trailOrientation[data-phase="lost"]{border-left-color:#d79c6c;color:#f0d2b6}
+#controls #trailOrientation[data-phase="exit"]{border-left-color:#9dd8b0;color:#dbf1d6;background:#183c35df}
+@media(max-width:390px){#controls #trailOrientation{font-size:9px;padding:3px 5px}}
+@media(max-height:610px) and (orientation:landscape){#controls #trailOrientation{max-height:32px;overflow:hidden;margin-top:0}}
