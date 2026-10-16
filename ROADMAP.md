@@ -146,7 +146,7 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Documentação:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md). A prévia foi validada publicamente, mas **não é o lançamento definitivo do Phaser**.
 
-## M1h-F.8 — Leitura tática da Floresta de Mürin [PUBLICADA · QA ONLINE EM VERIFICAÇÃO]
+## M1h-F.8 — Leitura tática da Floresta de Mürin [PUBLICADA · REVALIDADA NO QA M1h-F.9]
 
 **Publicação:** [PR #34](https://github.com/pedromaintenance/peren-o-bruxo/pull/34) mesclada em 16/10/2026, contendo exclusivamente o bundle de `phaser-demo-m1hf/` (JS/CSS, `index.html`, `demo-sw.js`). O jogo clássico, o protótipo M1d e seus saves permanecem separados. A PR de fonte #24 permanece em *draft*.
 
@@ -156,14 +156,14 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 | F8-02 | Informar folhagem, corrida, solo encharcado e neblina sem revelar monstros ocultos nem alterar `canDetect` | **Implementado e testado** — função pura e sinais do motor |
 | F8-03 | HUD compacto para celular, sem telemetria, novas regras ou escrita de save | **Implementado**; comportamento testado em Chromium |
 | F8-04 | Testes Node, Vite, seis vitórias, resiliência, três viewports (360×800, 390×844, 1280×800) e saves isolados | **Aprovado no bundle candidato** — [GitHub Actions: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315) |
-| F8-05 | Repetir a bateria no endereço público, incluindo o indicador, Diário, recuperação e PWA offline | **Em validação** — [reexecução de QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38965971233) |
+| F8-05 | Repetir a bateria no endereço público, incluindo o indicador, Diário, recuperação e PWA offline | **Aprovado na revisão posterior** — [QA público completo M1h-F.9](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147) cobriu leitura tática e os fluxos anteriores; a execução antiga foi iniciada antes da atualização da página e falhou na espera de publicação |
 | F8-06 | Validar Android físico, Xbox real, contraste OLED e linguagem visual | **Pendente de playtest humano** |
 
 **Jogar:** [Peren M1h-F.8](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html).
 
 **Documentação:** [docs/32-m1h-f-8-percepcao.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/32-m1h-f-8-percepcao.md). Nenhuma criatura ou sprite foi aprovado artisticamente por esse incremento.
 
-## M1h-F.9 — Coleta contextual [PUBLICADA NO REPOSITÓRIO · QA ONLINE EM EXECUÇÃO]
+## M1h-F.9 — Coleta contextual [PUBLICADA · QA PÚBLICO APROVADO]
 
 **Publicada em 16/10/2026**, via [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) (squash `a7781c4`). A ação `collect()` usa `nearestResource()` com alcance estrito de **57 px**; o feedback novo apenas mostra o alvo já disponível, sem ampliar o alcance, oferecer vantagens extras ou modificar inventário.
 
@@ -174,7 +174,7 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 | F9-03 | Sinal volátil `registry.harvestCue`, nenhum armazenamento novo ou alteração da transação de coleta | **Verificado** — invariantes de fontes e QA de isolamento |
 | F9-04 | Testes Node da mesma borda de 57 px, seeds, recursos já coletados; Chromium em 360×800, 390×844 e 1280×800 com isolamento dos saves | **Aprovado** — [CI do pacote candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101) |
 | F9-05 | Publicação exclusiva do bundle `phaser-demo-m1hf/`, diff JS/CSS/índice/SW auditado | **Concluída** — PR #35, sem alterar clássico ou M1d |
-| F9-06 | QA no site público de coleta contextual, seis vitórias, Diário, recuperação e PWA offline | **Em execução** — [reexecução após release](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147), sem declarar aprovado antes do resultado |
+| F9-06 | QA no site público de coleta contextual, seis vitórias, Diário, recuperação e PWA offline | **Aprovado** — [QA público após release (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147), Chromium 360/390/1280 px para coleta e 390/1280 px para fluxos gerais |
 | F9-07 | Android e Xbox físicos; legibilidade do HUD e aprovação artística | **Pendente de playtest humano** |
 
 **Teste:** [Peren M1h-F.9](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html). **Documentação:** [docs/33-m1h-f-9-coleta.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/33-m1h-f-9-coleta.md). Fonte permanece na PR #24 *draft*.
@@ -223,7 +223,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32) — M1h-F.6: Bancada de Teste de Campo e precache isolado; fonte em #24, QA Android ainda pendente.
 - [PR #33](https://github.com/pedromaintenance/peren-o-bruxo/pull/33) — M1h-F.7: Manual da Expedição integrado à prévia e correção de QA; [build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963137694) e [QA ao vivo](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686) aprovados.
 - [PR #34](https://github.com/pedromaintenance/peren-o-bruxo/pull/34) — M1h-F.8: HUD de discrição e leitura do ambiente, [CI de build e Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315); QA público em verificação.
-- [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) — M1h-F.9: coleta contextual por raio real de 57 px, [build/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101); QA público em andamento.
+- [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) — M1h-F.9: coleta contextual por raio real de 57 px, [build/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147).
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
