@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Roadmap de desenvolvimento
 
-> **Atualizado em 15/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
+> **Atualizado em 16/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
 >
 > O plano detalhado original do Phaser permanece em [`docs/01-roadmap.md` na branch de desenvolvimento](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/01-roadmap.md). Este arquivo é o **índice executivo** mantido na `main`.
 
@@ -52,18 +52,18 @@
 - **Pendente:** verificação em Android físico, offline/PWA instalada, desempenho e aprovação artística. Portanto, **a prévia está publicada, mas não é uma release definitiva do Phaser**.
 - **Acesso:** [jogar M1h-F.2](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [revisar arte](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/review.html?art=m1hf).
 
-## M1h-F.3 — Comparação direta de arte [FONTE IMPLEMENTADA, PUBLICAÇÃO EM VALIDAÇÃO]
+## M1h-F.3 — Comparação direta de arte e PWA offline [PUBLICADO · REVISÃO ARTÍSTICA PENDENTE]
 
 - **Comparador visual `compare.html`**: dois atlas reais (M1h-E à esquerda e M1h-F à direita), três criaturas de Mürin, sete ações sincronizadas, pausa, FPS, zoom e inspeção dos quatro quadros. **Estado: publicado no Pages**, pela [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28); testes locais de Chromium e build passaram. A avaliação humana permanece pendente.
 - **Parecer artístico voluntário**: checklist de silhueta a 1×, movimento, combate, identidade sombria, retrato e legibilidade, mais observações e escolha E/F. O usuário pode copiar ou baixar Markdown; sem gravar no `localStorage` e sem transmissão de dados.
 - **Métricas técnicas**: comparação de quadros únicos e da proporção de pixels visíveis. Não substituem julgamento humano ou aprovação de estilo.
-- **QA**: [código do teste mobile/desktop](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-compare-browser.mjs), três espécies × sete ações × duas resoluções, screenshots e invariância do save.
-- **PWA offline:** identificado fallback incorreto que carregava o jogo no lugar da galeria/comparador sem rede. **Correção implementada na PR #24, aguardando CI e publicação**; [teste offline de navegador](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-offline-browser.mjs) previsto para o Pages com jogo, três criaturas, comparador, ateliê e bancada de licenças. Não equivale a teste Android físico.
+- **QA:** [comparador e PWA testados no Pages (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864), incluindo três criaturas × sete ações, dois tamanhos de tela (390×844 e 1280×800), navegação offline, saves preservados, seis vitórias e cenários de resiliência. O código dos testes permanece na [branch de fonte](https://github.com/pedromaintenance/peren-o-bruxo/tree/feature/phaser-m1h-f-free-assets/phaser-lab/scripts).
+- **PWA offline: publicada e validada** — [PR #29](https://github.com/pedromaintenance/peren-o-bruxo/pull/29). Navegação usa a página HTML específica do cache antes do fallback do jogo; [testes de navegador offline no Pages passaram](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864) para jogo, três criaturas, comparador, ateliê e bancada CC0, sem sobrescrever saves. **Ainda falta comprovação em Android físico**.
 - **Gate final:** testar a página publicada, colher feedback humano e só então trabalhar no redesenho de cada criatura ou aprovar um atlas como padrão. **Nenhum sprite foi aprovado automaticamente.**
 
 Documentação técnica: [docs/27-m1h-f-3-comparador.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/27-m1h-f-3-comparador.md).
 
-## Próxima prioridade — M1h-F.3 (identidade artística da Carcaça)
+## Próxima prioridade — Refinamento artístico por criatura (M1h-F.4 / M1i-A)
 
 - [x] Três monstros de Mürin com **7 ações × 4 quadros** de atlas `256×448`, retratos `160×160` e assets gratuitos com origem rastreada; opção `?art=m1hf`.
 - [x] Galho Infectado: base de vegetação CC0; raízes, galhos e seiva corrompida.
@@ -113,6 +113,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #26](https://github.com/pedromaintenance/peren-o-bruxo/pull/26) — correção do encerramento de combate, já publicada.
 - [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27) — M1h-F.2: recompensas, retratos e diagnóstico no Pages; [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413).
 - [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28) — M1h-F.3: comparador visual sincronizado de monstros, checklist e parecer Markdown. Publicado na pasta experimental.
+- [PR #29](https://github.com/pedromaintenance/peren-o-bruxo/pull/29) — roteamento offline corrigido para as páginas da PWA; [QA real online/offline](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864) aprovado no Chromium.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
