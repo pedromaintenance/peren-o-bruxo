@@ -10,7 +10,7 @@ permissions:
 jobs:
   live-smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 22
     env:
       PAGES_BASE: https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/
     steps:
@@ -74,6 +74,12 @@ jobs:
       - name: Testar Phaser e sprites no site real
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-browser-check.mjs
+      - name: Conferir seis vitórias completas no site público
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-combat-qa.mjs
+      - name: Conferir recuperação após erro, derrota, fuga e clique duplicado
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-combat-resilience-qa.mjs
       - name: Salvar capturas do site online
         if: always()
         uses: actions/upload-artifact@v4
