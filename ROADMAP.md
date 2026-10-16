@@ -75,6 +75,23 @@ Documentação técnica: [docs/27-m1h-f-3-comparador.md](https://github.com/pedr
 - [ ] Auditar licenças/atribuição e transformação por arquivo; referências: [documentação dos assets M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/26-m1h-f-audicao-kenney-cc0.md).
 - [ ] Não fazer merge do novo padrão gráfico antes de aprovação explícita.
 
+## M1h-F.4 — Resgate de save experimental [IMPLEMENTADO · EM VALIDAÇÃO]
+
+A próxima entrega testável prioriza a recuperação segura de progresso após corrupção do arquivo, sem migrar ou modificar o save clássico.
+
+| ID | Critério de aceite | Estado |
+| --- | --- | --- |
+| F4-01 | Se o save da prévia não abrir, mostrar tela de recuperação **sem excluir dados** nem iniciar Phaser com progresso inválido | **Implementado na PR #24; aguardando CI/Pages** |
+| F4-02 | Oferecer download do save bruto danificado antes de restaurar ou reiniciar; somente ação explícita e confirmação do jogador | **Implementado na PR #24; aguardando QA** |
+| F4-03 | Validar backup Phaser v2 (até 2 MB), recusar arquivo inválido sem sobrescrever o anterior, evitar concorrência entre abas | **Implementado na PR #24; testes de recuperação em execução** |
+| F4-04 | Preservar `peren_carcaca_save_v1` e `peren_phaser_save_m1d_v1`; reset afeta somente `peren_phaser_save_m1hf_preview_v1` | **Implementado; verificar no Chromium e no Pages** |
+| F4-05 | Testes Chromium em 390×844 e 1280×800: baixar original, restaurar, resetar, cancelar, simular conflito e retornar ao jogo | **Aguardando resultado dos pipelines** |
+| F4-06 | Playtest real Android: download TXT, importação JSON, PWA instalada, armazenamento indisponível/quota | **Pendente de teste físico** |
+
+**Documentação de implementação:** [M1h-F.4 — resgate de save](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/28-m1h-f-4-resgate-save.md).
+
+**Critérios para publicar:** CI verde em Node/Vite/Chromium, PR contendo apenas `phaser-demo-m1hf/`, novo teste contra o Pages depois do deploy. **Sem merge da fonte da PR #24 na main**; backups de usuários reais não são material de teste.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
