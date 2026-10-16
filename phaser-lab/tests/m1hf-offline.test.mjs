@@ -5,7 +5,7 @@ const generator=readFileSync(new URL('../scripts/prepare-demo.mjs',import.meta.u
 const browserScript=readFileSync(new URL('../scripts/m1hf-offline-browser.mjs',import.meta.url),'utf8');
 test('M1h-F.3 offline navigation retrieves requested cached HTML, not always index',()=>{
  assert.match(generator,/caches\.match\(req,\{ignoreSearch:true\}\)/);
- assert.match(generator,/page===\\'\\'\\|\\|page===\\'index.html\\'/);
+ assert.ok(generator.includes("page===''||page==='index.html'"));
  assert.match(generator,/if\(cachedPage\)return cachedPage/);
  assert.match(generator,/return Response\.error\(\)/);
  assert.match(generator,/peren-phaser-m1hf-preview-/);
