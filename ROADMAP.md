@@ -129,20 +129,22 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Regra para o usuário:** manter a bancada aberta em outra aba, preencher o formulário e exportar antes de recarregar/fechar (as respostas não persistem por decisão de privacidade). **Não limpar dados do site**; saves do jogo ficam no dispositivo. A bancada **não certifica** a instalação/PWA/arte: reúne evidência para avaliação.
 
-## M1h-F.7 — Manual da Expedição e saneamento dos testes de Portomonte [FONTE IMPLEMENTADA · AGUARDANDO CI E PAGES]
+## M1h-F.7 — Manual da Expedição e saneamento do QA de Portomonte [PUBLICADO · QA ONLINE APROVADO]
 
-**Objetivo:** melhorar o primeiro contato do jogador com exploração, combate, economia e proteção do progresso antes do playtest de Android/Xbox. **Não** declarar publicado só porque há commits de fonte.
+**Entregue em 16/10/2026** pela [PR #33](https://github.com/pedromaintenance/peren-o-bruxo/pull/33). Somente a prévia estática `phaser-demo-m1hf/` foi alterada (bundle JS/CSS, `index.html` e `demo-sw.js`); a [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24) de fonte continua em *draft*. O Peren clássico e a demo M1d permanecem separados.
 
-| ID | Entrega / aceite | Estado |
+| ID | Entrega / critério de aceite | Estado |
 | --- | --- | --- |
-| F7-01 | Corrigir teste de UI que contava botões ocultos e esperava 6 depois da introdução do Diário (7 no DOM): conferir comandos disponíveis, opcionalidade e acessibilidade em 360×800, 390×844 e 1280×800 | **Corrigido na fonte** — a falha `7 !== 6` afetava os workflows M1g-A, C e E; CI de regressão em andamento |
-| F7-02 | Manual em Portomonte com capítulos **Explorar**, **Combate**, **Portomonte** e **Saves e testes**, sem criar missões ou regras | **Implementado na fonte** — apenas na prévia |
-| F7-03 | Navegação por toque, teclado (Escape e foco), Xbox (B/Menu, direcional), modal acessível, `hub.inert` e foco devolvido ao fechar | **Implementado**; QA em Chromium ainda a confirmar |
-| F7-04 | Guia estritamente de leitura: nenhuma importação, escrita de save ou telemetria; link voluntário para Bancada M1h-F.6 | **Implementado**, teste Node de privacidade adicionado |
-| F7-05 | Build Phaser candidato, testes Node e Chromium verdes, diff somente `phaser-demo-m1hf/` e QA em Pages antes de marcar publicação | **Pendente** — não mesclar a PR de fonte #24 na `main` |
-| F7-06 | Playtest Android físico / Xbox e revisão artística dos sprites de Mürin | **Pendente de avaliação humana**, não automatizável integralmente |
+| F7-01 | Corrigir teste de Portomonte antes quebrado por contagem fixa dos botões (`7 !== 6`): conferir comandos visíveis/habilitados, Diário e Manual em 360×800, 390×844 e 1280×800 | **Aprovado** — [Portomonte CI](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963244393), mais [alquimia](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963244476) e [HUD](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963244585) |
+| F7-02 | Manual no menu de Portomonte: **Explorar**, **Combate**, **Portomonte** e **Saves e testes**, sem inventar missões ou alterar regras | **Publicado no Pages** — PR #33; [QA público passou](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686) |
+| F7-03 | Navegação por toque, teclado (Escape/foco), Xbox (B/Menu/direcional); modal acessível e foco devolvido ao fechar | **QA automatizado em Chromium aprovado** (390×844 e 1280×800); **controle físico pendente** |
+| F7-04 | Manual exclusivamente leitura; não acessa nem altera o save e oferece link voluntário para Bancada M1h-F.6 | **Aprovado** — testes Node e teste público de preservação do save |
+| F7-05 | CI Node/Vite/Chromium e bundle isolado publicados; QA no site real cobrindo seis vitórias, erro/derrota/fuga, inventário, comparador, Diário, recuperação e PWA offline | **Aprovado** — [build candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963137694), [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686) |
+| F7-06 | Playtest **Android físico**, gamepad Xbox real e aprovação artística dos três monstros de Mürin | **Pendente de teste humano**, não substituir por aprovação de CI |
 
-**Fonte e detalhes:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md) · [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24). **Páginas para testar após a publicação:** [protótipo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) e [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html).
+**Jogar e avaliar:** [Peren Phaser M1h-F.7](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) · [Comparador artístico](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html?art=m1hf).
+
+**Documentação:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md). A prévia foi validada publicamente, mas **não é o lançamento definitivo do Phaser**.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -186,6 +188,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) — M1h-F.4: resgate seguro de save danificado no protótipo experimental. [Build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951389055) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) aprovados; Android físico pendente.
 - [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — M1h-F.5: Diário de Peren, filtros, registros reais e exportação Markdown. [CI](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) aprovados; Android físico pendente.
 - [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32) — M1h-F.6: Bancada de Teste de Campo e precache isolado; fonte em #24, QA Android ainda pendente.
+- [PR #33](https://github.com/pedromaintenance/peren-o-bruxo/pull/33) — M1h-F.7: Manual da Expedição integrado à prévia e correção de QA; [build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963137694) e [QA ao vivo](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686) aprovados.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
