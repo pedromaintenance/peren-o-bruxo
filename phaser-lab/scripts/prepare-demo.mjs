@@ -19,6 +19,8 @@ let html=await readFile(join(dist,'index.html'),'utf8');
 if(!html.includes('DEMONSTRAÇÃO PHASER M1d'))throw Error('Missing preview banner');
 if(isolated){
   // Explicit experimental-label banner inside the city hub; all assets stay relative.
+  html=html.replace('Exportar backup Phaser','Baixar backup do teste M1h-F');
+  html=html.replace('Restaurar backup Phaser','Restaurar backup do teste M1h-F');
   html=html.replace('DEMONSTRAÇÃO PHASER M1d · seu save clássico não será modificado.',
     'PRÉVIA M1h-F · 3 criaturas CC0 · save de teste independente e sem importação do clássico.');
   html=html.replace('<footer class="m1g-footer">',

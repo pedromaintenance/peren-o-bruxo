@@ -463,7 +463,7 @@ $('showInventory').addEventListener('click',()=>{hubTab='bag';renderHub();market
 $('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
 $('exportProgress').addEventListener('click',()=>{
  const blob=new Blob([bridge.export()],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download=`peren-phaser-m1d-dia-${bridge.state.day}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ a.href=url;a.download=M1HF_PREVIEW?`peren-m1hf-dia-${bridge.state.day}-backup.json`:`peren-phaser-m1d-dia-${bridge.state.day}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 $('importProgress').addEventListener('change',async e=>{
  const file=e.target.files?.[0];e.target.value='';if(!file)return;
