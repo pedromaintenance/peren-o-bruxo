@@ -52,6 +52,17 @@
 - **Pendente:** verificação em Android físico, offline/PWA instalada, desempenho e aprovação artística. Portanto, **a prévia está publicada, mas não é uma release definitiva do Phaser**.
 - **Acesso:** [jogar M1h-F.2](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [revisar arte](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/review.html?art=m1hf).
 
+## M1h-F.3 — Comparação direta de arte [FONTE IMPLEMENTADA, PUBLICAÇÃO EM VALIDAÇÃO]
+
+- **Comparador visual `compare.html`**: dois atlas reais (M1h-E à esquerda e M1h-F à direita), três criaturas de Mürin, sete ações sincronizadas, pausa, FPS, zoom e inspeção dos quatro quadros. **Status:** implementado na [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24); ainda aguardando publicação validada no Pages.
+- **Parecer artístico voluntário**: checklist de silhueta a 1×, movimento, combate, identidade sombria, retrato e legibilidade, mais observações e escolha E/F. O usuário pode copiar ou baixar Markdown; sem gravar no `localStorage` e sem transmissão de dados.
+- **Métricas técnicas**: comparação de quadros únicos e da proporção de pixels visíveis. Não substituem julgamento humano ou aprovação de estilo.
+- **QA**: [código do teste mobile/desktop](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-compare-browser.mjs), três espécies × sete ações × duas resoluções, screenshots e invariância do save.
+- **PWA offline**: [regressão automatizada preparada](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-offline-browser.mjs), para executar no endereço público após a publicação. **Não equivale a teste Android físico.**
+- **Gate final:** testar a página publicada, colher feedback humano e só então trabalhar no redesenho de cada criatura ou aprovar um atlas como padrão. **Nenhum sprite foi aprovado automaticamente.**
+
+Documentação técnica: [docs/27-m1h-f-3-comparador.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/27-m1h-f-3-comparador.md).
+
 ## Próxima prioridade — M1h-F.3 (identidade artística da Carcaça)
 
 - [x] Três monstros de Mürin com **7 ações × 4 quadros** de atlas `256×448`, retratos `160×160` e assets gratuitos com origem rastreada; opção `?art=m1hf`.
