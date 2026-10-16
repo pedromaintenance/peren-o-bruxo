@@ -1,6 +1,6 @@
 # M1h-F.7 — Manual da Expedição e regressão de Portomonte
 
-**Data:** 16/10/2026. **Escopo:** apenas a prévia Phaser M1h-F.
+**Data:** 16/10/2026. **Escopo:** apenas a prévia Phaser M1h-F. **Status:** publicado no GitHub Pages, com QA público automatizado aprovado; Android e Xbox físicos pendentes.
 
 ## Problema observado
 
@@ -30,10 +30,10 @@ Arquivos de fonte: `phaser-lab/src/ui-guide.js`, `phaser-lab/ui-guide.css`, `pha
 - [x] Conteúdo, interface e handlers implementados na branch fonte.
 - [x] Corrigida a asserção de botões de Portomonte por disponibilidade/visibilidade.
 - [x] Adicionados testes Node e Chromium para o novo recurso.
-- [ ] Aguardar CI no commit candidato: Node/Vite/Playwright e smoke de três tamanhos.
-- [ ] Comparar bundle gerado pela CI com `main`; mesclar **somente** `phaser-demo-m1hf/`.
-- [ ] Validar URL publicada em Chromium móvel e desktop, inclusive PWA offline, sem tocar saves clássico ou M1d.
-- [ ] Android físico e Xbox real exigem playtest humano; CI não equivale a aprovação.
+- [x] CI: [Node/Vite/Playwright e smoke do pacote candidato (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963137694); [regressão Portomonte](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963244393) e workflows de alquimia/HUD aprovados.
+- [x] Release isolada [PR #33](https://github.com/pedromaintenance/peren-o-bruxo/pull/33), com diff exclusivamente em `phaser-demo-m1hf/` (4 alterações lógicas): JS/CSS compilados, índice e cache offline.
+- [x] [QA público (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686): site real em Chromium móvel/desktop, Manual, três monstros, seis vitórias, resiliência, Diário, resgate, comparador e PWA offline sem alterar saves clássico e M1d.
+- [ ] Android físico e Xbox real exigem playtest humano; aprovação de arte também permanece pendente.
 
 ## Restrições
 
