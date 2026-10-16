@@ -70,6 +70,8 @@ function newEnvelope(raw,c,origin='new'){
  return {schema:PHASER_SCHEMA,revision:0,origin,character:normalizeClassic(raw,c),ledger:{},worlds:{activeSeed:'murin-001'},history:[]};
 }
 export function stageFromClassic(raw,c){return newEnvelope(raw,c,'classic-import');}
+/** Validate imported v2 backup in-memory, without writing localStorage. */
+export function validatePhaserBackup(text,catalogs){return checkEnvelope(JSON.parse(text),catalogs)}
 function checkEnvelope(raw,c){
  if(!raw||raw.schema!==PHASER_SCHEMA||!Number.isSafeInteger(raw.revision)||raw.revision<0)throw Error('Arquivo Phaser incompatível.');
  if(!raw.ledger||typeof raw.ledger!=='object'||Array.isArray(raw.ledger))throw Error('Registro de transações inválido.');
