@@ -3,6 +3,7 @@ import {buildForest,nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.j
 import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
 import {encounterKey,defaultProfile} from './combat.js';
 import {harvestProximity} from './harvest-proximity.js';
+import {trailOrientation} from './trail-orientation.js';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
@@ -33,6 +34,8 @@ export class ExplorationScene extends Phaser.Scene {
     this.activeEncounter=null;this.enemyClock=0;
     this.harvestCueSignature=undefined;
     this.registry.set('harvestCue',null);
+    this.trailCellSignature=undefined;
+    this.registry.set('trailCue',null);
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
     this.cameras.main.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
@@ -198,6 +201,17 @@ export class ExplorationScene extends Phaser.Scene {
     this.registry.set('status',`Você recuou de ${beast.name}. Nenhum XP, ouro ou loot foi concedido.`);
     this.scene.resume();return true;
   }
+  updateTrailCue(){
+    // Orientation only updates when Peren crosses a map tile or the exit
+    // threshold. No trail scan in every 60fps frame.
+    const px=this.player?.x,py=this.player?.y;
+    if(!Number.isFinite(px)||!Number.isFinite(py))return;
+    const e=this.world.exit,nearExit=Math.hypot((e.x+.5)*TILE-px,(e.y+.5)*TILE-py)<40;
+    const tileKey=`${Math.floor(px/TILE)}:${Math.floor(py/TILE)}:${Number(nearExit)}`;
+    if(tileKey===this.trailCellSignature)return;
+    this.trailCellSignature=tileKey;
+    this.registry.set('trailCue',trailOrientation(this.world,px,py));
+  }
   updateHarvestCue(){
     // Match collect() exactly: one nearest uncollected resource within 57px.
     const cue=harvestProximity(this.world,this.player?.x,this.player?.y,this.collected,this.isGathering);
@@ -230,6 +244,7 @@ export class ExplorationScene extends Phaser.Scene {
   update(_t,delta){
     if(!this.player)return;
     this.updateHarvestCue();
+    this.updateTrailCue();
     if(this.isGathering||this.activeEncounter)return;
     if(Phaser.Input.Keyboard.JustDown(this.key.E)||Phaser.Input.Keyboard.JustDown(this.key.SPACE)){this.collect();return}
     let x=0,y=0;
