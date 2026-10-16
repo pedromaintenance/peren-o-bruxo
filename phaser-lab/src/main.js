@@ -160,7 +160,7 @@ for(const name of ['pointerup','pointercancel','lostpointercapture'])pad.addEven
 $('gatherBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('gather'));
 $('sprintBtn').addEventListener('pointerdown',()=>app.scene.getScene('ExplorationScene')?.command('sprint'));
 for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').addEventListener(evt,()=>app.scene.getScene('ExplorationScene')?.command('walk'));
-function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent='Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
+function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent=M1HF_PREVIEW?'PRÉVIA M1h-F · save experimental protegido, separado do clássico e da demo anterior.':'Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
 $('returnBtn').addEventListener('click',()=>hub(true));
 $('goForest').addEventListener('click',()=>hub(false));
 $('resetForest').addEventListener('click',()=>{

@@ -41,6 +41,10 @@ try{
      revision:b.read().revision,key:b.read().worlds.activeSeed,instanceId:mob.instanceId};
    },id);
    await page.locator('#encounterModal').waitFor({state:'visible',timeout:7000});
+   if(process.env.PEREN_QA_REQUIRE_M1HF2==='1'){
+    const src=await page.locator('#beastPortrait').getAttribute('src');
+    assert.ok(src.includes('/art-m1hf/monsters/'+id+'/portrait.png'),'Wrong encounter art: '+src);
+   }
    await page.locator('#observeBeast').click();
    await page.locator('#battleUI').waitFor({state:'visible',timeout:7000});
    await page.waitForFunction(()=>window.__perenLab?.registry?.get('battleState')?.status==='active',{timeout:7000});

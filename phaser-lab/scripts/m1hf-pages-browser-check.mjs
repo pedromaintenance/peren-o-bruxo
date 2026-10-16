@@ -52,6 +52,10 @@ try{
   assert.ok(stage.monsters.every(x=>x.frames>=28),'Three 28-frame monster atlases required');
   const link=await page.locator('#m1hfPreviewNote').getAttribute('href');
   assert.equal(link,'./review.html?art=m1hf');
+  await page.locator('#goForest').click();
+  await page.keyboard.press('Escape');
+  await page.locator('#hub').waitFor({state:'visible',timeout:7000});
+  assert.match(await page.locator('#hubStatus').textContent(),/PRÉVIA M1h-F/);
   await page.goto(base+'review.html?art=m1hf',{waitUntil:'networkidle',timeout:30000});
   await page.locator('#entity').selectOption('mob-fungo-violeta');
   await page.waitForFunction(()=>document.querySelector('#status')?.textContent?.startsWith('Atlas carregado'),{timeout:10000});
