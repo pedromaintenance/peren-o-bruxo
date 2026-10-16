@@ -15,6 +15,7 @@ import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
 import {showPreviewSaveRecovery} from './save-recovery.js';
 import {createJournalScreen} from './ui-journal.js';
 import {createGuideScreen} from './ui-guide.js';
+import {fieldAwareness} from './field-awareness.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -151,6 +152,18 @@ function updateHud(){
   $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
+  // M1h-F.8: awareness is a read-only view of the SAME cover/sprint/weather
+  // and detected/investigating flags already produced by the enemy AI.
+  if(M1HF_PREVIEW){
+    const box=$('fieldAwareness'),cue=fieldAwareness(app.registry.get('fieldSignals'));
+    box.hidden=false;
+    const next=cue.state+':'+cue.title+':'+cue.detail;
+    if(box.dataset.signature!==next){
+      box.dataset.signature=next;box.dataset.state=cue.state;
+      $('fieldAwarenessTitle').textContent=cue.title;
+      $('fieldAwarenessDetail').textContent=cue.detail;
+    }
+  }
   if(!$('bagPanel').hidden)$('bagContents').textContent=inventoryText();
 }
 app.events.on('step',updateHud);
