@@ -15,6 +15,8 @@ try{
    page.on('pageerror',e=>errors.push(e.stack));
    const bad='DAMAGED_SAVE_NOT_JSON_'+scenario;
    await page.addInitScript(value=>{
+    if(sessionStorage.getItem('m1hf-rescue-qa-initialized'))return;
+    sessionStorage.setItem('m1hf-rescue-qa-initialized','1');
     localStorage.setItem('peren_phaser_save_m1hf_preview_v1',value);
     localStorage.setItem('peren_carcaca_save_v1','CLASSIC_MUST_NOT_CHANGE');
     localStorage.setItem('peren_phaser_save_m1d_v1','STABLE_MUST_NOT_CHANGE');
@@ -47,11 +49,6 @@ try{
      await page.evaluate(()=>localStorage.setItem('peren_phaser_save_m1hf_preview_v1','MODIFIED_OTHER_TAB'));
     }
     if(scenario==='restore'){
-     const backup=await page.evaluate(async()=>{
-      // A valid v2 envelope taken from normal initialization would be accepted by the same validator.
-      // We use a read-only fixture generated on this page via the module build's independent run.
-      return null;
-     });
      // A purpose-built source fixture is fetched from a fresh isolated browser context, not the damaged localStorage.
      const ctx=await browser.newContext();
      const seed=await ctx.newPage();
