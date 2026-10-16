@@ -39,7 +39,7 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 </style>
 </head>
 <body>
-<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1h-A</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a></header>
+<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1h-A</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a> · <a href="./asset-audition.html">Bancada de fontes CC0</a></header>
 <main>
 <div class="grid">
 <section class="panel">
@@ -106,11 +106,13 @@ peren:{w:48,h:64,columns:32,rows:4,path:'./art/characters/peren/peren-atlas.png'
 };
 let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
 const artValue=new URLSearchParams(location.search).get('art');
+const monsterCandidate=artValue==='m1hf'?'M1h-F · Ettercap Kenney CC0 (Galho/Fungo M1h-E)':artValue==='m1he'?'M1h-E · Sombreamento original':null;
 $('perenVariant').value=['m1h','m1hb','m1hc','m1hd'].includes(artValue)?artValue:'m1e';
 function applyVariant(){
- const monsterVariant=new URLSearchParams(location.search).get('art')==='m1he';
+ const selectedMonsterArt=new URLSearchParams(location.search).get('art');
+ const monsterVariant=['m1he','m1hf'].includes(selectedMonsterArt)?selectedMonsterArt:null;
  for(const id of ['mob-galho-infectado','mob-fungo-violeta','mob-ettercap']){
-  const dir=monsterVariant?'./art-m1he/monsters/':'./art/monsters/';
+  const dir=monsterVariant?'./art-'+monsterVariant+'/monsters/':'./art/monsters/';
   ents[id].path=dir+id+'/atlas.png';ents[id].portrait=dir+id+'/';
  }
 
@@ -135,6 +137,7 @@ function applyVariant(){
   ents.peren.portrait='./art/characters/peren/';
   $('m1hGameLink').href='./';
  }
+ if(monsterVariant)$('m1hGameLink').href='./?art='+monsterVariant;
 }
 const ctx=$('frame').getContext('2d',{alpha:true});ctx.imageSmoothingEnabled=false;
 function entity(){return $('entity').value}
@@ -187,7 +190,7 @@ function load(){
   act.value=options.includes(old)?old:'idle';
   $('directionLabel').style.visibility=selected==='peren'?'visible':'hidden';
   $('assetSize').textContent='Atlas '+m.columns*m.w+'×'+m.rows*m.h;
-  $('modeInfo').textContent=selected==='peren'?'4 direções × 8 ações':'7 ações';
+  $('modeInfo').textContent=selected==='peren'?'4 direções × 8 ações':(monsterCandidate||'7 ações');
   const thisLoad=++token;
   img=new Image();ready=false;frame=0;last=0;$('status').textContent='Carregando atlas de animações…';
   img.onload=()=>{if(thisLoad!==token)return;ready=true;$('status').textContent='Atlas carregado: textura original, sem interpolação.';paintAll()};

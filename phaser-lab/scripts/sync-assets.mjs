@@ -29,3 +29,5 @@ await import('./peren-m1hd-generator.mjs');
 
 // M1h-E optional monster art, generated after legacy source synchronization.
 await import('./murin-m1he-generator.mjs');
+// M1h-F uses a CC0 Kenney sprite set to generate its opt-in Ettercap atlas.
+await import('./murin-m1hf-generator.mjs');
