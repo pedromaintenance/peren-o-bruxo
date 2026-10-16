@@ -54,11 +54,11 @@
 
 ## M1h-F.3 — Comparação direta de arte [FONTE IMPLEMENTADA, PUBLICAÇÃO EM VALIDAÇÃO]
 
-- **Comparador visual `compare.html`**: dois atlas reais (M1h-E à esquerda e M1h-F à direita), três criaturas de Mürin, sete ações sincronizadas, pausa, FPS, zoom e inspeção dos quatro quadros. **Status:** implementado na [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24); ainda aguardando publicação validada no Pages.
+- **Comparador visual `compare.html`**: dois atlas reais (M1h-E à esquerda e M1h-F à direita), três criaturas de Mürin, sete ações sincronizadas, pausa, FPS, zoom e inspeção dos quatro quadros. **Estado: publicado no Pages**, pela [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28); testes locais de Chromium e build passaram. A avaliação humana permanece pendente.
 - **Parecer artístico voluntário**: checklist de silhueta a 1×, movimento, combate, identidade sombria, retrato e legibilidade, mais observações e escolha E/F. O usuário pode copiar ou baixar Markdown; sem gravar no `localStorage` e sem transmissão de dados.
 - **Métricas técnicas**: comparação de quadros únicos e da proporção de pixels visíveis. Não substituem julgamento humano ou aprovação de estilo.
 - **QA**: [código do teste mobile/desktop](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-compare-browser.mjs), três espécies × sete ações × duas resoluções, screenshots e invariância do save.
-- **PWA offline**: [regressão automatizada preparada](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-offline-browser.mjs), para executar no endereço público após a publicação. **Não equivale a teste Android físico.**
+- **PWA offline:** identificado fallback incorreto que carregava o jogo no lugar da galeria/comparador sem rede. **Correção implementada na PR #24, aguardando CI e publicação**; [teste offline de navegador](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/phaser-lab/scripts/m1hf-offline-browser.mjs) previsto para o Pages com jogo, três criaturas, comparador, ateliê e bancada de licenças. Não equivale a teste Android físico.
 - **Gate final:** testar a página publicada, colher feedback humano e só então trabalhar no redesenho de cada criatura ou aprovar um atlas como padrão. **Nenhum sprite foi aprovado automaticamente.**
 
 Documentação técnica: [docs/27-m1h-f-3-comparador.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/27-m1h-f-3-comparador.md).
@@ -112,6 +112,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #25](https://github.com/pedromaintenance/peren-o-bruxo/pull/25) — primeiro pacote isolado do Phaser para Pages.
 - [PR #26](https://github.com/pedromaintenance/peren-o-bruxo/pull/26) — correção do encerramento de combate, já publicada.
 - [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27) — M1h-F.2: recompensas, retratos e diagnóstico no Pages; [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413).
+- [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28) — M1h-F.3: comparador visual sincronizado de monstros, checklist e parecer Markdown. Publicado na pasta experimental.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
