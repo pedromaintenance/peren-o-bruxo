@@ -1,4 +1,4 @@
-const CACHE="peren-phaser-m1hf-preview-81bb8c68c03d";
+const CACHE="peren-phaser-m1hf-preview-90c67a631f00";
 
 const CACHE_PREFIX="peren-phaser-m1hf-preview-";
 
