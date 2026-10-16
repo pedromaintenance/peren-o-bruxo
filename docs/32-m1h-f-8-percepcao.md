@@ -1,6 +1,6 @@
 # M1h-F.8 — Leitura da floresta / sinais de discrição
 
-**Escopo:** exclusivamente a prévia Phaser M1h-F. O código do Peren clássico e da demo M1d não muda.
+**Escopo:** exclusivamente a prévia Phaser M1h-F. O código do Peren clássico e da demo M1d não muda. **Publicado na `main` pela PR #34; QA público em execução.**
 
 ## Problema
 O motor já usa `environmentAt` e `canDetect` em `encounters.js`: arbustos e folhagem dão cobertura, corrida aumenta a distância de percepção, neblina encurta a visão, e solo encharcado reduz velocidade. No HUD atual o jogador só conhece o tempo e o número de perseguidores, sem entender a relação tática entre movimento e terreno.
@@ -16,9 +16,9 @@ O motor já usa `environmentAt` e `canDetect` em `encounters.js`: arbustos e fol
 - [x] Indicador, coleta de sinais voláteis e estilos implementados.
 - [x] Testes Node de cobertura, névoa, corrida, investigação e perseguição adicionados.
 - [x] Teste Chromium local e público criado para 360×800, 390×844 e 1280×800, verificando viewport e saves isolados.
-- [ ] CI Node/Vite/Chromium no candidato concluído com sucesso.
-- [ ] Build somente `phaser-demo-m1hf/`, diff auditado e release publicada por PR própria; não mesclar PR #24 de fonte na `main`.
-- [ ] Smoke no Pages incluindo os fluxos anteriores (combates, Diário, backup, PWA offline) e novo indicador.
+- [x] [CI Node/Vite/Chromium no candidato (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315), incluindo testes do HUD e saves nos três viewports.
+- [x] Bundle somente `phaser-demo-m1hf/`, diff auditado e [PR #34 mesclada](https://github.com/pedromaintenance/peren-o-bruxo/pull/34); PR de fonte #24 segue em draft.
+- [ ] Smoke no site público com os fluxos anteriores e novo indicador: [reexecução em andamento](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38965971233).
 - [ ] Android físico e aprovação artística em jogo permanecem pendentes.
 
 **Limite:** o indicador explica condições reais; não é um radar nem garante invisibilidade quando não há inimigos detectando Peren. A IA e os cálculos de `canDetect` são preservados.
