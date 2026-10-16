@@ -146,6 +146,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Documentação:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md). A prévia foi validada publicamente, mas **não é o lançamento definitivo do Phaser**.
 
+## M1h-F.8 — Leitura tática da floresta [IMPLEMENTADA NA FONTE · QA/RELEASE PENDENTES]
+
+O sistema existente de visão inimiga usa **cobertura do terreno, corrida e neblina**, mas o HUD não deixa claro como o ambiente modifica a exposição de Peren. Este incremento adiciona um indicador tático na exploração, **sem alterar a IA, os cálculos de detecção, recompensas ou saves**.
+
+| ID | Entrega e critério | Estado |
+| --- | --- | --- |
+| F8-01 | Mostrar **Passos contidos**, **Sob cobertura**, **Passos ruidosos**, **Rastros recentes** e **Caçado**, conforme sinais do mundo já observados pelo motor | **Implementado na branch fonte**; só aparece na prévia M1h-F |
+| F8-02 | Exibir pistas sobre solo molhado, neblina e vegetação; não informar posição secreta de inimigos ou prometer invisibilidade | **Implementado** — apenas leitura do `environmentAt`/`monsterDecision` existente |
+| F8-03 | HUD compacto e responsivo em celular e desktop, sem escrita/consulta de save, sem telemetria, sem nova mecânica | **Implementado**; validação externa pendente |
+| F8-04 | Testes Node para os estados e Chromium em 360×800, 390×844 e 1280×800, inclusive preservação das três chaves de save | **Testes escritos**, execução CI pendente |
+| F8-05 | Publicar bundle isolado `phaser-demo-m1hf/` somente após CI, diff auditado e QA público de combate, PWA e Diário | **Pendente**; PR de fonte #24 permanece em *draft* |
+| F8-06 | Feedback humano sobre legibilidade OLED, Android real, gamepad e atmosfera | **Pendente**; não promover arte sem aprovação explícita |
+
+**Fonte e critérios:** [docs/32-m1h-f-8-percepcao.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/32-m1h-f-8-percepcao.md). Ao publicar: [protótipo M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
