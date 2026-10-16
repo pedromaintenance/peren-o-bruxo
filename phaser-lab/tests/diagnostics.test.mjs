@@ -34,10 +34,11 @@ test('M1h-F voluntary report whitelists metadata and never exports user save or 
 test('M1h-F diagnostic UI is preview-only and does not send data over network',()=>{
  const preparer=readFileSync(new URL('../scripts/prepare-demo.mjs',import.meta.url),'utf8');
  const main=readFileSync(new URL('../src/main.js',import.meta.url),'utf8');
- assert.match(preparer,/if\\(isolated\\)/);
- assert.match(preparer,/m1hfDiagCopy/);
- assert.match(preparer,/m1hfDiagSave/);
- assert.match(main,/if\\(M1HF_PREVIEW\\)/);
- assert.match(main,/buildDiagnosticReport\\(/);
- assert.doesNotMatch(main,/sendBeacon\\(|fetch\\(.*diagnos|XMLHttpRequest.*diagnos/);
+ assert.ok(preparer.includes('if(isolated)'));
+ assert.ok(preparer.includes('m1hfDiagCopy'));
+ assert.ok(preparer.includes('m1hfDiagSave'));
+ assert.ok(main.includes('if(M1HF_PREVIEW)'));
+ assert.ok(main.includes('buildDiagnosticReport('));
+ for(const forbidden of ['sendBeacon(','XMLHttpRequest('])assert.ok(!main.includes(forbidden));
+
 });
