@@ -4,7 +4,7 @@ import {HERBS} from './world.js';
 import {XboxPadTracker} from './gamepad.js';
 import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
-import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
+import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY,validatePhaserBackup} from './progress.js';
 import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
@@ -12,6 +12,7 @@ import {createMarketplaceScreen} from './ui-marketplace.js';
 import {expeditionViewModel,battleViewModel,battleOutcomeViewModel,fillGauge,actionDetails} from './ui-adventure.js';
 import {M1HF_PREVIEW} from './progress.js';
 import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
+import {showPreviewSaveRecovery} from './save-recovery.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -21,7 +22,15 @@ for(const name of ['itens','receitas','magias','monstros','cidades']){
   data[name]=await response.json();
 }
 const catalogs=buildCatalogs(data);
-const bridge=createProgressBridge(localStorage,catalogs);
+let bridge;
+try{bridge=createProgressBridge(localStorage,catalogs)}
+catch(error){
+ // Only the isolated M1h-F preview offers recovery: no automatic reset or
+ // access to other games' keys. The Phaser renderer has not started yet.
+ if(!M1HF_PREVIEW)throw error;
+ showPreviewSaveRecovery({document,storage:localStorage,key:PHASER_KEY,catalogs,error,validate:validatePhaserBackup});
+ return;
+}
 // Experimental visual flag only. Existing game and save remain unchanged by default.
 const chosenArt=new URLSearchParams(location.search).get('art');
 if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
