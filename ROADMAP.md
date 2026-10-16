@@ -163,6 +163,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Documentação:** [docs/32-m1h-f-8-percepcao.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/32-m1h-f-8-percepcao.md). Nenhuma criatura ou sprite foi aprovado artisticamente por esse incremento.
 
+## M1h-F.9 — Coleta contextual [FONTE IMPLEMENTADA · AGUARDANDO CI E PAGES]
+
+**Objetivo:** eliminar tentativas às cegas para colher recursos em Mürin sem aumentar o alcance nem facilitar artificialmente o jogo. A ação `collect()` já usa `nearestResource()` em um raio estrito de **57 pixels**.
+
+| ID | Entrega e aceite | Estado |
+| --- | --- | --- |
+| F9-01 | Quando Peren estiver dentro do alcance real de coleta, mostrar **“Ao alcance: ingrediente · quantidade”** junto ao botão Colher | **Implementado na fonte**, somente na prévia M1h-F |
+| F9-02 | Destacar discretamente o botão e atualizar seu `aria-label` para toque/leitores de tela; manter teclado e Xbox e não desabilitar Colher fora do alcance | **Implementado**; sem nova mecânica de inventário |
+| F9-03 | Não sinalizar recursos distantes, coletados ou durante a animação; manter sinal efêmero no `registry` e nunca escrever em save | **Implementado** com a mesma função `nearestResource` |
+| F9-04 | Testes Node para alvo/borda exata, seeds reais e recursos coletados; Chromium 360×800, 390×844, 1280×800 e três chaves de save | **Testes criados**, CI aguardando |
+| F9-05 | Publicação apenas do bundle `phaser-demo-m1hf/` após CI verde, diff auditado e smoke no site público | **Pendente**, sem alterar clássico nem demo M1d |
+| F9-06 | Android físico, contraste de HUD e confirmação de usabilidade de toque/Xbox | **Pendente de playtest humano** |
+
+**Detalhes:** [docs/33-m1h-f-9-coleta.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/33-m1h-f-9-coleta.md). **Quando publicada:** [Peren no Pages](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). A PR de fonte #24 permanece em *draft*.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
