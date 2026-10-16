@@ -21,6 +21,8 @@ try{
    await page.locator('#goForest').click();
    const cue=page.locator('#fieldAwareness');
    assert.equal(await cue.isVisible(),true);
+   // Freeze AI only inside this synthetic HUD test to avoid frame races.
+   await page.evaluate(()=>window.__perenLab.scene.pause('ExplorationScene'));
    const original=await page.evaluate(()=>({
     preview:localStorage.getItem('peren_phaser_save_m1hf_preview_v1'),
     classic:localStorage.getItem('peren_carcaca_save_v1'),
