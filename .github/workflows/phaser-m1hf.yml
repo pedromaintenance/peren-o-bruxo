@@ -47,6 +47,7 @@ jobs:
             sleep 1
           done
           node scripts/m1hf-browser-check.mjs
+          node scripts/m1hf-compare-browser.mjs
       - name: Evidências para revisão visual
         if: always()
         uses: actions/upload-artifact@v4

@@ -66,6 +66,7 @@ jobs:
           done
           node scripts/m1hf-pages-browser-check.mjs
           node scripts/m1hf-browser-check.mjs
+          node scripts/m1hf-compare-browser.mjs
           PEREN_QA_REQUIRE_M1HF2=1 node scripts/m1hf-combat-qa.mjs
           node scripts/m1hf-combat-resilience-qa.mjs
       - name: Armazenar pacote testável para recuperação manual
