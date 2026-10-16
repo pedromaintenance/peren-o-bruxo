@@ -93,6 +93,9 @@ jobs:
       - name: PWA offline com cache, páginas corretas e saves preservados
         working-directory: phaser-lab
         run: PEREN_QA_REQUIRE_COMPARISON=1 PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-offline-browser.mjs
+      - name: Diário read-only de Peren no Pages público
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-journal-browser.mjs
       - name: Recuperação de save danificado no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-save-rescue-browser.mjs
