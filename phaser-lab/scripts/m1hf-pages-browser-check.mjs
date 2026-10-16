@@ -21,6 +21,16 @@ try{
   await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready')===true,{timeout:30000});
   assert.equal(await page.locator('#m1hfPreviewNote').count(),1,'Missing explicit Pages preview marker');
   assert.match(await page.locator('#hubStatus').textContent(),/M1h-F/);
+  assert.equal(await page.locator('#m1hfDiagCopy').count(),1);
+  assert.equal(await page.locator('#m1hfDiagSave').count(),1);
+  const metadata=await page.evaluate(()=>window.__perenDiagnostics?.report());
+  assert.equal(metadata.format,'peren-m1hf-diagnostic-v1');
+  assert.equal(metadata.progress.origin,'m1hf-preview');
+  assert.ok(!JSON.stringify(metadata).includes('DO-NOT-READ-OR-OVERWRITE-CLASSIC'));
+  const downloadEvent=page.waitForEvent('download');
+  await page.locator('#m1hfDiagSave').click();
+  const diagnosticDownload=await downloadEvent;
+  assert.equal(diagnosticDownload.suggestedFilename(),'peren-m1hf-diagnostico.json');
   const stage=await page.evaluate(()=>{
    const game=window.__perenLab;
    const bridge=game.registry.get('progressBridge');

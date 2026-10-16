@@ -33,7 +33,7 @@ jobs:
         run: npm test
       - name: Compilar com chave de save PRIVADA para o Pages
         working-directory: phaser-lab
-        run: VITE_PEREN_M1HF_PREVIEW=1 npm run build
+        run: VITE_PEREN_M1HF_PREVIEW=1 VITE_PEREN_BUILD_SHA=$GITHUB_SHA npm run build
       - name: Gerar PWA isolada, revisão de arte e cache próprio
         working-directory: phaser-lab
         run: PEREN_M1HF_PAGES_PREVIEW=1 node scripts/prepare-demo.mjs

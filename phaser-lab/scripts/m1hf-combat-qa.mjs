@@ -53,6 +53,10 @@ try{
    }
    const status=await page.evaluate(()=>window.__perenLab.scene.getScene('BattleScene').state.status);
    assert.equal(status,'won','Expected normal player victory against '+id+', status '+status);
+   const rewardView=await page.locator('#battleRewardPreview').isVisible();
+   assert.ok(rewardView,'No reward preview before confirmation');
+   assert.match(await page.locator('#battleRewardDetails').textContent(),/XP/);
+   assert.match(await page.locator('#battleRewardDetails').textContent(),/moedas/);
    const finished=await page.locator('#battleFinish').isVisible();
    assert.equal(finished,true,'Finish battle button missing');
    await page.screenshot({path:'screenshots/m1hf-qa-before-finish-'+id+'-'+width+'.png',fullPage:true});
@@ -72,6 +76,7 @@ try{
       errors:window.__qaErrors||[]};
    });
    assert.equal(after.controls,true,'Controls did not return: '+JSON.stringify(after));
+   assert.match(after.feedback,/Vitória! \+\d+ XP,/,'Victories must show the confirmed reward in the HUD');
    assert.equal(after.paused,false,'Forest did not resume: '+JSON.stringify(after));
    assert.equal(after.hub,false,'Hub appeared erroneously');
    assert.equal(after.kills,before.kills+1,'Victory not persisted '+JSON.stringify(after));

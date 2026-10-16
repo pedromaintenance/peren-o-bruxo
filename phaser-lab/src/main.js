@@ -39,6 +39,65 @@ const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#10
   render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
   scene:[ExplorationScene,BattleScene]});
 window.__perenLab=app;
+
+/** Bug reports are opt-in, local-only and only exposed in the isolated M1h-F build. */
+const diagnosticLog=createDiagnosticLog();
+if(M1HF_PREVIEW){
+ const note=(type,message)=>diagnosticLog.record(type,message);
+ window.addEventListener('error',e=>note('javascript',e.message));
+ window.addEventListener('unhandledrejection',e=>note('promise',e.reason?.message||String(e.reason)));
+ app.events.on('peren-battle-error',message=>note('battle-error',message));
+ app.events.on('peren-progress-error',message=>note('save-error',message));
+ app.events.on('peren-battle-end',event=>note('battle-ended',event.result));
+ app.events.on('peren-encounter',event=>note('encounter',event.type));
+ const buildReport=()=>{
+  let explorer,combat;
+  try{explorer=app.scene.getScene('ExplorationScene')}catch{}
+  try{combat=app.scene.getScene('BattleScene')}catch{}
+  return buildDiagnosticReport({
+   version:import.meta.env.VITE_PEREN_BUILD_SHA||'m1hf-dev',
+   generatedAt:new Date().toISOString(),pathname:location.pathname,
+   viewport:{width:innerWidth,height:innerHeight},online:navigator.onLine,
+   save:bridge.read(),battle:app.registry.get('battleState'),
+   scene:{
+    explorationActive:!!explorer?.scene.isActive(),
+    explorationPaused:!!explorer?.scene.isPaused(),
+    battleActive:!!combat?.scene.isActive()
+   },
+   events:diagnosticLog.snapshot()
+  });
+ };
+ window.__perenDiagnostics={report:buildReport};
+ const say=(message)=>{
+  for(const id of ['m1hfDiagStatus','m1hfDiagBattleStatus']){
+   const el=document.getElementById(id);if(el)el.textContent=message;
+  }
+ };
+ const copy=async()=>{
+  try{
+   await navigator.clipboard.writeText(JSON.stringify(buildReport(),null,2));
+   say('Diagnóstico copiado. Cole na conversa ou no relato do bug.');
+  }catch(error){
+   note('diagnostic',error.message);
+   say('Não foi possível copiar; use Baixar diagnóstico no menu da cidade.');
+  }
+ };
+ const save=()=>{
+  try{
+   const payload=JSON.stringify(buildReport(),null,2);
+   const url=URL.createObjectURL(new Blob([payload],{type:'application/json'}));
+   const a=document.createElement('a');a.href=url;a.download='peren-m1hf-diagnostico.json';
+   document.body.append(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(url),1500);
+   say('Relatório salvo no aparelho. Ele não foi enviado para nenhum servidor.');
+  }catch(error){note('diagnostic',error.message);say('Erro ao salvar diagnóstico: '+error.message);}
+ };
+ for(const id of ['m1hfDiagCopy','m1hfDiagCopyBattle']){
+  document.getElementById(id)?.addEventListener('click',copy);
+ }
+ document.getElementById('m1hfDiagSave')?.addEventListener('click',save);
+}
+
 const workshop=createWorkshopScreen({document,bridge,catalogs,onChange:()=>{
   app.registry.set('combatProfile',bridge.combatProfile());renderHub();
 }});

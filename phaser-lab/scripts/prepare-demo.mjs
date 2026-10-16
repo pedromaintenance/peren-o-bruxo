@@ -22,7 +22,11 @@ if(isolated){
   html=html.replace('DEMONSTRAÇÃO PHASER M1d · seu save clássico não será modificado.',
     'PRÉVIA M1h-F · 3 criaturas CC0 · save de teste independente e sem importação do clássico.');
   html=html.replace('<footer class="m1g-footer">',
-    '<footer class="m1g-footer"><a id="m1hfPreviewNote" href="./review.html?art=m1hf">🧪 REVISÃO M1h-F · VER SPRITES ANIMADOS</a>');
+    '<footer class="m1g-footer"><div class="m1hf-diagnostic-controls" aria-label="Ferramentas de testes"><span>PRÉVIA M1h-F · RELATAR FALHA</span><button type="button" id="m1hfDiagCopy">Copiar diagnóstico</button><button type="button" id="m1hfDiagSave">Baixar diagnóstico</button><small id="m1hfDiagStatus" role="status">Sem envio automático: nenhum save ou inventário é exportado.</small></div><a id="m1hfPreviewNote" href="./review.html?art=m1hf">🧪 REVISÃO M1h-F · VER SPRITES ANIMADOS</a>');
+  html=html.replace('<small class="battle-note">',
+    '<button id="m1hfDiagCopyBattle" type="button" class="m1hf-battle-diag">Copiar diagnóstico técnico</button><small id="m1hfDiagBattleStatus" role="status"></small><small class="battle-note">');
+  html=html.replace('</head>',
+    `<style>.m1hf-diagnostic-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap;width:100%;padding:10px;border:1px solid #8b744f;background:#0e2029;color:#dcc6a3}.m1hf-diagnostic-controls span{font-weight:700}.m1hf-diagnostic-controls button,.m1hf-battle-diag{cursor:pointer;padding:8px 11px;border:1px solid #bfa475;border-radius:4px;background:#1c3544;color:#f5dca8}.m1hf-diagnostic-controls small{width:100%;font-size:11px;overflow-wrap:anywhere}.m1hf-battle-diag{display:block;margin:10px 0 5px}#m1hfDiagBattleStatus{display:block;color:#e4c993;font-size:11px}</style></head>`);
   html=html.replace('</head>','<meta name="robots" content="noindex,nofollow"><meta name="description" content="Prévia experimental M1h-F do jogo Peren, o Bruxo"></head>');
 }
 await mkdir(join(dist,'icons'),{recursive:true});
