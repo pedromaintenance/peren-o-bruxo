@@ -146,20 +146,22 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Documentação:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md). A prévia foi validada publicamente, mas **não é o lançamento definitivo do Phaser**.
 
-## M1h-F.8 — Leitura tática da floresta [IMPLEMENTADA NA FONTE · QA/RELEASE PENDENTES]
+## M1h-F.8 — Leitura tática da Floresta de Mürin [PUBLICADA · QA ONLINE EM VERIFICAÇÃO]
 
-O sistema existente de visão inimiga usa **cobertura do terreno, corrida e neblina**, mas o HUD não deixa claro como o ambiente modifica a exposição de Peren. Este incremento adiciona um indicador tático na exploração, **sem alterar a IA, os cálculos de detecção, recompensas ou saves**.
+**Publicação:** [PR #34](https://github.com/pedromaintenance/peren-o-bruxo/pull/34) mesclada em 16/10/2026, contendo exclusivamente o bundle de `phaser-demo-m1hf/` (JS/CSS, `index.html`, `demo-sw.js`). O jogo clássico, o protótipo M1d e seus saves permanecem separados. A PR de fonte #24 permanece em *draft*.
 
-| ID | Entrega e critério | Estado |
+| ID | Entrega / critério | Estado |
 | --- | --- | --- |
-| F8-01 | Mostrar **Passos contidos**, **Sob cobertura**, **Passos ruidosos**, **Rastros recentes** e **Caçado**, conforme sinais do mundo já observados pelo motor | **Implementado na branch fonte**; só aparece na prévia M1h-F |
-| F8-02 | Exibir pistas sobre solo molhado, neblina e vegetação; não informar posição secreta de inimigos ou prometer invisibilidade | **Implementado** — apenas leitura do `environmentAt`/`monsterDecision` existente |
-| F8-03 | HUD compacto e responsivo em celular e desktop, sem escrita/consulta de save, sem telemetria, sem nova mecânica | **Implementado**; validação externa pendente |
-| F8-04 | Testes Node para os estados e Chromium em 360×800, 390×844 e 1280×800, inclusive preservação das três chaves de save | **Testes escritos**, execução CI pendente |
-| F8-05 | Publicar bundle isolado `phaser-demo-m1hf/` somente após CI, diff auditado e QA público de combate, PWA e Diário | **Pendente**; PR de fonte #24 permanece em *draft* |
-| F8-06 | Feedback humano sobre legibilidade OLED, Android real, gamepad e atmosfera | **Pendente**; não promover arte sem aprovação explícita |
+| F8-01 | Exibir **Passos contidos**, **Sob cobertura**, **Passos ruidosos**, **Rastros recentes** e **Caçado** durante a exploração | **Publicado no Pages** — PR #34 |
+| F8-02 | Informar folhagem, corrida, solo encharcado e neblina sem revelar monstros ocultos nem alterar `canDetect` | **Implementado e testado** — função pura e sinais do motor |
+| F8-03 | HUD compacto para celular, sem telemetria, novas regras ou escrita de save | **Implementado**; comportamento testado em Chromium |
+| F8-04 | Testes Node, Vite, seis vitórias, resiliência, três viewports (360×800, 390×844, 1280×800) e saves isolados | **Aprovado no bundle candidato** — [GitHub Actions: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315) |
+| F8-05 | Repetir a bateria no endereço público, incluindo o indicador, Diário, recuperação e PWA offline | **Em validação** — [reexecução de QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38965971233) |
+| F8-06 | Validar Android físico, Xbox real, contraste OLED e linguagem visual | **Pendente de playtest humano** |
 
-**Fonte e critérios:** [docs/32-m1h-f-8-percepcao.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/32-m1h-f-8-percepcao.md). Ao publicar: [protótipo M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+**Jogar:** [Peren M1h-F.8](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html).
+
+**Documentação:** [docs/32-m1h-f-8-percepcao.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/32-m1h-f-8-percepcao.md). Nenhuma criatura ou sprite foi aprovado artisticamente por esse incremento.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -204,6 +206,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — M1h-F.5: Diário de Peren, filtros, registros reais e exportação Markdown. [CI](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957869361) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38957598003) aprovados; Android físico pendente.
 - [PR #32](https://github.com/pedromaintenance/peren-o-bruxo/pull/32) — M1h-F.6: Bancada de Teste de Campo e precache isolado; fonte em #24, QA Android ainda pendente.
 - [PR #33](https://github.com/pedromaintenance/peren-o-bruxo/pull/33) — M1h-F.7: Manual da Expedição integrado à prévia e correção de QA; [build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38963137694) e [QA ao vivo](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38964866686) aprovados.
+- [PR #34](https://github.com/pedromaintenance/peren-o-bruxo/pull/34) — M1h-F.8: HUD de discrição e leitura do ambiente, [CI de build e Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315); QA público em verificação.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
