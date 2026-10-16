@@ -39,7 +39,7 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 </style>
 </head>
 <body>
-<header><small>CARCAÇA · PEREN, O BRUXO · LABORATÓRIO VISUAL M1h-A</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a> · <a href="./asset-audition.html">Bancada de fontes CC0</a></header>
+<header><small>CARCAÇA · PEREN, O BRUXO · ATELIÊ DE REVISÃO VISUAL</small><h1>Ateliê de Sprites</h1><p>Examine a arte que o Phaser realmente carrega, quadro a quadro. Isto é uma galeria de QA, não um mockup.</p><a href="./">← Voltar à demonstração jogável</a> · <a href="./asset-audition.html">Bancada de fontes CC0</a> · <a href="./review.html?art=m1he">Comparar M1h-E</a> · <a href="./review.html?art=m1hf">Comparar M1h-F</a></header>
 <main>
 <div class="grid">
 <section class="panel">
@@ -71,7 +71,7 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 <p id="status" role="status" aria-live="polite">Carregando atlas de animações…</p>
 <h2>Retrato em pixel art</h2>
 <img id="portrait" src="./art/characters/peren/portrait.png" alt="Retrato do personagem selecionado">
-<p><small>M1h-A altera a paleta; M1h-B reconstrói a cabeça nas 32 animações, sem chapéu, com cabelos e barba prateados. Ambas são candidatas em revisão e não mudam o jogo padrão.</small></p>
+<p><small><span id="portraitHelp">Compare as variantes de Peren. Sua aparência doppelganger é variável e nenhuma opção muda regras ou saves.</span></small></p>
 </section>
 <section class="panel">
 <h2>Prévia animada</h2>
@@ -80,10 +80,10 @@ footer{padding:16px 24px;text-align:center;color:#a9b9b0}
 <div id="strip" aria-label="Sequência da animação"></div>
 <h2 style="margin-top:22px">Critérios de revisão</h2>
 <ul class="notes">
-<li><strong>Identidade:</strong> Peren deve ser reconhecível por seus cabelos grisalhos, rosto maduro, capa e equipamento, mesmo em miniatura.</li>
-<li><strong>Silhueta:</strong> botas, mãos e arma devem permanecer legíveis a 2× e 3× no celular.</li>
-<li><strong>Movimento:</strong> não basta deslocar o corpo inteiro: pés, capa, braços e efeito mágico devem mudar de pose.</li>
-<li><strong>Consistência:</strong> proporção, equipamento e paleta devem se manter nas quatro direções.</li>
+<li><strong>Identidade:</strong> Peren deve manter sua identidade doppelganger; Galho, Fungo e Ettercap precisam de silhuetas próprias, ameaçadoras e reconhecíveis.</li>
+<li><strong>Silhueta:</strong> mãos, galhos, micélio e membros aracnídeos precisam manter contornos legíveis a 1× e 2× no celular.</li>
+<li><strong>Movimento:</strong> exigir gestos reais em cada ação. Não contar o deslocamento integral da mesma imagem como uma animação pronta.</li>
+<li><strong>Consistência:</strong> paleta de horror, foco visual e proporções devem se manter entre quadros; Peren precisa de quatro direções.</li>
 <li><strong>Aprovação:</strong> a arte continua provisória até feedback visual e teste no aparelho real.</li>
 </ul>
 </section>
@@ -106,7 +106,7 @@ peren:{w:48,h:64,columns:32,rows:4,path:'./art/characters/peren/peren-atlas.png'
 };
 let img=new Image(),ready=false,frame=0,playing=true,last=0,token=0;
 const artValue=new URLSearchParams(location.search).get('art');
-const monsterCandidate=artValue==='m1hf'?'M1h-F · Ettercap Kenney CC0 (Galho/Fungo M1h-E)':artValue==='m1he'?'M1h-E · Sombreamento original':null;
+const monsterCandidate=artValue==='m1hf'?'M1h-F · Bestiário CC0 completo':artValue==='m1he'?'M1h-E · Sombreamento original':null;
 $('perenVariant').value=['m1h','m1hb','m1hc','m1hd'].includes(artValue)?artValue:'m1e';
 function applyVariant(){
  const selectedMonsterArt=new URLSearchParams(location.search).get('art');
@@ -191,6 +191,7 @@ function load(){
   $('directionLabel').style.visibility=selected==='peren'?'visible':'hidden';
   $('assetSize').textContent='Atlas '+m.columns*m.w+'×'+m.rows*m.h;
   $('modeInfo').textContent=selected==='peren'?'4 direções × 8 ações':(monsterCandidate||'7 ações');
+  $('portraitHelp').textContent=selected==='peren'?'Peren é doppelganger: formas humanas diferentes são possíveis, e nenhuma delas muda sua ficha.':selected==='mob-galho-infectado'?'Galho Infectado: madeira morta, raízes articuladas e seiva rubra. Conferir sombra e galhos durante o ataque.':selected==='mob-fungo-violeta'?'Fungo Violeta: chapéu fraturado, micélio rastejante e esporos; observar se a paleta fica sombria.':'Ettercap: anatomia de caçador aracnídeo, patas articuladas, olhos discretos e quitina escura.';
   const thisLoad=++token;
   img=new Image();ready=false;frame=0;last=0;$('status').textContent='Carregando atlas de animações…';
   img.onload=()=>{if(thisLoad!==token)return;ready=true;$('status').textContent='Atlas carregado: textura original, sem interpolação.';paintAll()};

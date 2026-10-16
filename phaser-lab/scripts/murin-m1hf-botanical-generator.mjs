@@ -206,6 +206,8 @@ function renderFungus(action,t){
   line(out,cx+side*(14+pulse),49+hop+(t%2),cx+side*(21+pulse),51+hop,[133,132,111,255],2);
   line(out,cx+side*8,39+hop,cx+side*(18+pulse),30+hop+(action==='attack'?-t*2:0),[83,92,77,255],3);
  }
+ // Stem from the same verified Kenney CC0 mushroom pack supplies translucent gill texture.
+ tintedMushroom(out,'stemShroom',cx,29+hop,19,18,{decay:.64});
  // Preserve original Kenney mushroom silhouette and dots, recolored to bruised violet.
  tintedMushroom(out,'tallShroom_red',cx,y,w,h,{decay:action==='death'?.45:1,flash:action==='hurt'&&t%2===0});
  // The original cap pattern is layered as pixel-sampled texture, cut into an arch.

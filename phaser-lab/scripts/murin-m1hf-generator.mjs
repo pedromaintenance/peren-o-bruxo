@@ -56,9 +56,9 @@ function drawSpider(canvas,image,cx,baseY,{width=37,height=36,alpha=255,flash=fa
     const lum=(image.data[i]*.2126+image.data[i+1]*.7152+image.data[i+2]*.0722)/255;
     const tone=Math.max(.08,Math.min(1,lum*1.5));
     // Ochre Kenney geometry becomes bruised chitin in the Mürin palette.
-    const red=flash?Math.round(108+tone*120):Math.round(38+tone*102);
-    const green=flash?Math.round(43+tone*76):Math.round(29+tone*56);
-    const blue=flash?Math.round(58+tone*83):Math.round(40+tone*53);
+    const red=flash?Math.round(108+tone*120):Math.round(30+tone*88);
+    const green=flash?Math.round(43+tone*76):Math.round(27+tone*65);
+    const blue=flash?Math.round(58+tone*83):Math.round(36+tone*78);
     pixel(canvas,ox+x,oy+y,red,green,blue,Math.round(a*alpha/255));
   }
   return {x:ox,y:oy,w,h};
@@ -108,6 +108,34 @@ function decorate(canvas,action,frame,cx,baseY){
     }
   }
 }
+function etchedChitin(canvas,cx,baseY,t,action){
+  // A cracked dorsal plate and long hooked limbs break the flat platformer silhouette.
+  // Keep detail sparse at native 64px, readable as dark fantasy rather than visual noise.
+  const y=baseY-20;
+  const ridge=[135,105,112,210],crack=[43,32,43,230],scar=[159,63,83,225];
+  line(canvas,cx-10,y+4,cx-6,y-1,ridge);
+  line(canvas,cx+10,y+4,cx+6,y-1,ridge);
+  line(canvas,cx-4,y+2,cx+3,y+4,crack);
+  line(canvas,cx+3,y+4,cx+7,y+1,crack);
+  line(canvas,cx-8,y+8,cx-3,y+6,crack);
+  line(canvas,cx+8,y+8,cx+3,y+6,crack);
+  for(const offset of [-4,0,4]){
+    pixel(canvas,cx+offset,y+7,offset===0?scar[0]:112,offset===0?scar[1]:58,offset===0?scar[2]:72,230);
+  }
+  if(action!=='death'){
+    // Jointed forelimbs curve inward and terminate in dark sickles.
+    for(const side of [-1,1]){
+      const bend=(action==='attack'?t*2:action==='alert'?2:t%2);
+      line(canvas,cx+side*13,y+3,cx+side*(18+bend),y-5,[98,79,88,225]);
+      line(canvas,cx+side*(18+bend),y-5,cx+side*(22+bend),y-13,[142,103,100,230]);
+      line(canvas,cx+side*(22+bend),y-13,cx+side*(19+bend),y-17,[185,139,116,200]);
+    }
+    // Mandibles mark the creature as something more than an ordinary spider.
+    line(canvas,cx-4,y+9,cx-2,y+14,[173,143,126,235]);
+    line(canvas,cx+4,y+9,cx+2,y+14,[173,143,126,235]);
+    pixel(canvas,cx,y+12,181,66+(t%2)*24,68,190);
+  }
+}
 function frameFor(action,t) {
   const names={
     idle:['spider.png','spider_walk1.png','spider.png','spider_walk2.png'],
@@ -126,6 +154,7 @@ function frameFor(action,t) {
   drawSpider(spr,image,cx,cy,{alpha:action==='death'?[255,220,185,130][t]:255,flash:action==='hurt'&&t%2===0});
   if(action!=='death')drawEyes(spr,cx,cy-19,t,action);
   decorate(spr,action,t,cx,cy);
+  etchedChitin(spr,cx,cy,t,action);
   return spr;
 }
 function paste(out,src,x0,y0){
@@ -144,6 +173,7 @@ function portrait(){
   }
   drawSpider(out,poses['spider.png'],80,121,{width:112,height:103});
   drawEyes(out,80,81,0,'alert');
+  // Portrait keeps the original Kenney pose; atlas-only carapace details are scaled by animation.
   return out;
 }
 await mkdir(output,{recursive:true});
