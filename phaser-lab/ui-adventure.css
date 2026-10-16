@@ -170,3 +170,20 @@
 #controls #fieldAwareness[data-state="quiet"]{border-left-color:#83c8a1}
 @media(max-width:390px){#controls #fieldAwareness.m1hf-field-awareness{grid-template-columns:1fr;gap:1px;padding:4px 6px;font-size:9px}}
 @media(max-height:610px) and (orientation:landscape){#controls #fieldAwareness.m1hf-field-awareness{font-size:9px;margin-top:3px;padding:3px 6px}}
+
+/* M1h-F.9: gathering feedback from the same 57px range as collect(). */
+#controls #harvestProximity[hidden]{display:none!important}
+#controls #harvestProximity{
+ box-sizing:border-box;display:block;width:min(235px,calc(100vw - 24px));
+ max-width:100%;padding:7px 10px;border:1px solid #a4c59d;
+ border-left:3px solid #b7d6ac;background:#0c2a29ef;box-shadow:0 4px 15px #010908a8;
+ color:#e7f0d9;font:600 11px/1.35 system-ui,sans-serif;
+ border-radius:5px;text-align:center;overflow-wrap:anywhere;
+}
+#controls #actions #gatherBtn[data-ready="true"]{
+ border-color:#d8e5af;box-shadow:inset 0 0 0 1px #a6d6aa44,0 0 13px #93bc8177;
+}
+@media(max-width:390px){
+ #controls #harvestProximity{width:min(160px,calc(100vw - 24px));font-size:10px;padding:5px 6px}
+}
+@media(prefers-reduced-motion:reduce){#controls #actions #gatherBtn{animation:none!important;transition:none!important}}
