@@ -75,22 +75,22 @@ Documentação técnica: [docs/27-m1h-f-3-comparador.md](https://github.com/pedr
 - [ ] Auditar licenças/atribuição e transformação por arquivo; referências: [documentação dos assets M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/26-m1h-f-audicao-kenney-cc0.md).
 - [ ] Não fazer merge do novo padrão gráfico antes de aprovação explícita.
 
-## M1h-F.4 — Resgate de save experimental [IMPLEMENTADO · EM VALIDAÇÃO]
+## M1h-F.4 — Resgate de save experimental [PUBLICADO · QA ONLINE APROVADO]
 
-A próxima entrega testável prioriza a recuperação segura de progresso após corrupção do arquivo, sem migrar ou modificar o save clássico.
+A versão M1h-F.4 está **publicada no Pages** via [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30). A recuperação segura de saves danificados foi testada em Chromium **390×844** e **1280×800** [diretamente no site público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551). O jogo clássico e a demo estável permanecem separados.
 
 | ID | Critério de aceite | Estado |
 | --- | --- | --- |
-| F4-01 | Se o save da prévia não abrir, mostrar tela de recuperação **sem excluir dados** nem iniciar Phaser com progresso inválido | **Implementado na PR #24; aguardando CI/Pages** |
-| F4-02 | Oferecer download do save bruto danificado antes de restaurar ou reiniciar; somente ação explícita e confirmação do jogador | **Implementado na PR #24; aguardando QA** |
-| F4-03 | Validar backup Phaser v2 (até 2 MB), recusar arquivo inválido sem sobrescrever o anterior, evitar concorrência entre abas | **Implementado na PR #24; testes de recuperação em execução** |
-| F4-04 | Preservar `peren_carcaca_save_v1` e `peren_phaser_save_m1d_v1`; reset afeta somente `peren_phaser_save_m1hf_preview_v1` | **Implementado; verificar no Chromium e no Pages** |
-| F4-05 | Testes Chromium em 390×844 e 1280×800: baixar original, restaurar, resetar, cancelar, simular conflito e retornar ao jogo | **Aguardando resultado dos pipelines** |
+| F4-01 | Se o save da prévia não abrir, mostrar tela de recuperação **sem excluir dados** nem iniciar Phaser com progresso inválido | **Publicado no Pages, QA aprovado** — PR #30 |
+| F4-02 | Oferecer download do save bruto danificado antes de restaurar ou reiniciar; somente ação explícita e confirmação do jogador | **Publicado, teste de download e confirmação aprovado** — PR #30 |
+| F4-03 | Validar backup Phaser v2 (até 2 MB), recusar arquivo inválido sem sobrescrever o anterior, evitar concorrência entre abas | **Publicado; validação de backup e conflitos passou no Pages** — PR #30 |
+| F4-04 | Preservar `peren_carcaca_save_v1` e `peren_phaser_save_m1d_v1`; reset afeta somente `peren_phaser_save_m1hf_preview_v1` | **Publicado; isolamento das chaves comprovado no QA** — PR #30 |
+| F4-05 | Testes Chromium em 390×844 e 1280×800: baixar original, restaurar, resetar, cancelar, simular conflito e retornar ao jogo | **Aprovado** — [build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951389055) e [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) |
 | F4-06 | Playtest real Android: download TXT, importação JSON, PWA instalada, armazenamento indisponível/quota | **Pendente de teste físico** |
 
 **Documentação de implementação:** [M1h-F.4 — resgate de save](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/28-m1h-f-4-resgate-save.md).
 
-**Critérios para publicar:** CI verde em Node/Vite/Chromium, PR contendo apenas `phaser-demo-m1hf/`, novo teste contra o Pages depois do deploy. **Sem merge da fonte da PR #24 na main**; backups de usuários reais não são material de teste.
+**Gate de publicação cumprido:** Node/Vite/Chromium verde, [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) modificou apenas 3 arquivos em `phaser-demo-m1hf/`, e o [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) repetiu combates, PWA offline, comparador e resgate. **A fonte da PR #24 permanece em draft**. Nenhum save real de jogador foi usado no QA.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -131,6 +131,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #27](https://github.com/pedromaintenance/peren-o-bruxo/pull/27) — M1h-F.2: recompensas, retratos e diagnóstico no Pages; [QA online](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38838431413).
 - [PR #28](https://github.com/pedromaintenance/peren-o-bruxo/pull/28) — M1h-F.3: comparador visual sincronizado de monstros, checklist e parecer Markdown. Publicado na pasta experimental.
 - [PR #29](https://github.com/pedromaintenance/peren-o-bruxo/pull/29) — roteamento offline corrigido para as páginas da PWA; [QA real online/offline](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38882157864) aprovado no Chromium.
+- [PR #30](https://github.com/pedromaintenance/peren-o-bruxo/pull/30) — M1h-F.4: resgate seguro de save danificado no protótipo experimental. [Build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951389055) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38951388551) aprovados; Android físico pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
