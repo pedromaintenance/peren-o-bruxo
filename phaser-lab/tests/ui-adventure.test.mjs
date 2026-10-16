@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {buildCatalogs,newClassicState} from '../src/progress.js';
 import {SPELLS,newBattle} from '../src/combat.js';
-import {ratio,actionDetails,expeditionViewModel,battleViewModel} from '../src/ui-adventure.js';
+import {ratio,actionDetails,expeditionViewModel,battleViewModel,battleOutcomeViewModel} from '../src/ui-adventure.js';
 const data=Object.fromEntries(['itens','receitas','magias','monstros','cidades'].map(key=>[key,JSON.parse(readFileSync(new URL('../data/'+key+'.json',import.meta.url)))]));
 const catalogs=buildCatalogs(data);
 
@@ -56,4 +56,25 @@ test('M1g-E apresenta controles funcionais sem substituir regras nem criar botõ
  assert.match(main,/expeditionViewModel\(/);assert.match(main,/battleViewModel\(/);
  assert.match(main,/fillGauge\(/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|bridge\.execute/);
+});
+
+test('M1h-F outcome panel previews canonical rewards without changing the save',()=>{
+ const before=JSON.stringify(catalogs.itensById['ing-hanging-moss']);
+ const victory=battleOutcomeViewModel({status:'won',enemyId:'mob-galho-infectado'},catalogs);
+ assert.equal(victory.xp,13);assert.equal(victory.gold,8);
+ assert.equal(victory.drop,'ing-hanging-moss');
+ assert.match(victory.details,/13 XP/);assert.match(victory.details,/8 moedas/);
+ assert.ok(victory.details.includes(catalogs.itensById[victory.drop].nome));
+ assert.equal(battleOutcomeViewModel({status:'active',enemyId:'mob-galho-infectado'},catalogs),null);
+ assert.equal(battleOutcomeViewModel({status:'lost'},catalogs).xp,undefined);
+ assert.match(battleOutcomeViewModel({status:'fled'},catalogs).details,/Sem XP ou saque/);
+ assert.equal(JSON.stringify(catalogs.itensById['ing-hanging-moss']),before);
+});
+test('M1h-F reward panel and encounter portraits honor the selected art flag',()=>{
+ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ const main=readFileSync(new URL('../src/main.js',import.meta.url),'utf8');
+ for(const id of ['battleRewardPreview','battleRewardTitle','battleRewardDetails'])assert.ok(html.includes('id="'+id+'"'));
+ assert.match(main,/chosenArt==='m1hf'/);
+ assert.match(main,/battleOutcomeViewModel\(state,catalogs\)/);
+ assert.match(main,/app\.registry\.set\('status',outcomeMessage\)/);
 });

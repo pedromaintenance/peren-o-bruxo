@@ -9,7 +9,9 @@ import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
 import {createMarketplaceScreen} from './ui-marketplace.js';
-import {expeditionViewModel,battleViewModel,fillGauge,actionDetails} from './ui-adventure.js';
+import {expeditionViewModel,battleViewModel,battleOutcomeViewModel,fillGauge,actionDetails} from './ui-adventure.js';
+import {M1HF_PREVIEW} from './progress.js';
+import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -120,7 +122,8 @@ app.events.on('peren-encounter',info=>{
  $('encounterModal').hidden=false;
  $('controls').inert=true;
  $('beastName').textContent=info.name;
- $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
+ const monsterArt=chosenArt==='m1hf'?'./art-m1hf/monsters/':chosenArt==='m1he'?'./art-m1he/monsters/':'./art/monsters/';
+ $('beastPortrait').src=`${monsterArt}${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
@@ -306,7 +309,11 @@ function renderBattleState(state){
   $('battleCommands').hidden=finished;
   $('battleFinish').hidden=!finished;
   $('battleFinish').textContent=state.status==='won'?'RECOLHER SAQUE E VOLTAR':state.status==='lost'?'ACEITAR RESGATE':'RETORNAR À FLORESTA';
-  $('battleEndHint').textContent=state.status==='won'?'Vitória! A recompensa é entregue uma única vez.':state.status==='lost'?'Peren caiu, mas esta prévia não causa perda de save.':state.status==='fled'?'Fuga concluída; sem XP nem loot.':'';
+  const outcome=battleOutcomeViewModel(state,catalogs);
+  $('battleRewardPreview').hidden=!outcome;
+  $('battleRewardTitle').textContent=outcome?.title||'';
+  $('battleRewardDetails').textContent=outcome?.details||'';
+  $('battleEndHint').textContent=state.status==='won'?'Confirme para salvar e recolher os materiais uma única vez.':state.status==='lost'?'A derrota não apaga o progresso salvo.':state.status==='fled'?'Nenhuma recompensa será concedida.':'';
   battleOptions.forEach(b=>{
     b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&(!bridge.state.learned.includes(b.dataset.battle.slice(6))||state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0))) || (b.dataset.battle==='potion'&&state.potions<=0);
   });
@@ -319,9 +326,11 @@ app.events.on('peren-battle-end',({result,reward,profile})=>{
   try{
     $('gatherBtn').focus({preventScroll:true});
     const itemLabel=reward?.items?Object.keys(reward.items).join(', '):'nenhum material';
-    $('feedback').textContent=result==='won'&&reward
+    const outcomeMessage=result==='won'&&reward
       ?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`
       :'Retorno à floresta sem recompensa.';
+    app.registry.set('status',outcomeMessage);
+    $('feedback').textContent=outcomeMessage;
     $('combatWallet').textContent=`Vitórias: ${profile?.kills??0} · Ouro: ${profile?.gold??0} · Nível: ${profile?.level??1}`;
     renderHub();updateHud();
   }catch(err){

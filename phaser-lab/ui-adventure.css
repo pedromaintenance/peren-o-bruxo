@@ -143,3 +143,13 @@
  #battleUI .battle-note{display:none}
 }
 @media(prefers-reduced-motion:reduce){.m1g-hud-track>i{transition:none!important}}
+
+/* M1h-F: real (not simulated) pending rewards, shown before claiming them. */
+#battlePanel #battleRewardPreview.m1g-battle-reward:not([hidden]){
+ display:flex;flex-direction:column;gap:5px;margin:12px 0 8px;padding:12px 13px;
+ border:1px solid #b59b69;border-left:3px solid #d5b576;border-radius:4px;
+ background:linear-gradient(145deg,#26323af2,#14212df2);color:#f1e3c5;
+ box-shadow:inset 0 0 0 1px #efd6ab18;
+}
+#battleRewardPreview strong{color:#f2ce92;font:600 18px/1.3 Georgia,serif}
+#battleRewardPreview span{font:500 13px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}

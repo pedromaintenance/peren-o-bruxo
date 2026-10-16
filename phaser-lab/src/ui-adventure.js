@@ -1,6 +1,6 @@
 // View model M1g-E. No combat or inventory transactions are performed here.
 import {maxClassicHp,maxClassicMp} from './progress.js';
-import {SPELLS} from './combat.js';
+import {SPELLS,BATTLE_MONSTERS} from './combat.js';
 export const ratio=(value,max)=>max>0?Math.round(100*Math.max(0,Math.min(1,value/max))):0;
 const hints={
   attack:'Ataque físico, resolvido pelo motor do combate.',
@@ -33,4 +33,19 @@ export function battleViewModel(s){
 export function fillGauge(doc,id,value,max){
  const bar=doc.getElementById(id);if(!bar)return;
  bar.style.width=ratio(value,max)+'%';bar.setAttribute('aria-valuenow',String(value));bar.setAttribute('aria-valuemax',String(max));
+}
+
+/** Canonical, read-only reward preview. Rewards are committed only on confirmation. */
+export function battleOutcomeViewModel(state,catalogs){
+ if(!state||state.status==='active')return null;
+ if(state.status==='won'){
+  const reward=BATTLE_MONSTERS[state.enemyId];
+  if(!reward)return {title:'Vitória',details:'Recompensa não encontrada no bestiário.',status:'warning'};
+  const itemName=catalogs?.itensById?.[reward.drop]?.nome||reward.drop;
+  return {title:'Vitória · saque a receber',details:`${reward.xp} XP · ${reward.gold} moedas · 1× ${itemName}`,
+   status:'won',gold:reward.gold,xp:reward.xp,drop:reward.drop};
+ }
+ if(state.status==='lost')return {title:'Derrota · resgate',details:'Sem XP ou saque. Peren retorna ferido.',status:'lost'};
+ if(state.status==='fled')return {title:'Retirada concluída',details:'Sem XP ou saque. O inimigo permanece na floresta.',status:'fled'};
+ return {title:'Desfecho',details:'Nenhuma recompensa prevista.',status:'warning'};
 }
