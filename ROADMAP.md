@@ -129,6 +129,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Regra para o usuário:** manter a bancada aberta em outra aba, preencher o formulário e exportar antes de recarregar/fechar (as respostas não persistem por decisão de privacidade). **Não limpar dados do site**; saves do jogo ficam no dispositivo. A bancada **não certifica** a instalação/PWA/arte: reúne evidência para avaliação.
 
+## M1h-F.7 — Manual da Expedição e saneamento dos testes de Portomonte [FONTE IMPLEMENTADA · AGUARDANDO CI E PAGES]
+
+**Objetivo:** melhorar o primeiro contato do jogador com exploração, combate, economia e proteção do progresso antes do playtest de Android/Xbox. **Não** declarar publicado só porque há commits de fonte.
+
+| ID | Entrega / aceite | Estado |
+| --- | --- | --- |
+| F7-01 | Corrigir teste de UI que contava botões ocultos e esperava 6 depois da introdução do Diário (7 no DOM): conferir comandos disponíveis, opcionalidade e acessibilidade em 360×800, 390×844 e 1280×800 | **Corrigido na fonte** — a falha `7 !== 6` afetava os workflows M1g-A, C e E; CI de regressão em andamento |
+| F7-02 | Manual em Portomonte com capítulos **Explorar**, **Combate**, **Portomonte** e **Saves e testes**, sem criar missões ou regras | **Implementado na fonte** — apenas na prévia |
+| F7-03 | Navegação por toque, teclado (Escape e foco), Xbox (B/Menu, direcional), modal acessível, `hub.inert` e foco devolvido ao fechar | **Implementado**; QA em Chromium ainda a confirmar |
+| F7-04 | Guia estritamente de leitura: nenhuma importação, escrita de save ou telemetria; link voluntário para Bancada M1h-F.6 | **Implementado**, teste Node de privacidade adicionado |
+| F7-05 | Build Phaser candidato, testes Node e Chromium verdes, diff somente `phaser-demo-m1hf/` e QA em Pages antes de marcar publicação | **Pendente** — não mesclar a PR de fonte #24 na `main` |
+| F7-06 | Playtest Android físico / Xbox e revisão artística dos sprites de Mürin | **Pendente de avaliação humana**, não automatizável integralmente |
+
+**Fonte e detalhes:** [docs/31-m1h-f-7-manual.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/31-m1h-f-7-manual.md) · [PR #24](https://github.com/pedromaintenance/peren-o-bruxo/pull/24). **Páginas para testar após a publicação:** [protótipo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) e [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html).
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
