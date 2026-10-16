@@ -1,0 +1,37 @@
+name: Peren M1h-F - diagnostico desfecho de combate
+on:
+  push:
+    branches: [feature/phaser-m1h-f-free-assets]
+    paths:
+      - ".github/workflows/phaser-m1hf-combat-qa.yml"
+      - "phaser-lab/scripts/m1hf-combat-qa.mjs"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependências
+        run: npm install --no-audit --no-fund
+      - name: Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Reproduzir os três combates e retorno no Pages
+        env:
+          PEREN_PREVIEW_URL: https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/
+        run: node scripts/m1hf-combat-qa.mjs
+      - name: Capturas e diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-m1hf-end-battle-diagnostics
+          path: phaser-lab/screenshots/m1hf-qa-*.png
+          if-no-files-found: warn
