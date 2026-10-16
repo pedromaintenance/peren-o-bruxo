@@ -116,13 +116,38 @@ export class BattleScene extends Phaser.Scene {
       next=done.applied?done.profile:settleEscape(profile,this.state);
       applied=done.applied;reward=done.reward||null;
     }
+    // The reward is already committed: never re-open settlement if UI or scene
+    // teardown fails. A throwing event subscriber previously skipped scene.stop()
+    // and left this.resolved=true, making the end-of-battle screen unrecoverable.
     this.reward=reward;
-    this.registry.set('combatProfile',next);
-    this.registry.set('battleState',null);
-    const explorer=this.scene.get('ExplorationScene');
-    explorer.finishCombat(this.state.status);
-    this.game.events.emit('peren-battle-end',{result:this.state.status,reward:this.reward,applied,profile:next});
-    this.scene.stop();
+    let finalizationError=null;
+    try{this.registry.set('combatProfile',next);this.registry.set('battleState',null);}
+    catch(err){finalizationError=err;}
+    try{
+      const explorer=this.scene.get('ExplorationScene');
+      explorer.finishCombat(this.state.status);
+    }catch(err){
+      finalizationError??=err;
+      // Keep navigation possible even if a stale creature collider crashed.
+      try{
+        const explorer=this.scene.get('ExplorationScene');
+        explorer.activeEncounter=null;
+        explorer.registry.set('encounter',null);
+        explorer.scene.resume();
+      }catch(fallbackErr){console.error('Falha ao restaurar a floresta:',fallbackErr);}
+    }
+    try{
+      this.game.events.emit('peren-battle-end',{result:this.state.status,reward:this.reward,applied,profile:next});
+    }catch(err){finalizationError??=err;}
+    finally{
+      // Critical: cleanup must execute even when a DOM event subscriber throws.
+      try{this.scene.stop();}catch(err){finalizationError??=err;}
+    }
+    if(finalizationError){
+      console.error('Falha recuperada após encerrar combate:',finalizationError);
+      try{this.game.events.emit('peren-battle-error','Combate concluído e salvo; houve falha ao atualizar a interface. Recarregue se algum comando permanecer travado.');}
+      catch(err){console.error('Falha ao emitir aviso de recuperação:',err);}
+    }
     return true;
   }
 }

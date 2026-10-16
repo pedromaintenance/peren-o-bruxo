@@ -259,8 +259,26 @@ function activateBattleChoice(){const b=battleOptions[selectedBattleIndex];if(b&
 function battleScene(){try{return app.scene.getScene('BattleScene')}catch{return null}}
 async function battleAction(action){
   const scene=battleScene();if(!scene||scene.resolved)return;
-  if(action==='finish'){if(scene.endBattle())$('battleUI').hidden=true;return;}
-  await scene.takeTurn(action);
+  try{
+    if(action==='finish'){
+      const closed=scene.endBattle();
+      if(closed){
+        // The DOM must unlock even if a post-save subscriber has failed.
+        $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
+      }
+      return;
+    }
+    await scene.takeTurn(action);
+  }catch(err){
+    console.error('Erro no controle do combate:',err);
+    const message='Erro no combate: '+(err?.message||String(err));
+    $('battleJournal').textContent=message;
+    // An unexpected error must never disappear silently behind the battle UI.
+    if(scene.resolved){
+      $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
+      $('feedback').textContent='O resultado foi registrado. Recarregue a prévia se a floresta não responder.';
+    }
+  }
 }
 for(const button of battleOptions){
  button.addEventListener('click',()=>battleAction(button.dataset.battle));
@@ -296,11 +314,20 @@ function renderBattleState(state){
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
 app.events.on('peren-battle-end',({result,reward,profile})=>{
+  // Close first. Never leave the game frozen if the reward panel fails to render.
   $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
-  $('gatherBtn').focus({preventScroll:true});
-  const itemLabel=reward?Object.keys(reward.items).join(', '):'nenhum material';
-  $('feedback').textContent=result==='won'?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`:'Retorno à floresta sem recompensa.';
-  $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;renderHub();updateHud();
+  try{
+    $('gatherBtn').focus({preventScroll:true});
+    const itemLabel=reward?.items?Object.keys(reward.items).join(', '):'nenhum material';
+    $('feedback').textContent=result==='won'&&reward
+      ?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`
+      :'Retorno à floresta sem recompensa.';
+    $('combatWallet').textContent=`Vitórias: ${profile?.kills??0} · Ouro: ${profile?.gold??0} · Nível: ${profile?.level??1}`;
+    renderHub();updateHud();
+  }catch(err){
+    console.error('Falha recuperada na interface de pós-combate:',err);
+    $('feedback').textContent='Combate registrado. A interface não atualizou completamente; recarregue a prévia.';
+  }
 });
 window.addEventListener('keydown',event=>{
   if($('battleUI').hidden)return;
