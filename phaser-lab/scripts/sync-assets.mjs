@@ -31,3 +31,6 @@ await import('./peren-m1hd-generator.mjs');
 await import('./murin-m1he-generator.mjs');
 // M1h-F uses a CC0 Kenney sprite set to generate its opt-in Ettercap atlas.
 await import('./murin-m1hf-generator.mjs');
+
+// M1h-F botanical pass replaces earlier M1h-E fallbacks with separately source-backed monster art.
+await import('./murin-m1hf-botanical-generator.mjs');

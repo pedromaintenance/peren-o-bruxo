@@ -47,19 +47,21 @@ try{
       if(response.status()>=400&&response.url().includes('/art-m1hf/'))reviewErrors.push('asset '+response.status()+': '+response.url());
     });
     await review.goto(url+'review.html?art=m1hf',{waitUntil:'networkidle',timeout:30000});
-    await review.locator('#entity').selectOption('mob-ettercap');
-    await review.waitForFunction(()=>document.querySelector('#status')?.textContent?.startsWith('Atlas carregado'),{timeout:10000});
-    await review.locator('#action').selectOption('attack');
-    const framePixels=await review.locator('#frame').evaluate(canvas=>{
-      const pixels=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
-      let nonTransparent=0;
-      for(let i=3;i<pixels.length;i+=4)if(pixels[i]>0)nonTransparent++;
-      return nonTransparent;
-    });
-    assert.ok(framePixels>70,'blank Ettercap frame: '+framePixels);
+    for(const monster of ['mob-galho-infectado','mob-fungo-violeta','mob-ettercap']){
+      await review.locator('#entity').selectOption(monster);
+      await review.waitForFunction(()=>document.querySelector('#status')?.textContent?.startsWith('Atlas carregado'),{timeout:10000});
+      await review.locator('#action').selectOption('attack');
+      const framePixels=await review.locator('#frame').evaluate(canvas=>{
+        const pixels=canvas.getContext('2d').getImageData(0,0,canvas.width,canvas.height).data;
+        let nonTransparent=0;
+        for(let i=3;i<pixels.length;i+=4)if(pixels[i]>0)nonTransparent++;
+        return nonTransparent;
+      });
+      assert.ok(framePixels>70,'blank '+monster+' frame: '+framePixels);
+      await review.screenshot({path:'screenshots/m1hf-'+monster+'-'+w+'.png',fullPage:true});
+    }
     const gameLink=await review.locator('#m1hGameLink').getAttribute('href');
     assert.equal(gameLink,'./?art=m1hf');
-    await review.screenshot({path:'screenshots/m1hf-review-'+w+'.png',fullPage:true});
     assert.deepEqual(reviewErrors,[],'Gallery/browser errors: '+reviewErrors.join(' | '));
     await review.close();
     console.log('M1h-F '+w+'×'+h+': load, 28 frames, encounter route & gallery OK');

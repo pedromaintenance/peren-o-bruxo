@@ -1,4 +1,4 @@
-name: Peren M1h-F - Kenney art e smoke no navegador
+name: Peren M1h-F - Bestiario CC0 e smoke no navegador
 on:
   push:
     branches: [feature/phaser-m1h-f-free-assets]
@@ -29,8 +29,10 @@ jobs:
       - name: Verificar arte, relatório e páginas entregues
         run: |
           set -euo pipefail
-          test -s dist/art-m1hf/monsters/mob-ettercap/atlas.png
-          test -s dist/art-m1hf/monsters/mob-ettercap/portrait.png
+          for id in mob-galho-infectado mob-fungo-violeta mob-ettercap; do
+            test -s "dist/art-m1hf/monsters/$id/atlas.png"
+            test -s "dist/art-m1hf/monsters/$id/portrait.png"
+          done
           test -s dist/art-m1hf/monsters/report.json
           test -s dist/review.html
           test -s dist/asset-audition.html
@@ -48,7 +50,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: peren-m1hf-kenney-review
+          name: peren-m1hf-bestiario-cc0-review
           path: |
             phaser-lab/screenshots/m1hf-*.png
             phaser-lab/public/art-m1hf/monsters/report.json
