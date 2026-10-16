@@ -1,0 +1,56 @@
+{
+  "stage": "M1h-E",
+  "candidate": true,
+  "approval": "pendente",
+  "technique": "non-destructive localized chiaroscuro",
+  "report": [
+    {
+      "id": "mob-galho-infectado",
+      "file": "atlas.png",
+      "width": 256,
+      "height": 448,
+      "opaque": 40380,
+      "changed": 40380
+    },
+    {
+      "id": "mob-galho-infectado",
+      "file": "portrait.png",
+      "width": 160,
+      "height": 160,
+      "opaque": 25600,
+      "changed": 25600
+    },
+    {
+      "id": "mob-fungo-violeta",
+      "file": "atlas.png",
+      "width": 256,
+      "height": 448,
+      "opaque": 54304,
+      "changed": 54304
+    },
+    {
+      "id": "mob-fungo-violeta",
+      "file": "portrait.png",
+      "width": 160,
+      "height": 160,
+      "opaque": 25600,
+      "changed": 25600
+    },
+    {
+      "id": "mob-ettercap",
+      "file": "atlas.png",
+      "width": 256,
+      "height": 448,
+      "opaque": 56964,
+      "changed": 56964
+    },
+    {
+      "id": "mob-ettercap",
+      "file": "portrait.png",
+      "width": 160,
+      "height": 160,
+      "opaque": 25600,
+      "changed": 25600
+    }
+  ]
+}

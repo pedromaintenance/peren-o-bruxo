@@ -1,0 +1,35 @@
+{
+  "stage": "M1h-C",
+  "state": "em_producao",
+  "approval": "pendente",
+  "base": "M1h-B",
+  "notes": "Subtle age lines, stern mouth, layered silver strands and articulated beard; non-destructive candidate",
+  "originalVariantsPreserved": [
+    "M1e",
+    "M1h-A",
+    "M1h-B"
+  ],
+  "report": [
+    {
+      "file": "peren-atlas.png",
+      "width": 1536,
+      "height": 256,
+      "frames": 128
+    },
+    {
+      "file": "portrait.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-cast.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-hurt.png",
+      "width": 256,
+      "height": 256
+    }
+  ]
+}
