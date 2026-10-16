@@ -14,6 +14,7 @@ import {M1HF_PREVIEW} from './progress.js';
 import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
 import {showPreviewSaveRecovery} from './save-recovery.js';
 import {createJournalScreen} from './ui-journal.js';
+import {createGuideScreen} from './ui-guide.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -49,6 +50,8 @@ if(journal){
  $('showJournal').hidden=false;
  $('showJournal').addEventListener('click',()=>journal.open());
 }
+const guide=M1HF_PREVIEW?createGuideScreen({document}):null;
+if(guide)$('showGuide').hidden=false;
 const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#101b1b',
   scale:{mode:Phaser.Scale.RESIZE,autoCenter:Phaser.Scale.CENTER_BOTH,width:390,height:844},
   render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
@@ -233,7 +236,7 @@ $('hub').hidden=false;$('controls').hidden=true;
 // Browsers generally reveal a new controller only after the user presses a button.
 const xbox=new XboxPadTracker();
 let lastPadLabel='', hubChoice=0, forestVisited=false;
-const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
+const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
 function selectHubChoice(index){
   hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
   hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
@@ -265,6 +268,14 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(guide?.isOpen()){
+    if(key.b||key.menu||key.view){guide.close();return;}
+    if(key.left)guide.cycleTab(-1);
+    else if(key.right)guide.cycleTab(1);
+    else if(key.up)guide.scroll(-1);
+    else if(key.down)guide.scroll(1);
+    return;
+  }
   if(journal?.isOpen()){
     if(key.b||key.menu||key.view){journal.close();return;}
     if(key.left)journal.cycleTab(-1);
@@ -322,6 +333,7 @@ window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
+  if(guide?.isOpen()){guide.close();return;}
   if(journal?.isOpen()){journal.close();return;}
   if(marketplace.isOpen()){marketplace.close();return;}
   if(workshop.isOpen()){workshop.close();return;}
