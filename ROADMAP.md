@@ -229,6 +229,22 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Teste:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Documentação técnica:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). A PR #24 de fonte permanece em *draft*.
 
+## M1h-F.13 — Consequências reais dos comandos de combate [FONTE IMPLEMENTADA · CI/RELEASE PENDENTES]
+
+O campo de dica do combate mostra informações genéricas, mas alguns efeitos têm consequências que não ficam claras até a ação ser executada. Na prévia Phaser M1h-F, a seleção de um comando passa a explicar **seus custos e efeitos reais**, sem revelar dano aleatório nem prever vitória.
+
+| ID | Entrega / aceite | Estado |
+| --- | --- | --- |
+| F13-01 | Descrever Atacar, Defender (+até 4 PM e defesa), Poção (+até 36 PV e consumo), Fugir (sem XP/saque) | **Implementado** — `command-consequences.js`, sem mudanças em `combat.js` |
+| F13-02 | Explicar os custos e efeitos reais de Fogo (queimadura), Gelo (sem reação nesta rodada) e Mísseis (dano arcano) | **Implementado**, sem previsão de resultados |
+| F13-03 | Exibir motivo de indisponibilidade quando faltarem PM, poções, aprendizado ou ação estiver em andamento | **Implementado**, mantendo o estado real dos botões |
+| F13-04 | Atualizar dica no foco, toque, ponteiro e seleção de controle; manter área legível no celular e saves intocados | **Código e testes implementados** |
+| F13-05 | Testes Node e Chromium (360×800, 390×844, 1280×800) de sete comandos, indisponibilidades e save isolado | **Aguardando CI** |
+| F13-06 | Release seletiva `phaser-demo-m1hf/` após CI verde, diff revisado e QA público de combate, Diário e PWA | **Pendente** |
+| F13-07 | Playtest humano em Android e Xbox físicos e avaliação da clareza/contraste | **Pendente** |
+
+**Documentação:** [docs/37-m1h-f-13-comandos.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/37-m1h-f-13-comandos.md). **Prévia anterior aprovada:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). Não mesclar a PR #24 de fonte diretamente na `main`.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
