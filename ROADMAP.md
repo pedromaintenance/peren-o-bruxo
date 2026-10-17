@@ -316,22 +316,23 @@ O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitóri
 
 [**Jogar: deploy e QA confirmados**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
 
-## M1h-F.18 — Janela de Recuo Seguro [CANDIDATA · 17/10/2026]
+## M1h-F.18 — Janela de Recuo Seguro [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
 
-Depois de recuar no encontro, fugir em combate ou sofrer resgate, a prévia Phaser concede **3 segundos de tempo ativo para reposicionamento** antes que qualquer criatura possa iniciar novo contato. A decisão de combate apenas ignora o gatilho de contato durante o período; detecção, patrulha e perseguição continuam normalmente. A proteção termina automaticamente, sem salvar dados, duplicar recompensas, restaurar PV ou alterar o motor de combate. Vitórias não a recebem.
+Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren tem **3 segundos de tempo ativo para reposicionamento**. Durante esse período, contatos de qualquer criatura não abrem outro encontro; patrulha, detecção e perseguição continuam, e o contato volta automaticamente quando o prazo se encerra. Um aviso no HUD indica a contagem. A proteção não ocorre em vitórias, não causa cura nem gera XP, itens ou moedas e não altera os saves.
 
-O HUD apresenta `RECUO SEGURO · Ns` e oculta o aviso ao expirar. Fora da variante M1h-F, a regra anterior permanece intacta.
+**Release:** [PR #44](https://github.com/pedromaintenance/peren-o-bruxo/pull/44), mesclada em `main` (commit `7072d2f`). Diff auditado: somente bundles JS/CSS, índice e cache offline em `phaser-demo-m1hf/`. O clássico, o M1d e a fonte experimental da PR #24 permanecem separados.
 
 | Aceite | Estado |
 | --- | --- |
-| Contato suspenso durante 3s em recuo pré-combate, fuga e resgate | **Implementado na branch experimental** |
-| IA volta a provocar encontros depois do prazo; sem invencibilidade permanente | **Testes Node e Chromium adicionados** |
-| Aviso no HUD, 360×800 / 390×844 / 1280×800 e isolamento dos saves | **Aguardando CI** |
-| Node/Vite/Chromium e regressão de combate | **Aguardando CI** |
-| Bundle publicado somente em `phaser-demo-m1hf/` e QA no Pages | **Não publicado até aprovação do CI** |
-| Teste Android/Xbox físicos | **Pendente de playtest humano** |
+| Janela de recuo pré-combate, fuga e resgate sem mudança no motor de combate | **Implementado e publicado** |
+| Bloqueio temporário de outro inimigo e restauração das regras após expirar | **Aprovado em testes Node/Chromium** |
+| Aviso no HUD e isolamento dos três saves em 360/390/1280px | **Aprovado no CI candidato** |
+| Compilação, PWA, seis vitórias e regressões existentes | **[CI completo success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819)** |
+| Publicação restrita a `phaser-demo-m1hf/` | **Concluída — PR #44** |
+| QA do GitHub Pages público | **Em execução** — [workflow live](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| Teste Android/Xbox físico | **Pendente de playtest humano** |
 
-[Commit de implementação](https://github.com/pedromaintenance/peren-o-bruxo/commit/baf1273a15d1de73f22f9ce0a8f5faa01a755b28) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md). A fonte continua na PR #24 em *draft*, sem alteração do jogo clássico.
+[**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
