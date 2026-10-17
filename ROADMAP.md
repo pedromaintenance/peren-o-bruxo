@@ -213,7 +213,7 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Jogar:** [Peren Phaser M1h-F.11](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Fonte/limites:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md).
 
-## M1h-F.12 — Impacto e dano legível no HUD de combate [PUBLICADA · QA PÚBLICO EM VALIDAÇÃO]
+## M1h-F.12 — Impacto e dano legível no HUD de combate [PUBLICADA · QA PÚBLICO APROVADO]
 
 **Publicada em 16/10/2026** via [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38), commit `e175f05`. A release altera **somente `phaser-demo-m1hf/`** (JS e CSS compilados com hash, índice e cache offline), sem modificar o clássico, a demo M1d, as regras de combate ou seus saves.
 
@@ -224,7 +224,7 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 | F12-03 | Limpar sinais ao encerrar/trocar batalha, sem escrever nos saves ou mexer em ações e recompensas | **Concluído** |
 | F12-04 | Node e Chromium em 360×800, 390×844, 1280×800 com impactos e saves isolados | **Aprovado** — [CI do candidato (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735). A primeira execução [falhou por medição tardia do elemento temporário](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991183958), corrigida e retestada |
 | F12-05 | Publicar apenas bundle experimental após diff auditado e CI verde | **Concluído** — [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38), quatro mudanças lógicas |
-| F12-06 | Executar QA no Pages real: indicadores, seis vitórias, resiliência, Diário, resgate e PWA offline | **Em validação** — ver [GitHub Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions) antes de afirmar aprovado |
+| F12-06 | Executar QA no Pages real: indicadores, seis vitórias, resiliência, Diário, resgate e PWA offline | **Aprovado** — [QA público completo, success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991794817): impactos, seis vitórias, resiliência, Diário, resgate e PWA offline |
 | F12-07 | Revisar legibilidade e os comandos em Android e Xbox físicos | **Pendente de playtest humano** |
 
 **Teste:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Documentação técnica:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). A PR #24 de fonte permanece em *draft*.
@@ -276,7 +276,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) — M1h-F.9: coleta contextual por raio real de 57 px, [build/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147).
 - [PR #36](https://github.com/pedromaintenance/peren-o-bruxo/pull/36) — M1h-F.10: Marcos da Trilha publicados no Pages, [CI de build/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984329094) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862).
 - [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37) — M1h-F.11: Instinto do Bruxo; [CI Node/Vite/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962).
-- [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38) — M1h-F.12: indicadores temporários de dano/cura; [CI do candidato aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735), QA público em validação.
+- [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38) — M1h-F.12: indicadores temporários de dano/cura; [CI do candidato aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991794817).
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
