@@ -13,6 +13,6 @@ O recuo já posiciona Peren numa célula navegável, distante de criaturas, e im
 ## QA
 - [x] Testes puros de duração, detecção, expiração e ausência de mutação.
 - [x] Chromium criado em 360×800, 390×844, 1280×800 com recuo real e um *segundo* inimigo posicionado no contato, verificando a proteção e o restabelecimento do encontro após a expiração, HUD e isolamento dos três saves.
-- [ ] CI de build e regressão completa.
-- [ ] Publicação isolada e QA do GitHub Pages.
+- [x] [CI de build, Node e Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819), incluindo segundo inimigo, expiração e regressões.
+- [x] [PR #44](https://github.com/pedromaintenance/peren-o-bruxo/pull/44) mesclada apenas com `phaser-demo-m1hf/`; [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39046019277), inclusive seis vitórias, resiliência, Diário, PWA offline e saves.
 - [ ] Aceite manual Android e Xbox físicos, percepção da janela de 3 segundos.
