@@ -270,3 +270,13 @@
 @media(max-height:610px) and (orientation:landscape){
  #battleUI #battleCommandHint{max-height:35px;overflow-y:auto}
 }
+
+/* M1h-F.14: voluntary, read-only battle history in the preview. */
+#battleUI #battleTranscript[hidden]{display:none!important}
+#battleUI #battleTranscript{pointer-events:auto;width:100%;margin-top:5px;color:#ead7bc;font:11px/1.35 system-ui,sans-serif}
+#battleUI #battleTranscript summary{display:inline-flex;align-items:center;min-height:34px;padding:5px 10px;max-width:100%;cursor:pointer;list-style-position:inside;border:1px solid #997d55;border-radius:4px;background:#172a35eb;color:#efdbb5;font:700 10px/1.4 system-ui,sans-serif}
+#battleUI #battleTranscript summary:focus-visible{outline:3px solid #f2d593;outline-offset:2px}
+#battleUI #battleTranscript[open] ol{margin:5px 0 0;padding:7px 10px 7px 28px;max-height:min(100px,14dvh);overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;border:1px solid #7c735b;background:#0b1b29f5}
+#battleUI #battleTranscript li{padding:3px 1px;overflow-wrap:anywhere}
+#battleUI #battleTranscript li+li{border-top:1px solid #a08c5636}
+@media(max-width:390px){#battleUI #battleTranscript summary{min-height:32px;font-size:9px;padding:4px 8px}#battleUI #battleTranscript[open] ol{max-height:72px;font-size:10px}}

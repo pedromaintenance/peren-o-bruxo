@@ -19,6 +19,7 @@ import {fieldAwareness} from './field-awareness.js';
 import {encounterReadout} from './encounter-readout.js';
 import {battleImpact} from './battle-impact.js';
 import {commandConsequences} from './command-consequences.js';
+import {createBattleTranscript} from './battle-transcript.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -447,6 +448,7 @@ for(const button of battleOptions.filter(button=>button.dataset.battle.startsWit
  if(spell){button.title=actionDetails(button.dataset.battle);button.setAttribute('aria-label',spell.name+', '+spell.mana+' pontos de mana');}
 }
 $('battleFinish').addEventListener('click',()=>battleAction('finish'));
+const battleTranscript=createBattleTranscript(24);
 let previousImpactState=null;
 const impactTimers=new Map();
 function showBattleImpact(id,change){
@@ -475,6 +477,15 @@ function clearBattleImpact(){
 function renderBattleState(state){
   if(!state)return;
   if(M1HF_PREVIEW){
+    const changed=previousImpactState?.key!==state.key;
+    const records=battleTranscript.observe(state).entries;
+    const panel=$('battleTranscript');
+    if(changed)panel.open=false;
+    panel.hidden=false;
+    $('battleTranscriptCount').textContent=String(records.length);
+    $('battleTranscriptList').replaceChildren(...records.map(entry=>{
+      const li=document.createElement('li');li.textContent=entry.text;return li;
+    }));
     if(!previousImpactState||previousImpactState.key!==state.key)clearBattleImpact();
     else{
       const changes=battleImpact(previousImpactState,state);
@@ -514,6 +525,7 @@ app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
 app.events.on('peren-battle-end',({result,reward,profile})=>{
   clearBattleImpact();
+  if(M1HF_PREVIEW){battleTranscript.reset();$('battleTranscript').open=false;}
   // Close first. Never leave the game frozen if the reward panel fails to render.
   $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
   try{
