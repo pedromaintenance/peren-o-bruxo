@@ -1,4 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
+# Revalidação M1h-F.13 após PR #39; foco/hover e saves devem passar no site público.
 # QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
