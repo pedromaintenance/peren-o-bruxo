@@ -197,6 +197,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Especificação:** [docs/34-m1h-f-10-trilha.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/34-m1h-f-10-trilha.md). A PR #24 de fonte permanece em *draft*; não mesclar diretamente na `main`.
 
+## M1h-F.11 — Instinto do Bruxo / leitura pré-combate [FONTE IMPLEMENTADA · CI E RELEASE PENDENTES]
+
+O modal de encontro já apresenta a criatura e as ações **Enfrentar** e **Recuar**, mas não comunica facilmente o comportamento observado e as condições de Peren antes da decisão. **Instinto do Bruxo** adiciona uma leitura contextual, sem introduzir mecânicas ou probabilidades de vitória inventadas.
+
+| ID | Entrega / aceite | Estado |
+| --- | --- | --- |
+| F11-01 | Ler o comportamento da criatura a partir dos atributos reais `MURIN_BEASTS`, com percepção e movimento qualitativos | **Implementado na fonte**; sem mudanças em `monsterDecision()` |
+| F11-02 | Apresentar PV, PM e poções atuais do perfil real e classificação informativa de ferimentos; sem prometer vitória | **Implementado no modal**; somente prévia M1h-F |
+| F11-03 | Preservar retrato, ações de enfrentar/recuar, Escape/Tab, toque e controle Xbox; modalidade sem escrita em save | **Integração implementada** |
+| F11-04 | Testes Node para três espécies, limites de vida e dados desconhecidos; Chromium em 360×800, 390×844, 1280×800, três encontros e saves isolados | **Testes adicionados**, aguardando CI |
+| F11-05 | Gerar e auditar build `phaser-demo-m1hf/` isolado; publicar via PR própria apenas após CI verde | **Pendente**; não mesclar fonte #24 |
+| F11-06 | Validar modal, combate, resiliência, Diário e PWA no Pages; Android e Xbox físicos continuam exigindo playtest humano | **Pendente** |
+
+**Especificação e critérios:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md). **Após release:** [Prévia Phaser](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
