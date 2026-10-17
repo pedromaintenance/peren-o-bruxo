@@ -23,6 +23,9 @@ try{
    await page.locator('#encounterModal').waitFor({state:'visible'});
    await page.locator('#observeBeast').click();
    await page.locator('#battleUI').waitFor({state:'visible'});
+   // The Phaser scene publishes its first battle snapshot asynchronously.
+   // Never compare state before this first event reaches the public registry.
+   await page.waitForFunction(()=>window.__perenLab?.registry?.get('battleState')?.status==='active',null,{timeout:30000});
    const before=await page.evaluate(()=>({
     classic:localStorage.getItem('peren_carcaca_save_v1'),
     stable:localStorage.getItem('peren_phaser_save_m1d_v1'),
