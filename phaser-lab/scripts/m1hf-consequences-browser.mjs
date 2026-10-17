@@ -43,22 +43,24 @@ try{
     assert.match(await page.locator('#battleCommandHint').textContent(),pattern,action+' consequence');
     assert.equal(await button.isVisible(),true);
    }
-   await page.evaluate(()=>{
-    const state=window.__perenLab.registry.get('battleState');
-    window.__perenLab.events.emit('peren-battle-change',{...state,mp:1,potions:0});
-   });
+   // The actual action buttons become disabled when resources run out.
+   // Focus while enabled, then emit a synthetic public state update, so the
+   // test does not try to focus a natively disabled button.
    await page.locator('[data-battle="potion"]').focus();
+   await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',{...state,mp:1,potions:0}),initial);
    assert.match(await page.locator('#battleCommandHint').textContent(),/INDISPONÍVEL.*Sem poções/);
+   await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',state),initial);
    await page.locator('[data-battle="spell:mag-raio-de-gelo"]').focus();
+   await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',{...state,mp:1,potions:0}),initial);
    assert.match(await page.locator('#battleCommandHint').textContent(),/INDISPONÍVEL.*Mana insuficiente/);
+   await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',state),initial);
    const after=await page.evaluate(()=>({
     classic:localStorage.getItem('peren_carcaca_save_v1'),
     stable:localStorage.getItem('peren_phaser_save_m1d_v1'),
     preview:localStorage.getItem('peren_phaser_save_m1hf_preview_v1'),
     state:JSON.stringify(window.__perenLab.registry.get('battleState'))
    }));
-   assert.deepEqual(after,{...before,state:JSON.stringify({...JSON.parse(before.state),mp:1,potions:0})},
-      'Viewing a hint must not mutate any save or battle registry beyond synthetic QA event');
+   assert.deepEqual(after,before,'Viewing the command hints must not mutate saves or registered battle state');
    assert.deepEqual(errors,[]);
    console.log('M1h-F.13 PASS '+width+'x'+height+': command explanations, unavailable, isolation');
   }finally{await context.close()}
