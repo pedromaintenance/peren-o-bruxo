@@ -19,7 +19,8 @@ test('M1h-F.6: playtest local completo, acessivel e sem telemetria',()=>{
  assert.equal((page.match(/\['(?:Cidade e navegação|Controles por toque|Encontros e combate|Persistência|Diário de Peren|Recuperação de save|PWA e modo avião|Controle Xbox|Arte e legibilidade)'/g)||[]).length,9);
 });
 test('M1h-F.6: compilacao publica inclui guia somente na previa isolada',()=>{
- assert.match(builder,/if\(isolated\)await copyFile\(join\(lab,'teste.html'\),join\(dist,'teste.html'\)\)/);
+ assert.match(builder,/if\\(isolated\\)\\s*\\{/);
+ assert.match(builder,/copyFile\\(join\\(lab,'teste.html'\\),join\\(dist,'teste.html'\\)\\)/);
  assert.match(builder,/id="m1hfPlaytestLink"/);
  assert.match(builder,/const precache=/);
  assert.match(builder,/cachePrefix=isolated\?'peren-phaser-m1hf-preview-'/);
