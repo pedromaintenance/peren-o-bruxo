@@ -1,6 +1,6 @@
 # M1h-F.11 — Instinto do Bruxo / leitura do encontro
 
-**Escopo:** informações contextuais do encontro hostil na Floresta de Mürin, apenas na prévia Phaser M1h-F.
+**Escopo:** informações contextuais do encontro hostil na Floresta de Mürin, apenas na prévia Phaser M1h-F. **Publicado via PR #37, com QA público ainda em validação.**
 
 ## Problema
 
@@ -19,7 +19,7 @@ O modal já inclui retrato, nome e uma descrição da criatura, além dos comand
 - [x] Implementação de apresentação e função pura de leitura, sem side effects.
 - [x] Testes Node para padrões reais, limites de PV e degradação segura em dados desconhecidos.
 - [x] Teste Chromium 360×800, 390×844 e 1280×800 para três encontros, recuo, viewport e isolamento das três chaves de save.
-- [ ] CI Node/Vite/Chromium do pacote experimental aprovada.
-- [ ] Publicação seletiva apenas de `phaser-demo-m1hf/` via PR auditada, após CI.
-- [ ] QA público (modal, batalhas, PWA offline, Diário, resgate) aprovado após release.
+- [x] [CI Node/Vite/Chromium — success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958), incluindo três encontros, recuo e isolamento de saves.
+- [x] [Publicação seletiva PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37), apenas `phaser-demo-m1hf/`, quatro alterações lógicas no diff.
+- [ ] [QA público do Pages em execução](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962): modal, batalhas, PWA offline, Diário e resgate.
 - [ ] Revisão humana de contraste/legibilidade em Android físico e Xbox.
