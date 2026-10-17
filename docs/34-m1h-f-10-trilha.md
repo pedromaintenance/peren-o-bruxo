@@ -1,6 +1,6 @@
 # M1h-F.10 — Marcos da Trilha / Retorno a Portomonte
 
-**Escopo:** orientação qualitativa durante a expedição em Mürin, apenas na prévia M1h-F.
+**Escopo:** orientação qualitativa durante a expedição em Mürin, apenas na prévia M1h-F. **Publicado pela PR #36; QA online em execução.**
 
 ## Motivação
 
@@ -20,9 +20,9 @@ O mundo procedural já possui uma trilha de terra (tiles `5` ou `6`), ponte sobr
 - [x] Integração na cena e no HUD M1h-F, cache por tile e threshold de saída.
 - [x] Testes Node de seeds reais, ponte, saída (limiar 40 px), fora da trilha e não mutação.
 - [x] Teste Chromium local/público para 360×800, 390×844 e 1280×800, incluindo integridade de saves.
-- [ ] CI Node/Vite/Playwright concluído e bundle experimental gerado.
-- [ ] Diff do bundle `phaser-demo-m1hf/` auditado e PR seletiva mesclada.
-- [ ] QA do Pages público (marcos, combate, Diário, resgate, offline) aprovado.
+- [x] [CI Node/Vite/Playwright — success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984329094), com build e bundle experimental gerados.
+- [x] Diff do bundle `phaser-demo-m1hf/` auditado, [PR seletiva #36 mesclada](https://github.com/pedromaintenance/peren-o-bruxo/pull/36), sem alterações no clássico/M1d.
+- [ ] [QA no Pages público em execução](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862): marcos, combate, Diário, resgate e offline.
 - [ ] Android físico, Xbox e aprovação de legibilidade/arte pelo usuário.
 
 **Regra:** não mesclar a PR #24 de fonte em `main`, nem alterar saves do clássico ou demo anterior.
