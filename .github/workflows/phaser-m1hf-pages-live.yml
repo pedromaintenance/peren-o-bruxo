@@ -1,4 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
+# QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
     branches: [feature/phaser-m1h-f-free-assets]
