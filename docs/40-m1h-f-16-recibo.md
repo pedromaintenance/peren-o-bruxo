@@ -13,7 +13,7 @@ Ao retornar à floresta após vencer, o HUD exibia `ing-hanging-moss` e outros I
 
 ## Aceite
 - [x] ViewModel, UI, testes Node e Chromium implementados.
-- [ ] Build e QA Chromium candidatos aprovados.
-- [ ] Diff auditado e bundle isolado mesclado em `main`.
-- [ ] QA do GitHub Pages após implantação aprovado.
+- [x] [Build e QA Chromium candidatos aprovados](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241), após correção do evento de recompensa e preservação do prefixo Vitória!.
+- [x] [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) mesclada com somente o bundle isolado `phaser-demo-m1hf/`.
+- [x] [QA do GitHub Pages após implantação aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919), incluindo recibo, seis vitórias, resiliência, PWA offline, Diário e saves.
 - [ ] Avaliação de legibilidade no Android físico pendente.
