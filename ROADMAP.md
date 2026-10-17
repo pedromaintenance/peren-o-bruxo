@@ -316,6 +316,23 @@ O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitóri
 
 [**Jogar: deploy e QA confirmados**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
 
+## M1h-F.18 — Janela de Recuo Seguro [CANDIDATA · 17/10/2026]
+
+Depois de recuar no encontro, fugir em combate ou sofrer resgate, a prévia Phaser concede **3 segundos de tempo ativo para reposicionamento** antes que qualquer criatura possa iniciar novo contato. A decisão de combate apenas ignora o gatilho de contato durante o período; detecção, patrulha e perseguição continuam normalmente. A proteção termina automaticamente, sem salvar dados, duplicar recompensas, restaurar PV ou alterar o motor de combate. Vitórias não a recebem.
+
+O HUD apresenta `RECUO SEGURO · Ns` e oculta o aviso ao expirar. Fora da variante M1h-F, a regra anterior permanece intacta.
+
+| Aceite | Estado |
+| --- | --- |
+| Contato suspenso durante 3s em recuo pré-combate, fuga e resgate | **Implementado na branch experimental** |
+| IA volta a provocar encontros depois do prazo; sem invencibilidade permanente | **Testes Node e Chromium adicionados** |
+| Aviso no HUD, 360×800 / 390×844 / 1280×800 e isolamento dos saves | **Aguardando CI** |
+| Node/Vite/Chromium e regressão de combate | **Aguardando CI** |
+| Bundle publicado somente em `phaser-demo-m1hf/` e QA no Pages | **Não publicado até aprovação do CI** |
+| Teste Android/Xbox físicos | **Pendente de playtest humano** |
+
+[Commit de implementação](https://github.com/pedromaintenance/peren-o-bruxo/commit/baf1273a15d1de73f22f9ce0a8f5faa01a755b28) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md). A fonte continua na PR #24 em *draft*, sem alteração do jogo clássico.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
