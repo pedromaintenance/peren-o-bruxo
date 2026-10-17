@@ -264,22 +264,22 @@ Incremento posterior à M1h-F.13: painel consultável, fechado por padrão, exib
 
 **Jogar (publicação e QA confirmados):** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · **Fonte/especificação:** [docs/38-m1h-f-14-historico.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/38-m1h-f-14-historico.md). O código-fonte experimental continua separado.
 
-## M1h-F.15 — Laboratório de Controles [CANDIDATA · 17/10/2026]
+## M1h-F.15 — Laboratório de Controles [PUBLICADA · QA PÚBLICO EM ANDAMENTO · 17/10/2026]
 
-O formulário de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) passa a oferecer leitura local dos controles físicos pelo **mesmo `readXboxPad()` usado na exploração**: conexão, mapeamento, direcional/analógico, A/B/X/Y, Menu/View e corrida RT/RB/L3. Não envia telemetria, não lê ou grava nenhum save e não considera um controle simulado como aprovação de hardware.
+A página de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) agora permite verificar **localmente** conexão USB/Bluetooth, direcional e analógico, A/B/X/Y, Menu/View e corrida RT/RB/L3 usando uma cópia fiel de `readXboxPad()`, adaptador puro compartilhado com o Phaser. A leitura não executa ações, não lê ou grava saves, não coleta telemetria nem exporta automaticamente o ID do dispositivo.
+
+**Release:** [PR #41](https://github.com/pedromaintenance/peren-o-bruxo/pull/41) mesclada em 17/10/2026, commit `3f59c1f`. Alterações restritas a `phaser-demo-m1hf/` (bundle JS com hash, índice, service worker, teste.html e dois scripts de controle); o clássico e M1d não foram alterados. A PR #24 de fonte permanece *draft*.
 
 | ID | Entrega e critério | Estado |
 | --- | --- | --- |
-| F15-01 | Laboratório de Gamepad no Teste de Campo, sem tocar controles do jogo | **Implementado na fonte experimental** |
-| F15-02 | Importar o adaptador puro do próprio jogo e indicar ausência de dispositivo / mapeamento não padrão | **Implementado; aguardando CI** |
-| F15-03 | Testes com Gamepad API simulada em 360×800, 390×844, 1280×800; isolamento das três chaves de save | **Testes criados; aguardando execução** |
-| F15-04 | Empacotar e armazenar offline exclusivamente em `phaser-demo-m1hf/` | **Aguardando CI e auditoria** |
-| F15-05 | Publicar bundle isolado e revalidar no Pages, incluindo regressões existentes | **Não publicado nesta etapa** |
-| F15-06 | Verificar fisicamente Android, Xbox USB/Bluetooth e legibilidade | **Pendente de teste humano real** |
+| F15-01 | Painel de conexão e resposta do controle com o mesmo parser do jogo | **Publicado na prévia Phaser M1h-F** |
+| F15-02 | Estados do analógico, botões e corrida; aviso para controle não padrão; sem automação do checklist | **Implementado** |
+| F15-03 | Testes Node/Chromium em 360×800, 390×844, 1280×800, mock de Gamepad e saves separados | **Aprovados** — [CI completo success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) |
+| F15-04 | Pacote PWA com adaptador e laboratório, preservando clássico/M1d | **Publicado pela PR #41**, diff restrito à prévia |
+| F15-05 | QA no Pages real: controle, saves, seis vitórias, Diário, PWA offline, resgate | **Em andamento** — [execução](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855) |
+| F15-06 | Xbox real USB/Bluetooth, Android físico e legibilidade | **Pendente de teste humano** |
 
-**Código-fonte e escopo:** [commit F.15](https://github.com/pedromaintenance/peren-o-bruxo/commit/e59c2c33f11bedd7ef5719422aff3f4695f038c7) · [documento técnico](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md) · [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033018227).
-
-A versão **F.14 continua publicada e testável** enquanto os critérios de release da F.15 não são atendidos.
+**Testar:** [Laboratório de Controles](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) · [Jogar Peren](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
