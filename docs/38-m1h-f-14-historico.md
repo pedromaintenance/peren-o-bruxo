@@ -11,6 +11,7 @@
 ## Aceite
 - [x] Helper puro e testes Node.
 - [x] Smoke Chromium criado para 360×800, 390×844 e 1280×800, eventos, novo combate, layout e três saves isolados.
-- [ ] Executar CI de fonte no GitHub Actions.
-- [ ] Auditar bundle da prévia e publicar apenas `phaser-demo-m1hf/` na `main`.
-- [ ] Reexecutar QA público no Pages; Android/Xbox reais ainda pendentes.
+- [x] CI Node/Vite/Chromium concluído: [success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026469758).
+- [x] Diff auditado e release exclusiva para `phaser-demo-m1hf/`: [PR #40](https://github.com/pedromaintenance/peren-o-bruxo/pull/40) mesclada à `main`.
+- [x] QA público completo: [success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254), incluindo histórico em três viewports, seis vitórias, resiliência, PWA offline, diário, recuperação de save e isolamento. 
+- [ ] Android/Xbox físicos e avaliação visual humana.
