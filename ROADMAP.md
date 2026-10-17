@@ -197,20 +197,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Especificação:** [docs/34-m1h-f-10-trilha.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/34-m1h-f-10-trilha.md). A PR #24 de fonte permanece em *draft*; não mesclar diretamente na `main`.
 
-## M1h-F.11 — Instinto do Bruxo / leitura pré-combate [FONTE IMPLEMENTADA · CI E RELEASE PENDENTES]
+## M1h-F.11 — Instinto do Bruxo / leitura pré-combate [PUBLICADA · QA PÚBLICO EM EXECUÇÃO]
 
-O modal de encontro já apresenta a criatura e as ações **Enfrentar** e **Recuar**, mas não comunica facilmente o comportamento observado e as condições de Peren antes da decisão. **Instinto do Bruxo** adiciona uma leitura contextual, sem introduzir mecânicas ou probabilidades de vitória inventadas.
+**Publicado em 16/10/2026** via [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37), commit `d43ff5e`. O pacote altera **exclusivamente `phaser-demo-m1hf/`**: JS/CSS compilados com hash, `index.html` e `demo-sw.js`. A PR #24 de fonte permanece *draft*, e o jogo clássico e a demo M1d não foram alterados.
 
 | ID | Entrega / aceite | Estado |
 | --- | --- | --- |
-| F11-01 | Ler o comportamento da criatura a partir dos atributos reais `MURIN_BEASTS`, com percepção e movimento qualitativos | **Implementado na fonte**; sem mudanças em `monsterDecision()` |
-| F11-02 | Apresentar PV, PM e poções atuais do perfil real e classificação informativa de ferimentos; sem prometer vitória | **Implementado no modal**; somente prévia M1h-F |
-| F11-03 | Preservar retrato, ações de enfrentar/recuar, Escape/Tab, toque e controle Xbox; modalidade sem escrita em save | **Integração implementada** |
-| F11-04 | Testes Node para três espécies, limites de vida e dados desconhecidos; Chromium em 360×800, 390×844, 1280×800, três encontros e saves isolados | **Testes adicionados**, aguardando CI |
-| F11-05 | Gerar e auditar build `phaser-demo-m1hf/` isolado; publicar via PR própria apenas após CI verde | **Pendente**; não mesclar fonte #24 |
-| F11-06 | Validar modal, combate, resiliência, Diário e PWA no Pages; Android e Xbox físicos continuam exigindo playtest humano | **Pendente** |
+| F11-01 | Leitura das três criaturas reais (sentinela, esporos, caçador), com percepção e velocidade derivadas de `MURIN_BEASTS` | **Publicada na prévia**, sem mudanças na IA |
+| F11-02 | Exibir PV, PM e poções reais e gravidade informativa dos ferimentos antes da decisão | **Publicada**; leitura não prevê vitória |
+| F11-03 | Preservar retrato, Enfrentar/Recuar, Escape/Tab, toque e Xbox, sem escrever no save | **Concluído**; mesmo fluxo de combate/recuo |
+| F11-04 | Node/Chromium em 360×800, 390×844, 1280×800, três espécies, recuo e saves isolados | **Aprovado** — [build e testes do candidato, success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958) |
+| F11-05 | Isolar a release em `phaser-demo-m1hf/` e auditar o diff | **Concluído** — [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37), quatro alterações lógicas |
+| F11-06 | Repetir QA público após o merge: pré-combate, seis vitórias, resiliência, Diário e PWA offline | **Em execução** — [QA do Pages](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962) |
+| F11-07 | Testar legibilidade, atmosfera e comandos em Android/Xbox físicos | **Pendente de playtest humano** |
 
-**Especificação e critérios:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md). **Após release:** [Prévia Phaser](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+**Jogar:** [Peren Phaser M1h-F.11](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Fonte/limites:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -258,6 +259,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #34](https://github.com/pedromaintenance/peren-o-bruxo/pull/34) — M1h-F.8: HUD de discrição e leitura do ambiente, [CI de build e Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38966068315); [revalidada no QA público da M1h-F.10](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862).
 - [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) — M1h-F.9: coleta contextual por raio real de 57 px, [build/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147).
 - [PR #36](https://github.com/pedromaintenance/peren-o-bruxo/pull/36) — M1h-F.10: Marcos da Trilha publicados no Pages, [CI de build/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984329094) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862).
+- [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37) — M1h-F.11: Instinto do Bruxo; [CI Node/Vite/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958), QA público em andamento.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
