@@ -523,7 +523,7 @@ function renderBattleState(state){
 }
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
-app.events.on('peren-battle-end',({result,reward,profile})=>{
+app.events.on('peren-battle-end',({result,reward,applied,profile})=>{
   clearBattleImpact();
   if(M1HF_PREVIEW){battleTranscript.reset();$('battleTranscript').open=false;}
   // Close first. Never leave the game frozen if the reward panel fails to render.
