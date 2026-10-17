@@ -213,21 +213,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Jogar:** [Peren Phaser M1h-F.11](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Fonte/limites:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md).
 
-## M1h-F.12 — Impacto e dano legível no HUD de combate [FONTE IMPLEMENTADA · CI/RELEASE PENDENTES]
+## M1h-F.12 — Impacto e dano legível no HUD de combate [PUBLICADA · QA PÚBLICO EM VALIDAÇÃO]
 
-O Phaser já exibe números de dano nos sprites e possui barras de PV, mas o HUD não destacava o **quanto de vida foi perdido ou recuperado**. A M1h-F.12 adiciona pequenos sinais **−X PV** e **+X PV** ao lado das barras reais do combate; a matemática da batalha, os efeitos e as recompensas **não mudam**.
+**Publicada em 16/10/2026** via [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38), commit `e175f05`. A release altera **somente `phaser-demo-m1hf/`** (JS e CSS compilados com hash, índice e cache offline), sem modificar o clássico, a demo M1d, as regras de combate ou seus saves.
 
-| ID | Entrega / critério | Estado |
+| ID | Entrega / aceite | Estado |
 | --- | --- | --- |
-| F12-01 | Ler diferenças entre snapshots públicos de PV, somente para a mesma chave de encontro, sem calcular dano | **Implementado na fonte** — `battle-impact.js` |
-| F12-02 | Indicadores de dano/cura no HUD de Peren e do inimigo, com duração de 1 s, layout mobile e `prefers-reduced-motion` | **Implementado na prévia M1h-F**, sem alterações na cena ou IA |
-| F12-03 | Limpar indicadores no fim do combate ou troca de encontro; nenhum write em save, alteração de progressão ou controles | **Implementado** |
-| F12-04 | Testes Node para dano, cura, reinício de encontro, dados inválidos; Chromium 360×800, 390×844, 1280×800 com salva clássico/M1d/prévia separados | **Testes criados**, aguardando CI |
-| F12-05 | Publicação seletiva exclusiva do bundle `phaser-demo-m1hf/` após build/Chromium verde e diff auditado | **Pendente**, sem alterar clássico, M1d ou PR #24 draft |
-| F12-06 | QA público de impacto, seis vitórias, resiliência, Diário, save rescue e PWA offline | **Pendente** |
-| F12-07 | Validação física Android/Xbox, legibilidade e aprovação artística | **Pendente de playtest humano** |
+| F12-01 | Calcular **−X PV** ou **+X PV** apenas pelas diferenças de PV entre snapshots da mesma batalha | **Publicado na prévia**, sem novo cálculo de dano |
+| F12-02 | Indicadores temporários de dano e cura no HUD do inimigo/Peren, com suporte a `prefers-reduced-motion` | **Publicado**, duração de um segundo |
+| F12-03 | Limpar sinais ao encerrar/trocar batalha, sem escrever nos saves ou mexer em ações e recompensas | **Concluído** |
+| F12-04 | Node e Chromium em 360×800, 390×844, 1280×800 com impactos e saves isolados | **Aprovado** — [CI do candidato (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735). A primeira execução [falhou por medição tardia do elemento temporário](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991183958), corrigida e retestada |
+| F12-05 | Publicar apenas bundle experimental após diff auditado e CI verde | **Concluído** — [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38), quatro mudanças lógicas |
+| F12-06 | Executar QA no Pages real: indicadores, seis vitórias, resiliência, Diário, resgate e PWA offline | **Em validação** — ver [GitHub Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions) antes de afirmar aprovado |
+| F12-07 | Revisar legibilidade e os comandos em Android e Xbox físicos | **Pendente de playtest humano** |
 
-**Documento:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). **Após release:** [prévia Phaser M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+**Teste:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Documentação técnica:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). A PR #24 de fonte permanece em *draft*.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -276,6 +276,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #35](https://github.com/pedromaintenance/peren-o-bruxo/pull/35) — M1h-F.9: coleta contextual por raio real de 57 px, [build/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967845101) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38967851147).
 - [PR #36](https://github.com/pedromaintenance/peren-o-bruxo/pull/36) — M1h-F.10: Marcos da Trilha publicados no Pages, [CI de build/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984329094) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862).
 - [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37) — M1h-F.11: Instinto do Bruxo; [CI Node/Vite/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962).
+- [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38) — M1h-F.12: indicadores temporários de dano/cura; [CI do candidato aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735), QA público em validação.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
