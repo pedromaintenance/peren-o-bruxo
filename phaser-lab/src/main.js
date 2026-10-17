@@ -16,6 +16,7 @@ import {showPreviewSaveRecovery} from './save-recovery.js';
 import {createJournalScreen} from './ui-journal.js';
 import {createGuideScreen} from './ui-guide.js';
 import {fieldAwareness} from './field-awareness.js';
+import {encounterReadout} from './encounter-readout.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -239,6 +240,15 @@ app.events.on('peren-encounter',info=>{
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
+ if(M1HF_PREVIEW){
+  const assessment=encounterReadout(info,bridge.combatProfile());
+  const panel=$('encounterAssessment');
+  panel.hidden=false;panel.dataset.state=assessment.state;
+  $('encounterBehavior').textContent=assessment.behavior;
+  $('encounterTactic').textContent=assessment.tactic;
+  $('encounterReadiness').textContent=assessment.vitality;
+  $('encounterSupplies').textContent=assessment.supplies;
+ }
  $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura de Mürin');
  $('observeBeast').focus({preventScroll:true});
 });

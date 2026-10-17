@@ -199,3 +199,31 @@
 #controls #trailOrientation[data-phase="exit"]{border-left-color:#9dd8b0;color:#dbf1d6;background:#183c35df}
 @media(max-width:390px){#controls #trailOrientation{font-size:9px;padding:3px 5px}}
 @media(max-height:610px) and (orientation:landscape){#controls #trailOrientation{max-height:32px;overflow:hidden;margin-top:0}}
+
+/* M1h-F.11: encounter reconnaissance with canonical stats; read-only. */
+#encounterAssessment[hidden]{display:none!important}
+#encounterModal #encounterAssessment.m1hf-encounter-assessment{
+ display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 0 13px;
+}
+#encounterAssessment>div{
+ display:flex;flex-direction:column;gap:4px;min-width:0;padding:10px 12px;
+ border:1px solid #8d826a;border-left:3px solid #a8ac9a;
+ background:linear-gradient(125deg,#132b33,#091c2a);color:#ebe2d3;
+}
+#encounterAssessment small{color:#cab88f;font-size:9px;line-height:1.3;letter-spacing:.1em}
+#encounterAssessment strong{color:#efd6a7;font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+#encounterAssessment span{font-size:11px;line-height:1.5;color:#d7e0dc;overflow-wrap:anywhere}
+#encounterAssessment[data-state="warning"] .m1hf-encounter-ready{border-left-color:#e4b473}
+#encounterAssessment[data-state="danger"] .m1hf-encounter-ready{border-left-color:#de776b;background:linear-gradient(125deg,#3a2328,#131d27)}
+#encounterAssessment[data-state="danger"] #encounterReadiness{color:#ffd4c6}
+@media(max-width:540px){
+ #encounterModal #encounterAssessment.m1hf-encounter-assessment{grid-template-columns:1fr;gap:6px}
+ #encounterAssessment>div{padding:7px 9px;gap:2px}
+ #encounterAssessment small{font-size:8px}
+ #encounterAssessment strong{font-size:11px}
+ #encounterAssessment span{font-size:10px}
+}
+@media(max-height:610px) and (orientation:landscape){
+ #encounterModal #encounterAssessment.m1hf-encounter-assessment{gap:5px;margin-bottom:7px}
+ #encounterAssessment>div{padding:5px 8px}
+}

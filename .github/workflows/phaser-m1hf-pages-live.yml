@@ -31,6 +31,7 @@ jobs:
                grep -q 'id="fieldAwareness"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="harvestProximity"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="trailOrientation"' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="encounterAssessment"' /tmp/peren-m1hf-index.html &&
                curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}demo-sw.js?check=$i" -o /tmp/peren-m1hf-qa-sw.js &&
                grep -q 'ignoreSearch:true' /tmp/peren-m1hf-qa-sw.js &&
                grep -Fq './teste.html' /tmp/peren-m1hf-qa-sw.js; then
@@ -86,6 +87,9 @@ jobs:
       - name: Testar salvamento isolado no site real
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-pages-browser-check.mjs
+      - name: Conferir leitura de criaturas, prontidão e recuo no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-encounter-browser.mjs
       - name: Conferir marcos da trilha, retorno e isolamento do save no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-trail-browser.mjs
