@@ -316,7 +316,7 @@ O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitóri
 
 [**Jogar: deploy e QA confirmados**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
 
-## M1h-F.18 — Janela de Recuo Seguro [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
+## M1h-F.18 — Janela de Recuo Seguro [PUBLICADA · QA PÚBLICO APROVADO · 17/10/2026]
 
 Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren tem **3 segundos de tempo ativo para reposicionamento**. Durante esse período, contatos de qualquer criatura não abrem outro encontro; patrulha, detecção e perseguição continuam, e o contato volta automaticamente quando o prazo se encerra. Um aviso no HUD indica a contagem. A proteção não ocorre em vitórias, não causa cura nem gera XP, itens ou moedas e não altera os saves.
 
@@ -329,7 +329,7 @@ Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren
 | Aviso no HUD e isolamento dos três saves em 360/390/1280px | **Aprovado no CI candidato** |
 | Compilação, PWA, seis vitórias e regressões existentes | **[CI completo success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819)** |
 | Publicação restrita a `phaser-demo-m1hf/` | **Concluída — PR #44** |
-| QA do GitHub Pages público | **Em execução** — [workflow live](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| QA do GitHub Pages público | **Aprovado** — [QA completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39046019277). Janela de recuo em 3 viewports, segundo monstro, seis vitórias, fuga/derrota, histórico, Diário, PWA offline, resiliência e recuperação de saves |
 | Teste Android/Xbox físico | **Pendente de playtest humano** |
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md).
@@ -387,6 +387,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #41](https://github.com/pedromaintenance/peren-o-bruxo/pull/41) — M1h-F.15: Laboratório de Controles na Bancada de Teste, [CI de build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) e [QA público completos](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855), com validação física ainda pendente.
 - [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) — M1h-F.16: recibo com nomes de saque canônicos e mensagem de vitória preservada; [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919) aprovados.
 - [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) — F.17: recibo legível no celular e [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280) aprovados; Android físico ainda pendente.
+- [PR #44](https://github.com/pedromaintenance/peren-o-bruxo/pull/44) — F.18: Janela de Recuo Seguro, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39046019277) aprovados; teste Android/Xbox físicos pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
