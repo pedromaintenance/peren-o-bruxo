@@ -24,3 +24,15 @@ test('M1h-F.6: compilacao publica inclui guia somente na previa isolada',()=>{
  assert.match(builder,/const precache=/);
  assert.match(builder,/cachePrefix=isolated\?'peren-phaser-m1hf-preview-'/);
 });
+
+test('M1h-F.15: laboratorio utiliza adaptador oficial, nao le saves ou envia identificador',()=>{
+ const live=readFileSync(new URL('../field-gamepad.js',import.meta.url),'utf8');
+ assert.match(page,/id="padLab"/);
+ assert.match(page,/id="padRefresh"/);
+ assert.match(page,/field-gamepad\.js/);
+ assert.match(live,/import \{readXboxPad\} from '\.\/field-gamepad-adapter\.js'/);
+ assert.match(live,/navigator\.getGamepads/);
+ assert.doesNotMatch(live,/\bfetch\(|sendBeacon|localStorage|sessionStorage|XMLHttpRequest/);
+ assert.match(builder,/field-gamepad-adapter\.js/);
+ assert.match(builder,/field-gamepad\.js/);
+});

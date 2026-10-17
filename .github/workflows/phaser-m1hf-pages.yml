@@ -46,6 +46,8 @@ jobs:
           test -s phaser-lab/dist/compare.html
           test -s phaser-lab/dist/manifest.webmanifest
           test -s phaser-lab/dist/demo-sw.js
+          test -s phaser-lab/dist/field-gamepad.js
+          test -s phaser-lab/dist/field-gamepad-adapter.js
           grep -q 'PRÉVIA M1h-F' phaser-lab/dist/index.html
           grep -q 'peren-phaser-m1hf-preview-' phaser-lab/dist/demo-sw.js
           for id in mob-galho-infectado mob-fungo-violeta mob-ettercap; do
@@ -72,6 +74,7 @@ jobs:
           node scripts/m1hf-impact-browser.mjs
           node scripts/m1hf-consequences-browser.mjs
           node scripts/m1hf-transcript-browser.mjs
+          node scripts/m1hf-gamepad-browser.mjs
           node scripts/m1hf-browser-check.mjs
           node scripts/m1hf-compare-browser.mjs
           node scripts/m1hf-journal-browser.mjs

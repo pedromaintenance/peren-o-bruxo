@@ -48,7 +48,12 @@ await writeFile(join(dist,'.nojekyll'),'');
 html=html.replace(/<\/head>/i,'<link rel="manifest" href="./manifest.webmanifest"></head>');
 html=html.replace(/<\/body>/i,`<script>if('serviceWorker' in navigator && location.pathname.includes('/${pagePath}/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(err=>console.warn('Cache offline indisponível:',err)))}</script></body>`);
 await writeFile(join(dist,'index.html'),html);
-if(isolated)await copyFile(join(lab,'teste.html'),join(dist,'teste.html'));
+if(isolated){
+  await copyFile(join(lab,'teste.html'),join(dist,'teste.html'));
+  // The field test imports the EXACT pure adapter used by the Phaser game.
+  await copyFile(join(lab,'src','gamepad.js'),join(dist,'field-gamepad-adapter.js'));
+  await copyFile(join(lab,'field-gamepad.js'),join(dist,'field-gamepad.js'));
+}
 const all=await list(dist);
 if(!all.some(p=>p.startsWith('assets/')&&p.endsWith('.js')))throw Error('Missing compiled JS bundle');
 for(const n of ['itens','receitas','magias','monstros','cidades']){
