@@ -1,6 +1,6 @@
 # M1h-F.13 — Consequências claras dos comandos de combate
 
-**Objetivo:** antecipar as regras reais de cada comando antes da confirmação, sem revelar resultados futuros e sem alterar a dificuldade.
+**Objetivo:** antecipar as regras reais de cada comando antes da confirmação, sem revelar resultados futuros e sem alterar a dificuldade. **Publicado pela PR #39; QA público em validação.**
 
 ## Comportamento
 
@@ -22,7 +22,7 @@ O campo de dica existente abaixo das ações fica contextual: segue a escolha pe
 - [x] Implementação de apresentação e helper puro, somente na prévia M1h-F.
 - [x] Testes Node verificam custos/equivalência do motor, motivos de indisponibilidade e ausência de mutação.
 - [x] Testes Chromium nas resoluções 360×800, 390×844 e 1280×800, com foco nos sete comandos, alteração sintética de estado para verificar indisponibilidade e isolamento de saves.
-- [ ] CI Node/Vite/Chromium completa aprovada.
-- [ ] Publicação isolada `phaser-demo-m1hf/` após diff auditado via PR seletiva.
-- [ ] QA público dos comandos, seis vitórias, resiliência, Diário, PWA e saves.
+- [x] [CI Node/Vite/Chromium completa — success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993091341), após correção do estado inicial do teste e disputa foco/hover no desktop.
+- [x] [Release isolada PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39) com diff de quatro alterações lógicas exclusivamente em `phaser-demo-m1hf/`.
+- [ ] QA público dos comandos, seis vitórias, resiliência, Diário, PWA e saves em validação.
 - [ ] Playtest humano em Android e Xbox físicos; avaliar legibilidade e rolagem da dica.
