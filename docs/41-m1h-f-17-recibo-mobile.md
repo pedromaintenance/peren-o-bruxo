@@ -9,7 +9,7 @@ Melhoria de UX sobre o recibo da F.16, **sem alterações no motor, no pagamento
 
 ## Critérios
 - [x] Estilos e resumo com resultado implementados na fonte experimental; cobertura Node e smoke de navegador incluídos.
-- [ ] CI Node/Vite/Chromium aprovado.
-- [ ] Bundle isolado publicado após auditoria de diff, sem mesclar fonte experimental na `main`.
-- [ ] QA público do GitHub Pages aprovado.
+- [x] CI Node/Vite/Chromium aprovado — [workflow success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977).
+- [x] [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) mesclada: somente JS/CSS, índice e service worker dentro de `phaser-demo-m1hf/`; fonte ainda draft.
+- [x] QA público aprovado — [workflow success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280), incluindo quatro viewports, saque idempotente, seis vitórias, PWA offline e isolamento de saves.
 - [ ] Teste no Android físico (tamanho dos controles, leitor de tela, paisagem, teclado e PWA offline) ainda pendente.
