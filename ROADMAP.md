@@ -229,21 +229,22 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Teste:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Documentação técnica:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). A PR #24 de fonte permanece em *draft*.
 
-## M1h-F.13 — Consequências reais dos comandos de combate [FONTE IMPLEMENTADA · CI/RELEASE PENDENTES]
+## M1h-F.13 — Consequências reais dos comandos de combate [PUBLICADA · QA PÚBLICO EM VALIDAÇÃO]
 
-O campo de dica do combate mostra informações genéricas, mas alguns efeitos têm consequências que não ficam claras até a ação ser executada. Na prévia Phaser M1h-F, a seleção de um comando passa a explicar **seus custos e efeitos reais**, sem revelar dano aleatório nem prever vitória.
+**Publicada em 16/10/2026** via [PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39), commit `2ee29bf`. O diff continha somente **quatro mudanças lógicas** em `phaser-demo-m1hf/`: JS/CSS compilados com hash, índice HTML e cache offline. Nenhuma alteração no clássico, M1d, combate, recompensas, saves ou arte.
 
 | ID | Entrega / aceite | Estado |
 | --- | --- | --- |
-| F13-01 | Descrever Atacar, Defender (+até 4 PM e defesa), Poção (+até 36 PV e consumo), Fugir (sem XP/saque) | **Implementado** — `command-consequences.js`, sem mudanças em `combat.js` |
-| F13-02 | Explicar os custos e efeitos reais de Fogo (queimadura), Gelo (sem reação nesta rodada) e Mísseis (dano arcano) | **Implementado**, sem previsão de resultados |
-| F13-03 | Exibir motivo de indisponibilidade quando faltarem PM, poções, aprendizado ou ação estiver em andamento | **Implementado**, mantendo o estado real dos botões |
-| F13-04 | Atualizar dica no foco, toque, ponteiro e seleção de controle; manter área legível no celular e saves intocados | **Código e testes implementados** |
-| F13-05 | Testes Node e Chromium (360×800, 390×844, 1280×800) de sete comandos, indisponibilidades e save isolado | **Aguardando CI** |
-| F13-06 | Release seletiva `phaser-demo-m1hf/` após CI verde, diff revisado e QA público de combate, Diário e PWA | **Pendente** |
-| F13-07 | Playtest humano em Android e Xbox físicos e avaliação da clareza/contraste | **Pendente** |
+| F13-01 | Atacar, Defender (+até 4 PM e redução do golpe), Poção (+até 36 PV, consumo de 1), Fugir (sem XP/saque) | **Publicado** em `phaser-demo-m1hf/` |
+| F13-02 | Custos e efeitos reais de Raio de Fogo (queimadura), Gelo (reação impedida) e Mísseis (dano arcano) | **Publicado**, sem prever dano futuro |
+| F13-03 | Motivos de indisponibilidade por falta de PM/poções, magia não aprendida ou turno ocupado | **Publicado**, sem modificar os botões |
+| F13-04 | Atualização pelo foco/controle e movimento intencional do ponteiro; rolável em tela pequena | **Concluído** — corrigida disputa de foco/hover no desktop |
+| F13-05 | Testes Node e Chromium em 360×800, 390×844 e 1280×800, sete comandos e isolamento de saves | **Aprovado** — [CI completa (success)](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993091341), após correções das primeiras execuções |
+| F13-06 | Publicar bundle experimental por PR separada, após revisão de diff | **Concluído** — [PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39), somente `phaser-demo-m1hf/` |
+| F13-07 | QA após publicação: comandos, seis vitórias, resiliência, Diário, PWA offline e saves | **Em validação**, não declarar sucesso até run pública terminar |
+| F13-08 | Playtest Android e Xbox físicos, legibilidade e acessibilidade visual | **Pendente de avaliação humana** |
 
-**Documentação:** [docs/37-m1h-f-13-comandos.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/37-m1h-f-13-comandos.md). **Prévia anterior aprovada:** [Peren Phaser M1h-F.12](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). Não mesclar a PR #24 de fonte diretamente na `main`.
+**Testar:** [Prévia Phaser M1h-F.13](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Detalhes técnicos:** [docs/37-m1h-f-13-comandos.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/37-m1h-f-13-comandos.md). PR #24 de fonte continua *draft*.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -293,6 +294,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #36](https://github.com/pedromaintenance/peren-o-bruxo/pull/36) — M1h-F.10: Marcos da Trilha publicados no Pages, [CI de build/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984329094) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38984333862).
 - [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37) — M1h-F.11: Instinto do Bruxo; [CI Node/Vite/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962).
 - [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38) — M1h-F.12: indicadores temporários de dano/cura; [CI do candidato aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991794817).
+- [PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39) — M1h-F.13: consequências de comandos publicadas; [CI de build e Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993091341); QA público em validação.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
