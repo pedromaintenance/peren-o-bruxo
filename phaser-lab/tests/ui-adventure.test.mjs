@@ -82,7 +82,7 @@ test('M1h-F.16 recibo exibe loot realmente aplicado e nomes do catalogo sem muta
  const reward={xp:13,gold:8,items:{'ing-hanging-moss':1}};
  const before=JSON.stringify(reward),catalogBefore=JSON.stringify(catalogs.itensById['ing-hanging-moss']);
  const receipt=battleReceiptViewModel({result:'won',reward,applied:true},catalogs);
- assert.equal(receipt.kind,'won');assert.match(receipt.summary,/^Vitória! \\+13 XP,/);assert.match(receipt.summary,/13 XP/);
+ assert.equal(receipt.kind,'won');assert.ok(receipt.summary.startsWith('Vitória! +13 XP,'));assert.match(receipt.summary,/13 XP/);
  assert.match(receipt.summary,/8 moedas/);
  assert.ok(receipt.summary.includes(catalogs.itensById['ing-hanging-moss'].nome));
  assert.doesNotMatch(receipt.summary,/ing-hanging-moss/);
