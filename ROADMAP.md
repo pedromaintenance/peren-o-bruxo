@@ -246,7 +246,7 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Testar:** [Prévia Phaser M1h-F.13](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Detalhes técnicos:** [docs/37-m1h-f-13-comandos.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/37-m1h-f-13-comandos.md). PR #24 de fonte continua *draft*.
 
-## M1h-F.14 — Histórico da Batalha [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
+## M1h-F.14 — Histórico da Batalha [PUBLICADA · QA PÚBLICO APROVADO · 17/10/2026]
 
 Incremento posterior à M1h-F.13: painel consultável, fechado por padrão, exibindo somente os acontecimentos **reais** do combate presentes em `BattleScene.publicState().log`. Até 24 mensagens temporárias, recentes primeiro, sem duplicar janelas de atualização e com limpeza por encontro. O motor `combat.js`, ações, saque, IA, dificuldade e saves não mudaram.
 
@@ -259,10 +259,10 @@ Incremento posterior à M1h-F.13: painel consultável, fechado por padrão, exib
 | F14-03 | Limite 24, reset por chave, nenhuma gravação nos três saves | **Aprovado em testes Node e Chromium** |
 | F14-04 | Build Node/Vite, combate e resiliência, economia, PWA e regressões | **Aprovado no CI candidato** — [execução success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026469758); um teste anterior falhou por leitura prematura de estado, corrigido e reexecutado |
 | F14-05 | Publicar bundle isolado, após revisão de diff | **Concluído** — [PR #40](https://github.com/pedromaintenance/peren-o-bruxo/pull/40) mesclada |
-| F14-06 | Reexecutar testes contra GitHub Pages após implantação | **Em execução** — [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254) |
+| F14-06 | Reexecutar testes contra GitHub Pages após implantação | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254). Histórico em 360×800, 390×844, 1280×800, sete comandos, seis vitórias, recuo, resiliência, Diário, PWA offline, resgate e saves isolados |
 | F14-07 | Android e Xbox físicos, contraste e legibilidade | **Pendente de playtest humano** |
 
-**Jogar após implantação:** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · **Fonte/especificação:** [docs/38-m1h-f-14-historico.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/38-m1h-f-14-historico.md). O código-fonte experimental continua separado.
+**Jogar (publicação e QA confirmados):** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · **Fonte/especificação:** [docs/38-m1h-f-14-historico.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/38-m1h-f-14-historico.md). O código-fonte experimental continua separado.
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
