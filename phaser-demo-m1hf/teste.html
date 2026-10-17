@@ -42,6 +42,21 @@ textarea{min-height:100px;resize:vertical}
 footer{color:#bccac4;font-size:12px;margin-top:30px}
 @media(max-width:570px){.grid{grid-template-columns:1fr}.choices{flex-direction:column}.case{padding:11px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* M1h-F.15: same Gamepad adapter as the game, read-only physical controls. */
+.pad-lab{border-color:#bfa271;background:linear-gradient(140deg,#162e3a,#0c202b)}
+.pad-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pad-readout{border:1px solid #607a77;border-radius:7px;background:#0a1b24;padding:12px;min-width:0}
+.pad-readout small{display:block;font-size:11px;color:#b5c5bf}
+.pad-readout output{display:block;color:#ffdfaa;font:700 14px/1.45 system-ui;overflow-wrap:anywhere;margin-top:5px}
+#padIdentity{font-size:12px;overflow-wrap:anywhere}
+.pad-controls{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.pad-control{border:1px solid #536b6b;border-radius:5px;padding:8px 9px;min-width:42px;text-align:center;font:700 12px system-ui;background:#152b34;color:#aebdb7}
+.pad-control[data-active="true"]{background:#72613e;border-color:#ffe0a2;color:#fff4d6}
+#padStatus[data-connected="true"]{color:#aee8b8}
+#padStatus[data-connected="false"]{color:#f1cd85}
+.pad-help{font-size:12px;color:#d1d9d0;line-height:1.6}
+@media(max-width:570px){.pad-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -58,6 +73,29 @@ footer{color:#bccac4;font-size:12px;margin-top:30px}
 <label for="browser">Navegador / modo de uso<input id="browser" type="text" maxlength="130" placeholder="Ex.: Chrome, aba ou PWA instalada"></label>
 </div>
 <p class="muted">Para instalação PWA, use o menu do navegador: “Instalar app” ou “Adicionar à tela inicial”, quando disponível. Evite limpar dados do site: seus saves ficam armazenados no aparelho.</p>
+</section>
+
+<section class="panel pad-lab" aria-labelledby="padLabTitle" id="padLab">
+  <p class="kicker">M1h-F.15 · CONTROLE FÍSICO · LEITURA LOCAL</p>
+  <h2 id="padLabTitle">Laboratório de Controles</h2>
+  <p>Conecte o Xbox por USB ou Bluetooth e pressione qualquer botão. O navegador só libera o controle após a interação. O painel mostra a leitura do <strong>mesmo adaptador usado pelo jogo</strong>, sem enviar dados, gerar comandos ou acessar saves.</p>
+  <p id="padStatus" data-connected="false" role="status" aria-live="polite">Aguardando conexão do controle…</p>
+  <div class="pad-grid">
+    <div class="pad-readout"><small>Controle / mapeamento</small><output id="padIdentity">Nenhum controle reconhecido</output></div>
+    <div class="pad-readout"><small>Movimento · direcional ou analógico esquerdo</small><output id="padMovement">Neutro · 0%, 0%</output></div>
+    <div class="pad-readout"><small>Corrida · RT / RB / L3</small><output id="padSprint">Inativa</output></div>
+    <div class="pad-readout"><small>Última leitura</small><output id="padFeedback">Pressione A, B, X, Y ou mova o direcional.</output></div>
+  </div>
+  <div id="padControls" class="pad-controls" role="group" aria-label="Estados atuais dos botões do controle">
+    <span class="pad-control" data-pad-key="a" data-active="false">A</span><span class="pad-control" data-pad-key="b" data-active="false">B</span>
+    <span class="pad-control" data-pad-key="x" data-active="false">X</span><span class="pad-control" data-pad-key="y" data-active="false">Y</span>
+    <span class="pad-control" data-pad-key="up" data-active="false">↑</span><span class="pad-control" data-pad-key="down" data-active="false">↓</span>
+    <span class="pad-control" data-pad-key="left" data-active="false">←</span><span class="pad-control" data-pad-key="right" data-active="false">→</span>
+    <span class="pad-control" data-pad-key="menu" data-active="false">Menu</span><span class="pad-control" data-pad-key="view" data-active="false">View</span>
+  </div>
+  <button type="button" id="padRefresh">↻ Verificar controle agora</button>
+  <p class="pad-help" id="padInstructions">No jogo: A confirma/coleta, B retorna/foge, X usa poção no combate, Y lança Fogo, direcional navega; RT/RB/L3 correm na floresta. Este teste não substitui a experiência de jogar com o controle físico.</p>
+  <p class="muted">O identificador aparece somente neste aparelho e não entra no relatório exportado. Marque manualmente «Controle Xbox» no checklist depois de testar.</p>
 </section>
 <section class="panel" aria-labelledby="checksTitle">
 <h2 id="checksTitle">Roteiro verificável</h2>
@@ -134,4 +172,5 @@ document.getElementById('reset').addEventListener('click',()=>{
 update();
 })();
 </script>
+<script type="module" src="./field-gamepad.js"></script>
 </body></html>
