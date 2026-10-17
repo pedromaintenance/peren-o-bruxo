@@ -299,20 +299,22 @@ Depois da vitória, a Floresta de Mürin passa a mostrar materiais com **nomes d
 
 **Jogar — deploy e QA confirmados:** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · [documentação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/40-m1h-f-16-recibo.md).
 
-## M1h-F.17 — Recibo acessível no celular [EM VALIDAÇÃO · 17/10/2026]
+## M1h-F.17 — Recibo acessível no celular [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
 
-Após a F.16, o recibo de batalha ficava com **fonte de 11 px**, área de toque de 33 px e título fechado sem informação do resultado. A F.17 corrige a apresentação e a ergonomia: resumo dinâmico com o desfecho real, área de toque mínima de 48 px, texto de 14 px e quebra de palavras, mantendo o painel nativo de teclado/toque e o histórico de recompensas sem mutação.
+O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitória/fuga/derrota). Área de toque mínima 48px, letras de 14px, quebra de palavras e suporte nativo a toque e teclado. Não há mudanças de motor, valores de recompensa, saves ou catálogo.
 
-| Aceite | Estado |
+**Publicação:** [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) mesclada à `main`, commit `fcc30bb`. Diff auditado de quatro alterações lógicas **apenas na pasta `phaser-demo-m1hf/`** (bundles JS/CSS versionados, índice e cache offline). A PR #24 continua *draft*.
+
+| Critério | Resultado |
 | --- | --- |
-| Resumo fechado indica vitória/fuga/derrota efetiva | **Implementado na branch experimental** |
-| Touch target mínimo, fonte e layout legíveis em 320/360/390 e paisagem | **Implementado; QA Chromium pendente** |
-| Nenhum novo saque, alteração de save, combate ou API | **Mantido; testes de regressão incluídos** |
-| Node/Vite/Chromium e PWA com isolamento do clássico | **Em validação** |
-| Bundle isolado publicado e QA no Pages | **Aguardando CI verde** |
-| Android físico, leitor de tela e PWA em dispositivo real | **Pendente de teste humano** |
+| Resumo com resultado real visível antes de abrir | **Implementado e publicado** |
+| Alvo de toque ≥48 px e fonte ≥14 px em 320×700, 360×800, 390×844, 844×390 | **Aprovado no Chromium de build** |
+| Abrir com toque/teclado, recompensa liquidada uma vez e saves isolados | **Aprovado no Chromium de build** |
+| Node/Vite e regressões completas de combate, PWA e histórico | **[CI success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977)** |
+| Página pública e regressões contra GitHub Pages | **Em execução** — [workflow de QA](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| Android físico, TalkBack, teclado/controle físico e PWA no aparelho | **Pendente de playtest humano** |
 
-[Commit experimental](https://github.com/pedromaintenance/peren-o-bruxo/commit/130ea5cf68d96d85e6d6085fe0853a5b69ee9753) · [Especificação da F.17](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md) · [Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions). Código-fonte na PR #24, ainda *draft*. A última versão publicada aprovada permanece a F.16.
+[**Testar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
