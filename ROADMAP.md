@@ -264,7 +264,7 @@ Incremento posterior à M1h-F.13: painel consultável, fechado por padrão, exib
 
 **Jogar (publicação e QA confirmados):** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · **Fonte/especificação:** [docs/38-m1h-f-14-historico.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/38-m1h-f-14-historico.md). O código-fonte experimental continua separado.
 
-## M1h-F.15 — Laboratório de Controles [PUBLICADA · QA PÚBLICO EM ANDAMENTO · 17/10/2026]
+## M1h-F.15 — Laboratório de Controles [PUBLICADA · QA PÚBLICO APROVADO · 17/10/2026]
 
 A página de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) agora permite verificar **localmente** conexão USB/Bluetooth, direcional e analógico, A/B/X/Y, Menu/View e corrida RT/RB/L3 usando uma cópia fiel de `readXboxPad()`, adaptador puro compartilhado com o Phaser. A leitura não executa ações, não lê ou grava saves, não coleta telemetria nem exporta automaticamente o ID do dispositivo.
 
@@ -276,7 +276,7 @@ A página de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/p
 | F15-02 | Estados do analógico, botões e corrida; aviso para controle não padrão; sem automação do checklist | **Implementado** |
 | F15-03 | Testes Node/Chromium em 360×800, 390×844, 1280×800, mock de Gamepad e saves separados | **Aprovados** — [CI completo success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) |
 | F15-04 | Pacote PWA com adaptador e laboratório, preservando clássico/M1d | **Publicado pela PR #41**, diff restrito à prévia |
-| F15-05 | QA no Pages real: controle, saves, seis vitórias, Diário, PWA offline, resgate | **Em andamento** — [execução](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855) |
+| F15-05 | QA no Pages real: controle, saves, seis vitórias, Diário, PWA offline, resgate | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855). Leitura simulada de A/RT/analógico/desconexão em três viewports, seis vitórias, resiliência, Diário, PWA offline e recuperação de saves |
 | F15-06 | Xbox real USB/Bluetooth, Android físico e legibilidade | **Pendente de teste humano** |
 
 **Testar:** [Laboratório de Controles](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) · [Jogar Peren](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md).
@@ -330,6 +330,8 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #37](https://github.com/pedromaintenance/peren-o-bruxo/pull/37) — M1h-F.11: Instinto do Bruxo; [CI Node/Vite/Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750958) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38988750962).
 - [PR #38](https://github.com/pedromaintenance/peren-o-bruxo/pull/38) — M1h-F.12: indicadores temporários de dano/cura; [CI do candidato aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991362735) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38991794817).
 - [PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39) — M1h-F.13: consequências de comandos publicadas; [CI de build e Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993091341) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993593655).
+- [PR #40](https://github.com/pedromaintenance/peren-o-bruxo/pull/40) — M1h-F.14: Histórico da Batalha publicado com [QA no Pages aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254).
+- [PR #41](https://github.com/pedromaintenance/peren-o-bruxo/pull/41) — M1h-F.15: Laboratório de Controles na Bancada de Teste, [CI de build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) e [QA público completos](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855), com validação física ainda pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
