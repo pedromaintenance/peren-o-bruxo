@@ -128,3 +128,16 @@ Direção artística: interfaces de JRPG pixel art, molduras douradas, painéis 
 
 **Não juntar toda a milestone em uma PR:** fatias empilhadas, cada uma revisável.
 O escopo operacional e critérios de aceite estão em [docs/14-m1g-ui-premium.md](14-m1g-ui-premium.md).
+
+
+## M1h-F.3 — Comparação visual e preparação para aprovação artística [IMPLEMENTADO NA BRANCH]
+
+- [x] Ferramenta `compare.html` para observar atlas **M1h-E e M1h-F lado a lado**, sincronizados por criatura, ação, frame e FPS.
+- [x] Zoom adaptativo mobile/desktop, quatro quadros visíveis por versão, checagem técnica de frames distintos.
+- [x] Parecer manual com seis critérios; cópia/download Markdown **sem acesso aos saves** e sem aprovação automática.
+- [x] Testes Node, Playwright para três criaturas × sete ações × dois tamanhos de tela, capturas e validação dos PNGs.
+- [ ] Confirmar CI e publicação na pasta experimental do Pages; revisar diff antes de lançar.
+- [ ] **Aceite artístico humano**, observando ataque, dano, morte, silhueta a 1× e coerência com a atmosfera da Carcaça.
+- [ ] A partir do parecer, corrigir cada criatura separadamente, mantendo ambos os candidatos acessíveis até decisão.
+
+Documentação e critérios: [27-m1h-f-3-comparador.md](27-m1h-f-3-comparador.md).

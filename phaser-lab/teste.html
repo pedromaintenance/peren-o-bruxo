@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b1b">
+<meta name="robots" content="noindex,nofollow">
+<title>Teste de Campo — Peren M1h-F</title>
+<style>
+:root{color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#0b161c;color:#f3e5cd}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at top,#243c43 0,#0b161c 68%);min-height:100dvh}
+main{max-width:900px;margin:auto;padding:clamp(16px,4vw,36px) clamp(12px,3vw,24px) 60px}
+a{color:#f1cd85}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #ffe2a3;outline-offset:3px}
+h1,h2,legend{font-family:Georgia,serif;color:#f3d49e}
+h1{font-size:clamp(29px,5vw,45px);line-height:1.15;margin:12px 0}
+h2{font-size:23px}
+small,.muted{color:#c9d0ca}
+.kicker{font-size:12px;letter-spacing:.16em;color:#e8bc79;font-weight:800}
+nav{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+nav a,button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:10px 14px;border:1px solid #bfa271;background:#253c45;color:#ffebc5;border-radius:8px;font:700 14px/1.3 system-ui;text-decoration:none;cursor:pointer}
+nav a:hover,button:hover{background:#36545c}
+p{max-width:75ch}
+.panel{padding:clamp(15px,3vw,25px);margin:18px 0;background:#11252ecc;border:1px solid #786b50;border-radius:12px;box-shadow:0 8px 24px #0005}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+label{display:block;font-weight:700;color:#f1d6a2}
+input[type=text],textarea{display:block;width:100%;margin-top:6px;border:1px solid #7b8d82;background:#091820;color:#f6ebd8;border-radius:6px;min-height:44px;padding:10px 12px;font:inherit;touch-action:auto}
+textarea{min-height:100px;resize:vertical}
+#checklist{display:grid;gap:12px}
+.case{border:1px solid #5c7471;border-radius:9px;padding:14px;background:#11262c}
+.case legend{font-size:18px;padding:0 5px}
+.case p{margin:5px 0 13px}
+.choices{display:flex;gap:7px;flex-wrap:wrap}
+.choice{flex:1 1 135px;display:flex;align-items:center;gap:8px;border:1px solid #788780;padding:10px;border-radius:7px;min-height:48px;cursor:pointer;background:#1a3035}
+.choice:has(input:checked){border-color:#e8bf7f;background:#3e3a30}
+.choice input{accent-color:#e8bf7f;width:19px;height:19px;flex:none}
+#progress{font-size:15px;font-weight:700;color:#f6d99f}
+.bar{height:10px;background:#31454a;border-radius:10px;overflow:hidden;margin:9px 0}
+#barFill{height:100%;width:0;background:#d9b777;transition:width .15s ease}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+#message{min-height:25px;color:#e6d9b5;overflow-wrap:anywhere}
+footer{color:#bccac4;font-size:12px;margin-top:30px}
+@media(max-width:570px){.grid{grid-template-columns:1fr}.choices{flex-direction:column}.case{padding:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* M1h-F.15: same Gamepad adapter as the game, read-only physical controls. */
+.pad-lab{border-color:#bfa271;background:linear-gradient(140deg,#162e3a,#0c202b)}
+.pad-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.pad-readout{border:1px solid #607a77;border-radius:7px;background:#0a1b24;padding:12px;min-width:0}
+.pad-readout small{display:block;font-size:11px;color:#b5c5bf}
+.pad-readout output{display:block;color:#ffdfaa;font:700 14px/1.45 system-ui;overflow-wrap:anywhere;margin-top:5px}
+#padIdentity{font-size:12px;overflow-wrap:anywhere}
+.pad-controls{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.pad-control{border:1px solid #536b6b;border-radius:5px;padding:8px 9px;min-width:42px;text-align:center;font:700 12px system-ui;background:#152b34;color:#aebdb7}
+.pad-control[data-active="true"]{background:#72613e;border-color:#ffe0a2;color:#fff4d6}
+#padStatus[data-connected="true"]{color:#aee8b8}
+#padStatus[data-connected="false"]{color:#f1cd85}
+.pad-help{font-size:12px;color:#d1d9d0;line-height:1.6}
+@media(max-width:570px){.pad-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<nav aria-label="Navegação"><a href="./?art=m1hf" target="_blank" rel="noopener noreferrer">↗ Abrir Peren para testar</a><a href="./compare.html?art=m1hf" target="_blank" rel="noopener noreferrer">Comparar criaturas</a><a href="./review.html?art=m1hf" target="_blank" rel="noopener noreferrer">Ateliê de sprites</a></nav>
+<p class="kicker">CARCAÇA · M1h-F.6 · FERRAMENTA EXPERIMENTAL</p>
+<h1>Teste de Campo</h1>
+<p>Uma travessia pela Floresta de Mürin também precisa sobreviver ao seu aparelho. Os links acima abrem outra aba para manter o checklist neste aparelho. Marque o que funcionou, o que falhou e o que não pôde testar. Ao terminar, copie ou baixe o relatório em Markdown para compartilhar por iniciativa própria.</p>
+<p><strong>Privacidade:</strong> esta página não lê nem altera saves, não guarda respostas no navegador e não envia telemetria. O formulário será perdido ao fechar ou recarregar; exporte antes.</p>
+<section class="panel" aria-labelledby="configTitle">
+<h2 id="configTitle">Ambiente do teste</h2>
+<div class="grid">
+<label for="device">Aparelho / sistema<input id="device" type="text" maxlength="130" placeholder="Ex.: Android, modelo e versão"></label>
+<label for="browser">Navegador / modo de uso<input id="browser" type="text" maxlength="130" placeholder="Ex.: Chrome, aba ou PWA instalada"></label>
+</div>
+<p class="muted">Para instalação PWA, use o menu do navegador: “Instalar app” ou “Adicionar à tela inicial”, quando disponível. Evite limpar dados do site: seus saves ficam armazenados no aparelho.</p>
+</section>
+
+<section class="panel pad-lab" aria-labelledby="padLabTitle" id="padLab">
+  <p class="kicker">M1h-F.15 · CONTROLE FÍSICO · LEITURA LOCAL</p>
+  <h2 id="padLabTitle">Laboratório de Controles</h2>
+  <p>Conecte o Xbox por USB ou Bluetooth e pressione qualquer botão. O navegador só libera o controle após a interação. O painel mostra a leitura do <strong>mesmo adaptador usado pelo jogo</strong>, sem enviar dados, gerar comandos ou acessar saves.</p>
+  <p id="padStatus" data-connected="false" role="status" aria-live="polite">Aguardando conexão do controle…</p>
+  <div class="pad-grid">
+    <div class="pad-readout"><small>Controle / mapeamento</small><output id="padIdentity">Nenhum controle reconhecido</output></div>
+    <div class="pad-readout"><small>Movimento · direcional ou analógico esquerdo</small><output id="padMovement">Neutro · 0%, 0%</output></div>
+    <div class="pad-readout"><small>Corrida · RT / RB / L3</small><output id="padSprint">Inativa</output></div>
+    <div class="pad-readout"><small>Última leitura</small><output id="padFeedback">Pressione A, B, X, Y ou mova o direcional.</output></div>
+  </div>
+  <div id="padControls" class="pad-controls" role="group" aria-label="Estados atuais dos botões do controle">
+    <span class="pad-control" data-pad-key="a" data-active="false">A</span><span class="pad-control" data-pad-key="b" data-active="false">B</span>
+    <span class="pad-control" data-pad-key="x" data-active="false">X</span><span class="pad-control" data-pad-key="y" data-active="false">Y</span>
+    <span class="pad-control" data-pad-key="up" data-active="false">↑</span><span class="pad-control" data-pad-key="down" data-active="false">↓</span>
+    <span class="pad-control" data-pad-key="left" data-active="false">←</span><span class="pad-control" data-pad-key="right" data-active="false">→</span>
+    <span class="pad-control" data-pad-key="menu" data-active="false">Menu</span><span class="pad-control" data-pad-key="view" data-active="false">View</span>
+  </div>
+  <button type="button" id="padRefresh">↻ Verificar controle agora</button>
+  <p class="pad-help" id="padInstructions">No jogo: A confirma/coleta, B retorna/foge, X usa poção no combate, Y lança Fogo, direcional navega; RT/RB/L3 correm na floresta. Este teste não substitui a experiência de jogar com o controle físico.</p>
+  <p class="muted">O identificador aparece somente neste aparelho e não entra no relatório exportado. Marque manualmente «Controle Xbox» no checklist depois de testar.</p>
+</section>
+<section class="panel" aria-labelledby="checksTitle">
+<h2 id="checksTitle">Roteiro verificável</h2>
+<p id="progress" role="status" aria-live="polite">0 de 9 verificações realizadas</p><div class="bar" aria-hidden="true"><div id="barFill"></div></div>
+<div id="checklist"></div>
+</section>
+<section class="panel" aria-labelledby="reportTitle">
+<h2 id="reportTitle">Relatório voluntário</h2>
+<label for="notes">Observações gerais e passos para reproduzir falhas<textarea id="notes" maxlength="6000" placeholder="O que você fez? O que esperava? O que aconteceu? Informe também se o problema ocorre após reabrir o jogo."></textarea></label>
+<p>O relatório contém somente os campos preenchidos aqui. Nenhum conteúdo do save é incluído. Para bugs do combate, há também <strong>Copiar diagnóstico</strong> dentro do próprio jogo.</p>
+<div class="actions"><button id="copy" type="button">Copiar relatório</button><button id="download" type="button">Baixar relatório .md</button><button id="reset" type="button">Limpar formulário</button></div>
+<p id="message" role="status" aria-live="polite"></p>
+</section>
+<footer>Peren, o Bruxo · prévia M1h-F, independente do Peren clássico. Testes manuais não substituem os testes automatizados e não representam aprovação artística.</footer>
+</main>
+<script>
+(()=>{'use strict';
+const cases=[
+ ['Cidade e navegação','Abrir Portomonte, usar menus de bolsa, oficina e comércio e voltar sem bloqueios.'],
+ ['Controles por toque','Entrar em Mürin, mover com o joystick, correr e colher com os botões na tela.'],
+ ['Encontros e combate','Iniciar um encontro, executar comandos, vencer ou fugir e conseguir retornar à floresta.'],
+ ['Persistência','Baixar o backup de teste em Portomonte, recarregar e verificar que o progresso continua; não apagar dados do site.'],
+ ['Diário de Peren','Abrir o Diário em Portomonte, filtrar, buscar, rolar e baixar o arquivo Markdown.'],
+ ['Recuperação de save','Opcional: testar restauração apenas com backup do protótipo; nunca usar o save clássico. Não corromper um save valioso para este teste.'],
+ ['PWA e modo avião','Se houver PWA instalada, abrir online uma vez, ativar modo avião e reabrir jogo, comparador e esta página; checar retorno online.'],
+ ['Controle Xbox','Se houver controle, testar direcional/analógico, A/B, pausa e navegação dos menus. Se não houver, escolher “Não testado”.'],
+ ['Arte e legibilidade','Comparar criaturas M1h-E/F a 1× e 2×, observar contraste e animações durante um combate real.']
+];
+const root=document.getElementById('checklist'),status=document.getElementById('progress'),bar=document.getElementById('barFill'),message=document.getElementById('message');
+const options=[['pass','Passou'],['fail','Falhou'],['skip','Não testado']];
+for(let i=0;i<cases.length;i++){
+ const field=document.createElement('fieldset');field.className='case';
+ const legend=document.createElement('legend');legend.textContent=(i+1)+'. '+cases[i][0];field.append(legend);
+ const help=document.createElement('p');help.textContent=cases[i][1];field.append(help);
+ const group=document.createElement('div');group.className='choices';
+ for(const [value,label] of options){
+  const wrap=document.createElement('label');wrap.className='choice';
+  const input=document.createElement('input');input.type='radio';input.name='check-'+i;input.value=value;input.checked=value==='skip';input.addEventListener('change',update);
+  const span=document.createElement('span');span.textContent=label;wrap.append(input,span);group.append(wrap);
+ }
+ field.append(group);root.append(field);
+}
+function values(){return cases.map((_,i)=>document.querySelector('input[name="check-'+i+'"]:checked')?.value||'skip')}
+function update(){const answered=values().filter(x=>x!=='skip').length;status.textContent=answered+' de '+cases.length+' verificações realizadas';bar.style.width=(answered/cases.length*100).toFixed(1)+'%'}
+function cleaned(id,max){return document.getElementById(id).value.replace(/\r/g,'').slice(0,max).trim()}
+function report(){
+ const valuesNow=values(),pass=valuesNow.filter(x=>x==='pass').length,fail=valuesNow.filter(x=>x==='fail').length;
+ const lines=['# Peren M1h-F.6 — Teste de Campo','',
+  'Aparelho: '+(cleaned('device',130)||'Não informado'),
+  'Navegador: '+(cleaned('browser',130)||'Não informado'),
+  'Resultados: '+pass+' passaram · '+fail+' falharam · '+(cases.length-pass-fail)+' não testados','',
+  '## Verificações',''];
+ for(let i=0;i<cases.length;i++)lines.push('- **'+cases[i][0]+'** — '+(valuesNow[i]==='pass'?'PASSOU':valuesNow[i]==='fail'?'FALHOU':'NÃO TESTADO'));
+ lines.push('','## Observações','',cleaned('notes',6000)||'Nenhuma observação.','','---','Documento gerado localmente, somente por ação do jogador. Sem saves, histórico de jogo ou telemetria automática.','');
+ return lines.join('\n');
+}
+document.getElementById('copy').addEventListener('click',async()=>{
+ try{if(!navigator.clipboard?.writeText)throw Error('API indisponível');await navigator.clipboard.writeText(report());message.textContent='Relatório copiado. Cole na conversa ou em uma issue quando quiser.'}
+ catch{message.textContent='O navegador não permitiu copiar. Use “Baixar relatório .md”.'}
+});
+document.getElementById('download').addEventListener('click',()=>{
+ try{
+ const url=URL.createObjectURL(new Blob([report()],{type:'text/markdown;charset=utf-8'}));
+ const a=document.createElement('a');a.href=url;a.download='peren-m1hf6-playtest.md';document.body.append(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),2000);message.textContent='Relatório preparado para download. Nenhum dado foi enviado.'
+ }catch{message.textContent='O navegador não conseguiu baixar. Tente copiar o relatório.'}
+});
+document.getElementById('reset').addEventListener('click',()=>{
+ if(!confirm('Limpar somente as respostas deste formulário? O progresso do jogo não será afetado.'))return;
+ document.getElementById('device').value='';document.getElementById('browser').value='';document.getElementById('notes').value='';
+ for(const i of cases.keys())document.querySelector('input[name="check-'+i+'"][value="skip"]').checked=true;
+ update();message.textContent='Formulário limpo. Save do jogo intocado.'
+});
+update();
+})();
+</script>
+<script type="module" src="./field-gamepad.js"></script>
+</body></html>

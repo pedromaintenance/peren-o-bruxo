@@ -1,6 +1,6 @@
 // View model M1g-E. No combat or inventory transactions are performed here.
 import {maxClassicHp,maxClassicMp} from './progress.js';
-import {SPELLS} from './combat.js';
+import {SPELLS,BATTLE_MONSTERS} from './combat.js';
 export const ratio=(value,max)=>max>0?Math.round(100*Math.max(0,Math.min(1,value/max))):0;
 const hints={
   attack:'Ataque físico, resolvido pelo motor do combate.',
@@ -33,4 +33,41 @@ export function battleViewModel(s){
 export function fillGauge(doc,id,value,max){
  const bar=doc.getElementById(id);if(!bar)return;
  bar.style.width=ratio(value,max)+'%';bar.setAttribute('aria-valuenow',String(value));bar.setAttribute('aria-valuemax',String(max));
+}
+
+/** Canonical, read-only reward preview. Rewards are committed only on confirmation. */
+export function battleOutcomeViewModel(state,catalogs){
+ if(!state||state.status==='active')return null;
+ if(state.status==='won'){
+  const reward=BATTLE_MONSTERS[state.enemyId];
+  if(!reward)return {title:'Vitória',details:'Recompensa não encontrada no bestiário.',status:'warning'};
+  const itemName=catalogs?.itensById?.[reward.drop]?.nome||reward.drop;
+  return {title:'Vitória · saque a receber',details:`${reward.xp} XP · ${reward.gold} moedas · 1× ${itemName}`,
+   status:'won',gold:reward.gold,xp:reward.xp,drop:reward.drop};
+ }
+ if(state.status==='lost')return {title:'Derrota · resgate',details:'Sem XP ou saque. Peren retorna ferido.',status:'lost'};
+ if(state.status==='fled')return {title:'Retirada concluída',details:'Sem XP ou saque. O inimigo permanece na floresta.',status:'fled'};
+ return {title:'Desfecho',details:'Nenhuma recompensa prevista.',status:'warning'};
+}
+
+/** M1h-F.16 — Receipt for rewards already settled by the canonical engine.
+ * Read-only; it must never grant a reward, infer XP or change the save.
+ */
+export function battleReceiptViewModel({result,reward,applied}={},catalogs){
+ const resultName=result==='won'?'VITÓRIA':result==='lost'?'DERROTA':result==='fled'?'FUGA':'DESFECHO';
+ const noReward=result==='fled'?'Peren escapou sem XP, ouro ou saque.':result==='lost'
+   ?'Peren foi resgatado sem XP, ouro ou saque.':'Nenhuma recompensa foi concedida.';
+ if(result!=='won'||!reward||applied!==true){
+  const already=result==='won'?'Vitória já registrada. Nenhuma recompensa adicional foi concedida.':noReward;
+  return {title:resultName,kind:result==='won'?'warning':result||'unknown',
+    summary:already,lines:[already]};
+ }
+ const amount=value=>Number.isSafeInteger(value)&&value>=0?value:0;
+ const items=Object.entries(reward.items&&typeof reward.items==='object'?reward.items:{})
+   .filter(([,count])=>Number.isSafeInteger(count)&&count>0)
+   .map(([id,count])=>count+'× '+(catalogs?.itensById?.[id]?.nome||id));
+ const xp=amount(reward.xp),gold=amount(reward.gold);
+ const lines=['+'+xp+' XP','+'+gold+' moedas',...items];
+ const summary='Vitória! '+lines.join(', ')+'.';
+ return {title:'VITÓRIA · SAQUE RECEBIDO',kind:'won',summary,lines};
 }

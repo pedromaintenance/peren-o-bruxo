@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import {buildForest,reachableCells,TILE} from '../src/world.js';
 import {spawnMurinCreatures,MURIN_BEASTS,monsterDecision,canDetect,hasSight,environmentAt,safeRetreat,worldWeather} from '../src/encounters.js';
+import {RETREAT_GRACE_MS,tickRetreatGrace,retreatGraceActive,retreatGraceReadout} from '../src/retreat-grace.js';
 for(let i=0;i<100;i++)test(`M1b seed ${i} gera seis criaturas distintas e acessíveis`,()=>{
  const w=buildForest(`m1b-${i}`),beasts=spawnMurinCreatures(w),again=spawnMurinCreatures(w);const reachable=reachableCells(w);
  assert.equal(beasts.length,6);
@@ -42,4 +43,21 @@ test('recuo evita outras criaturas próximas',()=>{
  const safe=safeRetreat(w,{x:beasts[0].x,y:beasts[0].y},beasts[0],beasts.slice(1));
  assert.equal(environmentAt(w,safe.x,safe.y).walkable,true);
  for(const b of beasts)assert.ok(Math.hypot(safe.x-b.x,safe.y-b.y)>=TILE*5);
+});
+
+test('M1h-F.18: recuo protege tres segundos sem mutar regras puras de percepcao',()=>{
+ const world=buildForest('f18-safety'),beast=spawnMurinCreatures(world)[0];
+ const player={x:beast.x+5,y:beast.y};
+ const original=JSON.stringify(beast);
+ assert.equal(RETREAT_GRACE_MS,3000);
+ assert.equal(monsterDecision(world,beast,player,16).encounter,true);
+ assert.equal(retreatGraceActive(RETREAT_GRACE_MS),true);
+ assert.equal(tickRetreatGrace(3000,1000),2000);
+ assert.equal(retreatGraceReadout(1000).seconds,1);
+ assert.equal(tickRetreatGrace(1000,1001),0);
+ assert.equal(retreatGraceReadout(0),null);
+ assert.equal(retreatGraceActive(-1),false);
+ assert.equal(tickRetreatGrace(100,Number.NaN),100);
+ assert.equal(JSON.stringify(beast),original);
+ assert.equal(monsterDecision(world,beast,player,16).encounter,true,'AI default unchanged');
 });

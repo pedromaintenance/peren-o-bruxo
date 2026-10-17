@@ -36,7 +36,8 @@ try {
       day:a('hubDay').textContent,pv:a('hubHpValue').textContent,
       overflow:document.documentElement.scrollWidth-window.innerWidth,
       className:root.className,heroImage:image?.complete&&image.naturalWidth>0,
-      scene:getComputedStyle(scenic).backgroundImage,nav:a('hubNav').querySelectorAll('button').length,
+      scene:getComputedStyle(scenic).backgroundImage,
+      navButtons:[...a('hubNav').querySelectorAll('button')].map(b=>({id:b.id,hidden:b.hidden,disabled:b.disabled})),
       disabled:a('tutorsUnavailable').disabled,
       styles:getComputedStyle(a('hub')).backgroundColor,
       classic:JSON.parse(localStorage.getItem('peren_carcaca_save_v1')),
@@ -49,7 +50,32 @@ try {
   assert.ok(backdrop.w>500&&backdrop.h>250,'Arte do cenário não carregou: '+JSON.stringify(backdrop));
   const sceneImage=await page.locator('.m1g-scenery').evaluate(el=>getComputedStyle(el).backgroundImage);
   assert.match(sceneImage,/visao-carcaca\.webp/);
-  assert.equal(report.nav,6);assert.equal(report.disabled,true);
+  assert.equal(report.disabled,true);
+  for(const id of ['goForest','showCraft','showShop','openBagHub','endDayBtn']){
+    const button=report.navButtons.find(b=>b.id===id);
+    assert.ok(button&&!button.hidden&&!button.disabled,'Comando principal indisponível: '+id);
+  }
+  const optional=report.navButtons.find(b=>b.id==='showJournal');
+  assert.ok(optional,'Diário deve existir na estrutura da cidade');
+  const manual=report.navButtons.find(b=>b.id==='showGuide');
+  assert.ok(manual,'Manual deve existir na estrutura de Portomonte');
+  assert.equal(report.navButtons.filter(b=>!b.hidden&&!b.disabled).length,5+Number(!optional.hidden)+Number(!manual.hidden));
+  if(!optional.hidden){
+    await page.locator('#showJournal').click();
+    assert.equal(await page.locator('#journalUI').isVisible(),true);
+    await page.locator('#journalClose').click();
+    assert.equal(await page.locator('#journalUI').isVisible(),false);
+  }
+  if(!manual.hidden){
+    await page.locator('#showGuide').click();
+    assert.equal(await page.locator('#guideUI').isVisible(),true);
+    assert.equal(await page.locator('#guideTabs button').count(),4);
+    await page.locator('[data-guide-section="seguranca"]').click();
+    assert.match(await page.locator('#guideContent').textContent(),/Backup/);
+    assert.equal(await page.locator('#guideContent a[href="./teste.html"]').count(),1);
+    await page.keyboard.press('Escape');
+    assert.equal(await page.locator('#guideUI').isVisible(),false);
+  }
   assert.ok(report.overflow<=2,'Layout M1g ultrapassa viewport: '+report.overflow);
   assert.deepEqual(report.classic,original);
   await page.locator('#showCraft').click();
