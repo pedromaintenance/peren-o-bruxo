@@ -281,7 +281,7 @@ A página de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/p
 
 **Testar:** [Laboratório de Controles](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) · [Jogar Peren](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md).
 
-## M1h-F.16 — Recibo do Último Combate [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
+## M1h-F.16 — Recibo do Último Combate [PUBLICADA · QA PÚBLICO APROVADO · 17/10/2026]
 
 Depois da vitória, a Floresta de Mürin passa a mostrar materiais com **nomes do catálogo**, quantidade, XP e moedas realmente aplicados. Em Portomonte, o painel **Último combate** (fechado por padrão) permite consultar o resultado já liquidado. O recibo depende de `applied === true` e não escreve no save, inventa recompensas ou duplica pagamentos. O texto de vitória conserva o contrato anterior `Vitória! +N XP,`.
 
@@ -294,10 +294,10 @@ Depois da vitória, a Floresta de Mürin passa a mostrar materiais com **nomes d
 | F16-03 | Painel temporário no hub, sem transações ou mudanças no formato de save | **Publicado** |
 | F16-04 | Build e regressões dos comandos, seis vitórias, saves, PWA e combate | **Aprovado** — [CI final success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241); correções feitas após duas falhas de regressão anteriores |
 | F16-05 | Publicar somente pasta de prévia Phaser | **Concluído** — [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) |
-| F16-06 | Confirmar página pública, recibo, PWA e integridade dos saves | **QA público em execução** — [GitHub Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| F16-06 | Confirmar página pública, recibo, PWA e integridade dos saves | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919). Recibo real, seis vitórias, fuga/derrota, controle simulado, histórico, Diário, PWA offline, resiliência e recuperação de save |
 | F16-07 | Legibilidade no Android real | **Pendente de teste humano** |
 
-**Testar após implantação:** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · [documentação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/40-m1h-f-16-recibo.md).
+**Jogar — deploy e QA confirmados:** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · [documentação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/40-m1h-f-16-recibo.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -350,7 +350,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #39](https://github.com/pedromaintenance/peren-o-bruxo/pull/39) — M1h-F.13: consequências de comandos publicadas; [CI de build e Chromium aprovada](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993091341) e [QA público completo aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/38993593655).
 - [PR #40](https://github.com/pedromaintenance/peren-o-bruxo/pull/40) — M1h-F.14: Histórico da Batalha publicado com [QA no Pages aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254).
 - [PR #41](https://github.com/pedromaintenance/peren-o-bruxo/pull/41) — M1h-F.15: Laboratório de Controles na Bancada de Teste, [CI de build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) e [QA público completos](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855), com validação física ainda pendente.
-- [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) — M1h-F.16: recibo com nomes de saque canônicos e mensagem de vitória preservada; [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241) aprovada, QA público pendente.
+- [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) — M1h-F.16: recibo com nomes de saque canônicos e mensagem de vitória preservada; [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919) aprovados.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
