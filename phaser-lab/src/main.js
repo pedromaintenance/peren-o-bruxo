@@ -17,6 +17,7 @@ import {createJournalScreen} from './ui-journal.js';
 import {createGuideScreen} from './ui-guide.js';
 import {fieldAwareness} from './field-awareness.js';
 import {encounterReadout} from './encounter-readout.js';
+import {battleImpact} from './battle-impact.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -433,8 +434,45 @@ for(const button of battleOptions.filter(button=>button.dataset.battle.startsWit
  if(spell){button.title=actionDetails(button.dataset.battle);button.setAttribute('aria-label',spell.name+', '+spell.mana+' pontos de mana');}
 }
 $('battleFinish').addEventListener('click',()=>battleAction('finish'));
+let previousImpactState=null;
+const impactTimers=new Map();
+function showBattleImpact(id,change){
+  if(!change)return;
+  const el=$(id);if(!el)return;
+  el.hidden=false;
+  el.dataset.kind=change.kind;
+  el.textContent=(change.kind==='damage'?'−':'+')+change.amount+' PV';
+  el.classList.remove('m1hf-impact-animate');
+  // Force a CSS replay for consecutive hits on the same target.
+  void el.offsetWidth;
+  el.classList.add('m1hf-impact-animate');
+  if(impactTimers.has(id))clearTimeout(impactTimers.get(id));
+  impactTimers.set(id,setTimeout(()=>{
+    el.hidden=true;el.classList.remove('m1hf-impact-animate');impactTimers.delete(id);
+  },1000));
+}
+function clearBattleImpact(){
+  for(const timer of impactTimers.values())clearTimeout(timer);
+  impactTimers.clear();
+  for(const id of ['battleEnemyImpact','battleHeroImpact']){
+    const el=$(id);if(el){el.hidden=true;el.classList.remove('m1hf-impact-animate');}
+  }
+  previousImpactState=null;
+}
 function renderBattleState(state){
   if(!state)return;
+  if(M1HF_PREVIEW){
+    if(!previousImpactState||previousImpactState.key!==state.key)clearBattleImpact();
+    else{
+      const changes=battleImpact(previousImpactState,state);
+      if(changes){
+        showBattleImpact('battleEnemyImpact',changes.enemy);
+        showBattleImpact('battleHeroImpact',changes.hero);
+      }
+    }
+    previousImpactState={key:state.key,enemyHp:state.enemyHp,enemyMaxHp:state.enemyMaxHp,
+      hp:state.hp,maxHp:state.maxHp};
+  }
   $('battleRound').textContent=state.status==='active'?`RODADA ${state.round}`:'DESFECHO';
   const ui=battleViewModel(state);
   $('battleMonster').textContent=ui.monster+' · '+ui.enemyHp+'/'+ui.enemyMaxHp+' PV';
@@ -461,6 +499,7 @@ function renderBattleState(state){
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
 app.events.on('peren-battle-end',({result,reward,profile})=>{
+  clearBattleImpact();
   // Close first. Never leave the game frozen if the reward panel fails to render.
   $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
   try{
