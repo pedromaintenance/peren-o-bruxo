@@ -29,6 +29,7 @@ try{
     preview:localStorage.getItem('peren_phaser_save_m1hf_preview_v1'),
     state:JSON.stringify(window.__perenLab.registry.get('battleState'))
    }));
+   const initial=await page.evaluate(()=>window.__perenLab.registry.get('battleState'));
    const assertions=[
     ['defend',/4 PM.*52%/],
     ['potion',/até 36 PV/],
