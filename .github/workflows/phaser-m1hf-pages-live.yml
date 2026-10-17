@@ -1,5 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
-# Revalidação M1h-F.13 após PR #39; foco/hover e saves devem passar no site público.
+# Revalidação M1h-F.14 após PR #40; histórico e regressões verificadas no Pages.
 # QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
@@ -35,6 +35,7 @@ jobs:
                grep -q 'id="trailOrientation"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="encounterAssessment"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="battleEnemyImpact"' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="battleTranscript"' /tmp/peren-m1hf-index.html &&
                curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}demo-sw.js?check=$i" -o /tmp/peren-m1hf-qa-sw.js &&
                grep -q 'ignoreSearch:true' /tmp/peren-m1hf-qa-sw.js &&
                grep -Fq './teste.html' /tmp/peren-m1hf-qa-sw.js; then
@@ -93,6 +94,9 @@ jobs:
       - name: Conferir regras reais e indisponibilidade dos comandos no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-consequences-browser.mjs
+      - name: Conferir histórico volátil e isolado das batalhas no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-transcript-browser.mjs
       - name: Conferir impacto e dano do HUD em combates no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-impact-browser.mjs
