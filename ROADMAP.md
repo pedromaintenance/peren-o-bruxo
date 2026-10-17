@@ -281,6 +281,21 @@ A página de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/p
 
 **Testar:** [Laboratório de Controles](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) · [Jogar Peren](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md).
 
+## M1h-F.16 — Recibo do Último Combate [CANDIDATO · 17/10/2026]
+
+Após vencer, o aviso ao retornar à floresta deixará de mostrar IDs como `ing-hanging-moss`, exibindo quantidades e nomes canônicos dos itens efetivamente recebidos. Portomonte ganhará um pequeno painel **Último combate**, fechado por padrão, com o resultado liquidado de fato no motor. O `applied` do evento impede afirmar que houve nova recompensa numa transação já consumida.
+
+| ID | Critério de aceite | Estado |
+| --- | --- | --- |
+| F16-01 | Mensagens de saque com IDs resolvidos por `itensById`, XP, moedas e quantidade real | **Implementado na fonte experimental** |
+| F16-02 | Fuga/derrota sem recompensa; já reivindicado não vira recompensa adicional fictícia | **Implementado com testes Node** |
+| F16-03 | Recibo temporário consultável em Portomonte, sem gravação no save nem botões de pagamento | **Implementado, pendente Chromium** |
+| F16-04 | Testar duas viewports, vitória liquidada uma vez, integridade do clássico/M1d/M1h-F e regressões | **CI pendente** |
+| F16-05 | Publicar somente a prévia Phaser isolada e QA real no Pages | **Bloqueado até CI verde e auditoria** |
+| F16-06 | Legibilidade e interação no Android físico | **Pendente de teste humano** |
+
+**Fonte:** [commit F.16](https://github.com/pedromaintenance/peren-o-bruxo/commit/9f143052e5f1afa0460c2a8ed894b505ae564e3b) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/40-m1h-f-16-recibo.md). A PR #24 continua *draft*; o último build aprovado publicamente ainda é a M1h-F.15.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
