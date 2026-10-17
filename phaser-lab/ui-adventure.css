@@ -253,3 +253,20 @@
 @media(prefers-reduced-motion:reduce){
  #battleUI .m1hf-impact.m1hf-impact-animate{animation:none}
 }
+
+/* M1h-F.13 — combat command consequences, no changes to the buttons. */
+#battleUI #battleCommandHint[data-status="ready"]{
+ border-left-color:#a8c7ad;color:#eadcc4;line-height:1.5;
+}
+#battleUI #battleCommandHint[data-status="unavailable"]{
+ border-left-color:#c57771;color:#ffcfb8;background:#2d1d28;
+}
+@media(max-width:690px){
+ #battleUI #battleCommandHint{
+   max-height:58px;overflow-y:auto;overscroll-behavior:contain;
+   line-height:1.4;
+ }
+}
+@media(max-height:610px) and (orientation:landscape){
+ #battleUI #battleCommandHint{max-height:35px;overflow-y:auto}
+}

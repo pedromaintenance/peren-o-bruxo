@@ -18,6 +18,7 @@ import {createGuideScreen} from './ui-guide.js';
 import {fieldAwareness} from './field-awareness.js';
 import {encounterReadout} from './encounter-readout.js';
 import {battleImpact} from './battle-impact.js';
+import {commandConsequences} from './command-consequences.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -394,10 +395,20 @@ $('bagClose').addEventListener('click',()=>toggleBag(false));
 // but a completely isolated in-memory testing profile. Never reads Peren's save.
 let selectedBattleIndex=0;
 const battleOptions=[...document.querySelectorAll('[data-battle]')];
+let battleHintAction='attack';
+function updateBattleHint(action,state=app.registry.get('battleState')){
+ const target=$('battleCommandHint');
+ battleHintAction=action;
+ if(M1HF_PREVIEW){
+  const data=commandConsequences(action,state,bridge.state.learned);
+  target.textContent=data.text;
+  target.dataset.status=data.status;
+ }else target.textContent=actionDetails(action);
+}
 function selectBattleChoice(i){selectedBattleIndex=(i+battleOptions.length)%battleOptions.length;syncBattleButtons();}
 function syncBattleButtons(){battleOptions.forEach((b,i)=>b.classList.toggle('pad-selected',i===selectedBattleIndex));
  const selected=battleOptions[selectedBattleIndex];
- if(selected)$('battleCommandHint').textContent=actionDetails(selected.dataset.battle);
+ if(selected)updateBattleHint(selected.dataset.battle);
 }
 function activateBattleChoice(){const b=battleOptions[selectedBattleIndex];if(b&&!b.disabled)battleAction(b.dataset.battle);}
 function battleScene(){try{return app.scene.getScene('BattleScene')}catch{return null}}
@@ -426,8 +437,8 @@ async function battleAction(action){
 }
 for(const button of battleOptions){
  button.addEventListener('click',()=>battleAction(button.dataset.battle));
- button.addEventListener('focus',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
- button.addEventListener('pointerenter',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
+ button.addEventListener('focus',()=>updateBattleHint(button.dataset.battle));
+ button.addEventListener('pointerenter',()=>updateBattleHint(button.dataset.battle));
 }
 for(const button of battleOptions.filter(button=>button.dataset.battle.startsWith('spell:'))){
  const spell=SPELLS.find(spell=>spell.id===button.dataset.battle.slice(6));
@@ -495,6 +506,7 @@ function renderBattleState(state){
   battleOptions.forEach(b=>{
     b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&(!bridge.state.learned.includes(b.dataset.battle.slice(6))||state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0))) || (b.dataset.battle==='potion'&&state.potions<=0);
   });
+  if(M1HF_PREVIEW)updateBattleHint(battleHintAction,state);
 }
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});

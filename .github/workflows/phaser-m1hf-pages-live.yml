@@ -89,6 +89,9 @@ jobs:
       - name: Testar salvamento isolado no site real
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-pages-browser-check.mjs
+      - name: Conferir regras reais e indisponibilidade dos comandos no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-consequences-browser.mjs
       - name: Conferir impacto e dano do HUD em combates no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-impact-browser.mjs
