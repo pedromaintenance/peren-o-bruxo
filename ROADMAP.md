@@ -213,6 +213,22 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Jogar:** [Peren Phaser M1h-F.11](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). **Fonte/limites:** [docs/35-m1h-f-11-encontros.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/35-m1h-f-11-encontros.md).
 
+## M1h-F.12 — Impacto e dano legível no HUD de combate [FONTE IMPLEMENTADA · CI/RELEASE PENDENTES]
+
+O Phaser já exibe números de dano nos sprites e possui barras de PV, mas o HUD não destacava o **quanto de vida foi perdido ou recuperado**. A M1h-F.12 adiciona pequenos sinais **−X PV** e **+X PV** ao lado das barras reais do combate; a matemática da batalha, os efeitos e as recompensas **não mudam**.
+
+| ID | Entrega / critério | Estado |
+| --- | --- | --- |
+| F12-01 | Ler diferenças entre snapshots públicos de PV, somente para a mesma chave de encontro, sem calcular dano | **Implementado na fonte** — `battle-impact.js` |
+| F12-02 | Indicadores de dano/cura no HUD de Peren e do inimigo, com duração de 1 s, layout mobile e `prefers-reduced-motion` | **Implementado na prévia M1h-F**, sem alterações na cena ou IA |
+| F12-03 | Limpar indicadores no fim do combate ou troca de encontro; nenhum write em save, alteração de progressão ou controles | **Implementado** |
+| F12-04 | Testes Node para dano, cura, reinício de encontro, dados inválidos; Chromium 360×800, 390×844, 1280×800 com salva clássico/M1d/prévia separados | **Testes criados**, aguardando CI |
+| F12-05 | Publicação seletiva exclusiva do bundle `phaser-demo-m1hf/` após build/Chromium verde e diff auditado | **Pendente**, sem alterar clássico, M1d ou PR #24 draft |
+| F12-06 | QA público de impacto, seis vitórias, resiliência, Diário, save rescue e PWA offline | **Pendente** |
+| F12-07 | Validação física Android/Xbox, legibilidade e aprovação artística | **Pendente de playtest humano** |
+
+**Documento:** [docs/36-m1h-f-12-impacto.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/36-m1h-f-12-impacto.md). **Após release:** [prévia Phaser M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf).
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
