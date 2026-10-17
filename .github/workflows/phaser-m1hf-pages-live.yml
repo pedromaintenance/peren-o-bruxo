@@ -1,5 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
-# Revalidação M1h-F.15 após PR #41; laboratório de Gamepad e regressões no Pages.
+# Revalidação M1h-F.16 após PR #42; recibo de saque real e regressões no Pages.
 # QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
@@ -38,6 +38,7 @@ jobs:
                grep -q 'id="battleTranscript"' /tmp/peren-m1hf-index.html &&
                curl -fsSL --max-time 20 "${PAGES_BASE}teste.html?check=$i" -o /tmp/peren-m1hf-padtest.html &&
                grep -q 'id="padLab"' /tmp/peren-m1hf-padtest.html &&
+               grep -q 'id="hubBattleReceipt"' /tmp/peren-m1hf-index.html &&
                curl -fsSL --max-time 20 "${PAGES_BASE}field-gamepad.js" -o /tmp/peren-m1hf-pad.js &&
                curl -fsSL --max-time 20 "${PAGES_BASE}field-gamepad-adapter.js" -o /tmp/peren-m1hf-pad-adapter.js &&
                curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}demo-sw.js?check=$i" -o /tmp/peren-m1hf-qa-sw.js &&
@@ -101,6 +102,9 @@ jobs:
       - name: Conferir gamepad físico simulado e saves protegidos no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-gamepad-browser.mjs
+      - name: Conferir recibo real e não duplicação de saque no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-receipt-browser.mjs
       - name: Conferir histórico volátil e isolado das batalhas no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-transcript-browser.mjs
