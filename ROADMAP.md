@@ -299,7 +299,7 @@ Depois da vitória, a Floresta de Mürin passa a mostrar materiais com **nomes d
 
 **Jogar — deploy e QA confirmados:** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · [documentação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/40-m1h-f-16-recibo.md).
 
-## M1h-F.17 — Recibo acessível no celular [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 17/10/2026]
+## M1h-F.17 — Recibo acessível no celular [PUBLICADA · QA PÚBLICO APROVADO · 17/10/2026]
 
 O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitória/fuga/derrota). Área de toque mínima 48px, letras de 14px, quebra de palavras e suporte nativo a toque e teclado. Não há mudanças de motor, valores de recompensa, saves ou catálogo.
 
@@ -311,10 +311,10 @@ O resumo fechado do recibo em Portomonte agora exibe o desfecho efetivo (vitóri
 | Alvo de toque ≥48 px e fonte ≥14 px em 320×700, 360×800, 390×844, 844×390 | **Aprovado no Chromium de build** |
 | Abrir com toque/teclado, recompensa liquidada uma vez e saves isolados | **Aprovado no Chromium de build** |
 | Node/Vite e regressões completas de combate, PWA e histórico | **[CI success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977)** |
-| Página pública e regressões contra GitHub Pages | **Em execução** — [workflow de QA](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| Página pública e regressões contra GitHub Pages | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280), incluindo toque e teclado em quatro viewports, saque único, seis vitórias, resiliência, PWA offline, Diário e saves |
 | Android físico, TalkBack, teclado/controle físico e PWA no aparelho | **Pendente de playtest humano** |
 
-[**Testar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
+[**Jogar: deploy e QA confirmados**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/41-m1h-f-17-recibo-mobile.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
@@ -368,6 +368,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #40](https://github.com/pedromaintenance/peren-o-bruxo/pull/40) — M1h-F.14: Histórico da Batalha publicado com [QA no Pages aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39026858254).
 - [PR #41](https://github.com/pedromaintenance/peren-o-bruxo/pull/41) — M1h-F.15: Laboratório de Controles na Bancada de Teste, [CI de build](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033132391) e [QA público completos](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033495855), com validação física ainda pendente.
 - [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) — M1h-F.16: recibo com nomes de saque canônicos e mensagem de vitória preservada; [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919) aprovados.
+- [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) — F.17: recibo legível no celular e [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280) aprovados; Android físico ainda pendente.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
