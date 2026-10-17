@@ -264,6 +264,23 @@ Incremento posterior à M1h-F.13: painel consultável, fechado por padrão, exib
 
 **Jogar (publicação e QA confirmados):** https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf · **Fonte/especificação:** [docs/38-m1h-f-14-historico.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/38-m1h-f-14-historico.md). O código-fonte experimental continua separado.
 
+## M1h-F.15 — Laboratório de Controles [CANDIDATA · 17/10/2026]
+
+O formulário de [Teste de Campo](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html) passa a oferecer leitura local dos controles físicos pelo **mesmo `readXboxPad()` usado na exploração**: conexão, mapeamento, direcional/analógico, A/B/X/Y, Menu/View e corrida RT/RB/L3. Não envia telemetria, não lê ou grava nenhum save e não considera um controle simulado como aprovação de hardware.
+
+| ID | Entrega e critério | Estado |
+| --- | --- | --- |
+| F15-01 | Laboratório de Gamepad no Teste de Campo, sem tocar controles do jogo | **Implementado na fonte experimental** |
+| F15-02 | Importar o adaptador puro do próprio jogo e indicar ausência de dispositivo / mapeamento não padrão | **Implementado; aguardando CI** |
+| F15-03 | Testes com Gamepad API simulada em 360×800, 390×844, 1280×800; isolamento das três chaves de save | **Testes criados; aguardando execução** |
+| F15-04 | Empacotar e armazenar offline exclusivamente em `phaser-demo-m1hf/` | **Aguardando CI e auditoria** |
+| F15-05 | Publicar bundle isolado e revalidar no Pages, incluindo regressões existentes | **Não publicado nesta etapa** |
+| F15-06 | Verificar fisicamente Android, Xbox USB/Bluetooth e legibilidade | **Pendente de teste humano real** |
+
+**Código-fonte e escopo:** [commit F.15](https://github.com/pedromaintenance/peren-o-bruxo/commit/e59c2c33f11bedd7ef5719422aff3f4695f038c7) · [documento técnico](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/39-m1h-f-15-gamepad.md) · [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39033018227).
+
+A versão **F.14 continua publicada e testável** enquanto os critérios de release da F.15 não são atendidos.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
