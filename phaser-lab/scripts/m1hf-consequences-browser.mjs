@@ -39,10 +39,16 @@ try{
     ['spell:mag-misseis-magicos',/7 PM.*arcano/]
    ];
    for(const [action,pattern] of assertions){
-    const button=page.locator('[data-battle="'+action+'"]');
-    await button.focus();
-    assert.match(await page.locator('#battleCommandHint').textContent(),pattern,action+' consequence');
-    assert.equal(await button.isVisible(),true);
+    // Focus and capture synchronously so transient pointer hover cannot
+    // overwrite the selected hint between two Playwright awaits.
+    const result=await page.evaluate(action=>{
+      const button=document.querySelector('[data-battle="'+action+'"]');
+      button.focus({preventScroll:true});
+      return {text:document.querySelector('#battleCommandHint').textContent,
+        visible:!!button.getClientRects().length};
+    },action);
+    assert.match(result.text,pattern,action+' consequence');
+    assert.equal(result.visible,true);
    }
    // The actual action buttons become disabled when resources run out.
    // Focus while enabled, then emit a synthetic public state update, so the

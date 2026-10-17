@@ -438,7 +438,9 @@ async function battleAction(action){
 for(const button of battleOptions){
  button.addEventListener('click',()=>battleAction(button.dataset.battle));
  button.addEventListener('focus',()=>updateBattleHint(button.dataset.battle));
- button.addEventListener('pointerenter',()=>updateBattleHint(button.dataset.battle));
+ // Pointermove reflects intentional pointer input; pointerenter can fire
+ // during focus scroll/layout and override a keyboard or Xbox selection.
+ button.addEventListener('pointermove',()=>updateBattleHint(button.dataset.battle));
 }
 for(const button of battleOptions.filter(button=>button.dataset.battle.startsWith('spell:'))){
  const spell=SPELLS.find(spell=>spell.id===button.dataset.battle.slice(6));
