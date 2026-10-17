@@ -179,6 +179,21 @@ Em 16/10/2026 foi mesclada a [PR #32](https://github.com/pedromaintenance/peren-
 
 **Teste:** [Peren M1h-F.9](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Bancada de Teste](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/teste.html). **Documentação:** [docs/33-m1h-f-9-coleta.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/33-m1h-f-9-coleta.md). Fonte permanece na PR #24 *draft*.
 
+## M1h-F.10 — Marcos da Trilha / orientação para Portomonte [FONTE IMPLEMENTADA · CI/RELEASE PENDENTES]
+
+A floresta já possui estrada de terra, travessia de ponte e saída a leste, mas sair da estrada não fornece ao jogador orientação de retorno. Este incremento **não cria minimapa ou teleporte**: mostra pistas ambientais sobre os marcos já existentes e uma indicação de rumo aproximado.
+
+| ID | Entrega / critério | Estado |
+| --- | --- | --- |
+| F10-01 | Detectar por tiles reais da estrada quando Peren saiu da trilha, sem aumentar visão ou criar caminho livre de obstáculos | **Implementado na fonte** — `trail-orientation.js` |
+| F10-02 | Informar **Trilha de Mürin**, **Ponte de Mürin**, **Retorno a Portomonte**, **Fora da Trilha** e **Retorno à Vista** | **Implementado**, orientação aproximada sem radar |
+| F10-03 | HUD discreto de clima/marcos com atualização cacheada por tile; sem gravação de save nem alteração em `returnBtn` | **Implementado na prévia** |
+| F10-04 | Testes Node em seeds, ponte, trilha e saída com limiar estrito de 40 px; Chromium 360×800, 390×844, 1280×800 e isolamento dos três saves | **Escritos**, aguardando CI |
+| F10-05 | Publicar `phaser-demo-m1hf/` só após CI verde e diff seletivo em PR própria, mantendo clássico e demo M1d separados | **Pendente** |
+| F10-06 | QA público no Pages, Android e Xbox físicos e avaliação da legibilidade sem distração | **Pendente**, com QA automatizado separado do físico |
+
+**Fonte e especificação:** [docs/34-m1h-f-10-trilha.md](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/34-m1h-f-10-trilha.md). **Link da prévia após release:** [Peren Phaser M1h-F](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf). Não mesclar a PR #24 de fonte diretamente na `main`.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
