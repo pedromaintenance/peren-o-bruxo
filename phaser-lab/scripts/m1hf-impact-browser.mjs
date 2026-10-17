@@ -30,16 +30,23 @@ try{
     preview:localStorage.getItem('peren_phaser_save_m1hf_preview_v1')
    }));
    const initial=await page.evaluate(()=>window.__perenLab.registry.get('battleState'));
-   await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',state),{...initial,enemyHp:initial.enemyHp-7,hp:initial.hp-9});
+   // Read bounds synchronously in the SAME browser evaluation that emits the
+   // change. These ephemeral labels intentionally disappear after 1000 ms:
+   // an awaited Playwright boundingBox() can race that timer on slow runners.
+   const hitBoxes=await page.evaluate(state=>{
+    window.__perenLab.events.emit('peren-battle-change',state);
+    return ['battleEnemyImpact','battleHeroImpact'].map(id=>{
+     const el=document.getElementById(id),r=el.getBoundingClientRect();
+     return {visible:!el.hidden,x:r.x,width:r.width};
+    });
+   },{...initial,enemyHp:initial.enemyHp-7,hp:initial.hp-9});
+   for(const box of hitBoxes)
+    assert.ok(box.visible&&box.width>0&&box.x>=0&&box.x+box.width<=width+2,'HUD sai da tela '+width);
    await page.waitForFunction(()=>document.querySelector('#battleEnemyImpact').textContent.includes('7 PV'));
    assert.match(await page.locator('#battleEnemyImpact').textContent(),/7 PV/);
    assert.match(await page.locator('#battleHeroImpact').textContent(),/9 PV/);
    assert.equal(await page.locator('#battleEnemyImpact').getAttribute('data-kind'),'damage');
    assert.equal(await page.locator('#battleHeroImpact').getAttribute('data-kind'),'damage');
-   for(const id of ['battleEnemyImpact','battleHeroImpact']){
-    const box=await page.locator('#'+id).boundingBox();
-    assert.ok(box&&box.x>=0&&box.x+box.width<=width+2,'HUD sai da tela '+width);
-   }
    await page.evaluate(state=>window.__perenLab.events.emit('peren-battle-change',state),{...initial,enemyHp:initial.enemyHp-7,hp:initial.hp-2});
    await page.waitForFunction(()=>document.querySelector('#battleHeroImpact').textContent.includes('+7 PV'));
    assert.equal(await page.locator('#battleHeroImpact').getAttribute('data-kind'),'heal');
