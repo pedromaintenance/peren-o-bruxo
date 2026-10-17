@@ -295,3 +295,24 @@
 #hubBattleReceipt ul{list-style:square;margin:5px 0;padding-left:20px;font:12px/1.6 system-ui,sans-serif;overflow-wrap:anywhere}
 #hubBattleReceipt small{color:#bacac5;font:10px/1.5 system-ui,sans-serif}
 @media(max-width:500px){#hubBattleReceipt{padding:8px 10px}#hubBattleReceipt ul{font-size:11px}}
+
+/* M1h-F.17: phone-first settled reward receipt. Native details remains keyboard-accessible. */
+#hubBattleReceipt.m1hf-battle-receipt{
+  box-sizing:border-box;width:100%;max-width:100%;overflow-wrap:anywhere;
+}
+#hubBattleReceipt summary{
+  box-sizing:border-box;display:list-item;min-height:48px;padding:12px 9px;
+  font:700 14px/1.5 system-ui,sans-serif;letter-spacing:.01em;
+  color:#ffe2ab;touch-action:manipulation;
+}
+#hubBattleReceipt[open] summary{border-bottom:1px solid #8f957b;margin-bottom:10px}
+#hubBattleReceipt strong{font:800 14px/1.5 system-ui,sans-serif;color:#f9dfa9}
+#hubBattleReceipt li{font:500 14px/1.65 system-ui,sans-serif;color:#f0e7d7;padding-block:4px}
+#hubBattleReceipt small{display:block;margin-top:10px;font:12px/1.5 system-ui,sans-serif;color:#d1dfda}
+@media(max-width:500px){
+  #hubBattleReceipt.m1hf-battle-receipt{padding:10px 12px}
+  #hubBattleReceipt summary{min-height:48px;font-size:14px;padding:12px 8px}
+  #hubBattleReceipt ul{font-size:14px;line-height:1.65;padding-left:22px}
+  #hubBattleReceipt li{font-size:14px;line-height:1.65}
+}
+@media (prefers-reduced-motion:reduce){#hubBattleReceipt{scroll-behavior:auto}}

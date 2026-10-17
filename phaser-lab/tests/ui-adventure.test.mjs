@@ -107,3 +107,16 @@ test('M1h-F.16 painel da cidade so exibe dados ja resolvidos e nao cria botoes d
  assert.match(main,/panel\.hidden=false;panel\.open=false/);
  assert.doesNotMatch(html,/id="hubBattleReceiptClaim"/);
 });
+
+test('M1h-F.17 apresenta resultado no resumo do recibo sem nova transacao',()=>{
+ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ const src=readFileSync(new URL('../src/main.js',import.meta.url),'utf8');
+ const css=readFileSync(new URL('../ui-adventure.css',import.meta.url),'utf8');
+ assert.match(html,/id="hubBattleReceiptSummary"/);
+ assert.match(src,/hubBattleReceiptSummary/);
+ assert.match(src,/receipt\.title\+' · abrir recibo'/);
+ assert.match(css,/#hubBattleReceipt summary\{/);
+ assert.match(css,/min-height:48px/);
+ assert.match(css,/@media\(max-width:500px\)/);
+ assert.doesNotMatch(src,/hubBattleReceiptClaim/);
+});

@@ -539,6 +539,7 @@ app.events.on('peren-battle-end',({result,reward,applied,profile})=>{
       const panel=$('hubBattleReceipt');
       panel.hidden=false;panel.open=false;panel.dataset.kind=receipt.kind;
       $('hubBattleReceiptTitle').textContent=receipt.title;
+      $('hubBattleReceiptSummary').textContent='✦ ÚLTIMO COMBATE · '+receipt.title+' · abrir recibo';
       $('hubBattleReceiptList').replaceChildren(...receipt.lines.map(item=>{
         const li=document.createElement('li');li.textContent=item;return li;
       }));
