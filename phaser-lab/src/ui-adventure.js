@@ -68,6 +68,6 @@ export function battleReceiptViewModel({result,reward,applied}={},catalogs){
    .map(([id,count])=>count+'× '+(catalogs?.itensById?.[id]?.nome||id));
  const xp=amount(reward.xp),gold=amount(reward.gold);
  const lines=['+'+xp+' XP','+'+gold+' moedas',...items];
- const summary='Vitória registrada! '+lines.join(' · ')+'.';
+ const summary='Vitória! '+lines.join(', ')+'.';
  return {title:'VITÓRIA · SAQUE RECEBIDO',kind:'won',summary,lines};
 }
