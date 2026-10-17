@@ -9,7 +9,7 @@ import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
 import {createMarketplaceScreen} from './ui-marketplace.js';
-import {expeditionViewModel,battleViewModel,battleOutcomeViewModel,fillGauge,actionDetails} from './ui-adventure.js';
+import {expeditionViewModel,battleViewModel,battleOutcomeViewModel,battleReceiptViewModel,fillGauge,actionDetails} from './ui-adventure.js';
 import {M1HF_PREVIEW} from './progress.js';
 import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
 import {showPreviewSaveRecovery} from './save-recovery.js';
@@ -530,10 +530,19 @@ app.events.on('peren-battle-end',({result,reward,profile})=>{
   $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
   try{
     $('gatherBtn').focus({preventScroll:true});
+    const receipt=M1HF_PREVIEW?battleReceiptViewModel({result,reward,applied},catalogs):null;
     const itemLabel=reward?.items?Object.keys(reward.items).join(', '):'nenhum material';
-    const outcomeMessage=result==='won'&&reward
+    const outcomeMessage=receipt?.summary||(result==='won'&&reward
       ?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`
-      :'Retorno à floresta sem recompensa.';
+      :'Retorno à floresta sem recompensa.');
+    if(receipt){
+      const panel=$('hubBattleReceipt');
+      panel.hidden=false;panel.open=false;panel.dataset.kind=receipt.kind;
+      $('hubBattleReceiptTitle').textContent=receipt.title;
+      $('hubBattleReceiptList').replaceChildren(...receipt.lines.map(item=>{
+        const li=document.createElement('li');li.textContent=item;return li;
+      }));
+    }
     app.registry.set('status',outcomeMessage);
     $('feedback').textContent=outcomeMessage;
     $('combatWallet').textContent=`Vitórias: ${profile?.kills??0} · Ouro: ${profile?.gold??0} · Nível: ${profile?.level??1}`;

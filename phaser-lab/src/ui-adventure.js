@@ -49,3 +49,25 @@ export function battleOutcomeViewModel(state,catalogs){
  if(state.status==='fled')return {title:'Retirada concluída',details:'Sem XP ou saque. O inimigo permanece na floresta.',status:'fled'};
  return {title:'Desfecho',details:'Nenhuma recompensa prevista.',status:'warning'};
 }
+
+/** M1h-F.16 — Receipt for rewards already settled by the canonical engine.
+ * Read-only; it must never grant a reward, infer XP or change the save.
+ */
+export function battleReceiptViewModel({result,reward,applied}={},catalogs){
+ const resultName=result==='won'?'VITÓRIA':result==='lost'?'DERROTA':result==='fled'?'FUGA':'DESFECHO';
+ const noReward=result==='fled'?'Peren escapou sem XP, ouro ou saque.':result==='lost'
+   ?'Peren foi resgatado sem XP, ouro ou saque.':'Nenhuma recompensa foi concedida.';
+ if(result!=='won'||!reward||applied!==true){
+  const already=result==='won'?'Vitória já registrada. Nenhuma recompensa adicional foi concedida.':noReward;
+  return {title:resultName,kind:result==='won'?'warning':result||'unknown',
+    summary:already,lines:[already]};
+ }
+ const amount=value=>Number.isSafeInteger(value)&&value>=0?value:0;
+ const items=Object.entries(reward.items&&typeof reward.items==='object'?reward.items:{})
+   .filter(([,count])=>Number.isSafeInteger(count)&&count>0)
+   .map(([id,count])=>count+'× '+(catalogs?.itensById?.[id]?.nome||id));
+ const xp=amount(reward.xp),gold=amount(reward.gold);
+ const lines=['+'+xp+' XP','+'+gold+' moedas',...items];
+ const summary='Vitória registrada! '+lines.join(' · ')+'.';
+ return {title:'VITÓRIA · SAQUE RECEBIDO',kind:'won',summary,lines};
+}

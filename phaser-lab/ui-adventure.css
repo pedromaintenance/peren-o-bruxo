@@ -280,3 +280,18 @@
 #battleUI #battleTranscript li{padding:3px 1px;overflow-wrap:anywhere}
 #battleUI #battleTranscript li+li{border-top:1px solid #a08c5636}
 @media(max-width:390px){#battleUI #battleTranscript summary{min-height:32px;font-size:9px;padding:4px 8px}#battleUI #battleTranscript[open] ol{max-height:72px;font-size:10px}}
+/* M1h-F.16: last settled battle receipt in Portomonte. Read-only and collapsible. */
+#hubBattleReceipt[hidden]{display:none!important}
+#hubBattleReceipt.m1hf-battle-receipt{
+ margin:10px 0 0;padding:10px 12px;border:1px solid #a38b63;border-left:3px solid #c0a36c;
+ background:linear-gradient(145deg,#17323b,#0c1d28);color:#ebdec7;border-radius:5px;min-width:0;
+}
+#hubBattleReceipt[data-kind="won"]{border-left-color:#9ccaa8}
+#hubBattleReceipt[data-kind="lost"]{border-left-color:#d18e84}
+#hubBattleReceipt[data-kind="fled"],#hubBattleReceipt[data-kind="warning"]{border-left-color:#dbc18b}
+#hubBattleReceipt summary{cursor:pointer;font:700 12px/1.5 system-ui,sans-serif;color:#f0d9a3;min-height:33px;padding:6px 2px;overflow-wrap:anywhere}
+#hubBattleReceipt summary:focus-visible{outline:3px solid #ffe5b8;outline-offset:3px}
+#hubBattleReceipt strong{display:block;margin:7px 0;color:#efd3a1;font-size:12px}
+#hubBattleReceipt ul{list-style:square;margin:5px 0;padding-left:20px;font:12px/1.6 system-ui,sans-serif;overflow-wrap:anywhere}
+#hubBattleReceipt small{color:#bacac5;font:10px/1.5 system-ui,sans-serif}
+@media(max-width:500px){#hubBattleReceipt{padding:8px 10px}#hubBattleReceipt ul{font-size:11px}}
