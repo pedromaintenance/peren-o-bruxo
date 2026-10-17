@@ -103,6 +103,7 @@ test('M1h-F.16 painel da cidade so exibe dados ja resolvidos e nao cria botoes d
  const main=readFileSync(new URL('../src/main.js',import.meta.url),'utf8');
  assert.match(html,/id="hubBattleReceipt"/);assert.match(html,/id="hubBattleReceiptList"/);
  assert.match(main,/battleReceiptViewModel\(\{result,reward,applied\},catalogs\)/);
+ assert.match(main,/app\.events\.on\('peren-battle-end',\(\{result,reward,applied,profile\}\)=>\{/);
  assert.match(main,/panel\.hidden=false;panel\.open=false/);
  assert.doesNotMatch(html,/id="hubBattleReceiptClaim"/);
 });
