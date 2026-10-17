@@ -316,3 +316,14 @@
   #hubBattleReceipt li{font-size:14px;line-height:1.65}
 }
 @media (prefers-reduced-motion:reduce){#hubBattleReceipt{scroll-behavior:auto}}
+
+/* M1h-F.18: temporary, non-persistent safe repositioning window after retreat. */
+#retreatGraceNotice[hidden]{display:none!important}
+#controls #retreatGraceNotice.m1hf-retreat-grace{
+ display:block;box-sizing:border-box;width:100%;margin-top:6px;
+ padding:8px 10px;min-height:35px;border:1px solid #a9c0a1;
+ border-left:3px solid #d5e6ae;border-radius:4px;background:#15302cf0;
+ color:#edf3d5;font:700 12px/1.45 system-ui,sans-serif;
+ overflow-wrap:anywhere;pointer-events:none;
+}
+@media(max-width:390px){#controls #retreatGraceNotice.m1hf-retreat-grace{font-size:11px}}

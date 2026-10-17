@@ -4,6 +4,8 @@ import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmen
 import {encounterKey,defaultProfile} from './combat.js';
 import {harvestProximity} from './harvest-proximity.js';
 import {trailOrientation} from './trail-orientation.js';
+import {RETREAT_GRACE_MS,tickRetreatGrace,retreatGraceActive} from './retreat-grace.js';
+const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
@@ -36,6 +38,8 @@ export class ExplorationScene extends Phaser.Scene {
     this.registry.set('harvestCue',null);
     this.trailCellSignature=undefined;
     this.registry.set('trailCue',null);
+    this.retreatGraceMs=0;this.lastGraceSeconds=0;
+    this.registry.set('retreatGrace',0);
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
     this.cameras.main.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
@@ -129,7 +133,8 @@ export class ExplorationScene extends Phaser.Scene {
       Object.assign(beast,decision.next);
       if(decision.detected)highest++;
       if(beast.state==='investigacao')investigating++;
-      if(decision.encounter){this.openEncounter(beast);return;}
+      // Preview-only contact shield: the beasts still perceive and pursue normally.
+      if(decision.encounter && !(ISOLATED_PREVIEW && retreatGraceActive(this.retreatGraceMs))){this.openEncounter(beast);return;}
       const target=beast.target;
       const walk=target?Math.hypot(target.x-spr.x,target.y-spr.y):0;
       const speed=beast.state==='perseguicao'?beast.speed*1.15:beast.state==='retirada'?beast.speed*.85:beast.speed*.65;
@@ -171,6 +176,12 @@ export class ExplorationScene extends Phaser.Scene {
     this.scene.launch('BattleScene',{beast:{type:beast.type,name:beast.name,instanceId:beast.instanceId},key});
     return true;
   }
+  beginRetreatGrace(){
+    if(!ISOLATED_PREVIEW)return;
+    this.retreatGraceMs=RETREAT_GRACE_MS;
+    this.lastGraceSeconds=Math.ceil(RETREAT_GRACE_MS/1000);
+    this.registry.set('retreatGrace',this.retreatGraceMs);
+  }
   finishCombat(outcome){
     const beast=this.activeEncounter;
     if(!beast){this.scene.resume();return false;}
@@ -184,6 +195,7 @@ export class ExplorationScene extends Phaser.Scene {
       this.player.body.reset(safe.x,safe.y);
       beast.cooldown=14000;beast.state='retirada';beast.lastSeen=null;
       beast.sprite.body.reset(beast.sprite.x,beast.sprite.y);
+      this.beginRetreatGrace();
       this.registry.set('status',outcome==='fled'?'Peren escapou. Nenhuma recompensa concedida.':'Peren foi resgatado. Nenhuma recompensa concedida.');
     }
     this.activeEncounter=null;
@@ -196,6 +208,7 @@ export class ExplorationScene extends Phaser.Scene {
     this.player.body.reset(safe.x,safe.y);
     beast.cooldown=10000;beast.state='retirada';beast.lastSeen=null;
     beast.sprite.body.reset(beast.sprite.x,beast.sprite.y);
+    this.beginRetreatGrace();
     this.activeEncounter=null;
     this.registry.set('encounter',null);
     this.registry.set('status',`Você recuou de ${beast.name}. Nenhum XP, ouro ou loot foi concedido.`);
@@ -243,6 +256,14 @@ export class ExplorationScene extends Phaser.Scene {
   command(action){if(action==='gather')this.collect();if(action==='sprint')this.sprintTouch=true;if(action==='walk')this.sprintTouch=false;}
   update(_t,delta){
     if(!this.player)return;
+    if(ISOLATED_PREVIEW && retreatGraceActive(this.retreatGraceMs)){
+      this.retreatGraceMs=tickRetreatGrace(this.retreatGraceMs,delta);
+      const seconds=Math.ceil(this.retreatGraceMs/1000);
+      if(seconds!==this.lastGraceSeconds){
+        this.lastGraceSeconds=seconds;
+        this.registry.set('retreatGrace',this.retreatGraceMs);
+      }
+    }
     this.updateHarvestCue();
     this.updateTrailCue();
     if(this.isGathering||this.activeEncounter)return;

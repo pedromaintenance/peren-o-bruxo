@@ -20,6 +20,7 @@ import {encounterReadout} from './encounter-readout.js';
 import {battleImpact} from './battle-impact.js';
 import {commandConsequences} from './command-consequences.js';
 import {createBattleTranscript} from './battle-transcript.js';
+import {retreatGraceReadout} from './retreat-grace.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -169,6 +170,16 @@ function updateHud(){
   $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
+  if(M1HF_PREVIEW){
+    const grace=retreatGraceReadout(app.registry.get('retreatGrace'));
+    const hint=$('retreatGraceNotice');
+    const signature=grace?String(grace.seconds):'';
+    if(hint.dataset.seconds!==signature){
+      hint.dataset.seconds=signature;
+      hint.hidden=!grace;
+      hint.textContent=grace?'⌁ '+grace.title+' · '+grace.detail:'';
+    }
+  }
   if(M1HF_PREVIEW){
     const mark=$('trailOrientation'),cue=app.registry.get('trailCue');
     const next=cue?`${cue.phase}:${cue.label}:${cue.hint}`:'';
