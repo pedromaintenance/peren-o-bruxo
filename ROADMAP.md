@@ -334,23 +334,24 @@ Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md).
 
-## M1h-F.19 — Passos Silenciosos [CANDIDATA EM VALIDAÇÃO · 19/10/2026]
+## M1h-F.19 — Passos Silenciosos [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 19/10/2026]
 
-A Floresta de Mürin ganha uma **nova escolha tática real**, exclusiva da prévia Phaser: andar silenciosamente a 82 unidades/s (em vez de 135) reduz o alcance efetivo de detecção das criaturas em 1,35 tiles. O terreno, a neblina e a cobertura continuam funcionando; correr tem prioridade e mantém a maior exposição. Esta mecânica não dá invisibilidade nem novos bônus de combate.
+Nova mecânica real de furtividade na Floresta de Mürin, **somente na prévia Phaser**. Modo discreto reduz velocidade de 135 para **82 unidades/s** e o alcance de percepção dos inimigos em **1,35 tiles**; distância, cobertura, neblina e obstáculos continuam aplicando suas regras. Corrida (205 unidades/s) sempre prevalece e é ruidosa, sem bônus de invisibilidade ou ataque furtivo.
 
-**Controles:** manter `C` no teclado, manter `LT` no Xbox ou alternar o botão `◈ DISCRETO` no celular. O HUD sinaliza a postura, sem gravação no save.
+**Controles:** `C` mantido no teclado; `LT` mantido no Xbox; botão `◈ DISCRETO` alternável no celular. HUD informa a postura. Nenhum save, comércio, ouro, saque, dano ou custo de magias foi alterado.
 
-| Aceite | Estado |
+**Publicação:** [PR #45](https://github.com/pedromaintenance/peren-o-bruxo/pull/45), mesclada em `main` (commit `eafb263`). Diff auditado exclusivamente dentro de `phaser-demo-m1hf/` (JS/CSS versionados, índice, cache offline e adaptador Xbox). Fonte experimental na PR #24 continua *draft*.
+
+| Critério de aceite | Estado |
 | --- | --- |
-| Movimento furtivo reduz velocidade e o alcance **real** da IA | **Implementado na fonte experimental** |
-| Corrida tem prioridade; não muda line-of-sight, combate ou regras normais sem sneak | **Testes Node adicionados** |
-| Controle C/LT/toque e botão com `aria-pressed`; HUD e leitura do ambiente | **Implementados, pendente CI** |
-| Navegador 360×800, 390×844, 1280×800 e isolamento dos três saves | **Smoke criado; pendente Chromium** |
-| Build e regressão de seis vitórias, fuga, PWA offline e erros | **Aguardando CI** |
-| Publicar somente bundle experimental + QA público completo | **Bloqueado até CI e auditoria** |
-| Android/Xbox físico e balanceamento por jogador | **Pendente de playtest humano** |
+| Furtividade reduz velocidade e a percepção efetiva da IA, sem mudar linha de visão | **Implementado e publicado** |
+| Corrida vence furtividade, mas não remove cobertura/névoa | **Testes Node aprovados** |
+| Teclado C, LT Xbox e botão touch; HUD e leitura tática | **Implementado no bundle** |
+| Node/Vite/Chromium em 360/390/1280px, detecção e saves protegidos | **[CI candidato: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39346802332)** após correção de sincronização do teste HUD |
+| QA completo do GitHub Pages após publicação | **Em execução** — [workflow live](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| Android e Xbox físicos e ajuste do balanço da furtividade | **Pendente de teste humano** |
 
-[**Commit experimental F.19**](https://github.com/pedromaintenance/peren-o-bruxo/commit/0f86543fb87256f9ef956725b021fc21bd6a47ab) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md) · [Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions). A PR #24 continua *draft*. A release F.18 permanece em produção enquanto a nova versão é validada.
+[**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md).
 
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
