@@ -334,6 +334,24 @@ Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md).
 
+## M1h-F.19 — Passos Silenciosos [CANDIDATA EM VALIDAÇÃO · 19/10/2026]
+
+A Floresta de Mürin ganha uma **nova escolha tática real**, exclusiva da prévia Phaser: andar silenciosamente a 82 unidades/s (em vez de 135) reduz o alcance efetivo de detecção das criaturas em 1,35 tiles. O terreno, a neblina e a cobertura continuam funcionando; correr tem prioridade e mantém a maior exposição. Esta mecânica não dá invisibilidade nem novos bônus de combate.
+
+**Controles:** manter `C` no teclado, manter `LT` no Xbox ou alternar o botão `◈ DISCRETO` no celular. O HUD sinaliza a postura, sem gravação no save.
+
+| Aceite | Estado |
+| --- | --- |
+| Movimento furtivo reduz velocidade e o alcance **real** da IA | **Implementado na fonte experimental** |
+| Corrida tem prioridade; não muda line-of-sight, combate ou regras normais sem sneak | **Testes Node adicionados** |
+| Controle C/LT/toque e botão com `aria-pressed`; HUD e leitura do ambiente | **Implementados, pendente CI** |
+| Navegador 360×800, 390×844, 1280×800 e isolamento dos três saves | **Smoke criado; pendente Chromium** |
+| Build e regressão de seis vitórias, fuga, PWA offline e erros | **Aguardando CI** |
+| Publicar somente bundle experimental + QA público completo | **Bloqueado até CI e auditoria** |
+| Android/Xbox físico e balanceamento por jogador | **Pendente de playtest humano** |
+
+[**Commit experimental F.19**](https://github.com/pedromaintenance/peren-o-bruxo/commit/0f86543fb87256f9ef956725b021fc21bd6a47ab) · [especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md) · [Actions](https://github.com/pedromaintenance/peren-o-bruxo/actions). A PR #24 continua *draft*. A release F.18 permanece em produção enquanto a nova versão é validada.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
