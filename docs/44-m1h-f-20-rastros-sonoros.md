@@ -13,7 +13,7 @@ A F.19 introduziu a escolha entre andar discretamente ou correr, mas a corrida s
 ## Testes
 - [x] Node: parede bloqueia visão, corrida audível causa investigação, som por si só não causa encontro, cooldown e detecção visual prevalecem, investigação termina ao chegar no destino.
 - [x] Smoke Chromium em 360×800, 390×844 e 1280×800 criado: monstro real atrás de parede, corrida real, silêncio posterior, HUD, ausência de combate e integridade dos saves.
-- [ ] CI completo Node/Vite/Chromium candidato.
-- [ ] Publicação restrita a `phaser-demo-m1hf/` após auditoria do diff.
-- [ ] QA público completo com saves, combate e PWA offline.
+- [x] [CI completo Node/Vite/Chromium candidato aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39349599574).
+- [x] [PR #46](https://github.com/pedromaintenance/peren-o-bruxo/pull/46) mesclada: somente o bundle JS, índice e cache offline em `phaser-demo-m1hf/`.
+- [x] [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39350150632): investigação sonora atrás de obstáculos, seis vitórias, resiliência, Diário, PWA offline e saves.
 - [ ] Balanceamento e Android/Xbox físicos: playtest humano pendente.
