@@ -353,7 +353,7 @@ Nova mecânica real de furtividade na Floresta de Mürin, **somente na prévia P
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md).
 
-## M1h-F.20 — Rastros Sonoros [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 19/10/2026]
+## M1h-F.20 — Rastros Sonoros [PUBLICADA · QA PÚBLICO APROVADO · 19/10/2026]
 
 Na Floresta de Mürin, correr **com movimento real** emite passos audíveis a até **3,25 tiles**, mesmo atrás de obstáculos visuais. A criatura vai investigar a última posição ouvida; quando Peren para, deixa de produzir novas pistas, mas a investigação existente continua até o destino. **Audição não concede visão nem inicia combate sozinha.** Visão direta, cobertura, cooldown de recuo e regras de combate continuam tendo prioridade.
 
@@ -367,7 +367,7 @@ O painel de discrição indica **BARULHO NA MATA** para criaturas que escutaram,
 | Parar ou correr parado não produz novas pistas; investigação segue seu destino | **Aprovado por testes de lógica** |
 | HUD distingue audição de perseguição visual | **Implementado e testado no build** |
 | Node/Vite/Chromium e regressões incluindo seis vitórias, saves e PWA | **[CI completo success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39349599574)** |
-| QA público da F.20 após deploy | **Em execução** — [workflow de Pages](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| QA público da F.20 após deploy | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39350150632). Audição atrás de parede, ausência de visão/combate por som, três viewports, seis vitórias, fuga/derrota, controles, resiliência, Diário, PWA offline e integridade dos saves |
 | Android/Xbox físicos e balanceamento do ruído | **Pendente de teste humano** |
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [documentação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/44-m1h-f-20-rastros-sonoros.md).
@@ -427,6 +427,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) — F.17: recibo legível no celular e [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280) aprovados; Android físico ainda pendente.
 - [PR #44](https://github.com/pedromaintenance/peren-o-bruxo/pull/44) — F.18: Janela de Recuo Seguro, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39046019277) aprovados; teste Android/Xbox físicos pendente.
 - [PR #45](https://github.com/pedromaintenance/peren-o-bruxo/pull/45) — F.19: Passos Silenciosos, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39346802332) e [QA do Pages](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39347684596) aprovados; validação física e balanceamento humano pendentes.
+- [PR #46](https://github.com/pedromaintenance/peren-o-bruxo/pull/46) — F.20: Rastros Sonoros publicados, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39349599574) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39350150632) aprovados; Android/Xbox e balanço humano pendentes.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
