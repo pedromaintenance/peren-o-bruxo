@@ -1,5 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
-# Revalidação M1h-F.19 após PR #45; furtividade real e regressões no Pages.
+# Revalidação M1h-F.20 após PR #46; rastros sonoros e regressões no Pages.
 # QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
@@ -106,6 +106,9 @@ jobs:
       - name: Conferir gamepad físico simulado e saves protegidos no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-gamepad-browser.mjs
+      - name: Conferir som de corrida e investigacao sem visao no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-noise-browser.mjs
       - name: Conferir passos silenciosos e regra real de percepcao no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-stealth-browser.mjs
