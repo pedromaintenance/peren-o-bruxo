@@ -27,6 +27,9 @@ try{
    assert.equal(await button.getAttribute('aria-pressed'),'false');
    await button.click();
    await page.waitForFunction(()=>window.__perenLab.registry.get('sneakState')?.active===true,null,{timeout:5000});
+   // Phaser applies the posture before the next DOM HUD refresh.
+   // Wait for that refresh instead of asserting within the same frame.
+   await page.waitForFunction(()=>document.querySelector('#sneakBtn')?.getAttribute('aria-pressed')==='true',null,{timeout:5000});
    assert.equal(await button.getAttribute('aria-pressed'),'true');
    const state=await page.evaluate(()=>{
     const s=window.__perenLab.scene.getScene('ExplorationScene');
