@@ -1,5 +1,5 @@
 name: Peren M1h-F - verificar prototipo online no Pages
-# Revalidação M1h-F.18 após PR #44; janela de recuo e regressões no Pages.
+# Revalidação M1h-F.19 após PR #45; furtividade real e regressões no Pages.
 # QA M1h-F.12: browser test measures short-lived HP cues synchronously.
 on:
   push:
@@ -41,6 +41,8 @@ jobs:
                grep -q 'id="hubBattleReceipt"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="hubBattleReceiptSummary"' /tmp/peren-m1hf-index.html &&
                grep -q 'id="retreatGraceNotice"' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="sneakBtn"' /tmp/peren-m1hf-index.html &&
+               grep -q 'id="sneakNotice"' /tmp/peren-m1hf-index.html &&
                curl -fsSL --max-time 20 "${PAGES_BASE}field-gamepad.js" -o /tmp/peren-m1hf-pad.js &&
                curl -fsSL --max-time 20 "${PAGES_BASE}field-gamepad-adapter.js" -o /tmp/peren-m1hf-pad-adapter.js &&
                curl -fsSL --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_BASE}demo-sw.js?check=$i" -o /tmp/peren-m1hf-qa-sw.js &&
@@ -104,6 +106,9 @@ jobs:
       - name: Conferir gamepad físico simulado e saves protegidos no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-gamepad-browser.mjs
+      - name: Conferir passos silenciosos e regra real de percepcao no Pages
+        working-directory: phaser-lab
+        run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-stealth-browser.mjs
       - name: Conferir recuo seguro contra novos encontros no Pages
         working-directory: phaser-lab
         run: PEREN_PREVIEW_URL="$PAGES_BASE" node scripts/m1hf-retreat-browser.mjs
