@@ -12,6 +12,6 @@ A Floresta de Mürin agora oferece **uma escolha tática real**: movimento lento
 ## Testes
 - [x] Testes Node: detecção e prioridade da corrida, controle LT, velocidade, status do ambiente e não-mutação das regras originais.
 - [x] Chromium criado: 360×800, 390×844 e 1280×800, clique do botão, velocidade real, prioridade corrida, saves isolados.
-- [ ] CI completo Node/Vite/Chromium.
-- [ ] Release isolada em `phaser-demo-m1hf/`, auditada e validada no Pages.
+- [x] [CI completo Node/Vite/Chromium aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39346802332). A primeira execução identificou sincronização incorreta no teste do HUD; corrigido antes da aprovação.
+- [x] [PR #45](https://github.com/pedromaintenance/peren-o-bruxo/pull/45) mesclada exclusivamente em `phaser-demo-m1hf/`; [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39347684596), incluindo controles, furtividade, seis vitórias, Diário, PWA e saves.
 - [ ] Teste humano Xbox real, Android físico e balanço da perseguição.
