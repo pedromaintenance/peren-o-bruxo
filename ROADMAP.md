@@ -334,7 +334,7 @@ Após recuar de um encontro, fugir durante o combate ou sofrer um resgate, Peren
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/42-m1h-f-18-recuo-seguro.md).
 
-## M1h-F.19 — Passos Silenciosos [PUBLICADA · QA PÚBLICO EM EXECUÇÃO · 19/10/2026]
+## M1h-F.19 — Passos Silenciosos [PUBLICADA · QA PÚBLICO APROVADO · 19/10/2026]
 
 Nova mecânica real de furtividade na Floresta de Mürin, **somente na prévia Phaser**. Modo discreto reduz velocidade de 135 para **82 unidades/s** e o alcance de percepção dos inimigos em **1,35 tiles**; distância, cobertura, neblina e obstáculos continuam aplicando suas regras. Corrida (205 unidades/s) sempre prevalece e é ruidosa, sem bônus de invisibilidade ou ataque furtivo.
 
@@ -348,7 +348,7 @@ Nova mecânica real de furtividade na Floresta de Mürin, **somente na prévia P
 | Corrida vence furtividade, mas não remove cobertura/névoa | **Testes Node aprovados** |
 | Teclado C, LT Xbox e botão touch; HUD e leitura tática | **Implementado no bundle** |
 | Node/Vite/Chromium em 360/390/1280px, detecção e saves protegidos | **[CI candidato: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39346802332)** após correção de sincronização do teste HUD |
-| QA completo do GitHub Pages após publicação | **Em execução** — [workflow live](https://github.com/pedromaintenance/peren-o-bruxo/actions/workflows/phaser-m1hf-pages-live.yml) |
+| QA completo do GitHub Pages após publicação | **Aprovado** — [QA público completo: success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39347684596). Furtividade, velocidade, corrida, três viewports, saves, seis vitórias, recuo, resiliência, Diário, PWA offline e recuperação de backups |
 | Android e Xbox físicos e ajuste do balanço da furtividade | **Pendente de teste humano** |
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md).
@@ -407,6 +407,7 @@ Ao relatar crash, informar **a ação que o precedeu**, inimigo, navegador/dispo
 - [PR #42](https://github.com/pedromaintenance/peren-o-bruxo/pull/42) — M1h-F.16: recibo com nomes de saque canônicos e mensagem de vitória preservada; [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39035571241) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39036357919) aprovados.
 - [PR #43](https://github.com/pedromaintenance/peren-o-bruxo/pull/43) — F.17: recibo legível no celular e [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038270977) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39038695280) aprovados; Android físico ainda pendente.
 - [PR #44](https://github.com/pedromaintenance/peren-o-bruxo/pull/44) — F.18: Janela de Recuo Seguro, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39045454819) e [QA público](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39046019277) aprovados; teste Android/Xbox físicos pendente.
+- [PR #45](https://github.com/pedromaintenance/peren-o-bruxo/pull/45) — F.19: Passos Silenciosos, [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39346802332) e [QA do Pages](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39347684596) aprovados; validação física e balanceamento humano pendentes.
 - [Fluxos de teste M1h-F](https://github.com/pedromaintenance/peren-o-bruxo/actions) — CI; verificar a execução específica antes de declarar uma revisão como aprovada.
 
 **Regra para atualizar este arquivo:** cada incremento deve registrar escopo, estado real, critérios de aceite, PR/commit, ambiente publicado e pendências de QA, com linguagem que distinga claramente `source`, `bundle Pages` e `release clássico`.
