@@ -3,9 +3,10 @@
  * from existing movement/perception data. No stealth roll, save fields or
  * new creature sensing is introduced by this module.
  */
-export function fieldAwareness({cover=false,wet=false,sprint=false,sneak=false,weather='sereno',detected=0,investigating=0}={}){
+export function fieldAwareness({cover=false,wet=false,sprint=false,sneak=false,weather='sereno',detected=0,investigating=0,heard=0}={}){
  const chased=Number.isFinite(detected)?Math.max(0,Math.floor(detected)):0;
  const searching=Number.isFinite(investigating)?Math.max(0,Math.floor(investigating)):0;
+ const listening=Number.isFinite(heard)?Math.max(0,Math.floor(heard)):0;
  const fog=weather==='neblina';
  const conditions=[];
  if(cover)conditions.push('Folhagem dificulta a detecção');
@@ -17,6 +18,8 @@ export function fieldAwareness({cover=false,wet=false,sprint=false,sneak=false,w
  if(chased>0)return {
   state:'danger',title:'CAÇADO',detail:chased===1?'Uma criatura detectou Peren. '+detail:`${chased} criaturas detectaram Peren. ${detail}`
  };
+ if(listening>0)return {state:'warning',title:'BARULHO NA MATA',
+  detail:(listening===1?'Uma criatura ouviu os passos de Peren. ':listening+' criaturas ouviram os passos de Peren. ')+detail};
  if(searching>0)return {state:'warning',title:'RASTROS RECENTES',
   detail:'Uma criatura investiga o último paradeiro de Peren. '+detail};
  if(sprint)return {state:'warning',title:'PASSOS RUIDOSOS',detail};

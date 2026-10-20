@@ -79,6 +79,7 @@ jobs:
           node scripts/m1hf-receipt-mobile-browser.mjs
           node scripts/m1hf-retreat-browser.mjs
           node scripts/m1hf-stealth-browser.mjs
+          node scripts/m1hf-noise-browser.mjs
           node scripts/m1hf-browser-check.mjs
           node scripts/m1hf-compare-browser.mjs
           node scripts/m1hf-journal-browser.mjs

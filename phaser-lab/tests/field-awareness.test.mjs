@@ -39,3 +39,14 @@ test('F.19: leitura silenciosa é informativa; sprint continua avisando ruído',
  const run=fieldAwareness({sneak:true,sprint:true});
  assert.equal(run.title,'PASSOS RUIDOSOS');
 });
+
+test('F.20: relato de som é separado de detecção visual e de rastro antigo',()=>{
+ const heard=fieldAwareness({sprint:true,heard:2,detected:0,investigating:2});
+ assert.equal(heard.title,'BARULHO NA MATA');
+ assert.equal(heard.state,'warning');
+ assert.match(heard.detail,/2 criaturas ouviram/);
+ assert.doesNotMatch(heard.detail,/detectaram/);
+ assert.equal(fieldAwareness({sprint:true,heard:1,detected:1}).title,'CAÇADO');
+ assert.equal(fieldAwareness({sprint:false,heard:0,investigating:1}).title,'RASTROS RECENTES');
+ assert.equal(fieldAwareness({sprint:true,heard:-1}).title,'PASSOS RUIDOSOS');
+});

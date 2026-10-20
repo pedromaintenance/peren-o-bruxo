@@ -130,12 +130,16 @@ export class ExplorationScene extends Phaser.Scene {
     const player={x:this.player.x,y:this.player.y};
     const running=this.key.SHIFT.isDown||this.sprintTouch||this.gamepadInput?.sprint;
     const sneaking=ISOLATED_PREVIEW&&Boolean(this.sneakingEffective);
-    let highest=0,investigating=0;
+    // Movement, not merely a held sprint key, makes audible footsteps.
+    const moving=Math.hypot(this.player.body?.velocity?.x||0,this.player.body?.velocity?.y||0)>40;
+    const noise=ISOLATED_PREVIEW&&Boolean(running&&moving);
+    let highest=0,investigating=0,heardCount=0;
     for(let i=0;i<this.beasts.length;i++){
       const beast=this.beasts[i];const spr=beast.sprite;
-      const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,sneak:sneaking,weather:this.weather,time});
+      const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,sneak:sneaking,noise,weather:this.weather,time});
       Object.assign(beast,decision.next);
       if(decision.detected)highest++;
+      if(decision.heard)heardCount++;
       if(beast.state==='investigacao')investigating++;
       // Preview-only contact shield: the beasts still perceive and pursue normally.
       if(decision.encounter && !(ISOLATED_PREVIEW && retreatGraceActive(this.retreatGraceMs))){this.openEncounter(beast);return;}
@@ -155,11 +159,11 @@ export class ExplorationScene extends Phaser.Scene {
         bar.fillStyle(0xe99d68,1);bar.fillRoundedRect(spr.x-13,spr.y-38,26,3,1);
       }
     }
-    const label=highest?`${highest} criatura(s) perceberam Peren`:'Patrulhas distantes';
+    const label=highest?`${highest} criatura(s) perceberam Peren`:heardCount?`${heardCount} criatura(s) ouviram passos`:'Patrulhas distantes';
     if(this.registry.get('threat')!==label)this.registry.set('threat',label);
     // Uses precisely the environment and sprint boolean passed to canDetect().
     const env=environmentAt(this.world,player.x,player.y);
-    const signals={cover:env.cover,wet:env.wet,sprint:Boolean(running),sneak:Boolean(sneaking),weather:this.weather,detected:highest,investigating};
+    const signals={cover:env.cover,wet:env.wet,sprint:Boolean(running),sneak:Boolean(sneaking),weather:this.weather,detected:highest,investigating,heard:heardCount};
     const signature=JSON.stringify(signals);
     if(signature!==this.fieldSignature){this.fieldSignature=signature;this.registry.set('fieldSignals',signals);}
   }
