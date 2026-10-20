@@ -353,6 +353,24 @@ Nova mecânica real de furtividade na Floresta de Mürin, **somente na prévia P
 
 [**Jogar no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf) · [Especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/43-m1h-f-19-passos-silenciosos.md).
 
+## M1h-F.20 — Rastros Sonoros [EM VALIDAÇÃO · 19/10/2026]
+
+A partir da furtividade da F.19, **correr com deslocamento real** agora pode atrair criaturas de Mürin mesmo quando árvores ou obstáculos impedem a visão. Até **3,25 tiles**, monstros próximos iniciam uma investigação da última posição ouvida. Ouvir **não** concede visão mágica nem abre combate: encontros ainda exigem as condições normais de percepção e proximidade. Parar de correr cessa o estímulo, mas não apaga a investigação existente; recuo/cooldown mantêm prioridade.
+
+**Escopo:** exclusivamente `M1HF_PREVIEW`; as chamadas antigas de IA continuam com `noise=false`. O HUD mostra `BARULHO NA MATA` quando há criaturas ouvindo os passos. Nenhuma alteração em combate, economia, recompensa, save ou dados do clássico.
+
+| Critério de aceite | Estado |
+| --- | --- |
+| Ruído de corrida real gera investigação atrás de bloqueio visual | **Implementado na fonte; testes Node criados** |
+| Corrida parada é silenciosa; visão e cooldown prevalecem; som não gera encontro automático | **Implementado; aguardando CI** |
+| HUD distingue audição, investigação e detecção visual | **Implementado; aguardando Chromium** |
+| Chromium 360×800, 390×844, 1280×800, segundo monstro, saves isolados | **Smoke criado; aguardando CI** |
+| CI completo Node/Vite/Chromium e regressão de seis vitórias, Diário e PWA | **Pendente** |
+| Publicação somente na pasta `phaser-demo-m1hf/` e QA real no Pages | **Pendente; não publicar sem CI verde** |
+| Teste humano Android/Xbox e balanceamento auditivo | **Pendente** |
+
+[**Commit F.20**](https://github.com/pedromaintenance/peren-o-bruxo/commit/0a94db09d97e3615cdf1ac490aabda7f1509fb6a) · [especificação técnica](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/44-m1h-f-20-rastros-sonoros.md) · [CI candidato](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39349599574). A PR de fonte #24 permanece em *draft*; a F.19 é a última release pública validada até o próximo aceite.
+
 ## Vertical slice — M1 (Portomonte ↔ Floresta de Mürin)
 
 | Sistema | Implementação atual | Critério restante |
