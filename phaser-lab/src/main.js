@@ -171,6 +171,14 @@ function updateHud(){
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
   if(M1HF_PREVIEW){
+    const sneak=app.registry.get('sneakState')||{active:false,touch:false};
+    const button=$('sneakBtn'),hint=$('sneakNotice');
+    button.hidden=false;button.setAttribute('aria-pressed',String(Boolean(sneak.touch)));
+    button.textContent=sneak.touch?'◈ DISCRETO ✓':'◈ DISCRETO';
+    hint.hidden=!sneak.active;
+    hint.textContent=sneak.active?'PASSOS SILENCIOSOS · Menor alcance de detecção; movimento mais lento.':'';
+  }
+  if(M1HF_PREVIEW){
     const grace=retreatGraceReadout(app.registry.get('retreatGrace'));
     const hint=$('retreatGraceNotice');
     const signature=grace?String(grace.seconds):'';
@@ -226,6 +234,7 @@ pad.addEventListener('pointerdown',event=>{event.preventDefault();pad.setPointer
 pad.addEventListener('pointermove',event=>{if(pad.hasPointerCapture(event.pointerId)){event.preventDefault();moveJoy(event)}});
 for(const name of ['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(name,releaseJoy);
 $('gatherBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('gather'));
+$('sneakBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('sneak'));
 $('sprintBtn').addEventListener('pointerdown',()=>app.scene.getScene('ExplorationScene')?.command('sprint'));
 for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').addEventListener(evt,()=>app.scene.getScene('ExplorationScene')?.command('walk'));
 function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent=M1HF_PREVIEW?'PRÉVIA M1h-F · save experimental protegido, separado do clássico e da demo anterior.':'Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
@@ -314,7 +323,7 @@ function pollXbox(){
   const label=state.connected?`🎮 Xbox / gamepad conectado: ${state.id}`:'🎮 Xbox: conecte o controle e pressione um botão';
   if(label!==lastPadLabel){lastPadLabel=label;$('gamepad-status').textContent=label;$('gamepad-hud').textContent=state.connected?'🎮 Xbox conectado':'';}
   const scene=joyScene();
-  if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint};
+  if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint,sneak:state.sneak};
   if(!state.connected)return;
   const key=state.justPressed;
   if(!$('battleUI').hidden){

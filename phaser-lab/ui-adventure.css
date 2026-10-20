@@ -327,3 +327,15 @@
  overflow-wrap:anywhere;pointer-events:none;
 }
 @media(max-width:390px){#controls #retreatGraceNotice.m1hf-retreat-grace{font-size:11px}}
+
+/* F.19: choice of stealthy slow travel; preview-only controls and readout. */
+#sneakBtn[hidden],#sneakNotice[hidden]{display:none!important}
+#controls #actions #sneakBtn{background:#213d3bea;border-color:#aac6ad;min-height:51px}
+#controls #actions #sneakBtn[aria-pressed="true"]{background:#40674cee;border-color:#dcefb1;color:#fff8dc}
+#controls #actions #sneakBtn:focus-visible{outline:3px solid #f0e7b3;outline-offset:2px}
+#controls #sneakNotice.m1hf-sneak-notice{
+ display:block;box-sizing:border-box;padding:6px 9px;margin-top:5px;width:100%;
+ border-left:3px solid #bde6a8;border-radius:4px;background:#163026ed;
+ color:#def1d0;font:700 11px/1.45 system-ui,sans-serif;overflow-wrap:anywhere;pointer-events:none;
+}
+@media(max-width:390px){#controls #actions #sneakBtn{min-width:88px;font-size:11px}}

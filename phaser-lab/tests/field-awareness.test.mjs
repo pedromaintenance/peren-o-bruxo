@@ -31,3 +31,11 @@ test('M1h-F.8: defaults are safe, no hidden state or new save field',()=>{
  assert.deepEqual(fieldAwareness(),{state:'neutral',title:'PASSOS CONTIDOS',detail:'Sem cobertura: mantenha distância das patrulhas'});
  assert.equal(fieldAwareness({detected:-1,investigating:-2}).state,'neutral');
 });
+
+test('F.19: leitura silenciosa é informativa; sprint continua avisando ruído',()=>{
+ const hidden=fieldAwareness({sneak:true});
+ assert.equal(hidden.title,'PASSOS SILENCIOSOS');
+ assert.match(hidden.detail,/diminuem a velocidade/);
+ const run=fieldAwareness({sneak:true,sprint:true});
+ assert.equal(run.title,'PASSOS RUIDOSOS');
+});

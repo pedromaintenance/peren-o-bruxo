@@ -18,13 +18,14 @@
   <div id="collected" class="m1g-hud-collected">Nenhum ingrediente coletado</div>
   <div id="forestInfo" class="m1g-hud-weather"><span id="weather">Tempo: sereno</span><span id="threat">Patrulhas distantes</span><span id="trailOrientation" hidden role="note" aria-label="Marcos da trilha">⌁ Siga os marcos da trilha</span></div>
   <output id="retreatGraceNotice" class="m1hf-retreat-grace" hidden aria-live="off" aria-label="Proteção breve após o recuo"></output>
+  <output id="sneakNotice" class="m1hf-sneak-notice" hidden aria-live="off"></output>
   <div id="fieldAwareness" class="m1hf-field-awareness" hidden data-state="neutral" aria-label="Discrição de Peren" role="group">
    <strong id="fieldAwarenessTitle">PASSOS CONTIDOS</strong><span id="fieldAwarenessDetail">Sem cobertura: mantenha distância das patrulhas</span>
   </div>
   <div id="gamepad-hud"></div>
  </div>
  <div id="joystick" role="application" aria-label="Joystick para mover Peren"><div id="joystick-knob"></div></div>
- <div id="actions" class="m1g-touch-actions"><output id="harvestProximity" hidden aria-live="off">Ingrediente próximo</output><button id="sprintBtn" type="button" aria-label="Correr">↗ CORRER</button><button id="gatherBtn" type="button" aria-label="Colher ingrediente">❧ COLHER</button><button id="returnBtn" type="button" hidden>↩ PORTOMONTE</button></div>
+ <div id="actions" class="m1g-touch-actions"><output id="harvestProximity" hidden aria-live="off">Ingrediente próximo</output><button id="sneakBtn" type="button" aria-label="Alternar passos silenciosos" aria-pressed="false" hidden>◈ DISCRETO</button><button id="sprintBtn" type="button" aria-label="Correr">↗ CORRER</button><button id="gatherBtn" type="button" aria-label="Colher ingrediente">❧ COLHER</button><button id="returnBtn" type="button" hidden>↩ PORTOMONTE</button></div>
 </div>
 <div id="encounterModal" class="m1g-encounter" hidden role="dialog" aria-modal="true" aria-label="Encontro na floresta"><section id="encounterBox" class="ui-panel" aria-labelledby="beastName">
  <div class="m1g-encounter-heading"><span class="ui-kicker">Floresta de Mürin · Contato hostil</span><span class="m1g-encounter-warning">◈ PERIGO</span></div>

@@ -5,6 +5,7 @@ import {encounterKey,defaultProfile} from './combat.js';
 import {harvestProximity} from './harvest-proximity.js';
 import {trailOrientation} from './trail-orientation.js';
 import {RETREAT_GRACE_MS,tickRetreatGrace,retreatGraceActive} from './retreat-grace.js';
+import {sneakActive,travelSpeed} from './stealth.js';
 const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
 
 const ASSET = './art/';
@@ -39,6 +40,8 @@ export class ExplorationScene extends Phaser.Scene {
     this.trailCellSignature=undefined;
     this.registry.set('trailCue',null);
     this.retreatGraceMs=0;this.lastGraceSeconds=0;
+    this.sneakToggle=false;this.sneakingEffective=false;
+    this.registry.set('sneakState',{active:false,touch:false});
     this.registry.set('retreatGrace',0);
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
@@ -78,9 +81,9 @@ export class ExplorationScene extends Phaser.Scene {
     this.createBeasts(colliders,blockers);
     this.cameras.main.startFollow(this.player,true,.10,.10);
     this.cameras.main.setZoom(1.4);
-    this.key=this.input.keyboard.addKeys('W,A,S,D,UP,DOWN,LEFT,RIGHT,SHIFT,E,SPACE,ESC');
+    this.key=this.input.keyboard.addKeys('W,A,S,D,UP,DOWN,LEFT,RIGHT,SHIFT,E,SPACE,ESC,C');
     // A joystick is drawn in fixed HTML, outside the zoomed camera.
-    this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false};
+    this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false,sneak:false};
     this.registry.set('collected',{});this.registry.set('status',this.weather==='neblina'?'A névoa esconde predadores. Observe antes de avançar.':'Siga a trilha: ervas e criaturas estão à espreita.');
     this.registry.set('beastCount',this.beasts.length);this.registry.set('weather',this.weather);this.registry.set('threat','Patrulhas distantes');
     // M1h-F.8: display-only conditions, never persisted or used as AI input.
@@ -126,10 +129,11 @@ export class ExplorationScene extends Phaser.Scene {
     if(!this.beasts||this.activeEncounter)return;
     const player={x:this.player.x,y:this.player.y};
     const running=this.key.SHIFT.isDown||this.sprintTouch||this.gamepadInput?.sprint;
+    const sneaking=ISOLATED_PREVIEW&&Boolean(this.sneakingEffective);
     let highest=0,investigating=0;
     for(let i=0;i<this.beasts.length;i++){
       const beast=this.beasts[i];const spr=beast.sprite;
-      const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,weather:this.weather,time});
+      const decision=monsterDecision(this.world,beast,player,Math.min(100,delta),{sprint:running,sneak:sneaking,weather:this.weather,time});
       Object.assign(beast,decision.next);
       if(decision.detected)highest++;
       if(beast.state==='investigacao')investigating++;
@@ -155,7 +159,7 @@ export class ExplorationScene extends Phaser.Scene {
     if(this.registry.get('threat')!==label)this.registry.set('threat',label);
     // Uses precisely the environment and sprint boolean passed to canDetect().
     const env=environmentAt(this.world,player.x,player.y);
-    const signals={cover:env.cover,wet:env.wet,sprint:Boolean(running),weather:this.weather,detected:highest,investigating};
+    const signals={cover:env.cover,wet:env.wet,sprint:Boolean(running),sneak:Boolean(sneaking),weather:this.weather,detected:highest,investigating};
     const signature=JSON.stringify(signals);
     if(signature!==this.fieldSignature){this.fieldSignature=signature;this.registry.set('fieldSignals',signals);}
   }
@@ -253,7 +257,12 @@ export class ExplorationScene extends Phaser.Scene {
       this.isGathering=false;
     });
   }
-  command(action){if(action==='gather')this.collect();if(action==='sprint')this.sprintTouch=true;if(action==='walk')this.sprintTouch=false;}
+  command(action){
+    if(action==='gather')this.collect();
+    if(action==='sneak'&&ISOLATED_PREVIEW)this.sneakToggle=!this.sneakToggle;
+    if(action==='sprint'){this.sprintTouch=true;if(ISOLATED_PREVIEW)this.sneakToggle=false;}
+    if(action==='walk')this.sprintTouch=false;
+  }
   update(_t,delta){
     if(!this.player)return;
     if(ISOLATED_PREVIEW && retreatGraceActive(this.retreatGraceMs)){
@@ -274,9 +283,14 @@ export class ExplorationScene extends Phaser.Scene {
     x+=this.joy.active?this.joy.x:0;y+=this.joy.active?this.joy.y:0;
     x+=this.gamepadInput?.move?.x||0;y+=this.gamepadInput?.move?.y||0;
     const n=Math.hypot(x,y);const sprint=this.sprintTouch||this.key.SHIFT.isDown||this.gamepadInput?.sprint;
-    // Soggy soil slows movement; shrub cover reduces monster sight in pure AI rules.
+    const sneak=ISOLATED_PREVIEW&&sneakActive({touch:this.sneakToggle,keyboard:this.key.C.isDown,gamepad:this.gamepadInput?.sneak,sprint});
+    if(sneak!==this.sneakingEffective || this.registry.get('sneakState')?.touch!==this.sneakToggle){
+      this.sneakingEffective=sneak;
+      this.registry.set('sneakState',{active:sneak,touch:this.sneakToggle});
+    }
+    // Crouch costs movement speed and reduces the real AI detection range.
     const env=environmentAt(this.world,this.player.x,this.player.y);
-    const speed=(sprint?205:135)*(env.wet?.78:1);
+    const speed=ISOLATED_PREVIEW?travelSpeed({sprint,sneak,wet:env.wet}):(sprint?205:135)*(env.wet?.78:1);
     const vx=n>0?x/n*speed:0,vy=n>0?y/n*speed:0;
     // Accelerator keeps movement fluid without grid snapping.
     const k=Math.min(1,delta*.012);

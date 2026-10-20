@@ -1,5 +1,6 @@
 /** M1b monster perception and movement. Pure JS: Phaser only renders snapshots. */
 import {TILE, WIDTH, HEIGHT, rngFor, reachableCells} from './world.js';
+import {SNEAK_SIGHT_MODIFIER} from './stealth.js';
 export const MURIN_BEASTS=Object.freeze([
  {id:'mob-galho-infectado',name:'Galho Infectado',behavior:'sentinela',sight:5,speed:47,alertness:0.8},
  {id:'mob-fungo-violeta',name:'Fungo Violeta',behavior:'esporo',sight:4,speed:35,alertness:0.7},
@@ -51,9 +52,10 @@ export function hasSight(world,a,b){
   }
   return true;
 }
-export function canDetect(world,monster,player,{sprint=false,weather='sereno'}={}){
+export function canDetect(world,monster,player,{sprint=false,sneak=false,weather='sereno'}={}){
   const tile=environmentAt(world,player.x,player.y);
-  const modifier=(sprint?1.5:0)+(weather==='neblina'?-1.5:0)+(tile.cover?-1.4:0);
+  // Sprint wins when both controls are held; stealth reduces RANGE, not line-of-sight.
+  const modifier=(sprint?1.5:0)+(!sprint&&sneak?SNEAK_SIGHT_MODIFIER:0)+(weather==='neblina'?-1.5:0)+(tile.cover?-1.4:0);
   const range=(monster.sight+modifier)*TILE;
   const distance=dist(monster,player);
   if(distance>range)return false;
@@ -67,8 +69,8 @@ function targetNear(world,beast,step){
   return cellWalkable(world,x,y)?{x:(x+.5)*TILE,y:(y+.5)*TILE}: {x:(center.x+.5)*TILE,y:(center.y+.5)*TILE};
 }
 // Returns intention, never awards experience or kills. The combat transaction belongs to M1c.
-export function monsterDecision(world,monster,player,dt,{sprint=false,weather='sereno',time=0}={}){
-  const detected=canDetect(world,monster,player,{sprint,weather});
+export function monsterDecision(world,monster,player,dt,{sprint=false,sneak=false,weather='sereno',time=0}={}){
+  const detected=canDetect(world,monster,player,{sprint,sneak,weather});
   const distance=dist(monster,player);
   const next={...monster,cooldown:Math.max(0,(monster.cooldown||0)-dt)};
   if(next.cooldown>0){next.state='retirada';next.target={x:(monster.spawn.x+.5)*TILE,y:(monster.spawn.y+.5)*TILE};return {next,encounter:false,detected:false};}

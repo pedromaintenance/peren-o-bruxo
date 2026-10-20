@@ -61,3 +61,14 @@ test('M1h-F.18: recuo protege tres segundos sem mutar regras puras de percepcao'
  assert.equal(JSON.stringify(beast),original);
  assert.equal(monsterDecision(world,beast,player,16).encounter,true,'AI default unchanged');
 });
+
+test('F.19: passos silenciosos alteram detecção somente se ativos e não se houver corrida',()=>{
+ const w={ground:Array.from({length:36},()=>Array(48).fill(0)),blocked:new Set()};
+ const beast={x:320,y:320,sight:5};
+ const player={x:320+132,y:320};
+ assert.equal(canDetect(w,beast,player),true);
+ assert.equal(canDetect(w,beast,player,{sneak:true}),false);
+ assert.equal(canDetect(w,beast,player,{sneak:true,sprint:true}),true);
+ assert.equal(canDetect(w,beast,{x:321,y:320},{sneak:true}),true,'encostado continua detectável');
+ assert.equal(monsterDecision(w,{...beast,spawn:{x:10,y:10},state:'patrulha',cooldown:0},player,16,{sneak:true}).detected,false);
+});
