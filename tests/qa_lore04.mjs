@@ -31,7 +31,7 @@ test("campaign and mode selection use official Peren portrait; previous atlas un
  assert.doesNotMatch(saveScript,/portrait-runtime|companion|timeline-entry/);
 });
 test("lore04 remains read-only and portrait offline",()=>{
- assert.match(sw,/peren-phaser-m1hf-preview-lore04(?:portrait|council)/);
+ assert.match(sw,/peren-phaser-m1hf-preview-lore04(?:portrait|council|expedition)/);
  assert.ok(sw.includes('"./art/characters/peren/official-v1/portrait-runtime.svg"'));
  assert.match(camp,/<details class="companion">/);
  assert.doesNotMatch(camp,/localStorage|sessionStorage|indexedDB/);
