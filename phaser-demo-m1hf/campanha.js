@@ -80,7 +80,7 @@ function saveChoice(payload) {
     for(let i=choices.length-1;i>=0;i--)if(choices[i].type==="plano")choices.splice(i,1);
   }
   if(item.type==="acordo"){
-    // One active response per companion. Re-negotiation is allowed until departure.
+    // A single active agreement per aliado; terms may be renegotiated before departure.
     for(let i=choices.length-1;i>=0;i--)if(choices[i].type==="acordo"&&choices[i].npc===item.npc)choices.splice(i,1);
   }
   if(item.type==="partida"){
