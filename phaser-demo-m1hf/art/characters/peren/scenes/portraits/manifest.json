@@ -1,0 +1,64 @@
+{
+  "schema": "peren.scene-portraits/v1",
+  "id": "peren.scene.portraits.v6",
+  "character": "Peren Kerrhylon",
+  "source": "Ficha de Personagem_ Mago Celestial Gótico.png",
+  "sourceSha256": "21edb1c9320fcd052f0aa89f5816ad463ad122c0c06f40ee781231268413abfe",
+  "originalSize": [
+    1448,
+    1086
+  ],
+  "columns": 4,
+  "rows": 1,
+  "frameSize": [
+    362,
+    1086
+  ],
+  "importStatus": "binary-pending",
+  "publicRuntimeEnabled": false,
+  "master": "peren_scene_portraits_4poses.png",
+  "portraits": [
+    {
+      "id": "peren.scene.frontal",
+      "file": "portrait_01.png",
+      "column": 0,
+      "semanticTags": [
+        "frontal",
+        "dialogue",
+        "neutral"
+      ]
+    },
+    {
+      "id": "peren.scene.manto",
+      "file": "portrait_02.png",
+      "column": 1,
+      "semanticTags": [
+        "manto",
+        "wind",
+        "travelling"
+      ]
+    },
+    {
+      "id": "peren.scene.orbe",
+      "file": "portrait_03.png",
+      "column": 2,
+      "semanticTags": [
+        "conjuration",
+        "orb",
+        "focus"
+      ]
+    },
+    {
+      "id": "peren.scene.invocacao",
+      "file": "portrait_04.png",
+      "column": 3,
+      "semanticTags": [
+        "extended-hand",
+        "invocation",
+        "dialogue"
+      ]
+    }
+  ],
+  "integration": "future scenes and dialogue; no character replacement nor automatic facial rig",
+  "pixelPolicy": "pixel-exact original cells; no upscaling or arbitrary facial overlays"
+}
