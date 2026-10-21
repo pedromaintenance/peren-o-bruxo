@@ -30,7 +30,7 @@ try {
     for(const f of ["./modos.html","./campanha.html","./cronica.html"]){
       if(await caches.match(f))throw Error("Retired page persisted in cache: "+f);
     }
-    const portrait=await caches.match("./art/characters/peren/official-v1/portrait-runtime.svg");
+    const portrait=await caches.match("./art/characters/peren/official-v1/peren-portrait-official-256.png");
     if(!portrait?.ok)throw Error("Missing official portrait offline");
   });
   await context.setOffline(true);
