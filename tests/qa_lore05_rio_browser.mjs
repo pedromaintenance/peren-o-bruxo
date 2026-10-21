@@ -32,7 +32,7 @@ try{
   assert.match(await page.locator("#riverBankScene").innerText(),/balsa|barqueiro/i);
   assert.equal(await page.locator("#riverOfferCoins").count(),1);
   assert.equal(await page.locator(".river-requirement").count(),3);
-  assert.match(await page.locator("#riverCoins").innerText(),new RegExp(PHRASE.replace(/[.*+?^$\\{}()|[\]\\]/g,"\\$&")));
+  assert.ok((await page.locator("#riverCoins").innerText()).includes(PHRASE));
   await page.locator("#riverOfferCoins").click();
   await page.waitForFunction(()=>window.PerenCampanhaSave.read().choices.some(x=>x.type==="moedas"));
   assert.equal(await page.locator("#riverOfferCoins").count(),0);
