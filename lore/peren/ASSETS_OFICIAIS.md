@@ -96,3 +96,14 @@ A conversão reproduzível está em `ferramentas/gerar_peren_caminhada_v3.py`; s
 - **Geração:** `ferramentas/gerar_peren_ferido_v4.py` e relatório de origem `official-v4/runtime-provenance.json` documentam integralmente o processo. A versão anterior v3 permanece preservada.
 
 Ainda são necessários assets adicionais se desejarmos animações próprias de **ferimento/impacto, coleta, interação, conjuração e ataque**. A caminhada ferida não substitui esses gestos.
+
+## V5 — Correção da caminhada frontal e coleta **exclusiva de ervas** (21/10/2026)
+
+Pacote fornecido pelo criador: `Peren_Kerrhylon_Assets_v4_Coleta_WalkFix_v4_Neutro(1).zip`, SHA-256 `c3e63c5c2527047eabf6cfd7546ed9e36facb037b6ba5a340b35a8fe473648bb`.
+
+- **Nova caminhada normal:** `charset/caminhada/atlas/peren_caminhada_3col_4lin_160x190.png`, SHA-256 `5882fb53ee495e977f69164373ce9a349d5cfc9deddf9f14471bb97690a5d8ba`. Gerada para 48×64 usando recorte e ancoragem fixa. O ciclo permanece `1→2→3→2` a 180 ms/quadro. Somente os 16 índices de caminhada normal foram reconstruídos, mantendo os 112 restantes da v3.
+- **Novo gesto de coleta:** `charset/coleta/atlas/peren_coleta_4col_4lin_160x190.png`, SHA-256 `f8f8d772a5268d0c465ec9ad0b6b2e02fc6660932090b8926ddb96ac4fef4147`. Quatro direções (frente, esquerda, direita, costas); quatro poses reais por direção, com 350/250/450/850 ms por pose e **uma execução por tentativa**.
+- **Atlas separado:** `peren-herb-atlas.png` carrega 16 quadros de coleta herbal nos índices frente 16–19, esquerda 48–51, direita 80–83, costas 112–115; os 112 demais são idênticos aos do atlas normal atualizado. Os quadros de caminhada ferida do atlas v4 não são modificados.
+- **Regra de gameplay:** apenas nós com `node.sprite === "herb"` disparam `gather-herb`. No mundo atual, são Raiz Velada, Musgo Suspenso e Musgo Parassol de Eldroth. Cogumelo do Imp e Cogumelo Luminescente continuam com o gesto `gather` genérico. O ramo verde no último quadro nunca deve aparecer ao colher cogumelos, minério ou sucata.
+- **Sem mudanças na lógica de economia ou salvamento:** o mesmo evento de coleta, com o mesmo `nodeId`, salva o item somente após o término da animação. A condição de PV que ativa caminhada ferida continua independente.
+- **Geração reproduzível:** `ferramentas/gerar_peren_coleta_ervas_v5.py` e `official-v5/runtime-provenance.json`. Arquivos-fonte enviados e PNGs derivados são preservados separadamente. Tests Pillow e Chromium validam correspondência pixel a pixel, animação com final estável e funcionamento offline.
