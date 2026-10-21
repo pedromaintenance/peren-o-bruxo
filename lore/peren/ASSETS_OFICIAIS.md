@@ -29,7 +29,7 @@
 | Aprovação do estilo, rosto, roupa e poses fornecidos | **Oficial — aprovação expressa do criador** |
 | Inventário das 67 entradas e documentação do atlas | **Conferidos a partir do ZIP** |
 | Binários PNG/JPG originais inseridos no GitHub | **Não**: os masters continuam no ZIP original entregue pelo criador |
-| Retrato oficial na interface Phaser | **Candidato de runtime** — SVG textual autocontido de 64×75, com PNG reduzido extraído do master, adicionado nas telas de modo e Campanha. Publicação/QA dependem de merge. |
+| Retrato oficial na interface Phaser | **Integrado ao código na `main`** — SVG autocontido de 64×75, com PNG reduzido do master; [PR #50](https://github.com/pedromaintenance/peren-o-bruxo/pull/50), Node/Chromium aprovados; publicação efetiva do Pages e aprovação artística em dispositivo físico ainda dependem de verificação. |
 | Conversão/expansão para as animações exigidas no Phaser | **Pendente de adaptação e validação** |
 | Testes de regressão e aprovação visual no jogo | **Pendentes** |
 
@@ -41,6 +41,6 @@
 
 > A documentação aqui não incorpora, hospeda, comprime novamente, publica nem certifica os binários do arquivo original. A fonte aprovada continua sendo o ZIP entregue; cada recurso integrado deverá ter proveniência e hash verificáveis.
 
-## Adaptação de interface — LORE-04 (candidata)
+## Adaptação de interface — LORE-04 (mesclada, QA automatizado aprovado)
 
 O recurso `phaser-demo-m1hf/art/characters/peren/official-v1/portrait-runtime.svg` embute uma miniatura PNG derivada do `retrato/peren_portrait.png` do ZIP oficial por **redução nearest-neighbor** para `64 × 75` e quantização a 64 cores (sem inventar desenho). O PNG interno tem 2.614 bytes, SHA-256 `9590186585eb9f145b1a1dbf6bdd14f36fdaecd2aefa1dfff05d0121a4baafa3`, e fica autocontido para PWA offline. É uma **derivação para interface**, não substituto da arte mestre. Não recolorir ou reinterpretar manualmente esse arquivo. Mantenha o sprite atlas de 48×64 em uso até existir atlas canônico de 4 direções com QA artístico próprio.
