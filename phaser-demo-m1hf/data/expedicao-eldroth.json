@@ -1,0 +1,160 @@
+{
+  "schema": "peren-eldroth-approach-1",
+  "canon": "lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json",
+  "disclaimer": "Cena NOVA do videogame, não transcrição da campanha de mesa. As falas e reações abaixo são ficção dramatizada. O save nunca assume consentimento sem interação, nem inventa cifras ou resultados de testes de D&D.",
+  "stage": "Primeiro trecho da marcha por Eldroth, ainda a caminho do Rio Ancestral; não corresponde a chegada, pagamento ou travessia.",
+  "agreements": [
+    {
+      "id": "veyra",
+      "name": "Veyra Sull",
+      "context": "As costelas e o flanco ainda doem; não é razoável impor uma marcha acelerada.",
+      "options": [
+        {
+          "id": "ritmo_compassado",
+          "label": "Oferecer ritmo compassado e pausas conforme Veyra precisar",
+          "accepted": true,
+          "response": "Veyra aceita a proposta de seguir no ritmo possível, preservando o direito de pedir uma pausa. Isso não cura seus ferimentos.",
+          "effect": "Acordo de deslocamento cuidadoso; rapidez não garantida."
+        },
+        {
+          "id": "marcha_forcada",
+          "label": "Exigir marcha forçada apesar dos ferimentos",
+          "accepted": false,
+          "response": "Veyra recusa. O contrato não lhe retira a autonomia, e ela não consentiu em agravar os ferimentos para ganhar tempo.",
+          "effect": "Partida bloqueada até rever o acordo."
+        }
+      ]
+    },
+    {
+      "id": "dren",
+      "name": "Dren",
+      "context": "Dren fornece segurança e caça em troca de um acordo concreto, não de lealdade cega.",
+      "options": [
+        {
+          "id": "contrato_claro",
+          "label": "Definir vigilância e proteção dentro do acordo já existente",
+          "accepted": true,
+          "response": "Dren aceita exercer o papel de vigia e apoio sem ampliar obrigações não negociadas. O valor exato da remuneração continua desconhecido.",
+          "effect": "Cobertura negociada; nenhuma moeda debitada."
+        },
+        {
+          "id": "ordens_unilaterais",
+          "label": "Impor ordens e novos serviços sem negociação",
+          "accepted": false,
+          "response": "Dren contesta: isso não estava combinado. A contribuição à viagem depende de um acordo voluntário.",
+          "effect": "Partida bloqueada; não há concordância automática."
+        }
+      ]
+    },
+    {
+      "id": "orel",
+      "name": "Orel",
+      "context": "O arqueiro auxilia, mas o medo e o desejo de segurança não podem ser ignorados.",
+      "options": [
+        {
+          "id": "posicao_protegida",
+          "label": "Convidar Orel a acompanhar o grupo em posição protegida",
+          "accepted": true,
+          "response": "Orel concorda em acompanhar a marcha sem ser enviado sozinho a investigar o desconhecido. Isso não elimina seus medos.",
+          "effect": "Função de apoio definida; não concede bônus de combate."
+        },
+        {
+          "id": "exploracao_sozinho",
+          "label": "Ordenar que Orel entre sozinho na mata à frente",
+          "accepted": false,
+          "response": "Orel se recusa a isolar-se numa floresta que o assusta. A recusa não o torna inimigo de Peren.",
+          "effect": "Partida bloqueada até nova proposta."
+        }
+      ]
+    },
+    {
+      "id": "tavin",
+      "name": "Tavin Rook",
+      "context": "A carga e as três moedas sem dono precisam continuar distintas da partilha do tesouro.",
+      "options": [
+        {
+          "id": "moedas_reservadas",
+          "label": "Preservar as três moedas e confiar a Tavin a organização da carga",
+          "accepted": true,
+          "response": "Tavin concorda em organizar a carga mantendo separadas as três moedas para o rito. Não se presume que exista um vaso para água.",
+          "effect": "Reserva respeitada; sem alteração do inventário."
+        },
+        {
+          "id": "moedas_como_pagamento",
+          "label": "Usar as três moedas dos mortos para custear a travessia",
+          "accepted": false,
+          "response": "Tavin lembra o compromisso com os Sem-Nome e recusa tratar as moedas reservadas como recurso ordinário sem nova deliberação.",
+          "effect": "Partida bloqueada; nenhuma moeda é gasta."
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "oficial",
+      "name": "Travessia oficial",
+      "scene": "Peren decide buscar a via regulamentada. A possibilidade de um registro administrativo acompanha a escolha; o grupo ainda não encontrou um posto.",
+      "cost": "Pedágio exigido, valor não conhecido. Nenhuma cobrança executada.",
+      "risk": "Exposição documental possível, ainda não ocorrida."
+    },
+    {
+      "id": "clandestina",
+      "name": "Balsa clandestina",
+      "scene": "Peren segue com a intenção de localizar um intermediário fora do circuito oficial. Não há barganha concluída nem preço acertado.",
+      "cost": "Preço e condições de passagem ainda desconhecidos. Nada pago.",
+      "risk": "Confiança no atravessador e fiscalização incertas."
+    },
+    {
+      "id": "autonoma",
+      "name": "Travessia autônoma",
+      "scene": "Peren pretende encontrar uma margem e avaliar a força da água por conta própria. Não existe ponto seguro confirmado.",
+      "cost": "Material e esforço necessários desconhecidos. Nada consumido.",
+      "risk": "Correnteza perigosa; Veyra ainda ferida."
+    }
+  ],
+  "observations": [
+    {
+      "id": "anel",
+      "name": "Pedir direção ao Anel do Caminho",
+      "scene": "A consulta estabelece um vínculo de busca com o caminho pretendido, mas não oferece coordenadas infalíveis. A reciprocidade do Anel torna Peren potencialmente rastreável por outros.",
+      "consequence": "Marca persistente: Anel consultado; risco de rastreamento recíproco assumido.",
+      "unknown": "A via mais adequada e a segurança da margem continuam desconhecidas."
+    },
+    {
+      "id": "presas",
+      "name": "Solicitar reconhecimento cauteloso a Presas",
+      "scene": "Presas se dispõe a observar os arredores, sem prometer visão ilimitada nem revelar inimigos inexistentes. O familiar assume exposição potencial enquanto cumpre a tarefa.",
+      "consequence": "Marca persistente: reconhecimento por Presas escolhido; exposição do familiar é risco, não ferimento consumado.",
+      "unknown": "Nenhum mapa completo ou posição inimiga foi confirmado."
+    },
+    {
+      "id": "a_pe",
+      "name": "Investigar discretamente com a companhia",
+      "scene": "Peren escolhe colher sinais do caminho a pé, mantendo Presas próximo e sem usar o poder de busca do Anel. É uma escolha de cautela com alcance limitado.",
+      "consequence": "Marca persistente: prospecção a pé; sem acionar rastro do Anel nem expor Presas em voo.",
+      "unknown": "A localização da passagem e o tempo restante continuam desconhecidos."
+    }
+  ],
+  "materialLedger": [
+    {
+      "key": "pedagio",
+      "value": "Sem valor conhecido; nenhuma cobrança ou pagamento."
+    },
+    {
+      "key": "balsa",
+      "value": "Sem cotação ou acordo; nenhuma dívida criada."
+    },
+    {
+      "key": "carne",
+      "value": "Carne de alce em preparação; não há quantidade ou consumo calculável."
+    },
+    {
+      "key": "moedas",
+      "value": "Três moedas reservadas aos Sem-Nome; continuam não gastas."
+    },
+    {
+      "key": "agua",
+      "value": "Água do Rio em vaso fechado ainda não recolhida; recipiente não confirmado."
+    }
+  ]
+}
