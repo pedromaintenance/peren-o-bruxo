@@ -378,5 +378,66 @@
     "sourceWalk": "official-v3/peren-caminhada-3x4-original-160x190.png",
     "provenance": "official-v3/runtime-provenance.json"
   },
-  "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual."
+  "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual.",
+  "herbHarvest": {
+    "version": 5,
+    "texture": "peren-herb-gather",
+    "sprite": "peren-herb-gather.png",
+    "runtimeFrameSize": [
+      48,
+      64
+    ],
+    "rows": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "poses": [
+      "em_pe",
+      "abaixando",
+      "recolhendo",
+      "erguendo_item"
+    ],
+    "keyPattern": "peren-herb-{direction}-gather",
+    "frameIndices": {
+      "down": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "left": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "right": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "up": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "durationsMs": [
+      350,
+      250,
+      450,
+      850
+    ],
+    "repeat": 0,
+    "selectionRule": "resource.sprite === \"herb\"",
+    "transaction": "Only after ANIMATION_COMPLETE, once per resource via existing collect pipeline",
+    "otherResources": "Mushrooms and non-herb resources use the original generic gather animation",
+    "sourcePackageSha256": "e19d409448575872b61294f7e48775dfa6de60d1f47161362fa29f016e5d4a0f",
+    "provenance": "official-v5/runtime-provenance.json",
+    "designLimit": "Final frame visually shows a green branch; do not depict mushroom collection with this texture"
+  }
 }

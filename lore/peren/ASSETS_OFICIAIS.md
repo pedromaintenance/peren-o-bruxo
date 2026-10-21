@@ -96,3 +96,17 @@ A conversão reproduzível está em `ferramentas/gerar_peren_caminhada_v3.py`; s
 - **Geração:** `ferramentas/gerar_peren_ferido_v4.py` e relatório de origem `official-v4/runtime-provenance.json` documentam integralmente o processo. A versão anterior v3 permanece preservada.
 
 Ainda são necessários assets adicionais se desejarmos animações próprias de **ferimento/impacto, coleta, interação, conjuração e ataque**. A caminhada ferida não substitui esses gestos.
+
+## Atualização v5 — Coleta de ervas (21/10/2026)
+
+**Fonte oficial recebida:** `Peren_Kerrhylon_Assets_v4_Coleta(1).zip`, SHA-256 `e19d409448575872b61294f7e48775dfa6de60d1f47161362fa29f016e5d4a0f`.
+
+- Fonte principal preservada **sem alterações** em `official-v5/peren-coleta-4x4-original-160x190.png`: 640×760 px, 16 poses originais, quatro quadros por direção, PNG RGBA, SHA-256 `f8f8d772a5268d0c465ec9ad0b6b2e02fc6660932090b8926ddb96ac4fef4147`.
+- Runtime **independente**, `official-v5/peren-coleta-runtime-4x4-48x64.png`: 192×256 px, 16 quadros de 48×64, SHA-256 `ed55e98fba4aff8aff46adea3d63d3d97e540f0e808f7cb9241403beada40ed6`.
+- Linhas do atlas: frente/down (quadros 0–3), esquerda/left (4–7), direita/right (8–11), costas/up (12–15). Cada linha percorre **em pé → abaixando → recolhendo → erguendo a erva**.
+- **Temporização do criador:** 350, 250, 450 e 850 ms (total de **1.900 ms**), uma execução. Após completar a animação, o sistema de coleta já existente efetua a única transação de item e reverte ao idle. Evita conceder prêmio antes do gesto terminar e preserva a verificação anti-duplicação.
+- **Seleção contextual:** somente recursos do tipo `herb`, como Raiz Velada e Musgo Suspenso, usam `peren-herb-{direção}-gather`. Cogumelos continuam com a animação genérica, pois o quadro final do novo sprite segura um ramo verde. Nenhum item ou quantia foi inventado.
+- **Independência:** o atlas de caminhada v3 e o de caminhada ferida v4 **não sofreram alterações**; ataque, magia e interação continuam sem novos quadros aprovados. O Modo Livre segue único.
+- **Reprodutibilidade:** executar `python ferramentas/gerar_peren_coleta_v5.py <zip_original> <pasta_destino>`. O script verifica o SHA-256 do ZIP e do master, usa recorte fixo (5,0,155,185) e escala nearest-neighbor 44×59 com deslocamento (2,3), sem redesenhar poses. QA pixel a pixel em `tests/qa_peren_herb_v5.py`, testes de mecânica em `tests/qa_peren_herb_v5.mjs` e de navegador em `tests/qa_peren_herb_v5_browser.mjs`.
+
+A alternativa 3×4 e os sprites 240×285 continuam acessíveis no ZIP original. A v5 usa a sequência principal 4×4, **sem descartar a segunda pose**.

@@ -35,6 +35,8 @@ O mesmo Peren de cabelo escuro, olhos azuis e manto dourado da arte aprovada apa
 
 **Novo: caminhada ferida (v4)** — o pacote oficial traz três poses adicionais por direção para Peren mancando (3 × 4). No Phaser, se o personagem estiver com **0 < PV ≤ 50% do máximo**, caminhar ou correr usa os passos feridos em ciclo **1–2–3–2** a **230 ms por quadro**. A caminhada saudável (180 ms) retorna automaticamente após recuperar mais de 50% dos PV. Isso é apenas representação visual, **sem penalidade de velocidade ou dano**; ataques, coleta e outras ações não foram redesenhados. A [galeria de arte](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html) permite comparar as duas animações sem mexer no save.
 
+**Novo asset oficial v5 — coleta de ervas:** Peren agora se abaixa, recolhe e ergue a planta em **quatro poses por direção**, usando os desenhos originais enviados. A coleta de plantas tem uma animação única de **1,9 s** (350/250/450/850 ms) e só entrega o item ao finalizar. Cogumelos mantêm a coleta genérica: o novo quadro final segura um ramo verde e não deve representar outros materiais. [Galeria de coleta](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html) — selecione “Coletando erva” e “Repetir coleta”. Caminhada normal e ferida permanecem intactas.
+
 **A atualização não migra saves, não cria segundo modo e não altera economia ou combate.** O cache offline será atualizado; não limpe os dados do navegador para forçar a atualização.
 
 ## Publicação e instalação

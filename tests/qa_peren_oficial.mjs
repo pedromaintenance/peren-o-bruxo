@@ -72,8 +72,8 @@ test("offline precaches correct art with versioned caches and all game resources
  const root=read("sw.js").toString();
  const stable=read("phaser-demo/demo-sw.js").toString();
  assert.match(root,/0\.1\.4-peren-auditado/);
- assert.match(stable,/peren-wounded-v4-20261021/);
- assert.match(pwa,/wounded-v4-20261021/);
+ assert.match(stable,/peren-herb-v5-20261021/);
+ assert.match(pwa,/herb-v5-20261021/);
  for(const f of Object.keys(expected))assert.ok(pwa.includes("./art/characters/peren/official-v2/"+f));
  assert.match(root,/peren-actor-official-128.png/);
  assert.match(root,/peren-portrait-official-256.png/);
