@@ -1,0 +1,47 @@
+name: LORE-04 Official Portrait QA
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lore04-qa.yml'
+      - 'phaser-demo-m1hf/**'
+      - 'tests/qa_lore04*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portrait:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Existing lore save regressions and official art integrity
+        run: |
+          node --test tests/qa_lore02.mjs tests/qa_lore03.mjs tests/qa_lore04.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Serve site locally
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-lore04-server.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/campanha.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-lore04-server.log
+          exit 1
+      - name: Browser regressions and official portrait decode
+        env:
+          LORE02_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+          LORE03_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+          LORE04_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: |
+          node tests/qa_lore02_browser.mjs
+          node tests/qa_lore03_browser.mjs
+          node tests/qa_lore04_browser.mjs
