@@ -1,0 +1,41 @@
+name: Peren Single Free Mode QA
+on:
+  pull_request:
+    paths:
+      - 'phaser-demo-m1hf/**'
+      - 'README.md'
+      - 'ROADMAP.md'
+      - 'lore/peren/**'
+      - 'tests/qa_single_free_mode*'
+      - '.github/workflows/single-free-mode-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  single-mode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: One-game contract, lore and asset integrity
+        run: node --test tests/qa_single_free_mode.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Serve Phaser preview
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-single.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-single.log
+          exit 1
+      - name: Mobile desktop official portrait and offline QA
+        env:
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: node tests/qa_single_free_mode_browser.mjs

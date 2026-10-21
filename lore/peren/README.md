@@ -1,20 +1,18 @@
-# Peren Kerrhylon — fontes e regras de continuidade
+# Peren Kerrhylon — fontes conceituais para o jogo
 
-A biografia de campanha usada para orientar o desenvolvimento de **Peren, o Bruxo** vive aqui. Ela **não** é um save, catálogo de equipamentos, ficha D&D completamente validada nem conjunto de mecânicas do protótipo.
+**Diretriz do criador (21/10/2026):** só existe **Peren, o Bruxo — Mercador da Carcaça**, sandbox em **Modo Livre**. A campanha de RPG não será adaptada como segundo jogo, fluxo obrigatório ou seleção de modos.
 
-- [**Dossiê de campanha v1.0.0 (JSON integral)**](Dossie_Peren_Kerrhylon_RPG_Carcaca.json) — arquivo entregue pelo usuário em 20/10/2026, preservado integralmente; registra **21 marcos da campanha**.
-- [**Análise das diferenças e plano de adaptação do videogame**](ADAPTACAO_AO_JOGO.md) — comparação do sandbox e da prévia Phaser com a história da mesa, prioridades, proteções de save e critérios de aceite.
-- [**Identidade visual oficial de Peren**](ASSETS_OFICIAIS.md) — ZIP recortado aprovado em 21/10/2026; mapa de sprites, dimensões, checksums e proteção para adaptação ao Phaser (binários ainda não importados no GitHub).
-- [**Roadmap executivo**](../../ROADMAP.md) — estado *real* de implementação, publicação e QA.
+O arquivo de lore é uma **referência de criação** para Peren e o mundo de Carcaça; não é save, backlog de missões a serem reproduzidas nem ordem canônica para o jogador seguir.
+
+- [Dossiê da mesa v1.0.0 — arquivo integral preservado](Dossie_Peren_Kerrhylon_RPG_Carcaca.json): história do personagem, pacto, relações, lugares e conceitos para inspirar o videogame. Os 21 marcos são passagens do RPG de mesa, não objetivos da engine.
+- [Guia de adaptação conceitual ao único Modo Livre](ADAPTACAO_AO_JOGO.md): o que aproveitar e o que não duplicar.
+- [Arte oficial de Peren Kerrhylon](ASSETS_OFICIAIS.md): referências visuais aprovadas, resolução, integridade dos masters e adaptação segura dos sprites.
+- [Roadmap do único jogo](../../ROADMAP.md): tarefas de exploração, economia, personagens, assets, combate, PWA e UX.
 
 ## Hierarquia de confiança
 
-**Acontecimento estabelecido em mesa** é distinto de **afirmação do personagem**, **interpretação do mestre**, **proposta de regra** e **informação incerta**. O dossiê identifica explicitamente essas categorias.
+Distinguir acontecimento de mesa, afirmação do personagem, interpretação do mestre, proposta de regra e lacunas desconhecidas. Não fabricar retcon, números ou mecânicas; não colocar eventos históricos da mesa no diário de aventuras jogadas no sandbox.
 
-O dossiê é **a fonte principal para a continuidade de Peren**, não licença para retcon do cenário geral ou implementação automática de artefatos sem regras. Informações desconhecidas permanecem desconhecidas; nunca preencher lacunas com números inventados.
+**Não há necessidade de iniciar em Eldroth ou reproduzir o caminho ao Rio Ancestral.** Peren começa no ambiente da versão jogável vigente, com progressão definida pelo jogo. Lugares, NPCs, simbolismos e eventos do RPG podem inspirar conteúdos *novos e opcionais* para o mundo aberto, sem linearizar o sandbox.
 
-## Proteções
-
-A campanha está no acampamento após a cripta dos Sem-Nome, rumo ao Rio Ancestral, com Veyra, Dren, Orel, Tavin e Presas. Isso **não** desloca os saves existentes de Portomonte/Mürin, que são um sandbox diferente. O diário do jogador não deve receber cenas históricas do dossiê como transações forjadas.
-
-Para novas revisões: referenciar seção/entrada relevante do JSON, marcar o nível de certeza, criar mecânicas em commits separados com testes, preservar chaves de save, nunca publicar a fonte experimental inteira na `main`.
+**Saves:** preservar os saves clássico e Phaser. O antigo slot `peren_campanha_v1` não será lido, escrito, excluído ou migrado pelo Modo Livre; permanecendo apenas nos dispositivos que participaram do protótipo descontinuado. Não limpar dados do navegador para atualizar.

@@ -1,23 +1,27 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
-**Versão 0.1.2 — campanha sandbox jogável / base de dados extensível.**
+**Versão 0.1.2 — Modo Livre sandbox jogável / base de dados extensível.**
 
-## Roadmap e protótipo Phaser em desenvolvimento
+## Um jogo, uma experiência livre
 
-O jogo clássico permanece publicado na raiz deste site. A nova versão Phaser está sendo desenvolvida e testada **separadamente**:
+**Peren, o Bruxo — Mercador da Carcaça** é um único jogo sandbox: viagens, comércio, ofícios, exploração e escolhas no universo da Carcaça. **Não existe Modo Campanha separado**, seleção de modos ou obrigação de reproduzir os acontecimentos da mesa de RPG.
 
-- [**ROADMAP.md — prioridades, entregas, testes e pendências**](ROADMAP.md)
-- [**Dossiê narrativo principal de Peren Kerrhylon (JSON integral)**](lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json) — fonte primária de continuidade da campanha da mesa, distinta da ficha provisória e dos saves do sandbox
-- [**Auditoria de adaptação à campanha**](lore/peren/ADAPTACAO_AO_JOGO.md) — diferenças entre nível 1 arcade e Peren nível 7, pacto com Khan, Presas, comitiva, Eldroth, artefatos, promessas e plano para modo campanha
-- [**Escolher modo — Livre / Campanha**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/modos.html) — LORE-03; a campanha possui prólogo e save exclusivo, mas ainda **não** possui exploração ou combate próprios.
-- **Arte oficial de Peren na prévia Phaser:** retrato canônico agora aparece na [seleção de modos](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/modos.html) e no [acampamento de Eldroth](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/campanha.html), com opções de consulta à companhia; [PR #50](https://github.com/pedromaintenance/peren-o-bruxo/pull/50), mantendo o atlas de animações anterior.
-- [**Crônica da Campanha — 21 marcos históricos**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/cronica.html) — LORE-02; somente leitura e separada do diário do save.
-- [**Jogar o protótipo Phaser M1h-F no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
-- **Novo: Diário de Peren em Portomonte** — crônicas e transações reais, filtros, busca e exportação `.md` no protótipo M1h-F.5 ([PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31))
-- [**Comparar Galho, Fungo e Ettercap (M1h-E × M1h-F)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html) — comparador em pixel art, sincronização de frames e parecer artístico exportável
-- [**PR de desenvolvimento M1h-F**](https://github.com/pedromaintenance/peren-o-bruxo/pull/24), ainda em rascunho
+O dossiê da antiga campanha de Peren Kerrhylon fornece **referências conceituais** para a identidade, a arte oficial, a personalidade, a mitologia e a ambientação do videogame. Seus eventos são passado criativo de referência, **não** uma linha de missões obrigatória, um save de nível 7 ou progressão paralela.
 
-A prévia tem save e cache próprios. **Não limpe os dados do navegador** para atualizar o protótipo sem antes exportar um backup do progresso.
+O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas implementações técnicas do mesmo jogo**, não dois jogos ou duas histórias. O Phaser mantém cache e save de teste próprios para proteger o progresso do clássico.
+
+- [**Jogar Peren, o Bruxo — edição clássica**](https://pedromaintenance.github.io/peren-o-bruxo/)
+- [**Jogar a prévia Phaser (Modo Livre)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
+- [**ROADMAP.md — desenvolvimento do único jogo**](ROADMAP.md)
+- [**Referências conceituais de Peren e Carcaça**](lore/peren/README.md)
+- [**Identidade visual oficial de Peren**](lore/peren/ASSETS_OFICIAIS.md)
+- [**Diário de Peren em Portomonte**](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — registra somente ações realizadas no sandbox
+- [**Comparador de arte M1h-E × M1h-F**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html)
+- [**Código-fonte em desenvolvimento Phaser M1h-F — PR #24**](https://github.com/pedromaintenance/peren-o-bruxo/pull/24)
+
+**Correção de escopo (21/10/2026):** os protótipos de uma campanha paralela introduzidos nas PRs #47–#54 foram retirados da edição jogável. O histórico Git os preserva apenas como experimentos descontinuados. Nada apaga os saves gravados anteriormente pelo navegador.
+
+**Atenção:** não limpe os dados do navegador para atualizar o PWA; primeiro exporte um backup do progresso.
 
 
 ## Publicação e instalação
@@ -36,7 +40,7 @@ A prévia tem save e cache próprios. **Não limpe os dados do navegador** para 
 - **Cozinha:** receitas regionais que preparam suprimentos para a estrada.
 - **Grimório:** magias exigem Arcanismo; novos grimórios podem ser adquiridos, escritos ou recuperados.
 - **Peren:** equipamentos, inventário, talentos, informações, importação/exportação de save.
-- **Batalhas:** escolhas por turno no estilo JRPG clássico (ataque, guarda, magia, consumíveis); sem animações. A derrota causa resgate, perda de dinheiro e ferimentos, mas não apaga a campanha.
+- **Batalhas:** escolhas por turno no estilo JRPG clássico (ataque, guarda, magia, consumíveis); sem animações. A derrota causa resgate, perda de dinheiro e ferimentos, mas não apaga o progresso do jogador.
 
 ## Coleção de dados
 
