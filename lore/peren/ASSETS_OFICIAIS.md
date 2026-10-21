@@ -82,3 +82,17 @@ O atlas ativo continua **768×512 px**, 128 quadros em 48×64. Apenas os 16 quad
 O mapeamento sugerido pelo criador é **180 ms por quadro (~5,56 FPS)**. O runtime repete a segunda pose ao fechar o ciclo `1→2→3→2`. Quadros oficiais recortados com registro fixo para evitar saltos de escala e pés desalinhados. **Advertência do ZIP:** a pose 03 para a esquerda foi espelhada da direita pelo próprio autor do novo pacote. O runtime não a espelha novamente.
 
 A conversão reproduzível está em `ferramentas/gerar_peren_caminhada_v3.py`; sua entrada é o ZIP completo, verificado pelo SHA-256. A origem dos frames consta de `official-v3/runtime-provenance.json`. A verificação pixel a pixel em `tests/qa_peren_walk_v3.py` compara todos os novos frames com o master e comprova que os outros 112 não foram alterados. O jogo continua tendo **um único Modo Livre**.
+
+## Atualização v4 — caminhada ferida (21/10/2026)
+
+**Pacote enviado pelo criador:** `Peren_Kerrhylon_Assets_v3_Andar_Ferido(1).zip`, SHA-256 `c7bc4b761b41760b0e93004b4edeb8a92074f32b220f712b3186ab0844f2f904`.
+
+- **Fonte compatível:** `charset/caminhada_ferido/atlas/peren_ferido_3col_4lin_160x190.png` (480×760, 12 poses = três por direção), guardada sem alterações na pasta `official-v4` do repositório. Ordem: frente, esquerda, direita, costas.
+- **Fonte estendida:** `peren_ferido_5col_4lin_240x285.png` (1200×1140) também está no ZIP original, com até 5 quadros por direção; não foi adaptada neste ciclo para preservar o contrato atual da engine e o peso do PWA.
+- **Runtime:** `peren-wounded-atlas.png`, 768×512 RGBA, 128 células 48×64. Apenas 16 células de caminhada ferida diferem do atlas saudável v3. As outras 112 foram mantidas byte a byte.
+- **Quadros:** frente 4–7, esquerda 36–39, direita 68–71, costas 100–103. Sequência 1 → 2 → 3 → 2, duração 230 ms por quadro. Recorte comum (5,5,155,185) para não cortar o manto inclinado; sem variar o zoom por pose.
+- **Gatilho visual no Modo Livre:** Peren com mais de 0 e até **50% dos PV máximos reais**, incluindo equipamentos/bônus, usa o atlas ferido ao caminhar; recuperação acima de 50% restaura a caminhada normal. Sprint usa a pose de andar ferido, **sem alterar velocidade de deslocamento, colisão, defesa ou dano**. O momento do golpe `hurt` continua uma animação separada, sem novos quadros.
+- **Integração:** os atlas foram incluídos no caminho padrão e nas quatro variantes do Phaser, e o bundle de execução foi adaptado para carregar as texturas e alternar as animações. Galeria de inspeção permite seleção independente, sem modificar PV ou saves.
+- **Geração:** `ferramentas/gerar_peren_ferido_v4.py` e relatório de origem `official-v4/runtime-provenance.json` documentam integralmente o processo. A versão anterior v3 permanece preservada.
+
+Ainda são necessários assets adicionais se desejarmos animações próprias de **ferimento/impacto, coleta, interação, conjuração e ataque**. A caminhada ferida não substitui esses gestos.
