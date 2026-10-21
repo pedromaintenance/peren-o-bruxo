@@ -12,7 +12,7 @@ const read=p=>readFileSync(join(ROOT,p));
 const hash=b=>createHash("sha256").update(b).digest("hex");
 const portrait=readFileSync(join(canon,"peren-portrait-official-256.png"));
 const actor=readFileSync(join(canon,"peren-actor-official-128.png"));
-const atlas=read("phaser-demo-m1hf/art/characters/peren/official-v3/peren-atlas-official-48x64.png");
+const atlas=read("phaser-demo-m1hf/art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png");
 const expected={
  "peren-portrait-official-256.png":{size:[256,256],sha:"81ae05daca03276ace5c8b463a81a4036be6834ae2e978397cd8b9f58d9a6cbf"},
  "peren-portrait-official-128.png":{size:[128,151],sha:"cab573bc7bac38fde239ad0710261d359eb53954bf81a4f939369cca18d3d68d"},
@@ -72,8 +72,8 @@ test("offline precaches correct art with versioned caches and all game resources
  const root=read("sw.js").toString();
  const stable=read("phaser-demo/demo-sw.js").toString();
  assert.match(root,/0\.1\.4-peren-auditado/);
- assert.match(stable,/peren-wounded-v4-20261021/);
- assert.match(pwa,/wounded-v4-20261021/);
+ assert.match(stable,/peren-herb-v5-20261021/);
+ assert.match(pwa,/herb-only-v5-20261021/);
  for(const f of Object.keys(expected))assert.ok(pwa.includes("./art/characters/peren/official-v2/"+f));
  assert.match(root,/peren-actor-official-128.png/);
  assert.match(root,/peren-portrait-official-256.png/);

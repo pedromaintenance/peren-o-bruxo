@@ -1,0 +1,107 @@
+{
+  "schema": "peren-walkfix-herbs-only-v5",
+  "sourcePackage": "Peren_Kerrhylon_Assets_v4_Coleta_WalkFix_v4_Neutro(1).zip",
+  "sourcePackageSha256": "c3e63c5c2527047eabf6cfd7546ed9e36facb037b6ba5a340b35a8fe473648bb",
+  "sourceWalkSha256": "5882fb53ee495e977f69164373ce9a349d5cfc9deddf9f14471bb97690a5d8ba",
+  "sourceGatherSha256": "f8f8d772a5268d0c465ec9ad0b6b2e02fc6660932090b8926ddb96ac4fef4147",
+  "baselineNormalAtlasSha256": "62a44d9ca68189014cb9e7731d04af8fe03800992140d99dae75e654c92317ea",
+  "fixedNormalAtlasSha256": "e0d20ce3b889d2eb2cc98b2a43a9ab3cc508bfd6bd79cc3a5352be9f615a7685",
+  "herbAtlasSha256": "39675de9f457a63103230422905984a72bac21e8adcba2aa2af5df76772b6c10",
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "walkIndices": {
+    "down": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "left": [
+      36,
+      37,
+      38,
+      39
+    ],
+    "right": [
+      68,
+      69,
+      70,
+      71
+    ],
+    "up": [
+      100,
+      101,
+      102,
+      103
+    ]
+  },
+  "herbIndices": {
+    "down": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "left": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "right": [
+      80,
+      81,
+      82,
+      83
+    ],
+    "up": [
+      112,
+      113,
+      114,
+      115
+    ]
+  },
+  "walkLoop": [
+    0,
+    1,
+    2,
+    1
+  ],
+  "walkFrameMs": 180,
+  "herbFrameMs": [
+    350,
+    250,
+    450,
+    850
+  ],
+  "oneShot": true,
+  "eligibility": "node.sprite === 'herb'; mushrooms remain generic gather",
+  "registration": {
+    "walk": [
+      15,
+      15,
+      145,
+      185
+    ],
+    "herb": [
+      5,
+      5,
+      155,
+      185
+    ],
+    "size": [
+      44,
+      59
+    ],
+    "paste": [
+      2,
+      3
+    ]
+  },
+  "otherFramesUnchanged": 112,
+  "note": "Independent herb atlas. No impact on wounded gait, saves, movement speed, mushroom collection or non-gather animations."
+}

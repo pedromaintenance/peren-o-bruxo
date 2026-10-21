@@ -27,42 +27,76 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <label for="condition">Estado visual do personagem</label>
 <select id="condition"><option value="normal">Saudável — caminhada comum</option><option value="wounded">Ferido — caminhada lenta (PV ≤ 50%)</option></select>
 <label for="action">Visualizar animação</label>
-<select id="action"><option value="idle">Parado</option><option value="walk">Caminhando</option><option value="run">Correndo</option><option value="interact">Interagindo</option><option value="gather">Coletando</option><option value="hurt">Ferido</option><option value="cast">Conjurando</option><option value="attack">Atacando</option></select>
+<select id="action"><option value="idle">Parado</option><option value="walk">Caminhando</option><option value="run">Correndo</option><option value="interact">Interagindo</option><option value="gather">Coleta genérica (cogumelos e outros)</option><option value="gather-herb">Colhendo ervas (animação oficial)</option><option value="hurt">Ferido</option><option value="cast">Conjurando</option><option value="attack">Atacando</option></select>
 <div class="poses">
 <div class="card"><canvas width="48" height="64" data-dir="0" aria-label="Peren de frente"></canvas><strong>Frente</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="1" aria-label="Peren olhando para a esquerda"></canvas><strong>Esquerda</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="2" aria-label="Peren olhando para a direita"></canvas><strong>Direita</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="3" aria-label="Peren de costas"></canvas><strong>Costas</strong></div>
 </div>
-<p class="notice">ATUALIZAÇÃO V4: caminhada normal e caminhada ferida têm três quadros oficiais por direção. O estado ferido é exibido no jogo quando Peren estiver com 50% ou menos dos PV máximos, sem alterar sua velocidade. Nesta galeria você pode comparar livremente as duas versões. Sequência 1 → 2 → 3 → 2; 180 ms/quadro. O terceiro quadro da esquerda já veio espelhado no pacote original. Ações de coleta, interação, ferimento, magia e ataque continuam com poses estáticas até receberem desenhos próprios.</p>
+<p class="notice">ATUALIZAÇÃO V5: caminhada frontal ajustada com os novos frames do criador. Coletando ervas agora é uma animação própria em quatro direções, somente para plantas/ervas, com tempos 350/250/450/850 ms e reprodução única. Cogumelos e outras coletas mantêm a ação genérica anterior. Caminhada ferida continua com o mesmo visual aprovado, ativado automaticamente no jogo quando Peren estiver com até 50% dos PV máximos. O seletor desta galeria não altera saves.</p>
 <small id="status" role="status">Preparando atlas...</small>
 </main>
 <script>
+/* Enable direct-link offline installation for the official art gallery, too. */
+if("serviceWorker" in navigator)navigator.serviceWorker.register("./demo-sw.js").catch(()=>{});
 const picture=new Image();
-const normalAtlas="./art/characters/peren/official-v3/peren-atlas-official-48x64.png";
+const normalAtlas="./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png";
 const woundedAtlas="./art/characters/peren/official-v4/peren-wounded-atlas.png";
-const condition=document.getElementById("condition");
-picture.src=normalAtlas;
-condition.addEventListener("change",()=>{ready=false;frame=0;picture.src=condition.value==="wounded"?woundedAtlas:normalAtlas;});
-const directions=[...document.querySelectorAll("canvas[data-dir]")];
+const herbAtlas="./art/characters/peren/official-v5/peren-atlas-herb-v5.png";
+const condition=document.getElementById("condition"),actionSelect=document.getElementById("action");
+const canvases=[...document.querySelectorAll("canvas[data-dir]")];
 const actions=["idle","walk","run","interact","gather","hurt","cast","attack"];
-let ready=false,last=0,frame=0;
-picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · caminhada 4 direções × 3 poses (1–2–3–2) · normal 180 ms / ferido 230 ms";requestAnimationFrame(render)};
-picture.onerror=()=>{document.getElementById("status").textContent="Não foi possível carregar o atlas offline."};
+const herbDelays=[350,250,450,850];
+let ready=false,frame=0,nextTick=0;
+function isHerb(){return actionSelect.value==="gather-herb";}
+function texture(){
+ return isHerb()?herbAtlas:(condition.value==="wounded"?woundedAtlas:normalAtlas);
+}
+function interval(){
+ return isHerb()?herbDelays[frame]:actionSelect.value==="walk"?(condition.value==="wounded"?230:180):125;
+}
+function draw(){
+ const action=isHerb()?4:Math.max(0,actions.indexOf(actionSelect.value));
+ for(const canvas of canvases){
+  const dir=Number(canvas.dataset.dir),index=dir*32+action*4+frame;
+  const sx=index%16*48,sy=Math.floor(index/16)*64;
+  const ctx=canvas.getContext("2d");ctx.imageSmoothingEnabled=false;
+  ctx.clearRect(0,0,48,64);ctx.drawImage(picture,sx,sy,48,64,0,0,48,64);
+ }
+}
+function reset(){
+ ready=false;frame=0;
+ const src=texture();
+ if(picture.getAttribute("src")===src&&picture.complete&&picture.naturalWidth===768){
+  onReady();return;
+ }
+ picture.src=src;
+}
+function onReady(){
+ if(picture.naturalWidth!==768||picture.naturalHeight!==512){
+  document.getElementById("status").textContent="Atlas inválido: dimensões incorretas";return;
+ }
+ ready=true;frame=0;draw();
+ nextTick=performance.now()+interval();
+ document.getElementById("status").textContent=isHerb()?
+  "128 quadros · 48×64 px · ervas apenas · 350/250/450/850 ms · sem repetição":
+  "128 quadros · 48×64 px · caminhada 4 direções · normal 180 ms / ferido 230 ms";
+}
+picture.onload=onReady;
+picture.onerror=()=>{ready=false;document.getElementById("status").textContent="Não foi possível carregar o atlas offline."};
+condition.addEventListener("change",reset);
+actionSelect.addEventListener("change",reset);
 function render(time){
- const isWalk=document.getElementById("action").value==="walk";
- if(ready&&time-last>=(isWalk?(condition.value==="wounded"?230:180):125)){
-  last=time;frame=(frame+1)%4;
-  const action=Math.max(0,actions.indexOf(document.getElementById("action").value));
-  for(const canvas of directions){
-   const direction=Number(canvas.dataset.dir);
-   const index=direction*32+action*4+frame;
-   const x=index%16*48,y=Math.floor(index/16)*64;
-   const ctx=canvas.getContext("2d");ctx.imageSmoothingEnabled=false;
-   ctx.clearRect(0,0,48,64);ctx.drawImage(picture,x,y,48,64,0,0,48,64);
+ if(ready&&time>=nextTick){
+  if(!isHerb()||frame<3){
+   frame=isHerb()?frame+1:(frame+1)%4;
+   draw();
+   nextTick=time+interval();
   }
  }
  requestAnimationFrame(render);
 }
+reset();requestAnimationFrame(render);
 </script>
 </body></html>

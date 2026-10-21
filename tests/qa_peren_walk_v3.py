@@ -45,5 +45,5 @@ for i in range(128):
   assert tile(atlas,i).tobytes()==tile(old,i).tobytes(),f"Non-walk frame changed: {i}"
 assert len(walk_frames)==16
 for dest in [BASE/"peren-atlas.png",ROOT/"phaser-demo/art/characters/peren/peren-atlas.png"]:
- assert dest.read_bytes()==(V3/"peren-atlas-official-48x64.png").read_bytes()
+ assert dest.read_bytes()==(BASE/"official-v5/peren-atlas-normal-walkfix-v5.png").read_bytes()
 print("WALK V3 PASSED: 4 directions, 3 real poses, 1-2-3-2 loop, 112 legacy frames unchanged.")
