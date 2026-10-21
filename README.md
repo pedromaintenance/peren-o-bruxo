@@ -33,6 +33,8 @@ O mesmo Peren de cabelo escuro, olhos azuis e manto dourado da arte aprovada apa
 
 **Caminhada oficial v3 (21/10/2026):** agora há **três poses novas em cada uma das quatro direções** (frente, esquerda, direita e costas), usando o ZIP `Peren_Kerrhylon_Assets_Atualizados_Caminhada(1).zip`. O atlas Phaser mantém 128 quadros de 48×64 e usa caminhada em ciclo **1–2–3–2**, com duração indicada de **180 ms/quadro**. As outras ações permanecem com seus quadros estáticos; nenhum gesto de ataque, coleta ou magia foi fabricado. [Visualizar os movimentos na galeria](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html). O terceiro quadro de caminhada à esquerda já foi espelhado no arquivo de origem.
 
+**Novo: caminhada ferida (v4)** — o pacote oficial traz três poses adicionais por direção para Peren mancando (3 × 4). No Phaser, se o personagem estiver com **0 < PV ≤ 50% do máximo**, caminhar ou correr usa os passos feridos em ciclo **1–2–3–2** a **230 ms por quadro**. A caminhada saudável (180 ms) retorna automaticamente após recuperar mais de 50% dos PV. Isso é apenas representação visual, **sem penalidade de velocidade ou dano**; ataques, coleta e outras ações não foram redesenhados. A [galeria de arte](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html) permite comparar as duas animações sem mexer no save.
+
 **A atualização não migra saves, não cria segundo modo e não altera economia ou combate.** O cache offline será atualizado; não limpe os dados do navegador para forçar a atualização.
 
 ## Publicação e instalação
