@@ -38,6 +38,8 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <small id="status" role="status">Preparando atlas...</small>
 </main>
 <script>
+/* Enable direct-link offline installation for the official art gallery, too. */
+if("serviceWorker" in navigator)navigator.serviceWorker.register("./demo-sw.js").catch(()=>{});
 const picture=new Image();
 const normalAtlas="./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png";
 const woundedAtlas="./art/characters/peren/official-v4/peren-wounded-atlas.png";
