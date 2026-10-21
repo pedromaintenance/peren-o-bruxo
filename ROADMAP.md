@@ -33,7 +33,7 @@
 | ID | Prioridade | Direção autorizada | Situação |
 | --- | --- | --- | --- |
 | **L-REF** | P0 | Preservar o dossiê da mesa como referência conceitual, sem transformá-lo em objetivo automático | **Mantido** em `lore/peren/`; 21 marcos de RPG documentados, não jogáveis |
-| **L-VISUAL** | P1 | Aplicar retratos e sprites da arte oficial de Peren **em todo o Modo Livre**, sem destruir a compatibilidade com as animações | **Candidato `feature/official-peren-everywhere`**: corpo/retrato oficiais, 128 sprites derivados para Phaser, clássico/HUD/combate, versões técnicas e galeria de inspeção; CI e QA artístico final pendentes. Apenas a caminhada à esquerda possui passos próprios no ZIP |
+| **L-VISUAL** | P1 | Aplicar os retratos e sprites oficiais de Peren em todo o Modo Livre, preservando o contrato de animação | **Integrado à `main`** — [PR #56](https://github.com/pedromaintenance/peren-o-bruxo/pull/56), [CI de arte aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39596963545) e [CI do único Modo Livre aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39596963573). QA visual/físico e movimentos exclusivos de frente/costas pendentes; masters preservados no ZIP |
 | **L-WORLD** | P1 | Enriquecer o sandbox com povos, lugares, facções e mistérios inspirados na Carcaça | **Planejar** conteúdo emergente/opcional, sem copiar linearmente cenas de mesa |
 | **L-GAMEPLAY** | P0 | Priorizar mapa, comércio, ofícios, inventário, progressão, encontros, UX, PWA e estabilidade | **Retomado** como direção do projeto |
 | **L-CORRECAO** | P0 | Remover seletor Livre/Campanha e páginas jogáveis da campanha paralela | Correção em revisão de código; histórico original recuperável no Git |
