@@ -29,7 +29,7 @@ function renderNPC(){
     const b=mk("button",npc.name,"council-person");
     b.type="button";
     b.setAttribute("aria-pressed",String(current===npc.id));
-    const completed=npc.topics.filter(topic=>recorded({id:npc.id},s)&&s.choices.some(x=>x.type==="dialogo"&&x.npc===npc.id&&x.topic===topic.id)).length;
+    const completed=npc.topics.filter(topic=>recorded({id:npc.id,topic:topic.id},s)).length;
     b.append(mk("small",completed+"/2 assuntos consultados"));
     b.addEventListener("click",()=>{current=npc.id;renderNPC()});
     people.append(b);
