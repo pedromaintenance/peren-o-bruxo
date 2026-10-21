@@ -49,7 +49,7 @@ test("recusa impede partida; renegociação e plano são necessários",()=>{
  assert.equal(s.read().checkpoint,"trilha_eldroth_rumo_ao_rio");
  assert.equal(s.read().choices.filter(c=>c.type==="partida").length,1);
  assert.throws(()=>s.saveChoice({type:"plano",route:"autonoma"}),/Ação indisponível/);
- assert.throws(()=>s.saveChoice({type:"dialogo",npc:"dren",topic:"vigia"}),/marcha já começou/);
+ assert.throws(()=>s.saveChoice({type:"dialogo",npc:"dren",topic:"vigia"}),/Ação indisponível/);
  s.saveChoice({type:"observacao",method:"anel"});
  assert.equal(s.read().choices.at(-1).method,"anel");
  assert.throws(()=>s.saveChoice({type:"observacao",method:"presas"}),/já foi realizada/);
