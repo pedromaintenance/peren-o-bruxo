@@ -1,0 +1,131 @@
+{
+  "schema": "peren-eldroth-council-1",
+  "source": "lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json",
+  "note": "Diálogos redigidos para o videogame com base no dossiê; não são falas literais de sessões anteriores. Nada aqui atribui consentimento automático, dispêndio ou deslocamento aos personagens.",
+  "companions": [
+    {
+      "id": "veyra",
+      "name": "Veyra Sull",
+      "role": "Custódia e logística · ferida, recuperando-se",
+      "topics": [
+        {
+          "id": "rotas",
+          "label": "Perguntar sobre as três travessias",
+          "response": "Há uma travessia oficial com pedágio e registro; uma balsa clandestina cujo preço e risco ainda precisam ser apurados; e a travessia por conta própria, submetida à correnteza. A melhor rota não é necessariamente a mais segura.",
+          "note": "O preço exato de cada alternativa, a distância e o tempo são desconhecidos."
+        },
+        {
+          "id": "ferimentos",
+          "label": "Conversar sobre o repouso",
+          "response": "Veyra está ferida no flanco e anda devagar. Antes de propor uma marcha, Peren precisa levar em conta o estado de sua conselheira e os limites de um acordo profissional.",
+          "note": "Este diálogo não cura Veyra nem decide por ela."
+        }
+      ]
+    },
+    {
+      "id": "dren",
+      "name": "Dren",
+      "role": "Vigília, segurança e caça",
+      "topics": [
+        {
+          "id": "vigia",
+          "label": "Discutir a vigilância do acampamento",
+          "response": "Dren conhece o terreno, os perigos de uma fogueira exposta e o peso de manter todos vivos. A vigília pode ser negociada, mas nenhuma escala é imposta automaticamente.",
+          "note": "Discussão registrada; execução de vigília ainda não simulada."
+        },
+        {
+          "id": "contrato",
+          "label": "Revisar o acordo de proteção",
+          "response": "O pagamento e a proteção são razões concretas para Dren permanecer; a permanência, porém, continua voluntária. Ele não prestou juramento de servidão a Peren.",
+          "note": "Nenhuma mudança salarial é calculada ou presumida."
+        }
+      ]
+    },
+    {
+      "id": "orel",
+      "name": "Orel",
+      "role": "Arco, apoio e testemunho",
+      "topics": [
+        {
+          "id": "testemunho",
+          "label": "Conversar sobre os mortos Sem-Nome",
+          "response": "Orel já se dispôs, com receio, a testemunhar o rito. O novo encontro não o obriga a mantê-lo para sempre; o consentimento deve ser reafirmado quando chegar a hora.",
+          "note": "Não conclui o rito nem transporta a Máscara da cripta."
+        },
+        {
+          "id": "temores",
+          "label": "Ouvir os temores de Orel",
+          "response": "Orel teme presságios e ameaças que não entende. A segurança, a comida e a companhia lhe importam tanto quanto os desígnios do bruxo.",
+          "note": "Conversar não aplica automaticamente bônus de coragem."
+        }
+      ]
+    },
+    {
+      "id": "tavin",
+      "name": "Tavin Rook",
+      "role": "Suprimentos e custódia",
+      "topics": [
+        {
+          "id": "moedas",
+          "label": "Conferir a reserva das três moedas",
+          "response": "As três moedas sem dono foram separadas da partilha. Devem permanecer reservadas para o Rio Ancestral; não são moeda de comércio nem parte do ouro pessoal de Peren.",
+          "note": "A conferência não significa que o rito já foi realizado."
+        },
+        {
+          "id": "suprimentos",
+          "label": "Revisar carga, alimento e recipiente",
+          "response": "O grupo está secando carne de alce e precisa de suprimentos transportáveis. Um vaso fechado será necessário para trazer água do Rio Ancestral; sua disponibilidade ainda não foi confirmada.",
+          "note": "O inventário não recebe itens novos."
+        }
+      ]
+    },
+    {
+      "id": "presas",
+      "name": "Presas",
+      "role": "Familiar pseudodragão · elo de percepção",
+      "topics": [
+        {
+          "id": "reconhecimento",
+          "label": "Planejar reconhecimento dos arredores",
+          "response": "Presas pode sobrevoar e observar, mas fica exposto ao perigo e aos limites da ligação com Peren. Aqui o reconhecimento ainda não foi executado.",
+          "note": "Nenhuma posição inimiga ou novo mapa é revelado."
+        },
+        {
+          "id": "seguranca",
+          "label": "Pensar na segurança de Presas",
+          "response": "A lealdade do familiar é íntima, mas não o torna descartável. Enviar Presas adiante envolve riscos reais que precisarão ser resolvidos durante a exploração.",
+          "note": "Não concede visão ilimitada ou novas habilidades."
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "id": "oficial",
+      "name": "Travessia oficial",
+      "benefit": "Procedimento público e caminho reconhecido",
+      "risk": "Pedágio e registro podem expor o grupo à rede",
+      "unknown": "Valor do pedágio e condições exatas ainda desconhecidos"
+    },
+    {
+      "id": "clandestina",
+      "name": "Balsa clandestina",
+      "benefit": "Potencial de evitar o registro oficial",
+      "risk": "Preço, intermediários e confiança incertos",
+      "unknown": "Preço e localização da balsa ainda não apurados"
+    },
+    {
+      "id": "autonoma",
+      "name": "Travessia autônoma",
+      "benefit": "Independência de atravessadores e cartórios",
+      "risk": "Correnteza perigosa e recuperação de Veyra",
+      "unknown": "Local seguro, equipamentos e dificuldade ainda desconhecidos"
+    }
+  ],
+  "notices": [
+    "Registrar um plano NÃO transporta a companhia nem consome um dia.",
+    "A comitiva mantém liberdade de discordar ou renegociar suas obrigações.",
+    "As três moedas permanecem reservadas; a Máscara continua na cripta.",
+    "A rota pode ser reconsiderada enquanto o grupo permanecer no acampamento."
+  ]
+}
