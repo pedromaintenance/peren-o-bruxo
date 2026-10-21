@@ -363,6 +363,7 @@
     "rune": "#6e57bd"
   },
   "runtimeAtlas": {
+    "version": 2,
     "width": 768,
     "height": 512,
     "columns": 16,
@@ -370,6 +371,22 @@
     "frameWidth": 48,
     "frameHeight": 64,
     "frames": 128,
-    "notes": "Direita espelhada dos cinco passos de esquerda; frente/costas reutilizam poses da arte oficial, sem novas animações originais."
+    "source": "Peren official approved ZIP",
+    "colorMode": "RGBA",
+    "sourceRegistration": [
+      20,
+      18,
+      140,
+      185
+    ],
+    "uniqueVisualFrames": 19,
+    "missingActions": [
+      "interact",
+      "gather",
+      "hurt",
+      "cast",
+      "attack"
+    ],
+    "limitation": "Source-backed static placeholders instead of fake gait in gestures; down walk has no new legs; up has cape motion; left walks, right mirrors"
   }
 }
