@@ -25,7 +25,26 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 .note-canon{color:#c3cabc;font-size:12px}
 @media(max-width:530px){.portrait-stage{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:11px}.portrait-stage h2{font-size:22px}.chrono{grid-template-columns:1fr}}
 @media(max-width:460px){.controls button{width:100%}main{padding:16px 12px 40px}}
-</style><script src="./campanha.js" defer></script></head>
+
+.council-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:16px}
+.council-people,.council-topics{display:flex;flex-direction:column;gap:8px}
+.council-person,.council-topic{font-size:14px;text-align:left;min-height:53px}
+.council-person{background:#203337;color:#ecdfc1}
+.council-person[aria-pressed="true"]{background:#755a43;border-color:#f2d49b}
+.council-person small{display:block;font-weight:400;color:#d1ddcb;margin-top:5px}
+.council-conversation{min-width:0}.council-conversation h3,.council-subtitle{font:24px Georgia,serif;color:#f1cf9c;margin:0 0 5px}
+.council-response{min-height:120px;margin:13px 0 4px;padding:13px;border:1px solid #8e8a7177;border-radius:9px;background:#111c23}
+.council-response p{margin:8px 0}.council-response small{color:#bbb9ae}
+.council-subtitle{margin-top:25px}
+.route-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.route-choice{display:flex;align-items:flex-start;gap:8px;padding:14px;background:#14242b;border:1px solid #927d5d;border-radius:9px;cursor:pointer}
+.route-choice:has(input:checked){background:#3e4139;border-color:#f0c984}
+.route-choice:has(input:disabled){opacity:.55;cursor:not-allowed}
+.route-choice input{accent-color:#ecca90;margin-top:5px}
+.route-choice small{display:block;color:#c1c6bc;font-size:12px;line-height:1.45;margin-top:6px}
+@media(max-width:680px){.council-layout{grid-template-columns:1fr}.council-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.route-choices{grid-template-columns:1fr}}
+@media(max-width:390px){.council-people{grid-template-columns:1fr}}
+</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script></head>
 <body><main>
 <div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
 <span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
@@ -49,6 +68,28 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 <details class="companion"><summary>Tavin Rook · Suprimentos</summary><p>Cuida da logística, do transporte e do apoio a feridos, com experiência nos procedimentos de custódia.</p></details>
 <details class="companion"><summary>Presas · Familiar</summary><p>Pseudodragão familiar do Pacto da Corrente. Pode reconhecer os arredores e alertar Peren, respeitados seus limites de alcance e exposição ao perigo.</p></details>
 </div><p class="note-canon">As informações acima vêm do dossiê da mesa. Ações e negociações ainda não foram executadas no jogo.</p></section>
+<section class="panel" id="eldrothCouncil" aria-labelledby="councilTitle">
+<h2 id="councilTitle">Conselho de Eldroth</h2>
+<p>Escolha com quem conversar. As falas abaixo são novas cenas dramatizadas a partir dos registros da mesa, não acontecimentos inventados no passado. Nenhum companheiro fica obrigado a seguir uma decisão.</p>
+<div class="council-layout">
+<nav id="councilPeople" class="council-people" aria-label="Escolher interlocutor"></nav>
+<div class="council-conversation">
+<h3 id="councilName">Companhia</h3>
+<p id="councilRole" class="note-canon">Conselho da estrada</p>
+<div id="councilTopics" class="council-topics"></div>
+<div id="councilResponse" class="council-response" role="status" aria-live="polite">
+<p>Selecione uma pessoa e um assunto. Conversas são registradas somente após você escolher um tópico.</p>
+</div>
+</div>
+</div>
+<h3 class="council-subtitle">Planejar a travessia</h3>
+<p>Depois de consultar Veyra sobre as rotas, escolha um <em>plano provisório</em>. A companhia permanecerá no acampamento; o deslocamento e o consentimento de cada um serão tratados em cenas posteriores.</p>
+<div id="routeChoices" class="route-choices" role="radiogroup" aria-label="Rotas para o Rio Ancestral"></div>
+<button id="planCouncilRoute" type="button" disabled>Registrar plano provisório</button>
+<p id="routeStatus" class="note-canon" aria-live="polite">Primeiro converse com Veyra sobre as rotas.</p>
+<p id="councilStatus" class="status" role="status" aria-live="polite">Carregando a cena do conselho...</p>
+<p id="councilSource" class="note-canon"></p>
+</section>
 <section class="panel" aria-labelledby="slotTitle">
 <h2 id="slotTitle">Registro da campanha</h2>
 <p id="slotDescription">Este é um slot novo e independente do Modo Livre. Nesta etapa ele preserva o ponto de partida; decisões, exploração e combate serão adicionados em marcos posteriores.</p>

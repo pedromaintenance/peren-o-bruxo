@@ -8,12 +8,28 @@ const exportBtn=document.getElementById("exportCampaign");
 const message=document.getElementById("slotStatus");
 const desc=document.getElementById("slotDescription");
 let state=null;
+const NPCS=new Set(["veyra","dren","orel","tavin","presas"]);
+const ROUTES=new Set(["oficial","clandestina","autonoma"]);
+const TOPICS={
+  veyra:["rotas","ferimentos"],
+  dren:["vigia","contrato"],
+  orel:["testemunho","temores"],
+  tavin:["moedas","suprimentos"],
+  presas:["reconhecimento","seguranca"]
+};
+function validChoice(c) {
+  if(!c || typeof c!=="object" || Array.isArray(c))return false;
+  if(typeof c.at!=="string" || !/^\d{4}-\d{2}-\d{2}T/.test(c.at))return false;
+  if(c.type==="dialogo")return NPCS.has(c.npc) && TOPICS[c.npc].includes(c.topic);
+  if(c.type==="plano")return ROUTES.has(c.route);
+  return false;
+}
 function isValid(s) {
   return Boolean(s && typeof s==="object" && !Array.isArray(s) &&
     s.schema==="peren-campaign-save" && s.schemaVersion===VERSION &&
     s.mode==="campanha" && s.checkpoint==="acampamento_eldroth_pos_cripta" &&
     s.phase==="preparacao" && s.chronicleRef==="1.0.0" &&
-    Array.isArray(s.choices) && s.choices.length===0);
+    Array.isArray(s.choices) && s.choices.length<=24 && s.choices.every(validChoice));
 }
 function read() {
   const raw=localStorage.getItem(KEY);
@@ -22,12 +38,39 @@ function read() {
   if(!isValid(obj))throw Error("Slot incompatível ou de versão futura; não sobrescrever");
   return obj;
 }
+function saveChoice(payload) {
+  // Persist only the player's explicit decisions. Do not assume consent or travel.
+  if(!payload || !["dialogo","plano"].includes(payload.type))throw Error("Escolha inválida");
+  const prev=read();
+  if(!prev)throw Error("Inicie o registro da campanha para escolher");
+  const now=new Date().toISOString();
+  const item={...payload,at:now};
+  if(!validChoice(item))throw Error("Escolha incompatível");
+  const choices=prev.choices.slice();
+  if(item.type==="dialogo" && choices.some(x=>x.type==="dialogo" && x.npc===item.npc && x.topic===item.topic))return prev;
+  if(item.type==="plano"){
+    if(!choices.some(x=>x.type==="dialogo" && x.npc==="veyra" && x.topic==="rotas"))throw Error("Consulte Veyra sobre as rotas primeiro");
+    // A route here is a provisional plan, not a crossing; replacing it is allowed.
+    for(let i=choices.length-1;i>=0;i--)if(choices[i].type==="plano")choices.splice(i,1);
+  }
+  if(choices.length>=24)throw Error("Limite de registros atingido; faça backup antes de prosseguir");
+  choices.push(item);
+  const next={...prev,updatedAt:now,choices};
+  if(!isValid(next))throw Error("Registro não compatível");
+  localStorage.setItem(KEY,JSON.stringify(next));
+  state=read(); render();
+  if(typeof window!=="undefined" && window.dispatchEvent)window.dispatchEvent(new Event("peren:campaign-changed"));
+  return state;
+}
+if(typeof window!=="undefined"){
+  Object.defineProperty(window,"PerenCampanhaSave", {value:Object.freeze({read,saveChoice}),writable:false,configurable:false});
+}
 function render() {
   start.hidden=Boolean(state);
   exportBtn.hidden=!state;
   if(state) {
-    message.textContent="Registro existente preservado. Próximo marco: abrir a primeira cena jogável em Eldroth.";
-    desc.textContent="Campanha iniciada, sem escolhas fictícias. A próxima etapa adicionará diálogos, viagem e decisões, mantendo este registro.";
+    message.textContent="Registro da Campanha ativo. Converse com a companhia e planeje a travessia abaixo.";
+    desc.textContent="Conversas e planos só são gravados após sua escolha. O grupo ainda está no acampamento; viagem e combate não foram iniciados.";
   }else{
     message.textContent="Nenhum slot de campanha. O Modo Livre permanece intocado.";
   }
@@ -48,6 +91,7 @@ start.addEventListener("click",()=>{
     localStorage.setItem(KEY,JSON.stringify(next));
     state=read();
     render();
+    if(typeof window!=="undefined" && window.dispatchEvent)window.dispatchEvent(new Event("peren:campaign-changed"));
   }catch(err){
     start.disabled=true;
     message.textContent="Não foi possível criar o registro. Armazenamento indisponível ou protegido; nenhum save anterior foi alterado.";
