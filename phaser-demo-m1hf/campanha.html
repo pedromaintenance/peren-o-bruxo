@@ -59,7 +59,16 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 .muted{color:#c4c5bc}
 [hidden]{display:none!important}
 @media(max-width:650px){.expedition-allies{grid-template-columns:1fr}.expedition-choices{grid-template-columns:1fr}}
-</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script><script src="./expedicao-eldroth.js" defer></script></head>
+
+.river-scene{border:1px solid #877a6e9a;background:#121f27;border-radius:12px;padding:16px;margin:16px 0}
+.river-scene h3{font:24px Georgia,serif;color:#e7ca9b;margin:0 0 10px}
+.river-scene blockquote{margin:16px 0;padding:14px;border-left:3px solid #cbb18b;background:#283334;font:italic 21px Georgia,serif;color:#f1d3a9}
+.river-requirement{margin:14px 0;padding:13px;border:1px solid #6f877e;border-radius:9px}
+.river-requirement h4{font:20px Georgia,serif;color:#eacb97;margin:0 0 8px}
+.river-requirement small{display:block;color:#becdc1;line-height:1.5}
+.river-note{display:block;margin-top:12px;font-size:13px}
+.river-completed{padding:12px;background:#234238;border-left:3px solid #badcbd;font-weight:700}
+</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script><script src="./expedicao-eldroth.js" defer></script><script src="./rio-ancestral.js" defer></script></head>
 <body><main>
 <div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
 <span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
@@ -127,13 +136,28 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 <ul id="expeditionCosts" class="expedition-ledger"></ul>
 <p id="expeditionStatus" role="status" class="status" aria-live="polite">Preparando a expedição...</p>
 </section>
+<section class="panel" id="ancestralRiver" aria-labelledby="riverTitle" hidden>
+<h2 id="riverTitle">O Rio Ancestral</h2>
+<p class="note-canon">Cena nova do videogame. A presença na margem não significa atravessar a correnteza, contratar transporte ou cumprir a promessa de regresso à cripta.</p>
+<div id="riverBeforeArrival">
+<p id="riverApproach" class="accent">Escolha um reconhecimento do caminho na Expedição.</p>
+<button id="riverReach" type="button" disabled>Chegar à margem (sem atravessar)</button>
+</div>
+<div id="riverAtBank" hidden>
+<div id="riverBankScene" class="river-scene"></div>
+<div id="riverCoins" class="river-scene"></div>
+<div id="riverRiteRequirements" class="river-scene"></div>
+<p id="riverUnknown" class="note-canon"></p>
+</div>
+<p id="riverStatus" class="status" role="status" aria-live="polite">Aguardando a próxima escolha...</p>
+</section>
 <section class="panel" aria-labelledby="slotTitle">
 <h2 id="slotTitle">Registro da campanha</h2>
 <p id="slotDescription">Este é um slot novo e independente do Modo Livre. Nesta etapa ele preserva o ponto de partida; decisões, exploração e combate serão adicionados em marcos posteriores.</p>
 <div class="controls"><button id="beginCampaign" type="button">Iniciar registro da campanha</button><button id="exportCampaign" type="button" hidden>Exportar backup JSON</button></div>
 <p class="status" id="slotStatus" role="status" aria-live="polite">Verificando o slot...</p>
 </section>
-<p><small>LORE-04: acordos, partida e reconhecimento são cenas novas e escolhas persistentes. O Rio Ancestral ainda não foi atravessado; sem valores monetários, PV, testes ou condições de combate inventadas.</small></p>
+<p><small>LORE-05: a chegada à margem e a oferenda das três moedas são escolhas persistentes; a travessia do Rio Ancestral continua pendente; sem valores monetários, PV, testes ou condições de combate inventadas.</small></p>
 </main>
 <script>if('serviceWorker' in navigator && location.pathname.includes('/phaser-demo-m1hf/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(()=>{}))}</script>
 </body></html>

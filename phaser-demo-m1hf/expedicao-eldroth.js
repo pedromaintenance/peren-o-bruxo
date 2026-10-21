@@ -33,7 +33,8 @@ function render(){
  if(!content)return;
  const s=get();
  if(s===undefined){say("Registro incompatível: a expedição está bloqueada para preservar os dados.");return}
- $("expeditionSetup").hidden=Boolean(s?.phase==="aproximacao");
+ $("expeditionSetup").hidden=Boolean(s?.phase==="aproximacao"||s?.phase==="margem");
+ if(s?.phase==="margem")say("A companhia alcançou a margem; veja o painel do Rio Ancestral.");
  $("expeditionApproach").hidden=!s||s.phase!=="aproximacao";
  $("expeditionReadiness").textContent=!s?"Crie o save da Campanha antes de negociar com a companhia.":s.phase==="preparacao"?"Negocie acordos voluntários com os quatro companheiros. Uma recusa bloqueia a partida, mas pode ser renegociada.":"Acordos fechados no início da viagem: nenhum dos personagens está submetido a um contrato forçado.";
  if(s?.phase==="preparacao" || !s) renderSetup(s);

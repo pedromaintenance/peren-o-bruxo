@@ -17,6 +17,8 @@ const TERMS={
   tavin:["moedas_reservadas","moedas_como_pagamento"]
 };
 const METHODS=new Set(["anel","presas","a_pe"]);
+const RIVER_PHRASE="Estes passaram sem registro, mas não sem peso.";
+const PENDING_TASKS=new Set(["vaso_fechado","nome_verdadeiro","testemunhas_voluntarias"]);
 const AGREED={veyra:"ritmo_compassado",dren:"contrato_claro",orel:"posicao_protegida",tavin:"moedas_reservadas"};
 const TOPICS={
   veyra:["rotas","ferimentos"],
@@ -32,6 +34,9 @@ function validChoice(c) {
   if(c.type==="plano"||c.type==="partida")return ROUTES.has(c.route);
   if(c.type==="acordo")return Object.hasOwn(TERMS,c.npc) && TERMS[c.npc].includes(c.term);
   if(c.type==="observacao")return METHODS.has(c.method);
+  if(c.type==="chegada")return ROUTES.has(c.route);
+  if(c.type==="moedas")return c.phrase===RIVER_PHRASE;
+  if(c.type==="pendencia")return PENDING_TASKS.has(c.task);
   return false;
 }
 function currentPlan(choices){return choices.filter(x=>x.type==="plano").at(-1)?.route||null}
@@ -44,11 +49,23 @@ function validHistory(s){
   if(s.choices.filter(x=>x.type==="plano").length>1)return false;
   if(new Set(s.choices.filter(x=>x.type==="acordo").map(x=>x.npc)).size!==s.choices.filter(x=>x.type==="acordo").length)return false;
   if(departure<0) return s.phase==="preparacao"&&s.checkpoint==="acampamento_eldroth_pos_cripta"&&observations.length===0;
-  if(s.phase!=="aproximacao"||s.checkpoint!=="trilha_eldroth_rumo_ao_rio")return false;
   const before=s.choices.slice(0,departure);
   const depart=s.choices[departure];
   if(!accepted(before)||currentPlan(before)!==depart.route||!before.some(x=>x.type==="dialogo"&&x.npc==="veyra"&&x.topic==="rotas"))return false;
-  return s.choices.slice(departure+1).every(x=>x.type==="observacao");
+  const arrivals=s.choices.filter(x=>x.type==="chegada");
+  const coins=s.choices.filter(x=>x.type==="moedas");
+  const tasks=s.choices.filter(x=>x.type==="pendencia");
+  if(arrivals.length>1||coins.length>1||new Set(tasks.map(x=>x.task)).size!==tasks.length)return false;
+  const arrivalIndex=s.choices.findIndex(x=>x.type==="chegada");
+  if(arrivalIndex<0){
+    return s.phase==="aproximacao"&&s.checkpoint==="trilha_eldroth_rumo_ao_rio"
+      &&coins.length===0&&tasks.length===0&&s.choices.slice(departure+1).every(x=>x.type==="observacao");
+  }
+  if(s.phase!=="margem"||s.checkpoint!=="margem_rio_ancestral")return false;
+  const onRoad=s.choices.slice(departure+1,arrivalIndex);
+  if(onRoad.length!==1||onRoad[0].type!=="observacao")return false;
+  if(arrivals[0].route!==depart.route)return false;
+  return s.choices.slice(arrivalIndex+1).every(x=>x.type==="moedas"||x.type==="pendencia");
 }
 function isValid(s) {
   return Boolean(s && typeof s==="object" && !Array.isArray(s) &&
@@ -65,11 +82,16 @@ function read() {
 }
 function saveChoice(payload) {
   // Persist only the player's explicit decisions. Do not assume consent or travel.
-  if(!payload || !["dialogo","plano","acordo","partida","observacao"].includes(payload.type))throw Error("Escolha inválida");
+  if(!payload || !["dialogo","plano","acordo","partida","observacao","chegada","moedas","pendencia"].includes(payload.type))throw Error("Escolha inválida");
   const prev=read();
   if(!prev)throw Error("Inicie o registro da campanha para escolher");
-  if(prev.phase!=="preparacao" && payload.type!=="observacao")throw Error("A marcha já começou; não é possível reescrever o acampamento");
-  if(prev.phase!=="aproximacao" && payload.type==="observacao")throw Error("Ainda não há partida registrada");
+  const allowedByPhase={
+    preparacao:["dialogo","plano","acordo","partida"],
+    aproximacao:["observacao","chegada"],
+    margem:["moedas","pendencia"]
+  };
+  if(!allowedByPhase[prev.phase]?.includes(payload.type))
+    throw Error("Ação indisponível neste trecho; decisões anteriores não podem ser reescritas");
   const now=new Date().toISOString();
   const item={...payload,at:now};
   if(!validChoice(item))throw Error("Escolha incompatível");
@@ -88,10 +110,18 @@ function saveChoice(payload) {
     if(!currentPlan(choices)||item.route!==currentPlan(choices))throw Error("O plano de travessia ainda não está definido");
   }
   if(item.type==="observacao"&&choices.some(x=>x.type==="observacao"))throw Error("A observação inicial já foi realizada");
+  if(item.type==="chegada"){
+    if(!choices.some(x=>x.type==="observacao"))throw Error("Escolha primeiro o reconhecimento do caminho");
+    if(choices.some(x=>x.type==="chegada"))throw Error("O grupo já chegou à margem");
+    if(item.route!==choices.find(x=>x.type==="partida")?.route)throw Error("A rota não pode mudar após a partida");
+  }
+  if(item.type==="moedas"&&choices.some(x=>x.type==="moedas"))throw Error("As três moedas já foram entregues à corrente");
+  if(item.type==="pendencia"&&choices.some(x=>x.type==="pendencia"&&x.task===item.task))return prev;
   if(choices.length>=24)throw Error("Limite de registros atingido; faça backup antes de prosseguir");
   choices.push(item);
   const next={...prev,updatedAt:now,choices,
-    ...(item.type==="partida"?{phase:"aproximacao",checkpoint:"trilha_eldroth_rumo_ao_rio"}:{})};
+    ...(item.type==="partida"?{phase:"aproximacao",checkpoint:"trilha_eldroth_rumo_ao_rio"}:{}),
+    ...(item.type==="chegada"?{phase:"margem",checkpoint:"margem_rio_ancestral"}:{})};
   if(!isValid(next))throw Error("Registro não compatível");
   localStorage.setItem(KEY,JSON.stringify(next));
   state=read(); render();
@@ -105,8 +135,8 @@ function render() {
   start.hidden=Boolean(state);
   exportBtn.hidden=!state;
   if(state) {
-    message.textContent=state.phase==="preparacao"?"Registro ativo. Negocie a partida, respeitando a autonomia da companhia.":"Primeiro trecho da expedição iniciado. A travessia do Rio ainda não ocorreu.";
-    desc.textContent=state.phase==="preparacao"?"Converse, negocie o apoio e decida a rota. Nenhuma viagem começa sem confirmação.":"A marcha foi registrada no mesmo slot. Progresso e escolhas anteriores preservados; ainda não há pedágio, combate ou travessia.";
+    message.textContent=state.phase==="preparacao"?"Registro ativo. Negocie a partida, respeitando a autonomia da companhia.":state.phase==="aproximacao"?"Primeiro trecho da expedição iniciado. A travessia do Rio ainda não ocorreu.":"O grupo alcançou a margem. O rito das moedas é opcional; o Rio ainda não foi atravessado.";
+    desc.textContent=state.phase==="preparacao"?"Converse, negocie o apoio e decida a rota. Nenhuma viagem começa sem confirmação.":state.phase==="aproximacao"?"A marcha foi registrada no mesmo slot. Progresso e escolhas anteriores preservados; ainda não há pedágio, combate ou travessia.":"As moedas reservadas podem ser entregues ao rio por decisão explícita. Água em vaso fechado, nome verdadeiro e testemunhas voluntárias continuam questões distintas.";
   }else{
     message.textContent="Nenhum slot de campanha. O Modo Livre permanece intocado.";
   }
