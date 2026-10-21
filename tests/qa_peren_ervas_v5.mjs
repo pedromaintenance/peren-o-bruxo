@@ -10,13 +10,13 @@ const gallery=load("phaser-demo-m1hf/peren-arte.html");
 const sw=load("phaser-demo-m1hf/demo-sw.js");
 const atlas=JSON.parse(load("phaser-demo-m1hf/art/characters/peren/atlas.json"));
 const data=JSON.parse(load("phaser-demo-m1hf/art/characters/peren/official-v5/runtime-provenance.json"));
-test("gather animation triggers only for herb nodes, mushrooms use preexisting generic gather",()=>{
- assert.match(bundle,/this\.playState\(X\.sprite==="herb"\?"gather-herb":"gather"\)/);
+test("gather chooses herb animation only for plants, generic animation for all other resources",()=>{
+ assert.match(bundle,/this\.playState\(X\.sprite==="herb"\?"gather-herb":"gather-general"\)/);
  assert.match(bundle,/sprite:"herb"/);
  assert.match(bundle,/sprite:"mushroom"/);
  assert.match(bundle,/X\.sprite==="herb"/);
- const choose=sprite=>sprite==="herb"?"gather-herb":"gather";
- for(const category of ["mushroom","stone","loot","ore",undefined])assert.equal(choose(category),"gather");
+ const choose=sprite=>sprite==="herb"?"gather-herb":"gather-general";
+ for(const category of ["mushroom","stone","loot","ore",undefined])assert.equal(choose(category),"gather-general");
  assert.equal(choose("herb"),"gather-herb");
  assert.match(bundle,/type:"collect",seed:this\.world\.seed,nodeId:X\.id/);
 });
@@ -46,7 +46,7 @@ test("preview and offline correctly include source and new herb atlas without ne
  for(const path of ["./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/runtime-provenance.json"]){
   assert.ok(files.includes(path),'not cached '+path);
  }
- assert.match(sw,/herb-only-v5/);
+ assert.match(sw,/generic-gather-v5/);
  assert.match(gallery,/value="gather-herb"/);
  assert.match(gallery,/350,250,450,850/);
  assert.doesNotMatch(gallery,/id="selectPerenMode"/);
