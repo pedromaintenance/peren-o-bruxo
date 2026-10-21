@@ -38,12 +38,12 @@ try{
  assert.match(img.headers()["content-type"]||"",/image\/png/);
  // Validate preview has no second-game links and the portrait is present in 3 views.
  await page.goto(base+"/",{waitUntil:"domcontentloaded"});
- assert.equal(await page.locator('img[src="./art/characters/peren/official-v1/peren-portrait-official-256.png"]').count(),3);
+ assert.equal(await page.locator('img[src="./art/characters/peren/official-v2/peren-portrait-official-256.png"]').count(),3);
  assert.equal(await page.locator("#selectPerenMode").count(),0);
  await page.evaluate(async()=>{
    await navigator.serviceWorker.ready;
    if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener("controllerchange",resolve,{once:true}));
-   for(const p of ["./art/characters/peren/official-v1/peren-portrait-official-256.png","./art/characters/peren/official-v1/peren-atlas-official-48x64.png","./peren-arte.html"]){
+   for(const p of ["./art/characters/peren/official-v2/peren-portrait-official-256.png","./art/characters/peren/official-v2/peren-atlas-official-48x64.png","./peren-arte.html"]){
      if(!(await caches.match(p))?.ok)throw new Error("Offline cache missing: "+p);
    }
  });
