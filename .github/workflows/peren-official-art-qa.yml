@@ -11,6 +11,7 @@ on:
       - 'README.md'
       - 'lore/peren/**'
       - 'ferramentas/gerar_peren_runtime.py'
+      - 'ferramentas/gerar_peren_caminhada_v3.py'
       - 'tests/qa_peren_oficial*'
       - 'tests/qa_single_free_mode*'
   workflow_dispatch:
@@ -28,9 +29,10 @@ jobs:
       - name: Sprite compatibility, provenance, saves and one-game contract
         run: |
           node --check game.js
-          python3 -m py_compile ferramentas/gerar_peren_runtime.py
+          python3 -m py_compile ferramentas/gerar_peren_runtime.py ferramentas/gerar_peren_caminhada_v3.py
           python3 -m pip install --disable-pip-version-check Pillow==11.3.0
           python3 tests/qa_peren_frames.py
+          python3 tests/qa_peren_walk_v3.py
           node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs
       - name: Install Chromium
         run: |
