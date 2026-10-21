@@ -69,8 +69,8 @@ function render() {
   start.hidden=Boolean(state);
   exportBtn.hidden=!state;
   if(state) {
-    message.textContent="Registro existente preservado. Próximo marco: abrir a primeira cena jogável em Eldroth.";
-    desc.textContent="Campanha iniciada, sem escolhas fictícias. A próxima etapa adicionará diálogos, viagem e decisões, mantendo este registro.";
+    message.textContent="Registro da Campanha ativo. Converse com a companhia e planeje a travessia abaixo.";
+    desc.textContent="Conversas e planos só são gravados após sua escolha. O grupo ainda está no acampamento; viagem e combate não foram iniciados.";
   }else{
     message.textContent="Nenhum slot de campanha. O Modo Livre permanece intocado.";
   }
