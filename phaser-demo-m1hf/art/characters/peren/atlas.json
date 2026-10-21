@@ -375,7 +375,34 @@
     "frameHeight": 64,
     "source": "18 poses oficiais de 160×190",
     "quality": "nearest-neighbor, paleta runtime indexada 128 cores",
-    "limitation": "Somente caminhada para esquerda possui passos completos de origem; direita espelhada e outras ações reaproveitam poses aprovadas, não são animações inéditas do artista."
+    "limitation": "Somente caminhada para esquerda possui passos completos de origem; direita espelhada e outras ações reaproveitam poses aprovadas, não são animações inéditas do artista.",
+    "version": 2,
+    "sourceRegistration": [
+      20,
+      18,
+      140,
+      185
+    ],
+    "registrationSize": [
+      42,
+      59
+    ],
+    "colorMode": "RGBA",
+    "alpha": "original",
+    "uniqueFrameVisuals": 19,
+    "feet": "bottom-aligned in 48x64; no independent per-pose normalization",
+    "missingActions": [
+      "interact",
+      "gather",
+      "hurt",
+      "cast",
+      "attack"
+    ],
+    "missingActionFallback": "source-authentic, static frames. Do not substitute running/walking for missing motions",
+    "downMovement": "front-facing still until user supplies directional walking sprites",
+    "backMovement": "authored cape variations; no leg gait",
+    "leftMovement": "official 5-step source (four poses used in walk)",
+    "rightMovement": "mirror of left"
   },
   "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual."
 }

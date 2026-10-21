@@ -45,3 +45,21 @@
 
 O recurso `phaser-demo-m1hf/art/characters/peren/official-v1/portrait-runtime.svg` embute uma miniatura PNG derivada do `retrato/peren_portrait.png` do ZIP oficial por **redução nearest-neighbor** para `64 × 75` e quantização a 64 cores (sem inventar desenho). O PNG interno tem 2.614 bytes, SHA-256 `9590186585eb9f145b1a1dbf6bdd14f36fdaecd2aefa1dfff05d0121a4baafa3`, e fica autocontido para PWA offline. É uma **derivação para interface**, não substituto da arte mestre. Não recolorir ou reinterpretar manualmente esse arquivo. Mantenha o sprite atlas de 48×64 em uso até existir atlas canônico de 4 direções com QA artístico próprio.
 \n## Derivações de runtime introduzidas em 21/10/2026\n\nOs PNGs do ZIP permanecem intactos fora do Git; os seguintes PNGs **derivados e integrados ao repositório principal** vêm exclusivamente do arquivo aprovado, sem mistura com o retrato antigo de cabelo grisalho:\n\n- `peren-portrait-official-128.png` — 128×151, SHA-256 `bee005e98fef9a28efaec797f1abbf4a7cea26495a81f26ab899918d7c0a7d10`.\n- `peren-portrait-official-256.png` — 256×256, SHA-256 `f379e9b1aa485bc6286749f6f77b71c9a7d8534256ef68c13aa6f815ca7a430b`.\n- `peren-actor-official-128.png` — 128×261, SHA-256 `f8ae3653621c3386de2d50d67d932fb2e166f276d378e418aa6020a4bb7930a5`.\n- `peren-atlas-official-48x64.png` — 768×512, 128 frames 48×64, SHA-256 `6044391acf753e110decbce22fa4777e8842013c0f7ac0a68e910c9a96ecc02d`.\n\nO jogo compartilha o mesmo rosto e atlas nas versões clássica/Phaser e variantes experimentais. A folha de sprites **não substitui a exigência artística de animação de quatro direções completamente nova**; esse trabalho permanece aberto. Uma bancada visual oferece inspeção no navegador, sem criar segundo modo de jogo.\n
+## Auditoria de bugs visuais — 21/10/2026 (v2)
+
+A verificação de todos os 128 frames da versão anterior encontrou **35 renderizações distintas** apesar dos 128 índices declarados. Isso era esperado parcialmente pelo número limitado de poses da fonte, mas havia dois defeitos de implementação: cada pose era dimensionada pelo próprio contorno opaco (fazendo o personagem inflar/encolher) e poses de caminhada eram alternadas para simular coleta, magia, interação e ataques, gerando gestos falsos e *flicker*.
+
+O runtime **v2** aplica registro comum dos 18 sprites alinhados (fonte 160×190; recorte constante x=20–140, y=18–185), usa redução nearest-neighbor com área fixa 42×59 dentro de frames 48×64 e mantém os pés no mesmo y=61. O atlas RGBA mantém cores e alfa, sem paleta indexada de 128 tons. Resultado: 128 índices de quadros, **19 imagens visualmente distintas**, sem oscilações artificiais; esse número menor é um compromisso explícito para não fingir animações inexistentes.
+
+**Disponíveis no pacote original:** cinco poses de caminhada à esquerda, vistas frontais estáticas, vistas posteriores com movimentos de capa e posturas laterais. A caminhada à direita continua espelhamento técnico.
+
+**Ainda precisam ser fornecidos se quisermos animações completas e fiéis:**
+- Caminhar frente e costas: idealmente quatro quadros por direção, com posições de pés alinhadas e ciclo coerente. Corrida também precisa de desenhos dedicados.
+- Interagir e coletar: quatro quadros por direção para as mãos e o corpo realmente executarem as ações.
+- Ferido: dois a quatro quadros por direção (impacto/reação e recuperação), sem trocar o rosto ou o manto.
+- Conjurar e atacar: quatro quadros por direção, respeitando a mão de magia e os acessórios aprovados.
+- Retratos de expressão *ferido* e *conjurando* são temporariamente cópias do retrato base; enviar expressões oficiais específicas se desejado.
+
+**Contrato recomendado para novos sprites:** PNG RGBA transparente, 160×190 px por quadro, pés alinhados à linha y=184 do pacote original, uma imagem por pose. Os filenames podem indicar `acao_direcao_frame_01.png`. Nunca precisamos que o criador monte o atlas 48×64; a conversão técnica fará isso de modo reproduzível. Aceitam-se outros tamanhos desde que informados e alinhados.
+
+**QA:** `tests/qa_peren_frames.py` verifica hashes e dimensões, alinhamento de todos os pés, recortes, ausência de movimentos falsos e espelhamento. `tests/qa_peren_phaser_browser.mjs` entra de fato na floresta com Phaser e guarda screenshots para inspeção. Até que a PR de auditoria seja aprovada, trate v2 como candidata.

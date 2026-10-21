@@ -10,9 +10,9 @@ try {
     assert.equal(await page.locator("#selectPerenMode").count(),0);
     assert.equal(await page.locator("#readCampChronicle").count(),0);
     assert.equal(await page.locator('a[href="./campanha.html"]').count(),0);
-    assert.equal(await page.locator('img[src="./art/characters/peren/official-v1/peren-portrait-official-256.png"]').count(),3);
+    assert.equal(await page.locator('img[src="./art/characters/peren/official-v2/peren-portrait-official-256.png"]').count(),3);
     assert.equal(await page.locator("#phaser").count(),1);
-    const file=await page.request.get(base+"/art/characters/peren/official-v1/peren-portrait-official-256.png");
+    const file=await page.request.get(base+"/art/characters/peren/official-v2/peren-portrait-official-256.png");
     assert.equal(file.ok(),true,"official portrait served");
     assert.match(file.headers()["content-type"]||"",/image\/png/);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+3),false);
@@ -26,11 +26,11 @@ try {
     if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener("controllerchange",resolve,{once:true}));
     const keys=await caches.keys();
     const active=keys.filter(x=>x.startsWith("peren-phaser-m1hf-preview-"));
-    if(active.length!==1||!active[0].includes("official-peren"))throw Error("Unexpected cache version: "+keys);
+    if(active.length!==1||!active[0].includes("qa-stable-v2"))throw Error("Unexpected cache version: "+keys);
     for(const f of ["./modos.html","./campanha.html","./cronica.html"]){
       if(await caches.match(f))throw Error("Retired page persisted in cache: "+f);
     }
-    const portrait=await caches.match("./art/characters/peren/official-v1/peren-portrait-official-256.png");
+    const portrait=await caches.match("./art/characters/peren/official-v2/peren-portrait-official-256.png");
     if(!portrait?.ok)throw Error("Missing official portrait offline");
   });
   await context.setOffline(true);
