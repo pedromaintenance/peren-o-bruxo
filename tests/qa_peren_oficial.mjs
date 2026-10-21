@@ -7,17 +7,17 @@ import {createHash} from "node:crypto";
 
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const PREVIEW=join(ROOT,"phaser-demo-m1hf");
-const canon=join(PREVIEW,"art/characters/peren/official-v1");
+const canon=join(PREVIEW,"art/characters/peren/official-v2");
 const read=p=>readFileSync(join(ROOT,p));
 const hash=b=>createHash("sha256").update(b).digest("hex");
 const portrait=readFileSync(join(canon,"peren-portrait-official-256.png"));
 const actor=readFileSync(join(canon,"peren-actor-official-128.png"));
 const atlas=readFileSync(join(canon,"peren-atlas-official-48x64.png"));
 const expected={
- "peren-portrait-official-256.png":{size:[256,256],sha:"f379e9b1aa485bc6286749f6f77b71c9a7d8534256ef68c13aa6f815ca7a430b"},
- "peren-portrait-official-128.png":{size:[128,151],sha:"bee005e98fef9a28efaec797f1abbf4a7cea26495a81f26ab899918d7c0a7d10"},
- "peren-actor-official-128.png":{size:[128,261],sha:"f8ae3653621c3386de2d50d67d932fb2e166f276d378e418aa6020a4bb7930a5"},
- "peren-atlas-official-48x64.png":{size:[768,512],sha:"6044391acf753e110decbce22fa4777e8842013c0f7ac0a68e910c9a96ecc02d"}
+ "peren-portrait-official-256.png":{size:[256,256],sha:"81ae05daca03276ace5c8b463a81a4036be6834ae2e978397cd8b9f58d9a6cbf"},
+ "peren-portrait-official-128.png":{size:[128,151],sha:"cab573bc7bac38fde239ad0710261d359eb53954bf81a4f939369cca18d3d68d"},
+ "peren-actor-official-128.png":{size:[128,261],sha:"f4a611f6073a6436115ee6c73ef5e40b980bc7f7c98735b9483dd67e62e972c9"},
+ "peren-atlas-official-48x64.png":{size:[768,512],sha:"a17344bda86f503faebd9fe3db65f951b3a0399d7fc39efb18d0b33e262316eb"}
 };
 function pngDimensions(raw){
  assert.equal(raw.subarray(0,8).toString("hex"),"89504e470d0a1a0a");
@@ -71,10 +71,10 @@ test("offline precaches correct art with versioned caches and all game resources
  const pwa=read("phaser-demo-m1hf/demo-sw.js").toString();
  const root=read("sw.js").toString();
  const stable=read("phaser-demo/demo-sw.js").toString();
- assert.match(root,/0\.1\.3-peren-oficial/);
- assert.match(stable,/peren-canon-20261021/);
- assert.match(pwa,/official-peren-20261021/);
- for(const f of Object.keys(expected))assert.ok(pwa.includes("./art/characters/peren/official-v1/"+f));
+ assert.match(root,/0\.1\.4-peren-auditado/);
+ assert.match(stable,/peren-stable-v2-20261021/);
+ assert.match(pwa,/qa-stable-v2-20261021/);
+ for(const f of Object.keys(expected))assert.ok(pwa.includes("./art/characters/peren/official-v2/"+f));
  assert.match(root,/peren-actor-official-128.png/);
  assert.match(root,/peren-portrait-official-256.png/);
  assert.match(pwa,/peren-arte.html/);
