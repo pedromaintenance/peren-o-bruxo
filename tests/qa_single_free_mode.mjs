@@ -24,7 +24,7 @@ test("one-game navigation has no second mode or D&D narrative campaign buttons",
  assert.match(hub,/id="showJournal"/);
  assert.match(hub,/id="hudGold"/);
  assert.match(hub,/id="phaser"/);
- assert.match(hub,/src="\.\/art\/characters\/peren\/official-v1\/portrait-runtime\.svg"/);
+ assert.ok(hub.includes('src="./art/characters/peren/official-v1/peren-portrait-official-256.png"'));
  assert.match(readme,/um único jogo sandbox/i);
  assert.match(lore,/referência de criação/i);
  assert.match(roadmap,/um único Modo Livre/);
