@@ -27,5 +27,7 @@
     "idle_04.png"
   ],
   "relativeAssetDirectory": "./art/characters/peren/battler/v6/",
-  "behavior": "Only for battle; keep the exploration atlas 48x64 and fallback when unavailable"
+  "behavior": "Only for battle; keep the exploration atlas 48x64 and fallback when unavailable",
+  "qualityNotes": "Traços de manto/cabelo chegam às bordas (3,5–12,1% de pixels com alfa >30); revisar pixels soltos antes de publicar.",
+  "artReviewedForProduction": false
 }
