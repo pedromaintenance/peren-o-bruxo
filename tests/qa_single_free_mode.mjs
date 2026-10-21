@@ -12,7 +12,7 @@ const sw=get("phaser-demo-m1hf/demo-sw.js");
 const readme=get("README.md");
 const lore=get("lore/peren/README.md");
 const roadmap=get("ROADMAP.md");
-const portrait="art/characters/peren/official-v1/peren-portrait-official-256.png";
+const portrait="art/characters/peren/official-v2/peren-portrait-official-256.png";
 const obsolete=[
  "modos.html","campanha.html","campanha.js","cronica.html","cronica.js",
  "conselho-eldroth.js","expedicao-eldroth.js","rio-ancestral.js","dividas-mortos.js",
@@ -24,7 +24,7 @@ test("one-game navigation has no second mode or D&D narrative campaign buttons",
  assert.match(hub,/id="showJournal"/);
  assert.match(hub,/id="hudGold"/);
  assert.match(hub,/id="phaser"/);
- assert.ok(hub.includes('src="./art/characters/peren/official-v1/peren-portrait-official-256.png"'));
+ assert.ok(hub.includes('src="./art/characters/peren/official-v2/peren-portrait-official-256.png"'));
  assert.match(readme,/um único jogo sandbox/i);
  assert.match(lore,/referência de criação/i);
  assert.match(roadmap,/um único Modo Livre/);
