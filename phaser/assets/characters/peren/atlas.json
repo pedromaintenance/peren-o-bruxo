@@ -363,7 +363,7 @@
     "rune": "#6e57bd"
   },
   "runtimeAtlas": {
-    "version": 3,
+    "version": 5,
     "width": 768,
     "height": 512,
     "columns": 16,
@@ -371,7 +371,7 @@
     "frameWidth": 48,
     "frameHeight": 64,
     "frames": 128,
-    "source": "Peren official approved ZIP",
+    "source": "WalkFix neutral v4",
     "colorMode": "RGBA",
     "sourceRegistration": [
       20,
@@ -424,7 +424,8 @@
       "frameMs": 180
     },
     "otherActions": "112 non-walk frames unchanged from v2",
-    "notes": "Third left step mirrored in supplied ZIP; no further mirroring in runtime"
+    "notes": "Third left step mirrored in supplied ZIP; no further mirroring in runtime",
+    "normalAtlasSha256": "e0d20ce3b889d2eb2cc98b2a43a9ab3cc508bfd6bd79cc3a5352be9f615a7685"
   },
   "woundedWalk": {
     "runtimeAtlas": "peren-wounded-atlas.png",
@@ -468,5 +469,48 @@
     "threshold": "0<hp<=0.5*playerMaxHp",
     "scope": "cosmetic gait only; do not alter speed or combat. Future source rebuild must load texture and create peren-wounded-{direction}-walk animations.",
     "status": "Implemented in distributed main bundle via PR #59; source source-code port must retain these rules"
+  },
+  "herbGather": {
+    "sourceZip": "Peren_Kerrhylon_Assets_v4_Coleta_WalkFix_v4_Neutro(1).zip",
+    "sourceSha256": "c3e63c5c2527047eabf6cfd7546ed9e36facb037b6ba5a340b35a8fe473648bb",
+    "walkAtlas": "peren-atlas.png",
+    "herbAtlas": "peren-herb-atlas.png",
+    "eligibility": "node.sprite === 'herb' only; mushroom stays gather",
+    "frames": {
+      "down": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "left": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "right": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "up": [
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    "frameMs": [
+      350,
+      250,
+      450,
+      850
+    ],
+    "repeat": false,
+    "loader": "Load peren-herb spritesheet. In collect(), when node.sprite === 'herb', play herb-specific one-shot; otherwise play generic gather. Reward on animation complete. Do not change the wounded gait or saves.",
+    "provenance": "Main branch official-v5/runtime-provenance.json",
+    "status": "Implemented and tested in distributed Phaser preview; when source engine is rebuilt, port the same routing and animation registration."
   }
 }
