@@ -25,8 +25,11 @@ try{
  await page.goto(base+"/peren-arte.html",{waitUntil:"load"});
  await page.waitForFunction(()=>document.querySelector("#status")?.textContent?.includes("128 quadros"));
  assert.equal(await page.locator("canvas[data-dir]").count(),4);
- const pixels=await page.locator("canvas[data-dir='0']").evaluate(c=>[...c.getContext("2d").getImageData(0,0,48,64).data].filter((_,i)=>i%4===3).filter(a=>a>0).length);
- assert.ok(pixels>100,"sprite needs visible approved art");
+ await page.waitForFunction(()=>{
+   const c=document.querySelector("canvas[data-dir='0']");
+   return c&&([...c.getContext("2d").getImageData(0,0,48,64).data]
+     .filter((_,i)=>i%4===3).filter(a=>a>0).length>100);
+ },null,{timeout:15000});
  await page.locator("#action").selectOption("walk");
  await page.waitForTimeout(300);
  assert.equal(await page.locator("#action").inputValue(),"walk");
