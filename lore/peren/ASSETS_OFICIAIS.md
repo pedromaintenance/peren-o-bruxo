@@ -28,8 +28,8 @@
 | --- | --- |
 | Aprovação do estilo, rosto, roupa e poses fornecidos | **Oficial — aprovação expressa do criador** |
 | Inventário das 67 entradas e documentação do atlas | **Conferidos a partir do ZIP** |
-| Binários PNG/JPG inseridos no GitHub | **Ainda não integrado** |
-| Retrato oficial exibido no jogo publicado | **Ainda não implementado** |
+| Binários PNG/JPG originais inseridos no GitHub | **Não**: os masters continuam no ZIP original entregue pelo criador |
+| Retrato oficial na interface Phaser | **Candidato de runtime** — SVG textual autocontido de 64×75, com PNG reduzido extraído do master, adicionado nas telas de modo e Campanha. Publicação/QA dependem de merge. |
 | Conversão/expansão para as animações exigidas no Phaser | **Pendente de adaptação e validação** |
 | Testes de regressão e aprovação visual no jogo | **Pendentes** |
 
@@ -40,3 +40,7 @@
 - `charset/atlas/peren_atlas_6x3_160x190.png` SHA-256: `f071439a066d0c2de13f4ec1e1bcff645a8b2e20a7779fd20ec86d7a2842ef09`.
 
 > A documentação aqui não incorpora, hospeda, comprime novamente, publica nem certifica os binários do arquivo original. A fonte aprovada continua sendo o ZIP entregue; cada recurso integrado deverá ter proveniência e hash verificáveis.
+
+## Adaptação de interface — LORE-04 (candidata)
+
+O recurso `phaser-demo-m1hf/art/characters/peren/official-v1/portrait-runtime.svg` embute uma miniatura PNG derivada do `retrato/peren_portrait.png` do ZIP oficial por **redução nearest-neighbor** para `64 × 75` e quantização a 64 cores (sem inventar desenho). O PNG interno tem 2.614 bytes, SHA-256 `9590186585eb9f145b1a1dbf6bdd14f36fdaecd2aefa1dfff05d0121a4baafa3`, e fica autocontido para PWA offline. É uma **derivação para interface**, não substituto da arte mestre. Não recolorir ou reinterpretar manualmente esse arquivo. Mantenha o sprite atlas de 48×64 em uso até existir atlas canônico de 4 direções com QA artístico próprio.
