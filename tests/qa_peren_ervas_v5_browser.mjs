@@ -22,8 +22,15 @@ try{
   assert.deepEqual(last,await pixel(),"one-shot herb gather should hold final pose");
   assert.equal(await page.locator("canvas[data-dir]").count(),4);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+3),false);
-  await page.locator("#action").selectOption("gather");
-  await page.waitForFunction(()=>document.querySelector("#status")?.textContent?.includes("128 quadros"));
+  await page.locator("#action").selectOption("gather-general");
+  await page.waitForFunction(()=>document.querySelector("#status")?.textContent?.includes("coleta geral"));
+  const generalStart=await pixel();
+  await page.waitForTimeout(1550);
+  const generalFinal=await pixel();
+  await page.waitForTimeout(400);
+  assert.notDeepEqual(generalStart,generalFinal,"generic collection must bend and recover at "+width);
+  assert.deepEqual(generalFinal,await pixel(),"generic gathering must play once and hold final frame");
+  assert.notDeepEqual(generalFinal,last,"generic pickup should differ from the final herb pose");
   assert.deepEqual(errors,[]);
   await ctx.close();
  }
@@ -33,7 +40,7 @@ try{
  await page.evaluate(async()=>{
   await navigator.serviceWorker.ready;
   if(!navigator.serviceWorker.controller)await new Promise(r=>navigator.serviceWorker.addEventListener("controllerchange",r,{once:true}));
-  for(const path of ["./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png"]){
+  for(const path of ["./art/characters/peren/generic-gather-runtime-patch.json","./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png"]){
    if(!(await caches.match(path))?.ok)throw new Error("Not cached "+path);
   }
  });
@@ -42,5 +49,5 @@ try{
  await page.locator("#action").selectOption("gather-herb");
  await page.waitForFunction(()=>document.querySelector("#status")?.textContent?.includes("ervas apenas"));
  await ctx.close();
- console.log("PEREN HERB V5 browser QA passed: one-shot, 3 viewports, no errors and offline.");
+ console.log("PEREN V5 gather QA passed: herbs and empty-hand one-shot, 3 viewports, no errors and offline.");
 }finally{await browser.close();}

@@ -48,7 +48,7 @@ test("precaching only assets that exist, without old second-game paths",()=>{
  assert.equal(new Set(list).size,list.length);
  for(const f of obsolete)assert.ok(!list.includes("./"+f),"unexpected offline campaign "+f);
  for(const f of list)if(f!=="./")assert.ok(existsSync(join(phaser,f)),"missing precache resource "+f);
- assert.match(sw,/herb-only-v5-20261021/);
+ assert.match(sw,/generic-gather-v5-20261021/);
  assert.match(sw,/k\.startsWith\(CACHE_PREFIX\)/);
 });
 test("there is no code wiping or migrating previous campaign saves",()=>{

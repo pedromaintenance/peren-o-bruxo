@@ -14,6 +14,7 @@ on:
       - 'ferramentas/gerar_peren_caminhada_v3.py'
       - 'ferramentas/gerar_peren_ferido_v4.py'
       - 'ferramentas/gerar_peren_coleta_ervas_v5.py'
+      - 'tests/qa_peren_coleta_geral_v5.mjs'
       - 'tests/qa_peren_oficial*'
       - 'tests/qa_single_free_mode*'
   workflow_dispatch:
@@ -38,7 +39,7 @@ jobs:
           python3 tests/qa_peren_walk_v3.py
           python3 tests/qa_peren_wounded_v4.py
           python3 tests/qa_peren_ervas_v5.py
-          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs
+          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_coleta_geral_v5.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
