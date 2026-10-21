@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10212a"><title>Peren — Galeria da Arte Oficial</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0e1922;color:#e9ddc8;font:15px/1.5 system-ui}
+main{width:min(960px,100%);margin:auto;padding:20px 16px 50px}
+a{color:#eed099}h1,h2{font-family:Georgia,serif;color:#e7c58a;margin:16px 0 9px}
+p{color:#bccbc2}.top{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.poses{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.card{border:1px solid #9a855b;background:#1a2c32;border-radius:12px;padding:12px;text-align:center}
+.card canvas{display:block;width:min(100%,144px);height:auto;aspect-ratio:3/4;image-rendering:pixelated;background:#263639;margin:auto;border:1px solid #536969}
+.figure{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.figure img{width:100%;max-height:310px;object-fit:contain;image-rendering:pixelated;background:#202c33}
+label{display:block;font-weight:700;margin:12px 0 8px}select{width:100%;max-width:300px;padding:10px;border:1px solid #b69c70;border-radius:8px;background:#1a3238;color:#f2e2c4;font:inherit}
+small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #ddb981;background:#24302f;border-radius:0 9px 9px 0}
+@media(max-width:620px){.poses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style></head>
+<body><main>
+<a href="./index.html">← Voltar ao único jogo — Modo Livre</a>
+<h1>Peren Kerrhylon — identidade visual oficial</h1>
+<p>Visual aprovado pelo criador, derivado do ZIP original. Esta é uma bancada de inspeção da arte, <strong>não um segundo modo de jogo</strong>.</p>
+<div class="figure">
+<div class="card"><img src="./art/characters/peren/official-v1/peren-portrait-official-256.png" alt="Peren, cabelos escuros, olhos azuis, manto dourado"><strong>Retrato do protagonista</strong></div>
+<div class="card"><img src="./art/characters/peren/official-v1/peren-actor-official-128.png" alt="Peren de corpo inteiro, traje escuro e dourado"><strong>Corpo inteiro</strong></div>
+</div>
+<h2>Sprites em quatro direções</h2>
+<label for="action">Visualizar animação</label>
+<select id="action"><option value="idle">Parado</option><option value="walk">Caminhando</option><option value="run">Correndo</option><option value="interact">Interagindo</option><option value="gather">Coletando</option><option value="hurt">Ferido</option><option value="cast">Conjurando</option><option value="attack">Atacando</option></select>
+<div class="poses">
+<div class="card"><canvas width="48" height="64" data-dir="0" aria-label="Peren de frente"></canvas><strong>Frente</strong></div>
+<div class="card"><canvas width="48" height="64" data-dir="1" aria-label="Peren olhando para a esquerda"></canvas><strong>Esquerda</strong></div>
+<div class="card"><canvas width="48" height="64" data-dir="2" aria-label="Peren olhando para a direita"></canvas><strong>Direita</strong></div>
+<div class="card"><canvas width="48" height="64" data-dir="3" aria-label="Peren de costas"></canvas><strong>Costas</strong></div>
+</div>
+<p class="notice">Limitação documentada: os cinco passos originais são para a esquerda. As demais direções e ações reutilizam poses reais e espelhamento, para manter compatibilidade com os 128 quadros do motor. Não são desenhos adicionais aprovados pelo artista.</p>
+<small id="status" role="status">Preparando atlas...</small>
+</main>
+<script>
+const picture=new Image();
+picture.src="./art/characters/peren/official-v1/peren-atlas-official-48x64.png";
+const directions=[...document.querySelectorAll("canvas[data-dir]")];
+const actions=["idle","walk","run","interact","gather","hurt","cast","attack"];
+let ready=false,last=0,frame=0;
+picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · arte derivada do ZIP oficial";requestAnimationFrame(render)};
+picture.onerror=()=>{document.getElementById("status").textContent="Não foi possível carregar o atlas offline."};
+function render(time){
+ if(ready&&time-last>=125){
+  last=time;frame=(frame+1)%4;
+  const action=Math.max(0,actions.indexOf(document.getElementById("action").value));
+  for(const canvas of directions){
+   const direction=Number(canvas.dataset.dir);
+   const index=direction*32+action*4+frame;
+   const x=index%16*48,y=Math.floor(index/16)*64;
+   const ctx=canvas.getContext("2d");ctx.imageSmoothingEnabled=false;
+   ctx.clearRect(0,0,48,64);ctx.drawImage(picture,x,y,48,64,0,0,48,64);
+  }
+ }
+ requestAnimationFrame(render);
+}
+</script>
+</body></html>

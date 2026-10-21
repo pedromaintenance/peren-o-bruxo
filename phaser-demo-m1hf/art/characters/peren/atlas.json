@@ -330,8 +330,8 @@
       "repeat": false
     }
   },
-  "author": "Projeto Carcaça",
-  "origin": "pixel art procedural original M1e; 128 frames; 32 directional clips",
+  "author": "Pacote visual oficial de Peren Kerrhylon aprovado pelo criador; adaptação técnica para Phaser",
+  "origin": "Peren_Kerrhylon_Assets_Recortados(1).zip, SHA-256 b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
   "palette": {
     "outline": "#10121d",
     "dark": "#1b1b2d",
@@ -361,5 +361,21 @@
     "magic": "#aa64ff",
     "glow": "#e4c4ff",
     "rune": "#6e57bd"
-  }
+  },
+  "runtime": {
+    "sheet": "peren-atlas.png",
+    "columns": 16,
+    "rows": 8,
+    "totalFrames": 128,
+    "size": [
+      768,
+      512
+    ],
+    "frameWidth": 48,
+    "frameHeight": 64,
+    "source": "18 poses oficiais de 160×190",
+    "quality": "nearest-neighbor, paleta runtime indexada 128 cores",
+    "limitation": "Somente caminhada para esquerda possui passos completos de origem; direita espelhada e outras ações reaproveitam poses aprovadas, não são animações inéditas do artista."
+  },
+  "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual."
 }

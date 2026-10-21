@@ -1,0 +1,52 @@
+name: Peren Official Art QA
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/peren-official-art-qa.yml'
+      - 'phaser-demo-m1hf/**'
+      - 'phaser-demo/**'
+      - 'game.js'
+      - 'style.css'
+      - 'sw.js'
+      - 'README.md'
+      - 'lore/peren/**'
+      - 'ferramentas/gerar_peren_runtime.py'
+      - 'tests/qa_peren_oficial*'
+      - 'tests/qa_single_free_mode*'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-art:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Sprite compatibility, provenance, saves and one-game contract
+        run: |
+          node --check game.js
+          python3 -m py_compile ferramentas/gerar_peren_runtime.py
+          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Serve sandbox and previews
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-asset-qa.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/peren-arte.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-asset-qa.log
+          exit 1
+      - name: Browser mobile desktop art gallery and PWA offline
+        env:
+          PEREN_SITE_ORIGIN: http://127.0.0.1:8765
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: |
+          node tests/qa_single_free_mode_browser.mjs
+          node tests/qa_peren_oficial_browser.mjs

@@ -7,3 +7,27 @@
 
 /* v0.1.2 — professores nas oficinas */
 .tutor-section{margin:8px 0 22px;padding:8px 0;border-bottom:1px solid #44564c}.tutor-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:10px 0 12px}.tutor-card{margin:0}.tutor-card .labelled{font-size:14px}.tutor-card .price{font-size:12px}.tutor-card p{margin:4px 0 10px}
+
+
+/* Peren official art — derived exclusively from user-approved source sprites. */
+.hero{overflow:hidden}
+.hero-peren-official{position:absolute;right:7px;bottom:-5px;height:202px;width:auto;max-width:35%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 3px 8px #000c);pointer-events:none}
+.hero-inner{z-index:1;max-width:calc(100% - 100px)}
+.hero-inner h1{font-size:clamp(23px,7vw,32px)}
+.peren-profile-header{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:13px;background:linear-gradient(120deg,#263b36,#161e25);border:1px solid #9b8056;border-radius:12px;padding:11px;margin-bottom:12px}
+.peren-profile-header img{display:block;width:110px;height:129px;object-fit:contain;image-rendering:pixelated;background:#101c24;border:1px solid #837458;border-radius:6px}
+.peren-profile-header strong{display:block;font:21px Georgia,serif;color:#f1d09b;overflow-wrap:anywhere}
+.peren-profile-header small{display:block;margin:6px 0;color:#afc9bd}
+.peren-profile-header p{font-size:12px;color:#d1d5c9;line-height:1.55;margin:7px 0}
+.battle-peren-official{position:absolute;left:8px;bottom:0;height:151px;max-width:32%;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 6px 6px #0009);z-index:2}
+.battle-bg h2{left:116px;max-width:calc(100% - 128px)}
+@media(max-width:360px){
+ .hero-peren-official{height:176px;right:2px}
+ .hero-inner{max-width:calc(100% - 83px)}
+ .hero-inner h1{font-size:23px}
+ .peren-profile-header{grid-template-columns:95px minmax(0,1fr);gap:9px;padding:8px}
+ .peren-profile-header img{width:95px;height:117px}
+ .peren-profile-header strong{font-size:18px}
+ .battle-peren-official{height:138px}
+ .battle-bg h2{left:100px;max-width:calc(100% - 107px)}
+}

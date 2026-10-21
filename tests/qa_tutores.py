@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parent.parent
 KEYS=['itens','receitas','magias','monstros','cidades','expedicoes','missoes','manifesto_dados','reliquias_dnd']
 DATA={k:json.loads((ROOT/'data'/f'{k}.json').read_text()) for k in KEYS}
 JS=(ROOT/'game.js').read_text(); CSS=(ROOT/'style.css').read_text()
-assert "peren-mercador-carcaca-0.1.2-offline" in (ROOT/'sw.js').read_text()
+assert "peren-mercador-carcaca-0.1.3-peren-oficial-offline" in (ROOT/'sw.js').read_text()
 errors=[]; counts=collections.Counter()
 with sync_playwright() as p:
  chromium=__import__('shutil').which('chromium') or __import__('shutil').which('google-chrome')

@@ -27,5 +27,18 @@
       "width": 256,
       "height": 256
     }
-  ]
+  ],
+  "deprecatedVisualStage": true,
+  "currentRuntime": "Peren oficial do pacote fornecido pelo criador, aplicado a todos os caminhos de variante por compatibilidade",
+  "originalStageNotesAreHistorical": true,
+  "officialArt": {
+    "spriteFrames": 128,
+    "frameSize": [
+      48,
+      64
+    ],
+    "sourcePackageSHA256": "b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
+    "provenance": "ferramentas/gerar_peren_runtime.py",
+    "limitations": "Animações faltantes derivadas de poses reais; sem novos desenhos autorais"
+  }
 }
