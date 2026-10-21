@@ -1,0 +1,147 @@
+{
+  "schema": "peren-official-walk-v3",
+  "source_zip_sha256": "0ff0981e3b1fa26f8d8cfe10131fd33fb85f6957d7700e979b09b54f32e9dcd4",
+  "source_walk_sha256": "4281a7f1e946037f479f94331a509d380d5582cc87b8e1e707f8da1f4ffb359c",
+  "frameSize": [
+    48,
+    64
+  ],
+  "atlasSize": [
+    768,
+    512
+  ],
+  "framesTotal": 128,
+  "walkDirectionOrder": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "sourceRows": [
+    "frente",
+    "esquerda",
+    "direita",
+    "costas"
+  ],
+  "walkLoop": "1 → 2 → 3 → 2",
+  "sourceFrameMs": 180,
+  "runtimeFps": 5.5555555556,
+  "walkIndices": {
+    "down": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "left": [
+      36,
+      37,
+      38,
+      39
+    ],
+    "right": [
+      68,
+      69,
+      70,
+      71
+    ],
+    "up": [
+      100,
+      101,
+      102,
+      103
+    ]
+  },
+  "originalLeftFrame03Mirrored": true,
+  "otherActions": "v2 preserved; no new attacks, gathering, cast, hurt, interact or running assets",
+  "walkFrames": {
+    "down": [
+      {
+        "frame": 1,
+        "file": "charset/caminhada/frames/frente/peren_frente_frame_01.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 2,
+        "file": "charset/caminhada/frames/frente/peren_frente_frame_02.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 3,
+        "file": "charset/caminhada/frames/frente/peren_frente_frame_03.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 4,
+        "file": "charset/caminhada/frames/frente/peren_frente_frame_02.png",
+        "sourceMirrored": false
+      }
+    ],
+    "left": [
+      {
+        "frame": 1,
+        "file": "charset/caminhada/frames/esquerda/peren_esquerda_frame_01.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 2,
+        "file": "charset/caminhada/frames/esquerda/peren_esquerda_frame_02.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 3,
+        "file": "charset/caminhada/frames/esquerda/peren_esquerda_frame_03.png",
+        "sourceMirrored": true
+      },
+      {
+        "frame": 4,
+        "file": "charset/caminhada/frames/esquerda/peren_esquerda_frame_02.png",
+        "sourceMirrored": false
+      }
+    ],
+    "right": [
+      {
+        "frame": 1,
+        "file": "charset/caminhada/frames/direita/peren_direita_frame_01.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 2,
+        "file": "charset/caminhada/frames/direita/peren_direita_frame_02.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 3,
+        "file": "charset/caminhada/frames/direita/peren_direita_frame_03.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 4,
+        "file": "charset/caminhada/frames/direita/peren_direita_frame_02.png",
+        "sourceMirrored": false
+      }
+    ],
+    "up": [
+      {
+        "frame": 1,
+        "file": "charset/caminhada/frames/costas/peren_costas_frame_01.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 2,
+        "file": "charset/caminhada/frames/costas/peren_costas_frame_02.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 3,
+        "file": "charset/caminhada/frames/costas/peren_costas_frame_03.png",
+        "sourceMirrored": false
+      },
+      {
+        "frame": 4,
+        "file": "charset/caminhada/frames/costas/peren_costas_frame_02.png",
+        "sourceMirrored": false
+      }
+    ]
+  }
+}
