@@ -13,19 +13,42 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 .accent{padding:12px 14px;border-left:3px solid #d0ab72;background:#263036;border-radius:0 8px 8px 0}
 .controls{display:flex;gap:11px;flex-wrap:wrap;margin-top:17px}.controls button{flex:1 1 180px}
 .status{margin-top:15px;min-height:30px;color:#d7c7a7}small{color:#b7c6bc}
+.portrait-stage{display:grid;grid-template-columns:minmax(140px,210px) minmax(0,1fr);align-items:center;gap:20px;border:1px solid #ad946e77;background:linear-gradient(110deg,#1c2a2c,#171c27);padding:17px;border-radius:13px;margin:20px 0}
+.portrait-stage img{width:100%;max-height:245px;aspect-ratio:64/75;object-fit:contain;image-rendering:pixelated;filter:drop-shadow(0 8px 18px #0009)}
+.portrait-stage h2{margin:0 0 8px}.portrait-stage p{margin:6px 0}
+.chrono{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.companion{border:1px solid #b69c6877;background:#15232bc9;border-radius:11px}
+.companion summary{font-weight:750;padding:14px;min-height:50px;cursor:pointer;color:#ecd0a1}
+.companion summary:hover{background:#304044}
+.companion p{padding:0 14px 14px;margin:0}
+.companion summary:focus-visible{outline:3px solid #edcc89;outline-offset:2px}
+.note-canon{color:#c3cabc;font-size:12px}
+@media(max-width:530px){.portrait-stage{grid-template-columns:110px minmax(0,1fr);gap:12px;padding:11px}.portrait-stage h2{font-size:22px}.chrono{grid-template-columns:1fr}}
 @media(max-width:460px){.controls button{width:100%}main{padding:16px 12px 40px}}
 </style><script src="./campanha.js" defer></script></head>
 <body><main>
 <div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
 <span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
 <h1>Peren Kerrhylon</h1>
-<p>Changeling. Bruxo de Lorde Khan. O homem dos olhos estrelados.</p>
+<section class="portrait-stage" aria-label="Identidade visual oficial de Peren">
+<img src="./art/characters/peren/official-v1/portrait-runtime.svg" alt="Retrato oficial em pixel art de Peren Kerrhylon, cabelo escuro, olhar estrelado e roupas sombrias com ornamentos" width="64" height="75" decoding="async">
+<div><h2>O Bruxo dos Olhos Estrelados</h2><p>Changeling · Bruxo de Lorde Khan · Pacto da Corrente</p><p class="note-canon">Retrato adaptado do pacote visual oficial aprovado em 21/10/2026. Os disfarces de Peren continuam sendo identidades separadas.</p></div>
+</section>
 <section class="panel" aria-label="Prólogo da campanha">
 <h2>O acampamento de Eldroth</h2>
 <p>Depois da cripta dos Sem-Nome, Peren e seus companheiros descansam numa elevação da floresta. A carne do alce está sendo preparada. Veyra ainda se recupera dos ferimentos, enquanto o grupo pondera como chegar ao Rio Ancestral.</p>
 <p>Três moedas foram separadas para um rito. A Máscara dos Sem-Nome permanece na cripta, e a promessa de retorno continua em vigor.</p>
 <p class="accent">A rota ainda <strong>não foi escolhida</strong>. Via oficial, balsa clandestina ou travessia autônoma são possibilidades — não ações consumadas.</p>
 </section>
+<section class="panel" aria-label="Conselho de campanha">
+<h2>À volta da fogueira</h2><p>O grupo está reunido e ainda não decidiu como atravessar o Rio Ancestral. Consulte os companheiros antes de qualquer escolha. Estas notas registram seus interesses conhecidos, sem simular decisões nem comprometer o save.</p>
+<div class="chrono">
+<details class="companion"><summary>Veyra Sull · Travessia</summary><p>Operadora de transporte e custódia, ferida e em recuperação. Conhece três alternativas: pedágio com registro, balsa clandestina com risco ou uma travessia autônoma pela correnteza.</p></details>
+<details class="companion"><summary>Dren · Segurança</summary><p>Vigia e caçador prático; ajuda a proteger a comitiva e transportar os recursos da caça. Sua permanência depende de um acordo livre.</p></details>
+<details class="companion"><summary>Orel · Arco e vigia</summary><p>Arqueiro de estrada e apoio logístico. Precisa ser considerado nas decisões de segurança e não é um combatente descartável.</p></details>
+<details class="companion"><summary>Tavin Rook · Suprimentos</summary><p>Cuida da logística, do transporte e do apoio a feridos, com experiência nos procedimentos de custódia.</p></details>
+<details class="companion"><summary>Presas · Familiar</summary><p>Pseudodragão familiar do Pacto da Corrente. Pode reconhecer os arredores e alertar Peren, respeitados seus limites de alcance e exposição ao perigo.</p></details>
+</div><p class="note-canon">As informações acima vêm do dossiê da mesa. Ações e negociações ainda não foram executadas no jogo.</p></section>
 <section class="panel" aria-labelledby="slotTitle">
 <h2 id="slotTitle">Registro da campanha</h2>
 <p id="slotDescription">Este é um slot novo e independente do Modo Livre. Nesta etapa ele preserva o ponto de partida; decisões, exploração e combate serão adicionados em marcos posteriores.</p>
