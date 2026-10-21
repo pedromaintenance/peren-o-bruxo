@@ -22,7 +22,7 @@ try{
   assert.deepEqual(last,await pixel(),"one-shot herb gather should hold final pose");
   assert.equal(await page.locator("canvas[data-dir]").count(),4);
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+3),false);
-  await page.locator("#action").selectOption("gather");
+  await page.locator("#action").selectOption("gather-general");
   await page.waitForFunction(()=>document.querySelector("#status")?.textContent?.includes("128 quadros"));
   assert.deepEqual(errors,[]);
   await ctx.close();
@@ -33,7 +33,7 @@ try{
  await page.evaluate(async()=>{
   await navigator.serviceWorker.ready;
   if(!navigator.serviceWorker.controller)await new Promise(r=>navigator.serviceWorker.addEventListener("controllerchange",r,{once:true}));
-  for(const path of ["./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png"]){
+  for(const path of ["./art/characters/peren/generic-gather-runtime-patch.json","./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png"]){
    if(!(await caches.match(path))?.ok)throw new Error("Not cached "+path);
   }
  });
