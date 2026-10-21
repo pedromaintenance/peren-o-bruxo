@@ -34,13 +34,15 @@
 | --- | --- | --- | --- |
 | **LORE-00** | P0 | Arquivar JSON completo sem modificar conteúdo, validar parse/versão e registrar regras de confiança | **Concluído na `main`**, arquivo conferido byte a byte com o upload (66.014 bytes) |
 | **LORE-01** | P0 | Analisar confronto entre lore e jogo, preservar a distinção entre **Modo Livre** e possível **Modo Campanha** | **Análise/documentação publicada**; sem mudança jogável |
-| **LORE-02** | P0 | Mostrar **Crônica de campanha** em painel somente de leitura, separada do diário de ações do save; offline, móvel e testada | **Pendente de implementação/QA** |
+| **LORE-02** | P0 | Mostrar **Crônica de campanha** em painel somente de leitura, separada do diário de ações do save; offline, móvel e testada | **Implementação candidata em `feature/lore-02-cronica-campanha`**; checagens estáticas e renderização simulada aprovadas; **QA de navegador, mobile/PWA e publicação ainda pendentes** |
 | **LORE-03** | P0 | Escolha explícita Livre × Campanha, saves isolados, sem retroatividade de nível/moedas | **Proposta** — requer decisão de escopo |
 | **LORE-04** | P1 | Criar acampamento em Eldroth, preservar agência de 4 companheiros e Presas; apresentar três rotas ao Rio | **Proposta** — não confundir Eldroth/Mürin |
 | **LORE-05** | P1 | Três moedas sem dono, água, nome de morto, testemunhas voluntárias e promessa de retorno | **Proposta**, sem inventar saldos/nomes |
 | **LORE-06** | P1 | Pacto com Khan, identidade changeling, forma de Presas e magias, em perfil próprio de regras | **Pendente** de decisão arcade × 5e e validação da ficha |
 | **LORE-07** | P2 | Anel com rastreamento recíproco, Cajado com intrusão astral e tabu, lacres, contratos e facções | **Pendente** de limites mecânicos e QA narrativo |
 | **LORE-08** | P2 | Arte de olhos estrelados e comitiva, com validação de retratos originais | **Pendente** de referências e aprovação artística |
+
+**LORE-02 (candidato para revisão):** `phaser-demo-m1hf/cronica.html` oferece a Crônica a partir do menu de Portomonte. O leitor usa uma projeção canônica de `lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json` com 21 marcos, quatro companheiros, Presas, Khan, cinco relíquias/ofertas, compromissos e facções. Capítulos começam fechados para evitar revelação involuntária; não acessa `localStorage`/`sessionStorage`, não escreve no save e não modifica o motor nem as recompensas. `demo-sw.js` inclui a página, script e projeção na lista de cache. Validações estáticas e de DOM simulado concluídas; **não considerar publicado/aprovado para celular físico** antes de teste em navegador real e merge. A integração está apenas no bundle público, não no `phaser-lab/` da PR #24; portá-la para a fonte antes de uma próxima recompilação para evitar regressão.
 
 **Preservação:** não sobrescrever saves do clássico (`peren_carcaca_save_v1`) nem das builds Phaser (`peren_phaser_save_m1d_v1` / `peren_phaser_save_m1hf_preview_v1`). Dados narrativos não são transações e não equivalem a funcionalidade concluída. **Esta entrega é documental; o Pages jogável continua com M1h-F.20**, sem nova mecânica publicada.
 
