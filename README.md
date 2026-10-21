@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
-**Versão 0.1.2 — campanha sandbox jogável / base de dados extensível.**
+**Versão 0.1.2 — Modo Livre sandbox jogável / base de dados extensível.**
 
 ## Um jogo, uma experiência livre
 
@@ -40,7 +40,7 @@ O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas imp
 - **Cozinha:** receitas regionais que preparam suprimentos para a estrada.
 - **Grimório:** magias exigem Arcanismo; novos grimórios podem ser adquiridos, escritos ou recuperados.
 - **Peren:** equipamentos, inventário, talentos, informações, importação/exportação de save.
-- **Batalhas:** escolhas por turno no estilo JRPG clássico (ataque, guarda, magia, consumíveis); sem animações. A derrota causa resgate, perda de dinheiro e ferimentos, mas não apaga a campanha.
+- **Batalhas:** escolhas por turno no estilo JRPG clássico (ataque, guarda, magia, consumíveis); sem animações. A derrota causa resgate, perda de dinheiro e ferimentos, mas não apaga o progresso do jogador.
 
 ## Coleção de dados
 
