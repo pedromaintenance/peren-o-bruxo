@@ -73,3 +73,7 @@ O artefato de conversa `Peren_V6_Batalha_e_4_Retratos_Pacote.zip` contém os doi
 4. Void Rift exibe transparência real antes de sua integração cinematográfica; números e fundo verde não aparecem.
 5. Comandados por teclado, controle e toque, os combates continuam funcionando sem regressão.
 6. A publicação do pacote e cache PWA só ocorre após QA e revisão visual.
+
+## Revisão de recortes de quatro colunas
+
+As fontes têm elementos com alfa atravessando os limites de coluna. A folha de idle apresenta aproximadamente **3,5–12,1%** de alfa significativo nos divisores; a folha de portraits, **37–45,1%**. O corte retangular preserva pixels, mas pode capturar fios/mantos de poses vizinhas e cortar pontas da roupa. As quatro imagens individuais geradas são **pré-recortes de montagem**, não sprites perfeitamente isolados. Antes de publicar, mascarar/isolá-las com revisão artística e comparar com os masters.
