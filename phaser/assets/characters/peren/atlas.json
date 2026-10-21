@@ -331,7 +331,7 @@
     }
   },
   "author": "Projeto Carcaça",
-  "origin": "pixel art procedural original M1e; 128 frames; 32 directional clips",
+  "origin": "Peren visual oficial: arquivo ZIP fornecido pelo criador, SHA-256 b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
   "palette": {
     "outline": "#10121d",
     "dark": "#1b1b2d",
@@ -361,5 +361,15 @@
     "magic": "#aa64ff",
     "glow": "#e4c4ff",
     "rune": "#6e57bd"
+  },
+  "runtimeAtlas": {
+    "width": 768,
+    "height": 512,
+    "columns": 16,
+    "rows": 8,
+    "frameWidth": 48,
+    "frameHeight": 64,
+    "frames": 128,
+    "notes": "Direita espelhada dos cinco passos de esquerda; frente/costas reutilizam poses da arte oficial, sem novas animações originais."
   }
 }
