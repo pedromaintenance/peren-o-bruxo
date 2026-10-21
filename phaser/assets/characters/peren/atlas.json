@@ -331,7 +331,7 @@
     }
   },
   "author": "Projeto Carcaça",
-  "origin": "pixel art procedural original M1e; 128 frames; 32 directional clips",
+  "origin": "Peren visual oficial: arquivo ZIP fornecido pelo criador, SHA-256 b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
   "palette": {
     "outline": "#10121d",
     "dark": "#1b1b2d",
@@ -361,5 +361,156 @@
     "magic": "#aa64ff",
     "glow": "#e4c4ff",
     "rune": "#6e57bd"
+  },
+  "runtimeAtlas": {
+    "version": 5,
+    "width": 768,
+    "height": 512,
+    "columns": 16,
+    "rows": 8,
+    "frameWidth": 48,
+    "frameHeight": 64,
+    "frames": 128,
+    "source": "WalkFix neutral v4",
+    "colorMode": "RGBA",
+    "sourceRegistration": [
+      20,
+      18,
+      140,
+      185
+    ],
+    "uniqueVisualFrames": 19,
+    "missingActions": [
+      "interact",
+      "gather",
+      "hurt",
+      "cast",
+      "attack"
+    ],
+    "limitation": "Source-backed static placeholders instead of fake gait in gestures; down walk has no new legs; up has cape motion; left walks, right mirrors",
+    "sourceZipSha256": "0ff0981e3b1fa26f8d8cfe10131fd33fb85f6957d7700e979b09b54f32e9dcd4",
+    "walk": {
+      "down": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "left": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "right": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "up": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "sourceFrames": 3,
+      "loop": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "frameMs": 180
+    },
+    "otherActions": "112 non-walk frames unchanged from v2",
+    "notes": "Third left step mirrored in supplied ZIP; no further mirroring in runtime",
+    "normalAtlasSha256": "e0d20ce3b889d2eb2cc98b2a43a9ab3cc508bfd6bd79cc3a5352be9f615a7685"
+  },
+  "woundedWalk": {
+    "runtimeAtlas": "peren-wounded-atlas.png",
+    "sourcePackageSha256": "c7bc4b761b41760b0e93004b4edeb8a92074f32b220f712b3186ab0844f2f904",
+    "sourceFrames": 12,
+    "frameCount": 16,
+    "originalAtlas": "peren-atlas.png",
+    "directions": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "frames": {
+      "down": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "left": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "right": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "up": [
+        100,
+        101,
+        102,
+        103
+      ]
+    },
+    "frameMs": 230,
+    "threshold": "0<hp<=0.5*playerMaxHp",
+    "scope": "cosmetic gait only; do not alter speed or combat. Future source rebuild must load texture and create peren-wounded-{direction}-walk animations.",
+    "status": "Implemented in distributed main bundle via PR #59; source source-code port must retain these rules"
+  },
+  "herbGather": {
+    "sourceZip": "Peren_Kerrhylon_Assets_v4_Coleta_WalkFix_v4_Neutro(1).zip",
+    "sourceSha256": "c3e63c5c2527047eabf6cfd7546ed9e36facb037b6ba5a340b35a8fe473648bb",
+    "walkAtlas": "peren-atlas.png",
+    "herbAtlas": "peren-herb-atlas.png",
+    "eligibility": "node.sprite === 'herb' only; mushroom stays gather",
+    "frames": {
+      "down": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "left": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "right": [
+        80,
+        81,
+        82,
+        83
+      ],
+      "up": [
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    "frameMs": [
+      350,
+      250,
+      450,
+      850
+    ],
+    "repeat": false,
+    "loader": "Load peren-herb spritesheet. In collect(), when node.sprite === 'herb', play herb-specific one-shot; otherwise play generic gather. Reward on animation complete. Do not change the wounded gait or saves.",
+    "provenance": "Main branch official-v5/runtime-provenance.json",
+    "status": "Implemented and tested in distributed Phaser preview; when source engine is rebuilt, port the same routing and animation registration."
   }
 }

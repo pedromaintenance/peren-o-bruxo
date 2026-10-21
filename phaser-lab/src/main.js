@@ -4,12 +4,23 @@ import {HERBS} from './world.js';
 import {XboxPadTracker} from './gamepad.js';
 import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
-import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY} from './progress.js';
+import {buildCatalogs,createProgressBridge,inventoryTotal,purchasePrice,salePrice,craftable,skillLevel,PHASER_KEY,CLASSIC_KEY,validatePhaserBackup} from './progress.js';
 import {hubViewModel,applyHubViewModel} from './ui-hub.js';
 import {createInventoryScreen} from './ui-inventory.js';
 import {createWorkshopScreen} from './ui-workshop.js';
 import {createMarketplaceScreen} from './ui-marketplace.js';
-import {expeditionViewModel,battleViewModel,fillGauge,actionDetails} from './ui-adventure.js';
+import {expeditionViewModel,battleViewModel,battleOutcomeViewModel,battleReceiptViewModel,fillGauge,actionDetails} from './ui-adventure.js';
+import {M1HF_PREVIEW} from './progress.js';
+import {createDiagnosticLog,buildDiagnosticReport} from './diagnostics.js';
+import {showPreviewSaveRecovery} from './save-recovery.js';
+import {createJournalScreen} from './ui-journal.js';
+import {createGuideScreen} from './ui-guide.js';
+import {fieldAwareness} from './field-awareness.js';
+import {encounterReadout} from './encounter-readout.js';
+import {battleImpact} from './battle-impact.js';
+import {commandConsequences} from './command-consequences.js';
+import {createBattleTranscript} from './battle-transcript.js';
+import {retreatGraceReadout} from './retreat-grace.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
@@ -19,7 +30,15 @@ for(const name of ['itens','receitas','magias','monstros','cidades']){
   data[name]=await response.json();
 }
 const catalogs=buildCatalogs(data);
-const bridge=createProgressBridge(localStorage,catalogs);
+let bridge;
+try{bridge=createProgressBridge(localStorage,catalogs)}
+catch(error){
+ // Only the isolated M1h-F preview offers recovery: no automatic reset or
+ // access to other games' keys. The Phaser renderer has not started yet.
+ if(!M1HF_PREVIEW)throw error;
+ showPreviewSaveRecovery({document,storage:localStorage,key:PHASER_KEY,catalogs,error,validate:validatePhaserBackup});
+ return;
+}
 // Experimental visual flag only. Existing game and save remain unchanged by default.
 const chosenArt=new URLSearchParams(location.search).get('art');
 if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
@@ -32,11 +51,77 @@ const inventory=createInventoryScreen({document,bridge,catalogs});
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
 const $=id=>document.getElementById(id);
+const journal=M1HF_PREVIEW?createJournalScreen({document,bridge,catalogs}):null;
+if(journal){
+ $('showJournal').hidden=false;
+ $('showJournal').addEventListener('click',()=>journal.open());
+}
+const guide=M1HF_PREVIEW?createGuideScreen({document}):null;
+if(guide)$('showGuide').hidden=false;
 const app=new Phaser.Game({type:Phaser.AUTO,parent:'phaser',backgroundColor:'#101b1b',
   scale:{mode:Phaser.Scale.RESIZE,autoCenter:Phaser.Scale.CENTER_BOTH,width:390,height:844},
   render:{pixelArt:true,antialias:false},input:{gamepad:true},physics:{default:'arcade',arcade:{debug:false}},
   scene:[ExplorationScene,BattleScene]});
 window.__perenLab=app;
+
+/** Bug reports are opt-in, local-only and only exposed in the isolated M1h-F build. */
+const diagnosticLog=createDiagnosticLog();
+if(M1HF_PREVIEW){
+ const note=(type,message)=>diagnosticLog.record(type,message);
+ window.addEventListener('error',e=>note('javascript',e.message));
+ window.addEventListener('unhandledrejection',e=>note('promise',e.reason?.message||String(e.reason)));
+ app.events.on('peren-battle-error',message=>note('battle-error',message));
+ app.events.on('peren-progress-error',message=>note('save-error',message));
+ app.events.on('peren-battle-end',event=>note('battle-ended',event.result));
+ app.events.on('peren-encounter',event=>note('encounter',event.type));
+ const buildReport=()=>{
+  let explorer,combat;
+  try{explorer=app.scene.getScene('ExplorationScene')}catch{}
+  try{combat=app.scene.getScene('BattleScene')}catch{}
+  return buildDiagnosticReport({
+   version:import.meta.env.VITE_PEREN_BUILD_SHA||'m1hf-dev',
+   generatedAt:new Date().toISOString(),pathname:location.pathname,
+   viewport:{width:innerWidth,height:innerHeight},online:navigator.onLine,
+   save:bridge.read(),battle:app.registry.get('battleState'),
+   scene:{
+    explorationActive:!!explorer?.scene.isActive(),
+    explorationPaused:!!explorer?.scene.isPaused(),
+    battleActive:!!combat?.scene.isActive()
+   },
+   events:diagnosticLog.snapshot()
+  });
+ };
+ window.__perenDiagnostics={report:buildReport};
+ const say=(message)=>{
+  for(const id of ['m1hfDiagStatus','m1hfDiagBattleStatus']){
+   const el=document.getElementById(id);if(el)el.textContent=message;
+  }
+ };
+ const copy=async()=>{
+  try{
+   await navigator.clipboard.writeText(JSON.stringify(buildReport(),null,2));
+   say('Diagnóstico copiado. Cole na conversa ou no relato do bug.');
+  }catch(error){
+   note('diagnostic',error.message);
+   say('Não foi possível copiar; use Baixar diagnóstico no menu da cidade.');
+  }
+ };
+ const save=()=>{
+  try{
+   const payload=JSON.stringify(buildReport(),null,2);
+   const url=URL.createObjectURL(new Blob([payload],{type:'application/json'}));
+   const a=document.createElement('a');a.href=url;a.download='peren-m1hf-diagnostico.json';
+   document.body.append(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(url),1500);
+   say('Relatório salvo no aparelho. Ele não foi enviado para nenhum servidor.');
+  }catch(error){note('diagnostic',error.message);say('Erro ao salvar diagnóstico: '+error.message);}
+ };
+ for(const id of ['m1hfDiagCopy','m1hfDiagCopyBattle']){
+  document.getElementById(id)?.addEventListener('click',copy);
+ }
+ document.getElementById('m1hfDiagSave')?.addEventListener('click',save);
+}
+
 const workshop=createWorkshopScreen({document,bridge,catalogs,onChange:()=>{
   app.registry.set('combatProfile',bridge.combatProfile());renderHub();
 }});
@@ -69,9 +154,61 @@ function updateHud(){
     fillGauge(document,'hudHpFill',ui.hp,ui.maxHp);
     fillGauge(document,'hudMpFill',ui.mp,ui.maxMp);
   }
+  if(M1HF_PREVIEW){
+    const hint=$('harvestProximity'),button=$('gatherBtn');
+    const node=app.registry.get('harvestCue');
+    const signature=node?`${node.nodeId}:${node.name}:${node.count}`:'';
+    if(hint.dataset.signature!==signature){
+      hint.dataset.signature=signature;
+      hint.hidden=!node;
+      hint.textContent=node?`❧ Ao alcance: ${node.name} · ${node.count}×`:'';
+      button.dataset.ready=node?'true':'false';
+      button.setAttribute('aria-label',node?`Colher ${node.name}, ${node.count} unidades`:'Colher ingrediente');
+      button.title=node?`${node.name} ao alcance — E / Espaço / toque / Xbox A ou X`:'Aproxime-se de um recurso para colher';
+    }
+  }
   $('returnBtn').hidden=!ui.canReturn;
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
+  if(M1HF_PREVIEW){
+    const sneak=app.registry.get('sneakState')||{active:false,touch:false};
+    const button=$('sneakBtn'),hint=$('sneakNotice');
+    button.hidden=false;button.setAttribute('aria-pressed',String(Boolean(sneak.touch)));
+    button.textContent=sneak.touch?'◈ DISCRETO ✓':'◈ DISCRETO';
+    hint.hidden=!sneak.active;
+    hint.textContent=sneak.active?'PASSOS SILENCIOSOS · Menor alcance de detecção; movimento mais lento.':'';
+  }
+  if(M1HF_PREVIEW){
+    const grace=retreatGraceReadout(app.registry.get('retreatGrace'));
+    const hint=$('retreatGraceNotice');
+    const signature=grace?String(grace.seconds):'';
+    if(hint.dataset.seconds!==signature){
+      hint.dataset.seconds=signature;
+      hint.hidden=!grace;
+      hint.textContent=grace?'⌁ '+grace.title+' · '+grace.detail:'';
+    }
+  }
+  if(M1HF_PREVIEW){
+    const mark=$('trailOrientation'),cue=app.registry.get('trailCue');
+    const next=cue?`${cue.phase}:${cue.label}:${cue.hint}`:'';
+    if(mark.dataset.signature!==next){
+      mark.dataset.signature=next;mark.hidden=!cue;
+      mark.dataset.phase=cue?.phase||'';
+      mark.textContent=cue?`⌁ ${cue.label} · ${cue.hint}`:'';
+    }
+  }
+  // M1h-F.8: awareness is a read-only view of the SAME cover/sprint/weather
+  // and detected/investigating flags already produced by the enemy AI.
+  if(M1HF_PREVIEW){
+    const box=$('fieldAwareness'),cue=fieldAwareness(app.registry.get('fieldSignals'));
+    box.hidden=false;
+    const next=cue.state+':'+cue.title+':'+cue.detail;
+    if(box.dataset.signature!==next){
+      box.dataset.signature=next;box.dataset.state=cue.state;
+      $('fieldAwarenessTitle').textContent=cue.title;
+      $('fieldAwarenessDetail').textContent=cue.detail;
+    }
+  }
   if(!$('bagPanel').hidden)$('bagContents').textContent=inventoryText();
 }
 app.events.on('step',updateHud);
@@ -97,9 +234,10 @@ pad.addEventListener('pointerdown',event=>{event.preventDefault();pad.setPointer
 pad.addEventListener('pointermove',event=>{if(pad.hasPointerCapture(event.pointerId)){event.preventDefault();moveJoy(event)}});
 for(const name of ['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(name,releaseJoy);
 $('gatherBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('gather'));
+$('sneakBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('sneak'));
 $('sprintBtn').addEventListener('pointerdown',()=>app.scene.getScene('ExplorationScene')?.command('sprint'));
 for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').addEventListener(evt,()=>app.scene.getScene('ExplorationScene')?.command('walk'));
-function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent='Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
+function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent=M1HF_PREVIEW?'PRÉVIA M1h-F · save experimental protegido, separado do clássico e da demo anterior.':'Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
 $('returnBtn').addEventListener('click',()=>hub(true));
 $('goForest').addEventListener('click',()=>hub(false));
 $('resetForest').addEventListener('click',()=>{
@@ -120,10 +258,20 @@ app.events.on('peren-encounter',info=>{
  $('encounterModal').hidden=false;
  $('controls').inert=true;
  $('beastName').textContent=info.name;
- $('beastPortrait').src=`./art/monsters/${info.type}/portrait.png`;
+ const monsterArt=chosenArt==='m1hf'?'./art-m1hf/monsters/':chosenArt==='m1he'?'./art-m1he/monsters/':'./art/monsters/';
+ $('beastPortrait').src=`${monsterArt}${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
  $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
+ if(M1HF_PREVIEW){
+  const assessment=encounterReadout(info,bridge.combatProfile());
+  const panel=$('encounterAssessment');
+  panel.hidden=false;panel.dataset.state=assessment.state;
+  $('encounterBehavior').textContent=assessment.behavior;
+  $('encounterTactic').textContent=assessment.tactic;
+  $('encounterReadiness').textContent=assessment.vitality;
+  $('encounterSupplies').textContent=assessment.supplies;
+ }
  $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura de Mürin');
  $('observeBeast').focus({preventScroll:true});
 });
@@ -156,7 +304,7 @@ $('hub').hidden=false;$('controls').hidden=true;
 // Browsers generally reveal a new controller only after the user presses a button.
 const xbox=new XboxPadTracker();
 let lastPadLabel='', hubChoice=0, forestVisited=false;
-const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('endDayBtn'),$('showInventory'),$('resetForest')];
+const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
 function selectHubChoice(index){
   hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
   hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
@@ -175,7 +323,7 @@ function pollXbox(){
   const label=state.connected?`🎮 Xbox / gamepad conectado: ${state.id}`:'🎮 Xbox: conecte o controle e pressione um botão';
   if(label!==lastPadLabel){lastPadLabel=label;$('gamepad-status').textContent=label;$('gamepad-hud').textContent=state.connected?'🎮 Xbox conectado':'';}
   const scene=joyScene();
-  if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint};
+  if(scene)scene.gamepadInput={move:state.move,sprint:state.sprint,sneak:state.sneak};
   if(!state.connected)return;
   const key=state.justPressed;
   if(!$('battleUI').hidden){
@@ -188,6 +336,22 @@ function pollXbox(){
     return;
   }
   if(!$('encounterModal').hidden){if(key.a||key.x)$('observeBeast').click();else if(key.b||key.menu)retreatBeast();return;}
+  if(guide?.isOpen()){
+    if(key.b||key.menu||key.view){guide.close();return;}
+    if(key.left)guide.cycleTab(-1);
+    else if(key.right)guide.cycleTab(1);
+    else if(key.up)guide.scroll(-1);
+    else if(key.down)guide.scroll(1);
+    return;
+  }
+  if(journal?.isOpen()){
+    if(key.b||key.menu||key.view){journal.close();return;}
+    if(key.left)journal.cycleTab(-1);
+    else if(key.right)journal.cycleTab(1);
+    else if(key.up)journal.scroll(-1);
+    else if(key.down)journal.scroll(1);
+    return;
+  }
   if(marketplace.isOpen()){
     if(key.b||key.menu){marketplace.close();return;}
     if(key.x){marketplace.setMode(marketplace.mode==='buy'?'sell':'buy');return;}
@@ -237,6 +401,8 @@ window.addEventListener('keydown',event=>{
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
+  if(guide?.isOpen()){guide.close();return;}
+  if(journal?.isOpen()){journal.close();return;}
   if(marketplace.isOpen()){marketplace.close();return;}
   if(workshop.isOpen()){workshop.close();return;}
   if(inventory.isOpen()){inventory.close();return;}
@@ -250,30 +416,107 @@ $('bagClose').addEventListener('click',()=>toggleBag(false));
 // but a completely isolated in-memory testing profile. Never reads Peren's save.
 let selectedBattleIndex=0;
 const battleOptions=[...document.querySelectorAll('[data-battle]')];
+let battleHintAction='attack';
+function updateBattleHint(action,state=app.registry.get('battleState')){
+ const target=$('battleCommandHint');
+ battleHintAction=action;
+ if(M1HF_PREVIEW){
+  const data=commandConsequences(action,state,bridge.state.learned);
+  target.textContent=data.text;
+  target.dataset.status=data.status;
+ }else target.textContent=actionDetails(action);
+}
 function selectBattleChoice(i){selectedBattleIndex=(i+battleOptions.length)%battleOptions.length;syncBattleButtons();}
 function syncBattleButtons(){battleOptions.forEach((b,i)=>b.classList.toggle('pad-selected',i===selectedBattleIndex));
  const selected=battleOptions[selectedBattleIndex];
- if(selected)$('battleCommandHint').textContent=actionDetails(selected.dataset.battle);
+ if(selected)updateBattleHint(selected.dataset.battle);
 }
 function activateBattleChoice(){const b=battleOptions[selectedBattleIndex];if(b&&!b.disabled)battleAction(b.dataset.battle);}
 function battleScene(){try{return app.scene.getScene('BattleScene')}catch{return null}}
 async function battleAction(action){
   const scene=battleScene();if(!scene||scene.resolved)return;
-  if(action==='finish'){if(scene.endBattle())$('battleUI').hidden=true;return;}
-  await scene.takeTurn(action);
+  try{
+    if(action==='finish'){
+      const closed=scene.endBattle();
+      if(closed){
+        // The DOM must unlock even if a post-save subscriber has failed.
+        $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
+      }
+      return;
+    }
+    await scene.takeTurn(action);
+  }catch(err){
+    console.error('Erro no controle do combate:',err);
+    const message='Erro no combate: '+(err?.message||String(err));
+    $('battleJournal').textContent=message;
+    // An unexpected error must never disappear silently behind the battle UI.
+    if(scene.resolved){
+      $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
+      $('feedback').textContent='O resultado foi registrado. Recarregue a prévia se a floresta não responder.';
+    }
+  }
 }
 for(const button of battleOptions){
  button.addEventListener('click',()=>battleAction(button.dataset.battle));
- button.addEventListener('focus',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
- button.addEventListener('pointerenter',()=>{$('battleCommandHint').textContent=actionDetails(button.dataset.battle)});
+ button.addEventListener('focus',()=>updateBattleHint(button.dataset.battle));
+ // Pointermove reflects intentional pointer input; pointerenter can fire
+ // during focus scroll/layout and override a keyboard or Xbox selection.
+ button.addEventListener('pointermove',()=>updateBattleHint(button.dataset.battle));
 }
 for(const button of battleOptions.filter(button=>button.dataset.battle.startsWith('spell:'))){
  const spell=SPELLS.find(spell=>spell.id===button.dataset.battle.slice(6));
  if(spell){button.title=actionDetails(button.dataset.battle);button.setAttribute('aria-label',spell.name+', '+spell.mana+' pontos de mana');}
 }
 $('battleFinish').addEventListener('click',()=>battleAction('finish'));
+const battleTranscript=createBattleTranscript(24);
+let previousImpactState=null;
+const impactTimers=new Map();
+function showBattleImpact(id,change){
+  if(!change)return;
+  const el=$(id);if(!el)return;
+  el.hidden=false;
+  el.dataset.kind=change.kind;
+  el.textContent=(change.kind==='damage'?'−':'+')+change.amount+' PV';
+  el.classList.remove('m1hf-impact-animate');
+  // Force a CSS replay for consecutive hits on the same target.
+  void el.offsetWidth;
+  el.classList.add('m1hf-impact-animate');
+  if(impactTimers.has(id))clearTimeout(impactTimers.get(id));
+  impactTimers.set(id,setTimeout(()=>{
+    el.hidden=true;el.classList.remove('m1hf-impact-animate');impactTimers.delete(id);
+  },1000));
+}
+function clearBattleImpact(){
+  for(const timer of impactTimers.values())clearTimeout(timer);
+  impactTimers.clear();
+  for(const id of ['battleEnemyImpact','battleHeroImpact']){
+    const el=$(id);if(el){el.hidden=true;el.classList.remove('m1hf-impact-animate');}
+  }
+  previousImpactState=null;
+}
 function renderBattleState(state){
   if(!state)return;
+  if(M1HF_PREVIEW){
+    const changed=previousImpactState?.key!==state.key;
+    const records=battleTranscript.observe(state).entries;
+    const panel=$('battleTranscript');
+    if(changed)panel.open=false;
+    panel.hidden=false;
+    $('battleTranscriptCount').textContent=String(records.length);
+    $('battleTranscriptList').replaceChildren(...records.map(entry=>{
+      const li=document.createElement('li');li.textContent=entry.text;return li;
+    }));
+    if(!previousImpactState||previousImpactState.key!==state.key)clearBattleImpact();
+    else{
+      const changes=battleImpact(previousImpactState,state);
+      if(changes){
+        showBattleImpact('battleEnemyImpact',changes.enemy);
+        showBattleImpact('battleHeroImpact',changes.hero);
+      }
+    }
+    previousImpactState={key:state.key,enemyHp:state.enemyHp,enemyMaxHp:state.enemyMaxHp,
+      hp:state.hp,maxHp:state.maxHp};
+  }
   $('battleRound').textContent=state.status==='active'?`RODADA ${state.round}`:'DESFECHO';
   const ui=battleViewModel(state);
   $('battleMonster').textContent=ui.monster+' · '+ui.enemyHp+'/'+ui.enemyMaxHp+' PV';
@@ -288,19 +531,47 @@ function renderBattleState(state){
   $('battleCommands').hidden=finished;
   $('battleFinish').hidden=!finished;
   $('battleFinish').textContent=state.status==='won'?'RECOLHER SAQUE E VOLTAR':state.status==='lost'?'ACEITAR RESGATE':'RETORNAR À FLORESTA';
-  $('battleEndHint').textContent=state.status==='won'?'Vitória! A recompensa é entregue uma única vez.':state.status==='lost'?'Peren caiu, mas esta prévia não causa perda de save.':state.status==='fled'?'Fuga concluída; sem XP nem loot.':'';
+  const outcome=battleOutcomeViewModel(state,catalogs);
+  $('battleRewardPreview').hidden=!outcome;
+  $('battleRewardTitle').textContent=outcome?.title||'';
+  $('battleRewardDetails').textContent=outcome?.details||'';
+  $('battleEndHint').textContent=state.status==='won'?'Confirme para salvar e recolher os materiais uma única vez.':state.status==='lost'?'A derrota não apaga o progresso salvo.':state.status==='fled'?'Nenhuma recompensa será concedida.':'';
   battleOptions.forEach(b=>{
     b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&(!bridge.state.learned.includes(b.dataset.battle.slice(6))||state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0))) || (b.dataset.battle==='potion'&&state.potions<=0);
   });
+  if(M1HF_PREVIEW)updateBattleHint(battleHintAction,state);
 }
 app.events.on('peren-battle-change',renderBattleState);
 app.events.on('peren-battle-error',msg=>{$('battleJournal').textContent=msg;});
-app.events.on('peren-battle-end',({result,reward,profile})=>{
+app.events.on('peren-battle-end',({result,reward,applied,profile})=>{
+  clearBattleImpact();
+  if(M1HF_PREVIEW){battleTranscript.reset();$('battleTranscript').open=false;}
+  // Close first. Never leave the game frozen if the reward panel fails to render.
   $('battleUI').hidden=true;$('controls').hidden=false;$('controls').inert=false;
-  $('gatherBtn').focus({preventScroll:true});
-  const itemLabel=reward?Object.keys(reward.items).join(', '):'nenhum material';
-  $('feedback').textContent=result==='won'?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`:'Retorno à floresta sem recompensa.';
-  $('combatWallet').textContent=`Vitórias: ${profile.kills} · Ouro: ${profile.gold} · Nível: ${profile.level}`;renderHub();updateHud();
+  try{
+    $('gatherBtn').focus({preventScroll:true});
+    const receipt=M1HF_PREVIEW?battleReceiptViewModel({result,reward,applied},catalogs):null;
+    const itemLabel=reward?.items?Object.keys(reward.items).join(', '):'nenhum material';
+    const outcomeMessage=receipt?.summary||(result==='won'&&reward
+      ?`Vitória! +${reward.xp} XP, +${reward.gold} moedas, ${itemLabel}.`
+      :'Retorno à floresta sem recompensa.');
+    if(receipt){
+      const panel=$('hubBattleReceipt');
+      panel.hidden=false;panel.open=false;panel.dataset.kind=receipt.kind;
+      $('hubBattleReceiptTitle').textContent=receipt.title;
+      $('hubBattleReceiptSummary').textContent='✦ ÚLTIMO COMBATE · '+receipt.title+' · abrir recibo';
+      $('hubBattleReceiptList').replaceChildren(...receipt.lines.map(item=>{
+        const li=document.createElement('li');li.textContent=item;return li;
+      }));
+    }
+    app.registry.set('status',outcomeMessage);
+    $('feedback').textContent=outcomeMessage;
+    $('combatWallet').textContent=`Vitórias: ${profile?.kills??0} · Ouro: ${profile?.gold??0} · Nível: ${profile?.level??1}`;
+    renderHub();updateHud();
+  }catch(err){
+    console.error('Falha recuperada na interface de pós-combate:',err);
+    $('feedback').textContent='Combate registrado. A interface não atualizou completamente; recarregue a prévia.';
+  }
 });
 window.addEventListener('keydown',event=>{
   if($('battleUI').hidden)return;
@@ -352,6 +623,7 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
  if(inventory.isOpen())inventory.render();
  if(workshop.isOpen())workshop.render();
  if(marketplace.isOpen())marketplace.render();
+ if(journal?.isOpen())journal.render();
 }
 $('showCraft').addEventListener('click',()=>{hubTab='craft';renderHub();workshop.open()});
 $('showShop').addEventListener('click',()=>{hubTab='shop';renderHub();marketplace.open('buy')});
@@ -359,7 +631,7 @@ $('showInventory').addEventListener('click',()=>{hubTab='bag';renderHub();market
 $('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
 $('exportProgress').addEventListener('click',()=>{
  const blob=new Blob([bridge.export()],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
- a.href=url;a.download=`peren-phaser-m1d-dia-${bridge.state.day}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ a.href=url;a.download=M1HF_PREVIEW?`peren-m1hf-dia-${bridge.state.day}-backup.json`:`peren-phaser-m1d-dia-${bridge.state.day}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 });
 $('importProgress').addEventListener('change',async e=>{
  const file=e.target.files?.[0];e.target.value='';if(!file)return;

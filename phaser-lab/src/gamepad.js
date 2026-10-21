@@ -29,7 +29,7 @@ export function readXboxPad(gamepads = []) {
   // Prefer the browser's Standard Gamepad mapping (used by Xbox on USB/Bluetooth).
   const connected = Array.from(gamepads || []).filter(p => p && p.connected !== false);
   const pad = connected.find(p => p.mapping === 'standard') || connected[0];
-  if (!pad) return {connected:false,index:null,id:'',move:{x:0,y:0},sprint:false,buttons:emptyButtons()};
+  if (!pad) return {connected:false,index:null,id:'',move:{x:0,y:0},sprint:false,sneak:false,buttons:emptyButtons()};
   let move = radialStick(axis(pad,0), axis(pad,1));
   const dpadX=Number(btn(pad,XBOX.RIGHT))-Number(btn(pad,XBOX.LEFT));
   const dpadY=Number(btn(pad,XBOX.DOWN))-Number(btn(pad,XBOX.UP));
@@ -43,7 +43,7 @@ export function readXboxPad(gamepads = []) {
     right:btn(pad,XBOX.RIGHT) || move.x > .78,
   };
   return {connected:true,index:pad.index ?? 0,id:String(pad.id||'Controle'),move,
-    sprint:btn(pad,XBOX.RT)||btn(pad,XBOX.RB)||btn(pad,XBOX.L3),buttons};
+    sprint:btn(pad,XBOX.RT)||btn(pad,XBOX.RB)||btn(pad,XBOX.L3),sneak:btn(pad,XBOX.LT),buttons};
 }
 export class XboxPadTracker {
   constructor(){this.last=emptyButtons();this.padId=null;}

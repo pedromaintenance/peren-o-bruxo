@@ -143,3 +143,199 @@
  #battleUI .battle-note{display:none}
 }
 @media(prefers-reduced-motion:reduce){.m1g-hud-track>i{transition:none!important}}
+
+/* M1h-F: real (not simulated) pending rewards, shown before claiming them. */
+#battlePanel #battleRewardPreview.m1g-battle-reward:not([hidden]){
+ display:flex;flex-direction:column;gap:5px;margin:12px 0 8px;padding:12px 13px;
+ border:1px solid #b59b69;border-left:3px solid #d5b576;border-radius:4px;
+ background:linear-gradient(145deg,#26323af2,#14212df2);color:#f1e3c5;
+ box-shadow:inset 0 0 0 1px #efd6ab18;
+}
+#battleRewardPreview strong{color:#f2ce92;font:600 18px/1.3 Georgia,serif}
+#battleRewardPreview span{font:500 13px/1.5 system-ui,sans-serif;overflow-wrap:anywhere}
+
+/* M1h-F.8 — real stealth signals; preview only, no new mechanic. */
+#fieldAwareness[hidden]{display:none!important}
+#controls #fieldAwareness.m1hf-field-awareness{
+ display:grid;grid-template-columns:auto 1fr;gap:4px 9px;align-items:start;
+ margin-top:6px;padding:6px 8px;border:1px solid #697f76;border-left:3px solid #a9bd91;
+ background:#071823ee;color:#e3e7d8;font-size:10px;line-height:1.4
+}
+#fieldAwareness strong{font:700 10px/1.4 system-ui,sans-serif;letter-spacing:.06em;color:#c9e1ba;white-space:nowrap}
+#fieldAwareness span{overflow-wrap:anywhere;color:#d8e1dd}
+#controls #fieldAwareness[data-state="warning"]{border-left-color:#efb96c;background:#251e19ee}
+#controls #fieldAwareness[data-state="warning"] strong{color:#ffd08b}
+#controls #fieldAwareness[data-state="danger"]{border-left-color:#f18b77;background:#311b21ee}
+#controls #fieldAwareness[data-state="danger"] strong{color:#ffd1ba}
+#controls #fieldAwareness[data-state="quiet"]{border-left-color:#83c8a1}
+@media(max-width:390px){#controls #fieldAwareness.m1hf-field-awareness{grid-template-columns:1fr;gap:1px;padding:4px 6px;font-size:9px}}
+@media(max-height:610px) and (orientation:landscape){#controls #fieldAwareness.m1hf-field-awareness{font-size:9px;margin-top:3px;padding:3px 6px}}
+
+/* M1h-F.9: gathering feedback from the same 57px range as collect(). */
+#controls #harvestProximity[hidden]{display:none!important}
+#controls #harvestProximity{
+ box-sizing:border-box;display:block;width:min(235px,calc(100vw - 24px));
+ max-width:100%;padding:7px 10px;border:1px solid #a4c59d;
+ border-left:3px solid #b7d6ac;background:#0c2a29ef;box-shadow:0 4px 15px #010908a8;
+ color:#e7f0d9;font:600 11px/1.35 system-ui,sans-serif;
+ border-radius:5px;text-align:center;overflow-wrap:anywhere;
+}
+#controls #actions #gatherBtn[data-ready="true"]{
+ border-color:#d8e5af;box-shadow:inset 0 0 0 1px #a6d6aa44,0 0 13px #93bc8177;
+}
+@media(max-width:390px){
+ #controls #harvestProximity{width:min(160px,calc(100vw - 24px));font-size:10px;padding:5px 6px}
+}
+@media(prefers-reduced-motion:reduce){#controls #actions #gatherBtn{animation:none!important;transition:none!important}}
+
+/* M1h-F.10: landmark hints, not a minimap, solely in preview mode. */
+#controls #trailOrientation[hidden]{display:none!important}
+#controls #trailOrientation{
+  display:block;flex-basis:100%;padding:4px 6px;margin-top:2px;
+  border-left:2px solid #a9a37d;background:#10252bcf;color:#ddcead;
+  font:600 10px/1.4 system-ui,sans-serif;overflow-wrap:anywhere;
+}
+#controls #trailOrientation[data-phase="lost"]{border-left-color:#d79c6c;color:#f0d2b6}
+#controls #trailOrientation[data-phase="exit"]{border-left-color:#9dd8b0;color:#dbf1d6;background:#183c35df}
+@media(max-width:390px){#controls #trailOrientation{font-size:9px;padding:3px 5px}}
+@media(max-height:610px) and (orientation:landscape){#controls #trailOrientation{max-height:32px;overflow:hidden;margin-top:0}}
+
+/* M1h-F.11: encounter reconnaissance with canonical stats; read-only. */
+#encounterAssessment[hidden]{display:none!important}
+#encounterModal #encounterAssessment.m1hf-encounter-assessment{
+ display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 0 13px;
+}
+#encounterAssessment>div{
+ display:flex;flex-direction:column;gap:4px;min-width:0;padding:10px 12px;
+ border:1px solid #8d826a;border-left:3px solid #a8ac9a;
+ background:linear-gradient(125deg,#132b33,#091c2a);color:#ebe2d3;
+}
+#encounterAssessment small{color:#cab88f;font-size:9px;line-height:1.3;letter-spacing:.1em}
+#encounterAssessment strong{color:#efd6a7;font-size:12px;line-height:1.45;overflow-wrap:anywhere}
+#encounterAssessment span{font-size:11px;line-height:1.5;color:#d7e0dc;overflow-wrap:anywhere}
+#encounterAssessment[data-state="warning"] .m1hf-encounter-ready{border-left-color:#e4b473}
+#encounterAssessment[data-state="danger"] .m1hf-encounter-ready{border-left-color:#de776b;background:linear-gradient(125deg,#3a2328,#131d27)}
+#encounterAssessment[data-state="danger"] #encounterReadiness{color:#ffd4c6}
+@media(max-width:540px){
+ #encounterModal #encounterAssessment.m1hf-encounter-assessment{grid-template-columns:1fr;gap:6px}
+ #encounterAssessment>div{padding:7px 9px;gap:2px}
+ #encounterAssessment small{font-size:8px}
+ #encounterAssessment strong{font-size:11px}
+ #encounterAssessment span{font-size:10px}
+}
+@media(max-height:610px) and (orientation:landscape){
+ #encounterModal #encounterAssessment.m1hf-encounter-assessment{gap:5px;margin-bottom:7px}
+ #encounterAssessment>div{padding:5px 8px}
+}
+
+/* M1h-F.12: short, truthful damage numbers by existing HP bars. */
+#battleUI .m1g-battle-foe,#battleUI .m1g-battle-hero{position:relative}
+#battleUI .m1hf-impact[hidden]{display:none!important}
+#battleUI .m1hf-impact{
+  position:absolute;z-index:4;right:0;top:17px;pointer-events:none;
+  color:#ffd1b8;font:800 13px/1.25 system-ui,sans-serif;
+  padding:2px 6px;border-radius:3px;border:1px solid #c77e66;
+  background:#381a22ec;text-shadow:0 1px 3px #000;
+}
+#battleUI .m1hf-impact[data-kind="heal"]{
+  color:#bceac1;background:#173a2beb;border-color:#83bd8d;
+}
+#battleUI .m1hf-impact.m1hf-impact-animate{
+  animation:m1hf-impact-rise .9s ease-out both;
+}
+@keyframes m1hf-impact-rise{
+  0%{opacity:0;transform:translateY(6px) scale(.92)}
+  15%{opacity:1;transform:translateY(0) scale(1.04)}
+  70%{opacity:1}
+  100%{opacity:0;transform:translateY(-13px)}
+}
+@media(max-width:390px){#battleUI .m1hf-impact{font-size:11px;padding:1px 4px;top:14px}}
+@media(prefers-reduced-motion:reduce){
+ #battleUI .m1hf-impact.m1hf-impact-animate{animation:none}
+}
+
+/* M1h-F.13 — combat command consequences, no changes to the buttons. */
+#battleUI #battleCommandHint[data-status="ready"]{
+ border-left-color:#a8c7ad;color:#eadcc4;line-height:1.5;
+}
+#battleUI #battleCommandHint[data-status="unavailable"]{
+ border-left-color:#c57771;color:#ffcfb8;background:#2d1d28;
+}
+@media(max-width:690px){
+ #battleUI #battleCommandHint{
+   max-height:58px;overflow-y:auto;overscroll-behavior:contain;
+   line-height:1.4;
+ }
+}
+@media(max-height:610px) and (orientation:landscape){
+ #battleUI #battleCommandHint{max-height:35px;overflow-y:auto}
+}
+
+/* M1h-F.14: voluntary, read-only battle history in the preview. */
+#battleUI #battleTranscript[hidden]{display:none!important}
+#battleUI #battleTranscript{pointer-events:auto;width:100%;margin-top:5px;color:#ead7bc;font:11px/1.35 system-ui,sans-serif}
+#battleUI #battleTranscript summary{display:inline-flex;align-items:center;min-height:34px;padding:5px 10px;max-width:100%;cursor:pointer;list-style-position:inside;border:1px solid #997d55;border-radius:4px;background:#172a35eb;color:#efdbb5;font:700 10px/1.4 system-ui,sans-serif}
+#battleUI #battleTranscript summary:focus-visible{outline:3px solid #f2d593;outline-offset:2px}
+#battleUI #battleTranscript[open] ol{margin:5px 0 0;padding:7px 10px 7px 28px;max-height:min(100px,14dvh);overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;border:1px solid #7c735b;background:#0b1b29f5}
+#battleUI #battleTranscript li{padding:3px 1px;overflow-wrap:anywhere}
+#battleUI #battleTranscript li+li{border-top:1px solid #a08c5636}
+@media(max-width:390px){#battleUI #battleTranscript summary{min-height:32px;font-size:9px;padding:4px 8px}#battleUI #battleTranscript[open] ol{max-height:72px;font-size:10px}}
+/* M1h-F.16: last settled battle receipt in Portomonte. Read-only and collapsible. */
+#hubBattleReceipt[hidden]{display:none!important}
+#hubBattleReceipt.m1hf-battle-receipt{
+ margin:10px 0 0;padding:10px 12px;border:1px solid #a38b63;border-left:3px solid #c0a36c;
+ background:linear-gradient(145deg,#17323b,#0c1d28);color:#ebdec7;border-radius:5px;min-width:0;
+}
+#hubBattleReceipt[data-kind="won"]{border-left-color:#9ccaa8}
+#hubBattleReceipt[data-kind="lost"]{border-left-color:#d18e84}
+#hubBattleReceipt[data-kind="fled"],#hubBattleReceipt[data-kind="warning"]{border-left-color:#dbc18b}
+#hubBattleReceipt summary{cursor:pointer;font:700 12px/1.5 system-ui,sans-serif;color:#f0d9a3;min-height:33px;padding:6px 2px;overflow-wrap:anywhere}
+#hubBattleReceipt summary:focus-visible{outline:3px solid #ffe5b8;outline-offset:3px}
+#hubBattleReceipt strong{display:block;margin:7px 0;color:#efd3a1;font-size:12px}
+#hubBattleReceipt ul{list-style:square;margin:5px 0;padding-left:20px;font:12px/1.6 system-ui,sans-serif;overflow-wrap:anywhere}
+#hubBattleReceipt small{color:#bacac5;font:10px/1.5 system-ui,sans-serif}
+@media(max-width:500px){#hubBattleReceipt{padding:8px 10px}#hubBattleReceipt ul{font-size:11px}}
+
+/* M1h-F.17: phone-first settled reward receipt. Native details remains keyboard-accessible. */
+#hubBattleReceipt.m1hf-battle-receipt{
+  box-sizing:border-box;width:100%;max-width:100%;overflow-wrap:anywhere;
+}
+#hubBattleReceipt summary{
+  box-sizing:border-box;display:list-item;min-height:48px;padding:12px 9px;
+  font:700 14px/1.5 system-ui,sans-serif;letter-spacing:.01em;
+  color:#ffe2ab;touch-action:manipulation;
+}
+#hubBattleReceipt[open] summary{border-bottom:1px solid #8f957b;margin-bottom:10px}
+#hubBattleReceipt strong{font:800 14px/1.5 system-ui,sans-serif;color:#f9dfa9}
+#hubBattleReceipt li{font:500 14px/1.65 system-ui,sans-serif;color:#f0e7d7;padding-block:4px}
+#hubBattleReceipt small{display:block;margin-top:10px;font:12px/1.5 system-ui,sans-serif;color:#d1dfda}
+@media(max-width:500px){
+  #hubBattleReceipt.m1hf-battle-receipt{padding:10px 12px}
+  #hubBattleReceipt summary{min-height:48px;font-size:14px;padding:12px 8px}
+  #hubBattleReceipt ul{font-size:14px;line-height:1.65;padding-left:22px}
+  #hubBattleReceipt li{font-size:14px;line-height:1.65}
+}
+@media (prefers-reduced-motion:reduce){#hubBattleReceipt{scroll-behavior:auto}}
+
+/* M1h-F.18: temporary, non-persistent safe repositioning window after retreat. */
+#retreatGraceNotice[hidden]{display:none!important}
+#controls #retreatGraceNotice.m1hf-retreat-grace{
+ display:block;box-sizing:border-box;width:100%;margin-top:6px;
+ padding:8px 10px;min-height:35px;border:1px solid #a9c0a1;
+ border-left:3px solid #d5e6ae;border-radius:4px;background:#15302cf0;
+ color:#edf3d5;font:700 12px/1.45 system-ui,sans-serif;
+ overflow-wrap:anywhere;pointer-events:none;
+}
+@media(max-width:390px){#controls #retreatGraceNotice.m1hf-retreat-grace{font-size:11px}}
+
+/* F.19: choice of stealthy slow travel; preview-only controls and readout. */
+#sneakBtn[hidden],#sneakNotice[hidden]{display:none!important}
+#controls #actions #sneakBtn{background:#213d3bea;border-color:#aac6ad;min-height:51px}
+#controls #actions #sneakBtn[aria-pressed="true"]{background:#40674cee;border-color:#dcefb1;color:#fff8dc}
+#controls #actions #sneakBtn:focus-visible{outline:3px solid #f0e7b3;outline-offset:2px}
+#controls #sneakNotice.m1hf-sneak-notice{
+ display:block;box-sizing:border-box;padding:6px 9px;margin-top:5px;width:100%;
+ border-left:3px solid #bde6a8;border-radius:4px;background:#163026ed;
+ color:#def1d0;font:700 11px/1.45 system-ui,sans-serif;overflow-wrap:anywhere;pointer-events:none;
+}
+@media(max-width:390px){#controls #actions #sneakBtn{min-width:88px;font-size:11px}}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111e24">
+<title>Peren — Mürin · Comparador de criaturas M1h-E / M1h-F</title>
+<style>
+:root{color-scheme:dark;--bg:#0a141a;--panel:#162830;--border:#70654a;--gold:#efce91;--text:#efe3ca;--muted:#c6cabc}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif;margin:0}
+a{color:var(--gold)}a:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #ffe09e;outline-offset:3px}
+header{background:linear-gradient(135deg,#223640,#101c23);border-bottom:1px solid var(--border);padding:20px clamp(14px,4vw,42px)}
+header>div,main{max-width:1160px;margin:auto}h1,h2{color:var(--gold);font-family:Georgia,serif;line-height:1.2}
+h1{font-size:clamp(27px,4vw,41px);margin:6px 0}h2{font-size:22px;margin:4px 0 14px}
+p{color:var(--muted)}header small,.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:#b7a77e}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 0}
+main{padding:18px clamp(12px,3vw,28px) 38px}
+section.panel{background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:16px;margin:0 0 18px;min-width:0}
+.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:end}
+label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#decfab}
+select,input,button,textarea{font:inherit;color:var(--text);background:#20383f;border:1px solid #928161;border-radius:5px;min-height:42px;padding:8px}
+button{cursor:pointer;font-weight:700}button:disabled{opacity:.5;cursor:default}
+input[type=range]{padding:0;accent-color:#d9b67c}
+.timeline{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:14px}
+.timeline output{color:#d5c7a6;font-size:12px}
+.twins{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.specimen{min-width:0;border:1px solid #657066;border-radius:8px;padding:12px;background:#102128}
+.specimen h2{font-size:clamp(18px,3vw,24px);margin:0}.specimen .eyebrow{display:block;margin-bottom:5px}
+.stage{height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:10px 0;background:radial-gradient(ellipse at 50% 60%,#26433b,#101d27 69%);border:1px solid #45605d;border-radius:7px;position:relative}
+.stage:before{content:"";width:110px;height:17px;background:#0309085c;border-radius:50%;position:absolute;bottom:40px;filter:blur(7px)}
+.stage canvas{image-rendering:pixelated;position:relative;max-width:100%;height:auto;aspect-ratio:1}
+.strip{display:flex;gap:5px;justify-content:space-between;margin:7px auto 5px;max-width:325px}
+.strip canvas{width:min(21%,66px);height:auto;image-rendering:pixelated;border:1px solid #546057;aspect-ratio:1}
+.stat{color:#c5d6bf;font-size:12px;margin:8px 0;min-height:22px;overflow-wrap:anywhere}
+#loadStatus,#feedbackStatus{color:#e5d6b4;min-height:20px;font-size:13px}
+.checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.checks label{font-size:13px;flex-direction:row;align-items:flex-start;gap:9px;cursor:pointer;color:#e2d8c5}
+.checks input{min-height:0;width:19px;height:19px;margin-top:2px;accent-color:#d4b06e;flex:none}
+.feedback-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+textarea{width:100%;min-height:95px;resize:vertical}
+footer{text-align:center;color:#a4b0a7;font-size:12px;padding:20px}
+@media(max-width:780px){.controls{grid-template-columns:repeat(2,minmax(0,1fr))}.feedback-grid{grid-template-columns:1fr}.stage{height:238px}}
+@media(max-width:450px){main{padding:12px 9px}.twins{gap:7px}.specimen{padding:6px}.stage{height:194px;margin:7px 0}.stat{font-size:11px}.checks{grid-template-columns:1fr}.panel{padding:11px!important}.links{gap:9px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div>
+<small>CARCAÇA · PEREN, O BRUXO · QA DE ARTE</small>
+<h1>Mürin — antes e depois</h1>
+<p>Compare os <strong>arquivos PNG reais</strong> de M1h-E e M1h-F, sincronizados na mesma ação e no mesmo quadro. Esta ferramenta apenas lê imagens: <strong>não acessa saves</strong> e não altera o jogo.</p>
+<nav class="links" aria-label="Navegação"><a href="./?art=m1hf">← Jogar M1h-F</a><a href="./review.html?art=m1hf">Ateliê de sprites</a><a href="./asset-audition.html">Fontes CC0</a></nav>
+</div></header>
+<main>
+<section class="panel" aria-labelledby="controlTitle">
+<h2 id="controlTitle">Laboratório comparativo</h2>
+<div class="controls">
+<label>Monstro<select id="monster">
+<option value="mob-galho-infectado">Galho Infectado</option>
+<option value="mob-fungo-violeta">Fungo Violeta</option>
+<option value="mob-ettercap">Ettercap</option></select></label>
+<label>Ação<select id="action">
+<option value="idle">Parado</option><option value="walk">Caminhada</option><option value="alert">Alerta</option>
+<option value="attack">Ataque</option><option value="hurt">Dano</option><option value="retreat">Recuo</option><option value="death">Morte</option>
+</select></label>
+<label>Ampliação <output id="zoomLabel">3×</output><input id="zoom" type="range" min="1" max="5" step="1" value="3"></label>
+<label>Velocidade <output id="fpsLabel">6 fps</output><input id="fps" type="range" min="1" max="12" step="1" value="6"></label>
+</div>
+<div class="timeline">
+<button id="toggle" type="button" aria-pressed="true">⏸ Pausar</button>
+<button id="previous" type="button">← Quadro anterior</button>
+<button id="next" type="button">Próximo quadro →</button>
+<output id="frameInfo">Quadro 1 de 4</output>
+</div>
+<p id="loadStatus" role="status" aria-live="polite">Carregando atlas…</p>
+</section>
+<div class="twins" role="group" aria-label="Comparação de duas versões do mesmo monstro">
+<section class="specimen" aria-labelledby="leftHeading">
+<span class="eyebrow">Referência anterior</span><h2 id="leftHeading">M1h-E</h2>
+<div class="stage"><canvas id="leftFrame" width="64" height="64" aria-label="Sprite M1h-E ampliado"></canvas></div>
+<div id="leftStrip" class="strip" aria-label="Quatro quadros M1h-E"></div>
+<p id="leftStat" class="stat">Analisando quatro quadros…</p>
+</section>
+<section class="specimen" aria-labelledby="rightHeading">
+<span class="eyebrow">Candidata CC0</span><h2 id="rightHeading">M1h-F</h2>
+<div class="stage"><canvas id="rightFrame" width="64" height="64" aria-label="Sprite M1h-F ampliado"></canvas></div>
+<div id="rightStrip" class="strip" aria-label="Quatro quadros M1h-F"></div>
+<p id="rightStat" class="stat">Analisando quatro quadros…</p>
+</section>
+</div>
+<section class="panel" aria-labelledby="reviewTitle" style="margin-top:18px">
+<h2 id="reviewTitle">Parecer artístico — revisão humana</h2>
+<p>Contar pixels e quadros diferentes ajuda no QA, mas <strong>não aprova a arte</strong>. Avalie cada requisito no celular e escreva o que deve mudar. A avaliação é temporária e só sai do aparelho se você copiar ou baixar.</p>
+<div class="checks">
+<label><input type="checkbox" data-criterion="Silhueta reconhecível a 1×"> Silhueta reconhecível a 1×</label>
+<label><input type="checkbox" data-criterion="Animações de ataque e dano legíveis"> Ataque e dano claramente diferentes</label>
+<label><input type="checkbox" data-criterion="Coerência com horror da Carcaça"> Identidade sombria da Carcaça</label>
+<label><input type="checkbox" data-criterion="Movimento real, não apenas translação"> Movimento real dos membros/corpo</label>
+<label><input type="checkbox" data-criterion="Retrato e sprite coerentes"> Retrato coerente com sprite</label>
+<label><input type="checkbox" data-criterion="Boa leitura na tela do celular"> Legível no celular</label>
+</div>
+<div class="feedback-grid">
+<label>Preferência visual
+<select id="verdict"><option value="Precisa de revisão">Precisa de revisão</option><option value="M1h-F">Preferir M1h-F</option><option value="M1h-E">Preferir M1h-E</option></select></label>
+<label>Observações<textarea id="reviewNotes" maxlength="1800" placeholder="Ex.: o ataque do Ettercap precisa de mais peso; contorno dos galhos some no fundo."></textarea></label>
+</div>
+<div class="timeline"><button type="button" id="copyFeedback">Copiar parecer</button><button type="button" id="downloadFeedback">Baixar parecer (.md)</button><span id="feedbackStatus" role="status"></span></div>
+</section>
+</main>
+<footer>Visualizador de QA sem telemetria. Não armazena aprovação, navega pelos próprios PNGs e não substitui o playtest real.</footer>
+<script>
+(()=>{
+'use strict';
+const $=id=>document.getElementById(id);
+const actions=['idle','walk','alert','attack','hurt','retreat','death'];
+const versions=[{label:'M1h-E',base:'./art-m1he/monsters/',prefix:'left'},{label:'M1h-F',base:'./art-m1hf/monsters/',prefix:'right'}];
+let frame=0,playing=!matchMedia('(prefers-reduced-motion: reduce)').matches,last=0,loadId=0;
+let sprites=[null,null],ready=false;
+for(const side of versions){
+ const strip=$(side.prefix+'Strip');
+ for(let i=0;i<4;i++){
+  const tile=document.createElement('canvas');tile.width=64;tile.height=64;
+  tile.dataset.frame=String(i);tile.title='Quadro '+(i+1);
+  strip.append(tile);
+ }
+}
+function atlasPixels(image,actionIndex,frameIndex){
+ const tile=document.createElement('canvas');tile.width=64;tile.height=64;
+ const ctx=tile.getContext('2d',{willReadFrequently:true});ctx.imageSmoothingEnabled=false;
+ ctx.drawImage(image,frameIndex*64,actionIndex*64,64,64,0,0,64,64);
+ return ctx.getImageData(0,0,64,64).data;
+}
+function coverage(buffer){
+ let opaque=0;for(let i=3;i<buffer.length;i+=4)if(buffer[i]>0)opaque++;
+ return opaque;
+}
+function checksum(buffer){
+ let hash=2166136261;
+ for(let i=0;i<buffer.length;i++){hash^=buffer[i];hash=Math.imul(hash,16777619)}
+ return hash>>>0;
+}
+function drawSide(index){
+ const side=versions[index],sprite=sprites[index],key=side.prefix;
+ const canvas=$(key+'Frame'),ctx=canvas.getContext('2d');
+ ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,64,64);
+ const zoom=Number($('zoom').value),max=Math.max(1,Math.floor((canvas.parentElement.clientWidth-10)/64));
+ const actual=Math.min(zoom,max);
+ canvas.style.width=String(actual*64)+'px';canvas.style.height=String(actual*64)+'px';
+ if(!sprite)return;
+ const row=actions.indexOf($('action').value);
+ ctx.drawImage(sprite,frame*64,row*64,64,64,0,0,64,64);
+ for(const tile of $(key+'Strip').children){
+  const n=Number(tile.dataset.frame),tileContext=tile.getContext('2d');
+  tileContext.imageSmoothingEnabled=false;tileContext.clearRect(0,0,64,64);
+  tileContext.drawImage(sprite,n*64,row*64,64,64,0,0,64,64);
+  tile.style.borderColor=n===frame?'#f3cf84':'#546057';
+  tile.style.borderWidth=n===frame?'2px':'1px';
+ }
+ const buffers=[0,1,2,3].map(n=>atlasPixels(sprite,row,n));
+ const uniques=new Set(buffers.map(checksum)).size;
+ const alpha=buffers.map(coverage);
+ $(key+'Stat').textContent=uniques+'/4 quadros distintos · área visível '+Math.round(alpha.reduce((a,b)=>a+b,0)/4/4096*100)+'%';
+}
+function draw(){
+ for(let i=0;i<2;i++)drawSide(i);
+ $('frameInfo').textContent='Quadro '+(frame+1)+' de 4';
+ $('fpsLabel').value=$('fps').value+' fps';
+ $('zoomLabel').value=$('zoom').value+'× (limitado à largura da tela)';
+ $('toggle').textContent=playing?'⏸ Pausar':'▶ Reproduzir';
+ $('toggle').setAttribute('aria-pressed',String(playing));
+}
+function fetchImage(url){
+ return new Promise((resolve,reject)=>{
+  const img=new Image();img.onload=()=>resolve(img);img.onerror=()=>reject(Error('Atlas não encontrado: '+url));img.src=url;
+ });
+}
+async function load(){
+ const token=++loadId,id=$('monster').value;
+ sprites=[null,null];ready=false;frame=0;last=0;
+ $('loadStatus').textContent='Carregando versões de '+$('monster').selectedOptions[0].textContent+'…';
+ draw();
+ try{
+  const images=await Promise.all(versions.map(v=>fetchImage(v.base+id+'/atlas.png')));
+  if(token!==loadId)return;
+  for(const image of images)if(image.naturalWidth!==256||image.naturalHeight!==448)throw Error('Atlas inesperado: esperado 256×448');
+  sprites=images;ready=true;
+  $('loadStatus').textContent='Dois atlas reais de 256×448 carregados; animação sincronizada, sem interpolação.';
+  draw();
+ }catch(e){
+  if(token!==loadId)return;
+  $('loadStatus').textContent='Falha ao carregar comparação: '+e.message;
+  draw();
+ }
+}
+function notes(){
+ const id=$('monster').value;
+ const title=$('monster').selectedOptions[0].textContent;
+ const lines=[
+  '# Revisão M1h-E × M1h-F — '+title,
+  '',
+  'Criatura: '+id,
+  'Ação observada: '+$('action').selectedOptions[0].textContent,
+  'Preferência: '+$('verdict').value,
+  '',
+  '## Critérios',
+  ...[...document.querySelectorAll('[data-criterion]')].map(c=>'- ['+(c.checked?'x':' ')+'] '+c.dataset.criterion),
+  '',
+  '## Observações',
+  $('reviewNotes').value.trim()||'Sem observações.',
+  '',
+  'Origem: comparador visual de assets do Peren Phaser (não aprova automaticamente o merge).'
+ ];
+ return lines.join('\n');
+}
+function exportReport(){
+ const blob=new Blob([notes()],{type:'text/markdown;charset=utf-8'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;
+ a.download='peren-revisao-'+$('monster').value+'.md';
+ document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);
+ $('feedbackStatus').textContent='Parecer baixado localmente; nada foi enviado.';
+}
+$('monster').addEventListener('change',()=>{for(const c of document.querySelectorAll('[data-criterion]'))c.checked=false;$('reviewNotes').value='';$('verdict').value='Precisa de revisão';load()});
+$('action').addEventListener('change',()=>{frame=0;last=0;draw()});
+$('zoom').addEventListener('input',draw);
+$('fps').addEventListener('input',draw);
+$('toggle').addEventListener('click',()=>{playing=!playing;last=0;draw()});
+$('previous').addEventListener('click',()=>{playing=false;frame=(frame+3)%4;draw()});
+$('next').addEventListener('click',()=>{playing=false;frame=(frame+1)%4;draw()});
+$('copyFeedback').addEventListener('click',async()=>{
+ try{await navigator.clipboard.writeText(notes());$('feedbackStatus').textContent='Parecer copiado. Cole no GitHub ou na conversa.'}
+ catch{$('feedbackStatus').textContent='Cópia indisponível neste navegador. Use Baixar parecer.'}
+});
+$('downloadFeedback').addEventListener('click',exportReport);
+window.addEventListener('resize',draw);
+function animate(t){if(ready&&playing&&(!last||t-last>=1000/Number($('fps').value))){last=t;frame=(frame+1)%4;draw()}requestAnimationFrame(animate)}
+load();requestAnimationFrame(animate);
+})();
+</script>
+</body></html>

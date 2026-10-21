@@ -32,3 +32,10 @@ test('mudança ou desconexão do dispositivo limpa bordas e lida com API ausente
 test('botões acessíveis por value e preferência por mapping standard',()=>{
  const p=pad();p.buttons[XBOX.A]={value:.9};const legacy={...pad(),id:'legacy',index:1,mapping:'',axes:[1,1]};assert.equal(readXboxPad([legacy,p]).id,p.id);assert.equal(readXboxPad([legacy,p]).buttons.a,true);
 });
+
+test('F.19: LT ativa modo silencioso, corrida simultânea continua prioritária no movimento',()=>{
+ const p=pad();press(p,XBOX.LT);assert.equal(readXboxPad([p]).sneak,true);
+ press(p,XBOX.RT);const state=readXboxPad([p]);
+ assert.equal(state.sprint,true);assert.equal(state.sneak,true);
+ assert.equal(readXboxPad([]).sneak,false);
+});
