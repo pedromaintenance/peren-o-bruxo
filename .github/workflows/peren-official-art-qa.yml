@@ -13,6 +13,7 @@ on:
       - 'ferramentas/gerar_peren_runtime.py'
       - 'ferramentas/gerar_peren_caminhada_v3.py'
       - 'ferramentas/gerar_peren_ferido_v4.py'
+      - 'ferramentas/gerar_peren_coleta_ervas_v5.py'
       - 'tests/qa_peren_oficial*'
       - 'tests/qa_single_free_mode*'
   workflow_dispatch:
@@ -31,12 +32,13 @@ jobs:
         run: |
           node --check game.js
           node --check phaser-demo-m1hf/assets/game-B5Gp97dd.js
-          python3 -m py_compile ferramentas/gerar_peren_runtime.py ferramentas/gerar_peren_caminhada_v3.py ferramentas/gerar_peren_ferido_v4.py
+          python3 -m py_compile ferramentas/gerar_peren_runtime.py ferramentas/gerar_peren_caminhada_v3.py ferramentas/gerar_peren_ferido_v4.py ferramentas/gerar_peren_coleta_ervas_v5.py
           python3 -m pip install --disable-pip-version-check Pillow==11.3.0
           python3 tests/qa_peren_frames.py
           python3 tests/qa_peren_walk_v3.py
           python3 tests/qa_peren_wounded_v4.py
-          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs
+          python3 tests/qa_peren_ervas_v5.py
+          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
@@ -59,6 +61,7 @@ jobs:
           node tests/qa_peren_oficial_browser.mjs
           node tests/qa_peren_phaser_browser.mjs
           node tests/qa_peren_wounded_v4_browser.mjs
+          node tests/qa_peren_ervas_v5_browser.mjs
       - name: Share in-game screenshot proof
         if: always()
         uses: actions/upload-artifact@v4
