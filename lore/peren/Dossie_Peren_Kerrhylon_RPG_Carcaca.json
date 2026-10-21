@@ -1,0 +1,1365 @@
+{
+  "metadados": {
+    "titulo": "Dossiê de Campanha — Peren Kerrhylon, o Bruxo de Olhos Estrelados",
+    "universo": "RPG Carcaça",
+    "sistema_principal": "Dungeons & Dragons 5ª edição com artefatos, cenário e decisões narrativas de mesa próprios",
+    "versao_dossie": "1.0.0",
+    "data_compilacao_real": "2026-10-20",
+    "idioma": "pt-BR",
+    "tipo": "registro narrativo e operacional de continuidade, não ficha oficial validada",
+    "escopo": "A campanha de Peren, do pedestal nas ruínas à marcha rumo ao Rio Ancestral após o encontro com os mortos sem nome",
+    "criterios_de_confiabilidade": {
+      "estabelecido_em_jogo": "Acontecimento afirmado pelo jogador ou narrado e aceito na sequência da campanha.",
+      "declaracao_personagem": "O personagem disse/acredita; pode ser percepção subjetiva ou mentira diegética.",
+      "interpretacao_mestre": "Interpretação narrativa criada durante o jogo que pode ser revista.",
+      "proposta_de_regra": "Mecânica caseira descrita narrativamente, ainda sem bloco completo de regras.",
+      "incerto": "Não foi definido, os relatos divergem ou faltam registros suficientes."
+    },
+    "fontes": [
+      {
+        "tipo": "conversa",
+        "descricao": "Campanha de Peren e suas cenas, falas do jogador, registros do mestre e subida ao nível 7.",
+        "grau": "primária"
+      },
+      {
+        "tipo": "contexto_de_campanha",
+        "descricao": "Contexto de sessões anteriores: origem em Lysvar, sistema de dez pedestais/lacres, Arquivo Frio.",
+        "grau": "complementar; pormenores não integralmente recuperados"
+      },
+      {
+        "tipo": "arquivo_de_ambientacao",
+        "arquivo": "Ambientação - A Carcaça - Visão Geral.txt",
+        "descricao": "Panorama geral de Golzdov, ocupação shadow fey, Eldroth, Ironwood e Rio Ancestral.",
+        "grau": "canônico de cenário, não prova cenas de Peren"
+      }
+    ],
+    "politica_de_atualizacao": "Registrar decisões do jogador como cânone; não preencher datas, estatísticas, quantidades ou causas ausentes. Distinguir fato, boato, suspeita, interpretação e regra caseira."
+  },
+  "sumario": {
+    "premissa": "Peren Kerrhylon, changeling bruxo de pacto com Lorde Khan, encontra peças de uma prisão primordial. Recusa permitir que coletores, cultistas e compradores do caos libertem o mal nela contido. Em vez de destruir irresponsavelmente os lacres, converte dois sinos em um anel que encontra e expõe seu portador e em um cajado que abre caminhos e mantém uma passagem astral aberta em sua mente. Conduz uma pequena companhia de antigos saqueadores e uma operadora da rede para além de Karsthal em direção ao Rio Ancestral.",
+    "estado_em_uma_frase": "Após partilhar o ouro encontrado numa cripta dos sem-nome, Peren e seus quatro companheiros descansam numa elevação da floresta, preservam carne de um alce e planejam alcançar o Rio Ancestral para cumprir um rito de três moedas e recolher água ritual.",
+    "questao_central": "Como impedir a libertação de uma fome ancestral sem se tornar o novo senhor daquilo que se pretende aprisionar?",
+    "temas": [
+      "pacto e reciprocidade",
+      "lei, posse e dívida",
+      "domínio versus responsabilidade",
+      "identidade e memória",
+      "livre-arbítrio dos companheiros",
+      "violência instrumental e suas consequências",
+      "mistério cósmico",
+      "ocupação colonial e economia da estrada",
+      "os mortos apagados pelos registros",
+      "o preço de abrir caminhos"
+    ],
+    "tom": [
+      "fantasia sombria",
+      "horror cósmico",
+      "intriga social e comercial",
+      "humor negro entre companheiros",
+      "aventura de estrada",
+      "arqueologia ritual"
+    ]
+  },
+  "protagonista": {
+    "nome": "Peren Kerrhylon",
+    "epitetos": [
+      "homem dos olhos estrelados",
+      "demônio que assombra os vivos",
+      "bruxo de Lorde Khan",
+      "bruxo das trevas",
+      "caçador de portadores dos sinos"
+    ],
+    "pseudonimos_e_personas": [
+      {
+        "nome": "Peren Kerrhylon",
+        "uso": "nome próprio, revelado seletivamente; identidade de pacto",
+        "confirmacao": "estabelecido_em_jogo"
+      },
+      {
+        "nome": "Tim Buckham",
+        "uso": "persona de joalheiro e associado à Confraria do Fio Rubro; usada em Karsthal",
+        "detalhe": "memórias afetivas genuínas do ofício e de Maelor Venn",
+        "confirmacao": "estabelecido_em_jogo"
+      },
+      {
+        "nome": "homem dos olhos estrelados",
+        "uso": "aparência teatral, cósmica e ameaçadora; olhos azuis de fundo negro estrelado",
+        "confirmacao": "estabelecido_em_jogo"
+      },
+      {
+        "nome": "donzela ferida",
+        "uso": "disfarce para receber assistência e repouso entre os halflings do Baixio após combate",
+        "nome_proprio": null,
+        "confirmacao": "estabelecido_em_jogo"
+      },
+      {
+        "nome": "Serrik",
+        "uso": "aparência assumida para se aproximar de Veyra após matar um integrante da escolta",
+        "detalhe": "adotou o rosto de Serrik, não a identidade permanente",
+        "confirmacao": "estabelecido_em_jogo"
+      },
+      {
+        "nome": "um arqueiro da emboscada",
+        "uso": "rosto copiado para aterrorizar os companheiros do arqueiro durante encontro na estrada",
+        "confirmacao": "estabelecido_em_jogo"
+      }
+    ],
+    "povo": "changeling",
+    "classe": "Bruxo (Warlock)",
+    "nivel_atual": 7,
+    "subclasse": "The Genie — Efreeti",
+    "patrono": {
+      "nome": "Lorde Khan",
+      "tipo": "efreeti/gênio de fogo",
+      "relacao": "pacto de poder, negociação e nobreza elemental; sua lâmpada é símbolo e vaso do pacto",
+      "interacoes_relevantes": [
+        "Aprovou a proposta de poder com preço, mas desconfiou da Forja da Boca Rubra.",
+        "Aconselhou cautela ao transformar os sinos; reconheceu a competência de Maelor.",
+        "Manifestou aprovação pelo uso de poder e vulnerabilidade recíprocos.",
+        "Na caça, os Eldritch Blasts de Peren tomaram forma de cimitarras de fogo endurecido, estética apreciada por Khan."
+      ],
+      "confirmacao": "estabelecido_em_jogo"
+    },
+    "pacto": "Pact of the Chain / Pacto da Corrente",
+    "alinhamento_declarado_pelo_jogador": "Leal e Mau (Lawful Evil)",
+    "idade": null,
+    "aparencia_base": {
+      "rosto": "aparência masculina adulta, variável por metamorfose",
+      "olhos": "azul sobrenatural, fundo negro estrelado como céu noturno",
+      "cabelos": "escuros, no retrato de referência ondulados/cacheados",
+      "roupas": "camadas de trajes de viagem escuros, capuz, tecidos gastos, amuletos e ornamentos arcanos",
+      "gestual": "solene, ameaçador, teatral, frequentemente calmo",
+      "observacao": "muitos traços físicos são faces escolhidas, não biologia imutável"
+    },
+    "origem": {
+      "cidade": "Lysvar",
+      "regiao": "asa direita da Carcaça",
+      "confianca": "contexto complementar de sessão anterior",
+      "local_de_nascimento_exato": null,
+      "detalhes_da_infancia": "não recuperados e deliberadamente vedados por juramento"
+    },
+    "familia_e_passado": {
+      "irmao": {
+        "existencia": true,
+        "situacao": "morto pela mão de Peren",
+        "quando": "aproximadamente cinco anos antes da cena da Forja da Boca Rubra",
+        "contexto": "o irmão encontrou Peren; Peren concluiu uma vingança muito antiga matando-o",
+        "nome": null,
+        "causa_da_vinganca": null,
+        "detalhes_perdidos": "Como o irmão o encontrou, o som da voz e a expressão na morte foram consumidos no rito do anel; Peren preservou os fatos do encontro, parentesco e homicídio.",
+        "observacao": "não reconstruir a memória que o personagem sacrificou como se fosse conhecida"
+      },
+      "familia_restante": "existe referência a família e origem abandonadas, mas composição e localização não definidas",
+      "juramento": "Nunca buscar o caminho de volta à família; nunca abrir caminho para o próprio passado; nunca tentar mudar a origem. Peren existe como bruxo e aventureiro, só.",
+      "efeito": "o Cajado do Limiar recusa esse tipo de abertura e ameaça transformar a transgressão em julgamento."
+    },
+    "psicologia": {
+      "autodefinicao": [
+        "Não se considera agente do caos.",
+        "Descreve seu modo de conhecer o mundo como excêntrico e sua vida atual como curiosidade mórbida.",
+        "Afirma não pertencer ao mundo como os mortais, mas aceita que suas vontades e relações existem nele.",
+        "Quer conter o mal esquecido para voltar a ser livre.",
+        "Se vê como criatura antiga, negociador competente e por vezes pai incompreensível para seus protegidos."
+      ],
+      "etica_da_relacao": [
+        "Contratos mutuamente úteis são superiores à exploração mesquinha.",
+        "Protege, remunera, alimenta e aloja companheiros, sem exigir permanência involuntária.",
+        "Usa medo e violência como ferramentas, não como justificativa universal.",
+        "Não deseja usar subordinados como peões descartáveis nem sacrificá-los por sua curiosidade.",
+        "Diferencia bondade cósmica (impedir libertação primordial) de relação profissional com seguidores."
+      ],
+      "tensoes": [
+        "Leal e mau, mas assume compromissos efetivos de proteção.",
+        "Usa linguagem paternal e de soberania, embora declare respeitar a liberdade dos outros.",
+        "Busca poder por fins de contenção, mas deseja caçar e devorar os portadores adversários.",
+        "Valoriza o próprio teatro, embora diga não acreditar nas próprias poesias.",
+        "Oferece redenção aos mortos sem nome enquanto incendia estradas e ameaça agentes locais."
+      ],
+      "falha_dramatica_possivel": "Atração por atos teatrais, contratos absolutos e autoconfiança elevada pode superar a prudência.",
+      "limites_importantes_ao_jogador": "O jogador deseja apostas reais sem morte arbitrária dos companheiros; vínculos e consequências devem importar.",
+      "interpretacao_critica": "A figura de um patrono protetor e predatório, uma pequena corte voluntária; é leitura de personagem, não onisciência do cenário."
+    },
+    "frases_canonicas": [
+      "Não caminho por este mundo para ouvir resmungos de pestes desrespeitosas.",
+      "Vocês seguem ordens. Eu não sou um cara legal.",
+      "Eu sou um demônio que assombra os vivos.",
+      "Recebi por risco. Tomei por força. Conservo por direito de investigação. Abro para conhecer, não para libertar.",
+      "Eu não pertenço a este mundo como vocês.",
+      "Não sou um agente do caos.",
+      "Eu sou inteligente o suficiente para saber que eu sou real e não me iludir com as minhas próprias poesias.",
+      "Meu objetivo hoje é colocar um fim nesta escuridão para que eu possa ser livre novamente.",
+      "Eu nunca tentarei encontrar o caminho de volta para a minha família.",
+      "Não os contratei para morrer.",
+      "Não tenho intenção de violar a morada de seus mortos. Busco somente recompensas mundanas."
+    ],
+    "retratos": [
+      "mago_levitando_na_floresta_encantada.png"
+    ]
+  },
+  "ficha_mecanica": {
+    "versao": "D&D 5e na configuração utilizada pela mesa",
+    "estado": "resumo provisório da progressão ao nível 7, valores retirados da conversa; sujeita a revisão com ficha original",
+    "nivel": 7,
+    "bonus_proficiencia": 3,
+    "atributos": {
+      "forca": {
+        "valor": 10,
+        "modificador": 0
+      },
+      "destreza": {
+        "valor": 12,
+        "modificador": 1
+      },
+      "constituicao": {
+        "valor": 15,
+        "modificador": 2
+      },
+      "inteligencia": {
+        "valor": 13,
+        "modificador": 1
+      },
+      "sabedoria": {
+        "valor": 14,
+        "modificador": 2
+      },
+      "carisma": {
+        "valor": 18,
+        "modificador": 4
+      }
+    },
+    "pv_maximos_reportados": 51,
+    "pv_atual": "não confirmado no instante atual; após descansos, presumivelmente recuperado, mas não recalculado",
+    "classe_de_armadura_reportada": 11,
+    "dados_de_vida": "7d8",
+    "iniciativa_reportada": 1,
+    "salvaguardas_reportadas": {
+      "FOR": 0,
+      "DES": 1,
+      "CON": 2,
+      "INT": 1,
+      "SAB": 5,
+      "CAR": 7
+    },
+    "pericias_reportadas": {
+      "Acrobacia": 1,
+      "Adestrar Animais": 2,
+      "Arcanismo": 4,
+      "Atletismo": 0,
+      "Enganação": 7,
+      "História": 1,
+      "Intuição": 5,
+      "Intimidação": 7,
+      "Investigação": 1,
+      "Medicina": 2,
+      "Natureza": 1,
+      "Percepção": 5,
+      "Atuação": 4,
+      "Persuasão": 7,
+      "Religião": 1,
+      "Prestidigitação": 1,
+      "Furtividade": 1,
+      "Sobrevivência": 2
+    },
+    "magia": {
+      "atributo": "Carisma",
+      "modificador": 4,
+      "cd_resistencia": 15,
+      "bonus_ataque": 7,
+      "espacos_pacto": 2,
+      "nivel_dos_espacos": 4,
+      "recuperacao": "descanso curto ou longo",
+      "truques_conhecidos": [
+        "Eldritch Blast / Rajada Mística",
+        "Mage Hand / Mãos Mágicas",
+        "Minor Illusion / Ilusão Menor"
+      ],
+      "magias_conhecidas": [
+        {
+          "nome": "Comprehend Languages / Compreender Idiomas",
+          "circulo": 1
+        },
+        {
+          "nome": "Hellish Rebuke / Repreensão Infernal",
+          "circulo": 1
+        },
+        {
+          "nome": "Hex / Bruxaria",
+          "circulo": 1
+        },
+        {
+          "nome": "Unseen Servant / Servo Invisível",
+          "circulo": 1
+        },
+        {
+          "nome": "Crown of Madness / Coroa da Loucura",
+          "circulo": 2
+        },
+        {
+          "nome": "Fireball / Bola de Fogo",
+          "circulo": 3
+        },
+        {
+          "nome": "Fly / Voo",
+          "circulo": 3
+        },
+        {
+          "nome": "Summon Greater Demon / Invocar Demônio Maior",
+          "circulo": 4
+        }
+      ],
+      "magia_vinda_do_pacto": "Find Familiar / Encontrar Familiar (pelo Pacto da Corrente)",
+      "magia_de_quarto_circulo_escolhida_ao_subir": "Summon Greater Demon",
+      "observacao_rituais": "Durante a campanha Compreender Idiomas e Servo Invisível foram conjurados como rituais. A classe bruxo com Pacto da Corrente não ganha conjuração ritual livre dessas magias pelas regras padrão; registrar como adjudicação da mesa ainda por validar.",
+      "uso_recente": [
+        "Elemental Gift ativado na caçada ao alce; voo acabou antes da entrada na cripta.",
+        "Eldritch Blast conjurado na caçada.",
+        "Comprehend Languages e Unseen Servant usados ritualmente na cripta."
+      ],
+      "slots_atuais": null
+    },
+    "invocacoes_reportadas": [
+      {
+        "nome": "Agonizing Blast",
+        "funcao": "+4 de Carisma ao dano de cada feixe de Rajada Mística"
+      },
+      {
+        "nome": "Eldritch Spear",
+        "funcao": "alcance da Rajada Mística até 90 m"
+      },
+      {
+        "nome": "Eldritch Sight",
+        "funcao": "Detect Magic / Detectar Magia à vontade, sem gastar slot"
+      },
+      {
+        "nome": "Eldritch Mind",
+        "funcao": "vantagem em testes de Constituição para manter concentração"
+      }
+    ],
+    "poderes_patrimonio_do_genio": [
+      {
+        "nome": "Genie's Vessel / Vaso do Gênio",
+        "forma": "lâmpada de Khan",
+        "efeito": "abrigo extradimensional e foco de pacto; detalhes de destruição/reconstrução não rastreados"
+      },
+      {
+        "nome": "Genie's Wrath / Ira do Gênio",
+        "efeito": "uma vez por turno, quando um ataque acerta, +3 de dano de fogo"
+      },
+      {
+        "nome": "Elemental Gift",
+        "efeito": "resistência a fogo; ação bônus concede voo com pairar de 9 m por 10 min, sem concentração",
+        "usos": "3 por descanso longo"
+      }
+    ],
+    "eldritch_blast": {
+      "feixes": 2,
+      "bonus_ataque": 7,
+      "alcance_m": 90,
+      "dano_base_por_feixe": "1d10 + 4 força",
+      "bonus_primeiro_acerto_da_rodada": "+3 fogo via Ira do Gênio, uma vez por turno",
+      "visualizacoes_usadas": [
+        "lanças negras ou rúnicas",
+        "raios negros que sugam calor",
+        "cimitarras de fogo endurecido"
+      ]
+    },
+    "habilidades_raciais": {
+      "metamorfose": "changeling consegue alterar o próprio rosto e corpo dentro dos limites raciais; roupa e equipamento não se metamorfoseiam automaticamente"
+    },
+    "capacidades_narrativas_nao_classificadas": [
+      {
+        "nome": "visão ancestral",
+        "status": "termo usado pelo jogador e narrado como leitura de aspectos antigos da câmara, mas fonte e mecânica exatas não identificadas"
+      }
+    ],
+    "pontos_de_regra_para_conferir": [
+      "Furtividade de Peren +1, não conceder vantagem automática por isca ou voo; contextualizar.",
+      "Presas pode ajudar, explorar e entregar magias de toque; não transmite Eldritch Blast como magia à distância por padrão.",
+      "Invocar Demônio Maior exige concentração, comando e risco de perda de controle.",
+      "Ação de 'Help' por Presas precisa obedecer distância e iniciativa reais do familiar.",
+      "Não presumir rituais para Bruxo/Corrente sem característica ou regra da casa.",
+      "O número de PV e equipamentos devem ser conferidos na ficha original.",
+      "Regras de Anel e Cajado são homebrew narrativo ainda sem CD, cargas ou limites quantificados."
+    ]
+  },
+  "familiar": {
+    "nome": "Presas",
+    "tipo": "familiar do Pacto da Corrente em forma de pseudodragão",
+    "natureza": "a mesa primeiro o tratou como dragônico apenas estético, mas redescobriu que Pact of the Chain pode conceder a forma efetiva de pseudodragão",
+    "vinculo": "lealdade íntima, telepatia, percepção compartilhada sob limites de alcance e ações; demonstra afeto e preocupação",
+    "habitos": [
+      "sobrevoar para reconhecimento quando seguro",
+      "espreitar telhados e copas como lagarto alado",
+      "vigiar 30 m à frente em trilhas",
+      "dar cobertura e avisos sensoriais",
+      "distrair inimigos com gritos e voos rasantes"
+    ],
+    "momentos": [
+      "Participou da encenação aterrorizante contra assaltantes.",
+      "Auxiliou Peren em combates contra coletores e Veyra.",
+      "Vigiou Karsthal durante a visita a Maelor.",
+      "Reagiu de forma instintiva aos sinos e à cripta dos sem-nome.",
+      "Na caça ao alce, vigiou o vale."
+    ],
+    "desejo_de_evolucao": "possibilidade futura de transformá-lo em um pseudodragão familiar singular e verdadeiro na ficção, para além de mera forma conjurada, apesar de a forma já ser permitida pelas regras",
+    "relacao_emocional": "candidato a vínculo mais profundo do personagem, para o qual Peren deseja proteção",
+    "tarot_interpretativo": {
+      "mes": "A Estrela",
+      "dia": "Pajem de Paus",
+      "hora": "Dois de Copas",
+      "regencia": "Sol Pálido em Vênus de Osso"
+    },
+    "imagem": null
+  },
+  "companhia": {
+    "nome_informal": "companhia de Peren / sua pequena corte de estrada",
+    "membros_humanoides": 5,
+    "inclui_familiar": true,
+    "termos_de_contratacao": {
+      "pagamento_base_historico": "1 peça de prata por dia aos três homens recrutados na estrada",
+      "beneficios": [
+        "comida",
+        "transporte",
+        "alojamento",
+        "eventuais bônus em saque",
+        "proteção de Peren"
+      ],
+      "liberdade": "a permanência não é compulsória; o interesse deve ser recíproco",
+      "adiantamentos": "Peren adiantou 15 peças de ouro a um recém-recrutado e depois aos outros dois; cronologia exata e contabilização final precisam ser verificadas",
+      "ultimo_acordo": "ouro funerário remanescente repartido em cinco partes iguais, uma por pessoa; três moedas separadas para o rito"
+    },
+    "membros": [
+      {
+        "nome": "Veyra Sull",
+        "papel": "operadora da rede de transporte/custódia de artefatos, hoje aliada e conselheira comercial",
+        "anterior": "mulher do capuz cinza, operadora de aquisição, transporte, validação e descarte",
+        "recrutamento": "Peren a perseguiu após entrega, matou a escolta, feriu gravemente Veyra, estabilizou-a com auxílio do grupo e ofereceu novo contrato.",
+        "condicao_atual": "ferida nas costelas/flanco, em recuperação; anda lentamente e necessita repouso",
+        "traços": [
+          "analítica",
+          "sarcástica",
+          "profissional",
+          "fria mas pragmática",
+          "profunda familiaridade com contratos e falsificações",
+          "cobra limites e responsabilidades"
+        ],
+        "contribuicoes": [
+          "Explicou a natureza contratual da caixa e o circuito de venda dos lacres.",
+          "Orientou a encenação para entrar em Karsthal.",
+          "Ensinou a equipe a distinguir carga, resgate, dívida e proteção na Casa do Peso Justo.",
+          "Coordenou distribuição e preservação da caça."
+        ],
+        "relacao_com_peren": "aceitou relação profissional não devocional; respeita capacidade e questiona teatralidade, domínio e promessa",
+        "visual": "mulher de cabelos escuros presos de modo prático, rosto anguloso cansado, olhar avaliador, capa cinza/preta, couro, bolsas, faixas sobre ferimento",
+        "signo_tarot_interpretativo": {
+          "mes": "A Justiça",
+          "dia": "Rainha de Espadas",
+          "hora": "Dois de Ouros",
+          "regencia": "Mercúrio-Corvo em Saturno-Ossário"
+        },
+        "retrato": "aventureira_solitária_na_floresta_encantada.png"
+      },
+      {
+        "nome": "Dren",
+        "papel": "sobrevivente de estrada, faca, segurança, caçador prático e vigia",
+        "anterior": "assaltante/coletor de estrada, integrante do grupo que encontrou Peren",
+        "recrutamento": "cedeu à demonstração de poder, aceitou soldo com os demais e se tornou protetor ativo do grupo",
+        "condicao_atual": "sem ferimento persistente relatado",
+        "traços": [
+          "cínico",
+          "bem-humorado de forma seca",
+          "pragmático",
+          "violento com economia de gestos",
+          "não busca glória",
+          "teme a miséria mais que a maioria das ameaças"
+        ],
+        "contribuicoes": [
+          "Planeja cobertura, acampamento e segurança.",
+          "Abateu o alce ferido de forma rápida e liderou o esquartejamento.",
+          "Manteve a vigilância em várias noites.",
+          "Entendeu os riscos da prisão administrativa da Casa do Peso Justo."
+        ],
+        "relacao_com_peren": "respeito concreto por remuneração e proteção, sem devoção declarada",
+        "visual": "homem adulto magro e resistente, barba curta, nariz marcado, cabelo escuro desalinhado, couro remendado, faca, expressão desconfiada",
+        "signo_tarot_interpretativo": {
+          "mes": "O Carro",
+          "dia": "Sete de Paus",
+          "hora": "Cinco de Ouros",
+          "regencia": "Marte Rubro em Saturno-Ossário"
+        },
+        "retrato": "homem_misterioso_na_floresta_encantada.png"
+      },
+      {
+        "nome": "Orel",
+        "papel": "arqueiro de estrada, sobrevivente medroso, pequenas tarefas e apoio logístico",
+        "anterior": "assaltante pobre integrante do grupo inicial",
+        "recrutamento": "entrou na comitiva mediante soldo e promessa de segurança",
+        "condicao_atual": "sem ferimento persistente relatado",
+        "traços": [
+          "temeroso",
+          "supersticioso",
+          "sensível a música",
+          "humor involuntário",
+          "apreço por queijo, comida, bebida e conforto",
+          "tem coragem oscilante mas tenta ajudar"
+        ],
+        "contribuicoes": [
+          "Cantou/cultivou canções durante o contato inicial.",
+          "Atingiu o alce com flecha durante a caça.",
+          "Auxiliou no tratamento da carne, embora inseguro.",
+          "Aceitou testemunhar o rito dos mortos sem nome, com receio."
+        ],
+        "relacao_com_peren": "gratidão interessada, medo do poder e busca de segurança",
+        "visual": "rapaz magro, cabelo castanho-escuro revolto, roupas muito remendadas, arco simples, bolsas de alimento e cantil, expressão ansiosa",
+        "signo_tarot_interpretativo": {
+          "mes": "A Lua",
+          "dia": "Pajem de Copas",
+          "hora": "Nove de Copas",
+          "regencia": "Lua Negra em Vênus de Osso"
+        },
+        "retrato": "viajante_solitário_na_floresta_mágica.png"
+      },
+      {
+        "nome": "Tavin Rook",
+        "papel": "carregador, auxiliar de logística, cuidador de feridos, interlocutor com procedimentos de custódia",
+        "anterior": "trabalhador de transporte ligado a pessoas perigosas, posteriormente recrutado por Peren",
+        "recrutamento": "após combate contra rede e seus escoltas, recebeu proposta profissional e adiantamento",
+        "condicao_atual": "sem ferimento persistente relatado",
+        "traços": [
+          "desajeitado sob pressão simples",
+          "aprende observando",
+          "útil com cargas e documentos",
+          "discreto senso de responsabilidade",
+          "não é guerreiro brilhante"
+        ],
+        "contribuicoes": [
+          "Ajudou Veyra a permanecer de pé e a receber curativos.",
+          "Improvisou argumento jurídico diante de Sera Vhald.",
+          "Carregou material de acampamento, carne e suprimentos.",
+          "Separou as três moedas reservadas para os mortos antes da partilha."
+        ],
+        "relacao_com_peren": "prudência, confiança condicionada à clareza contratual, crescimento de competência",
+        "visual": "homem de porte sólido, cabelo escuro ondulado, barba curta, mochila grande, roupas de carregador, cantil, faca utilitária, botas gastas",
+        "signo_tarot_interpretativo": {
+          "mes": "Temperança",
+          "dia": "Seis de Espadas",
+          "hora": "Oito de Ouros",
+          "regencia": "Mercúrio-Corvo em Júpiter-Coroa"
+        },
+        "retrato": "viajante_na_floresta_encantada.png"
+      }
+    ]
+  },
+  "personagens_secundarios": [
+    {
+      "nome": "Maelor Venn",
+      "papel": "mestre-joalheiro da Confraria do Fio Rubro e contato de Tim Buckham em Karsthal",
+      "local": "Forja da Boca Rubra / Karsthal",
+      "aparencia": "idoso magro de cabelos brancos presos, monóculo âmbar, mãos manchadas por ácido e pó de gema",
+      "relacao": "respeito e afeto profissional genuíno; protegeu Peren da voracidade da forja e lhe cobrou juramento",
+      "estado": "vivo ao fim da visita; intervenção e sangue sacrificados durante o rito"
+    },
+    {
+      "nome": "Briska Nhalim",
+      "papel": "gnoma idosa, segunda avaliadora da Confraria",
+      "local": "posto discreto do Fio Rubro, Karsthal",
+      "traços": "direta, exigente, leal à segurança de Maelor",
+      "momentos": "exigiu presente por privacidade, acionou proteção contra escuta e deu capuz a Peren; presente ainda devido",
+      "estado": "em Karsthal"
+    },
+    {
+      "nome": "Sera Vhald",
+      "papel": "avaliadora juramentada da Casa do Peso Justo e agente do Pátio das Três Bigornas",
+      "local": "Karsthal",
+      "traços": "não se deixa intimidar facilmente; usa vínculos administrativos e sinais de rastreamento",
+      "momentos": "reteve Veyra e companheiros por processo; Peren ameaçou-a e saiu sob categoria de proteção",
+      "estado": "livre, institucionalmente humilhada, possível adversária futura"
+    },
+    {
+      "nome": "Marga",
+      "papel": "halfling anfitriã e cuidadora no Baixio",
+      "local": "vila halfling do Baixio",
+      "relacao": "tratou Peren ferido sob disfarce de donzela; recebeu confissão privada de seu nome e natureza e agradecimento por hospitalidade",
+      "detalhes": "erva, comida e remédios; conhecimento de pressões sobre a comunidade",
+      "estado": "viva na última interação"
+    },
+    {
+      "nome": "Serrik",
+      "papel": "integrante da escolta/rede e identidade imitada por Peren",
+      "destino": "morto em conflito anterior à tentativa de infiltração de Peren contra Veyra",
+      "detalhes": "Veyra acreditou ouvir que ele fora morto por raio negro; pessoa usada como rosto de aproximação"
+    },
+    {
+      "nome": "capitão do portão de Karsthal",
+      "papel": "autoridade local de saída",
+      "momento": "liberou grupo sem ordem escrita de prisão, com guardas alertados",
+      "nome_proprio": null
+    },
+    {
+      "nome": "guardião dos sem-nome",
+      "papel": "sentinela funerária de corpo seco, osso e cobre; representante dos mortos apagados",
+      "local": "cripta sob vale do alce, Eldroth",
+      "fala": "usa língua antiga compreendida por Compreender Idiomas",
+      "motivos": "preservar nomes, impedir uso indevido da máscara, garantir passagem voluntária e honesta para alguns mortos",
+      "relacao": "firmou pacto sem preço adicional com Peren para rito junto ao Rio Ancestral e possível retorno"
+    },
+    {
+      "nome": "homem do tubo",
+      "papel": "conjurador da primeira escolta inimiga",
+      "destino": "morto pelas rajadas de Peren após confronto longo",
+      "nome_proprio": null
+    },
+    {
+      "nome": "arqueiro da emboscada",
+      "papel": "assaltante inicial cuja face foi copiada para intimidação",
+      "destino": "não confirmado individualmente no registro disponível",
+      "nome_proprio": null
+    }
+  ],
+  "geografia_e_lugares": [
+    {
+      "nome": "Carcaça",
+      "tipo": "continente",
+      "descricao": "formado sobre o corpo de Golzdov, Dragão Ancestral; governo colonial shadow fey e resistências regionais",
+      "origem": "ambientação geral"
+    },
+    {
+      "nome": "Lysvar",
+      "tipo": "cidade de origem atribuída a Peren",
+      "localizacao": "asa direita da Carcaça",
+      "origem": "contexto complementar de campanha; detalhes não recuperados"
+    },
+    {
+      "nome": "Floresta de Eldroth",
+      "tipo": "floresta sombria",
+      "descricao": "mata fria, raízes negras, névoa, escarpas, ruínas e animais perigosos; na lore geral sob Lady Sylara Nightwhisper",
+      "eventos": [
+        "jornada com a comitiva",
+        "acampamentos",
+        "caça ao alce",
+        "cofre funerário"
+      ]
+    },
+    {
+      "nome": "Ironwood",
+      "tipo": "fortaleza de rangers e druidas",
+      "descricao": "resistência à ocupação shadow fey ao sul das montanhas de Thargrid",
+      "nota": "citada na campanha como referência de distância; não se assumir passagem recente pelo interior da cidade"
+    },
+    {
+      "nome": "Karsthal",
+      "tipo": "cidade industrial de escarpa, oficinas, guildas e mercados",
+      "descricao": "ruas em vários níveis, guindastes e correntes, mercado baixo, postos de custódia e forja ancestral",
+      "eventos": [
+        "visita a Maelor",
+        "transformação dos sinos",
+        "retirada da comitiva pela porta principal"
+      ]
+    },
+    {
+      "nome": "Confraria do Fio Rubro — Posto de Karsthal",
+      "tipo": "oficina e entreposto",
+      "detalhes": "placa com fio vermelho, bigorna e gema; Briska recebe comerciantes; porta lateral protegida de escuta"
+    },
+    {
+      "nome": "Forja da Boca Rubra",
+      "tipo": "forja arcana ancestral",
+      "detalhes": "estrutura de pedra vermelha capaz de extrair propriedade e significado de matéria ritual; reage a linguagem, custódia e preço; Maelor conduz rito"
+    },
+    {
+      "nome": "Casa do Peso Justo",
+      "tipo": "casa de penhores, balança pública e validação de custódia",
+      "detalhes": "dois pratos de bronze, administração de dívidas e mercadorias, instrumento de latão detector, regulação por Sera Vhald"
+    },
+    {
+      "nome": "Pátio das Três Bigornas",
+      "tipo": "circuito de mercado e validação de relíquias",
+      "detalhes": "destino declarado no registro ECO IX e símbolo portado por Sera; rede de compra e triagem"
+    },
+    {
+      "nome": "Baixio",
+      "tipo": "vila de halflings",
+      "detalhes": "hospitalidade de Marga, erva, comida, recuperação após combate e relato da donzela resgatada"
+    },
+    {
+      "nome": "Velário de Nhal-Soren",
+      "tipo": "domínio de elfos das sombras",
+      "detalhes": "Peren ofereceu retaliação extrema contra seus elfos a Marga, se ela quisesse; não há ataque realizado"
+    },
+    {
+      "nome": "Rio Ancestral",
+      "tipo": "grande rio do continente",
+      "descricao": "eixo de comércio, conquista e tributo; destino de travessia e rito de três moedas; suas águas também são exigidas para rito futuro dos sem-nome",
+      "estado": "não alcançado"
+    },
+    {
+      "nome": "cripta subterrânea dos sem-nome",
+      "tipo": "câmara funerária clandestina sob vale do alce",
+      "descricao": "ouro funerário, ossos arranjados em vigília, máscara de nomes, guardião de couro/osso/cobre e porta selada",
+      "estado": "fechada e preservada por Peren; prometeu retornar"
+    },
+    {
+      "nome": "ruína dos dez pedestais",
+      "tipo": "complexo arqueológico e prisão antiga",
+      "descricao": "dez estruturas/lacres, correntes, inscrições e sinais de remoção por caçadores de peças",
+      "estado": "parte violada; exploração inicial interrompida; localização detalhada não recuperada"
+    },
+    {
+      "nome": "Arquivo Frio",
+      "tipo": "local associado a outros vestígios e câmaras da prisão",
+      "detalhes": "mencionado em contexto complementar; ainda sem visita detalhada confirmada"
+    },
+    {
+      "nome": "Nhal-Soren",
+      "tipo": "referência feérica regional",
+      "detalhes": "grafia presente na menção ao Velário; localização cartográfica não fixada"
+    }
+  ],
+  "faccoes_e_forcas": [
+    {
+      "nome": "rede de coletores / caçadores de peças",
+      "natureza": "logística clandestina de relíquias, lacres e contratos",
+      "interesses": "adquirir, transportar, vender e validar peças da prisão; organização não necessariamente entende totalidade do risco",
+      "agentes": [
+        "Veyra Sull (desertora ou operadora que mudou de lado)",
+        "escoltas",
+        "conjuradores"
+      ],
+      "status": "antagonista ativo ou potencial; recebeu sinal de comprometimento e pode rastrear Peren"
+    },
+    {
+      "nome": "Pátio das Três Bigornas / Casa do Peso Justo",
+      "natureza": "instituições comerciais e de custódia em Karsthal",
+      "interesses": "avaliar proveniência, impor categorias de posse e dívida, controlar registros e mercadorias",
+      "status": "possível perseguição legal, mercantil ou armada após humilhação de Sera"
+    },
+    {
+      "nome": "Confraria do Fio Rubro",
+      "natureza": "guilda de joalheria e ofícios arcanos",
+      "interesses": "ofício, avaliação de materiais e acesso ritual à Boca Rubra",
+      "status": "aliada pontual por Maelor; não envolver a guilda sem consentimento"
+    },
+    {
+      "nome": "adoradores do caos / libertadores da prisão",
+      "natureza": "grupo ou grupos que desejam romper os lacres",
+      "interesses": "libertar mal antigo e esquecido",
+      "status": "identidades, hierarquia e extensão real desconhecidas"
+    },
+    {
+      "nome": "Corte shadow fey / Rainha da Noite",
+      "natureza": "ocupação colonial da Carcaça",
+      "interesses": "controle de território, tributo, rotas e capital arcano",
+      "status": "pano de fundo estrutural; conexão específica com a rede ainda não provada"
+    },
+    {
+      "nome": "povos livres e de resistência",
+      "natureza": "rangers, druídas, anões, gigantes, comunidades locais",
+      "interesses": "sobrevivência e oposição à Corte",
+      "status": "a companhia ainda não assumiu filiação política a esses movimentos"
+    }
+  ],
+  "reliquias_e_itens_especiais": [
+    {
+      "id": "anel_caminho",
+      "nome": "Anel do Caminho",
+      "origem": "Sino de Caminho, Lembrança e Reabertura convertido na Forja da Boca Rubra",
+      "categoria": "artefato próprio de primeiro despertar, regras de mesa",
+      "funcao": "encontrar pessoas, objetos, lugares, rotas, rastros nomeados com alguma clareza; direção e intuição, não coordenadas oniscientes",
+      "preco": "outros portadores, rituais e caçadores capazes podem encontrar Peren por reciprocidade da trilha",
+      "condicao": "em posse e geralmente no dedo de Peren",
+      "uso_em_jogo": [
+        "encontrou a comitiva retida na Casa do Peso Justo, mas também denunciou o vínculo à validação",
+        "encontrou um alce para sustentar o grupo",
+        "encontrou um depósito funerário subterrâneo como oportunidade de tesouro"
+      ],
+      "limites": "alvos abstratos podem devolver caminhos perigosos; não concede posse sobre alvos; primeiro despertar não é localização perfeita",
+      "status_regra": "homebrew provisório"
+    },
+    {
+      "id": "cajado_limiar",
+      "nome": "Cajado do Limiar",
+      "origem": "Sino de Limiar/Porta/Trânsito Negado, ECO IX, convertido em forja",
+      "categoria": "artefato próprio de primeiro despertar, regras de mesa",
+      "funcao": "abrir ou revelar portas, trancas e rotas ocultas, contornar obstáculos e limiares menores; usos grandes ainda não definidos",
+      "preco": "passagem constante na mente e no plano astral de Peren; ataques oníricos, contato com a fome primordial, vulnerabilidade a intrusões",
+      "juramento": "não abrir caminho para família, passado ou reescrita da origem",
+      "uso_em_jogo": [
+        "revelou saída/percurso de caça no vale",
+        "criou passagens entre rochas",
+        "abriu a passagem para a cripta sob a formação musgosa",
+        "foi foco de confronto onírico contra o mal selado"
+      ],
+      "status_regra": "homebrew provisório"
+    },
+    {
+      "id": "lampada_khan",
+      "nome": "Lâmpada/Vaso de Lorde Khan",
+      "categoria": "foco e vaso do patrono do Gênio",
+      "funcao": "manifesta pactos, contato com Khan e abrigo extradimensional por Genie's Vessel",
+      "estado": "em posse de Peren"
+    },
+    {
+      "id": "mascara_sem_nome",
+      "nome": "Máscara dos Sem-Nome",
+      "categoria": "relíquia funerária ritual",
+      "material": "osso polido, prata escura, pedra azul mnemônica",
+      "funcao": "carregar/emprestar nome e autoridade de mortos; possível credencial para porta selada; risco de vestir identidade alheia",
+      "estado": "permanece no suporte da cripta, NÃO foi saqueada",
+      "restricao": "precisa de nome recuperado, testemunhas vivas e água do Rio Ancestral para ritual sem vestir o rosto de Peren"
+    },
+    {
+      "id": "caixa_contrato",
+      "nome": "Caixa-Cartório de Custódia",
+      "categoria": "cofre ritual contratual",
+      "funcao": "lê entrega, posse, pagamento, risco, investigação, categorias de abertura",
+      "historico": "transportava o Sino do Limiar; aberta por declaração de posse e intenção não libertadora",
+      "estado_atual": "não confirmado; não assumir transportada após retirar sino",
+      "registro": "ECO IX — LIMIAR; origem Câmara Oculta cadeia norte-oriental; destino Karsthal/Pátio das Três Bigornas; intermediária V. Sull; validação Casa do Peso Justo"
+    },
+    {
+      "id": "ouro_cripta",
+      "nome": "Tesouro mundano dos Sem-Nome",
+      "categoria": "ouro, prata e joalheria funerária",
+      "componentes": [
+        "moedas antigas",
+        "pequenas barras de metal precioso",
+        "prata ritual",
+        "anéis funerários",
+        "corrente grossa escurecida"
+      ],
+      "estado": "retirado com Servo Invisível por permissão do guardião e dividido em cinco partes iguais",
+      "quantidade_total": null,
+      "valor_em_po": null,
+      "observacao": "não foi feita contagem numérica; evitar inventar saldo"
+    },
+    {
+      "id": "tres_moedas",
+      "nome": "Três moedas sem dono",
+      "categoria": "oferenda de passagem",
+      "estado": "separadas antes da divisão e reservadas para lançamento ao Rio Ancestral",
+      "frase": "Estes passaram sem registro, mas não sem peso.",
+      "complemento_opcional": "Se algum nome desejar caminho, que a corrente o pese."
+    },
+    {
+      "id": "carne_alce",
+      "nome": "Carne do alce negro",
+      "categoria": "suprimento",
+      "estado": "abatido, repartido e levado para lugar afastado do sangue; em processo de secagem/defumação",
+      "quantidade_em_racoes": null
+    },
+    {
+      "id": "cajado_e_anel_primeiro_despertar",
+      "nome": "Observação conjunta sobre a forja",
+      "categoria": "vínculo metafísico",
+      "detalhes": "os artefatos foram criados como armas de caça e custódia, mas não quebraram a prisão; podem atrair portadores e ações da fome que aprende"
+    }
+  ],
+  "sistema_dos_dez_lacres": {
+    "total_indicado": 10,
+    "origem": "prisão ancestral de entidade primordial esquecida; dez pedestais ou selos antigos vistos nas ruínas e reforçados por Maelor",
+    "entidade_contida": {
+      "nome_verdadeiro": null,
+      "epitetos": [
+        "a fome que aprende",
+        "o mal esquecido",
+        "algo anterior à linguagem satânica",
+        "coisa que testa fechaduras"
+      ],
+      "natureza": "poder primordial preso em sistema de palavras, rotas e limites",
+      "status": "confinado, mas percebendo atividades perto dos lacres e no sonho de Peren",
+      "certeza": "descrição parcial de cena, não taxonomia completa"
+    },
+    "lacres_identificados": [
+      {
+        "nome": "Caminho",
+        "funcoes": [
+          "Caminho",
+          "Lembrança",
+          "Reabertura"
+        ],
+        "forma_atual": "Anel do Caminho"
+      },
+      {
+        "nome": "Limiar",
+        "funcoes": [
+          "Porta",
+          "Trânsito Negado",
+          "Limiar"
+        ],
+        "codigo": "ECO IX",
+        "forma_atual": "Cajado do Limiar"
+      }
+    ],
+    "demais_lacres": "oito funções/peças ainda não conhecidas; não inventar nomes",
+    "arquitetura": "correntes, pedestais, validação de custódia, sinos e câmaras que respondem a linguagem/contrato",
+    "conflito": "Peren quer impedir libertação atraindo e eliminando portadores enquanto facções compram e manipulam lacres"
+  },
+  "promessas_e_dividas": [
+    {
+      "id": "juramento_cajado",
+      "devedor": "Peren",
+      "credor": "limiar/ritual da Boca Rubra",
+      "obrigacao": "não buscar retorno à família, ao passado ou alteração da origem",
+      "cumprimento": "permanente enquanto portar ou invocar a função do cajado",
+      "preco_pago": "memória da morte do irmão consumida na forja, para criação do anel"
+    },
+    {
+      "id": "presente_briska",
+      "devedor": "Peren/Tim",
+      "credor": "Briska Nhalim",
+      "obrigacao": "dar bom presente pela privacidade concedida diante de Maelor",
+      "estado": "não há pagamento do presente registrado"
+    },
+    {
+      "id": "proteção_companhia",
+      "devedor": "Peren",
+      "credor": "Veyra, Dren, Orel, Tavin",
+      "obrigacao": "pagar, alimentar, abrigar, manter liberdade de desligamento, não tratá-los como peões de sacrifício",
+      "estado": "em vigor"
+    },
+    {
+      "id": "tres_moedas",
+      "devedor": "Peren",
+      "credor": "guardião e mortos sem nome",
+      "obrigacao": "lançar três moedas sem dono no Rio Ancestral recitando 'Estes passaram sem registro, mas não sem peso'",
+      "estado": "pendente"
+    },
+    {
+      "id": "segundo_ritual_cripta",
+      "devedor": "Peren",
+      "credor": "mortos sem nome",
+      "obrigacao": "voltar com água do Rio Ancestral em vaso fechado, pelo menos um nome verdadeiro recuperado de um morto, testemunhas vivas voluntárias",
+      "finalidade": "ouvir os mortos e possibilitar passagem somente aos que desejarem, sem apropriar-se da máscara",
+      "estado": "promessa expressa pendente"
+    },
+    {
+      "id": "marga",
+      "devedor": "Peren",
+      "credor": "Marga e povo do Baixio",
+      "obrigacao": "gratidão declarada e oferta extrema de vingança contra elfos do Velário de Nhal-Soren se Marga viesse a desejar",
+      "estado": "oferta aberta narrativamente, não acionada"
+    },
+    {
+      "id": "sinais_rastreio",
+      "devedor": null,
+      "credor": "caçadores e antigos compradores",
+      "obrigacao": "nenhuma; é ameaça criada pelo preço do anel e pelas ações públicas de Peren",
+      "estado": "ativo"
+    }
+  ],
+  "linha_do_tempo": [
+    {
+      "ordem": 1,
+      "titulo": "A descoberta da ruína e dos pedestais",
+      "fatos": [
+        "Peren investiga ruína, pedestal, lacres e correntes usando Eldritch Sight, Arcanismo e Servo Invisível para não tocar diretamente.",
+        "Identifica estrutura de prisão com dez lacres e vestígios de remoção de peças.",
+        "Interpreta as ações de saqueadores como caça a peças poderosas, não coleção técnica inocente."
+      ],
+      "evidencia": "contexto de sessão anterior + falas preservadas"
+    },
+    {
+      "ordem": 2,
+      "titulo": "Saída da ruína e preparação da marcha",
+      "fatos": [
+        "Decide sair do local perigoso e viajar sem pressa, oito horas de avanço e oito horas de descanso conforme abrigos.",
+        "Servo Invisível vestido com capuz funciona como isca; Presas reconhece o caminho do alto; Peren espreita oculto."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 3,
+      "titulo": "Emboscada e nascimento da corte de estrada",
+      "fatos": [
+        "Peren intimida arqueiro e companheiros assumindo seu rosto e criando atmosfera de terror com Ilusão Menor e Presas.",
+        "Exige canções, segredos ou conhecimentos da região como resgate simbólico.",
+        "Oferece serviço por uma prata ao dia, bônus, comida, transporte e alojamento.",
+        "Dren, Orel e futuramente Tavin compõem o núcleo de companheiros humanos."
+      ],
+      "evidencia": "jogo; nomes exatos da primeira composição exigem releitura completa"
+    },
+    {
+      "ordem": 4,
+      "titulo": "A cabana, a marca e o rastro de Veyra",
+      "fatos": [
+        "Peren investiga sinal/marka em cabana usando Detect Magic e Arcanismo.",
+        "Segue mulher de capuz cinza, movendo Servo Invisível à frente e Presas como batedor."
+      ],
+      "evidencia": "jogo com passagens resumidas"
+    },
+    {
+      "ordem": 5,
+      "titulo": "Confronto com os coletores",
+      "fatos": [
+        "Voa e dispara Eldritch Blast a grande distância contra grupo armado transportando caixa.",
+        "Elimina arqueiro, besteiro e conjurador/homem do tubo, explorando cobertura e visão de Presas.",
+        "Um sobrevivente recebe oferta de emprego e 15 peças de ouro adiantadas.",
+        "Outros dois recebem também adiantamentos."
+      ],
+      "evidencia": "jogo; baixas exatas e ordem dos combatentes não integralmente recuperadas"
+    },
+    {
+      "ordem": 6,
+      "titulo": "A hospitalidade dos halflings do Baixio",
+      "fatos": [
+        "Peren retira flecha do ombro e assume forma de belíssima donzela ferida.",
+        "Companheiros contam história de resgate heroico e abrem a bolsa para despesas.",
+        "Marga trata o ferimento; Peren descansa, experimenta erva, comida e conhece questões locais.",
+        "Revela privadamente seu nome Peren Kerrhylon e sua natureza teatral de demônio.",
+        "Despede-se cantando canção da pedra que canta."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 7,
+      "titulo": "Entrega da caixa e suspeita",
+      "fatos": [
+        "Peren copia o rosto de integrante da escolta, simula entrega aos operadores e observa Veyra.",
+        "Relata coletores e conjurador poderoso mortos na estrada.",
+        "Após recebimento, recua e inicia rastreamento discreto da operadora e guardas."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 8,
+      "titulo": "Segunda emboscada e recrutamento de Veyra",
+      "fatos": [
+        "Ataca guardas e conjurador, utiliza Presas para rastrear e aproxima-se disfarçado de Serrik.",
+        "Usa Coroa da Loucura para obrigar Veyra a tentar atacar o familiar.",
+        "Destrói ponto de fuga ao atingir estrutura com Rajada Mística, conforme autorização caseira do mestre.",
+        "Fere Veyra com rajadas, ela envia sinal de comprometimento da carga.",
+        "Peren oferece emprego; o grupo presta primeiros socorros e a estabiliza."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 9,
+      "titulo": "Primeira noite de Veyra na companhia",
+      "fatos": [
+        "Acampam sem se deslocar longamente; Veyra explica captura de ativos e falhas da rede.",
+        "Peren defende contratos úteis, bondade dos termos e direito de saída, mas se proclama uma criatura antiga e terrível.",
+        "Veyra concorda em atuar como profissional e recomenda Casa do Peso Justo antes do Pátio das Três Bigornas."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 10,
+      "titulo": "Caixa-Cartório e o ECO IX",
+      "fatos": [
+        "Peren analisa caixa com magia e Arcanismo.",
+        "Declara custódia por risco, força e investigação; a caixa admite abertura sem libertação.",
+        "Descobre Sino de Limiar e lâmina de metal com registro ECO IX, destino Karsthal, V. Sull intermediária."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 11,
+      "titulo": "Plano de Karsthal",
+      "fatos": [
+        "O grupo decide usar Karsthal apenas para reabastecer, seguir ao Rio Ancestral e não confrontar a rede no coração mercantil.",
+        "Veyra e os três homens entram como sobreviventes procurando trabalho na Casa do Peso Justo.",
+        "Peren assume persona Tim Buckham e busca Maelor Venn pela periferia.",
+        "Presas segue furtivo pelos telhados."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 12,
+      "titulo": "Reencontro com Maelor e a Boca Rubra",
+      "fatos": [
+        "Briska exige privacidade recompensada; Maelor percebe ligação afetiva real com Tim.",
+        "Peren mostra sinos, lâmpada e intenção de frustrar a libertação de mal esquecido.",
+        "Maelor explica que os sinos carregam funções ou verbos, e que destruí-los de modo bruto pode soltar a prisão."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 13,
+      "titulo": "A forja de um caçador rastreável",
+      "fatos": [
+        "Peren propõe um anel que encontra qualquer coisa mas expõe seu portador e um cajado que abre caminhos mas mantém acesso astral à mente.",
+        "Jura não buscar família, passado ou origem.",
+        "Entrega memória do encontro e morte do irmão, ocorrido cinco anos antes; Maelor protege detalhes centrais de perda adicional.",
+        "Nascem o Anel do Caminho e o Cajado do Limiar, primeiro despertar."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 14,
+      "titulo": "A praça e a autoridade da Casa do Peso Justo",
+      "fatos": [
+        "Peren segue a direção do anel até os quatro companheiros retidos.",
+        "Sera Vhald pergunta se assume dívida, posse, culpa ou proteção.",
+        "Peren impõe a retirada com ameaça de caminho do inferno.",
+        "Sera reconhece proteção, companheiros são liberados; saem do mercado."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 15,
+      "titulo": "Saída pública de Karsthal",
+      "fatos": [
+        "Peren escolhe portão principal, não trilhas furtivas.",
+        "Capitão permite passagem pois não há ordem escrita de prisão.",
+        "A saída pública espalha fama e risco de rastreamento."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 16,
+      "titulo": "Fogo na estrada e primeiro sonho",
+      "fatos": [
+        "Após um quilômetro e uma pausa, Peren lança Bola de Fogo na estrada ao sul, criando incêndio e obstrução.",
+        "O grupo acampa afastado do fogo.",
+        "Durante o sono, presença da prisão tenta tentá-lo com retorno ao passado.",
+        "Peren recusa categoricamente e protege seu juramento, mas a porta mental permanece aberta."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 17,
+      "titulo": "Caça ao alce negro",
+      "fatos": [
+        "Na manhã seguinte anel encontra alce negro de escarpa; cajado revela passagem para flanqueá-lo.",
+        "Peren usa voo patronal e Rajada Mística em cimitarras de fogo; Orel acerta flecha.",
+        "Dren finaliza a presa; grupo esquarteja e prepara carne."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 18,
+      "titulo": "Uma oportunidade de ouro sob o vale",
+      "fatos": [
+        "Meditando levitando, Peren usa anel para localizar tesouro próximo.",
+        "Anel aponta à pequena cripta funerária sob o vale da caça.",
+        "Peren ordena que demais esperem longe e entra sozinho, com Presas próximo à abertura."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 19,
+      "titulo": "O guardião dos sem-nome",
+      "fatos": [
+        "Câmara contém ossos em vigília, ouro, máscara de nome e guardião no teto.",
+        "Peren convoca Servo Invisível em ritual para levar riquezas mundanas e usa Eldritch Sight/Arcanismo na máscara.",
+        "Conjura Compreender Idiomas e pede autorização ao guardião.",
+        "Descobre que mortos foram privados de nome, transformados em carga e dívida; ouro pode sair como pagamento, máscara deve permanecer."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 20,
+      "titulo": "A promessa do rio",
+      "fatos": [
+        "Guardião pede três moedas lançadas no Rio Ancestral com fórmula ritual.",
+        "Peren oferece também passagem voluntária dos mortos aos deuses, mas aceita prudência do guardião.",
+        "Promete voltar com água do rio em vaso fechado, testemunhas vivas e nome verdadeiro de pelo menos um morto.",
+        "Cripta permanece intacta quanto a máscara/porta, ouro sai por consentimento."
+      ],
+      "evidencia": "jogo"
+    },
+    {
+      "ordem": 21,
+      "titulo": "Partilha do ouro e novo acampamento",
+      "fatos": [
+        "Peren declara o ouro propriedade coletiva e o divide em cinco partes iguais.",
+        "Tavin destaca as três moedas sem dono para o rito.",
+        "Peren solicita à comitiva que testemunhe voluntariamente o futuro rito dos mortos.",
+        "Comem alce, levam parte da carne para longe da cripta, preparam secagem e repousam em elevação mais segura.",
+        "Veyra expõe opções futuras de travessia: oficial, clandestina ou independente."
+      ],
+      "evidencia": "cena atual, jogo"
+    }
+  ],
+  "rituais_e_frases": {
+    "abertura_caixa": "Recebi por risco. Tomei por força. Conservo por direito de investigação. Abro para conhecer, não para libertar.",
+    "voto_do_cajado": "Eu nunca tentarei encontrar o caminho de volta para a minha família. Não abrirei caminho para o meu passado ou tentarei mudar minha origem. Peren existe como bruxo e aventureiro. Só.",
+    "tres_moedas": "Estes passaram sem registro, mas não sem peso.",
+    "convite_opcional_aos_mortos": "Se algum nome desejar caminho, que a corrente o pese.",
+    "condicoes_para_o_regresso_a_cripta": [
+      "água do Rio Ancestral em vaso fechado",
+      "nome recuperado de um dos sem-nome, com prova material ou testemunhal",
+      "testemunhas vivas voluntárias, que vejam e ouçam sem se apropriar dos mortos"
+    ],
+    "aviso_guardiao": "Não abra céu dentro de túmulo; entidades podem se aproveitar de caminhos divinos se abertos imprudentemente.",
+    "outros_rituais": "Unseen Servant foi usado como rito de coleta; Compreender Idiomas para decifrar a fala antiga do guardião."
+  },
+  "objetivos_e_ganchos": {
+    "prioridades_imediatas": [
+      "Conservar e transportar a carne do alce sem estragar.",
+      "Garantir repouso e recuperação de Veyra.",
+      "Encontrar via de travessia do Rio Ancestral sem entregar o grupo a registros da rede.",
+      "Recolher água do Rio Ancestral em vaso fechado.",
+      "Lançar três moedas sem dono e dizer a frase acordada.",
+      "Manter os quatro companheiros livres e protegidos."
+    ],
+    "medio_prazo": [
+      "Recuperar o nome verdadeiro e evidência de identidade de ao menos um morto da cripta.",
+      "Voltar à cripta com água e testemunhas para ouvir os mortos e auxiliar passagem voluntária.",
+      "Obter recursos para futura viagem sem expor excessivamente o grupo.",
+      "Controlar o rastro recíproco do Anel do Caminho e os acessos mentais do Cajado."
+    ],
+    "longo_prazo": [
+      "Localizar portadores dos outros oito lacres e evitar que os libertadores reúnam a gramática da prisão.",
+      "Conhecer a verdadeira natureza da fome que aprende e os riscos de manipular lacres.",
+      "Entender a rede, seus financiadores e a ligação eventual com a Corte.",
+      "Aprimorar anel e cajado sem romper prisão nem juramentos.",
+      "Aprofundar pacto com Khan sem abdicar da autonomia.",
+      "Dar a Presas uma condição de familiar singular além da forma conjurada."
+    ],
+    "ameacas_ativas": [
+      "rastreabilidade criada pelo anel",
+      "intrusão onírica ou astral causada pelo cajado",
+      "facções interessadas em ECO IX e demais sinos",
+      "reação pública/administrativa de Karsthal",
+      "possível incêndio e consequências ambientais na rota",
+      "crise futura na lealdade e autonomia da companhia"
+    ],
+    "perguntas_sem_resposta": [
+      "Qual nome verdadeiro da entidade contida e seu projeto de libertação?",
+      "Quem removeu cada um dos demais lacres e quantos foram realmente levados?",
+      "O que exatamente faz o Arquivo Frio?",
+      "Quem financiava a rede de Veyra e quem recebeu seu sinal?",
+      "Qual é o status institucional de Sera e das Três Bigornas após a saída?",
+      "Quais limites e custos objetivos terão os dois artefatos no avanço de nível?",
+      "De quem são os ossos e a máscara dos sem-nome?",
+      "Quem pode fornecer primeiro nome recuperado?",
+      "De que maneira o passado vedado de Peren interferirá sem desrespeitar o sacrifício de memória?"
+    ]
+  },
+  "estado_atual_para_retomada": {
+    "marco": "fim da última cena narrada, após partilha de ouro e pausa para secagem de carne",
+    "local": "elevação relativamente seca no interior/limite de Eldroth, algumas horas além do vale da cripta dos sem-nome; ao norte do caminho de Karsthal e rumo ao Rio Ancestral",
+    "hora_diegética": "indefinida; depois da caça, visita à cripta e deslocamento de algumas horas no mesmo dia",
+    "grupo_presente": [
+      "Peren",
+      "Veyra",
+      "Dren",
+      "Orel",
+      "Tavin",
+      "Presas"
+    ],
+    "situacao": "sem combate ativo; carne em preparação, tesouro partilhado, próximos planos de travessia em discussão",
+    "saude": "Veyra ainda ferida e em recuperação; demais membros sem ferimentos atuais explicitamente descritos; PV exatos desconhecidos",
+    "itens_desta_cena": [
+      "anel no dedo de Peren",
+      "cajado de Peren",
+      "lâmpada de Khan",
+      "cinco partes de tesouro, de valores não contados",
+      "três moedas reservadas",
+      "carne fresca/seca do alce"
+    ],
+    "ultimo_assunto_em_aberto": "Veyra ofereceu três possibilidades de atravessar o Rio Ancestral: travessia oficial com pedágio e registro; balsa clandestina com preço e risco; travessia autônoma com corrente perigosa. Também sugeriu perguntar ao anel pelo melhor caminho, sem confundir melhor com seguro.",
+    "estado_da_cripta": "selada novamente pela passagem do cajado; guardião, máscara e porta permanecem; retorno prometido",
+    "proxima_cena_recomendada": "O grupo precisa escolher como alcançar/travessar o Rio Ancestral e lidar com custo, suprimentos, recuperação de Veyra e risco de rastreamento; colocar escolhas na mão do jogador, sem decidir por ele."
+  },
+  "regras_de_narracao_acordadas": {
+    "mestre": "ChatGPT interpreta ambiente, NPCs e consequências; jogador controla Peren e escolhe suas ações",
+    "uso_de_dados": "Não rolar para todo gesto ou reação. Fazer teste apenas onde as regras e a incerteza significativa justificam. Ataques e testes necessários seguem mecânicas de D&D.",
+    "aleatoriedade": "Quando houver rolagem, executá-la com código Python, conforme pedido explícito do jogador.",
+    "vantagem": "Deve decorrer de regra ou circunstância válida, não ser presumida por bom plano sem análise.",
+    "agencia": "Não tomar decisões de Peren. Não forçar avanço da cena além das consequências imediatas das ações.",
+    "tom": "fantasia sombria, imprevisível, política, com humor de estrada; personagens secundários têm vontades, interesses e limites próprios",
+    "stakes": "consequências reais para falhas, aliados e pactos; morte possível, mas não arbitrária ou ferramenta fácil de drama",
+    "regra_de_coerencia": "separar experiência subjetiva, leitura mágica, suspeita e conhecimento confirmado; preservar sacrifícios e juramentos",
+    "observacao": "D&D 5e predominante; conteúdo homebrew de artefatos e algumas arbitragens específicas foram narrados sem estatísticas oficiais completas."
+  },
+  "sistema_tarot_sugerido": {
+    "status": "criação interpretativa proposta em conversa, sem calendário natal nem datas de nascimento definidas",
+    "regra": "um arcano maior representa o mês; um arcano menor representa o dia; outro arcano menor representa a hora; planeta colore a regência",
+    "astros_propostos": [
+      "Lua Negra — sonhos, medo e memória",
+      "Mercúrio-Corvo — linguagem, contrato e comércio",
+      "Vênus de Osso — vínculos e lealdade",
+      "Marte Rubro — violência e coragem",
+      "Júpiter-Coroa — patronato e hierarquia",
+      "Saturno-Ossário — dívida e limites",
+      "Sol Pálido — exposição e identidade"
+    ],
+    "nota": "as cartas dos companheiros foram atribuídas por personalidade, NÃO derivadas de datas de nascimento"
+  },
+  "pendencias_de_consistencia": [
+    {
+      "tema": "origem e cronologia de Peren",
+      "problema": "Lysvar consta de contexto anterior; origem extraplanar é fala do próprio personagem e não fato comprovado.",
+      "acao": "manter declaração e biografia separadas"
+    },
+    {
+      "tema": "companheiros e primeiro recrutamento",
+      "problema": "Dren/Orel/Tavin aparecem na companhia consolidada, mas alguns detalhes das primeiras contratações e mortes da escolta estão resumidos.",
+      "acao": "não reconstruir datas/identidades sem as sessões originais"
+    },
+    {
+      "tema": "Unseen Servant e Comprehend Languages como rituais",
+      "problema": "conjuração ritual descrita em jogo não resulta automaticamente de Pact of the Chain pela regra padrão.",
+      "acao": "marcar como regra caseira ou corrigir em comum acordo, sem desfazer cenas passadas"
+    },
+    {
+      "tema": "Eldritch Blast versus objetos",
+      "problema": "foi usado para destruir ponto de fuga apesar do alvo por regra padrão ser criatura; houve autorização narrada do mestre.",
+      "acao": "manter como decisão daquele encontro, não regra geral automática"
+    },
+    {
+      "tema": "familiar e ataque",
+      "problema": "episódios narraram disparo de Rajada Mística a partir de Presas; isso não segue a regra padrão do familiar de entregar magias de toque.",
+      "acao": "tratar como exceção diegética não generalizável sem poder próprio"
+    },
+    {
+      "tema": "número de lacres",
+      "problema": "dez pedestais e dez lacres são aceitos na narração, mas posição/natureza das oito peças restantes são desconhecidas.",
+      "acao": "não inventar funções restantes"
+    },
+    {
+      "tema": "ouro",
+      "problema": "o tesouro e os adiantamentos foram descritos sem contagem consolidada.",
+      "acao": "não produzir saldo em PO; registrar cinco frações iguais e três moedas separadas"
+    },
+    {
+      "tema": "visão ancestral",
+      "problema": "narrada como percepção especial sem mecânica documentada.",
+      "acao": "identificar origem de regra antes de automatizar percepção mágica/temporal"
+    },
+    {
+      "tema": "deslocamentos geográficos",
+      "problema": "termos Ironwood, Eldroth, Lysvar, Karsthal e norte foram usados sem mapa tático canônico preciso na sessão.",
+      "acao": "não inventar quilômetros ou localização cartográfica exata"
+    },
+    {
+      "tema": "saúde/PV",
+      "problema": "PV 51/51 e CA 11 foram mencionados na subida de nível; situação do dano atual e armadura não rastreada por turno.",
+      "acao": "conferir ficha atual antes de combate"
+    },
+    {
+      "tema": "poder dos artefatos",
+      "problema": "o desejo original de encontrar/abrir qualquer caminho é mais amplo que a capacidade do primeiro despertar.",
+      "acao": "usar efeitos narrados já confirmados, exigir evolução para feitos absolutos"
+    }
+  ],
+  "referencias_visuais": [
+    {
+      "personagem": "Peren",
+      "arquivo": "mago_levitando_na_floresta_encantada.png",
+      "descricao": "olhos estelares, meditação de olhos abertos flutuando em Eldroth"
+    },
+    {
+      "personagem": "Veyra",
+      "arquivo": "aventureira_solitária_na_floresta_encantada.png",
+      "descricao": "operadora ferida de capa escura e couro em floresta enevoada"
+    },
+    {
+      "personagem": "Dren",
+      "arquivo": "homem_misterioso_na_floresta_encantada.png",
+      "descricao": "homem de estrada endurecido, faca, roupa gasta"
+    },
+    {
+      "personagem": "Orel",
+      "arquivo": "viajante_solitário_na_floresta_mágica.png",
+      "descricao": "jovem ansioso de arco simples e equipamentos improvisados"
+    },
+    {
+      "personagem": "Tavin",
+      "arquivo": "viajante_na_floresta_encantada.png",
+      "descricao": "carregador robusto, mochila de suprimentos e aparência confiável"
+    }
+  ]
+}
