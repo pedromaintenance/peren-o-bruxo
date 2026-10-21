@@ -137,7 +137,7 @@ with sync_playwright() as p:
     assert overflow<=2,(width,overflow)
     counts['mobile_viewports']+=1
   # PWA checks via offline asset manifest (browser policy prevents local HTTP navigation)
-  sw=open(f'{ROOT}/sw.js').read();assert 'peren-mercador-carcaca-0.1.3-peren-oficial-offline' in sw
+  sw=open(f'{ROOT}/sw.js').read();assert 'peren-mercador-carcaca-0.1.4-peren-auditado-offline' in sw
   assert 'reliquias_dnd' in sw and 'caches.open(CACHE)' in sw
   for f in ['index.html','game.js','style.css','manifest.webmanifest','sw.js','data/reliquias_dnd.json']:
     assert os.path.exists(f'{ROOT}/{f}')
