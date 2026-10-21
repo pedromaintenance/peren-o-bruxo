@@ -1,0 +1,179 @@
+{
+  "schema": "peren-wounded-walk-v4",
+  "sourcePackageSha256": "c7bc4b761b41760b0e93004b4edeb8a92074f32b220f712b3186ab0844f2f904",
+  "sourceWalkSha256": "e65916fab240e41bd4c7c0deb183547cd459c29ad84338d04ee3543bc3f48dcc",
+  "sourceExtendedSha256": "cb7435e49a9b62ab1f491dfcdfc06930882446316527ab77f3614cddb31786ae",
+  "normalAtlasSha256": "62a44d9ca68189014cb9e7731d04af8fe03800992140d99dae75e654c92317ea",
+  "runtimeAtlasSha256": "4520292c92ae79e922a7cffebce5c51863639924cd1bcb9af7bfbe3a20474c78",
+  "sourceFrames": "4 directions × 3 (12 art poses)",
+  "runtimeFrames": "4 directions × 4 (16 cells: 1-2-3-2)",
+  "frameSize": [
+    48,
+    64
+  ],
+  "atlasSize": [
+    768,
+    512
+  ],
+  "sourceRows": [
+    "frente",
+    "esquerda",
+    "direita",
+    "costas"
+  ],
+  "order": [
+    0,
+    1,
+    2,
+    1
+  ],
+  "frameMs": 230,
+  "visualThreshold": 0.5,
+  "note": "Injured walking is an alternative cosmetic gait when 0<HP<=50% max. No speed or damage modifications.",
+  "crop": [
+    5,
+    5,
+    155,
+    185
+  ],
+  "target": [
+    44,
+    59
+  ],
+  "anchor": [
+    2,
+    3
+  ],
+  "unchangedOtherFrames": 112,
+  "extendedFiveColumnAtlas": "remains in original user-supplied ZIP; not used in runtime",
+  "frames": [
+    {
+      "atlasFrame": 4,
+      "direction": "down",
+      "sourceRow": "frente",
+      "sourceFrame": 1,
+      "sourceSHA256": "97c6bb16b044499a6f719a36399b4ccc97e7f92be5c2cddecdbad87d103af733",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 5,
+      "direction": "down",
+      "sourceRow": "frente",
+      "sourceFrame": 2,
+      "sourceSHA256": "b6b5494e2fa24cc4ebace1bbbe6772a6cb33376848671cc71eca65e47c615f97",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 6,
+      "direction": "down",
+      "sourceRow": "frente",
+      "sourceFrame": 3,
+      "sourceSHA256": "6e0068d9d74419edee06296092904e42840a1647426bc35c930934ee05728911",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 7,
+      "direction": "down",
+      "sourceRow": "frente",
+      "sourceFrame": 2,
+      "sourceSHA256": "b6b5494e2fa24cc4ebace1bbbe6772a6cb33376848671cc71eca65e47c615f97",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 36,
+      "direction": "left",
+      "sourceRow": "esquerda",
+      "sourceFrame": 1,
+      "sourceSHA256": "1119bbed6d0aadf1840451051ddfffaa05144a0e904c3cda1aae0b775dd1ffbd",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 37,
+      "direction": "left",
+      "sourceRow": "esquerda",
+      "sourceFrame": 2,
+      "sourceSHA256": "bfc4c5dfbe5a90488e8d3915fbd31b5da073b4a5882c011dc527ca6209437760",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 38,
+      "direction": "left",
+      "sourceRow": "esquerda",
+      "sourceFrame": 3,
+      "sourceSHA256": "148a6067b0a1b8440b693ec74117168a44dfa80b2c2f13fc3f378b2656dd113d",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 39,
+      "direction": "left",
+      "sourceRow": "esquerda",
+      "sourceFrame": 2,
+      "sourceSHA256": "bfc4c5dfbe5a90488e8d3915fbd31b5da073b4a5882c011dc527ca6209437760",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 68,
+      "direction": "right",
+      "sourceRow": "direita",
+      "sourceFrame": 1,
+      "sourceSHA256": "5fee2196b5e52fcd3e5a6e65c6670cdc6ddd4fe15dedf95e3ee4036a6fb5f7f9",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 69,
+      "direction": "right",
+      "sourceRow": "direita",
+      "sourceFrame": 2,
+      "sourceSHA256": "5ea5cfb115abd7178473a68638ad51fa8f657d1aadf3f79cf16fe7d0379c4c50",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 70,
+      "direction": "right",
+      "sourceRow": "direita",
+      "sourceFrame": 3,
+      "sourceSHA256": "067ad3744f04ca5534b8a667a403dd09bf2be5f1f92acef4871328614da49d17",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 71,
+      "direction": "right",
+      "sourceRow": "direita",
+      "sourceFrame": 2,
+      "sourceSHA256": "5ea5cfb115abd7178473a68638ad51fa8f657d1aadf3f79cf16fe7d0379c4c50",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 100,
+      "direction": "up",
+      "sourceRow": "costas",
+      "sourceFrame": 1,
+      "sourceSHA256": "6946aac7b98e134184cf558b198734dbb2e25ae40679d6611579a6d6dea7dc93",
+      "feetY": 60
+    },
+    {
+      "atlasFrame": 101,
+      "direction": "up",
+      "sourceRow": "costas",
+      "sourceFrame": 2,
+      "sourceSHA256": "148fd4bbf9afc4365d16ab237a45084bc38fc1ecdf4eecab4c94412681cc1042",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 102,
+      "direction": "up",
+      "sourceRow": "costas",
+      "sourceFrame": 3,
+      "sourceSHA256": "8194f2a0e9bc4b1aea268376cf6c130207ac28da0b5972f2835274f91218e9ce",
+      "feetY": 61
+    },
+    {
+      "atlasFrame": 103,
+      "direction": "up",
+      "sourceRow": "costas",
+      "sourceFrame": 2,
+      "sourceSHA256": "148fd4bbf9afc4365d16ab237a45084bc38fc1ecdf4eecab4c94412681cc1042",
+      "feetY": 61
+    }
+  ]
+}
