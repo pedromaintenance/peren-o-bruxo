@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121b22"><meta name="robots" content="noindex,nofollow">
+<title>Campanha — Peren Kerrhylon</title><link rel="manifest" href="./manifest.webmanifest">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#10171e;color:#eaddc5;font:15px system-ui}
+body{background:radial-gradient(circle at 20% 0,#352c38 0,transparent 50%),linear-gradient(160deg,#172b2d,#080e15)}
+main{max-width:850px;margin:0 auto;padding:20px 17px 65px}h1{font:clamp(34px,7vw,55px) Georgia,serif;color:#efd3a1;margin:18px 0 8px}h2{font:27px Georgia,serif;color:#f0cc98;margin:0 0 10px}
+a{color:#f3cd8b}a:focus-visible,button:focus-visible{outline:3px solid #edcc89;outline-offset:3px}
+p{line-height:1.7}button{font:700 15px system-ui;color:#f9e6bb;border:1px solid #c7a875;background:#344e45;border-radius:9px;padding:13px;min-height:49px;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-wrap:wrap}.kicker{text-transform:uppercase;font:700 12px system-ui;letter-spacing:.12em;color:#bdcdbb}
+.panel{padding:20px;margin:20px 0;background:#172a2ccf;border:1px solid #9d88617b;border-radius:13px}
+.accent{padding:12px 14px;border-left:3px solid #d0ab72;background:#263036;border-radius:0 8px 8px 0}
+.controls{display:flex;gap:11px;flex-wrap:wrap;margin-top:17px}.controls button{flex:1 1 180px}
+.status{margin-top:15px;min-height:30px;color:#d7c7a7}small{color:#b7c6bc}
+@media(max-width:460px){.controls button{width:100%}main{padding:16px 12px 40px}}
+</style><script src="./campanha.js" defer></script></head>
+<body><main>
+<div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
+<span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
+<h1>Peren Kerrhylon</h1>
+<p>Changeling. Bruxo de Lorde Khan. O homem dos olhos estrelados.</p>
+<section class="panel" aria-label="Prólogo da campanha">
+<h2>O acampamento de Eldroth</h2>
+<p>Depois da cripta dos Sem-Nome, Peren e seus companheiros descansam numa elevação da floresta. A carne do alce está sendo preparada. Veyra ainda se recupera dos ferimentos, enquanto o grupo pondera como chegar ao Rio Ancestral.</p>
+<p>Três moedas foram separadas para um rito. A Máscara dos Sem-Nome permanece na cripta, e a promessa de retorno continua em vigor.</p>
+<p class="accent">A rota ainda <strong>não foi escolhida</strong>. Via oficial, balsa clandestina ou travessia autônoma são possibilidades — não ações consumadas.</p>
+</section>
+<section class="panel" aria-labelledby="slotTitle">
+<h2 id="slotTitle">Registro da campanha</h2>
+<p id="slotDescription">Este é um slot novo e independente do Modo Livre. Nesta etapa ele preserva o ponto de partida; decisões, exploração e combate serão adicionados em marcos posteriores.</p>
+<div class="controls"><button id="beginCampaign" type="button">Iniciar registro da campanha</button><button id="exportCampaign" type="button" hidden>Exportar backup JSON</button></div>
+<p class="status" id="slotStatus" role="status" aria-live="polite">Verificando o slot...</p>
+</section>
+<p><small>LORE-03: esta etapa não simula a cena nem determina decisões por Peren. Nenhuma progressão de D&D é convertida para o arcade.</small></p>
+</main>
+<script>if('serviceWorker' in navigator && location.pathname.includes('/phaser-demo-m1hf/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(()=>{}))}</script>
+</body></html>
