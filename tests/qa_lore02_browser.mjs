@@ -54,7 +54,7 @@ try {
   });
   await ctx.setOffline(true);
   await page.goto(base+"/cronica.html?offline=1",{waitUntil:"domcontentloaded"});
-  await page.waitForSelector(".timeline-entry");
+  await page.waitForSelector(".timeline-entry", {state:"attached"});
   assert.equal(await page.locator(".timeline-entry").count(),21);
   await ctx.close();
   passes++;
