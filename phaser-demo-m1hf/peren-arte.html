@@ -20,8 +20,8 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <h1>Peren Kerrhylon — identidade visual oficial</h1>
 <p>Visual aprovado pelo criador, derivado do ZIP original. Esta é uma bancada de inspeção da arte, <strong>não um segundo modo de jogo</strong>.</p>
 <div class="figure">
-<div class="card"><img src="./art/characters/peren/official-v1/peren-portrait-official-256.png" alt="Peren, cabelos escuros, olhos azuis, manto dourado"><strong>Retrato do protagonista</strong></div>
-<div class="card"><img src="./art/characters/peren/official-v1/peren-actor-official-128.png" alt="Peren de corpo inteiro, traje escuro e dourado"><strong>Corpo inteiro</strong></div>
+<div class="card"><img src="./art/characters/peren/official-v2/peren-portrait-official-256.png" alt="Peren, cabelos escuros, olhos azuis, manto dourado"><strong>Retrato do protagonista</strong></div>
+<div class="card"><img src="./art/characters/peren/official-v2/peren-actor-official-128.png" alt="Peren de corpo inteiro, traje escuro e dourado"><strong>Corpo inteiro</strong></div>
 </div>
 <h2>Sprites em quatro direções</h2>
 <label for="action">Visualizar animação</label>
@@ -32,16 +32,16 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <div class="card"><canvas width="48" height="64" data-dir="2" aria-label="Peren olhando para a direita"></canvas><strong>Direita</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="3" aria-label="Peren de costas"></canvas><strong>Costas</strong></div>
 </div>
-<p class="notice">Limitação documentada: os cinco passos originais são para a esquerda. As demais direções e ações reutilizam poses reais e espelhamento, para manter compatibilidade com os 128 quadros do motor. Não são desenhos adicionais aprovados pelo artista.</p>
+<p class="notice">AUDITORIA V2: câmera/escala/posição dos pés estabilizadas; cores originais preservadas. Há caminhada lateral e movimento de capa visto por trás. Frente sem passos e gestos de interação, coleta, ferimento, magia ou ataque são quadros estáticos intencionais até recebermos sprites próprios. Nada disso representa uma animação nova aprovada.</p>
 <small id="status" role="status">Preparando atlas...</small>
 </main>
 <script>
 const picture=new Image();
-picture.src="./art/characters/peren/official-v1/peren-atlas-official-48x64.png";
+picture.src="./art/characters/peren/official-v2/peren-atlas-official-48x64.png";
 const directions=[...document.querySelectorAll("canvas[data-dir]")];
 const actions=["idle","walk","run","interact","gather","hurt","cast","attack"];
 let ready=false,last=0,frame=0;
-picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · arte derivada do ZIP oficial";requestAnimationFrame(render)};
+picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · correção de alinhamento · movimentos incompletos sinalizados";requestAnimationFrame(render)};
 picture.onerror=()=>{document.getElementById("status").textContent="Não foi possível carregar o atlas offline."};
 function render(time){
  if(ready&&time-last>=125){
