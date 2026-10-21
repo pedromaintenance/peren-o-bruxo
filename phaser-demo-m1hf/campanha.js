@@ -19,6 +19,9 @@ const TERMS={
 const METHODS=new Set(["anel","presas","a_pe"]);
 const RIVER_PHRASE="Estes passaram sem registro, mas não sem peso.";
 const PENDING_TASKS=new Set(["vaso_fechado","nome_verdadeiro","testemunhas_voluntarias"]);
+const INVESTIGATION_METHODS={vaso:["conferir_carga","avaliar_lampada"],nome:["depoimentos","revisitar_cripta"]};
+const INVITATIONS={orel:["convite_livre","exigir_juramento"],dren:["convite_livre","impor_contrato"]};
+const SAVE_EVENT_LIMIT=40;
 const AGREED={veyra:"ritmo_compassado",dren:"contrato_claro",orel:"posicao_protegida",tavin:"moedas_reservadas"};
 const TOPICS={
   veyra:["rotas","ferimentos"],
@@ -37,6 +40,8 @@ function validChoice(c) {
   if(c.type==="chegada")return ROUTES.has(c.route);
   if(c.type==="moedas")return c.phrase===RIVER_PHRASE;
   if(c.type==="pendencia")return PENDING_TASKS.has(c.task);
+  if(c.type==="pista")return Object.hasOwn(INVESTIGATION_METHODS,c.subject)&&INVESTIGATION_METHODS[c.subject].includes(c.method);
+  if(c.type==="convite")return Object.hasOwn(INVITATIONS,c.npc)&&INVITATIONS[c.npc].includes(c.approach);
   return false;
 }
 function currentPlan(choices){return choices.filter(x=>x.type==="plano").at(-1)?.route||null}
@@ -55,7 +60,11 @@ function validHistory(s){
   const arrivals=s.choices.filter(x=>x.type==="chegada");
   const coins=s.choices.filter(x=>x.type==="moedas");
   const tasks=s.choices.filter(x=>x.type==="pendencia");
+  const leads=s.choices.filter(x=>x.type==="pista");
+  const invitations=s.choices.filter(x=>x.type==="convite");
   if(arrivals.length>1||coins.length>1||new Set(tasks.map(x=>x.task)).size!==tasks.length)return false;
+  if(new Set(leads.map(x=>x.subject)).size!==leads.length)return false;
+  if(new Set(invitations.map(x=>x.npc)).size!==invitations.length)return false;
   const arrivalIndex=s.choices.findIndex(x=>x.type==="chegada");
   if(arrivalIndex<0){
     return s.phase==="aproximacao"&&s.checkpoint==="trilha_eldroth_rumo_ao_rio"
@@ -65,13 +74,13 @@ function validHistory(s){
   const onRoad=s.choices.slice(departure+1,arrivalIndex);
   if(onRoad.length!==1||onRoad[0].type!=="observacao")return false;
   if(arrivals[0].route!==depart.route)return false;
-  return s.choices.slice(arrivalIndex+1).every(x=>x.type==="moedas"||x.type==="pendencia");
+  return s.choices.slice(arrivalIndex+1).every(x=>["moedas","pendencia","pista","convite"].includes(x.type));
 }
 function isValid(s) {
   return Boolean(s && typeof s==="object" && !Array.isArray(s) &&
     s.schema==="peren-campaign-save" && s.schemaVersion===VERSION &&
     s.mode==="campanha" && s.chronicleRef==="1.0.0" &&
-    Array.isArray(s.choices) && s.choices.length<=24 && validHistory(s));
+    Array.isArray(s.choices) && s.choices.length<=SAVE_EVENT_LIMIT && validHistory(s));
 }
 function read() {
   const raw=localStorage.getItem(KEY);
@@ -82,13 +91,13 @@ function read() {
 }
 function saveChoice(payload) {
   // Persist only the player's explicit decisions. Do not assume consent or travel.
-  if(!payload || !["dialogo","plano","acordo","partida","observacao","chegada","moedas","pendencia"].includes(payload.type))throw Error("Escolha inválida");
+  if(!payload || !["dialogo","plano","acordo","partida","observacao","chegada","moedas","pendencia","pista","convite"].includes(payload.type))throw Error("Escolha inválida");
   const prev=read();
   if(!prev)throw Error("Inicie o registro da campanha para escolher");
   const allowedByPhase={
     preparacao:["dialogo","plano","acordo","partida"],
     aproximacao:["observacao","chegada"],
-    margem:["moedas","pendencia"]
+    margem:["moedas","pendencia","pista","convite"]
   };
   if(!allowedByPhase[prev.phase]?.includes(payload.type))
     throw Error("Ação indisponível neste trecho; decisões anteriores não podem ser reescritas");
@@ -117,7 +126,14 @@ function saveChoice(payload) {
   }
   if(item.type==="moedas"&&choices.some(x=>x.type==="moedas"))throw Error("As três moedas já foram entregues à corrente");
   if(item.type==="pendencia"&&choices.some(x=>x.type==="pendencia"&&x.task===item.task))return prev;
-  if(choices.length>=24)throw Error("Limite de registros atingido; faça backup antes de prosseguir");
+  // Investigative approaches can be reconsidered while the second ritual remains unresolved.
+  if(item.type==="pista"){
+    for(let i=choices.length-1;i>=0;i--)if(choices[i].type==="pista"&&choices[i].subject===item.subject)choices.splice(i,1);
+  }
+  if(item.type==="convite"){
+    for(let i=choices.length-1;i>=0;i--)if(choices[i].type==="convite"&&choices[i].npc===item.npc)choices.splice(i,1);
+  }
+  if(choices.length>=SAVE_EVENT_LIMIT)throw Error("Limite de registros atingido; faça backup antes de prosseguir");
   choices.push(item);
   const next={...prev,updatedAt:now,choices,
     ...(item.type==="partida"?{phase:"aproximacao",checkpoint:"trilha_eldroth_rumo_ao_rio"}:{}),
