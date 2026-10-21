@@ -44,7 +44,22 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 .route-choice small{display:block;color:#c1c6bc;font-size:12px;line-height:1.45;margin-top:6px}
 @media(max-width:680px){.council-layout{grid-template-columns:1fr}.council-people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.route-choices{grid-template-columns:1fr}}
 @media(max-width:390px){.council-people{grid-template-columns:1fr}}
-</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script></head>
+
+.expedition-subtitle{font:23px Georgia,serif;color:#edcb99;margin:22px 0 10px}
+.expedition-allies{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:15px 0}
+.expedition-ally{border:1px solid #a58b6499;background:#14242b;padding:15px;border-radius:10px;min-width:0}
+.expedition-ally h4{font:21px Georgia,serif;color:#f1d49e;margin:2px 0 10px}
+.expedition-ally p{margin:8px 0}.expedition-choice{display:block;width:100%;margin:8px 0;text-align:left;font-size:14px;white-space:normal}
+.expedition-accepted{border-left:3px solid #b1cbab;background:#233a33;padding:9px 12px}
+.expedition-declined{border-left:3px solid #e6a48a;background:#443332;padding:9px 12px}
+.expedition-outcome{background:#111d24;border:1px solid #937f60a0;padding:17px;border-radius:10px;margin:12px 0}
+.expedition-outcome h3,.expedition-outcome h4{font:22px Georgia,serif;color:#e9ca95;margin:0 0 8px}
+.expedition-outcome p{margin:7px 0}.expedition-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.expedition-ledger{padding-left:22px;line-height:1.65}.expedition-ledger li{margin-bottom:6px}
+.muted{color:#c4c5bc}
+[hidden]{display:none!important}
+@media(max-width:650px){.expedition-allies{grid-template-columns:1fr}.expedition-choices{grid-template-columns:1fr}}
+</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script><script src="./expedicao-eldroth.js" defer></script></head>
 <body><main>
 <div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
 <span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
@@ -57,7 +72,7 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 <h2>O acampamento de Eldroth</h2>
 <p>Depois da cripta dos Sem-Nome, Peren e seus companheiros descansam numa elevação da floresta. A carne do alce está sendo preparada. Veyra ainda se recupera dos ferimentos, enquanto o grupo pondera como chegar ao Rio Ancestral.</p>
 <p>Três moedas foram separadas para um rito. A Máscara dos Sem-Nome permanece na cripta, e a promessa de retorno continua em vigor.</p>
-<p class="accent">A rota ainda <strong>não foi escolhida</strong>. Via oficial, balsa clandestina ou travessia autônoma são possibilidades — não ações consumadas.</p>
+<p class="accent">Na retomada da mesa, a rota ainda <strong>não foi escolhida</strong>. Via oficial, balsa clandestina ou travessia autônoma são possibilidades; a expedição registra as escolhas feitas neste jogo.</p>
 </section>
 <section class="panel" aria-label="Conselho de campanha">
 <h2>À volta da fogueira</h2><p>O grupo está reunido e ainda não decidiu como atravessar o Rio Ancestral. Consulte os companheiros antes de qualquer escolha. Estas notas registram seus interesses conhecidos, sem simular decisões nem comprometer o save.</p>
@@ -90,13 +105,35 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 <p id="councilStatus" class="status" role="status" aria-live="polite">Carregando a cena do conselho...</p>
 <p id="councilSource" class="note-canon"></p>
 </section>
+<section class="panel" id="eldrothExpedition" aria-labelledby="expeditionTitle">
+<h2 id="expeditionTitle">Expedição — O primeiro trecho</h2>
+<p id="expeditionDisclaimer" class="note-canon">Carregando roteiro narrativo...</p>
+<p id="expeditionStage" class="accent"></p>
+<div id="expeditionSetup">
+<h3 class="expedition-subtitle">Antes da partida: contratos e limites</h3>
+<p id="expeditionReadiness">Inicie o registro de campanha e converse com a comitiva.</p>
+<div id="expeditionAgreements" class="expedition-allies"></div>
+<p id="expeditionRoute" class="accent">Escolha primeiro um plano com Veyra.</p>
+<button type="button" id="expeditionDepart" disabled>Aguardando acordos</button>
+</div>
+<div id="expeditionApproach" hidden>
+<div id="expeditionArrival" class="expedition-outcome"></div>
+<h3 class="expedition-subtitle">Primeira observação do caminho</h3>
+<p>Escolha um método. A decisão fica registrada e seus riscos permanecem no histórico; a chegada ao rio, os custos e os possíveis encontros serão resolvidos em próximas cenas.</p>
+<div id="expeditionObservations" class="expedition-choices"></div>
+<div id="expeditionConsequence" class="expedition-outcome" aria-live="polite"></div>
+</div>
+<h3 class="expedition-subtitle">Custos e recursos conhecidos</h3>
+<ul id="expeditionCosts" class="expedition-ledger"></ul>
+<p id="expeditionStatus" role="status" class="status" aria-live="polite">Preparando a expedição...</p>
+</section>
 <section class="panel" aria-labelledby="slotTitle">
 <h2 id="slotTitle">Registro da campanha</h2>
 <p id="slotDescription">Este é um slot novo e independente do Modo Livre. Nesta etapa ele preserva o ponto de partida; decisões, exploração e combate serão adicionados em marcos posteriores.</p>
 <div class="controls"><button id="beginCampaign" type="button">Iniciar registro da campanha</button><button id="exportCampaign" type="button" hidden>Exportar backup JSON</button></div>
 <p class="status" id="slotStatus" role="status" aria-live="polite">Verificando o slot...</p>
 </section>
-<p><small>LORE-03: esta etapa não simula a cena nem determina decisões por Peren. Nenhuma progressão de D&D é convertida para o arcade.</small></p>
+<p><small>LORE-04: acordos, partida e reconhecimento são cenas novas e escolhas persistentes. O Rio Ancestral ainda não foi atravessado; sem valores monetários, PV, testes ou condições de combate inventadas.</small></p>
 </main>
 <script>if('serviceWorker' in navigator && location.pathname.includes('/phaser-demo-m1hf/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(()=>{}))}</script>
 </body></html>
