@@ -32,19 +32,20 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <div class="card"><canvas width="48" height="64" data-dir="2" aria-label="Peren olhando para a direita"></canvas><strong>Direita</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="3" aria-label="Peren de costas"></canvas><strong>Costas</strong></div>
 </div>
-<p class="notice">AUDITORIA V2: câmera/escala/posição dos pés estabilizadas; cores originais preservadas. Há caminhada lateral e movimento de capa visto por trás. Frente sem passos e gestos de interação, coleta, ferimento, magia ou ataque são quadros estáticos intencionais até recebermos sprites próprios. Nada disso representa uma animação nova aprovada.</p>
+<p class="notice">ATUALIZAÇÃO V3: caminhada real com três quadros por direção — frente, esquerda, direita e costas. Sequência 1 → 2 → 3 → 2; 180 ms/quadro. O terceiro quadro da esquerda já veio espelhado no pacote original. Ações de coleta, interação, ferimento, magia e ataque continuam com poses estáticas até receberem desenhos próprios.</p>
 <small id="status" role="status">Preparando atlas...</small>
 </main>
 <script>
 const picture=new Image();
-picture.src="./art/characters/peren/official-v2/peren-atlas-official-48x64.png";
+picture.src="./art/characters/peren/official-v3/peren-atlas-official-48x64.png";
 const directions=[...document.querySelectorAll("canvas[data-dir]")];
 const actions=["idle","walk","run","interact","gather","hurt","cast","attack"];
 let ready=false,last=0,frame=0;
-picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · correção de alinhamento · movimentos incompletos sinalizados";requestAnimationFrame(render)};
+picture.onload=()=>{if(picture.naturalWidth!==768||picture.naturalHeight!==512){document.getElementById("status").textContent="Erro nas dimensões do atlas.";return}ready=true;document.getElementById("status").textContent="128 quadros · 48×64 px · caminhada 4 direções × 3 poses (1–2–3–2) · 180 ms";requestAnimationFrame(render)};
 picture.onerror=()=>{document.getElementById("status").textContent="Não foi possível carregar o atlas offline."};
 function render(time){
- if(ready&&time-last>=125){
+ const isWalk=document.getElementById("action").value==="walk";
+ if(ready&&time-last>=(isWalk?180:125)){
   last=time;frame=(frame+1)%4;
   const action=Math.max(0,actions.indexOf(document.getElementById("action").value));
   for(const canvas of directions){
