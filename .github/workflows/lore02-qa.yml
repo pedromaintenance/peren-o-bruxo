@@ -1,0 +1,42 @@
+name: LORE-02 Chronicle QA
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lore02-qa.yml'
+      - 'phaser-demo-m1hf/**'
+      - 'lore/peren/**'
+      - 'tests/qa_lore02*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chronicle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Canon, storage and simulated DOM regression
+        run: node --test tests/qa_lore02.mjs
+      - name: Install browser dependency
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Start local server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-lore02-server.log 2>&1 &
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8765/phaser-demo-m1hf/cronica.html >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-lore02-server.log
+          exit 1
+      - name: Chromium mobile desktop and offline smoke
+        env:
+          LORE02_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: node tests/qa_lore02_browser.mjs
