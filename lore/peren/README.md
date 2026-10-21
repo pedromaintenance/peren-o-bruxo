@@ -4,6 +4,7 @@ A biografia de campanha usada para orientar o desenvolvimento de **Peren, o Brux
 
 - [**Dossiê de campanha v1.0.0 (JSON integral)**](Dossie_Peren_Kerrhylon_RPG_Carcaca.json) — arquivo entregue pelo usuário em 20/10/2026, preservado integralmente; registra **21 marcos da campanha**.
 - [**Análise das diferenças e plano de adaptação do videogame**](ADAPTACAO_AO_JOGO.md) — comparação do sandbox e da prévia Phaser com a história da mesa, prioridades, proteções de save e critérios de aceite.
+- [**Identidade visual oficial de Peren**](ASSETS_OFICIAIS.md) — ZIP recortado aprovado em 21/10/2026; mapa de sprites, dimensões, checksums e proteção para adaptação ao Phaser (binários ainda não importados no GitHub).
 - [**Roadmap executivo**](../../ROADMAP.md) — estado *real* de implementação, publicação e QA.
 
 ## Hierarquia de confiança
