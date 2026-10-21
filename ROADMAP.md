@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Roadmap de desenvolvimento
 
-> **Atualizado em 16/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
+> **Atualizado em 20/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
 >
 > O plano detalhado original do Phaser permanece em [`docs/01-roadmap.md` na branch de desenvolvimento](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/01-roadmap.md). Este arquivo é o **índice executivo** mantido na `main`.
 
@@ -23,6 +23,26 @@
 - **Implementado — em validação:** código existe e tem testes, mas pode não estar ainda no Pages ou depende de revisão.
 - **Pendente:** sem entrega verificável; não marcar como concluído porque uma imagem, mockup ou documento menciona a funcionalidade.
 - **Aprovação final:** exige revisão artística e teste em dispositivo físico, além do CI. O CI em Chromium não equivale a playtest manual Android.
+
+## Marco de alinhamento narrativo — Dossiê de Peren Kerrhylon [FONTE ARQUIVADA · ANÁLISE PUBLICADA · 20/10/2026]
+
+**Fonte principal de continuidade do protagonista:** [dossiê JSON integral v1.0.0](lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json), recebido do jogador e preservado integralmente, incluindo **21 marcos narrativos**. [Auditoria técnica, diferenças e plano de adaptação](lore/peren/ADAPTACAO_AO_JOGO.md) · [regras de proveniência](lore/peren/README.md).
+
+**Diagnóstico crítico:** o **sandbox Mercador da Carcaça** (início em Portomonte, nível 1, 114 PV, 68 PM, quatro feitiços de catálogo, exploração de Mürin) **não** é a continuação literal da campanha D&D. O Peren da mesa é um **changeling bruxo de nível 7, patrono Lorde Khan, Pacto da Corrente**, acompanhado por **Presas, Veyra, Dren, Orel e Tavin**, com artefatos de função perigosa e promessas com os mortos Sem-Nome. Sua última cena canônica é o **acampamento em Eldroth após a cripta, antes de chegar ao Rio Ancestral**. A ficha de mesa é provisória; valores monetários e regras finais de artefatos não estão fechados.
+
+| ID | Prioridade | Entrega e aceite | Estado |
+| --- | --- | --- | --- |
+| **LORE-00** | P0 | Arquivar JSON completo sem modificar conteúdo, validar parse/versão e registrar regras de confiança | **Concluído na `main`**, arquivo conferido byte a byte com o upload (66.014 bytes) |
+| **LORE-01** | P0 | Analisar confronto entre lore e jogo, preservar a distinção entre **Modo Livre** e possível **Modo Campanha** | **Análise/documentação publicada**; sem mudança jogável |
+| **LORE-02** | P0 | Mostrar **Crônica de campanha** em painel somente de leitura, separada do diário de ações do save; offline, móvel e testada | **Pendente de implementação/QA** |
+| **LORE-03** | P0 | Escolha explícita Livre × Campanha, saves isolados, sem retroatividade de nível/moedas | **Proposta** — requer decisão de escopo |
+| **LORE-04** | P1 | Criar acampamento em Eldroth, preservar agência de 4 companheiros e Presas; apresentar três rotas ao Rio | **Proposta** — não confundir Eldroth/Mürin |
+| **LORE-05** | P1 | Três moedas sem dono, água, nome de morto, testemunhas voluntárias e promessa de retorno | **Proposta**, sem inventar saldos/nomes |
+| **LORE-06** | P1 | Pacto com Khan, identidade changeling, forma de Presas e magias, em perfil próprio de regras | **Pendente** de decisão arcade × 5e e validação da ficha |
+| **LORE-07** | P2 | Anel com rastreamento recíproco, Cajado com intrusão astral e tabu, lacres, contratos e facções | **Pendente** de limites mecânicos e QA narrativo |
+| **LORE-08** | P2 | Arte de olhos estrelados e comitiva, com validação de retratos originais | **Pendente** de referências e aprovação artística |
+
+**Preservação:** não sobrescrever saves do clássico (`peren_carcaca_save_v1`) nem das builds Phaser (`peren_phaser_save_m1d_v1` / `peren_phaser_save_m1hf_preview_v1`). Dados narrativos não são transações e não equivalem a funcionalidade concluída. **Esta entrega é documental; o Pages jogável continua com M1h-F.20**, sem nova mecânica publicada.
 
 ## Prioridade imediata — M1h-F.2 (robustez e UX)
 

@@ -7,6 +7,8 @@
 O jogo clássico permanece publicado na raiz deste site. A nova versão Phaser está sendo desenvolvida e testada **separadamente**:
 
 - [**ROADMAP.md — prioridades, entregas, testes e pendências**](ROADMAP.md)
+- [**Dossiê narrativo principal de Peren Kerrhylon (JSON integral)**](lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json) — fonte primária de continuidade da campanha da mesa, distinta da ficha provisória e dos saves do sandbox
+- [**Auditoria de adaptação à campanha**](lore/peren/ADAPTACAO_AO_JOGO.md) — diferenças entre nível 1 arcade e Peren nível 7, pacto com Khan, Presas, comitiva, Eldroth, artefatos, promessas e plano para modo campanha
 - [**Jogar o protótipo Phaser M1h-F no GitHub Pages**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
 - **Novo: Diário de Peren em Portomonte** — crônicas e transações reais, filtros, busca e exportação `.md` no protótipo M1h-F.5 ([PR #31](https://github.com/pedromaintenance/peren-o-bruxo/pull/31))
 - [**Comparar Galho, Fungo e Ettercap (M1h-E × M1h-F)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html) — comparador em pixel art, sincronização de frames e parecer artístico exportável
