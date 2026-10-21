@@ -12,8 +12,9 @@ try {
     assert.equal(await page.locator('a[href="./campanha.html"]').count(),0);
     assert.equal(await page.locator('img[src="./art/characters/peren/official-v1/portrait-runtime.svg"]').count(),1);
     assert.equal(await page.locator("#phaser").count(),1);
-    const img=page.locator('img[src="./art/characters/peren/official-v1/portrait-runtime.svg"]');
-    await img.evaluate(async im=>{await im.decode()});
+    const file=await page.request.get(base+"/art/characters/peren/official-v1/portrait-runtime.svg");
+    assert.equal(file.ok(),true,"official portrait served");
+    assert.match(await file.text(),/image\/png;base64/);
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+3),false);
     await context.close();
   }
