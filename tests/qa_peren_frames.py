@@ -63,7 +63,9 @@ for name,(expected_hash,shape) in expected_files.items():
  assert path.is_file(),f'Missing runtime art: {name}'
  assert hashlib.sha256(path.read_bytes()).hexdigest()==expected_hash,f'Unexpected sprite content: {name}'
  assert Image.open(path).size==shape
+# Legacy v2 remains archived and unmodified; live assets must match new walk-v3 instead.
+V3=BASE/'official-v3/peren-atlas-official-48x64.png'
 for path in [BASE/'peren-atlas.png',ROOT/'phaser-demo/art/characters/peren/peren-atlas.png']:
- assert path.read_bytes()==(DIR/'peren-atlas-official-48x64.png').read_bytes()
+ assert path.read_bytes()==V3.read_bytes()
 
 print(f'Peren sprites QA: 128 aligned frames, 4 directions, {len({hashlib.sha256(f.tobytes()).digest() for f in frames})} distinct source renderings; stable missing-action placeholders; truecolor PNGs. PASS')

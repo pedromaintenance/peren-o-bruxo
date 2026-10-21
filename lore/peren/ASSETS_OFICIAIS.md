@@ -63,3 +63,22 @@ O runtime **v2** aplica registro comum dos 18 sprites alinhados (fonte 160×190;
 **Contrato recomendado para novos sprites:** PNG RGBA transparente, 160×190 px por quadro, pés alinhados à linha y=184 do pacote original, uma imagem por pose. Os filenames podem indicar `acao_direcao_frame_01.png`. Nunca precisamos que o criador monte o atlas 48×64; a conversão técnica fará isso de modo reproduzível. Aceitam-se outros tamanhos desde que informados e alinhados.
 
 **QA:** `tests/qa_peren_frames.py` verifica hashes e dimensões, alinhamento de todos os pés, recortes, ausência de movimentos falsos e espelhamento. `tests/qa_peren_phaser_browser.mjs` entra de fato na floresta com Phaser e guarda screenshots para inspeção. **Status:** a implementação técnica v2 foi integrada à `main` pela [PR #57](https://github.com/pedromaintenance/peren-o-bruxo/pull/57), com CI de atlas, PNGs, cenas reais e funcionamento offline aprovado. Não foi recebida nova arte de animação para os gestos faltantes; aprovação artística em dispositivo físico continua pendente.
+
+## Atualização v3 — caminhada oficial em quatro direções (21/10/2026)
+
+**Fonte enviada pelo criador:** `Peren_Kerrhylon_Assets_Atualizados_Caminhada(1).zip` — SHA-256 `0ff0981e3b1fa26f8d8cfe10131fd33fb85f6957d7700e979b09b54f32e9dcd4`. O corpo, retratos, expressões e as 18 poses anteriores permaneceram idênticos aos do ZIP aprovado.
+
+**Novo master de caminhada**, adicionado ao repositório sem edição em `phaser-demo-m1hf/art/characters/peren/official-v3/peren-caminhada-3x4-original-160x190.png` (480×760 pixels): SHA-256 `4281a7f1e946037f479f94331a509d380d5582cc87b8e1e707f8da1f4ffb359c`.
+
+| Linha na fonte | Direção no Phaser | Índices runtime | Poses do ciclo |
+| --- | --- | --- | --- |
+| 1 | down / frente | 4–7 | 01, 02, 03, 02 |
+| 2 | left / esquerda | 36–39 | 01, 02, 03, 02 |
+| 3 | right / direita | 68–71 | 01, 02, 03, 02 |
+| 4 | up / costas | 100–103 | 01, 02, 03, 02 |
+
+O atlas ativo continua **768×512 px**, 128 quadros em 48×64. Apenas os 16 quadros de caminhada (quatro por direção) foram substituídos. Os demais 112 quadros conservam seus pixels da v2, assim como os retratos e as outras ações; **correr não recebe automaticamente sprites de caminhada nem arte inventada**.
+
+O mapeamento sugerido pelo criador é **180 ms por quadro (~5,56 FPS)**. O runtime repete a segunda pose ao fechar o ciclo `1→2→3→2`. Quadros oficiais recortados com registro fixo para evitar saltos de escala e pés desalinhados. **Advertência do ZIP:** a pose 03 para a esquerda foi espelhada da direita pelo próprio autor do novo pacote. O runtime não a espelha novamente.
+
+A conversão reproduzível está em `ferramentas/gerar_peren_caminhada_v3.py`; sua entrada é o ZIP completo, verificado pelo SHA-256. A origem dos frames consta de `official-v3/runtime-provenance.json`. A verificação pixel a pixel em `tests/qa_peren_walk_v3.py` compara todos os novos frames com o master e comprova que os outros 112 não foram alterados. O jogo continua tendo **um único Modo Livre**.
