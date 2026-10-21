@@ -363,7 +363,7 @@
     "rune": "#6e57bd"
   },
   "runtimeAtlas": {
-    "version": 2,
+    "version": 3,
     "width": 768,
     "height": 512,
     "columns": 16,
@@ -387,6 +387,43 @@
       "cast",
       "attack"
     ],
-    "limitation": "Source-backed static placeholders instead of fake gait in gestures; down walk has no new legs; up has cape motion; left walks, right mirrors"
+    "limitation": "Source-backed static placeholders instead of fake gait in gestures; down walk has no new legs; up has cape motion; left walks, right mirrors",
+    "sourceZipSha256": "0ff0981e3b1fa26f8d8cfe10131fd33fb85f6957d7700e979b09b54f32e9dcd4",
+    "walk": {
+      "down": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "left": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "right": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "up": [
+        100,
+        101,
+        102,
+        103
+      ],
+      "sourceFrames": 3,
+      "loop": [
+        1,
+        2,
+        3,
+        2
+      ],
+      "frameMs": 180
+    },
+    "otherActions": "112 non-walk frames unchanged from v2",
+    "notes": "Third left step mirrored in supplied ZIP; no further mirroring in runtime"
   }
 }
