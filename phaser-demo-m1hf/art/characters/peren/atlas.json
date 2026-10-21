@@ -331,7 +331,7 @@
     }
   },
   "author": "Pacote visual oficial de Peren Kerrhylon aprovado pelo criador; adaptação técnica para Phaser",
-  "origin": "Peren_Kerrhylon_Assets_Atualizados_Caminhada(1).zip · SHA-256 0ff0981e3b1fa26f8d8cfe10131fd33fb85f6957d7700e979b09b54f32e9dcd4",
+  "origin": "Peren_Kerrhylon_Assets_v4_Coleta_WalkFix_v4_Neutro(1).zip · SHA-256 c3e63c5c2527047eabf6cfd7546ed9e36facb037b6ba5a340b35a8fe473648bb",
   "palette": {
     "outline": "#10121d",
     "dark": "#1b1b2d",
@@ -373,10 +373,10 @@
     ],
     "frameWidth": 48,
     "frameHeight": 64,
-    "source": "18 poses oficiais + 12 quadros novos de caminhada (3 para cada direção)",
+    "source": "18 poses oficiais + caminhada v3 com ajustes frontais aprovados",
     "quality": "nearest-neighbor, paleta runtime indexada 128 cores",
     "limitation": "Somente caminhada para esquerda possui passos completos de origem; direita espelhada e outras ações reaproveitam poses aprovadas, não são animações inéditas do artista.",
-    "version": 3,
+    "version": 5,
     "sourceRegistration": [
       20,
       18,
@@ -393,12 +393,11 @@
     "feet": "bottom-aligned in 48x64; no independent per-pose normalization",
     "missingActions": [
       "interact",
-      "gather",
       "hurt",
       "cast",
       "attack"
     ],
-    "missingActionFallback": "poses estáticas provenientes dos assets originais; não simulam movimentos sem sprites",
+    "missingActionFallback": "Coleta genérica permanece estática; ervas usam peren-herb-atlas.png exclusivo",
     "downMovement": "3 quadros oficiais novos de frente",
     "backMovement": "3 quadros oficiais novos de costas",
     "leftMovement": "3 quadros novos; terceiro espelhado no pacote de origem",
@@ -406,7 +405,47 @@
     "walkFrames": "1 → 2 → 3 → 2",
     "walkFrameMs": 180,
     "sourceWalk": "official-v3/peren-caminhada-3x4-original-160x190.png",
-    "provenance": "official-v3/runtime-provenance.json"
+    "provenance": "official-v5/runtime-provenance.json",
+    "walkSource": "official-v5/source-walkfix-3x4.png",
+    "herbGather": {
+      "sheet": "peren-herb-atlas.png",
+      "source": "official-v5/source-herb-gather-4x4.png",
+      "frameMs": [
+        350,
+        250,
+        450,
+        850
+      ],
+      "oneShot": true,
+      "frameIndices": {
+        "down": [
+          16,
+          17,
+          18,
+          19
+        ],
+        "left": [
+          48,
+          49,
+          50,
+          51
+        ],
+        "right": [
+          80,
+          81,
+          82,
+          83
+        ],
+        "up": [
+          112,
+          113,
+          114,
+          115
+        ]
+      },
+      "eligibility": "node.sprite === 'herb' (excludes mushroom)",
+      "note": "Atlas separado e evento de coleta finalizado antes da recompensa; sem duplicar saves nem coleta"
+    }
   },
   "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual."
 }
