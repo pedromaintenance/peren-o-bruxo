@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
-**Versão 0.1.4 (atlas do protagonista auditado) — Modo Livre sandbox jogável / base de dados extensível.**
+**Versão 0.1.4 — atlas do protagonista auditado — Modo Livre sandbox jogável / base de dados extensível.**
 
 ## Um jogo, uma experiência livre
 
