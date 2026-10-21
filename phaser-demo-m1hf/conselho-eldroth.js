@@ -42,7 +42,7 @@ function renderNPC(){
   for(const topic of active.topics){
     const b=mk("button",(recorded({id:active.id,topic:topic.id},s)?"✓ ":"✧ ")+topic.label,"council-topic");
     b.type="button";
-    b.disabled=!s;
+    b.disabled=!s||s.phase!=="preparacao";
     b.addEventListener("click",()=>{
       const latest=progress();
       if(!latest){report("Inicie o registro da Campanha antes de registrar conversas.");return}
@@ -70,7 +70,7 @@ function renderRoutes(){
     const label=mk("label",null,"route-choice");
     const input=document.createElement("input");
     input.type="radio";input.name="eldrothRoute";input.value=route.id;
-    input.disabled=!consulted;
+    input.disabled=!consulted||s.phase!=="preparacao";
     input.checked=(chosenRoute||last)===route.id;
     input.addEventListener("change",()=>{chosenRoute=route.id;updatePlanButton()});
     const description=mk("span",null);
@@ -78,10 +78,11 @@ function renderRoutes(){
     label.append(input,description);
     routes.append(label);
   }
-  $("planCouncilRoute").disabled=!consulted;
+  $("planCouncilRoute").disabled=!consulted||s.phase!=="preparacao";
   const output=$("routeStatus");
   if(!s)output.textContent="Sem registro de Campanha: escolha uma jornada e inicie o slot.";
   else if(!consulted)output.textContent="Primeiro converse com Veyra sobre as três travessias.";
+  else if(s.phase==="aproximacao")output.textContent="Partida registrada. A rota está fechada enquanto a marcha está em andamento; a travessia ainda não ocorreu.";
   else if(last)output.textContent="Plano atual: "+content.routes.find(r=>r.id===last).name+". Nenhuma travessia realizada. Você pode rever o plano.";
   else output.textContent="Veyra foi consultada. Escolha um plano para a saída do acampamento, sem iniciar a viagem.";
   updatePlanButton();
@@ -97,6 +98,7 @@ $("planCouncilRoute").addEventListener("click",()=>{
   try{
     store.saveChoice({type:"plano",route:chosen.value});
     report("Plano registrado. Ainda não há partida, cobrança, consumo de recursos nem consentimento imposto.");
+    chosenRoute=null;
     renderRoutes();
   }catch(err){report("Plano não registrado: "+String(err.message||err))}
 });
