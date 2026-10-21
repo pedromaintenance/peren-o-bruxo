@@ -1,0 +1,63 @@
+{
+  "schema": "peren-rio-ancestral-1",
+  "source": "lore/peren/Dossie_Peren_Kerrhylon_RPG_Carcaca.json",
+  "factuality": "O acampamento, o compromisso de três moedas e as condições de regresso à cripta são canônicos. Chegada à margem, descrições e apresentações da cena são ficção NOVA do videogame, determinada somente pela ação do jogador.",
+  "arrival": {
+    "oficial": {
+      "title": "A margem sob vigilância",
+      "description": "O curso do Rio Ancestral aparece além dos troncos. A rota escolhida prevê pedágio e registro, mas a comitiva ainda não alcançou um posto, não negociou com agentes nem pagou qualquer tarifa.",
+      "constraints": "Registro e pedágio permanecem riscos, não fatos consumados."
+    },
+    "clandestina": {
+      "title": "A margem à procura de outra passagem",
+      "description": "A corrente se revela pela névoa de Eldroth. A companhia busca sinais de uma travessia fora do registro, mas não encontrou barqueiro, não conhece preços e não celebrou nenhum contrato.",
+      "constraints": "A balsa clandestina permanece uma possibilidade sem fornecedor confirmado."
+    },
+    "autonoma": {
+      "title": "A margem da corrente indomada",
+      "description": "Peren vê a força do Rio Ancestral, mas não identifica passagem segura. A recuperação de Veyra continua impondo limites à ideia de atravessar por conta própria.",
+      "constraints": "Não existe vadeamento seguro confirmado; não se efetua teste de risco nem travessia."
+    }
+  },
+  "coins": {
+    "reserved": 3,
+    "phrase": "Estes passaram sem registro, mas não sem peso.",
+    "optional": "Se algum nome desejar caminho, que a corrente o pese.",
+    "scene": "Peren pode oferecer as três moedas sem dono, separadas antes da partilha do tesouro. Ao recitar o voto, entrega-as à água; esse é um rito de passagem distinto do ritual de retorno à cripta.",
+    "effect": "As três moedas reservadas deixam de estar disponíveis. Não descontar nenhuma quantia do ouro pessoal de Peren.",
+    "restriction": "Irreversível no save. Não completa a promessa de recuperar nome, testemunhas e água para o retorno à cripta."
+  },
+  "returnRite": {
+    "goal": "Regressar à cripta dos Sem-Nome e possibilitar escuta e passagem somente a quem desejar, sem vestir a Máscara.",
+    "requirements": [
+      {
+        "task": "vaso_fechado",
+        "title": "Água do Rio em vaso fechado",
+        "unknown": "Nenhum recipiente apropriado foi confirmado como disponível; não marcar a coleta de água como concluída.",
+        "description": "Registrar a intenção de encontrar um recipiente fechado. A presença na margem não cria o vaso, e o Anel ou a Lâmpada de Khan não são automaticamente recipientes válidos."
+      },
+      {
+        "task": "nome_verdadeiro",
+        "title": "Um nome verdadeiro, com prova",
+        "unknown": "Ainda não foi recuperado o nome de nenhum dos mortos Sem-Nome.",
+        "description": "Registrar a necessidade de encontrar um nome verdadeiro respaldado por prova material ou testemunhal. Não gerar um nome fictício automaticamente."
+      },
+      {
+        "task": "testemunhas_voluntarias",
+        "title": "Testemunhas vivas e voluntárias",
+        "unknown": "Orel anteriormente se dispôs com receio; isso não garante consentimento renovado. Nenhuma testemunha deve ser considerada confirmada nesta cena.",
+        "description": "Registrar intenção de solicitar participação voluntária quando houver condições para o rito, preservando a possibilidade de recusa."
+      }
+    ],
+    "mask": "A Máscara dos Sem-Nome permanece na cripta selada. Ela não integra o inventário de Peren."
+  },
+  "stillUnknown": [
+    "Tarifas e localização das passagens",
+    "Duração exata da marcha",
+    "Recipiente fechado e água coletada",
+    "Nome de um morto e prova",
+    "Consentimento efetivo de testemunhas",
+    "Dificuldade e resultados de travessia",
+    "Resposta sobrenatural ao rito das moedas"
+  ]
+}
