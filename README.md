@@ -1,6 +1,6 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
-**Versão 0.1.2 — Modo Livre sandbox jogável / base de dados extensível.**
+**Versão 0.1.3 (arte do protagonista em validação) — Modo Livre sandbox jogável / base de dados extensível.**
 
 ## Um jogo, uma experiência livre
 
@@ -15,6 +15,7 @@ O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas imp
 - [**ROADMAP.md — desenvolvimento do único jogo**](ROADMAP.md)
 - [**Referências conceituais de Peren e Carcaça**](lore/peren/README.md)
 - [**Identidade visual oficial de Peren**](lore/peren/ASSETS_OFICIAIS.md)
+- [**Inspeção de Peren: retratos e movimentos nas 4 direções**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html) — bancada visual, não outro modo.
 - [**Diário de Peren em Portomonte**](https://github.com/pedromaintenance/peren-o-bruxo/pull/31) — registra somente ações realizadas no sandbox
 - [**Comparador de arte M1h-E × M1h-F**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/compare.html)
 - [**Código-fonte em desenvolvimento Phaser M1h-F — PR #24**](https://github.com/pedromaintenance/peren-o-bruxo/pull/24)
@@ -23,6 +24,12 @@ O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas imp
 
 **Atenção:** não limpe os dados do navegador para atualizar o PWA; primeiro exporte um backup do progresso.
 
+
+## Atualização visual de Peren (em validação)
+
+O mesmo Peren de cabelo escuro, olhos azuis e manto dourado da arte aprovada aparece no HUD, na ficha e no combate do clássico, e nos retratos, sprites e variantes Phaser. A folha de 128 quadros adapta as 18 poses oficiais por nearest-neighbor; a direção direita espelha a caminhada à esquerda, e outras ações ainda reutilizam poses por falta de quadros dedicados. **O resultado é uma adaptação técnica, não animação autoral adicional aprovada.** Os mestres originais permanecem no ZIP; o script `ferramentas/gerar_peren_runtime.py` permite reproduzir os PNGs.
+
+**A atualização não migra saves, não cria segundo modo e não altera economia ou combate.** O cache offline será atualizado; não limpe os dados do navegador para forçar a atualização.
 
 ## Publicação e instalação
 
