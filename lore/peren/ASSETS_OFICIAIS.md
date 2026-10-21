@@ -18,8 +18,8 @@
 1. Preservar os PNGs oficiais como **masters** com pixels, proporções, cores, canal alfa e nomes originais. Evitar interpolação bilinear, contornos suavizados e repintura sem nova aprovação. Renderizar pixel art com nearest-neighbor quando houver escala.
 2. **Não substituir cegamente** `phaser-demo-m1hf/art/characters/peren/peren-atlas.png` ou `atlas.json`. O motor atual usa 48 × 64 e ciclos down/left/right/up com ações. O pacote novo só contém cinco quadros de caminhada à esquerda; há poses frontais e traseiras majoritariamente estáticas ou repetidas. Não afirmar que o novo atlas cumpre essas animações.
 3. Implementação segura: importar os masters em diretório versionado próprio (proposta: `assets/characters/peren/official-v1/`); produzir **adaptação de runtime separada** — dimensão, quadros ausentes, origem dos pés, direção, hitbox e ação — com testes e revisão visual. As animações inexistentes devem ser criadas e validadas em outro marco, sem inventar poses e tratá-las como originais do pacote.
-4. Priorizar o **retrato e a arte estática** em LORE-04 (acampamento em Eldroth e conversas), mantendo o ator jogável anterior até a compatibilização dos movimentos.
-5. A designação de arte oficial vale para a identidade visual de Peren nos dois modos, sem reescrever a biografia de sua natureza changeling: outras personas/disfarces requerem assets ou regras próprias.
+4. Priorizar o **retrato e a arte estática** nas interfaces do **Modo Livre** (HUD, ficha, mercadores, eventos opcionais), mantendo o ator jogável anterior até a compatibilização dos movimentos.
+5. A designação de arte oficial vale para Peren no **único sandbox**. Sua condição changeling informa o design do personagem, mas outras personas/disfarces requerem assets ou regras próprias.
 6. **Preservação:** não modificar saves, economia, magia, combates nem o protótipo clássico como efeito colateral da troca de retratos; snapshots e testes em mobile/Desktop/PWA e cache offline são obrigatórios ao publicar.
 
 ## Situação do projeto
@@ -29,7 +29,7 @@
 | Aprovação do estilo, rosto, roupa e poses fornecidos | **Oficial — aprovação expressa do criador** |
 | Inventário das 67 entradas e documentação do atlas | **Conferidos a partir do ZIP** |
 | Binários PNG/JPG originais inseridos no GitHub | **Não**: os masters continuam no ZIP original entregue pelo criador |
-| Retrato oficial na interface Phaser | **Integrado ao código na `main`** — SVG autocontido de 64×75, com PNG reduzido do master; [PR #50](https://github.com/pedromaintenance/peren-o-bruxo/pull/50), Node/Chromium aprovados; publicação efetiva do Pages e aprovação artística em dispositivo físico ainda dependem de verificação. |
+| Retrato oficial na interface Phaser | **Derivação SVG de 64×75 preservada**; PR #50 realizou a importação inicial e a correção de escopo a reaproveita no **HUD do Modo Livre**. Masters originais seguem no ZIP; QA real do dispositivo pendente. |
 | Conversão/expansão para as animações exigidas no Phaser | **Pendente de adaptação e validação** |
 | Testes de regressão e aprovação visual no jogo | **Pendentes** |
 
@@ -41,6 +41,6 @@
 
 > A documentação aqui não incorpora, hospeda, comprime novamente, publica nem certifica os binários do arquivo original. A fonte aprovada continua sendo o ZIP entregue; cada recurso integrado deverá ter proveniência e hash verificáveis.
 
-## Adaptação de interface — LORE-04 (mesclada, QA automatizado aprovado)
+## Adaptação de interface — retrato usado no jogo único
 
 O recurso `phaser-demo-m1hf/art/characters/peren/official-v1/portrait-runtime.svg` embute uma miniatura PNG derivada do `retrato/peren_portrait.png` do ZIP oficial por **redução nearest-neighbor** para `64 × 75` e quantização a 64 cores (sem inventar desenho). O PNG interno tem 2.614 bytes, SHA-256 `9590186585eb9f145b1a1dbf6bdd14f36fdaecd2aefa1dfff05d0121a4baafa3`, e fica autocontido para PWA offline. É uma **derivação para interface**, não substituto da arte mestre. Não recolorir ou reinterpretar manualmente esse arquivo. Mantenha o sprite atlas de 48×64 em uso até existir atlas canônico de 4 direções com QA artístico próprio.
