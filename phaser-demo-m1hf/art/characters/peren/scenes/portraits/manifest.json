@@ -60,5 +60,7 @@
     }
   ],
   "integration": "future scenes and dialogue; no character replacement nor automatic facial rig",
-  "pixelPolicy": "pixel-exact original cells; no upscaling or arbitrary facial overlays"
+  "pixelPolicy": "pixel-exact original cells; no upscaling or arbitrary facial overlays",
+  "qualityNotes": "As poses e mantos se cruzam nas fronteiras de células (37–45% de pixels com alfa >30); exigem revisão de máscaras antes de publicar.",
+  "artReviewedForProduction": false
 }
