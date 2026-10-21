@@ -68,7 +68,21 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 .river-requirement small{display:block;color:#becdc1;line-height:1.5}
 .river-note{display:block;margin-top:12px;font-size:13px}
 .river-completed{padding:12px;background:#234238;border-left:3px solid #badcbd;font-weight:700}
-</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script><script src="./expedicao-eldroth.js" defer></script><script src="./rio-ancestral.js" defer></script></head>
+
+.debts{border-top:1px solid #806b4c;margin-top:24px;padding-top:15px}
+.debts h3{font:27px Georgia,serif;color:#e9cc9c;margin:8px 0}
+.debt-chapter{border:1px solid #81745e;border-radius:10px;margin:13px 0;overflow:hidden}
+.debt-chapter summary{cursor:pointer;padding:17px;background:#283737;color:#f5dcb5;font:20px Georgia,serif;min-height:48px}
+.debt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:14px}
+.debt-topic{border:1px solid #798b7d;border-radius:9px;background:#14262c;padding:14px;min-width:0}
+.debt-topic h4{font:21px Georgia,serif;color:#f0d19f;margin:0 0 8px}
+.debt-topic p{line-height:1.55}.debt-topic small{display:block;color:#ced1bc}
+.debt-choice{display:block;width:100%;white-space:normal;text-align:left;font-size:13px;margin-top:9px}
+.debt-selected{padding:9px 12px;border-left:3px solid #b7ceaa;background:#263d37}
+.debt-ledger{margin-top:18px;padding:12px;background:#17252b;border-left:3px solid #d7b583;border-radius:0 8px 8px 0}
+.debt-ledger p{font-size:13px;margin:8px 0}
+@media(max-width:680px){.debt-grid{grid-template-columns:1fr}}
+</style><script src="./campanha.js" defer></script><script src="./conselho-eldroth.js" defer></script><script src="./expedicao-eldroth.js" defer></script><script src="./rio-ancestral.js" defer></script><script src="./dividas-mortos.js" defer></script></head>
 <body><main>
 <div class="links"><a href="./modos.html">↩ Escolher modo</a><a href="./cronica.html">✧ Consultar a Crônica</a></div>
 <span class="kicker" style="display:block;margin-top:20px">Modo Campanha · Carcaça</span>
@@ -148,6 +162,19 @@ button:disabled{opacity:.5;cursor:not-allowed}.links{display:flex;gap:20px;flex-
 <div id="riverCoins" class="river-scene"></div>
 <div id="riverRiteRequirements" class="river-scene"></div>
 <p id="riverUnknown" class="note-canon"></p>
+<section id="deadDebts" class="debts" aria-labelledby="deadDebtsTitle" hidden>
+<h3 id="deadDebtsTitle">As Dívidas dos Mortos</h3>
+<p id="deadDebtsNote" class="note-canon">Investigação em curso. Cenas e resultados não concluídos serão indicados explicitamente.</p>
+<details class="debt-chapter"><summary>Encontrar um recipiente e recuperar um nome</summary>
+<div id="deadDebtsLeads" class="debt-grid"></div>
+</details>
+<details class="debt-chapter"><summary>Convidar testemunhas sem obrigá-las</summary>
+<div id="deadDebtsWitnesses" class="debt-grid"></div>
+</details>
+<div id="deadDebtsState" class="debt-ledger"></div>
+<p id="deadDebtsSummary" class="note-canon" aria-live="polite">Nenhum requisito concluído.</p>
+<p id="deadDebtsStatus" class="status" role="status" aria-live="polite">Preparando os registros...</p>
+</section>
 </div>
 <p id="riverStatus" class="status" role="status" aria-live="polite">Aguardando a próxima escolha...</p>
 </section>
