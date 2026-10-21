@@ -1,0 +1,75 @@
+{
+  "schema": "peren-herb-harvest-v5",
+  "sourceZipSha256": "e19d409448575872b61294f7e48775dfa6de60d1f47161362fa29f016e5d4a0f",
+  "originalAtlasSha256": "f8f8d772a5268d0c465ec9ad0b6b2e02fc6660932090b8926ddb96ac4fef4147",
+  "runtimeAtlasSha256": "ed55e98fba4aff8aff46adea3d63d3d97e540f0e808f7cb9241403beada40ed6",
+  "sourceAtlas": "peren-coleta-4x4-original-160x190.png",
+  "runtimeAtlas": "peren-coleta-runtime-4x4-48x64.png",
+  "sourceSize": [
+    640,
+    760
+  ],
+  "frameSize": [
+    160,
+    190
+  ],
+  "runtimeSize": [
+    192,
+    256
+  ],
+  "runtimeFrameSize": [
+    48,
+    64
+  ],
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "poses": [
+    "em_pe",
+    "abaixando",
+    "recolhendo",
+    "erguendo_item"
+  ],
+  "durationsMs": [
+    350,
+    250,
+    450,
+    850
+  ],
+  "crop": [
+    5,
+    0,
+    155,
+    185
+  ],
+  "resize": [
+    44,
+    59
+  ],
+  "offset": [
+    2,
+    3
+  ],
+  "frameHashes": [
+    "087ed67bf8ea3f3ef703b5a2daa342a6dcaf008af1af97738d5734ddca59a668",
+    "8e6cbad6fbb8047e0adf3e07994954ac581d2f4e74728090ac78537a99d23153",
+    "83cd1670bb53412742aa7bdb731ca2db00b0578c297dae4cad07bbc0cc215e0c",
+    "5980c5a7f350fa628943795f5d50230d242be654cf084024a21a5e0511bd3c58",
+    "9fb445ed173368a567a90cffdb631f4a4c2b7c58e2f7e3f5e05b3c2b7176c112",
+    "2a322875229af62b29aa9c77034bf68e26a318bf799533dd9f982febe6d66938",
+    "7368acc086ff2b854b95d04050c42cf26affe0e66ce98499a2573b264f4df26b",
+    "e5c275c5f1fe9911cf3118c379de77f21d010bf38613467c2f59aedd76c14ea0",
+    "b0ce4be54e33723676153c7efd7675ef40f8dab0c20c0dc009e80e70efa0916e",
+    "fab49e803326e904047097edf782c4e9f2600f8f1a2be38de4972584434e1bbe",
+    "85f7bb18c3bbb9a3923473b1b29b28515f0c3ab0500e2ef7feeb43ddb4fa69d6",
+    "74bafd94b59353e2d80c3742e03d79b83378f0d505797389103e8f936363a686",
+    "e484d1904d87401fa907a90d17ef9de6ebd27888e0df5392ffb15126483289df",
+    "8f304b6b56be9f5c08d599ea157b8bdb1651a9fa3aae5a8503b7f4a79522c2eb",
+    "67add1550110cf6c7622df6b590d8853e1332a6d17fe42123b921527ea2b79cb",
+    "91a508d644f88f39273a8893e003a5f07a80b2c827e54d89c9e572bc1cc83463"
+  ],
+  "contentRule": "Only plants/herbs, because last frame shows green foliage."
+}
