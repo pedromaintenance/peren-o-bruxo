@@ -1,0 +1,29 @@
+{
+  "id": "peren_idle_battler",
+  "character": "Peren Kerrhylon",
+  "type": "battler_idle",
+  "status": "source_art_pending_upload",
+  "note": "4-frame idle concept approved by creator; source PNG must be placed alongside this manifest before it is usable by the engine.",
+  "source_file": "peren_idle_battler_4frames.png",
+  "source_dimensions": {
+    "width": 1916,
+    "height": 821
+  },
+  "frame_layout": {
+    "columns": 4,
+    "rows": 1,
+    "frame_width": 479,
+    "frame_height": 821
+  },
+  "frame_order": [
+    "idle_01",
+    "idle_02",
+    "idle_03",
+    "idle_04"
+  ],
+  "fps": 4,
+  "loop": true,
+  "alpha": true,
+  "style_reference": "Void Rift battler",
+  "usage": "battle idle stance; do not replace 48x64 overworld charset"
+}
