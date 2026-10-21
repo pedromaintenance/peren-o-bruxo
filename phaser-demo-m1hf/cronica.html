@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b1b">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Crônica canônica de Peren Kerrhylon — arquivo de campanha, independente dos saves.">
+<title>Crônica da Campanha — Peren, o Bruxo</title>
+<link rel="manifest" href="./manifest.webmanifest">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0a141a;color:#eee0c5}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 80% 0,#30433988 0,transparent 48%),linear-gradient(160deg,#101d23,#080f14 85%);line-height:1.55}
+a{color:#f2d397}a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f1c985;outline-offset:4px}
+.top{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:18px max(18px,env(safe-area-inset-right));border-bottom:1px solid #b49b624c;background:#0c1a20ec}
+.brand{font:700 26px Georgia,serif;letter-spacing:.14em;color:#eecb8f}.brand small{display:block;font:11px system-ui;letter-spacing:.2em;color:#a8c4b5}
+.return{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 16px;border:1px solid #b49b62;border-radius:9px;text-decoration:none;font-weight:700;background:#233b38}
+main{width:min(920px,100%);margin:0 auto;padding:18px 18px 50px}
+.kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#bbd1bb;font-weight:700}
+.hero{margin:18px 0 24px;padding:clamp(18px,4vw,35px);border:1px solid #b49b6282;border-radius:17px;background:linear-gradient(110deg,#182d2eea,#101c25e8),url('./art/regions/portomonte/visao-carcaca.webp') center/cover;box-shadow:0 15px 40px #0006}
+h1{font:clamp(29px,6vw,50px) Georgia,serif;line-height:1.12;color:#f3d5a1;margin:9px 0}h2{font:26px Georgia,serif;color:#e6ca98;margin:0}h3{font:21px Georgia,serif;color:#e7c994;margin:0 0 6px}
+.lead{font-size:15px;max-width:70ch}.dim{color:#b9b9b0}.notice{padding:13px 16px;border-left:3px solid #d4aa66;background:#1c2d2f;border-radius:0 8px 8px 0;font-size:13px}
+.card{background:#15262ad9;border:1px solid #7a79635e;border-radius:12px;margin:14px 0;overflow:hidden}
+.card>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:18px;min-height:62px}
+.card>summary::-webkit-details-marker{display:none}
+.card>summary::after{content:"＋";font:25px Georgia,serif;color:#e7c58c;flex-shrink:0}
+.card[open]>summary::after{content:"−"}
+.card>summary:hover{background:#29414077}
+.card>summary strong{display:block;font:22px Georgia,serif;color:#eacb97}
+.card>summary small{display:block;font:12px system-ui;color:#b7c9bb;margin-top:4px}
+.card-body{border-top:1px solid #7e786452;padding:17px}
+.entry{border:1px solid #706e5970;background:#101e24;border-radius:9px;padding:15px;margin:12px 0}
+.entry p{margin:6px 0;color:#ddd5c4}
+.entry small{color:#b1c4b2}
+.entry[open]{border-color:#b99c69}
+.timeline-entry{padding:0}
+.timeline-entry summary{cursor:pointer;padding:14px 15px;font-weight:650;min-height:46px}
+.timeline-entry[open] summary{color:#f0ce8c}
+.timeline-entry .detail{padding:0 15px 15px}
+ul{padding-left:24px;margin:12px 0}li{margin:7px 0}
+.search-label{display:block;font-size:12px;color:#ddcaa8;margin:0 0 14px}
+.search{width:100%;margin-top:6px;min-height:48px;padding:12px;border-radius:9px;border:1px solid #9d8b68;background:#0c1920;color:#fae4c4;font:15px system-ui}
+.tag{display:inline-block;background:#29453e;color:#d2e3c7;font:12px system-ui;padding:4px 8px;border-radius:6px;margin:3px 4px 3px 0}
+.empty{color:#e7bc88}footer{padding:22px 18px;border-top:1px solid #b49b623b;color:#bbc3b8;font-size:12px;text-align:center}
+@media(max-width:560px){main{padding:12px 12px 40px}.top{padding:13px}.top .return{width:100%}.card>summary{padding:15px}.card-body{padding:12px}.hero{margin-top:10px}}
+</style>
+<script defer src="./cronica.js"></script>
+</head>
+<body>
+<header class="top"><div class="brand">PEREN<small>O BRUXO · CARCAÇA</small></div><a class="return" href="./index.html">↩ Voltar a Portomonte</a></header>
+<main>
+  <section class="hero" aria-labelledby="title">
+    <span class="kicker">Arquivo de memórias · Campanha de mesa</span>
+    <h1 id="title">Crônica da Campanha</h1>
+    <p class="lead">Uma história já vivida. Os pactos, as perdas e as obrigações do bruxo de olhos estrelados.</p>
+    <p class="notice"><strong>Arquivo canônico, não diário do save.</strong> Esta página contém acontecimentos anteriores da campanha de Peren Kerrhylon (nível 7). O protótipo jogável em Portomonte é outro estado, de nível 1. Ler não altera progresso, ouro, inventário ou escolhas.</p>
+  </section>
+  <div id="chronicleRoot"><p role="status" id="chronicleLoading">Abrindo o arquivo dos acontecimentos…</p></div>
+  <noscript><p class="notice">Ative JavaScript para consultar a Crônica. O jogo existente continua independente.</p></noscript>
+</main>
+<footer>Fonte: dossiê narrativo v1.0.0 · 20/10/2026 · Detalhes e revelações só aparecem ao abrir as seções.</footer>
+<script>if('serviceWorker' in navigator&&location.pathname.includes('/phaser-demo-m1hf/')){addEventListener('load',()=>navigator.serviceWorker.register('./demo-sw.js',{scope:'./'}).catch(()=>{}))}</script>
+</body>
+</html>
