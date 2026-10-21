@@ -425,5 +425,48 @@
     },
     "otherActions": "112 non-walk frames unchanged from v2",
     "notes": "Third left step mirrored in supplied ZIP; no further mirroring in runtime"
+  },
+  "woundedWalk": {
+    "runtimeAtlas": "peren-wounded-atlas.png",
+    "sourcePackageSha256": "c7bc4b761b41760b0e93004b4edeb8a92074f32b220f712b3186ab0844f2f904",
+    "sourceFrames": 12,
+    "frameCount": 16,
+    "originalAtlas": "peren-atlas.png",
+    "directions": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "frames": {
+      "down": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "left": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "right": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "up": [
+        100,
+        101,
+        102,
+        103
+      ]
+    },
+    "frameMs": 230,
+    "threshold": "0<hp<=0.5*playerMaxHp",
+    "scope": "cosmetic gait only; do not alter speed or combat. Future source rebuild must load texture and create peren-wounded-{direction}-walk animations.",
+    "status": "Implemented in distributed main bundle via PR #59; source source-code port must retain these rules"
   }
 }
