@@ -16,9 +16,9 @@
 ## Contrato técnico para a integração
 
 1. Preservar os PNGs oficiais como **masters** com pixels, proporções, cores, canal alfa e nomes originais. Evitar interpolação bilinear, contornos suavizados e repintura sem nova aprovação. Renderizar pixel art com nearest-neighbor quando houver escala.
-2. **Não substituir cegamente** `phaser-demo-m1hf/art/characters/peren/peren-atlas.png` ou `atlas.json`. O motor atual usa 48 × 64 e ciclos down/left/right/up com ações. O pacote novo só contém cinco quadros de caminhada à esquerda; há poses frontais e traseiras majoritariamente estáticas ou repetidas. Não afirmar que o novo atlas cumpre essas animações.
-3. Implementação segura: importar os masters em diretório versionado próprio (proposta: `assets/characters/peren/official-v1/`); produzir **adaptação de runtime separada** — dimensão, quadros ausentes, origem dos pés, direção, hitbox e ação — com testes e revisão visual. As animações inexistentes devem ser criadas e validadas em outro marco, sem inventar poses e tratá-las como originais do pacote.
-4. Priorizar o **retrato e a arte estática** nas interfaces do **Modo Livre** (HUD, ficha, mercadores, eventos opcionais), mantendo o ator jogável anterior até a compatibilização dos movimentos.
+2. O motor usa quadros 48 × 64 em 32 ciclos (128 frames) para quatro direções. **O atlas runtime foi agora adaptado** a partir das poses fornecidas, mantendo o contrato dos índices. **Não afirmar animação original completa:** a fonte contém cinco passos à esquerda; a direita é espelhada, as demais ações/direções reutilizam poses, ainda sem aprovação artística final da interpolação.
+3. Arquivos originais continuam no ZIP e devem ser preservados. As **derivações runtime** versionadas em `phaser-demo-m1hf/art/characters/peren/official-v1/` não substituem masters. O script `ferramentas/gerar_peren_runtime.py` reproduz redução nearest-neighbor e quantização de 128 cores. Novas animações autorais ainda dependem de aprovação própria.
+4. Usar as derivações oficiais no **Modo Livre**: personagem jogável do Phaser, retratos de HUD/cidade/inventário, apresentação e ficha/combatente do clássico. Não estender o rosto antigo grisalho ou chapéu à versão canônica.
 5. A designação de arte oficial vale para Peren no **único sandbox**. Sua condição changeling informa o design do personagem, mas outras personas/disfarces requerem assets ou regras próprias.
 6. **Preservação:** não modificar saves, economia, magia, combates nem o protótipo clássico como efeito colateral da troca de retratos; snapshots e testes em mobile/Desktop/PWA e cache offline são obrigatórios ao publicar.
 
@@ -29,9 +29,9 @@
 | Aprovação do estilo, rosto, roupa e poses fornecidos | **Oficial — aprovação expressa do criador** |
 | Inventário das 67 entradas e documentação do atlas | **Conferidos a partir do ZIP** |
 | Binários PNG/JPG originais inseridos no GitHub | **Não**: os masters continuam no ZIP original entregue pelo criador |
-| Retrato oficial na interface Phaser | **Derivação SVG de 64×75 preservada**; PR #50 realizou a importação inicial e a correção de escopo a reaproveita no **HUD do Modo Livre**. Masters originais seguem no ZIP; QA real do dispositivo pendente. |
-| Conversão/expansão para as animações exigidas no Phaser | **Pendente de adaptação e validação** |
-| Testes de regressão e aprovação visual no jogo | **Pendentes** |
+| Retrato oficial nas interfaces | **Integrado no código do jogo único**, em todos os retratos Phaser e clássico; 128×151 e 256×256 derivados do PNG oficial. QA de navegador e aprovação visual final pendentes. |
+| Compatibilização para animações Phaser | **Implementado tecnicamente**: 128 quadros a 48×64 (16 colunas × 8 linhas) derivados das poses aprovadas, substituindo a arte anterior. Os ciclos de ações sem quadros específicos são reutilizações; movimento artístico ainda precisa de QA/aprovação. |
+| Testes de regressão e aprovação visual no jogo | **Em execução**: testes automatizados + revisão humana da galeria `phaser-demo-m1hf/peren-arte.html` ainda a concluir. |
 
 **Referências de integridade para futuras importações:**
 
@@ -44,3 +44,4 @@
 ## Adaptação de interface — retrato usado no jogo único
 
 O recurso `phaser-demo-m1hf/art/characters/peren/official-v1/portrait-runtime.svg` embute uma miniatura PNG derivada do `retrato/peren_portrait.png` do ZIP oficial por **redução nearest-neighbor** para `64 × 75` e quantização a 64 cores (sem inventar desenho). O PNG interno tem 2.614 bytes, SHA-256 `9590186585eb9f145b1a1dbf6bdd14f36fdaecd2aefa1dfff05d0121a4baafa3`, e fica autocontido para PWA offline. É uma **derivação para interface**, não substituto da arte mestre. Não recolorir ou reinterpretar manualmente esse arquivo. Mantenha o sprite atlas de 48×64 em uso até existir atlas canônico de 4 direções com QA artístico próprio.
+\n## Derivações de runtime introduzidas em 21/10/2026\n\nOs PNGs do ZIP permanecem intactos fora do Git; os seguintes PNGs **derivados e publicados nesta branch** vêm exclusivamente do arquivo aprovado, sem mistura com o retrato antigo de cabelo grisalho:\n\n- `peren-portrait-official-128.png` — 128×151, SHA-256 `bee005e98fef9a28efaec797f1abbf4a7cea26495a81f26ab899918d7c0a7d10`.\n- `peren-portrait-official-256.png` — 256×256, SHA-256 `f379e9b1aa485bc6286749f6f77b71c9a7d8534256ef68c13aa6f815ca7a430b`.\n- `peren-actor-official-128.png` — 128×261, SHA-256 `f8ae3653621c3386de2d50d67d932fb2e166f276d378e418aa6020a4bb7930a5`.\n- `peren-atlas-official-48x64.png` — 768×512, 128 frames 48×64, SHA-256 `6044391acf753e110decbce22fa4777e8842013c0f7ac0a68e910c9a96ecc02d`.\n\nO jogo compartilha o mesmo rosto e atlas nas versões clássica/Phaser e variantes experimentais. A folha de sprites **não substitui a exigência artística de animação de quatro direções completamente nova**; esse trabalho permanece aberto. Uma bancada visual oferece inspeção no navegador, sem criar segundo modo de jogo.\n
