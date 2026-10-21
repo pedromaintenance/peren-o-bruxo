@@ -20,7 +20,8 @@ try {
     // A read-only document may be inspected while existing save values remain byte-identical.
     await page.evaluate((arr)=>arr.forEach((k,i)=>localStorage.setItem(k,"protected-"+i)),keys);
     const original = await page.evaluate(arr=>arr.map(k=>localStorage.getItem(k)),keys);
-    await page.getByText("Acontecimentos anteriores").first().click();
+    await page.locator(".card").nth(1).locator(":scope > summary").click();
+    assert.equal(await page.locator(".card").nth(1).getAttribute("open"), "", "timeline section is open");
     await page.locator(".timeline-entry").first().locator("summary").click();
     assert.ok((await chapters.first().innerText()).length>80);
     await page.locator("#chronicleSearch").fill("Maelor");
