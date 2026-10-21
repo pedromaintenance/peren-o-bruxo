@@ -33,7 +33,7 @@
 | ID | Prioridade | Direção autorizada | Situação |
 | --- | --- | --- | --- |
 | **L-REF** | P0 | Preservar o dossiê da mesa como referência conceitual, sem transformá-lo em objetivo automático | **Mantido** em `lore/peren/`; 21 marcos de RPG documentados, não jogáveis |
-| **L-VISUAL** | P1 | Peren oficial em todo o Modo Livre; caminhada fluida nas quatro direções | **Caminhada v3 candidata à integração:** 3 novos quadros por direção no atlas 48×64, ciclo 1–2–3–2, 180 ms por quadro, fonte preservada e script reproduzível. Próximos assets pendentes: ferido, coleta, interação, conjuração, ataque e corrida. Publicação e testes físicos pendentes |
+| **L-VISUAL** | P1 | Peren oficial em todo o Modo Livre; caminhada nova de 3 quadros por direção | **Caminhada v3 mesclada à `main` — [PR #58](https://github.com/pedromaintenance/peren-o-bruxo/pull/58); [CI de arte aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39615159844) e [Pages implantado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/39615379289)**. Próximos assets pendentes: ferido, coleta, interação, conjuração, ataque e corrida. Testes em dispositivo físico ainda recomendados |
 | **L-WORLD** | P1 | Enriquecer o sandbox com povos, lugares, facções e mistérios inspirados na Carcaça | **Planejar** conteúdo emergente/opcional, sem copiar linearmente cenas de mesa |
 | **L-GAMEPLAY** | P0 | Priorizar mapa, comércio, ofícios, inventário, progressão, encontros, UX, PWA e estabilidade | **Retomado** como direção do projeto |
 | **L-CORRECAO** | P0 | Remover seletor Livre/Campanha e páginas jogáveis da campanha paralela | Correção em revisão de código; histórico original recuperável no Git |
