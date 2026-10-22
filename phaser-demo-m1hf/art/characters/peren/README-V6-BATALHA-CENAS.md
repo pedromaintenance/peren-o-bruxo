@@ -77,3 +77,11 @@ O artefato de conversa `Peren_V6_Batalha_e_4_Retratos_Pacote.zip` contém os doi
 ## Revisão de recortes de quatro colunas
 
 As fontes têm elementos com alfa atravessando os limites de coluna. A folha de idle apresenta aproximadamente **3,5–12,1%** de alfa significativo nos divisores; a folha de portraits, **37–45,1%**. O corte retangular preserva pixels, mas pode capturar fios/mantos de poses vizinhas e cortar pontas da roupa. As quatro imagens individuais geradas são **pré-recortes de montagem**, não sprites perfeitamente isolados. Antes de publicar, mascarar/isolá-las com revisão artística e comparar com os masters.
+
+## Prévia local de combate e entrega completa (22/10/2026)
+
+O pacote binário entregue na conversa `Peren_V6_Integracao_Previa_Completa.zip` contém `arena.html`, uma prévia **funcional** que usa os 4 frames de idle a 4 FPS, oferece botões para conjuração Void Rift, dano simulado, vitória e seleção dos **4 portraits**. Os 19 recursos binários foram conferidos por hash com `verify.py`.
+
+Execute `python -m http.server 8765` na pasta extraída e visite `http://localhost:8765/arena.html` (ou o subdiretório conforme a extração). **Isso é uma demonstração visual independente**, não integração das regras do `BattleScene` do Phaser publicado, nem deploy do GitHub Pages.
+
+**Bloqueio explícito de publicação:** a conexão GitHub acessível nesta conversa não permitiu transferir os PNGs locais, e o ambiente de arquivos não possui acesso direto de rede ao GitHub. Portanto os manifestos da PR permanecem `binary-pending` e o site público não deve ser anunciado como atualizado. Quando existir um fluxo autorizado de envio dos binários, aplicar o importador, versionar os PNGs, revisar transparências/cortes e incluir os assets no build e no cache offline antes de publicar.
