@@ -31,8 +31,8 @@ def run(archive:Path,repo:Path):
     raise ValueError("Unsafe archive path: "+relative)
    content=z.read(PREFIX+relative)
    if digest(content)!=sha:raise ValueError("Corrupt image/content: "+relative)
-   entries[relative]=content
-  src=json.loads(entries["manifest.json"])
+   # Keep approved release-gate manifest separate from original author manifest.\n   entries["source-manifest.json" if relative=="manifest.json" else relative]=content
+  src=json.loads(entries["source-manifest.json"])
   if len(src["frames"])!=8 or src["atlas"]["width"]!=2048 or src["atlas"]["frame_width"]!=512:
    raise ValueError("Unexpected source manifest")
   target=repo/DEST
