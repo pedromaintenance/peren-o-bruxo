@@ -39,3 +39,7 @@ https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/asset-lab/
 ## Próxima etapa
 
 Importar o ZIP completo no clone GitHub, commitar os PNGs (com revisão de transparências), validar no Pages, e depois abrir a implementação dos eventos animados em `BattleScene`, respeitando `stepBattle` e o fallback dos sprites atuais.
+
+## Atualização Asset Forge v8 — Summon Greater Demon
+
+O painel da conversa ganhou três registros: **animação Summon Greater Demon (8 quadros, 2380 ms exatos)**, **atlas transparente 4×2** e **folha master verde**, chegando a **82 registros**. A entrega completa `Peren_Asset_Forge_v8_Summon_Greater_Demon_Pacote_Completo.zip` contém **263 arquivos conferidos por hash**; existe também um HTML standalone para testar sem servidor. O instalador atualizado é `ferramentas/instalar_asset_forge_v8.py`. Manter o v7 como histórico. **Os binários do novo material ainda não foram enviados ao GitHub Pages.**
