@@ -78,3 +78,22 @@ test("missing texture never blocks a turn or touches hero",async()=>{
  const out=await playVisualSequence({textures:{exists:()=>false}},"summon",{base:null});
  assert.deepEqual(out,{played:false,reason:"missing-asset"});
 });
+
+test("asset marker enables the real BattleScene bridge exactly once",async()=>{
+ const scene={preload(){return "legacy"},create(){return undefined},
+  animatePlayer(){return Promise.resolve()},takeTurn(){return Promise.resolve(true)}};
+ const result=await bootstrapBattleArt({
+  windowRef:{__perenLab:{scene:{getScene:name=>{assert.equal(name,"BattleScene");return scene}}}},
+  doc:{},fetcher:async()=>({ok:true,json:async()=>marker})
+ });
+ assert.deepEqual(result,{enabled:true,reason:"installed"});
+ assert.equal(scene.__perenV8Installed,true);
+ assert.equal(installOnBattleScene(scene,{doc:{}}),false);
+});
+test("combat gameplay source is unchanged; battle art only overlays events",()=>{
+ const js=read("phaser-demo-m1hf/battle-art-runtime-v8.mjs");
+ assert.doesNotMatch(js,/localStorage|sessionStorage|ledger\s*\[|\.finishBattle\(|\.stepBattle\(/);
+ assert.match(js,/Promise\.allSettled/);
+ assert.match(js,/this\.__v8PreviewBusy/);
+ assert.match(js,/preload\s*=function/);
+});
