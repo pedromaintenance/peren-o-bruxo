@@ -50,25 +50,54 @@ try {
         assert.equal(state.originalVisible,false);
         assert.ok(state.hp>0);
         assert.ok(state.mp>0);
-        // Exercise real visual action choreography (without invoking save/loot).
-        // Keep the original BattleScene.animatePlayer implementation in the call chain.
-        const seen=await page.evaluate(async({spell,texture})=>{
-          const s=window.__perenLab.scene.getScene("BattleScene");
-          const original=s.add.sprite.bind(s.add),frames=[];
-          s.add.sprite=(...args)=>{
-            const spr=original(...args);
-            if(args[2]===texture)frames.push({texture:args[2],frame:spr.frame?.name});
-            return spr;
+        // Trigger the real BattleScene animation without damage, mana, saves or loot.
+        // Do NOT await here: the screenshot must prove the effect ON SCREEN,
+        // rather than photographing the idle state after the effect has disappeared.
+        await page.evaluate(({spell})=>{
+          const scene=window.__perenLab.scene.getScene("BattleScene");
+          window.__perenV85Animation=scene.animatePlayer(
+            spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[]
+          );
+          return true;
+        },{spell});
+        await page.waitForFunction(texture=>{
+          const scene=window.__perenLab?.scene?.getScene("BattleScene");
+          return scene?.children?.list?.some(child=>
+            child.active && child.texture?.key===texture && child.visible);
+        },texture,{timeout:8000});
+        const during=await page.evaluate(texture=>{
+          const scene=window.__perenLab.scene.getScene("BattleScene");
+          const sprite=scene.children.list.find(child=>child.active&&child.texture?.key===texture);
+          return {
+            texture:sprite?.texture?.key,
+            visible:sprite?.visible,
+            idleHidden:scene.__v84Idle?.sprite?.visible===false,
+            originalHidden:scene.peren.visible===false,
+            top:sprite?.getBounds?.().top,
+            bottom:sprite?.getBounds?.().bottom
           };
-          try {await s.animatePlayer(spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[])}
-          finally {s.add.sprite=original}
-          return {frames,stillActive:!!s.__v84Idle?.sprite?.active,originalVisible:s.peren.visible};
-        },{spell,texture});
-        assert.ok(seen.frames.length>=1,"Expected an actual "+texture+" sprite in BattleScene");
-        assert.ok(seen.stillActive,"Battler was lost after casting animation");
-        assert.equal(seen.originalVisible,false);
-        assert.deepEqual(errors,[],"In-game sprite errors: "+errors.join(" | "));
+        },texture);
+        assert.equal(during.texture,texture);
+        assert.equal(during.visible,true);
+        assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
+        assert.equal(during.originalHidden,true);
+        assert.ok(during.bottom>0 && during.top<height,"Spell animation must intersect the visible viewport");
         await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
+        await page.evaluate(async()=>await window.__perenV85Animation);
+        const after=await page.evaluate(texture=>{
+          const scene=window.__perenLab.scene.getScene("BattleScene");
+          return {
+            cinematicCount:scene.children.list.filter(child=>child.active&&child.texture?.key===texture).length,
+            idleVisible:scene.__v84Idle?.sprite?.visible,
+            idleActive:scene.__v84Idle?.sprite?.active,
+            oldVisible:scene.peren.visible
+          };
+        },texture);
+        assert.equal(after.cinematicCount,0,"Cinematic leaked a sprite after completing");
+        assert.equal(after.idleVisible,true,"New Idle battler did not return");
+        assert.equal(after.idleActive,true);
+        assert.equal(after.oldVisible,false);
+        assert.deepEqual(errors,[],"In-game sprite errors: "+errors.join(" | "));
       } finally {await page.close()}
     }
   }
