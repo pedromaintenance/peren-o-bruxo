@@ -1,0 +1,198 @@
+/**
+ * Peren v8.4: verified battle-art bridge for the distributed Phaser preview.
+ *
+ * DOES NOT modify stepBattle, health, mana, inventory or persisted saves.
+ * Only installs if a verified battle-asset-pack-v84.json marker and all PNGs are deployed.
+ * Thus the public build remains safe until PNGs actually reach GitHub Pages.
+ */
+const ROOT="./art/battle/runtime-v84/";
+export const CONTRACT=Object.freeze({
+ idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
+ infernal:{key:"peren-v84-infernal",file:"infernal.png",width:512,height:341,frames:8,frameMs:180},
+ void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
+ summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
+  durations:[190,210,250,300,330,400,380,320]},
+ portraits:["portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png"]
+});
+export const CINEMATIC_ACTIONS=Object.freeze({
+ "spell:mag-raio-de-fogo":"infernal",
+ "spell:mag-misseis-magicos":"void"
+}); // Purely visual: existing spell and save logic is unchanged.
+export function getAnimationPlan(action){
+ return CINEMATIC_ACTIONS[action]||null;
+}
+export function validateAssetMarker(marker){
+ if(!marker||marker.schema!=="peren-battle-art-v84"||marker.verified!==true)return false;
+ if(!Array.isArray(marker.files))return false;
+ const required=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,CONTRACT.summon.file,...CONTRACT.portraits];
+ return required.every(file=>marker.files.some(f=>f.path===file&&/^[a-f0-9]{64}$/.test(f.sha256)));
+}
+export async function checkInstalledAssets(fetcher=fetch){
+ try{
+  const res=await fetcher(ROOT+"battle-asset-pack-v84.json",{cache:"no-cache"});
+  if(!res.ok)return false;
+  const manifest=await res.json();
+  if(!validateAssetMarker(manifest))return false;
+  const required=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,CONTRACT.summon.file,...CONTRACT.portraits];
+  // HEAD verifies that GitHub Pages has all PNGs before the scene preloads them.
+  const checks=await Promise.all(required.map(file=>fetcher(ROOT+file,{method:"HEAD",cache:"no-cache"}).then(r=>r.ok).catch(()=>false)));
+  return checks.every(Boolean);
+ }catch{return false}
+}
+function contains(scene,key){return Boolean(scene.textures?.exists?.(key))}
+function useIdle(scene){
+ const cfg=CONTRACT.idle;
+ if(!contains(scene,cfg.key)||!scene.peren)return null;
+ if(!scene.anims.exists("peren-v84-idle-loop"))scene.anims.create({
+   key:"peren-v84-idle-loop",frames:scene.anims.generateFrameNumbers(cfg.key,{start:0,end:3}),
+   frameRate:cfg.fps,repeat:-1
+ });
+ const spr=scene.add.sprite(0,0,cfg.key,0).setOrigin(.5,1).setDepth(13);
+ spr.play("peren-v84-idle-loop");
+ const original=scene.peren;
+ original.setVisible(false);
+ const relayout=()=>{
+  if(!spr.active)return;
+  const w=scene.scale.width,h=scene.scale.height;
+  spr.setPosition(w*.245,h*.77).setScale(Math.min(w*.41/(cfg.width),h*.51/(cfg.height)));
+ };
+ relayout();
+ scene.events.on("update",relayout);
+ scene.events.once("shutdown",()=>{
+  scene.events.off("update",relayout);
+  spr.destroy();
+  if(original.active)original.setVisible(true);
+ });
+ return {sprite:spr,relayout};
+}
+export function playVisualSequence(scene,id,{base=null}={}){
+ const spec=CONTRACT[id];
+ if(!spec||!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-asset"});
+ const w=scene.scale.width,h=scene.scale.height;
+ const target=base?.sprite;
+ const former=target?.visible??true;
+ if(target?.active)target.setVisible(false);
+ const actor=scene.add.sprite(w*.245,h*.77,spec.key,0).setOrigin(.5,1).setDepth(22);
+ actor.setScale(Math.min(w*.67/(spec.width),h*.56/(spec.height)));
+ const delays=spec.durations||Array(spec.frames).fill(spec.frameMs);
+ return new Promise(resolve=>{
+  let current=0,timer=null,done=false;
+  function complete(reason){
+   if(done)return;
+   done=true;timer?.remove?.(false);
+   scene.events.off("shutdown",cancel);
+   if(actor.active)actor.destroy();
+   if(target?.active)target.setVisible(former);
+   resolve({played:reason==="complete",reason});
+  }
+  const cancel=()=>complete("shutdown");
+  scene.events.once("shutdown",cancel);
+  function next(){
+   if(done)return;
+   if(current>=spec.frames)return complete("complete");
+   actor.setFrame(current);
+   timer=scene.time.delayedCall(delays[current++],next);
+  }
+  next();
+ });
+}
+function addScenePortraitGallery(scene,doc){
+ const dialog=doc.createElement("dialog");
+ dialog.id="peren-v84-portraits-dialog";
+ dialog.setAttribute("aria-label","Retratos de Peren — catálogo de cenas");
+ dialog.style.cssText="position:fixed;inset:9% 8%;z-index:99999;max-height:82vh;max-width:650px;width:84%;background:#071016;color:#f2dbb1;border:2px solid #ab884f;border-radius:12px;box-shadow:0 0 0 9999px #0009;padding:12px;overflow:auto";
+ const heading=doc.createElement("h3");heading.textContent="Peren · Quatro retratos de cena";
+ const img=doc.createElement("img");
+ img.alt="Retrato de corpo inteiro de Peren";img.style.cssText="display:block;object-fit:contain;width:100%;height:calc(60vh - 40px);";
+ img.src=ROOT+CONTRACT.portraits[0];
+ const nav=doc.createElement("div");
+ nav.style.cssText="display:flex;gap:6px;flex-wrap:wrap";
+ CONTRACT.portraits.forEach((p,i)=>{
+  const b=doc.createElement("button");b.type="button";b.textContent="Retrato "+(i+1);
+  b.addEventListener("click",()=>{img.src=ROOT+p;img.alt="Peren, retrato "+(i+1)});
+  nav.append(b)
+ });
+ const close=doc.createElement("button");close.type="button";close.textContent="Fechar";
+ close.addEventListener("click",()=>dialog.close());
+ dialog.append(heading,img,nav,close);doc.body.append(dialog);
+ scene.events.once("shutdown",()=>{dialog.close?.();dialog.remove()});
+ return dialog;
+}
+function addControls(scene,doc){
+ const panel=doc.getElementById("battlePanel");
+ if(!panel)return;
+ const holder=doc.createElement("div");holder.id="peren-v84-art-controls";
+ holder.style.cssText="display:flex;gap:7px;flex-wrap:wrap;margin:7px 0;pointer-events:auto";
+ const summon=doc.createElement("button");summon.type="button";
+ summon.textContent="✦ Prévia: invocar demônio (sem custo)";
+ summon.setAttribute("aria-label","Prévia visual da invocação, sem consumir mana nem iniciar um turno");
+ summon.addEventListener("click",async()=>{
+  if(scene.busy||scene.__v84PreviewBusy||scene.state?.status!=="active")return;
+  scene.__v84PreviewBusy=true;summon.disabled=true;
+  try{await playVisualSequence(scene,"summon",{base:scene.__v84Idle})}
+  finally{scene.__v84PreviewBusy=false;summon.disabled=false}
+ });
+ const button=doc.createElement("button");button.type="button";button.textContent="▣ Retratos";
+ const dialog=addScenePortraitGallery(scene,doc);
+ button.addEventListener("click",()=>dialog.showModal());
+ holder.append(summon,button);panel.append(holder);
+ scene.events.once("shutdown",()=>{holder.remove()});
+}
+export function installOnBattleScene(scene,{doc=document}={}){
+ if(scene.__perenV84Installed)return false;
+ scene.__perenV84Installed=true;
+ const originalPreload=scene.preload;
+ scene.preload=function(){
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon];
+  for(const a of assets)this.load.spritesheet(a.key,ROOT+a.file,{
+    frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
+  });
+  return originalPreload.apply(this,arguments);
+ };
+ const originalCreate=scene.create;
+ scene.create=function(){
+  const result=originalCreate.apply(this,arguments);
+  this.__v84Idle=useIdle(this);
+  addControls(this,doc);
+  return result;
+ };
+ const originalPlayer=scene.animatePlayer;
+ scene.animatePlayer=async function(action,events){
+  const effect=getAnimationPlan(action);
+  if(!effect)return originalPlayer.call(this,action,events);
+  // Concurrently retain normal gameplay choreography, hits and HUD.
+  const results=await Promise.allSettled([
+   originalPlayer.call(this,action,events),
+   playVisualSequence(this,effect,{base:this.__v84Idle})
+  ]);
+  const failure=results.find(r=>r.status==="rejected");
+  if(failure)throw failure.reason;
+ };
+ const originalTakeTurn=scene.takeTurn;
+ scene.takeTurn=function(action){
+  if(this.__v84PreviewBusy)return Promise.resolve(false);
+  return originalTakeTurn.call(this,action);
+ };
+ return true;
+}
+/** Detect the game after its dynamic catalogs finish booting; no saved state touched. */
+export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=fetch}={}){
+ const ready=await checkInstalledAssets(fetcher);
+ if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
+ for(let attempts=0;attempts<120;attempts++){
+  const game=windowRef.__perenLab;
+  if(game?.scene?.getScene){
+   try{
+    const scene=game.scene.getScene("BattleScene");
+    return {enabled:installOnBattleScene(scene,{doc}),reason:"installed"};
+   }catch{}
+  }
+  await new Promise(r=>setTimeout(r,100));
+ }
+ return {enabled:false,reason:"phaser-not-ready"};
+}
+if(typeof window!=="undefined"&&typeof document!=="undefined"){
+ bootstrapBattleArt().then(result=>{
+  window.__perenBattleArtV84=result;
+ }).catch(e=>console.warn("Battle Art v8.4 fallback",e));
+}
