@@ -52,3 +52,11 @@ A plataforma conectada nesta sessão não dispõe de uma ponte de transferência
 ## Próxima ação
 
 Instalar os oito PNGs efetivos, executar a Action de liberação, conferir quatro screenshots e só então fazer o merge/publicação do jogo. A ausência dos arquivos agora fica visível como falha de CI, não mascarada pelo fallback.
+
+## Ajuste pós-auditoria: prova de conjuração visível
+
+O teste `tests/qa_peren_battle_v85_browser.mjs` foi aprimorado para fotografar cada feitiço **enquanto seu sprite está ativo**, verificando que o Idle novo se oculta temporariamente, que a animação ocupa a janela de combate e que o novo Idle retorna ao término. Antes, uma captura após `await animatePlayer` poderia mostrar só o Idle, sem provar a presença de Infernal ou Void Rift. Os quatro screenshots agora devem conter as magias em execução.
+
+**Falha remota observada:** a Action `Peren Official Art QA` reprovou no teste de PNGs: `idle.png`, `infernal.png`, os quatro `portrait_*.png`, `summon.png` e `void.png` estão ausentes. A suíte `Peren Single Free Mode QA` passou, preservando o jogo atual. Essa reprovação é intencional e bloqueia a publicação até os arquivos binários entrarem no mesmo commit/revisão da PR #69.
+
+**Atalho para Windows:** entregue no chat o arquivo `INSTALAR-PEREN-V85.ps1`, que recebe `-ZipPath`, `-RepoPath` e `-Push`, verifica branch, repositório, oito SHA-256 e manifesto, recusa substituir arte divergente e envia somente os nove arquivos de batalha. Não autoriza merge automático na `main`.
