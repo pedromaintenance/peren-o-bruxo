@@ -1,0 +1,98 @@
+name: Peren v8.6 Auto Import Battle PNGs
+
+on:
+  push:
+    branches:
+      - feature/peren-battle-v85-release-qa
+    paths:
+      - 'asset-ingest/Peren_v84_BattleScene_Assets.zip'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: peren-v86-import-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  import-approved-binaries:
+    if: github.repository == 'pedromaintenance/peren-o-bruxo'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact approved branch
+        uses: actions/checkout@v4
+        with:
+          ref: feature/peren-battle-v85-release-qa
+          persist-credentials: true
+
+      - name: Require approved ZIP (no external downloads)
+        shell: bash
+        run: |
+          set -euo pipefail
+          FILE="asset-ingest/Peren_v84_BattleScene_Assets.zip"
+          test -f "$FILE"
+          echo 'c185e95e47d684a49e5ddf0ae576d311d652dad50f21d0dd489efbed2185ba41  asset-ingest/Peren_v84_BattleScene_Assets.zip' | sha256sum -c -
+          test "$(git branch --show-current)" = "feature/peren-battle-v85-release-qa"
+
+      - name: Extract only approved eight art PNGs and verified marker
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 ferramentas/instalar_battle_v84.py asset-ingest/Peren_v84_BattleScene_Assets.zip
+          node --test tests/qa_peren_battle_v85_binary.mjs
+
+      - name: Commit images into this PR branch and remove upload ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f -- phaser-demo-m1hf/art/battle/runtime-v84/
+          git rm -- asset-ingest/Peren_v84_BattleScene_Assets.zip
+          # Refuse unexpected changed paths. README and program code must stay untouched.
+          python3 - <<'PY'
+          import subprocess
+          paths=set(subprocess.check_output(["git","diff","--cached","--name-only"],text=True).splitlines())
+          prefix="phaser-demo-m1hf/art/battle/runtime-v84/"
+          exact={prefix+n for n in [
+              "idle.png","infernal.png","void.png","summon.png",
+              "portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png",
+              "battle-asset-pack-v84.json"]}
+          exact.add("asset-ingest/Peren_v84_BattleScene_Assets.zip")
+          if paths!=exact:
+              raise SystemExit(f"Unexpected import paths; refusing commit: {sorted(paths.symmetric_difference(exact))}")
+          PY
+          git commit -m "assets(peren): import eight SHA-approved battler PNGs"
+          git push origin HEAD:refs/heads/feature/peren-battle-v85-release-qa
+
+      - name: Run approved binary gate again
+        run: node --test tests/qa_peren_battle_v85_binary.mjs
+
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Start production Phaser preview server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/peren-battle-v86.log 2>&1 &
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-battle-v86.log
+          exit 1
+
+      - name: Verify replacement inside real BattleScene at mobile and desktop sizes
+        env:
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: timeout 175s node tests/qa_peren_battle_v85_browser.mjs
+
+      - name: Preserve combat screenshots for manual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-v86-real-phaser-battle
+          path: artifacts/peren-v85-battle-*.png
+          if-no-files-found: ignore
