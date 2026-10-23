@@ -55,5 +55,5 @@ test("gallery compares normal and wounded; offline precache includes both all ar
  "./art/characters/peren/official-v4/runtime-provenance.json",
  ...["art-m1h","art-m1hb","art-m1hc","art-m1hd"].map(x=>`./${x}/characters/peren/peren-wounded-atlas.png`)
  ])assert.ok(arr.includes(p),"missing from PWA "+p);
- assert.match(sw,/preview-herb-only-v5-20261021/);
+ assert.match(sw,/preview-battler-v81-20261022/);
 });
