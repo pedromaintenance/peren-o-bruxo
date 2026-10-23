@@ -46,7 +46,7 @@ test("preview and offline correctly include source and new herb atlas without ne
  for(const path of ["./art/characters/peren/peren-herb-atlas.png","./art/characters/peren/official-v5/peren-atlas-herb-v5.png","./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png","./art/characters/peren/official-v5/runtime-provenance.json"]){
   assert.ok(files.includes(path),'not cached '+path);
  }
- assert.match(sw,/herb-only-v5/);
+ assert.match(sw,/battler-v81/);
  assert.match(gallery,/value="gather-herb"/);
  assert.match(gallery,/350,250,450,850/);
  assert.doesNotMatch(gallery,/id="selectPerenMode"/);
