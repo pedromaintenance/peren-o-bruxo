@@ -23,6 +23,8 @@ on:
       - 'tests/qa_peren_battler_v81.mjs'
       - 'tests/qa_peren_battler_v82_review.mjs'
       - 'tests/qa_peren_battle_v84.mjs'
+      - 'tests/qa_peren_battle_v85_binary.mjs'
+      - 'tests/qa_peren_battle_v85_browser.mjs'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
       - 'ferramentas/instalar_battlers_v81.py'
@@ -51,6 +53,10 @@ jobs:
           python3 tests/qa_peren_wounded_v4.py
           python3 tests/qa_peren_ervas_v5.py
           node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_v6_assets.mjs tests/qa_peren_summon_greater_demon.mjs tests/qa_peren_battle_art_runtime_v8.mjs tests/qa_peren_battler_v81.mjs tests/qa_peren_battler_v82_review.mjs tests/qa_peren_battle_v84.mjs
+      # Unlike contract tests, this step fails when actual approved PNGs are absent.
+      # Do not ship a release which only displays the previous exploration battler.
+      - name: Release gate — require eight approved PNGs on the current PR
+        run: node --test tests/qa_peren_battle_v85_binary.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
@@ -89,6 +95,18 @@ jobs:
           PEREN_SITE_ORIGIN: http://127.0.0.1:8765
           PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
         run: timeout 90s node tests/qa_peren_ervas_v5_browser.mjs
+      - name: Release proof — real BattleScene with new Idle and spells
+        env:
+          PEREN_SITE_ORIGIN: http://127.0.0.1:8765
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: timeout 170s node tests/qa_peren_battle_v85_browser.mjs
+      - name: Preserve real battle screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-v85-battle-real-scene
+          path: artifacts/peren-v85-battle-*.png
+          if-no-files-found: ignore
       - name: Share in-game screenshot proof
         if: always()
         uses: actions/upload-artifact@v4
