@@ -173,6 +173,21 @@ export function installOnBattleScene(scene,{doc=document}={}){
   if(this.__v84PreviewBusy)return Promise.resolve(false);
   return originalTakeTurn.call(this,action);
  };
+ // A player may have opened combat while the versioned manifest was fetched.
+ // Hot-hydrate that already-running scene instead of waiting for the next battle.
+ if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon];
+  const hydrate=()=>{
+   if(!scene.peren?.active||scene.__v84Idle)return;
+   scene.__v84Idle=useIdle(scene);
+   addControls(scene,doc);
+  };
+  if(scene.load.once)scene.load.once("complete",hydrate);
+  for(const a of assets)scene.load.spritesheet(a.key,ROOT+a.file,{
+   frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
+  });
+  if(scene.load.start)scene.load.start();
+ }
  return true;
 }
 /** Detect the game after its dynamic catalogs finish booting; no saved state touched. */
