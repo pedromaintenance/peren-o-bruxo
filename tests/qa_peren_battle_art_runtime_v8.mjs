@@ -33,8 +33,8 @@ test("existing spell commands retain their mechanics and gain optional art only"
  assert.equal(CINEMATIC_ACTIONS["spell:mag-summon-greater-demon"],undefined);
  const source=read("phaser-demo-m1hf/assets/game-B5Gp97dd.js");
  assert.match(source,/function Di\(/);
- assert.match(read("phaser-demo-m1hf/index.html"),/battle-art-runtime-v8\.mjs/);
- assert.match(read("phaser-demo-m1hf/demo-sw.js"),/battle-art-runtime-v8\.mjs/);
+ assert.match(read("phaser-demo-m1hf/index.html"),/battle-art-runtime-v81\.mjs/);
+ assert.match(read("phaser-demo-m1hf/demo-sw.js"),/battle-art-runtime-v81\.mjs/);
 });
 test("frames are shown and original battler restored after visual choreography",async()=>{
  const queue=[],shown=[],visibility=[];
