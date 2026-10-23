@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: peren-v86-import-${{ github.ref }}
@@ -96,3 +97,13 @@ jobs:
           name: peren-v86-real-phaser-battle
           path: artifacts/peren-v85-battle-*.png
           if-no-files-found: ignore
+
+      - name: Dispatch full official artwork QA on the bot's latest commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # Pushes with GITHUB_TOKEN do not trigger ordinary push/PR workflows.
+          # workflow_dispatch is allowed, and targets the newly imported branch head.
+          gh workflow run peren-official-art-qa.yml --ref feature/peren-battle-v85-release-qa
+          echo "Official full QA dispatched for current branch head; verify its green status before merging."
