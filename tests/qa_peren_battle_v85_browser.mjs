@@ -23,10 +23,10 @@ try {
         await page.locator("#goForest").waitFor({state:"visible",timeout:30000});
         await page.locator("#goForest").click();
         await page.locator("#phaser canvas").waitFor({state:"visible",timeout:30000});
-        await page.waitForFunction(()=>window.__perenBattleArtV84?.enabled===true,{timeout:45000});
+        await page.waitForFunction(()=>window.__perenBattleArtV84?.enabled===true,null,{timeout:45000});
         const initial=await page.evaluate(()=>{
           const game=window.__perenLab;
-          assert(game);
+          if(!game)throw new Error("Peren Phaser game was not initialized");
           const scene=game.scene.getScene("BattleScene");
           game.scene.launch("BattleScene",{
             beast:{type:"mob-fungo-violeta",name:"Fungo Violeta",instanceId:"qa-v85"},
@@ -38,7 +38,7 @@ try {
         await page.waitForFunction(()=>{
           const s=window.__perenLab?.scene?.getScene("BattleScene");
           return s?.__v84Idle?.sprite?.active===true && s.peren?.visible===false;
-        },{timeout:30000});
+        },null,{timeout:30000});
         const state=await page.evaluate(()=>{
           const s=window.__perenLab.scene.getScene("BattleScene");
           const t=s.__v84Idle.sprite;
