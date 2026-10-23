@@ -45,9 +45,9 @@ test('preload only allowed battlers, not pending Infernal and Void Rift',()=>{
 test('existing battle game loads the new optional module, never replaces gameplay logic',()=>{
  const html=read('phaser-demo-m1hf/index.html');
  const sw=read('phaser-demo-m1hf/demo-sw.js');
- assert.match(html,/src="\.\/battle-art-runtime-v81\.mjs"/);
- assert.match(sw,/battle-art-runtime-v81\.mjs/);
- assert.match(sw,/battler-v81-20261022/);
+ assert.match(html,/src="\.\/battle-art-runtime-v84\.mjs"/);
+ assert.match(sw,/battle-art-runtime-v84\.mjs/);
+ assert.match(sw,/battler-v84-20261022/);
  assert.doesNotMatch(read('phaser-demo-m1hf/battle-art-runtime-v81.mjs'),/localStorage|sessionStorage|\.finishBattle\(/);
 });
 test('one shot still restores idle after eight original summon timings',async()=>{
