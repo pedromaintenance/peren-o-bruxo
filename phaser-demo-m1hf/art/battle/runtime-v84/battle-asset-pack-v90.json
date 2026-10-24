@@ -2,7 +2,7 @@
   "schema": "peren-battle-art-v90",
   "verified": true,
   "version": "9.0.0",
-  "source": "Refined 8-frame infernal smoke+skulls atlas, user-approved 2026-10-24; previous idle/void/summon/portraits preserved",
+  "source": "Eight-frame 2048x682 RGBA atlas directly attached and approved by creator, 2026-10-24 (4x2 grid 512x341), all other art unchanged",
   "art_status": {
     "idle": "approved",
     "summon": "approved",
@@ -22,8 +22,8 @@
       821
     ],
     "infernal": [
-      543,
-      362
+      512,
+      341
     ],
     "void": [
       640,
@@ -42,8 +42,8 @@
     },
     {
       "path": "infernal-v90.png",
-      "bytes": 2389459,
-      "sha256": "b52a89a9737403071c898cfbcec428dbfd892a6e4ebc728f12a573892e785c0a"
+      "bytes": 2208337,
+      "sha256": "fc2ecca170a76c76e89ad846709b0d9659e57699eb0611441736ce81a17b22c9"
     },
     {
       "path": "portrait_01.png",
@@ -76,5 +76,5 @@
       "sha256": "e72d153996dad30a1a6f54f45fdd332ceb186d3e413c6257c5b072010a259f25"
     }
   ],
-  "source_art_sha256": "b52a89a9737403071c898cfbcec428dbfd892a6e4ebc728f12a573892e785c0a"
+  "source_art_sha256": "fc2ecca170a76c76e89ad846709b0d9659e57699eb0611441736ce81a17b22c9"
 }

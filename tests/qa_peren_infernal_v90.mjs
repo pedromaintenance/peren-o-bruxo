@@ -8,11 +8,11 @@ import {CONTRACT,CINEMATIC_ACTIONS,validateAssetMarker,checkInstalledAssets} fro
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const path="phaser-demo-m1hf/art/battle/runtime-v84/";
 const manifest=JSON.parse(readFileSync(resolve(root,path+"battle-asset-pack-v90.json"),"utf8"));
-const sha="b52a89a9737403071c898cfbcec428dbfd892a6e4ebc728f12a573892e785c0a";
+const sha="fc2ecca170a76c76e89ad846709b0d9659e57699eb0611441736ce81a17b22c9";
 
-test("Infernal v9.0 uses eight equal-size 543×362 cells and its own key",()=>{
- assert.equal(CONTRACT.infernal.width,543);
- assert.equal(CONTRACT.infernal.height,362);
+test("Infernal v9.0 uses eight equal-size 512×341 cells and its own key",()=>{
+ assert.equal(CONTRACT.infernal.width,512);
+ assert.equal(CONTRACT.infernal.height,341);
  assert.equal(CONTRACT.infernal.frames,8);
  assert.equal(CONTRACT.infernal.file,"infernal-v90.png");
  assert.equal(CONTRACT.infernal.key,"peren-v90-infernal");
@@ -22,8 +22,8 @@ test("Infernal v9.0 uses eight equal-size 543×362 cells and its own key",()=>{
 test("v9 manifest authorizes new Infernal but preserves seven earlier sprites",()=>{
  assert.equal(manifest.version,"9.0.0");
  assert.equal(manifest.schema,"peren-battle-art-v90");
- assert.equal(manifest.frame_dimensions.infernal[0],543);
- assert.equal(manifest.frame_dimensions.infernal[1],362);
+ assert.equal(manifest.frame_dimensions.infernal[0],512);
+ assert.equal(manifest.frame_dimensions.infernal[1],341);
  assert.equal(manifest.frames.infernal,8);
  assert.equal(manifest.files.length,8);
  assert.equal(manifest.files.find(x=>x.path==="infernal-v90.png")?.sha256,sha);
@@ -46,11 +46,11 @@ test("PWA now imports v9 module, new marker, new PNG, and unique offline cache",
 });
 test("release gate: approved PNG must be committed and byte-identical",()=>{
  const p=resolve(root,path+"infernal-v90.png");
- assert.ok(existsSync(p),"Approved PNG absent from GitHub. Upload Peren_Infernal_v90_GitHub_Ingest.zip through asset-ingest on this PR.");
+ assert.ok(existsSync(p),"Infernal v9.0 PNG must be present in the repository before publication.");
  const buf=readFileSync(p);
  assert.equal(buf.subarray(0,8).toString("hex"),"89504e470d0a1a0a");
- assert.equal(buf.readUInt32BE(16),2172);
- assert.equal(buf.readUInt32BE(20),724);
+ assert.equal(buf.readUInt32BE(16),2048);
+ assert.equal(buf.readUInt32BE(20),682);
  assert.equal(createHash("sha256").update(buf).digest("hex"),sha);
  assert.equal(manifest.files.find(x=>x.path==="infernal-v90.png").bytes,buf.length);
 });

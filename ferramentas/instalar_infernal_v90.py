@@ -1,65 +1,45 @@
 #!/usr/bin/env python3
-"""Import the creator-approved Infernal v9.0 sprite sheet without touching other sprites.
+"""Validate the exact creator-provided Infernal v9.0 PNG already committed in Git.
 
-Usage: python ferramentas/instalar_infernal_v90.py asset-ingest/Peren_Infernal_v90_GitHub_Ingest.zip
-
-Pure local import. SHA-256 checks both ZIP and PNG; no network, no save changes.
+No ZIP import, no network and no mutation: release-integrity check only.
 """
 from pathlib import Path
-from zipfile import ZipFile
 import argparse
 import hashlib
 import json
 import struct
 
-EXPECTED_ARCHIVE_SHA="ad53107a88c542054bf90e9b85a89819b453f9f20114ed17a876764ff969aa7e"
-EXPECTED_IMAGE_SHA="b52a89a9737403071c898cfbcec428dbfd892a6e4ebc728f12a573892e785c0a"
+EXPECTED_IMAGE_SHA="fc2ecca170a76c76e89ad846709b0d9659e57699eb0611441736ce81a17b22c9"
+EXPECTED_BYTES=2208337
+EXPECTED_DIMENSIONS=(2048,682)
 DEST=Path("phaser-demo-m1hf/art/battle/runtime-v84")
 PNG_NAME="infernal-v90.png"
 MANIFEST_NAME="battle-asset-pack-v90.json"
-ZIP_PREFIX=DEST.as_posix()+"/"
 
-def checksum(value:bytes)->str:
-    return hashlib.sha256(value).hexdigest()
-
-def install(archive:Path,repo:Path)->Path:
-    if checksum(archive.read_bytes())!=EXPECTED_ARCHIVE_SHA:
-        raise ValueError("Archive is not the exact approved v9.0 release")
-    with ZipFile(archive) as z:
-        image=z.read(ZIP_PREFIX+PNG_NAME)
-        original=json.loads(z.read(ZIP_PREFIX+MANIFEST_NAME))
-    if checksum(image)!=EXPECTED_IMAGE_SHA:
-        raise ValueError("Image differs from creator-approved v9.0")
-    if image[:8]!=b"\x89PNG\r\n\x1a\n" or struct.unpack(">II",image[16:24])!=(2172,724):
-        raise ValueError("Expected 2172x724 RGBA atlas, 4x2 equal 543x362 frames")
-    if image[25]!=6:
-        raise ValueError("Expected RGBA PNG")
-    stored=repo/DEST/MANIFEST_NAME
-    if not stored.is_file():
-        raise FileNotFoundError("Versioned manifest must already be in the branch")
-    current=json.loads(stored.read_text(encoding="utf-8"))
-    for manifest in [original,current]:
-        if manifest.get("schema")!="peren-battle-art-v90":
-            raise ValueError("Unexpected manifest schema")
-        if manifest.get("frame_dimensions",{}).get("infernal")!=[543,362]:
-            raise ValueError("Unexpected frame dimensions")
-        matches=[f for f in manifest.get("files",[]) if f.get("path")==PNG_NAME]
-        if len(matches)!=1 or matches[0].get("sha256")!=EXPECTED_IMAGE_SHA or matches[0].get("bytes")!=len(image):
-            raise ValueError("Manifest checksum/length does not match atlas")
-    if original!=current:
-        raise ValueError("ZIP manifest and GitHub manifest differ")
-    destination=repo/DEST/PNG_NAME
-    if destination.exists() and destination.read_bytes()!=image:
-        raise FileExistsError("Refusing to overwrite different v9.0 PNG")
-    destination.parent.mkdir(parents=True,exist_ok=True)
-    if not destination.exists():destination.write_bytes(image)
-    print("PASS: verified v9.0 Infernal PNG (2172x724, 8 cells 543x362)")
-    print("SHA-256:",EXPECTED_IMAGE_SHA)
-    return destination
+def verify(repo:Path)->Path:
+    image_path=repo/DEST/PNG_NAME
+    image=image_path.read_bytes()
+    digest=hashlib.sha256(image).hexdigest()
+    if len(image)!=EXPECTED_BYTES or digest!=EXPECTED_IMAGE_SHA:
+        raise ValueError("Infernal v9.0 sprite differs from the creator-approved PNG")
+    if image[:8]!=b"\x89PNG\r\n\x1a\n":
+        raise ValueError("Invalid PNG signature")
+    if struct.unpack(">II",image[16:24])!=EXPECTED_DIMENSIONS or image[25]!=6:
+        raise ValueError("Expected 2048x682 RGBA PNG, equal 4x2 cells 512x341")
+    marker=json.loads((repo/DEST/MANIFEST_NAME).read_text(encoding="utf-8"))
+    if marker.get("schema")!="peren-battle-art-v90":
+        raise ValueError("Unexpected v9.0 manifest schema")
+    if marker.get("frame_dimensions",{}).get("infernal")!=[512,341]:
+        raise ValueError("Unexpected v9.0 sprite grid")
+    row=[r for r in marker.get("files",[]) if r.get("path")==PNG_NAME]
+    if len(row)!=1 or row[0].get("sha256")!=digest or row[0].get("bytes")!=len(image):
+        raise ValueError("Manifest digest or size mismatch")
+    print("PASS: committed Infernal v9.0 PNG (2048x682; 8 frames 512x341)")
+    print("SHA-256:",digest)
+    return image_path
 
 if __name__=="__main__":
-    p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("archive",type=Path)
-    p.add_argument("--repo",type=Path,default=Path(__file__).resolve().parents[1])
-    args=p.parse_args()
-    install(args.archive.resolve(),args.repo.resolve())
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--repo",type=Path,default=Path(__file__).resolve().parents[1])
+    args=parser.parse_args()
+    verify(args.repo.resolve())

@@ -8,7 +8,7 @@
 const ROOT="./art/battle/runtime-v84/";
 export const CONTRACT=Object.freeze({
  idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
- infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:543,height:362,frames:8,frameMs:180},
+ infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,frameMs:180},
  void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
  summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
   durations:[190,210,250,300,330,400,380,320]},
