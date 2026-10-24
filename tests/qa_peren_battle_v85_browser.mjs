@@ -99,7 +99,8 @@ try {
           return {
             texture:sprite?.texture?.key,
             visible:sprite?.visible,
-            maskApplied:Boolean(sprite?.mask),\n            idleHidden:scene.__v84Idle?.sprite?.visible===false,
+            maskApplied:Boolean(sprite?.mask),
+            idleHidden:scene.__v84Idle?.sprite?.visible===false,
             originalHidden:scene.peren.visible===false,
             top:sprite?.getBounds?.().top,
             bottom:sprite?.getBounds?.().bottom
