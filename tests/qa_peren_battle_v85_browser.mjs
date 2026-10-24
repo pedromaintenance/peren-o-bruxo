@@ -106,7 +106,8 @@ try {
             bottom:sprite?.getBounds?.().bottom
           };
         },texture);
-        assert.equal(during.texture,texture);\n        if(spell==="fire")assert.equal(during.maskApplied,true,"Infernal sprite must feather its cropped atlas edges");
+        assert.equal(during.texture,texture);
+        if(spell==="fire")assert.equal(during.maskApplied,true,"Infernal sprite must feather its cropped atlas edges");
         assert.equal(during.visible,true);
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
