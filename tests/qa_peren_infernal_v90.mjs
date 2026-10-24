@@ -4,7 +4,7 @@ import {readFileSync,existsSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {createHash} from "node:crypto";
 import {fileURLToPath} from "node:url";
-import {CONTRACT,CINEMATIC_ACTIONS,validateAssetMarker,checkInstalledAssets} from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
+import {CONTRACT,CINEMATIC_ACTIONS,validateAssetMarker,checkInstalledAssets,playVisualSequence,infernalFeatherWidth} from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const path="phaser-demo-m1hf/art/battle/runtime-v84/";
 const manifest=JSON.parse(readFileSync(resolve(root,path+"battle-asset-pack-v90.json"),"utf8"));
@@ -41,7 +41,7 @@ test("PWA now imports v9 module, new marker, new PNG, and unique offline cache",
  const html=readFileSync(resolve(root,"phaser-demo-m1hf/index.html"),"utf8");
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
  assert.match(html,/battle-art-runtime-v90\.mjs/);
- assert.match(sw,/preview-infernal-v90-20261024/);
+ assert.match(sw,/preview-infernal-v91-20261024/);
  for(const p of ["battle-asset-pack-v90.json","infernal-v90.png"])assert.ok(sw.includes(p),p);
 });
 test("release gate: approved PNG must be committed and byte-identical",()=>{
@@ -53,4 +53,39 @@ test("release gate: approved PNG must be committed and byte-identical",()=>{
  assert.equal(buf.readUInt32BE(20),682);
  assert.equal(createHash("sha256").update(buf).digest("hex"),sha);
  assert.equal(manifest.files.find(x=>x.path==="infernal-v90.png").bytes,buf.length);
+});
+
+test("v9.1 infernal masks both hard cell borders without changing approved PNG",()=>{
+ assert.equal(infernalFeatherWidth(512),44);
+ assert.ok(infernalFeatherWidth(512)>0 && infernalFeatherWidth(512)<512/2);
+ assert.equal(CONTRACT.infernal.tailMs,320);
+ assert.equal(manifest.files.find(x=>x.path==="infernal-v90.png")?.sha256,sha);
+});
+test("infernal ending plays all 8 frames and visibly dissolves before idle returns",async()=>{
+ const delays=[],frames=[],alpha=[],tweens=[],visible=[];
+ const base={active:true,visible:true,setVisible(v){this.visible=v;visible.push(v);return this}};
+ const actor={active:true,x:100,y:200,scaleX:1,scaleY:1,
+  setOrigin(){return this},setDepth(){return this},setScale(){return this},
+  setFrame(n){frames.push(n);return this},setAlpha(v){alpha.push(v);return this},
+  destroy(){this.active=false}};
+ const queue=[];
+ const scene={
+  textures:{exists:()=>true},scale:{width:600,height:420},
+  add:{sprite:()=>actor},
+  events:{once(){},off(){}},
+  tweens:{add(opts){tweens.push(opts);return{stop(){}}}},
+  time:{delayedCall(ms,cb){delays.push(ms);queue.push(cb);return{remove(){}}}}
+ };
+ const playing=playVisualSequence(scene,"infernal",{base:{sprite:base}});
+ for(let i=0;i<8;i++)queue[i]();
+ assert.deepEqual(await playing,{played:true,reason:"complete"});
+ assert.deepEqual(frames,[0,1,2,3,4,5,6,7]);
+ assert.deepEqual(delays,[180,180,180,180,180,180,180,320]);
+ assert.deepEqual(visible,[false,true]);
+ assert.equal(tweens.length,1);
+ assert.equal(tweens[0].targets,actor);
+ assert.equal(tweens[0].alpha,0);
+ assert.equal(tweens[0].duration,320);
+ assert.ok(alpha.includes(.92));
+ assert.equal(actor.active,false);
 });
