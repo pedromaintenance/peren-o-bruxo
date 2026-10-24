@@ -28,7 +28,9 @@ try {
           const game=window.__perenLab;
           if(!game)throw new Error("Peren Phaser game was not initialized");
           const scene=game.scene.getScene("BattleScene");
-          game.scene.launch("BattleScene",{
+          // Phaser.Game.scene is a SceneManager; unlike ScenePlugin it has
+          // start(), not launch(). Use the same monster ID as exploration.
+          game.scene.start("BattleScene",{
             beast:{type:"mob-fungo-violeta",name:"Fungo Violeta",instanceId:"qa-v85"},
             key:"qa-v85-battle"
           });
