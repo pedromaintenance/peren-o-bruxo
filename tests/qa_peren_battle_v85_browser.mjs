@@ -135,18 +135,10 @@ try {
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
         assert.ok(during.bottom>0 && during.top<height,"Spell animation must intersect the visible viewport");
-        if(spell==="fire"){
-          // Capture the actual penultimate atlas cell at the FINAL playback step.
-          await page.waitForFunction(()=>{
-            const scene=window.__perenLab?.scene?.getScene("BattleScene");
-            const sprite=scene?.children?.list?.find(child=>
-              child.active&&child.texture?.key==="peren-v90-infernal");
-            return sprite&&Number(sprite.frame?.name)===6;
-          },null,{timeout:8000});
-          await page.screenshot({path:`artifacts/peren-v92-infernal-clean-ending-${width}.png`,fullPage:false});
-        }else{
-          await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
-        }
+        // Frame-by-frame evidence is collected by scene update listeners above.
+        // Avoid waiting on an ephemeral frame after expensive screenshots:
+        // the renderer may have passed it by the time Playwright polls.
+        await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
         await page.evaluate(async()=>await window.__perenV85Animation);
         if(spell==="fire"){
           const sparkFrames=await page.evaluate(()=>{
