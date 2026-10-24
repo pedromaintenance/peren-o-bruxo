@@ -1,0 +1,53 @@
+{
+  "schema": "peren-sparks-v10",
+  "source": "Sequência de Chamas Mágicas Animadas(2).png",
+  "source_sha256": "872ab3d50e14b1094b859dbad1571dfdde19b74e756ebc2b87d0867b72e9836d",
+  "asset": "sparks-v10.png",
+  "sha256": "71769eb59937d35bbb0575a80a1c003a5e2f7042f273e6611c3fe13564b5007e",
+  "bytes": 644753,
+  "dimensions": [
+    2080,
+    682
+  ],
+  "frame_size": [
+    416,
+    682
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    120,
+    125,
+    165,
+    145,
+    130
+  ],
+  "source_cut_ranges": [
+    [
+      0,
+      405
+    ],
+    [
+      405,
+      812
+    ],
+    [
+      812,
+      1230
+    ],
+    [
+      1230,
+      1655
+    ],
+    [
+      1655,
+      2048
+    ]
+  ]
+}
