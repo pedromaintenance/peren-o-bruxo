@@ -9,6 +9,40 @@
 </style>  <script type="module" crossorigin src="./assets/game-B5Gp97dd.js"></script>
   <script type="module" src="./battle-art-runtime-v84.mjs"></script>
   <link rel="stylesheet" crossorigin href="./assets/game-BTyR319X.css">
+<style id="peren-battle-responsive-v85">
+/* Battle-screen-only compact mode: keep actual 48x64 exploration HUD unchanged. */
+#battleUI #battleHeader{max-width:780px;padding:8px 10px;}
+#battleUI #battleHeader #battleJournal{margin:4px 0;font-size:11px;}
+#battleUI #battleHeader .m1hf-battle-transcript{margin-top:3px;}
+#battleUI #battlePanel{max-width:780px;padding:8px 10px;}
+#battleUI #battlePanel .battle-actions{grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;}
+#battleUI #battlePanel .battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));}
+#battleUI #battlePanel button{min-height:36px;padding:5px 4px;font-size:11px;}
+#battleUI #battlePanel .battle-spells{margin-top:5px;padding-top:4px;}
+#battleUI #battlePanel #battleCommandHint,
+#battleUI #battlePanel .battle-note,
+#battleUI #battlePanel #m1hfDiagCopyBattle,
+#battleUI #battlePanel #m1hfDiagBattleStatus{display:none;}
+#battleUI #battlePanel #battleEndHint:empty{display:none;}
+#battleUI #battlePanel #peren-v84-battle-extras summary{padding:3px 2px;}
+@media(max-width:620px){
+ #battleUI #battleHeader{top:calc(4px + env(safe-area-inset-top));left:5px;right:5px;padding:6px 8px;}
+ #battleUI #battleHeader #battleJournal,
+ #battleUI #battleHeader #battleTranscript{display:none;}
+ #battleUI #battleHeader .m1g-battle-heading{margin:0;padding:0;}
+ #battleUI #battleHeader strong{font-size:12px;}
+ #battleUI #battleHeader #battleMonster{font-size:12px;margin:2px 0;}
+ #battleUI #battleHeader #battleStats{font-size:10px;}
+ #battleUI #battlePanel{left:5px;right:5px;bottom:calc(4px + env(safe-area-inset-bottom));padding:5px 7px;max-height:38vh;overflow-y:auto;}
+ #battleUI #battlePanel .battle-actions{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;}
+ #battleUI #battlePanel .battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));}
+ #battleUI #battlePanel button{min-height:35px;padding:4px 2px;font-size:10px;line-height:1.1;}
+ #battleUI #battlePanel .battle-spells{margin-top:3px;padding-top:3px;}
+ #battleUI #battlePanel .battle-spells small{font-size:8px;letter-spacing:.04em;}
+ #battleUI #battlePanel .m1g-battle-panelhead{margin:0 0 2px;}
+ #battleUI #battlePanel #peren-v84-battle-extras summary{font-size:11px;padding:2px;}
+}
+</style>
 <style>.m1hf-diagnostic-controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap;width:100%;padding:10px;border:1px solid #8b744f;background:#0e2029;color:#dcc6a3}.m1hf-diagnostic-controls span{font-weight:700}.m1hf-diagnostic-controls button,.m1hf-battle-diag{cursor:pointer;padding:8px 11px;border:1px solid #bfa475;border-radius:4px;background:#1c3544;color:#f5dca8}.m1hf-diagnostic-controls small{width:100%;font-size:11px;overflow-wrap:anywhere}.m1hf-battle-diag{display:block;margin:10px 0 5px}#m1hfDiagBattleStatus{display:block;color:#e4c993;font-size:11px}</style><meta name="robots" content="noindex,nofollow"><meta name="description" content="Prévia experimental M1h-F do jogo Peren, o Bruxo"><link rel="manifest" href="./manifest.webmanifest"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
 <div id="controls" class="m1g-expedition" hidden>
  <div id="status" class="m1g-expedition-hud ui-panel" aria-label="Estado da expedição">
