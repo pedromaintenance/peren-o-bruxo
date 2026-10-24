@@ -8,7 +8,7 @@
 const ROOT="./art/battle/runtime-v84/";
 export const CONTRACT=Object.freeze({
  idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
- infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,frameMs:180},
+ infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,frameMs:180,tailMs:320},
  void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
  summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
   durations:[190,210,250,300,330,400,380,320]},
@@ -130,6 +130,47 @@ function battleArena(scene){
  return {w,h,top,bottom,height:bottom-top};
 }
 function contains(scene,key){return Boolean(scene.textures?.exists?.(key))}
+/** Each frame is independent: never sample or borrow pixels from adjacent atlas cells. */
+export function infernalFeatherWidth(frameWidth){
+ return Math.max(1,Math.min(48,Math.round(frameWidth*.085)));
+}
+/**
+ * The creator-approved atlas includes flames touching the left/right cell boundaries.
+ * A per-frame alpha mask makes those hard vertical crop lines disappear WITHOUT
+ * regenerating the PNG, changing its SHA-256 or touching gameplay logic.
+ * The mask lives in local cell coordinates and follows the sprite's scale/origin.
+ */
+function softenInfernalEdges(scene,actor,spec){
+ if(typeof document==="undefined"||!scene.textures?.addCanvas||!scene.make?.image||!actor.setMask)return null;
+ const key="peren-v91-infernal-soft-edges";
+ try{
+  if(!scene.textures.exists(key)){
+   const canvas=document.createElement("canvas");
+   canvas.width=spec.width;canvas.height=spec.height;
+   const ctx=canvas.getContext("2d");
+   if(!ctx)return null;
+   const edge=infernalFeatherWidth(spec.width)/spec.width;
+   const gradient=ctx.createLinearGradient(0,0,spec.width,0);
+   gradient.addColorStop(0,"rgba(255,255,255,0)");
+   gradient.addColorStop(edge,"rgba(255,255,255,1)");
+   gradient.addColorStop(1-edge,"rgba(255,255,255,1)");
+   gradient.addColorStop(1,"rgba(255,255,255,0)");
+   ctx.fillStyle=gradient;
+   ctx.fillRect(0,0,spec.width,spec.height);
+   scene.textures.addCanvas(key,canvas);
+  }
+  const image=scene.make.image({x:actor.x,y:actor.y,key,add:false})
+   .setOrigin(.5,1).setScale(actor.scaleX,actor.scaleY);
+  actor.setMask(image.createBitmapMask());
+  return ()=>{
+   if(actor.active)actor.clearMask(true);
+   image.destroy();
+  };
+ }catch(error){
+  console.warn("Infernal edge feather unavailable; original atlas kept",error);
+  return null;
+ }
+}
 function useIdle(scene){
  const cfg=CONTRACT.idle;
  if(!contains(scene,cfg.key)||!scene.peren)return null;
@@ -171,12 +212,16 @@ export function playVisualSequence(scene,id,{base=null}={}){
   .setOrigin(.5,1).setDepth(22);
  actor.setScale(Math.min(area.w*(compact?.84:.64)/spec.width,area.height*.89/spec.height));
  const delays=spec.durations||Array(spec.frames).fill(spec.frameMs);
+ // Only Infernal needs a spatial crop feather and a temporal fade-out.
+ const releaseMask=id==="infernal"?softenInfernalEdges(scene,actor,spec):null;
  return new Promise(resolve=>{
-  let current=0,timer=null,done=false;
+  let current=0,timer=null,fadeTween=null,done=false;
   function complete(reason){
    if(done)return;
    done=true;timer?.remove?.(false);
+   fadeTween?.stop?.();
    scene.events.off("shutdown",cancel);
+   releaseMask?.();
    if(actor.active)actor.destroy();
    if(target?.active)target.setVisible(former);
    resolve({played:reason==="complete",reason});
@@ -187,7 +232,19 @@ export function playVisualSequence(scene,id,{base=null}={}){
    if(done)return;
    if(current>=spec.frames)return complete("complete");
    actor.setFrame(current);
-   timer=scene.time.delayedCall(delays[current++],next);
+   let duration=delays[current];
+   if(id==="infernal"){
+    if(current===spec.frames-2)actor.setAlpha(.92);
+    if(current===spec.frames-1){
+     duration=spec.tailMs||duration;
+     // The last image genuinely dissolves instead of disappearing on a timer.
+     fadeTween=scene.tweens?.add?.({
+      targets:actor,alpha:0,duration,ease:"Sine.easeIn"
+     })||null;
+    }
+   }
+   current++;
+   timer=scene.time.delayedCall(duration,next);
   }
   next();
  });
