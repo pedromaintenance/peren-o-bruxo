@@ -96,7 +96,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: peren-v86-real-phaser-battle
-          path: artifacts/peren-v85-battle-*.png
+          path: artifacts/peren-v85-*.png
           if-no-files-found: ignore
 
       - name: Dispatch full official artwork QA on the bot's latest commit
