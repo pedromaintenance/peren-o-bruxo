@@ -1,0 +1,31 @@
+{
+  "schema": "peren-flame-v10",
+  "asset": "flame-v10.png",
+  "bytes": 713946,
+  "sha256": "27d13641bef40ebebe784d68c75f74909a31668bb2775a1bf0a87135a8f5a853",
+  "source_sha256": "da68df6b20fa1116c983cf09941615081060d6daa53dd7a9337ebd385fec64e5",
+  "source": "chama_2_spritesheet_5_quadros(2).png",
+  "dimensions": [
+    1920,
+    370
+  ],
+  "frame_size": [
+    384,
+    370
+  ],
+  "frames": 5,
+  "sequence": [
+    "inicio",
+    "progressao",
+    "apice",
+    "regressao",
+    "fim"
+  ],
+  "durations_ms": [
+    145,
+    165,
+    220,
+    170,
+    180
+  ]
+}
