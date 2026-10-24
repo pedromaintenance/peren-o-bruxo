@@ -27,16 +27,28 @@ try {
         const initial=await page.evaluate(()=>{
           const game=window.__perenLab;
           if(!game)throw new Error("Peren Phaser game was not initialized");
-          const scene=game.scene.getScene("BattleScene");
-          // Phaser.Game.scene is a SceneManager; unlike ScenePlugin it has
-          // start(), not launch(). Use the same monster ID as exploration.
-          game.scene.start("BattleScene",{
-            beast:{type:"mob-fungo-violeta",name:"Fungo Violeta",instanceId:"qa-v85"},
-            key:"qa-v85-battle"
-          });
-          return {installed:scene.__perenV84Installed};
+          const battle=game.scene.getScene("BattleScene");
+          const exploration=game.scene.getScene("ExplorationScene");
+          // Reproduce the REAL user route: a live forest monster opens
+          // the encounter dialog. Clicking its Fight button then launches
+          // BattleScene and hides exploration controls via the game's UI.
+          const beast=exploration.beasts?.find(b=>b.type==="mob-fungo-violeta"&&b.sprite?.active)
+            || exploration.beasts?.find(b=>b.sprite?.active);
+          if(!beast)throw new Error("No live Mürin forest monster for encounter QA");
+          exploration.openEncounter(beast);
+          return {installed:battle.__perenV84Installed,monster:beast.name};
         });
         assert.equal(initial.installed,true,"BattleScene bridge was not installed before combat");
+        await page.locator("#encounterModal").waitFor({state:"visible",timeout:12000});
+        await page.locator("#observeBeast").click();
+        await page.locator("#battleUI").waitFor({state:"visible",timeout:12000});
+        const ui=await page.evaluate(()=>({
+          battleVisible:!document.querySelector("#battleUI").hidden,
+          forestControlsHidden:document.querySelector("#controls").hidden,
+          encounterHidden:document.querySelector("#encounterModal").hidden
+        }));
+        assert.deepEqual(ui,{battleVisible:true,forestControlsHidden:true,encounterHidden:true},
+          "The real combat HUD must replace the exploration controls");
         await page.waitForFunction(()=>{
           const s=window.__perenLab?.scene?.getScene("BattleScene");
           return s?.__v84Idle?.sprite?.active===true && s.peren?.visible===false;
