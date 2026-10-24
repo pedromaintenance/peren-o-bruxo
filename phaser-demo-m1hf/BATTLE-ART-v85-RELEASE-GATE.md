@@ -60,3 +60,23 @@ O teste `tests/qa_peren_battle_v85_browser.mjs` foi aprimorado para fotografar c
 **Falha remota observada:** a Action `Peren Official Art QA` reprovou no teste de PNGs: `idle.png`, `infernal.png`, os quatro `portrait_*.png`, `summon.png` e `void.png` estão ausentes. A suíte `Peren Single Free Mode QA` passou, preservando o jogo atual. Essa reprovação é intencional e bloqueia a publicação até os arquivos binários entrarem no mesmo commit/revisão da PR #69.
 
 **Atalho para Windows:** entregue no chat o arquivo `INSTALAR-PEREN-V85.ps1`, que recebe `-ZipPath`, `-RepoPath` e `-Push`, verifica branch, repositório, oito SHA-256 e manifesto, recusa substituir arte divergente e envia somente os nove arquivos de batalha. Não autoriza merge automático na `main`.
+
+## Diagnóstico v8.7 — detectar a causa do sprite antigo
+
+Foi incorporado ao módulo `battle-art-runtime-v84.mjs` um diagnóstico **somente quando solicitado**, sem alterar gameplay nem saves. Ao acessar o aplicativo com a URL:
+
+```text
+https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?debug-battler=1
+```
+
+o jogo exibirá um pequeno painel indicando se está usando o novo battler ou o fallback antigo e qual etapa de verificação falhou:
+
+- `manifest-not-found`: a implantação ainda não contém `battle-asset-pack-v84.json`;
+- `manifest-invalid-schema-or-hashes`: o manifesto está incorreto;
+- `png-missing`: um ou mais PNGs retornaram HTTP inválido;
+- `assets-present`: os oito PNGs e manifesto podem ser encontrados;
+- `manifest-network-error`: o dispositivo está offline ou não conseguiu acessar a rede.
+
+Esse diagnóstico é intencionalmente separado do teste SHA-256 do GitHub. Um HTTP 200 não prova a integridade binária; a CI continua comparando todos os hashes aprovados.
+
+O novo teste `tests/qa_peren_battle_diagnostics.mjs` verifica esses cenários sem requisitar PNGs ausentes nem alterar a máquina de estados do combate. O endereço com `?debug-battler=1` só terá o painel novo **depois que o código dessa branch for mesclado e publicado**. Antes disso, continuará o comportamento da versão antiga.
