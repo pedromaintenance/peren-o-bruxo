@@ -27,16 +27,35 @@ export function validateAssetMarker(marker){
  const required=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,CONTRACT.summon.file,...CONTRACT.portraits];
  return required.every(file=>marker.files.some(f=>f.path===file&&/^[a-f0-9]{64}$/.test(f.sha256)));
 }
-export async function checkInstalledAssets(fetcher=fetch){
+/**
+ * Pre-cached art is valid in airplane/offline mode. HEAD requests cannot be
+ * intercepted by this PWA's GET-only service worker; check CacheStorage as
+ * a fallback without downloading all PNG bodies into JavaScript memory.
+ */
+export async function assetAvailability(file,fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
+ const url=ROOT+file;
+ try{
+  const response=await fetcher(url,{method:"HEAD",cache:"no-cache"});
+  if(response?.ok)return {ok:true,source:"network",status:response.status??200};
+ }catch{}
+ try{
+  const cached=await cacheStore?.match?.(url);
+  if(cached?.ok)return {ok:true,source:"cache",status:cached.status??200};
+ }catch{}
+ return {ok:false,source:"missing",status:null};
+}
+
+export async function checkInstalledAssets(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
  try{
   const res=await fetcher(ROOT+"battle-asset-pack-v84.json",{cache:"no-cache"});
   if(!res.ok)return false;
   const manifest=await res.json();
   if(!validateAssetMarker(manifest))return false;
   const required=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,CONTRACT.summon.file,...CONTRACT.portraits];
-  // HEAD verifies that GitHub Pages has all PNGs before the scene preloads them.
-  const checks=await Promise.all(required.map(file=>fetcher(ROOT+file,{method:"HEAD",cache:"no-cache"}).then(r=>r.ok).catch(()=>false)));
-  return checks.every(Boolean);
+  // A registered service worker answers GET from precache, but cannot
+  // satisfy offline HEAD; CacheStorage supplies the offline readiness proof.
+  const checks=await Promise.all(required.map(file=>assetAvailability(file,fetcher,cacheStore)));
+  return checks.every(check=>check.ok);
  }catch{return false}
 }
 /**
@@ -44,7 +63,7 @@ export async function checkInstalledAssets(fetcher=fetch){
  * This deliberately does not fetch image bodies, change the Scene or touch saves.
  * Debug it at /phaser-demo-m1hf/?debug-battler=1
  */
-export async function diagnoseBattleArt(fetcher=fetch){
+export async function diagnoseBattleArt(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
  const expected=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,
    CONTRACT.summon.file,...CONTRACT.portraits];
  let response;
@@ -56,14 +75,13 @@ export async function diagnoseBattleArt(fetcher=fetch){
   return {ready:false,code:"manifest-invalid-json",reason:String(error),missing:expected};
  }
  if(!validateAssetMarker(marker))return {ready:false,code:"manifest-invalid-schema-or-hashes",missing:expected};
- const checks=await Promise.all(expected.map(async file=>{
-  try{
-   const r=await fetcher(ROOT+file,{method:"HEAD",cache:"no-store"});
-   return {file,ok:!!r?.ok,status:r?.status??null};
-  }catch(error){return {file,ok:false,error:String(error)}}
- }));
+ const checks=await Promise.all(expected.map(async file=>({
+  file,...await assetAvailability(file,fetcher,cacheStore)
+ })));
  const missing=checks.filter(x=>!x.ok).map(x=>x.file);
- return {ready:missing.length===0,code:missing.length?"png-missing":"assets-present",
+ const offline=checks.some(x=>x.source==="cache");
+ return {ready:missing.length===0,
+   code:missing.length?"png-missing":offline?"cached-assets-present":"assets-present",
    missing,checks,version:marker.version??null};
 }
 function renderBattleArtDiagnostics(doc,result,diagnostic){
