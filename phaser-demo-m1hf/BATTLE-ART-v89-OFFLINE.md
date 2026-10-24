@@ -22,8 +22,8 @@ O service worker atende requisições **GET** para rotas do aplicativo, não res
 
 ## Critérios de saída
 
-- [ ] `Peren Official Art QA` passa testes Node, integridade dos oito PNGs e browser online/offline.
-- [ ] `Peren Single Free Mode QA` passa os testes de instalação PWA existentes.
+- [x] `Peren Official Art QA` passou Node, integridade dos oito PNGs e browser online/offline ([execução #40114686577](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40114686577)).
+- [x] `Peren Single Free Mode QA` passou os testes de instalação PWA existentes ([execução #40114686570](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40114686570)).
 - [ ] PR mesclada em `main` sem conflitos.
 - [ ] Build do GitHub Pages conclui com sucesso.
 
