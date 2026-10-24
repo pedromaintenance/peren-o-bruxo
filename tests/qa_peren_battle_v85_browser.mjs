@@ -99,6 +99,7 @@ try {
           return {
             texture:sprite?.texture?.key,
             visible:sprite?.visible,
+            maskApplied:Boolean(sprite?.mask),
             idleHidden:scene.__v84Idle?.sprite?.visible===false,
             originalHidden:scene.peren.visible===false,
             top:sprite?.getBounds?.().top,
@@ -106,6 +107,7 @@ try {
           };
         },texture);
         assert.equal(during.texture,texture);
+        if(spell==="fire")assert.equal(during.maskApplied,true,"Infernal sprite must feather its cropped atlas edges");
         assert.equal(during.visible,true);
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
