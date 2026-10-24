@@ -2,11 +2,11 @@
   "schema": "peren-battle-art-v90",
   "verified": true,
   "version": "9.0.0",
-  "source": "Approved Peren refined infernal atlas 2026-10-24; original 7 v8.9 sprites unchanged",
+  "source": "Refined 8-frame infernal smoke+skulls atlas, user-approved 2026-10-24; previous idle/void/summon/portraits preserved",
   "art_status": {
     "idle": "approved",
     "summon": "approved",
-    "infernal": "user-approved-refined-v90",
+    "infernal": "approved-v90-8-equal-frames",
     "void": "v84-transition-smoothed",
     "portraits": "reviewed"
   },
