@@ -55,15 +55,29 @@ try {
         },null,{timeout:30000});
         const state=await page.evaluate(()=>{
           const s=window.__perenLab.scene.getScene("BattleScene");
-          const t=s.__v84Idle.sprite;
+          const t=s.__v84Idle.sprite,canvas=s.game.canvas.getBoundingClientRect();
+          const head=document.getElementById("battleHeader").getBoundingClientRect();
+          const panel=document.getElementById("battlePanel").getBoundingClientRect();
+          const bounds=t.getBounds(),scale=canvas.height/s.scale.height;
           return {visible:t.visible,texture:t.texture?.key,frames:s.anims.get("peren-v84-idle-loop")?.frames?.length,
-           originalVisible:s.peren.visible,hp:s.state?.playerHp,mp:s.state?.playerMp};
+           originalVisible:s.peren.visible,hp:s.state?.playerHp,mp:s.state?.playerMp,
+           boundsTop:canvas.top+bounds.top*scale,boundsBottom:canvas.top+bounds.bottom*scale,
+           arenaTop:head.bottom,arenaBottom:panel.top,panelHeight:panel.height};
         });
         assert.equal(state.texture,"peren-v84-idle","Old exploration sprite was not replaced by battler");
         assert.equal(state.frames,4);
         assert.equal(state.originalVisible,false);
         assert.ok(state.hp>0);
         assert.ok(state.mp>0);
+        assert.ok(state.boundsTop>=state.arenaTop-18,
+          "Idle battler is hidden behind the combat header");
+        assert.ok(state.boundsBottom<=state.arenaBottom+15,
+          "Idle battler is hidden behind the commands");
+        if(width<=620)assert.ok(state.panelHeight<height*.34,
+          "Battle actions occupy too much of the mobile screen");
+        if(spell==="fire")await page.screenshot({
+          path:`artifacts/peren-v85-idle-${width}.png`,fullPage:false
+        });
         // Trigger the real BattleScene animation without damage, mana, saves or loot.
         // Do NOT await here: the screenshot must prove the effect ON SCREEN,
         // rather than photographing the idle state after the effect has disappeared.
