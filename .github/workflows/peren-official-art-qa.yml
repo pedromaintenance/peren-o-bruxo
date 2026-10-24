@@ -29,6 +29,7 @@ on:
       - 'tests/qa_peren_battle_v89_offline.mjs'
       - 'tests/qa_peren_battle_v89_offline_browser.mjs'
       - 'tests/qa_peren_infernal_v90.mjs'
+      - 'tests/qa_peren_sparks_v10.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
@@ -64,6 +65,8 @@ jobs:
         run: node --test tests/qa_peren_battle_v85_binary.mjs
       - name: Infernal v9.0 release gate — require the exact approved PNG in this checkout
         run: node --test tests/qa_peren_infernal_v90.mjs
+      - name: Spark v10 release gate — verify approved five-frame PNG is committed
+        run: node --test tests/qa_peren_sparks_v10.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
@@ -116,7 +119,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: peren-v85-battle-real-scene
-          path: artifacts/peren-v85-*.png
+          path: |
+            artifacts/peren-v85-*.png
+            artifacts/peren-v10-*.png
           if-no-files-found: ignore
       - name: Share in-game screenshot proof
         if: always()
