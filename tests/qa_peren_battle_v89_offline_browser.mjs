@@ -15,10 +15,10 @@ try{
      const ready=await navigator.serviceWorker?.ready;
      if(!ready?.active)return false;
      const entries=await caches.keys();
-     const current=entries.find(x=>x.includes("battler-v89-20261024"));
+     const current=entries.find(x=>x.includes("infernal-v90-20261024"));
      if(!current)return false;
      const c=await caches.open(current);
-     const files=["battle-asset-pack-v84.json","idle.png","infernal.png","void.png","summon.png",
+     const files=["battle-asset-pack-v90.json","idle.png","infernal-v90.png","void.png","summon.png",
        "portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png"];
      const ok=await Promise.all(files.map(f=>c.match("./art/battle/runtime-v84/"+f)));
      return ok.every(x=>x?.ok);
@@ -30,7 +30,7 @@ try{
    await context.setOffline(true);
    await page.reload({waitUntil:"domcontentloaded",timeout:30000});
    await page.locator("#goForest").waitFor({state:"visible",timeout:30000});
-   await page.waitForFunction(()=>window.__perenBattleArtV84?.enabled===true,null,{timeout:20000});
+   await page.waitForFunction(()=>window.__perenBattleArtV90?.enabled===true,null,{timeout:20000});
    await page.locator("#goForest").click();
    await page.locator("#phaser canvas").waitFor({state:"visible",timeout:30000});
    await page.evaluate(()=>{
@@ -50,7 +50,7 @@ try{
    const verified=await page.evaluate(()=>({
      id:window.__perenLab.scene.getScene("BattleScene").__v84Idle.sprite.texture.key,
      battle:!document.getElementById("battleUI").hidden,
-     active:window.__perenBattleArtV84.enabled
+     active:window.__perenBattleArtV90.enabled
    }));
    assert.deepEqual(verified,{id:"peren-v84-idle",battle:true,active:true});
    assert.deepEqual(errors,[],errors.join("\n"));
