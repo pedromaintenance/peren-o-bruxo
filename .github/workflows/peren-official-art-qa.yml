@@ -28,6 +28,8 @@ on:
       - 'tests/qa_peren_battle_diagnostics.mjs'
       - 'tests/qa_peren_battle_v89_offline.mjs'
       - 'tests/qa_peren_battle_v89_offline_browser.mjs'
+      - 'tests/qa_peren_infernal_v90.mjs'
+      - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
       - 'ferramentas/instalar_battlers_v81.py'
@@ -49,7 +51,7 @@ jobs:
         run: |
           node --check game.js
           node --check phaser-demo-m1hf/assets/game-B5Gp97dd.js
-          python3 -m py_compile ferramentas/instalar_battle_v84.py ferramentas/tratar_battlers_v82.py ferramentas/instalar_battlers_v81.py ferramentas/instalar_battle_art_v8.py ferramentas/importar_summon_greater_demon.py ferramentas/importar_peren_batalha_v6.py ferramentas/gerar_peren_runtime.py ferramentas/gerar_peren_caminhada_v3.py ferramentas/gerar_peren_ferido_v4.py ferramentas/gerar_peren_coleta_ervas_v5.py
+          python3 -m py_compile ferramentas/instalar_infernal_v90.py ferramentas/instalar_battle_v84.py ferramentas/tratar_battlers_v82.py ferramentas/instalar_battlers_v81.py ferramentas/instalar_battle_art_v8.py ferramentas/importar_summon_greater_demon.py ferramentas/importar_peren_batalha_v6.py ferramentas/gerar_peren_runtime.py ferramentas/gerar_peren_caminhada_v3.py ferramentas/gerar_peren_ferido_v4.py ferramentas/gerar_peren_coleta_ervas_v5.py
           python3 -m pip install --disable-pip-version-check Pillow==11.3.0
           python3 tests/qa_peren_frames.py
           python3 tests/qa_peren_walk_v3.py
@@ -60,6 +62,8 @@ jobs:
       # Do not ship a release which only displays the previous exploration battler.
       - name: Release gate — require eight approved PNGs on the current PR
         run: node --test tests/qa_peren_battle_v85_binary.mjs
+      - name: Infernal v9.0 release gate — require the exact approved PNG in this checkout
+        run: node --test tests/qa_peren_infernal_v90.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
