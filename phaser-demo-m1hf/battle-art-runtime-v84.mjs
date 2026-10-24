@@ -92,6 +92,25 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
  doc.body.append(panel);
 }
 
+function battleArena(scene){
+ const w=scene.scale.width,h=scene.scale.height;
+ let top=h*.18,bottom=h*.73;
+ if(typeof document!=="undefined"){
+  const canvas=scene.game?.canvas?.getBoundingClientRect?.();
+  const header=document.getElementById("battleHeader")?.getBoundingClientRect?.();
+  const panel=document.getElementById("battlePanel")?.getBoundingClientRect?.();
+  if(canvas?.height&&header&&panel){
+   const ratio=h/canvas.height;
+   top=(header.bottom-canvas.top)*ratio+6;
+   bottom=(panel.top-canvas.top)*ratio-5;
+  }
+ }
+ // Fall back to safe fractional placement while responsive CSS settles.
+ if(bottom-top<Math.min(115,h*.20)){
+  top=h*.18;bottom=h*.74;
+ }
+ return {w,h,top,bottom,height:bottom-top};
+}
 function contains(scene,key){return Boolean(scene.textures?.exists?.(key))}
 function useIdle(scene){
  const cfg=CONTRACT.idle;
@@ -106,8 +125,12 @@ function useIdle(scene){
  original.setVisible(false);
  const relayout=()=>{
   if(!spr.active)return;
-  const w=scene.scale.width,h=scene.scale.height;
-  spr.setPosition(w*.245,h*.77).setScale(Math.min(w*.41/(cfg.width),h*.51/(cfg.height)));
+  const a=battleArena(scene);
+  const mobile=a.w<=620;
+  const boundWidth=a.w*(mobile?.46:.38);
+  const boundHeight=a.height*.9;
+  spr.setPosition(a.w*(mobile?.27:.25),a.bottom-3)
+     .setScale(Math.min(boundWidth/cfg.width,boundHeight/cfg.height));
  };
  relayout();
  scene.events.on("update",relayout);
@@ -121,12 +144,14 @@ function useIdle(scene){
 export function playVisualSequence(scene,id,{base=null}={}){
  const spec=CONTRACT[id];
  if(!spec||!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-asset"});
- const w=scene.scale.width,h=scene.scale.height;
+ const area=battleArena(scene);
  const target=base?.sprite;
  const former=target?.visible??true;
  if(target?.active)target.setVisible(false);
- const actor=scene.add.sprite(w*.245,h*.77,spec.key,0).setOrigin(.5,1).setDepth(22);
- actor.setScale(Math.min(w*.67/(spec.width),h*.56/(spec.height)));
+ const compact=area.w<=620;
+ const actor=scene.add.sprite(area.w*(compact?.43:.30),area.bottom-3,spec.key,0)
+  .setOrigin(.5,1).setDepth(22);
+ actor.setScale(Math.min(area.w*(compact?.84:.64)/spec.width,area.height*.89/spec.height));
  const delays=spec.durations||Array(spec.frames).fill(spec.frameMs);
  return new Promise(resolve=>{
   let current=0,timer=null,done=false;
@@ -188,8 +213,16 @@ function addControls(scene,doc){
  const button=doc.createElement("button");button.type="button";button.textContent="▣ Retratos";
  const dialog=addScenePortraitGallery(scene,doc);
  button.addEventListener("click",()=>dialog.showModal());
- holder.append(summon,button);panel.append(holder);
- scene.events.once("shutdown",()=>{holder.remove()});
+ holder.append(summon,button);
+ const details=doc.createElement("details");
+ details.id="peren-v84-battle-extras";
+ details.style.cssText="margin-top:5px;pointer-events:auto";
+ const summary=doc.createElement("summary");
+ summary.textContent="✦ Cenas e invocações (prévia)";
+ summary.style.cssText="cursor:pointer;color:#f1d49f;font:600 12px system-ui;padding:4px 2px";
+ details.append(summary,holder);
+ panel.append(details);
+ scene.events.once("shutdown",()=>{details.remove()});
 }
 export function installOnBattleScene(scene,{doc=document}={}){
  if(scene.__perenV84Installed)return false;
