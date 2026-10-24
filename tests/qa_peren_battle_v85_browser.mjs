@@ -85,12 +85,19 @@ try {
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="fire"){
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Spark v10 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Flame v10 PNG not activated in BattleScene");
             window.__perenV10SparkFrames=[];
             window.__perenV10Track=()=>{
               const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
               if(sprite)window.__perenV10SparkFrames.push(Number(sprite.frame?.name));
             };
             scene.events.on("update",window.__perenV10Track);
+            window.__perenV10FlameFrames=[];
+            window.__perenV10FlameTrack=()=>{
+              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-flame");
+              if(sprite)window.__perenV10FlameFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV10FlameTrack);
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -149,6 +156,13 @@ try {
           });
           assert.deepEqual(sparkFrames,[0,1,2,3,4],
             "Spark animation must show all five author-approved phases before ending");
+          const flameFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV10FlameTrack);
+            return [...new Set(window.__perenV10FlameFrames)];
+          });
+          assert.deepEqual(flameFrames,[0,1,2,3,4],
+            "Flame animation must show all five creator-approved phases before ending");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);
