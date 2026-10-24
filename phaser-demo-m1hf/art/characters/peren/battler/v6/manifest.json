@@ -1,0 +1,33 @@
+{
+  "schema": "peren.battle-asset/v1",
+  "id": "peren.battle.idle.v6",
+  "character": "Peren Kerrhylon",
+  "source": "Mago Astral Sombrio em Quatro Quadros(1).png",
+  "sourceSha256": "87f63f78130ffeb171f766dcdad44ac220167f7f027e61be3828e2536288d24b",
+  "originalSize": [
+    1916,
+    821
+  ],
+  "columns": 4,
+  "rows": 1,
+  "frameSize": [
+    479,
+    821
+  ],
+  "fps": 4,
+  "repeat": true,
+  "pixelPolicy": "pixel-exact crop, no resize",
+  "importStatus": "binary-pending",
+  "publicRuntimeEnabled": false,
+  "master": "peren_idle_battler_4frames.png",
+  "frames": [
+    "idle_01.png",
+    "idle_02.png",
+    "idle_03.png",
+    "idle_04.png"
+  ],
+  "relativeAssetDirectory": "./art/characters/peren/battler/v6/",
+  "behavior": "Only for battle; keep the exploration atlas 48x64 and fallback when unavailable",
+  "qualityNotes": "Traços de manto/cabelo chegam às bordas (3,5–12,1% de pixels com alfa >30); revisar pixels soltos antes de publicar.",
+  "artReviewedForProduction": false
+}

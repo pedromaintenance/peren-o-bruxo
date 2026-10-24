@@ -1,0 +1,56 @@
+{
+  "schema": "peren.battle-vfx/v1",
+  "id": "peren.battle.void_rift.v6",
+  "sourceArchive": "Peren_Kerrhylon_Assets_v6_Batalha_Integrada.zip",
+  "sourceArchiveSha256": "8165928775b3dd8ac7b1cc0bc1c9e5f5e6321c080dc3ae7770827dc75759695d",
+  "spriteSize": [
+    543,
+    362
+  ],
+  "frames": [
+    {
+      "order": 1,
+      "file": "01_charge_spark.png"
+    },
+    {
+      "order": 2,
+      "file": "02_charge_cluster.png"
+    },
+    {
+      "order": 3,
+      "file": "03_rift_opening.png"
+    },
+    {
+      "order": 4,
+      "file": "04_rift_stabilized.png"
+    },
+    {
+      "order": 5,
+      "file": "05_power_surge.png"
+    },
+    {
+      "order": 6,
+      "file": "06_projectile_launch.png"
+    },
+    {
+      "order": 7,
+      "file": "07_projectile_extended.png"
+    },
+    {
+      "order": 8,
+      "file": "08_dissipation.png"
+    }
+  ],
+  "proposedFps": 8,
+  "repeat": false,
+  "importStatus": "binary-pending",
+  "publicRuntimeEnabled": false,
+  "compositingStatus": "requires-art-cleanup",
+  "blockingIssues": [
+    "frames contain visible green backdrop despite RGBA",
+    "frame numbers are baked into the art",
+    "some frame edges include neighboring illustrated material"
+  ],
+  "statusNote": "Source frames must be preserved. Do not chroma-key automatically as destructive cleaning could remove character or magic details.",
+  "combatRule": "VFX only. Void Rift is not currently a separate learned spell; do not add to combat.js without design approval."
+}

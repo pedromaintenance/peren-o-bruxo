@@ -1,0 +1,79 @@
+{
+  "schema": "peren-battle-art-v84",
+  "verified": true,
+  "version": "8.4.0",
+  "source": "Peren cycle v8.3 approved art + v8.1 idle/summon/portrait masters",
+  "art_status": {
+    "idle": "approved",
+    "summon": "approved",
+    "infernal": "approved-by-user-v83",
+    "void": "v84-transition-smoothed",
+    "portraits": "reviewed"
+  },
+  "frames": {
+    "idle": 4,
+    "infernal": 8,
+    "void": 11,
+    "summon": 8
+  },
+  "frame_dimensions": {
+    "idle": [
+      560,
+      821
+    ],
+    "infernal": [
+      512,
+      341
+    ],
+    "void": [
+      640,
+      362
+    ],
+    "summon": [
+      512,
+      512
+    ]
+  },
+  "files": [
+    {
+      "path": "idle.png",
+      "bytes": 1664837,
+      "sha256": "f597da9909787090ac48e1291ca692295a323dc4461638e773073dd1715543d4"
+    },
+    {
+      "path": "infernal.png",
+      "bytes": 1819749,
+      "sha256": "29c5c642289ed776c3475646c2d91c30cf6b65c54da0739c908b86e5ab688173"
+    },
+    {
+      "path": "portrait_01.png",
+      "bytes": 605971,
+      "sha256": "c7da32b5a2aa98e36413280ca5ce413753201d15c28bcfd0c9e0405289225768"
+    },
+    {
+      "path": "portrait_02.png",
+      "bytes": 630167,
+      "sha256": "555af850c9f0a869c5aafb8578ebdb2a2003c16305e7c21d5e8d8f465816c120"
+    },
+    {
+      "path": "portrait_03.png",
+      "bytes": 629757,
+      "sha256": "4d46fba99a2f311949b78b6fb768096294b6ec5d7c67046fcaa4e4c9a184f58f"
+    },
+    {
+      "path": "portrait_04.png",
+      "bytes": 582763,
+      "sha256": "da47932b624bc216d8f31fbececa7c0d95761b6c43237ecaeeb8f7e53e0dbdfd"
+    },
+    {
+      "path": "summon.png",
+      "bytes": 2703005,
+      "sha256": "0a31ff32b60a0e793e4fa9ea405cd4da7cfc892c24f2226dccec5ee8c243935c"
+    },
+    {
+      "path": "void.png",
+      "bytes": 2246245,
+      "sha256": "e72d153996dad30a1a6f54f45fdd332ceb186d3e413c6257c5b072010a259f25"
+    }
+  ]
+}
