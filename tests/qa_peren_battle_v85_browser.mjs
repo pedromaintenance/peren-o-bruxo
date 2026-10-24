@@ -5,7 +5,7 @@ import {chromium} from "playwright";
 import {mkdirSync} from "node:fs";
 
 const base=process.env.PEREN_BASE_URL||"http://127.0.0.1:8765/phaser-demo-m1hf";
-const expected={fire:"peren-v84-infernal",arcane:"peren-v84-void"};
+const expected={fire:"peren-v90-infernal",arcane:"peren-v84-void"};
 const browser=await chromium.launch({headless:true,args:["--no-sandbox","--enable-webgl","--use-gl=angle"]});
 mkdirSync("artifacts",{recursive:true});
 try {
@@ -23,7 +23,7 @@ try {
         await page.locator("#goForest").waitFor({state:"visible",timeout:30000});
         await page.locator("#goForest").click();
         await page.locator("#phaser canvas").waitFor({state:"visible",timeout:30000});
-        await page.waitForFunction(()=>window.__perenBattleArtV84?.enabled===true,null,{timeout:45000});
+        await page.waitForFunction(()=>window.__perenBattleArtV90?.enabled===true,null,{timeout:45000});
         const initial=await page.evaluate(()=>{
           const game=window.__perenLab;
           if(!game)throw new Error("Peren Phaser game was not initialized");

@@ -58,8 +58,8 @@ test("infernal and Void Rift remain presentation-only wrappers, not new mechanic
  assert.doesNotMatch(s,/localStorage|sessionStorage|\.finishBattle\(|\.stepBattle\(/);
  assert.match(s,/Promise\.allSettled/);
  assert.match(s,/this\.__v84PreviewBusy/);
- assert.match(read("phaser-demo-m1hf/index.html"),/battle-art-runtime-v84\.mjs/);
- assert.match(read("phaser-demo-m1hf/demo-sw.js"),/battler-v89/);
+ assert.match(read("phaser-demo-m1hf/index.html"),/battle-art-runtime-v90\.mjs/);
+ assert.match(read("phaser-demo-m1hf/demo-sw.js"),/infernal-v90/);
 });
 test("Summon still restores visible idle after exact 2380 ms",async()=>{
  const ms=[],frames=[],queue=[];

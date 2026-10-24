@@ -3,19 +3,19 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
-import {CONTRACT,assetAvailability,checkInstalledAssets,diagnoseBattleArt} from "../phaser-demo-m1hf/battle-art-runtime-v84.mjs";
+import {CONTRACT,assetAvailability,checkInstalledAssets,diagnoseBattleArt} from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
 const list=JSON.parse(sw.match(/const FILES=(\[[^\n]+\]);/)[1]);
 const names=[CONTRACT.idle.file,CONTRACT.infernal.file,CONTRACT.void.file,CONTRACT.summon.file,...CONTRACT.portraits];
-const manifest={schema:"peren-battle-art-v84",verified:true,version:"8.4.0",files:names.map(path=>({path,sha256:"a".repeat(64)}))};
+const manifest={schema:"peren-battle-art-v90",verified:true,version:"8.4.0",files:names.map(path=>({path,sha256:"a".repeat(64)}))};
 const manifestOnly=async(url,{method}={})=>{
  if(method==="HEAD")throw new Error("airplane mode");
  return {ok:true,json:async()=>manifest};
 };
 test("v8.9 precache contains manifest and ALL 8 real PNG paths",()=>{
- assert.match(sw,/battler-v89-20261024/);
- for(const file of ["battle-asset-pack-v84.json",...names]){
+ assert.match(sw,/infernal-v90-20261024/);
+ for(const file of ["battle-asset-pack-v90.json",...names]){
   assert.ok(list.includes("./art/battle/runtime-v84/"+file),"missing offline art "+file);
  }
  assert.equal(new Set(list).size,list.length);
