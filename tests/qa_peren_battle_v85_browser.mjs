@@ -84,6 +84,13 @@ try {
         await page.evaluate(({spell})=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="fire"){
+            if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Spark v10 PNG not activated in BattleScene");
+            window.__perenV10SparkFrames=[];
+            window.__perenV10Track=()=>{
+              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
+              if(sprite)window.__perenV10SparkFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV10Track);
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -135,6 +142,13 @@ try {
         }
         await page.evaluate(async()=>await window.__perenV85Animation);
         if(spell==="fire"){
+          const sparkFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV10Track);
+            return [...new Set(window.__perenV10SparkFrames)];
+          });
+          assert.deepEqual(sparkFrames,[0,1,2,3,4],
+            "Spark animation must show all five author-approved phases before ending");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);
