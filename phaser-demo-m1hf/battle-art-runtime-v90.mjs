@@ -12,6 +12,8 @@ export const CONTRACT=Object.freeze({
  void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
  summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
   durations:[190,210,250,300,330,400,380,320]},
+ sparks:{key:"peren-v10-sparks",file:"sparks-v10.png",width:416,height:682,frames:5,
+  durations:[120,125,165,145,130]},
  portraits:["portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png"]
 });
 export const CINEMATIC_ACTIONS=Object.freeze({
@@ -84,6 +86,18 @@ export async function diagnoseBattleArt(fetcher=fetch,cacheStore=typeof caches==
    code:missing.length?"png-missing":offline?"cached-assets-present":"assets-present",
    missing,checks,version:marker.version??null};
 }
+/** Sparks are optional until the author-approved PNG is committed and cached. */
+export async function checkInstalledSparks(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
+ try{
+  const response=await fetcher(ROOT+"sparks-v10.json",{cache:"no-cache"});
+  if(!response?.ok)return false;
+  const marker=await response.json();
+  if(marker?.schema!=="peren-sparks-v10"||marker?.asset!==CONTRACT.sparks.file||
+     marker?.frames!==5||marker?.frame_size?.[0]!==416||marker?.frame_size?.[1]!==682||
+     !/^[a-f0-9]{64}$/.test(marker?.sha256??""))return false;
+  return (await assetAvailability(CONTRACT.sparks.file,fetcher,cacheStore)).ok;
+ }catch{return false}
+}
 function renderBattleArtDiagnostics(doc,result,diagnostic){
  if(!doc?.body)return;
  const previous=doc.getElementById("peren-battle-art-diagnostics");
@@ -101,6 +115,7 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
   "Integridade remota: "+diagnostic.code,
   "Versão: "+(diagnostic.version||"não identificada"),
   "PNG ausente: "+(diagnostic.missing?.join(", ")||"nenhum"),
+  "Faíscas v10 carregadas: "+Boolean(result?.sparksEnabled),
   "BattleScene carregado: "+Boolean(doc.defaultView?.__perenLab?.scene?.getScene)
  ].join("\n");
  const close=doc.createElement("button");close.type="button";close.textContent="Fechar";
@@ -252,6 +267,34 @@ export function playVisualSequence(scene,id,{base=null}={}){
   next();
  });
 }
+/** Five source-preserving spark phases near Peren's casting hand (no damage or mana). */
+export function playSparksOverlay(scene){
+ const spec=CONTRACT.sparks;
+ if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-sparks"});
+ const a=battleArena(scene),compact=a.w<=620;
+ const sprite=scene.add.sprite(a.w*(compact?.42:.42),a.top+a.height*.42,spec.key,0)
+  .setOrigin(.5,.5).setDepth(24);
+ const scale=Math.min(a.w*(compact?.31:.23)/spec.width,a.height*.80/spec.height);
+ sprite.setScale(scale);
+ return new Promise(resolve=>{
+  let current=0,timer=null,done=false;
+  const clear=(reason)=>{
+   if(done)return;
+   done=true;timer?.remove?.(false);scene.events.off("shutdown",cancel);
+   if(sprite.active)sprite.destroy();
+   resolve({played:reason==="complete",reason});
+  };
+  const cancel=()=>clear("shutdown");
+  scene.events.once("shutdown",cancel);
+  function next(){
+   if(done)return;
+   if(current===spec.frames)return clear("complete");
+   sprite.setFrame(current);
+   timer=scene.time.delayedCall(spec.durations[current++],next);
+  }
+  next();
+ });
+}
 function addScenePortraitGallery(scene,doc){
  const dialog=doc.createElement("dialog");
  dialog.id="peren-v84-portraits-dialog";
@@ -302,12 +345,12 @@ function addControls(scene,doc){
  panel.append(details);
  scene.events.once("shutdown",()=>{details.remove()});
 }
-export function installOnBattleScene(scene,{doc=document}={}){
+export function installOnBattleScene(scene,{doc=document,sparksEnabled=false}={}){
  if(scene.__perenV84Installed)return false;
  scene.__perenV84Installed=true;
  const originalPreload=scene.preload;
  scene.preload=function(){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[])];
   for(const a of assets)this.load.spritesheet(a.key,ROOT+a.file,{
     frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
   });
@@ -327,7 +370,8 @@ export function installOnBattleScene(scene,{doc=document}={}){
   // Concurrently retain normal gameplay choreography, hits and HUD.
   const results=await Promise.allSettled([
    originalPlayer.call(this,action,events),
-   playVisualSequence(this,effect,{base:this.__v84Idle})
+   playVisualSequence(this,effect,{base:this.__v84Idle}),
+   effect==="infernal"&&sparksEnabled?playSparksOverlay(this):Promise.resolve({played:false})
   ]);
   const failure=results.find(r=>r.status==="rejected");
   if(failure)throw failure.reason;
@@ -340,7 +384,7 @@ export function installOnBattleScene(scene,{doc=document}={}){
  // A player may have opened combat while the versioned manifest was fetched.
  // Hot-hydrate that already-running scene instead of waiting for the next battle.
  if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[])];
   const hydrate=()=>{
    if(!scene.peren?.active||scene.__v84Idle)return;
    scene.__v84Idle=useIdle(scene);
@@ -358,12 +402,13 @@ export function installOnBattleScene(scene,{doc=document}={}){
 export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=fetch}={}){
  const ready=await checkInstalledAssets(fetcher);
  if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
+ const sparksEnabled=await checkInstalledSparks(fetcher);
  for(let attempts=0;attempts<120;attempts++){
   const game=windowRef.__perenLab;
   if(game?.scene?.getScene){
    try{
     const scene=game.scene.getScene("BattleScene");
-    return {enabled:installOnBattleScene(scene,{doc}),reason:"installed"};
+    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled}),reason:"installed",sparksEnabled};
    }catch{}
   }
   await new Promise(r=>setTimeout(r,100));
