@@ -8,7 +8,7 @@
 const ROOT="./art/battle/runtime-v84/";
 export const CONTRACT=Object.freeze({
  idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
- infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,frameMs:180,tailMs:320},
+ infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,playFrames:7,frameMs:180,tailMs:320},
  void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
  summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
   durations:[190,210,250,300,330,400,380,320]},
@@ -211,7 +211,10 @@ export function playVisualSequence(scene,id,{base=null}={}){
  const actor=scene.add.sprite(area.w*(compact?.43:.30),area.bottom-3,spec.key,0)
   .setOrigin(.5,1).setDepth(22);
  actor.setScale(Math.min(area.w*(compact?.84:.64)/spec.width,area.height*.89/spec.height));
- const delays=spec.durations||Array(spec.frames).fill(spec.frameMs);
+ // The atlas is eight cells, but infernal cell #7 contains a stray skull behind Peren.
+ // Never display that source cell; instead dissolve cleanly out of cell #6.
+ const renderedFrames=spec.playFrames??spec.frames;
+ const delays=spec.durations||Array(renderedFrames).fill(spec.frameMs);
  // Only Infernal needs a spatial crop feather and a temporal fade-out.
  const releaseMask=id==="infernal"?softenInfernalEdges(scene,actor,spec):null;
  return new Promise(resolve=>{
@@ -230,12 +233,12 @@ export function playVisualSequence(scene,id,{base=null}={}){
   scene.events.once("shutdown",cancel);
   function next(){
    if(done)return;
-   if(current>=spec.frames)return complete("complete");
+   if(current>=renderedFrames)return complete("complete");
    actor.setFrame(current);
    let duration=delays[current];
    if(id==="infernal"){
-    if(current===spec.frames-2)actor.setAlpha(.92);
-    if(current===spec.frames-1){
+    if(current===renderedFrames-2)actor.setAlpha(.92);
+    if(current===renderedFrames-1){
      duration=spec.tailMs||duration;
      // The last image genuinely dissolves instead of disappearing on a timer.
      fadeTween=scene.tweens?.add?.({
