@@ -25,6 +25,7 @@ on:
       - 'tests/qa_peren_battle_v84.mjs'
       - 'tests/qa_peren_battle_v85_binary.mjs'
       - 'tests/qa_peren_battle_v85_browser.mjs'
+      - 'tests/qa_peren_battle_diagnostics.mjs'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
       - 'ferramentas/instalar_battlers_v81.py'
@@ -52,7 +53,7 @@ jobs:
           python3 tests/qa_peren_walk_v3.py
           python3 tests/qa_peren_wounded_v4.py
           python3 tests/qa_peren_ervas_v5.py
-          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_v6_assets.mjs tests/qa_peren_summon_greater_demon.mjs tests/qa_peren_battle_art_runtime_v8.mjs tests/qa_peren_battler_v81.mjs tests/qa_peren_battler_v82_review.mjs tests/qa_peren_battle_v84.mjs
+          node --test tests/qa_single_free_mode.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_v6_assets.mjs tests/qa_peren_summon_greater_demon.mjs tests/qa_peren_battle_art_runtime_v8.mjs tests/qa_peren_battler_v81.mjs tests/qa_peren_battler_v82_review.mjs tests/qa_peren_battle_v84.mjs tests/qa_peren_battle_diagnostics.mjs
       # Unlike contract tests, this step fails when actual approved PNGs are absent.
       # Do not ship a release which only displays the previous exploration battler.
       - name: Release gate — require eight approved PNGs on the current PR
