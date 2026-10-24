@@ -44,6 +44,7 @@ jobs:
           node --test tests/qa_peren_battle_v85_binary.mjs
 
       - name: Commit images into this PR branch and remove upload ZIP
+        id: commit_assets
         shell: bash
         run: |
           set -euo pipefail
@@ -99,6 +100,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Dispatch full official artwork QA on the bot's latest commit
+        if: ${{ always() && steps.commit_assets.outcome == 'success' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
