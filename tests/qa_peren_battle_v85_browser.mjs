@@ -83,6 +83,15 @@ try {
         // rather than photographing the idle state after the effect has disappeared.
         await page.evaluate(({spell})=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
+          if(spell==="fire"){
+            window.__perenV92SeenFrames=[];
+            window.__perenV92Observe=()=>{
+              const sprite=scene.children.list.find(child=>
+                child.active&&child.texture?.key==="peren-v90-infernal");
+              if(sprite)window.__perenV92SeenFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV92Observe);
+          }
           window.__perenV85Animation=scene.animatePlayer(
             spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[]
           );
@@ -113,7 +122,26 @@ try {
         assert.equal(during.originalHidden,true);
         assert.ok(during.bottom>0 && during.top<height,"Spell animation must intersect the visible viewport");
         await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
+        if(spell==="fire"){
+          // Capture the actual penultimate atlas cell at the FINAL playback step.
+          await page.waitForFunction(()=>{
+            const scene=window.__perenLab?.scene?.getScene("BattleScene");
+            const sprite=scene?.children?.list?.find(child=>
+              child.active&&child.texture?.key==="peren-v90-infernal");
+            return sprite&&Number(sprite.frame?.name)===6;
+          },null,{timeout:8000});
+          await page.screenshot({path:`artifacts/peren-v92-infernal-clean-ending-${width}.png`,fullPage:false});
+        }
         await page.evaluate(async()=>await window.__perenV85Animation);
+        if(spell==="fire"){
+          const seen=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV92Observe);
+            return window.__perenV92SeenFrames;
+          });
+          assert.ok(seen.includes(6),"Clean ending frame #6 must be visible");
+          assert.equal(seen.includes(7),false,"Defective skull frame #7 was drawn!");
+        }
         const after=await page.evaluate(texture=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
           return {
