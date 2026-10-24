@@ -1,0 +1,48 @@
+name: Peren v8.5 Battle Art Release Gate
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/peren-battle-v85-release.yml'
+      - 'phaser-demo-m1hf/art/battle/runtime-v84/**'
+      - 'phaser-demo-m1hf/battle-art-runtime-v84.mjs'
+      - 'phaser-demo-m1hf/index.html'
+      - 'tests/qa_peren_battle_v85_*'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-battle-art:
+    name: Require real PNGs and prove Phaser sprite swap
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Release readiness: all eight exact PNGs, hash + frame grid
+        run: node --test tests/qa_peren_battle_v85_binary.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Serve actual Phaser build
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-v85-battle.log 2>&1 &
+          for i in $(seq 1 25); do
+            if curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/ >/dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/peren-v85-battle.log
+          exit 1
+      - name: Play real combat at 390px and 1280px, fire and arcane
+        env:
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: timeout 170s node tests/qa_peren_battle_v85_browser.mjs
+      - name: Preserve screenshots of real BattleScene
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: peren-v85-real-combat-390-1280
+          path: artifacts/peren-v85-battle-*.png
+          if-no-files-found: ignore

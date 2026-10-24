@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "id": "peren_summon_greater_demon",
+  "display_name": "Peren Kerrhylon — Summon Greater Demon",
+  "category": "battler",
+  "type": "one_shot",
+  "sourceArchive": "Peren_Summon_Greater_Demon_Integration_v1(1).zip",
+  "sourceArchiveSha256": "e0e36495bfa649ff85af65e94e844ffa5a15dec92de2ebc0519e357b7432c179",
+  "sourceAtlas": "atlases/peren_summon_greater_demon_4x2_512.png",
+  "frameSize": [
+    512,
+    512
+  ],
+  "atlasSize": [
+    2048,
+    1024
+  ],
+  "frames": [
+    {
+      "name": "01_preparacao",
+      "file": "frames/01_preparacao.png",
+      "index": 0,
+      "durationMs": 190
+    },
+    {
+      "name": "02_fissura_inicial",
+      "file": "frames/02_fissura_inicial.png",
+      "index": 1,
+      "durationMs": 210
+    },
+    {
+      "name": "03_fenda_aberta",
+      "file": "frames/03_fenda_aberta.png",
+      "index": 2,
+      "durationMs": 250
+    },
+    {
+      "name": "04_primeiro_contato",
+      "file": "frames/04_primeiro_contato.png",
+      "index": 3,
+      "durationMs": 300
+    },
+    {
+      "name": "05_emergencia",
+      "file": "frames/05_emergencia.png",
+      "index": 4,
+      "durationMs": 330
+    },
+    {
+      "name": "06_manifestacao_completa",
+      "file": "frames/06_manifestacao_completa.png",
+      "index": 5,
+      "durationMs": 400
+    },
+    {
+      "name": "07_confronto_quarta_parede",
+      "file": "frames/07_confronto_quarta_parede.png",
+      "index": 6,
+      "durationMs": 380
+    },
+    {
+      "name": "08_retracao_da_fenda",
+      "file": "frames/08_retracao_da_fenda.png",
+      "index": 7,
+      "durationMs": 320
+    }
+  ],
+  "totalDurationMs": 2380,
+  "loop": false,
+  "anchor": [
+    0.5,
+    1
+  ],
+  "restore": "battler idle",
+  "visualNotes": "Original chroma keyed automatically; alpha edge halos may be visible in hair, ribbons and crack. Demon and Peren share the same PNG cells.",
+  "assetStatus": "binary-pending-github",
+  "runtimeStatus": "adapter-available-not-activated",
+  "mechanics": "visual only; no new spell, demon entity, mana cost, concentration, damage, saves or rewards",
+  "note": "Source PNGs and standalone v8 testing panel delivered in current conversation. Upload actual PNG binaries and verify Pages before enabling preload."
+}
