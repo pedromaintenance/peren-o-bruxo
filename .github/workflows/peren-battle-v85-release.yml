@@ -44,5 +44,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: peren-v85-real-combat-390-1280
-          path: artifacts/peren-v85-battle-*.png
+          path: artifacts/peren-v85-*.png
           if-no-files-found: ignore
