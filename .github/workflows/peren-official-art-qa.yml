@@ -35,6 +35,7 @@ on:
       - 'tests/qa_peren_ring_v12.mjs'
       - 'tests/qa_peren_burst_v13.mjs'
       - 'tests/qa_peren_blaze_v14.mjs'
+      - 'tests/qa_peren_smoke_v15.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
@@ -82,6 +83,8 @@ jobs:
         run: node --test tests/qa_peren_burst_v13.mjs
       - name: Labareda v14 release gate — verify real PNG and five frames
         run: node --test tests/qa_peren_blaze_v14.mjs
+      - name: Smoke v15 release gate — require real RGBA sprite and 5 frames
+        run: node --test tests/qa_peren_smoke_v15.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
