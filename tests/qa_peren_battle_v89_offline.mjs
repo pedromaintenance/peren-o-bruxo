@@ -14,7 +14,7 @@ const manifestOnly=async(url,{method}={})=>{
  return {ok:true,json:async()=>manifest};
 };
 test("v8.9 precache contains manifest and ALL 8 real PNG paths",()=>{
- assert.match(sw,/fire-ring-v12-20261025/);
+ assert.match(sw,/fire-burst-v13-20261025/);
  for(const file of ["battle-asset-pack-v90.json",...names]){
   assert.ok(list.includes("./art/battle/runtime-v84/"+file),"missing offline art "+file);
  }
