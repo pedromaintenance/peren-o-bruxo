@@ -1,0 +1,54 @@
+{
+  "schema": "peren-pupil-v11",
+  "asset": "pupil-v11.png",
+  "source": "Sequência de Pupilas Flamejantes(1).png",
+  "source_sha256": "f60f74500f4cab9cce3d235c1ce0bc8a0b5178a0c358ad53504809debea0c7b8",
+  "sha256": "b172b67cdb1560ef0b0f80e08bdbeb77d1e512037d4825e06601f99d4ed571b4",
+  "bytes": 1018021,
+  "dimensions": [
+    2080,
+    682
+  ],
+  "frame_size": [
+    416,
+    682
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    135,
+    165,
+    230,
+    170,
+    160
+  ],
+  "source_x_ranges": [
+    [
+      0,
+      410
+    ],
+    [
+      410,
+      820
+    ],
+    [
+      820,
+      1230
+    ],
+    [
+      1230,
+      1640
+    ],
+    [
+      1640,
+      2048
+    ]
+  ],
+  "transform": "only equal-cell slicing and transparent padding; original RGBA pixels retained"
+}
