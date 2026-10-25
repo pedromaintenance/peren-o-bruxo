@@ -41,7 +41,7 @@ test("PWA now imports v9 module, new marker, new PNG, and unique offline cache",
  const html=readFileSync(resolve(root,"phaser-demo-m1hf/index.html"),"utf8");
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
  assert.match(html,/battle-art-runtime-v90\.mjs/);
- assert.match(sw,/preview-fire-blaze-v14-20261025/);
+ assert.match(sw,/preview-fire-smoke-v15-20261025/);
  for(const p of ["battle-asset-pack-v90.json","infernal-v90.png"])assert.ok(sw.includes(p),p);
 });
 test("release gate: approved PNG must be committed and byte-identical",()=>{
