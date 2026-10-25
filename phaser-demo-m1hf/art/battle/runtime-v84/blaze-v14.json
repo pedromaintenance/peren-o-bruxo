@@ -1,0 +1,55 @@
+{
+  "schema": "peren-blaze-v14",
+  "asset": "blaze-v14.png",
+  "source": "labareda_spritesheet_5_quadros(1).png",
+  "source_sha256": "c7c06c14a3bf6211e406c666d5cb63d1d54bd9a3540cef16e08e026205193607",
+  "sha256": "c30c398166ca542f394615cffafe88431b0aeac88ccf74a74cb544a341d505c0",
+  "bytes": 532291,
+  "dimensions": [
+    2080,
+    226
+  ],
+  "frame_size": [
+    416,
+    226
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    120,
+    150,
+    210,
+    155,
+    135
+  ],
+  "delay_ms": 560,
+  "source_x_ranges": [
+    [
+      70,
+      325
+    ],
+    [
+      448,
+      773
+    ],
+    [
+      826,
+      1222
+    ],
+    [
+      1267,
+      1607
+    ],
+    [
+      1726,
+      1974
+    ]
+  ],
+  "transform": "Original RGBA pixels cropped from separated segments; fiery convergence aligned to x=405 in each transparent cell; no painting or resampling."
+}
