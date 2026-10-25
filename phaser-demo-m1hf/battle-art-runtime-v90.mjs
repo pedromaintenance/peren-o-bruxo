@@ -26,6 +26,8 @@ export const CONTRACT=Object.freeze({
   durations:[130,150,200,150,135],delayMs:490},
  blaze:{key:"peren-v14-blaze",file:"blaze-v14.png",width:416,height:226,frames:5,
   durations:[120,150,210,155,135],delayMs:560},
+ smoke:{key:"peren-v15-smoke",file:"smoke-v15.png",width:416,height:280,frames:5,
+  durations:[125,160,220,170,145],delayMs:630},
  portraits:["portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png"]
 });
 export const CINEMATIC_ACTIONS=Object.freeze({
@@ -179,6 +181,20 @@ export async function checkInstalledBlaze(fetcher=fetch,cacheStore=typeof caches
   return (await assetAvailability(spec.file,fetcher,cacheStore)).ok;
  }catch{return false}
 }
+/** Optional smoke needs its actual RGBA PNG and matching five-frame manifest. */
+export async function checkInstalledSmoke(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
+ const spec=CONTRACT.smoke;
+ try{
+  const response=await fetcher(ROOT+"smoke-v15.json",{cache:"no-cache"});
+  if(!response?.ok)return false;
+  const marker=await response.json();
+  if(marker?.schema!=="peren-smoke-v15"||marker?.asset!==spec.file||
+     marker?.frames!==spec.frames||marker?.frame_size?.[0]!==spec.width||
+     marker?.frame_size?.[1]!==spec.height||
+     !/^[a-f0-9]{64}$/.test(marker?.sha256??""))return false;
+  return (await assetAvailability(spec.file,fetcher,cacheStore)).ok;
+ }catch{return false}
+}
 function renderBattleArtDiagnostics(doc,result,diagnostic){
  if(!doc?.body)return;
  const previous=doc.getElementById("peren-battle-art-diagnostics");
@@ -203,6 +219,7 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
   "Anel v12 carregado: "+Boolean(result?.ringEnabled),
   "Rajada v13 carregada: "+Boolean(result?.burstEnabled),
   "Labareda v14 carregada: "+Boolean(result?.blazeEnabled),
+  "Fumaça v15 carregada: "+Boolean(result?.smokeEnabled),
   "BattleScene carregado: "+Boolean(doc.defaultView?.__perenLab?.scene?.getScene)
  ].join("\n");
  const close=doc.createElement("button");close.type="button";close.textContent="Fechar";
@@ -544,6 +561,37 @@ export function playBlazeOverlay(scene){
   });
  });
 }
+/** Eighth fire layer: residual smoke expands after flame with no gameplay effects. */
+export function playSmokeOverlay(scene){
+ const spec=CONTRACT.smoke;
+ if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-smoke"});
+ const area=battleArena(scene),compact=area.w<=620;
+ const sprite=scene.add.sprite(area.w*(compact?.66:.68),area.top+area.height*.46,spec.key,0)
+  .setOrigin(.5,.5).setDepth(28);
+ sprite.setScale(Math.min(area.w*(compact?.47:.36)/spec.width,area.height*.66/spec.height));
+ sprite.setAlpha(0);
+ return new Promise(resolve=>{
+  let frame=0,timer=null,done=false;
+  function complete(reason){
+   if(done)return;
+   done=true;timer?.remove?.(false);scene.events.off("shutdown",cancel);
+   if(sprite.active)sprite.destroy();
+   resolve({played:reason==="complete",reason});
+  }
+  const cancel=()=>complete("shutdown");
+  scene.events.once("shutdown",cancel);
+  function next(){
+   if(done)return;
+   if(frame>=spec.frames)return complete("complete");
+   sprite.setFrame(frame);
+   timer=scene.time.delayedCall(spec.durations[frame++],next);
+  }
+  timer=scene.time.delayedCall(spec.delayMs,()=>{
+   if(done)return;
+   sprite.setAlpha(1);next();
+  });
+ });
+}
 function addScenePortraitGallery(scene,doc){
  const dialog=doc.createElement("dialog");
  dialog.id="peren-v84-portraits-dialog";
@@ -594,12 +642,12 @@ function addControls(scene,doc){
  panel.append(details);
  scene.events.once("shutdown",()=>{details.remove()});
 }
-export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,embersEnabled=false,pupilEnabled=false,ringEnabled=false,burstEnabled=false,blazeEnabled=false}={}){
+export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,embersEnabled=false,pupilEnabled=false,ringEnabled=false,burstEnabled=false,blazeEnabled=false,smokeEnabled=false}={}){
  if(scene.__perenV84Installed)return false;
  scene.__perenV84Installed=true;
  const originalPreload=scene.preload;
  scene.preload=function(){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[]),...(smokeEnabled?[CONTRACT.smoke]:[])];
   for(const a of assets)this.load.spritesheet(a.key,ROOT+a.file,{
     frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
   });
@@ -626,7 +674,8 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
    effect==="infernal"&&pupilEnabled?playPupilOverlay(this):Promise.resolve({played:false}),
    effect==="infernal"&&ringEnabled?playRingOverlay(this):Promise.resolve({played:false}),
    effect==="infernal"&&burstEnabled?playBurstOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&blazeEnabled?playBlazeOverlay(this):Promise.resolve({played:false})
+   effect==="infernal"&&blazeEnabled?playBlazeOverlay(this):Promise.resolve({played:false}),
+   effect==="infernal"&&smokeEnabled?playSmokeOverlay(this):Promise.resolve({played:false})
   ]);
   const failure=results.find(r=>r.status==="rejected");
   if(failure)throw failure.reason;
@@ -639,7 +688,7 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
  // A player may have opened combat while the versioned manifest was fetched.
  // Hot-hydrate that already-running scene instead of waiting for the next battle.
  if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[]),...(smokeEnabled?[CONTRACT.smoke]:[])];
   const hydrate=()=>{
    if(!scene.peren?.active||scene.__v84Idle)return;
    scene.__v84Idle=useIdle(scene);
@@ -657,15 +706,15 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
 export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=fetch}={}){
  const ready=await checkInstalledAssets(fetcher);
  if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
- const [sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled]=await Promise.all([
-  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledEmbers(fetcher),checkInstalledPupil(fetcher),checkInstalledRing(fetcher),checkInstalledBurst(fetcher),checkInstalledBlaze(fetcher)
+ const [sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled]=await Promise.all([
+  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledEmbers(fetcher),checkInstalledPupil(fetcher),checkInstalledRing(fetcher),checkInstalledBurst(fetcher),checkInstalledBlaze(fetcher),checkInstalledSmoke(fetcher)
  ]);
  for(let attempts=0;attempts<120;attempts++){
   const game=windowRef.__perenLab;
   if(game?.scene?.getScene){
    try{
     const scene=game.scene.getScene("BattleScene");
-    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled}),reason:"installed",sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled};
+    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled}),reason:"installed",sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled};
    }catch{}
   }
   await new Promise(r=>setTimeout(r,100));

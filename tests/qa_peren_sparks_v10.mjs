@@ -56,7 +56,7 @@ test("runtime shows 0→4 and destroys overlay without modifying actor",async()=
 });
 test("PWA precaches v10 marker + spritesheet",()=>{
  const sw=readFileSync(resolve(ROOT,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-blaze-v14-20261025/);
+ assert.match(sw,/preview-fire-smoke-v15-20261025/);
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.png"));
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.json"));
 });

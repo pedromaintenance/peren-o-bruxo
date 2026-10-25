@@ -1,0 +1,55 @@
+{
+  "schema": "peren-smoke-v15",
+  "asset": "smoke-v15.png",
+  "source": "fumaca_8_spritesheet_5_quadros (1).png",
+  "source_sha256": "484e23571ee5a998bc334440cdd1f94d41c6f5d60df36782a940b30cccf917b8",
+  "sha256": "e71b3cc5455f15a97fe550cd617db6c1df75b06eae90785c031e73decfee2485",
+  "bytes": 529234,
+  "dimensions": [
+    2080,
+    280
+  ],
+  "frame_size": [
+    416,
+    280
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    125,
+    160,
+    220,
+    170,
+    145
+  ],
+  "delay_ms": 630,
+  "source_x_ranges": [
+    [
+      104,
+      288
+    ],
+    [
+      463,
+      757
+    ],
+    [
+      827,
+      1220
+    ],
+    [
+      1282,
+      1594
+    ],
+    [
+      1753,
+      1950
+    ]
+  ],
+  "transform": "Source RGBA pixels cropped from separate alpha regions and positioned 12px from each cell's left edge. Original Y positions and colors retained without painting or resampling."
+}
