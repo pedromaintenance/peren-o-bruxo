@@ -26,7 +26,7 @@ try {
     if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener("controllerchange",resolve,{once:true}));
     const keys=await caches.keys();
     const active=keys.filter(x=>x.startsWith("peren-phaser-m1hf-preview-"));
-    if(active.length!==1||!active[0].includes("fire-ring-v12"))throw Error("Unexpected cache version: "+keys);
+    if(active.length!==1||!active[0].includes("fire-burst-v13"))throw Error("Unexpected cache version: "+keys);
     for(const f of ["./modos.html","./campanha.html","./cronica.html"]){
       if(await caches.match(f))throw Error("Retired page persisted in cache: "+f);
     }
