@@ -84,6 +84,20 @@ try {
         await page.evaluate(({spell})=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="fire"){
+            if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Spark v10 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Flame v10 PNG not activated in BattleScene");
+            window.__perenV10SparkFrames=[];
+            window.__perenV10Track=()=>{
+              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
+              if(sprite)window.__perenV10SparkFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV10Track);
+            window.__perenV10FlameFrames=[];
+            window.__perenV10FlameTrack=()=>{
+              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-flame");
+              if(sprite)window.__perenV10FlameFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV10FlameTrack);
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -121,20 +135,26 @@ try {
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
         assert.ok(during.bottom>0 && during.top<height,"Spell animation must intersect the visible viewport");
-        if(spell==="fire"){
-          // Capture the actual penultimate atlas cell at the FINAL playback step.
-          await page.waitForFunction(()=>{
-            const scene=window.__perenLab?.scene?.getScene("BattleScene");
-            const sprite=scene?.children?.list?.find(child=>
-              child.active&&child.texture?.key==="peren-v90-infernal");
-            return sprite&&Number(sprite.frame?.name)===6;
-          },null,{timeout:8000});
-          await page.screenshot({path:`artifacts/peren-v92-infernal-clean-ending-${width}.png`,fullPage:false});
-        }else{
-          await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
-        }
+        // Frame-by-frame evidence is collected by scene update listeners above.
+        // Avoid waiting on an ephemeral frame after expensive screenshots:
+        // the renderer may have passed it by the time Playwright polls.
+        await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
         await page.evaluate(async()=>await window.__perenV85Animation);
         if(spell==="fire"){
+          const sparkFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV10Track);
+            return [...new Set(window.__perenV10SparkFrames)];
+          });
+          assert.deepEqual(sparkFrames,[0,1,2,3,4],
+            "Spark animation must show all five author-approved phases before ending");
+          const flameFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV10FlameTrack);
+            return [...new Set(window.__perenV10FlameFrames)];
+          });
+          assert.deepEqual(flameFrames,[0,1,2,3,4],
+            "Flame animation must show all five creator-approved phases before ending");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);

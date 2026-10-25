@@ -47,7 +47,7 @@ test('existing battle game loads the new optional module, never replaces gamepla
  const sw=read('phaser-demo-m1hf/demo-sw.js');
  assert.match(html,/src="\.\/battle-art-runtime-v90\.mjs"/);
  assert.match(sw,/battle-art-runtime-v90\.mjs/);
- assert.match(sw,/infernal-v92-20261024/);
+ assert.match(sw,/sparks-v10-20261024/);
  assert.doesNotMatch(read('phaser-demo-m1hf/battle-art-runtime-v81.mjs'),/localStorage|sessionStorage|\.finishBattle\(/);
 });
 test('one shot still restores idle after eight original summon timings',async()=>{
