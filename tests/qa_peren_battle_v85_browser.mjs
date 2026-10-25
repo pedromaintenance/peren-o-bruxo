@@ -86,6 +86,8 @@ try {
           if(spell==="fire"){
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Spark v10 PNG not activated in BattleScene");
             if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Flame v10 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.embersEnabled!==true)throw Error("Embers v11 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.pupilEnabled!==true)throw Error("Pupil v11 PNG not activated in BattleScene");
             window.__perenV10SparkFrames=[];
             window.__perenV10Track=()=>{
               const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
@@ -98,6 +100,17 @@ try {
               if(sprite)window.__perenV10FlameFrames.push(Number(sprite.frame?.name));
             };
             scene.events.on("update",window.__perenV10FlameTrack);
+            for(const [id,key] of [["Embers","peren-v11-embers"],["Pupil","peren-v11-pupil"]]){
+              const frames=[];
+              window["__perenV11"+id+"Frames"]=frames;
+              const handler=()=>{
+                const sprite=scene.children.list.find(child=>
+                  child.active&&child.texture?.key===key&&child.alpha>0);
+                if(sprite)frames.push(Number(sprite.frame?.name));
+              };
+              window["__perenV11"+id+"Track"]=handler;
+              scene.events.on("update",handler);
+            }
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -155,6 +168,15 @@ try {
           });
           assert.deepEqual(flameFrames,[0,1,2,3,4],
             "Flame animation must show all five creator-approved phases before ending");
+          const phases=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            return ["Embers","Pupil"].map(id=>{
+              scene.events.off("update",window["__perenV11"+id+"Track"]);
+              return [...new Set(window["__perenV11"+id+"Frames"])];
+            });
+          });
+          assert.deepEqual(phases,[[0,1,2,3,4],[0,1,2,3,4]],
+            "Embers and Pupil must each render all five real phases");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);
