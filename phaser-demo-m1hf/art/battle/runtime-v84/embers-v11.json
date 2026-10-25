@@ -1,0 +1,54 @@
+{
+  "schema": "peren-embers-v11",
+  "asset": "embers-v11.png",
+  "source": "Sequência de Brasas em Chamas.png",
+  "source_sha256": "c3ce68bd09ef5e02d64ef6303d0d7d75592dc47719c117d6cbad7ef5b64c2072",
+  "sha256": "e3f08845193058cdba534a364dac83da1b472b9cc96e323496f0502c2f580026",
+  "bytes": 1098226,
+  "dimensions": [
+    2080,
+    682
+  ],
+  "frame_size": [
+    416,
+    682
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    125,
+    145,
+    205,
+    155,
+    125
+  ],
+  "source_x_ranges": [
+    [
+      0,
+      410
+    ],
+    [
+      410,
+      815
+    ],
+    [
+      815,
+      1230
+    ],
+    [
+      1230,
+      1640
+    ],
+    [
+      1640,
+      2048
+    ]
+  ],
+  "transform": "only equal-cell slicing and transparent padding; original RGBA pixels retained"
+}
