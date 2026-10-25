@@ -33,6 +33,7 @@ on:
       - 'tests/qa_peren_flame_v10.mjs'
       - 'tests/qa_peren_fire_elements_v11.mjs'
       - 'tests/qa_peren_ring_v12.mjs'
+      - 'tests/qa_peren_burst_v13.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
@@ -76,6 +77,8 @@ jobs:
         run: node --test tests/qa_peren_fire_elements_v11.mjs
       - name: Ring v12 release gate — require authentic five-frame PNG
         run: node --test tests/qa_peren_ring_v12.mjs
+      - name: Burst v13 release gate — verify real PNG and five-frame animation
+        run: node --test tests/qa_peren_burst_v13.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1

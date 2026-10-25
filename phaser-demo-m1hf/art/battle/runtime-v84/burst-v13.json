@@ -1,0 +1,55 @@
+{
+  "schema": "peren-burst-v13",
+  "asset": "burst-v13.png",
+  "source": "rajada_7_spritesheet_5_quadros (1).png",
+  "source_sha256": "ec222887d30f10fd17ec87fde3bf5369a34da948139d068559f2223c5eec323b",
+  "sha256": "5bee8cdc44b3dac2d1301b8df47577b598e81268730db8590c7841867205c4fa",
+  "bytes": 594525,
+  "dimensions": [
+    2080,
+    336
+  ],
+  "frame_size": [
+    416,
+    336
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    130,
+    150,
+    200,
+    150,
+    135
+  ],
+  "delay_ms": 490,
+  "source_x_ranges": [
+    [
+      0,
+      420
+    ],
+    [
+      420,
+      830
+    ],
+    [
+      830,
+      1230
+    ],
+    [
+      1230,
+      1670
+    ],
+    [
+      1670,
+      2048
+    ]
+  ],
+  "transform": "Source RGBA pixels preserved, cropped by fully empty column gaps and right-aligned inside five transparent 416x336 cells; no interpolation or painting."
+}
