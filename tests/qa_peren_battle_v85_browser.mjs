@@ -88,6 +88,7 @@ try {
             if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Flame v10 PNG not activated in BattleScene");
             if(window.__perenBattleArtV90?.embersEnabled!==true)throw Error("Embers v11 PNG not activated in BattleScene");
             if(window.__perenBattleArtV90?.pupilEnabled!==true)throw Error("Pupil v11 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.ringEnabled!==true)throw Error("Ring v12 PNG not activated in BattleScene");
             window.__perenV10SparkFrames=[];
             window.__perenV10Track=()=>{
               const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
@@ -111,6 +112,13 @@ try {
               window["__perenV11"+id+"Track"]=handler;
               scene.events.on("update",handler);
             }
+            window.__perenV12RingFrames=[];
+            window.__perenV12RingTrack=()=>{
+              const sprite=scene.children.list.find(child=>
+                child.active&&child.texture?.key==="peren-v12-ring"&&child.alpha>0);
+              if(sprite)window.__perenV12RingFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV12RingTrack);
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -177,6 +185,13 @@ try {
           });
           assert.deepEqual(phases,[[0,1,2,3,4],[0,1,2,3,4]],
             "Embers and Pupil must each render all five real phases");
+          const ringFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV12RingTrack);
+            return [...new Set(window.__perenV12RingFrames)];
+          });
+          assert.deepEqual(ringFrames,[0,1,2,3,4],
+            "Fifth effect Ring must render all five real phases");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);

@@ -1,0 +1,55 @@
+{
+  "schema": "peren-ring-v12",
+  "asset": "ring-v12.png",
+  "source": "Progressão de Anéis de Fogo Celestial(1).png",
+  "source_sha256": "809fd5e07f3cba3b4570627315c79dbee0b7827b52673da8b9aceaa6adb54faf",
+  "sha256": "24eecad72e0a402ef79447940fb05cf737ca4f439e520882f1e6447c96797fb4",
+  "bytes": 971008,
+  "dimensions": [
+    2400,
+    682
+  ],
+  "frame_size": [
+    480,
+    682
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    130,
+    155,
+    190,
+    170,
+    145
+  ],
+  "start_delay_ms": 430,
+  "source_x_ranges": [
+    [
+      0,
+      381
+    ],
+    [
+      381,
+      795
+    ],
+    [
+      795,
+      1261
+    ],
+    [
+      1261,
+      1665
+    ],
+    [
+      1665,
+      2048
+    ]
+  ],
+  "transform": "Five source-preserving cuts centered within transparent 480x682 cells; no painting, resampling or regeneration."
+}
