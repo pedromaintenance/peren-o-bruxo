@@ -65,6 +65,6 @@ test("Burst waits 490ms, plays 0–4 and cleans up its sprite",async()=>{
 });
 test("PWA retains Burst PNG and manifest for offline play",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-burst-v13-20261025/);
+ assert.match(sw,/preview-fire-blaze-v14-20261025/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/burst-v13."+ext));
 });
