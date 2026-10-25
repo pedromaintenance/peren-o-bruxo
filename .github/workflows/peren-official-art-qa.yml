@@ -31,6 +31,7 @@ on:
       - 'tests/qa_peren_infernal_v90.mjs'
       - 'tests/qa_peren_sparks_v10.mjs'
       - 'tests/qa_peren_flame_v10.mjs'
+      - 'tests/qa_peren_fire_elements_v11.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
@@ -70,6 +71,8 @@ jobs:
         run: node --test tests/qa_peren_sparks_v10.mjs
       - name: Flame v10 release gate — verify original five-stage spritesheet
         run: node --test tests/qa_peren_flame_v10.mjs
+      - name: Fire elements v11 release gate — require authentic Embers/Pupil PNGs
+        run: node --test tests/qa_peren_fire_elements_v11.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
