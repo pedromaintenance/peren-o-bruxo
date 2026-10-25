@@ -66,6 +66,6 @@ test("Ring starts after 430ms, displays frames 0 through 4 and cleans itself up"
 });
 test("v12 offline service worker precaches actual Ring PNG and manifest",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-ring-v12-20261025/);
+ assert.match(sw,/preview-fire-burst-v13-20261025/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/ring-v12."+ext));
 });
