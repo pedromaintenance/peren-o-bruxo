@@ -31,9 +31,12 @@ export const CONTRACT=Object.freeze({
  hellskull:{key:"peren-v16-hellskull",file:"hellskull-v16.png",width:416,height:405,frames:5,
   durations:[130,165,230,175,145],delayMs:700},
  skullcloud:{key:"peren-v17-skullcloud",file:"skullcloud-v17.png",width:416,height:238,frames:5,
-  durations:[135,180,240,185,155],delayMs:850},
+  durations:[135,180,240,185,155],delayMs:560},
  portraits:["portrait_01.png","portrait_02.png","portrait_03.png","portrait_04.png"]
 });
+// Curated fire choreography: the Infernal caster plus only these two overlays.
+// Unused fire assets remain available for other future spells.
+export const FIRE_OVERLAY_PRESET=Object.freeze(["sparks","skullcloud"]);
 export const CINEMATIC_ACTIONS=Object.freeze({
  "spell:mag-raio-de-fogo":"infernal",
  "spell:mag-misseis-magicos":"void"
@@ -247,15 +250,8 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
   "Versão: "+(diagnostic.version||"não identificada"),
   "PNG ausente: "+(diagnostic.missing?.join(", ")||"nenhum"),
   "Faíscas v10 carregadas: "+Boolean(result?.sparksEnabled),
-  "Chama v10 carregada: "+Boolean(result?.flameEnabled),
-  "Brasas v11 carregadas: "+Boolean(result?.embersEnabled),
-  "Pupila v11 carregada: "+Boolean(result?.pupilEnabled),
-  "Anel v12 carregado: "+Boolean(result?.ringEnabled),
-  "Rajada v13 carregada: "+Boolean(result?.burstEnabled),
-  "Labareda v14 carregada: "+Boolean(result?.blazeEnabled),
-  "Fumaça v15 carregada: "+Boolean(result?.smokeEnabled),
-  "Caveira do Inferno v16 carregada: "+Boolean(result?.hellskullEnabled),
   "Nuvem de Caveiras v17 carregada: "+Boolean(result?.skullcloudEnabled),
+  "Composição visual: conjuração + faíscas + nuvem espelhada",
   "BattleScene carregado: "+Boolean(doc.defaultView?.__perenLab?.scene?.getScene)
  ].join("\n");
  const close=doc.createElement("button");close.type="button";close.textContent="Fechar";
@@ -665,7 +661,7 @@ export function playSkullcloudOverlay(scene){
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-skullcloud"});
  const area=battleArena(scene),compact=area.w<=620;
  const sprite=scene.add.sprite(area.w*(compact?.78:.79),area.top+area.height*.42,spec.key,0)
-  .setOrigin(.5,.5).setDepth(30);
+  .setOrigin(.5,.5).setDepth(30).setFlipX(true);
  sprite.setScale(Math.min(area.w*(compact?.58:.46)/spec.width,area.height*.60/spec.height));
  sprite.setAlpha(0);
  return new Promise(resolve=>{
@@ -740,12 +736,12 @@ function addControls(scene,doc){
  panel.append(details);
  scene.events.once("shutdown",()=>{details.remove()});
 }
-export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,embersEnabled=false,pupilEnabled=false,ringEnabled=false,burstEnabled=false,blazeEnabled=false,smokeEnabled=false,hellskullEnabled=false,skullcloudEnabled=false}={}){
+export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,skullcloudEnabled=false}={}){
  if(scene.__perenV84Installed)return false;
  scene.__perenV84Installed=true;
  const originalPreload=scene.preload;
  scene.preload=function(){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[]),...(smokeEnabled?[CONTRACT.smoke]:[]),...(hellskullEnabled?[CONTRACT.hellskull]:[]),...(skullcloudEnabled?[CONTRACT.skullcloud]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(skullcloudEnabled?[CONTRACT.skullcloud]:[])];
   for(const a of assets)this.load.spritesheet(a.key,ROOT+a.file,{
     frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
   });
@@ -762,20 +758,15 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
  scene.animatePlayer=async function(action,events){
   const effect=getAnimationPlan(action);
   if(!effect)return originalPlayer.call(this,action,events);
-  // Concurrently retain normal gameplay choreography, hits and HUD.
+  // Only one hand ignition and one enemy impact; not all ten fire overlays.
+  const fireOverlays=effect==="infernal"
+   ?FIRE_OVERLAY_PRESET.filter(id=>id==="sparks"?sparksEnabled:skullcloudEnabled)
+     .map(id=>id==="sparks"?playSparksOverlay(this):playSkullcloudOverlay(this))
+   :[];
   const results=await Promise.allSettled([
    originalPlayer.call(this,action,events),
    playVisualSequence(this,effect,{base:this.__v84Idle}),
-   effect==="infernal"&&sparksEnabled?playSparksOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&flameEnabled?playFlameOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&embersEnabled?playEmbersOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&pupilEnabled?playPupilOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&ringEnabled?playRingOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&burstEnabled?playBurstOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&blazeEnabled?playBlazeOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&smokeEnabled?playSmokeOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&hellskullEnabled?playHellskullOverlay(this):Promise.resolve({played:false}),
-   effect==="infernal"&&skullcloudEnabled?playSkullcloudOverlay(this):Promise.resolve({played:false})
+   ...fireOverlays
   ]);
   const failure=results.find(r=>r.status==="rejected");
   if(failure)throw failure.reason;
@@ -788,7 +779,7 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
  // A player may have opened combat while the versioned manifest was fetched.
  // Hot-hydrate that already-running scene instead of waiting for the next battle.
  if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(embersEnabled?[CONTRACT.embers]:[]),...(pupilEnabled?[CONTRACT.pupil]:[]),...(ringEnabled?[CONTRACT.ring]:[]),...(burstEnabled?[CONTRACT.burst]:[]),...(blazeEnabled?[CONTRACT.blaze]:[]),...(smokeEnabled?[CONTRACT.smoke]:[]),...(hellskullEnabled?[CONTRACT.hellskull]:[]),...(skullcloudEnabled?[CONTRACT.skullcloud]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(skullcloudEnabled?[CONTRACT.skullcloud]:[])];
   const hydrate=()=>{
    if(!scene.peren?.active||scene.__v84Idle)return;
    scene.__v84Idle=useIdle(scene);
@@ -806,15 +797,16 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
 export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=fetch}={}){
  const ready=await checkInstalledAssets(fetcher);
  if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
- const [sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled,hellskullEnabled,skullcloudEnabled]=await Promise.all([
-  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledEmbers(fetcher),checkInstalledPupil(fetcher),checkInstalledRing(fetcher),checkInstalledBurst(fetcher),checkInstalledBlaze(fetcher),checkInstalledSmoke(fetcher),checkInstalledHellskull(fetcher),checkInstalledSkullcloud(fetcher)
+ // Check only the two active layers; don't download eight unused effect atlases.
+ const [sparksEnabled,skullcloudEnabled]=await Promise.all([
+  checkInstalledSparks(fetcher),checkInstalledSkullcloud(fetcher)
  ]);
  for(let attempts=0;attempts<120;attempts++){
   const game=windowRef.__perenLab;
   if(game?.scene?.getScene){
    try{
     const scene=game.scene.getScene("BattleScene");
-    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled,hellskullEnabled,skullcloudEnabled}),reason:"installed",sparksEnabled,flameEnabled,embersEnabled,pupilEnabled,ringEnabled,burstEnabled,blazeEnabled,smokeEnabled,hellskullEnabled,skullcloudEnabled};
+    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,skullcloudEnabled}),reason:"installed",sparksEnabled,skullcloudEnabled};
    }catch{}
   }
   await new Promise(r=>setTimeout(r,100));

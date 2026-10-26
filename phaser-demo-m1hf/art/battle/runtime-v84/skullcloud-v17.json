@@ -29,7 +29,7 @@
     185,
     155
   ],
-  "delay_ms": 850,
+  "delay_ms": 560,
   "source_x_ranges": [
     [
       0,
@@ -53,5 +53,5 @@
     ]
   ],
   "transform": "Cortes RGBA em cinco segmentos independentes, centralizados sem redimensionamento em células de 416×238; pixels, alturas e transparências originais preservados.",
-  "placement": "Área do alvo na batalha, após a caveira infernal v16; efeito puramente visual."
+  "placement": "Área do inimigo, espelhada horizontalmente em Phaser (setFlipX); impacto principal junto às faíscas da mão. Sem outros efeitos de fogo sobrepostos."
 }
