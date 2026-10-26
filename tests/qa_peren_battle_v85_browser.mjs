@@ -87,9 +87,9 @@ try {
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Casting sparks not available");
             if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Enemy flame not available");
             if(window.__perenBattleArtV90?.castingFireEnabled!==true)throw Error("Fire-lit casting Peren not available");
-            window.__perenV19Fire={sparks:[],flame:[],casting:[],unexpected:[],sparksPositions:[],flamePositions:[]};
+            window.__perenV19Fire={sparks:[],flame:[],casting:[],unexpected:[],sparksPositions:[],sparksWidths:[],flamePositions:[]};
             const forbidden=new Set([
-              "peren-v90-infernal","peren-v17-skullcloud","peren-v16-hellskull",
+              "vfx-fire","peren-v90-infernal","peren-v17-skullcloud","peren-v16-hellskull",
               "peren-v10-flame-legacy","peren-v11-embers","peren-v11-pupil",
               "peren-v12-ring","peren-v13-burst","peren-v14-blaze","peren-v15-smoke"
             ]);
@@ -100,6 +100,7 @@ try {
                 if(key==="peren-v10-sparks"){
                   window.__perenV19Fire.sparks.push(Number(child.frame?.name));
                   window.__perenV19Fire.sparksPositions.push(child.x);
+                  window.__perenV19Fire.sparksWidths.push(child.displayWidth);
                 }
                 if(key==="peren-v10-flame"){
                   window.__perenV19Fire.flame.push(Number(child.frame?.name));
@@ -155,15 +156,18 @@ try {
           assert.deepEqual([...new Set(fire.observations.flame)],[0,1,2,3,4],"Five flame frames must appear at the target");
           assert.deepEqual([...new Set(fire.observations.casting)],[0,1,2,3],"Peren must cast in four authored frames");
           const compact=fire.arenaWidth<=620;
-          const sparkTarget=fire.arenaWidth*(compact?.35:.33);
+          const sparkTarget=fire.arenaWidth*(compact?.30:.285);
           const flameTarget=fire.arenaWidth*(compact?.74:.75);
           assert.ok(fire.observations.sparksPositions.length>0 &&
             fire.observations.sparksPositions.every(x=>Math.abs(x-sparkTarget)<.5),
             "Sparks must sit close to Peren on mobile and desktop");
+          assert.ok(fire.observations.sparksWidths.length>0 &&
+            fire.observations.sparksWidths.every(width=>width<fire.arenaWidth*(compact?.14:.07)),
+            "Sparks should only slightly exceed Peren's hand size, not cover the whole caster");
           assert.ok(fire.observations.flamePositions.length>0 &&
             fire.observations.flamePositions.every(x=>Math.abs(x-flameTarget)<.5),
             "Flame must be centered to the left of its previous target offset");
-          assert.deepEqual(fire.observations.unexpected,[],"No skull cloud, giant Infernal or other high-level VFX for Fire Bolt");
+          assert.deepEqual(fire.observations.unexpected,[],"No procedural vfx-fire, skull cloud, giant Infernal or other high-level VFX");
         }
         const after=await page.evaluate(texture=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");

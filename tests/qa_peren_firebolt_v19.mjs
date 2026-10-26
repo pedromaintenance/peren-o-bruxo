@@ -6,7 +6,7 @@ import {resolve,dirname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {
  CONTRACT,FIRE_OVERLAY_PRESET,getAnimationPlan,
- checkInstalledCastingFire,playVisualSequence
+ checkInstalledCastingFire,playVisualSequence,installOnBattleScene
 } from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const folder="phaser-demo-m1hf/art/characters/peren/battler/casting/";
@@ -75,7 +75,7 @@ test("fire-lit character animates 0→3, stays on the idle actor's side and rest
 });
 test("PWA includes caster and basic spells with separate advanced assets preserved",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-bolt-v20-20261026/);
+ assert.match(sw,/preview-fire-bolt-v21-20261026/);
  for(const p of ["./art/characters/peren/battler/casting/manifest.json",
                   "./art/characters/peren/battler/casting/peren-casting-fire.png",
                   "./art/battle/runtime-v84/sparks-v10.png",
@@ -83,4 +83,22 @@ test("PWA includes caster and basic spells with separate advanced assets preserv
   assert.ok(sw.includes(p),"Offline cache missing "+p);
  }
  assert.ok(sw.includes("skullcloud-v17.png"),"Advanced spell asset must remain available");
+});
+
+test("Fire Bolt suppresses bundled procedural vfx-fire without changing other battle actions",async()=>{
+ const invoked=[];
+ const scene={
+  preload(){},create(){},takeTurn(){return Promise.resolve(true)},
+  animatePlayer(action){invoked.push(action);return Promise.resolve("legacy");},
+  textures:{exists:()=>false},events:{once(){},off(){}},
+  scene:{isActive:()=>false}
+ };
+ assert.equal(installOnBattleScene(scene,{doc:{getElementById(){return null}},sparksEnabled:false,flameEnabled:false,castingFireEnabled:false}),true);
+ await scene.animatePlayer("spell:mag-raio-de-fogo",[]);
+ assert.deepEqual(invoked,[],"fire must NEVER invoke bundled procedural vfx-fire animation");
+ await scene.animatePlayer("spell:mag-misseis-magicos",[]);
+ assert.deepEqual(invoked,["spell:mag-misseis-magicos"],"other spells keep their built-in animation path");
+ await scene.animatePlayer("attack",[]);
+ assert.deepEqual(invoked,["spell:mag-misseis-magicos","attack"],"physical attacks keep original path");
+ assert.equal(await scene.takeTurn("spell:mag-raio-de-fogo"),true,"combat state machine remains intact");
 });
