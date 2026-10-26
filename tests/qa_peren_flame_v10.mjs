@@ -49,7 +49,7 @@ test("flame overlay plays only 0–4 then destroys sprite without changing comba
  queue[0].cb();
  for(let i=0;i<5;i++){assert.equal(queue[i+1].ms,CONTRACT.flame.durations[i]);queue[i+1].cb()}
  assert.deepEqual(alphas,[0,1]);
- assert.ok(positions[0][0]>900*.7,"Flame should appear over the opponent");
+ assert.ok(Math.abs(positions[0][0]-900*.75)<.01,"Desktop flame must move toward the opponent center");
  assert.deepEqual(await pending,{played:true,reason:"complete"});
  assert.deepEqual(seen,[0,1,2,3,4]);
  assert.equal(actor.active,false);
@@ -58,4 +58,16 @@ test("both approved fire PNGs and their manifests are cached for offline play",(
  const sw=readFileSync(resolve(ROOT,"phaser-demo-m1hf/demo-sw.js"),"utf8");
  for(const p of ["sparks-v10.png","sparks-v10.json","flame-v10.png","flame-v10.json"])
   assert.ok(sw.includes("./art/battle/runtime-v84/"+p),"Missing precache: "+p);
+});
+
+test("mobile flame impact is centered at 74% rather than 78% of the arena",()=>{
+ const points=[];
+ const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
+  setAlpha(){return this},setFrame(){return this},destroy(){this.active=false}};
+ const scene={scale:{width:390,height:844},textures:{exists:()=>true},
+  add:{sprite:(x,y)=>{points.push([x,y]);return sprite}},
+  events:{once(){},off(){}},
+  time:{delayedCall(){return{remove(){}}}}};
+ void playFlameOverlay(scene);
+ assert.ok(Math.abs(points[0][0]-390*.74)<.01,"Mobile enemy-centered flame placement");
 });

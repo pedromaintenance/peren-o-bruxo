@@ -39,11 +39,11 @@ test("optional art refuses missing manifest or PNG without blocking old Infernal
  assert.equal(await checkInstalledSparks(missing,null),false);
 });
 test("runtime shows 0→4 and destroys overlay without modifying actor",async()=>{
- const shown=[],queue=[];
+ const shown=[],queue=[],positions=[];
  const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
  setFrame(n){shown.push(n);return this},destroy(){this.active=false}};
  const scene={scale:{width:900,height:640},textures:{exists:key=>key===CONTRACT.sparks.key},
-  add:{sprite:()=>sprite},events:{once(){},off(){}},
+  add:{sprite:(x,y)=>{positions.push([x,y]);return sprite}},events:{once(){},off(){}},
   time:{delayedCall(ms,cb){queue.push({ms,cb});return {remove(){}}}}};
  const pending=playSparksOverlay(scene);
  for(let i=0;i<5;i++){
@@ -53,10 +53,26 @@ test("runtime shows 0→4 and destroys overlay without modifying actor",async()=
  assert.deepEqual(await pending,{played:true,reason:"complete"});
  assert.deepEqual(shown,[0,1,2,3,4]);
  assert.equal(sprite.active,false);
+ assert.ok(Math.abs(positions[0][0]-900*.33)<.01,"Desktop sparks must move toward Peren");
+ const expectedTop=640*.18,expectedBottom=640*.74;
+ assert.ok(Math.abs(positions[0][1]-(expectedTop+(expectedBottom-expectedTop)*.44))<.01,
+   "Sparks should sit slightly lower near the casting hand");
 });
 test("PWA precaches v10 marker + spritesheet",()=>{
  const sw=readFileSync(resolve(ROOT,"phaser-demo-m1hf/demo-sw.js"),"utf8");
  assert.match(sw,/preview-fire-[a-z0-9-]+-v\d+-20\d{6}/);
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.png"));
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.json"));
+});
+
+test("mobile fire sparks stay at 35% of the arena, closer to Peren",()=>{
+ const points=[];
+ const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
+  setFrame(){return this},destroy(){this.active=false}};
+ const scene={scale:{width:390,height:844},textures:{exists:()=>true},
+  add:{sprite:(x,y)=>{points.push([x,y]);return sprite}},
+  events:{once(){},off(){}},
+  time:{delayedCall(){return{remove(){}}}}};
+ void playSparksOverlay(scene);
+ assert.ok(Math.abs(points[0][0]-390*.35)<.01,"Mobile hand sparks placement");
 });
