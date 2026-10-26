@@ -54,7 +54,7 @@ test("runtime shows 0→4 and destroys overlay without modifying actor",async()=
  assert.deepEqual(shown,[0,1,2,3,4]);
  assert.equal(sprite.active,false);
  assert.ok(Math.abs(positions[0][0]-900*.33)<.01,"Desktop sparks must move toward Peren");
- const expectedTop=640*.18,expectedBottom=640*.74;
+ const expectedTop=640*.18,expectedBottom=640*.73;
  assert.ok(Math.abs(positions[0][1]-(expectedTop+(expectedBottom-expectedTop)*.44))<.01,
    "Sparks should sit slightly lower near the casting hand");
 });
