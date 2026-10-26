@@ -84,80 +84,28 @@ try {
         await page.evaluate(({spell})=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="fire"){
-            if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Spark v10 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Flame v10 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.embersEnabled!==true)throw Error("Embers v11 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.pupilEnabled!==true)throw Error("Pupil v11 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.ringEnabled!==true)throw Error("Ring v12 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.burstEnabled!==true)throw Error("Burst v13 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.blazeEnabled!==true)throw Error("Labareda v14 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.smokeEnabled!==true)throw Error("Smoke v15 PNG not activated in BattleScene");
-            if(window.__perenBattleArtV90?.hellskullEnabled!==true)throw Error("Hell Skull v16 PNG not activated in BattleScene");
-            window.__perenV10SparkFrames=[];
-            window.__perenV10Track=()=>{
-              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
-              if(sprite)window.__perenV10SparkFrames.push(Number(sprite.frame?.name));
+            if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Casting sparks not available");
+            if(window.__perenBattleArtV90?.skullcloudEnabled!==true)throw Error("Skullcloud not available");
+            window.__perenV18Fire={sparks:[],cloud:[],infernal:[],flips:[],unexpected:[]};
+            const oldKeys=new Set([
+              "peren-v10-flame","peren-v11-embers","peren-v11-pupil",
+              "peren-v12-ring","peren-v13-burst","peren-v14-blaze",
+              "peren-v15-smoke","peren-v16-hellskull"
+            ]);
+            window.__perenV18Observe=()=>{
+              for(const child of scene.children.list){
+                if(!child.active||!child.visible||child.alpha<=0)continue;
+                const key=child.texture?.key;
+                if(key==="peren-v10-sparks")window.__perenV18Fire.sparks.push(Number(child.frame?.name));
+                if(key==="peren-v17-skullcloud"){
+                  window.__perenV18Fire.cloud.push(Number(child.frame?.name));
+                  window.__perenV18Fire.flips.push(child.flipX);
+                }
+                if(key==="peren-v90-infernal")window.__perenV18Fire.infernal.push(Number(child.frame?.name));
+                if(oldKeys.has(key))window.__perenV18Fire.unexpected.push(key);
+              }
             };
-            scene.events.on("update",window.__perenV10Track);
-            window.__perenV10FlameFrames=[];
-            window.__perenV10FlameTrack=()=>{
-              const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-flame");
-              if(sprite)window.__perenV10FlameFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV10FlameTrack);
-            for(const [id,key] of [["Embers","peren-v11-embers"],["Pupil","peren-v11-pupil"]]){
-              const frames=[];
-              window["__perenV11"+id+"Frames"]=frames;
-              const handler=()=>{
-                const sprite=scene.children.list.find(child=>
-                  child.active&&child.texture?.key===key&&child.alpha>0);
-                if(sprite)frames.push(Number(sprite.frame?.name));
-              };
-              window["__perenV11"+id+"Track"]=handler;
-              scene.events.on("update",handler);
-            }
-            window.__perenV12RingFrames=[];
-            window.__perenV12RingTrack=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v12-ring"&&child.alpha>0);
-              if(sprite)window.__perenV12RingFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV12RingTrack);
-            window.__perenV13BurstFrames=[];
-            window.__perenV13BurstTrack=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v13-burst"&&child.alpha>0);
-              if(sprite)window.__perenV13BurstFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV13BurstTrack);
-            window.__perenV14BlazeFrames=[];
-            window.__perenV14BlazeTrack=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v14-blaze"&&child.alpha>0);
-              if(sprite)window.__perenV14BlazeFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV14BlazeTrack);
-            window.__perenV15SmokeFrames=[];
-            window.__perenV15SmokeTrack=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v15-smoke"&&child.alpha>0);
-              if(sprite)window.__perenV15SmokeFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV15SmokeTrack);
-            window.__perenV16HellskullFrames=[];
-            window.__perenV16HellskullTrack=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v16-hellskull"&&child.alpha>0);
-              if(sprite)window.__perenV16HellskullFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV16HellskullTrack);
-            window.__perenV92SeenFrames=[];
-            window.__perenV92Observe=()=>{
-              const sprite=scene.children.list.find(child=>
-                child.active&&child.texture?.key==="peren-v90-infernal");
-              if(sprite)window.__perenV92SeenFrames.push(Number(sprite.frame?.name));
-            };
-            scene.events.on("update",window.__perenV92Observe);
+            scene.events.on("update",window.__perenV18Observe);
           }
           window.__perenV85Animation=scene.animatePlayer(
             spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[]
@@ -192,73 +140,26 @@ try {
         // Avoid waiting on an ephemeral frame after expensive screenshots:
         // the renderer may have passed it by the time Playwright polls.
         await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
+        if(spell==="fire"){
+          await page.waitForFunction(()=>{
+            const b=window.__perenLab?.scene?.getScene("BattleScene");
+            return b?.children?.list?.some(c=>c.active&&c.visible&&c.alpha>0&&c.texture?.key==="peren-v17-skullcloud"&&c.flipX===true);
+          },null,{timeout:3000,polling:30});
+          await page.screenshot({path:`artifacts/peren-v18-fire-impact-${width}.png`,fullPage:false});
+        }
         await page.evaluate(async()=>await window.__perenV85Animation);
         if(spell==="fire"){
-          const sparkFrames=await page.evaluate(()=>{
+          const fire=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV10Track);
-            return [...new Set(window.__perenV10SparkFrames)];
+            scene.events.off("update",window.__perenV18Observe);
+            return window.__perenV18Fire;
           });
-          assert.deepEqual(sparkFrames,[0,1,2,3,4],
-            "Spark animation must show all five author-approved phases before ending");
-          const flameFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV10FlameTrack);
-            return [...new Set(window.__perenV10FlameFrames)];
-          });
-          assert.deepEqual(flameFrames,[0,1,2,3,4],
-            "Flame animation must show all five creator-approved phases before ending");
-          const phases=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            return ["Embers","Pupil"].map(id=>{
-              scene.events.off("update",window["__perenV11"+id+"Track"]);
-              return [...new Set(window["__perenV11"+id+"Frames"])];
-            });
-          });
-          assert.deepEqual(phases,[[0,1,2,3,4],[0,1,2,3,4]],
-            "Embers and Pupil must each render all five real phases");
-          const ringFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV12RingTrack);
-            return [...new Set(window.__perenV12RingFrames)];
-          });
-          assert.deepEqual(ringFrames,[0,1,2,3,4],
-            "Fifth effect Ring must render all five real phases");
-          const burstFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV13BurstTrack);
-            return [...new Set(window.__perenV13BurstFrames)];
-          });
-          assert.deepEqual(burstFrames,[0,1,2,3,4],
-            "Sixth effect Burst must render all five actual frames");
-          const blazeFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV14BlazeTrack);
-            return [...new Set(window.__perenV14BlazeFrames)];
-          });
-          assert.deepEqual(blazeFrames,[0,1,2,3,4],
-            "Seventh fire effect Labareda must render all five actual frames");
-          const smokeFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV15SmokeTrack);
-            return [...new Set(window.__perenV15SmokeFrames)];
-          });
-          assert.deepEqual(smokeFrames,[0,1,2,3,4],
-            "Eighth fire effect Smoke must render all five actual frames");
-          const skullFrames=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV16HellskullTrack);
-            return [...new Set(window.__perenV16HellskullFrames)];
-          });
-          assert.deepEqual(skullFrames,[0,1,2,3,4],
-            "Ninth fire effect Hell Skull must render five frames without stray atlas cells");
-          const seen=await page.evaluate(()=>{
-            const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV92Observe);
-            return window.__perenV92SeenFrames;
-          });
-          assert.ok(seen.includes(6),"Clean ending frame #6 must be visible");
-          assert.equal(seen.includes(7),false,"Defective skull frame #7 was drawn!");
+          assert.deepEqual([...new Set(fire.sparks)],[0,1,2,3,4],"Five hand-spark frames must play");
+          assert.deepEqual([...new Set(fire.cloud)],[0,1,2,3,4],"Five skull-cloud impact frames must play");
+          assert.ok(fire.flips.length>0&&fire.flips.every(Boolean),"Skull cloud must face the opposite direction");
+          assert.deepEqual(fire.unexpected,[],"Eight unused fire effects must not pile onto the scene");
+          assert.ok(fire.infernal.includes(6),"Clean Infernal ending frame must be visible");
+          assert.equal(fire.infernal.includes(7),false,"Broken Infernal last frame must remain hidden");
         }
         const after=await page.evaluate(texture=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");

@@ -1,4 +1,4 @@
-const CACHE="peren-phaser-m1hf-preview-fire-skullcloud-v17-20261026";
+const CACHE="peren-phaser-m1hf-preview-fire-skullcloud-v18-20261026";
 
 const CACHE_PREFIX="peren-phaser-m1hf-preview-";
 

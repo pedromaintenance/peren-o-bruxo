@@ -4,7 +4,7 @@ import {readFileSync,existsSync} from "node:fs";
 import {resolve,dirname} from "node:path";
 import {createHash} from "node:crypto";
 import {fileURLToPath} from "node:url";
-import {CONTRACT,checkInstalledSkullcloud,playSkullcloudOverlay} from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
+import {CONTRACT,FIRE_OVERLAY_PRESET,checkInstalledSkullcloud,playSkullcloudOverlay} from "../phaser-demo-m1hf/battle-art-runtime-v90.mjs";
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),"..");
 const assetDir="phaser-demo-m1hf/art/battle/runtime-v84/";
@@ -16,7 +16,9 @@ test("Fogo 10 preserves all five authored phases with equal transparent cells",(
  assert.equal(spec.key,"peren-v17-skullcloud");
  assert.deepEqual([spec.width,spec.height,spec.frames],[416,238,5]);
  assert.deepEqual(spec.durations,[135,180,240,185,155]);
- assert.equal(spec.delayMs,850);
+ assert.equal(spec.delayMs,560);
+ assert.equal(marker.delay_ms,560);
+ assert.deepEqual(FIRE_OVERLAY_PRESET,["sparks","skullcloud"]);
  assert.equal(marker.schema,"peren-skullcloud-v17");
  assert.equal(marker.asset,spec.file);
  assert.deepEqual(marker.dimensions,[2080,238]);
@@ -49,8 +51,9 @@ test("optional VFX needs both exact metadata and the PNG",async()=>{
 });
 
 test("10th cloud animates 0–4 then releases visual resources without changing turns",async()=>{
- const frames=[],alphas=[],queue=[],positions=[];
+ const frames=[],alphas=[],queue=[],positions=[],flips=[];
  const sprite={active:true,setOrigin(){return this},setDepth(){return this},
+  setFlipX(value){flips.push(value);return this},
   setScale(){return this},setAlpha(n){alphas.push(n);return this},
   setFrame(n){frames.push(n);return this},destroy(){this.active=false}};
  const scene={scale:{width:900,height:640},textures:{exists:k=>k===CONTRACT.skullcloud.key},
@@ -59,7 +62,8 @@ test("10th cloud animates 0–4 then releases visual resources without changing 
   time:{delayedCall(ms,callback){queue.push({ms,callback});return{remove(){}}}}};
  const p=playSkullcloudOverlay(scene);
  assert.deepEqual(alphas,[0]);
- assert.equal(queue[0].ms,850);
+ assert.equal(queue[0].ms,560);
+ assert.deepEqual(flips,[true],"skull cloud must face left after mirroring");
  queue[0].callback();
  for(let i=0;i<5;i++){
   assert.equal(queue[i+1].ms,CONTRACT.skullcloud.durations[i]);
@@ -74,6 +78,6 @@ test("10th cloud animates 0–4 then releases visual resources without changing 
 
 test("PWA precaches the approved v17 PNG and manifest under new cache version",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-skullcloud-v17-20261026/);
+ assert.match(sw,/preview-fire-skullcloud-v18-20261026/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/skullcloud-v17."+ext));
 });
