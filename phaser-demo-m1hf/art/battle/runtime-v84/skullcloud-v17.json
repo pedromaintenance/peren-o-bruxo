@@ -1,0 +1,57 @@
+{
+  "schema": "peren-skullcloud-v17",
+  "name": "Fogo 10 — Nuvem de Caveiras Infernais",
+  "asset": "skullcloud-v17.png",
+  "source": "nuvem_caveiras_10_spritesheet_5_quadros(2).png",
+  "source_sha256": "26230a07430a23a4b9ea1b5d63071ddcb29148d89223996d61eb30fb7d8aa268",
+  "sha256": "ca25e194fdb1060480b0d10f5d73f415c01caa377c6190a039f1e76f6474765b",
+  "bytes": 431542,
+  "dimensions": [
+    2080,
+    238
+  ],
+  "frame_size": [
+    416,
+    238
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    135,
+    180,
+    240,
+    185,
+    155
+  ],
+  "delay_ms": 850,
+  "source_x_ranges": [
+    [
+      0,
+      410
+    ],
+    [
+      410,
+      819
+    ],
+    [
+      819,
+      1229
+    ],
+    [
+      1229,
+      1638
+    ],
+    [
+      1638,
+      2048
+    ]
+  ],
+  "transform": "Cortes RGBA em cinco segmentos independentes, centralizados sem redimensionamento em células de 416×238; pixels, alturas e transparências originais preservados.",
+  "placement": "Área do alvo na batalha, após a caveira infernal v16; efeito puramente visual."
+}
