@@ -87,7 +87,7 @@ try {
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Casting sparks not available");
             if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Enemy flame not available");
             if(window.__perenBattleArtV90?.castingFireEnabled!==true)throw Error("Fire-lit casting Peren not available");
-            window.__perenV19Fire={sparks:[],flame:[],casting:[],unexpected:[],sparksPositions:[],sparksWidths:[],flamePositions:[]};
+            window.__perenV19Fire={sparks:[],flame:[],casting:[],unexpected:[],sparksPositions:[],sparksWidths:[],flamePositions:[],flameTriads:[]};
             const forbidden=new Set([
               "vfx-fire","peren-v90-infernal","peren-v17-skullcloud","peren-v16-hellskull",
               "peren-v10-flame-legacy","peren-v11-embers","peren-v11-pupil",
@@ -108,6 +108,15 @@ try {
                 }
                 if(key==="peren-v19-casting-fire")window.__perenV19Fire.casting.push(Number(child.frame?.name));
                 if(forbidden.has(key))window.__perenV19Fire.unexpected.push(key);
+              }
+              // Capture the live group after all three sprites have spawned. This
+              // checks real Phaser rotation/anchor/scale, not just authored values.
+              const visibleFlames=scene.children.list.filter(c=>c.active&&c.visible&&c.alpha>0&&c.texture?.key==="peren-v10-flame");
+              if(visibleFlames.length===3){
+                window.__perenV19Fire.flameTriads.push(visibleFlames.map(c=>({
+                  x:c.x,y:c.y,rotation:c.rotation,scaleX:c.scaleX,
+                  originX:c.originX,originY:c.originY,frame:Number(c.frame?.name)
+                })));
               }
             };
             scene.events.on("update",window.__perenV19Observe);
@@ -162,11 +171,25 @@ try {
             fire.observations.sparksPositions.every(x=>Math.abs(x-sparkTarget)<.5),
             "Sparks must sit close to Peren on mobile and desktop");
           assert.ok(fire.observations.sparksWidths.length>0 &&
-            fire.observations.sparksWidths.every(width=>width<fire.arenaWidth*(compact?.14:.07)),
+            fire.observations.sparksWidths.every(width=>width<fire.arenaWidth*(compact?.084:.042)),
             "Sparks should only slightly exceed Peren's hand size, not cover the whole caster");
           assert.ok(fire.observations.flamePositions.length>0 &&
             fire.observations.flamePositions.every(x=>Math.abs(x-flameTarget)<.5),
             "Flame must be centered to the left of its previous target offset");
+          assert.ok(fire.observations.flameTriads.length>0,"Three concurrent flames must appear over the enemy");
+          for(const trio of fire.observations.flameTriads){
+            assert.equal(trio.length,3);
+            assert.ok(trio.every(f=>Math.abs(f.x-trio[0].x)<.5&&Math.abs(f.y-trio[0].y)<.5),
+              "All flame bases must have the exact same center");
+            assert.ok(trio.every(f=>f.originX===.5&&f.originY===1),
+              "Flames must rotate around their lower center");
+            const angles=trio.map(f=>f.rotation).sort((a,b)=>a-b);
+            assert.ok(angles.every((v,i)=>Math.abs(v-[-Math.PI/4,0,Math.PI/4][i])<.01),
+              "Side flames must be inclined at negative/positive 45 degrees");
+            const core=trio.find(f=>Math.abs(f.rotation)<.01);
+            assert.ok(trio.every(f=>f===core||f.scaleX<core.scaleX),"Center flame must be larger");
+            assert.ok(trio.every(f=>f.frame===trio[0].frame),"Flame frames must be synchronized");
+          }
           assert.deepEqual(fire.observations.unexpected,[],"No procedural vfx-fire, skull cloud, giant Infernal or other high-level VFX");
         }
         const after=await page.evaluate(texture=>{
