@@ -15,7 +15,7 @@ try{
      const ready=await navigator.serviceWorker?.ready;
      if(!ready?.active)return false;
      const entries=await caches.keys();
-     const current=entries.find(x=>x.includes("fire-smoke-v15-20261025"));
+     const current=entries.find(x=>x.includes("fire-hellskull-v16-20261026"));
      if(!current)return false;
      const c=await caches.open(current);
      const files=["battle-asset-pack-v90.json","idle.png","infernal-v90.png","void.png","summon.png",

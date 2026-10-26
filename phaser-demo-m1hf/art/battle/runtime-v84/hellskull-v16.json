@@ -1,0 +1,56 @@
+{
+  "schema": "peren-hellskull-v16",
+  "asset": "hellskull-v16.png",
+  "source": "caveiras_9_spritesheet_corrigida(1).png",
+  "source_sha256": "d7e75e2f9a0529e32af2c7877dc1349c5a8b17e6f1ee7c4d305361ae81995586",
+  "sha256": "ea971b558fa11e80bbd850eaceb7780b8dadb48a474da398fbf35fa92babb25d",
+  "bytes": 628985,
+  "dimensions": [
+    2080,
+    405
+  ],
+  "frame_size": [
+    416,
+    405
+  ],
+  "frames": 5,
+  "sequence": [
+    "início",
+    "progressão",
+    "ápice",
+    "regressão",
+    "fim"
+  ],
+  "durations_ms": [
+    130,
+    165,
+    230,
+    175,
+    145
+  ],
+  "delay_ms": 700,
+  "source_x_ranges": [
+    [
+      59,
+      307
+    ],
+    [
+      463,
+      758
+    ],
+    [
+      836,
+      1211
+    ],
+    [
+      1294,
+      1581
+    ],
+    [
+      1750,
+      1973
+    ]
+  ],
+  "transform": "Five independent untouched RGBA cuts, horizontally centered in cells of 416x405. Original vertical positions, color and transparency preserved. No resampling, painting or asset regeneration.",
+  "placement": "Enemy-side fire skull (not behind Peren)"
+}
