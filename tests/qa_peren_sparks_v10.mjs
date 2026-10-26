@@ -54,9 +54,9 @@ test("runtime shows 0→4 and destroys overlay without modifying actor",async()=
  assert.deepEqual(shown,[0,1,2,3,4]);
  assert.equal(sprite.active,false);
  const formerScale=Math.min(900*.085/CONTRACT.sparks.width,(640*(.73-.18))*.29/CONTRACT.sparks.height);
- assert.ok(Math.abs(sprite.spriteScale-formerScale*.60)<1e-10,"Desktop sparks must be exactly 60% of v21 scale");
- assert.ok(sprite.spriteScale*CONTRACT.sparks.width<65,"Sparks must remain hand-sized on desktop");
- assert.ok(Math.abs(positions[0][0]-900*.285)<.01,"Desktop sparks must sit just right of Peren's hand");
+ assert.ok(Math.abs(sprite.spriteScale-formerScale*1.20)<1e-10,"Desktop sparks must be 200% of v22 scale");
+ assert.ok(sprite.spriteScale*CONTRACT.sparks.width<130,"Sparks must remain compact on desktop");
+ assert.ok(Math.abs(positions[0][0]-(900*.285+50))<.01,"Desktop sparks must shift exactly 50 scene pixels to the right");
  const expectedTop=640*.18,expectedBottom=640*.73;
  assert.ok(Math.abs(positions[0][1]-(expectedTop+(expectedBottom-expectedTop)*.39))<.01,
    "Sparks must sit near the extended hand, not down the screen");
@@ -68,7 +68,7 @@ test("PWA precaches v10 marker + spritesheet",()=>{
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.json"));
 });
 
-test("mobile sparks appear beside the hand at 30% of the arena",()=>{
+test("mobile sparks double in size and shift 50 pixels right of their v22 location",()=>{
  const points=[];
  const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(value){this.spriteScale=value;return this},
   setFrame(){return this},destroy(){this.active=false}};
@@ -77,8 +77,8 @@ test("mobile sparks appear beside the hand at 30% of the arena",()=>{
   events:{once(){},off(){}},
   time:{delayedCall(){return{remove(){}}}}};
  void playSparksOverlay(scene);
- assert.ok(Math.abs(points[0][0]-390*.30)<.01,"Mobile hand sparks placement");
+ assert.ok(Math.abs(points[0][0]-(390*.30+50))<.01,"Mobile hand sparks must shift exactly 50 scene pixels right");
  const formerScale=Math.min(390*.12/CONTRACT.sparks.width,(844*(.73-.18))*.29/CONTRACT.sparks.height);
- assert.ok(Math.abs(sprite.spriteScale-formerScale*.60)<1e-10,"Mobile sparks must be exactly 60% of v21 scale");
- assert.ok(sprite.spriteScale*CONTRACT.sparks.width<50,"Mobile sparks should be only a little larger than the hand");
+ assert.ok(Math.abs(sprite.spriteScale-formerScale*1.20)<1e-10,"Mobile sparks must be twice the v22 scale");
+ assert.ok(sprite.spriteScale*CONTRACT.sparks.width<100,"Mobile sparks must still be compact despite 2× scale");
 });
