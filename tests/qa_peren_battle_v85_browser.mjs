@@ -5,7 +5,7 @@ import {chromium} from "playwright";
 import {mkdirSync} from "node:fs";
 
 const base=process.env.PEREN_BASE_URL||"http://127.0.0.1:8765/phaser-demo-m1hf";
-const expected={fire:"peren-v90-infernal",arcane:"peren-v84-void"};
+const expected={fire:"peren-v19-casting-fire",arcane:"peren-v84-void"};
 const browser=await chromium.launch({headless:true,args:["--no-sandbox","--enable-webgl","--use-gl=angle"]});
 mkdirSync("artifacts",{recursive:true});
 try {
@@ -85,27 +85,28 @@ try {
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="fire"){
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Casting sparks not available");
-            if(window.__perenBattleArtV90?.skullcloudEnabled!==true)throw Error("Skullcloud not available");
-            window.__perenV18Fire={sparks:[],cloud:[],infernal:[],flips:[],unexpected:[]};
-            const oldKeys=new Set([
-              "peren-v10-flame","peren-v11-embers","peren-v11-pupil",
-              "peren-v12-ring","peren-v13-burst","peren-v14-blaze",
-              "peren-v15-smoke","peren-v16-hellskull"
+            if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Enemy flame not available");
+            if(window.__perenBattleArtV90?.castingFireEnabled!==true)throw Error("Fire-lit casting Peren not available");
+            window.__perenV19Fire={sparks:[],flame:[],casting:[],unexpected:[],flamePositions:[]};
+            const forbidden=new Set([
+              "peren-v90-infernal","peren-v17-skullcloud","peren-v16-hellskull",
+              "peren-v10-flame-legacy","peren-v11-embers","peren-v11-pupil",
+              "peren-v12-ring","peren-v13-burst","peren-v14-blaze","peren-v15-smoke"
             ]);
-            window.__perenV18Observe=()=>{
+            window.__perenV19Observe=()=>{
               for(const child of scene.children.list){
                 if(!child.active||!child.visible||child.alpha<=0)continue;
                 const key=child.texture?.key;
-                if(key==="peren-v10-sparks")window.__perenV18Fire.sparks.push(Number(child.frame?.name));
-                if(key==="peren-v17-skullcloud"){
-                  window.__perenV18Fire.cloud.push(Number(child.frame?.name));
-                  window.__perenV18Fire.flips.push(child.flipX);
+                if(key==="peren-v10-sparks")window.__perenV19Fire.sparks.push(Number(child.frame?.name));
+                if(key==="peren-v10-flame"){
+                  window.__perenV19Fire.flame.push(Number(child.frame?.name));
+                  window.__perenV19Fire.flamePositions.push(child.x);
                 }
-                if(key==="peren-v90-infernal")window.__perenV18Fire.infernal.push(Number(child.frame?.name));
-                if(oldKeys.has(key))window.__perenV18Fire.unexpected.push(key);
+                if(key==="peren-v19-casting-fire")window.__perenV19Fire.casting.push(Number(child.frame?.name));
+                if(forbidden.has(key))window.__perenV19Fire.unexpected.push(key);
               }
             };
-            scene.events.on("update",window.__perenV18Observe);
+            scene.events.on("update",window.__perenV19Observe);
           }
           window.__perenV85Animation=scene.animatePlayer(
             spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[]
@@ -131,7 +132,7 @@ try {
           };
         },texture);
         assert.equal(during.texture,texture);
-        if(spell==="fire")assert.equal(during.maskApplied,true,"Infernal sprite must feather its cropped atlas edges");
+        if(spell==="fire")assert.equal(during.maskApplied,false,"New casting PNG should not need Infernal cropping");
         assert.equal(during.visible,true);
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
@@ -144,15 +145,14 @@ try {
         if(spell==="fire"){
           const fire=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
-            scene.events.off("update",window.__perenV18Observe);
-            return window.__perenV18Fire;
+            scene.events.off("update",window.__perenV19Observe);
+            return {observations:window.__perenV19Fire,arenaWidth:scene.scale.width};
           });
-          assert.deepEqual([...new Set(fire.sparks)],[0,1,2,3,4],"Five hand-spark frames must play");
-          assert.deepEqual([...new Set(fire.cloud)],[0,1,2,3,4],"Five skull-cloud impact frames must play");
-          assert.ok(fire.flips.length>0&&fire.flips.every(Boolean),"Skull cloud must face the opposite direction");
-          assert.deepEqual(fire.unexpected,[],"Eight unused fire effects must not pile onto the scene");
-          assert.ok(fire.infernal.includes(6),"Clean Infernal ending frame must be visible");
-          assert.equal(fire.infernal.includes(7),false,"Broken Infernal last frame must remain hidden");
+          assert.deepEqual([...new Set(fire.observations.sparks)],[0,1,2,3,4],"Five sparks frames must appear by Peren");
+          assert.deepEqual([...new Set(fire.observations.flame)],[0,1,2,3,4],"Five flame frames must appear at the target");
+          assert.deepEqual([...new Set(fire.observations.casting)],[0,1,2,3],"Peren must cast in four authored frames");
+          assert.ok(fire.observations.flamePositions.every(x=>x>fire.arenaWidth*.7),"Flame must hit the enemy side");
+          assert.deepEqual(fire.observations.unexpected,[],"No skull cloud, giant Infernal or other high-level VFX for Fire Bolt");
         }
         const after=await page.evaluate(texture=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
@@ -171,5 +171,5 @@ try {
       } finally {await page.close()}
     }
   }
-  console.log("PASS: 4 real BattleScene runs, new Idle visible, infernal and Void spells animated, no runtime sprite errors");
+  console.log("PASS: 4 real BattleScene runs; basic Fire Bolt uses Peren casting, hand sparks, enemy flame; Void untouched");
 }finally {await browser.close()}

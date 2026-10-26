@@ -37,5 +37,5 @@
       "description": "casting motions with warm light reflected on character; fire VFX remain separate"
     }
   ],
-  "integrationStatus": "assets-only; no battle animation or spell behavior modified"
+  "integrationStatus": "peren-casting-fire integrated into beginner Fire Bolt visual only; peren-casting reserved for non-elemental spells; no combat or save rules modified"
 }

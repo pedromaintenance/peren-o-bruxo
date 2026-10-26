@@ -18,7 +18,7 @@ test("Fogo 10 preserves all five authored phases with equal transparent cells",(
  assert.deepEqual(spec.durations,[135,180,240,185,155]);
  assert.equal(spec.delayMs,560);
  assert.equal(marker.delay_ms,560);
- assert.deepEqual(FIRE_OVERLAY_PRESET,["sparks","skullcloud"]);
+ assert.deepEqual(FIRE_OVERLAY_PRESET,["sparks","flame"],"starter spell reserves skull cloud for advanced magic");
  assert.equal(marker.schema,"peren-skullcloud-v17");
  assert.equal(marker.asset,spec.file);
  assert.deepEqual(marker.dimensions,[2080,238]);
@@ -78,6 +78,6 @@ test("10th cloud animates 0–4 then releases visual resources without changing 
 
 test("PWA precaches the approved v17 PNG and manifest under new cache version",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-skullcloud-v18-20261026/);
+ assert.match(sw,/preview-fire-bolt-v19-20261026/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/skullcloud-v17."+ext));
 });
