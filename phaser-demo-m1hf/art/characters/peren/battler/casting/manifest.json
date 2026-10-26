@@ -1,0 +1,41 @@
+{
+  "schema": "peren.battle-casting/v1",
+  "character": "Peren Kerrhylon",
+  "purpose": "battler character animation independent from spell VFX",
+  "sourcePolicy": "preserve original uploaded RGBA PNG pixels; no redraw, rescaling or recompression",
+  "atlas": {
+    "columns": 4,
+    "rows": 1,
+    "width": 2048,
+    "height": 682,
+    "frameWidth": 512,
+    "frameHeight": 682
+  },
+  "animations": [
+    {
+      "id": "peren-casting",
+      "file": "peren-casting.png",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "4030589eb19c30b18af16657463b551ee58811d471996d1de55cd06504446538",
+      "description": "neutral casting motions without elemental glow"
+    },
+    {
+      "id": "peren-casting-fire",
+      "file": "peren-casting-fire.png",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "5264a9f2332341c98e4f76b7867e36e146822414ad64ca37ff559ce47f34fdc7",
+      "description": "casting motions with warm light reflected on character; fire VFX remain separate"
+    }
+  ],
+  "integrationStatus": "assets-only; no battle animation or spell behavior modified"
+}
