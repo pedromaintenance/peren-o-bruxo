@@ -37,6 +37,7 @@ on:
       - 'tests/qa_peren_blaze_v14.mjs'
       - 'tests/qa_peren_smoke_v15.mjs'
       - 'tests/qa_peren_hellskull_v16.mjs'
+      - 'tests/qa_peren_skullcloud_v17.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
       - 'ferramentas/tratar_battlers_v82.py'
@@ -88,6 +89,8 @@ jobs:
         run: node --test tests/qa_peren_smoke_v15.mjs
       - name: Hell Skull v16 release gate — require source-faithful PNG and five frames
         run: node --test tests/qa_peren_hellskull_v16.mjs
+      - name: Skull Cloud v17 release gate — verify the PNG and all 5 animation frames
+        run: node --test tests/qa_peren_skullcloud_v17.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
