@@ -92,6 +92,7 @@ try {
             if(window.__perenBattleArtV90?.burstEnabled!==true)throw Error("Burst v13 PNG not activated in BattleScene");
             if(window.__perenBattleArtV90?.blazeEnabled!==true)throw Error("Labareda v14 PNG not activated in BattleScene");
             if(window.__perenBattleArtV90?.smokeEnabled!==true)throw Error("Smoke v15 PNG not activated in BattleScene");
+            if(window.__perenBattleArtV90?.hellskullEnabled!==true)throw Error("Hell Skull v16 PNG not activated in BattleScene");
             window.__perenV10SparkFrames=[];
             window.__perenV10Track=()=>{
               const sprite=scene.children.list.find(child=>child.active&&child.texture?.key==="peren-v10-sparks");
@@ -143,6 +144,13 @@ try {
               if(sprite)window.__perenV15SmokeFrames.push(Number(sprite.frame?.name));
             };
             scene.events.on("update",window.__perenV15SmokeTrack);
+            window.__perenV16HellskullFrames=[];
+            window.__perenV16HellskullTrack=()=>{
+              const sprite=scene.children.list.find(child=>
+                child.active&&child.texture?.key==="peren-v16-hellskull"&&child.alpha>0);
+              if(sprite)window.__perenV16HellskullFrames.push(Number(sprite.frame?.name));
+            };
+            scene.events.on("update",window.__perenV16HellskullTrack);
             window.__perenV92SeenFrames=[];
             window.__perenV92Observe=()=>{
               const sprite=scene.children.list.find(child=>
@@ -237,6 +245,13 @@ try {
           });
           assert.deepEqual(smokeFrames,[0,1,2,3,4],
             "Eighth fire effect Smoke must render all five actual frames");
+          const skullFrames=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV16HellskullTrack);
+            return [...new Set(window.__perenV16HellskullFrames)];
+          });
+          assert.deepEqual(skullFrames,[0,1,2,3,4],
+            "Ninth fire effect Hell Skull must render five frames without stray atlas cells");
           const seen=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
             scene.events.off("update",window.__perenV92Observe);
