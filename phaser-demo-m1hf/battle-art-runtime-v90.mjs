@@ -429,10 +429,11 @@ export function playSparksOverlay(scene){
  const spec=CONTRACT.sparks;
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-sparks"});
  const a=battleArena(scene),compact=a.w<=620;
- // Bring ignition closer to Peren’s outstretched hand at both breakpoints.
- const sprite=scene.add.sprite(a.w*(compact?.35:.33),a.top+a.height*.44,spec.key,0)
+ // The VFX is a short ignition immediately right of the outstretched hand:
+ // use much smaller fractions than the full-size 5-frame source atlas.
+ const sprite=scene.add.sprite(a.w*(compact?.30:.285),a.top+a.height*.39,spec.key,0)
   .setOrigin(.5,.5).setDepth(24);
- const scale=Math.min(a.w*(compact?.31:.23)/spec.width,a.height*.80/spec.height);
+ const scale=Math.min(a.w*(compact?.12:.085)/spec.width,a.height*.29/spec.height);
  sprite.setScale(scale);
  return new Promise(resolve=>{
   let current=0,timer=null,done=false;
@@ -792,8 +793,15 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
    ?FIRE_OVERLAY_PRESET.filter(id=>id==="sparks"?sparksEnabled:flameEnabled)
      .map(id=>id==="sparks"?playSparksOverlay(this):playFlameOverlay(this))
    :[];
+  // The bundled Phaser animatePlayer creates a legacy procedural `vfx-fire`
+  // sprite for all spell actions containing "fogo". Skip THAT original
+  // visual-only call for the basic Fire Bolt. Combat damage, mana,
+  // counters and enemy responses belong to takeTurn/stepBattle and stay intact.
+  const originalAnimation=fire
+   ?Promise.resolve({played:false,reason:"legacy-procedural-fire-suppressed"})
+   :originalPlayer.call(this,action,events);
   const results=await Promise.allSettled([
-   originalPlayer.call(this,action,events),
+   originalAnimation,
    casterEffect?playVisualSequence(this,casterEffect,{base:this.__v84Idle}):Promise.resolve({played:false,reason:"casting-asset-unavailable"}),
    ...fireOverlays
   ]);

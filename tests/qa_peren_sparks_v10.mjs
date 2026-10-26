@@ -40,7 +40,7 @@ test("optional art refuses missing manifest or PNG without blocking old Infernal
 });
 test("runtime shows 0→4 and destroys overlay without modifying actor",async()=>{
  const shown=[],queue=[],positions=[];
- const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
+ const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(value){this.spriteScale=value;return this},
  setFrame(n){shown.push(n);return this},destroy(){this.active=false}};
  const scene={scale:{width:900,height:640},textures:{exists:key=>key===CONTRACT.sparks.key},
   add:{sprite:(x,y)=>{positions.push([x,y]);return sprite}},events:{once(){},off(){}},
@@ -53,10 +53,11 @@ test("runtime shows 0→4 and destroys overlay without modifying actor",async()=
  assert.deepEqual(await pending,{played:true,reason:"complete"});
  assert.deepEqual(shown,[0,1,2,3,4]);
  assert.equal(sprite.active,false);
- assert.ok(Math.abs(positions[0][0]-900*.33)<.01,"Desktop sparks must move toward Peren");
+ assert.ok(sprite.spriteScale*CONTRACT.sparks.width<65,"Sparks must be hand-sized on desktop");
+ assert.ok(Math.abs(positions[0][0]-900*.285)<.01,"Desktop sparks must sit just right of Peren's hand");
  const expectedTop=640*.18,expectedBottom=640*.73;
- assert.ok(Math.abs(positions[0][1]-(expectedTop+(expectedBottom-expectedTop)*.44))<.01,
-   "Sparks should sit slightly lower near the casting hand");
+ assert.ok(Math.abs(positions[0][1]-(expectedTop+(expectedBottom-expectedTop)*.39))<.01,
+   "Sparks must sit near the extended hand, not down the screen");
 });
 test("PWA precaches v10 marker + spritesheet",()=>{
  const sw=readFileSync(resolve(ROOT,"phaser-demo-m1hf/demo-sw.js"),"utf8");
@@ -65,14 +66,15 @@ test("PWA precaches v10 marker + spritesheet",()=>{
  assert.ok(sw.includes("./art/battle/runtime-v84/sparks-v10.json"));
 });
 
-test("mobile fire sparks stay at 35% of the arena, closer to Peren",()=>{
+test("mobile sparks appear beside the hand at 30% of the arena",()=>{
  const points=[];
- const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
+ const sprite={active:true,setOrigin(){return this},setDepth(){return this},setScale(value){this.spriteScale=value;return this},
   setFrame(){return this},destroy(){this.active=false}};
  const scene={scale:{width:390,height:844},textures:{exists:()=>true},
   add:{sprite:(x,y)=>{points.push([x,y]);return sprite}},
   events:{once(){},off(){}},
   time:{delayedCall(){return{remove(){}}}}};
  void playSparksOverlay(scene);
- assert.ok(Math.abs(points[0][0]-390*.35)<.01,"Mobile hand sparks placement");
+ assert.ok(Math.abs(points[0][0]-390*.30)<.01,"Mobile hand sparks placement");
+ assert.ok(sprite.spriteScale*CONTRACT.sparks.width<50,"Mobile sparks should be only a little larger than the hand");
 });
