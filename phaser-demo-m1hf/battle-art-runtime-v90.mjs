@@ -433,7 +433,7 @@ export function playSparksOverlay(scene){
  // use much smaller fractions than the full-size 5-frame source atlas.
  const sprite=scene.add.sprite(a.w*(compact?.30:.285),a.top+a.height*.39,spec.key,0)
   .setOrigin(.5,.5).setDepth(24);
- const scale=Math.min(a.w*(compact?.12:.085)/spec.width,a.height*.29/spec.height);
+ const scale=.60*Math.min(a.w*(compact?.12:.085)/spec.width,a.height*.29/spec.height);
  sprite.setScale(scale);
  return new Promise(resolve=>{
   let current=0,timer=null,done=false;
@@ -454,22 +454,32 @@ export function playSparksOverlay(scene){
   next();
  });
 }
-/** A distinct five-stage flame swirl, independently guarded by its asset manifest. */
+/** Three small five-stage flames at the enemy, all anchored at the same lower-center point. */
 export function playFlameOverlay(scene){
  const spec=CONTRACT.flame;
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-flame"});
  const a=battleArena(scene),compact=a.w<=620;
- // Place the impact over the enemy silhouette, not to its right.
- const sprite=scene.add.sprite(a.w*(compact?.74:.75),a.top+a.height*.43,spec.key,0)
-  .setOrigin(.5,.5).setDepth(27);
- sprite.setScale(Math.min(a.w*(compact?.36:.29)/spec.width,a.height*.64/spec.height));
- sprite.setAlpha(0);
+ // One shared lower-center impact point: the two side flames pivot from
+ // exactly the same base as the larger central flame.
+ const baseX=a.w*(compact?.74:.75);
+ const baseY=a.top+a.height*.50;
+ const mainScale=Math.min(
+  a.w*(compact?.22:.17)/spec.width,
+  a.height*.40/spec.height
+ );
+ const sideScale=mainScale*.82;
+ const createFlame=(scale,rotation,depth)=>scene.add.sprite(baseX,baseY,spec.key,0)
+  .setOrigin(.5,1).setDepth(depth).setScale(scale).setRotation(rotation).setAlpha(0);
+ const center=createFlame(mainScale,0,28);
+ const left=createFlame(sideScale,-Math.PI/4,27);
+ const right=createFlame(sideScale,Math.PI/4,27);
+ const flames=[left,center,right];
  return new Promise(resolve=>{
   let current=0,timer=null,done=false;
   const clear=reason=>{
    if(done)return;
    done=true;timer?.remove?.(false);scene.events.off("shutdown",cancel);
-   if(sprite.active)sprite.destroy();
+   for(const flame of flames)if(flame.active)flame.destroy();
    resolve({played:reason==="complete",reason});
   };
   const cancel=()=>clear("shutdown");
@@ -477,12 +487,13 @@ export function playFlameOverlay(scene){
   function next(){
    if(done)return;
    if(current>=spec.frames)return clear("complete");
-   sprite.setFrame(current);
+   for(const flame of flames)flame.setFrame(current);
    timer=scene.time.delayedCall(spec.durations[current++],next);
   }
   timer=scene.time.delayedCall(spec.delayMs,()=>{
    if(done)return;
-   sprite.setAlpha(1);next();
+   for(const flame of flames)flame.setAlpha(1);
+   next();
   });
  });
 }
