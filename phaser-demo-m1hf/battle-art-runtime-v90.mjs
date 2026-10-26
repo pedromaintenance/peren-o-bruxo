@@ -429,7 +429,8 @@ export function playSparksOverlay(scene){
  const spec=CONTRACT.sparks;
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-sparks"});
  const a=battleArena(scene),compact=a.w<=620;
- const sprite=scene.add.sprite(a.w*(compact?.42:.42),a.top+a.height*.42,spec.key,0)
+ // Bring ignition closer to Peren’s outstretched hand at both breakpoints.
+ const sprite=scene.add.sprite(a.w*(compact?.35:.33),a.top+a.height*.44,spec.key,0)
   .setOrigin(.5,.5).setDepth(24);
  const scale=Math.min(a.w*(compact?.31:.23)/spec.width,a.height*.80/spec.height);
  sprite.setScale(scale);
@@ -457,7 +458,8 @@ export function playFlameOverlay(scene){
  const spec=CONTRACT.flame;
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-flame"});
  const a=battleArena(scene),compact=a.w<=620;
- const sprite=scene.add.sprite(a.w*(compact?.78:.79),a.top+a.height*.43,spec.key,0)
+ // Place the impact over the enemy silhouette, not to its right.
+ const sprite=scene.add.sprite(a.w*(compact?.74:.75),a.top+a.height*.43,spec.key,0)
   .setOrigin(.5,.5).setDepth(27);
  sprite.setScale(Math.min(a.w*(compact?.36:.29)/spec.width,a.height*.64/spec.height));
  sprite.setAlpha(0);
