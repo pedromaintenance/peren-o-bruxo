@@ -136,17 +136,16 @@ try {
         assert.equal(during.idleHidden,true,"Cinematic must temporarily hide idle battler");
         assert.equal(during.originalHidden,true);
         assert.ok(during.bottom>0 && during.top<height,"Spell animation must intersect the visible viewport");
-        // Frame-by-frame evidence is collected by scene update listeners above.
-        // Avoid waiting on an ephemeral frame after expensive screenshots:
-        // the renderer may have passed it by the time Playwright polls.
-        await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
+        // Capture the cloud while the scene is animating, before any other
+        // screenshot stalls the render loop long enough to miss an ephemeral VFX.
         if(spell==="fire"){
           await page.waitForFunction(()=>{
             const b=window.__perenLab?.scene?.getScene("BattleScene");
             return b?.children?.list?.some(c=>c.active&&c.visible&&c.alpha>0&&c.texture?.key==="peren-v17-skullcloud"&&c.flipX===true);
-          },null,{timeout:3000,polling:30});
+          },null,{timeout:3000,polling:20});
           await page.screenshot({path:`artifacts/peren-v18-fire-impact-${width}.png`,fullPage:false});
         }
+        await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
         await page.evaluate(async()=>await window.__perenV85Animation);
         if(spell==="fire"){
           const fire=await page.evaluate(()=>{
