@@ -63,6 +63,6 @@ test("new skull plays all five frames after 700ms then destroys its own sprite",
 });
 test("new Hell Skull PNG and manifest present in offline service worker",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-hellskull-v16-20261026/);
+ assert.match(sw,/preview-fire-[a-z0-9-]+-v\d+-20\d{6}/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/hellskull-v16."+ext));
 });

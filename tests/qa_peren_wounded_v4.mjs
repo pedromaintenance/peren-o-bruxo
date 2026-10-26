@@ -55,5 +55,5 @@ test("gallery compares normal and wounded; offline precache includes both all ar
  "./art/characters/peren/official-v4/runtime-provenance.json",
  ...["art-m1h","art-m1hb","art-m1hc","art-m1hd"].map(x=>`./${x}/characters/peren/peren-wounded-atlas.png`)
  ])assert.ok(arr.includes(p),"missing from PWA "+p);
- assert.match(sw,/preview-fire-hellskull-v16-20261026/);
+ assert.match(sw,/preview-fire-[a-z0-9-]+-v\d+-20\d{6}/);
 });

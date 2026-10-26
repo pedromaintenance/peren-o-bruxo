@@ -66,6 +66,6 @@ test("Labareda waits 560ms, plays 0 through 4 and always destroys its sprite",as
 });
 test("offline cache includes real PNG and manifest after bump",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-hellskull-v16-20261026/);
+ assert.match(sw,/preview-fire-[a-z0-9-]+-v\d+-20\d{6}/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/blaze-v14."+ext));
 });

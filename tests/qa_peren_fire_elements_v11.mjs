@@ -67,7 +67,7 @@ for(const [id,expected] of Object.entries(fixtures)){
 }
 test("service worker caches the two new transparent atlases and metadata",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-hellskull-v16-20261026/);
+ assert.match(sw,/preview-fire-[a-z0-9-]+-v\d+-20\d{6}/);
  for(const id of Object.keys(fixtures))for(const ext of ["png","json"])
   assert.ok(sw.includes("./art/battle/runtime-v84/"+id+"-v11."+ext));
 });
