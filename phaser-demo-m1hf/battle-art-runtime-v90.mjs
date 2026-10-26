@@ -429,11 +429,11 @@ export function playSparksOverlay(scene){
  const spec=CONTRACT.sparks;
  if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-sparks"});
  const a=battleArena(scene),compact=a.w<=620;
- // The VFX is a short ignition immediately right of the outstretched hand:
- // use much smaller fractions than the full-size 5-frame source atlas.
- const sprite=scene.add.sprite(a.w*(compact?.30:.285),a.top+a.height*.39,spec.key,0)
+ // Adjust only the starter spell's sparks: twice the v22 size, shifted
+ // exactly 50 Phaser scene pixels right, toward the extended hand's fingertips.
+ const sprite=scene.add.sprite(a.w*(compact?.30:.285)+50,a.top+a.height*.39,spec.key,0)
   .setOrigin(.5,.5).setDepth(24);
- const scale=.60*Math.min(a.w*(compact?.12:.085)/spec.width,a.height*.29/spec.height);
+ const scale=1.20*Math.min(a.w*(compact?.12:.085)/spec.width,a.height*.29/spec.height);
  sprite.setScale(scale);
  return new Promise(resolve=>{
   let current=0,timer=null,done=false;

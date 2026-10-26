@@ -1,4 +1,4 @@
-const CACHE="peren-phaser-m1hf-preview-fire-bolt-v22-20261026";
+const CACHE="peren-phaser-m1hf-preview-fire-bolt-v23-20261026";
 
 const CACHE_PREFIX="peren-phaser-m1hf-preview-";
 

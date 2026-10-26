@@ -165,14 +165,14 @@ try {
           assert.deepEqual([...new Set(fire.observations.flame)],[0,1,2,3,4],"Five flame frames must appear at the target");
           assert.deepEqual([...new Set(fire.observations.casting)],[0,1,2,3],"Peren must cast in four authored frames");
           const compact=fire.arenaWidth<=620;
-          const sparkTarget=fire.arenaWidth*(compact?.30:.285);
+          const sparkTarget=fire.arenaWidth*(compact?.30:.285)+50;
           const flameTarget=fire.arenaWidth*(compact?.74:.75);
           assert.ok(fire.observations.sparksPositions.length>0 &&
             fire.observations.sparksPositions.every(x=>Math.abs(x-sparkTarget)<.5),
-            "Sparks must sit close to Peren on mobile and desktop");
+            "Sparks must shift 50 scene pixels toward the right on mobile and desktop");
           assert.ok(fire.observations.sparksWidths.length>0 &&
-            fire.observations.sparksWidths.every(width=>width<fire.arenaWidth*(compact?.084:.042)),
-            "Sparks should only slightly exceed Peren's hand size, not cover the whole caster");
+            fire.observations.sparksWidths.every(width=>width<fire.arenaWidth*(compact?.168:.084)),
+            "Sparks should be twice v22 size without engulfing Peren");
           assert.ok(fire.observations.flamePositions.length>0 &&
             fire.observations.flamePositions.every(x=>Math.abs(x-flameTarget)<.5),
             "Flame must be centered to the left of its previous target offset");
