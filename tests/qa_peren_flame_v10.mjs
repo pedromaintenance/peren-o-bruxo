@@ -38,14 +38,18 @@ test("optional flame requires a validated marker and actual PNG availability",as
  assert.equal(await checkInstalledFlame(missing,null),false);
 });
 test("flame overlay plays only 0–4 then destroys sprite without changing combat",async()=>{
- const seen=[],queue=[];
+ const seen=[],queue=[],alphas=[],positions=[];
  const actor={active:true,setOrigin(){return this},setDepth(){return this},setScale(){return this},
- setFrame(n){seen.push(n);return this},destroy(){this.active=false}};
+ setAlpha(v){alphas.push(v);return this},setFrame(n){seen.push(n);return this},destroy(){this.active=false}};
  const scene={scale:{width:900,height:640},textures:{exists:key=>key===CONTRACT.flame.key},
-  add:{sprite:()=>actor},events:{once(){},off(){}},
+  add:{sprite:(x,y)=>{positions.push([x,y]);return actor}},events:{once(){},off(){}},
   time:{delayedCall(ms,cb){queue.push({ms,cb});return {remove(){}}}}};
  const pending=playFlameOverlay(scene);
- for(let i=0;i<5;i++){assert.equal(queue[i].ms,CONTRACT.flame.durations[i]);queue[i].cb()}
+ assert.equal(queue[0].ms,270,"Flame impact starts after Peren begins casting");
+ queue[0].cb();
+ for(let i=0;i<5;i++){assert.equal(queue[i+1].ms,CONTRACT.flame.durations[i]);queue[i+1].cb()}
+ assert.deepEqual(alphas,[0,1]);
+ assert.ok(positions[0][0]>900*.7,"Flame should appear over the opponent");
  assert.deepEqual(await pending,{played:true,reason:"complete"});
  assert.deepEqual(seen,[0,1,2,3,4]);
  assert.equal(actor.active,false);
