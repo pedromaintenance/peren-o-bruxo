@@ -85,13 +85,18 @@ try {
           const scene=window.__perenLab.scene.getScene("BattleScene");
           if(spell==="ice"){
             if(window.__perenBattleArtV90?.castingIceEnabled!==true)throw Error("Transparent ice caster is unavailable");
-            window.__perenV24Ice={frames:[],enemyImpact:false,wrongFire:false};
+            if(window.__perenBattleArtV90?.iceShardsEnabled!==true)throw Error("Approved Estilhaços asset unavailable");
+            window.__perenV24Ice={frames:[],shards:[],shardPositions:[],legacyIce:false,wrongFire:false};
             window.__perenV24IceObserve=()=>{
               for(const child of scene.children.list){
                 if(!child.active||!child.visible||child.alpha<=0)continue;
                 const key=child.texture?.key;
                 if(key==="peren-v24-casting-ice")window.__perenV24Ice.frames.push(Number(child.frame?.name));
-                if(key==="vfx-ice")window.__perenV24Ice.enemyImpact=true;
+                if(key==="peren-v26-ice-shards"){
+                  window.__perenV24Ice.shards.push(Number(child.frame?.name));
+                  window.__perenV24Ice.shardPositions.push({x:child.x,y:child.y});
+                }
+                if(key==="vfx-ice")window.__perenV24Ice.legacyIce=true;
                 if(key==="vfx-fire")window.__perenV24Ice.wrongFire=true;
               }
             };
@@ -176,8 +181,13 @@ try {
             return window.__perenV24Ice;
           });
           assert.deepEqual([...new Set(ice.frames)],[0,1,2,3],"Ice caster must play all four approved frames");
-          assert.equal(ice.enemyImpact,true,"Existing ice impact remains until a new enemy asset is ready");
-          assert.equal(ice.wrongFire,false,"Ice must not call the old fire VFX");
+          assert.deepEqual([...new Set(ice.shards)],[0,1,2,3,4],
+            "Approved Estilhaços must display all five stages on the enemy");
+          assert.equal(ice.legacyIce,false,"The old procedural ice must never render");
+          assert.equal(ice.wrongFire,false,"Ice must not call procedural fire");
+          assert.ok(ice.shardPositions.length>0,"Estilhaços must be visible in real combat");
+          assert.ok(ice.shardPositions.every(p=>p.x>width*.50),
+            "Estilhaços must stay over the right-hand target creature, not Peren");
         }
         if(spell==="fire"){
           const fire=await page.evaluate(()=>{

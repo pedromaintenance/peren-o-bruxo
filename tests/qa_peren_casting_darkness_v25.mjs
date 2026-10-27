@@ -76,7 +76,7 @@ test("missing or tampered darkness source fails closed without interrupting comb
 });
 test("PWA precaches the real Darkness PNG and has a new versioned cache",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-magic-casting-darkness-v25-20261026/);
+ assert.match(sw,/const CACHE="peren-phaser-m1hf-preview-[a-z0-9-]+-v\d+-20\d{6}";/);
  const files=JSON.parse(sw.match(/const FILES=(\[[^\n]+\]);/)[1]);
  assert.ok(files.includes("./art/characters/peren/battler/casting/peren-casting-darkness.png"));
  assert.ok(files.includes("./art/characters/peren/battler/casting/manifest.json"));

@@ -40,6 +40,7 @@ on:
       - 'tests/qa_peren_firebolt_v19.mjs'
       - 'tests/qa_peren_casting_ice_v24.mjs'
       - 'tests/qa_peren_casting_darkness_v25.mjs'
+      - 'tests/qa_peren_ice_shards_v26.mjs'
       - 'tests/qa_peren_skullcloud_v17.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
@@ -100,6 +101,8 @@ jobs:
         run: node --test tests/qa_peren_casting_ice_v24.mjs
       - name: Darkness Casting v25 — verify seven original poses, fifteen ticks, height and offline cache
         run: node --test tests/qa_peren_casting_darkness_v25.mjs
+      - name: Ice Shards v26 — original RGBA asset, five phases, enemy-only hit and no procedural ice
+        run: node --test tests/qa_peren_ice_shards_v26.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1

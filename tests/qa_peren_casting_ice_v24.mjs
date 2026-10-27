@@ -57,7 +57,7 @@ test("ice plays frames 0–3, stays on caster side and restores Idle",async()=>{
  assert.ok(positions[0][0]<900*.35);
  assert.equal(spr.active,false);
 });
-test("new ice caster preserves existing target hit, while basic fire suppresses legacy vfx-fire",async()=>{
+test("basic ice and fire suppress legacy procedural visuals without changing combat turns",async()=>{
  const calls=[];
  const scene={preload(){},create(){},animatePlayer(action){calls.push(action);return Promise.resolve("legacy")},
   takeTurn(){return Promise.resolve(true)},textures:{exists:()=>false},
@@ -65,7 +65,7 @@ test("new ice caster preserves existing target hit, while basic fire suppresses 
  assert.equal(installOnBattleScene(scene,{doc:{getElementById(){return null}},castingIceEnabled:false}),true);
  await scene.animatePlayer("spell:mag-raio-de-gelo",[]);
  await scene.animatePlayer("spell:mag-raio-de-fogo",[]);
- assert.deepEqual(calls,["spell:mag-raio-de-gelo"],"ice still uses existing enemy impact; fire's procedural effect stays disabled");
+ assert.deepEqual(calls,[],"both basic elemental spells suppress the bundled procedural effects");
 });
 test("PWA includes approved ice PNG and caster manifest",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
