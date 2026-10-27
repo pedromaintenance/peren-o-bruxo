@@ -1,0 +1,53 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-portal-05",
+  "name": "Vazio 5 — Portal",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Grade de Efeitos Cósmicos do Vazio (5)(1).png",
+    "originalSha256": "4763eebd82185a193177409902b64497b47587c68f182be05a83739cab4c616a",
+    "storedFile": "dark-portal-05-source.png",
+    "sourceVariant": "uploaded original PNG, byte-for-byte unchanged; a single portal illustration, not a spritesheet",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 437,
+    "height": 468,
+    "bytes": 269313,
+    "sha256": "4763eebd82185a193177409902b64497b47587c68f182be05a83739cab4c616a",
+    "gitBlobSha": "8571a0811160d4b0b53eb96b991bfc7818869601"
+  },
+  "animationMap": {
+    "sourceLayout": "single 437x468 RGBA image with transparency; no separate frames or animation stages",
+    "poseCount": 1,
+    "poseOrder": [
+      1
+    ],
+    "spacerPx": 0,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 437,
+        "height": 468,
+        "phase": "static-portal"
+      }
+    ],
+    "cropStatus": "not cropped; full original canvas retained; do not pretend multiple animation frames exist",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "A circular purple-black cosmic void portal framed by jagged amethyst-magenta magical cracks, with vertical spikes above and below."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep exact original 437x468 RGBA PNG bytes and transparency. Do not redraw, resize, recrop, fake additional animation poses, or activate without explicit subsequent approval.",
+  "notes": "Fifth darkness/void VFX in reserved library; single static image. Archive only: do not modify existing magic, Void Rift, precache, combat engine, PWA, saves or other effects."
+}

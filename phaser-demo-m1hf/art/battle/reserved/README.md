@@ -51,3 +51,10 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - PNG 2528 × 682 RGBA derivado do original 2048 × 682, com quatro lacunas transparentes de 120 px e cinco quadros de larguras individuais
 - Os pixels e os níveis de transparência da arte original foram preservados integralmente; sem duração, alvo ou magia atribuídos
 - **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
+
+## Vazio 5 — Portal
+- PNG original integral: [dark-portal-05-source.png](dark-portal-05-source.png)
+- Mapeamento e metadados: [dark-portal-05.json](dark-portal-05.json)
+- PNG 437 × 468 RGBA com transparência original preservada integralmente (arquivo idêntico ao enviado)
+- **Um único quadro estático**: não é spritesheet animado; sem quadros intermediários, duração, alvo ou magia atribuídos
+- **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
