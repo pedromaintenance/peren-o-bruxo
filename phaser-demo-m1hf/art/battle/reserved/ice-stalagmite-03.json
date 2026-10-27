@@ -1,0 +1,51 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-stalagmite-03",
+  "name": "Gelo 3 — Estalagmite",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência de Eruptura de Estalagmite de Gelo(1).png",
+    "storedFile": "ice-stalagmite-03-source.png",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 682,
+    "bytes": 1490813,
+    "sha256": "3365e71f63e1f851fc06be14ae1307aaf4077b1582d7e091b985e5f2e03391fd"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored poses arranged horizontally in one original PNG",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "provisionalColumnCutsX": [
+      0,
+      410,
+      819,
+      1229,
+      1638,
+      2048
+    ],
+    "cropStatus": "estimated boundaries only; must visually review per-cell edges before runtime repacking",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five-stage eruption of blue ice stalagmites/crystalline spires rising from an icy impact point and dissipating."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep the uploaded source PNG pixel-identical, including full 682px height and transparency; no art generation, resize, crop or frame repacking at this stage.",
+  "notes": "Future library asset only. Do not add to active basic Raio de Gelo, whose effects remain casting-ice + Estilhaços (ice-shards-v26)."
+}
