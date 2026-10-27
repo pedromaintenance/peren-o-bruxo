@@ -65,3 +65,10 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - PNG 2048 × 475 RGBA; cinco quadros com larguras variáveis e lacunas transparentes originais de 184, 134, 130 e 170 px entre as áreas visíveis
 - Arte original preservada byte a byte; nenhum espaçamento adicional, redimensionamento ou alteração de transparência
 - **Estado:** reservado; sem duração, alvo ou magia atribuídos; não carregado no Phaser, não pré-cacheado e não ativado em combate
+
+## Escuridão 7 — Smite do Vazio
+- PNG original preservado: [dark-smite-07-source.png](dark-smite-07-source.png)
+- Mapeamento dos cinco quadros: [dark-smite-07.json](dark-smite-07.json)
+- PNG 2048 × 475 RGBA; cinco quadros com larguras individuais e separações totalmente transparentes de 180, 149, 140 e 163 px entre as áreas visíveis
+- Arquivo e canal alfa preservados byte a byte; sem necessidade de recomposição, recorte ou espaçamento adicional
+- **Estado:** reservado; sem duração, alvo ou magia atribuídos; não carregado no Phaser, não pré-cacheado e não ativado em combate

@@ -1,0 +1,125 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-smite-07",
+  "name": "Escuridão 7 — Smite do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Peren_Smite_Do_Vazio_5frames_80px(1).png",
+    "originalSha256": "2ba7050bf6dbfe305b9e7bfdaec0029c797554ace529a9dbe360451f0acb6b8a",
+    "storedFile": "dark-smite-07-source.png",
+    "sourceVariant": "original five-pose PNG preserved byte-for-byte; preexisting alpha-zero separators retained",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 475,
+    "bytes": 691160,
+    "sha256": "2ba7050bf6dbfe305b9e7bfdaec0029c797554ace529a9dbe360451f0acb6b8a",
+    "gitBlobSha": "34767c6d2f605a07417afc4b90c71d66620950f3"
+  },
+  "animationMap": {
+    "sourceLayout": "five visual poses in a single horizontal RGBA strip; four uneven alpha-zero separations already present in original PNG; no repacking or added spacing",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceCutX": [
+      0,
+      388,
+      804,
+      1239,
+      1660,
+      2048
+    ],
+    "fullyTransparentSeparationsPx": [
+      180,
+      149,
+      140,
+      163
+    ],
+    "spacerPx": null,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 388,
+        "height": 475,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 388,
+        "y": 0,
+        "width": 416,
+        "height": 475,
+        "phase": "growth"
+      },
+      {
+        "frame": 3,
+        "x": 804,
+        "y": 0,
+        "width": 435,
+        "height": 475,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1239,
+        "y": 0,
+        "width": 421,
+        "height": 475,
+        "phase": "collapse"
+      },
+      {
+        "frame": 5,
+        "x": 1660,
+        "y": 0,
+        "width": 388,
+        "height": 475,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsX": [
+      [
+        69,
+        298
+      ],
+      [
+        478,
+        730
+      ],
+      [
+        879,
+        1169
+      ],
+      [
+        1309,
+        1578
+      ],
+      [
+        1741,
+        1987
+      ]
+    ],
+    "cropStatus": "cut boundaries verified on columns with alpha=0 from top to bottom; source PNG not modified; widths are not uniform and cannot be parsed with uniform Phaser spritesheet frameWidth",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five phases of a purple-black vertical magical smite rising from a circular ground sigil with a spiraling bright violet arc; energy peaks before dispersing."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep exact uploaded 2048x475 PNG bytes and alpha values. Do not resize, repack, fabricate frames, set timing or activate without explicit future approval.",
+  "notes": "Seventh darkness/void VFX in reserved library. Archive only; no changes to existing spells, Phaser runtime, cache, saves, combat or Void Rift."
+}
