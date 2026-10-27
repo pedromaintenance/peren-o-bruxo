@@ -1,0 +1,140 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-specter-08",
+  "name": "Escuridão 8 — Espectro do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência de Energia Espectral Roxa(1).png",
+    "originalSha256": "f7024edcb13df6776f8eb78b2226b496d6d3784f05839157eba4b5e2f3d21870",
+    "storedFile": "dark-specter-08-source.png",
+    "sourceVariant": "original uploaded PNG archived byte-for-byte; no edit to pixel data, transparency, frame spacing or dimensions",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 682,
+    "bytes": 1921117,
+    "sha256": "f7024edcb13df6776f8eb78b2226b496d6d3784f05839157eba4b5e2f3d21870",
+    "gitBlobSha": "5970c8c4ebcd3a681909e2f335b18cc79f43d8fb"
+  },
+  "animationMap": {
+    "sourceLayout": "five visual poses in one horizontal RGBA canvas; separators have negligible residual alpha (maximum 1 at cut columns), so frame boundaries are mapped from visual activity rather than claiming completely transparent gutters",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceCutX": [
+      0,
+      396,
+      802,
+      1234,
+      1640,
+      2048
+    ],
+    "spacerPx": null,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 396,
+        "height": 682,
+        "phase": "appearance"
+      },
+      {
+        "frame": 2,
+        "x": 396,
+        "y": 0,
+        "width": 406,
+        "height": 682,
+        "phase": "intensification"
+      },
+      {
+        "frame": 3,
+        "x": 802,
+        "y": 0,
+        "width": 432,
+        "height": 682,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1234,
+        "y": 0,
+        "width": 406,
+        "height": 682,
+        "phase": "recession"
+      },
+      {
+        "frame": 5,
+        "x": 1640,
+        "y": 0,
+        "width": 408,
+        "height": 682,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsAtThreshold8": [
+      {
+        "frame": 1,
+        "x0": 34,
+        "y0": 138,
+        "x1": 376,
+        "y1": 587
+      },
+      {
+        "frame": 2,
+        "x0": 416,
+        "y0": 114,
+        "x1": 789,
+        "y1": 593
+      },
+      {
+        "frame": 3,
+        "x0": 812,
+        "y0": 82,
+        "x1": 1223,
+        "y1": 611
+      },
+      {
+        "frame": 4,
+        "x0": 1244,
+        "y0": 91,
+        "x1": 1624,
+        "y1": 593
+      },
+      {
+        "frame": 5,
+        "x0": 1656,
+        "y0": 129,
+        "x1": 2029,
+        "y1": 588
+      }
+    ],
+    "boundaryAlphaMax": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "cropStatus": "Original PNG is unmodified. Cut lines x=396,802,1234,1640 have at most alpha=1 and contain no alpha>=8 pixels. Frames are variable width; do not use uniform frameWidth in a Phaser spritesheet loader.",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five stages of a black and ultraviolet spectral humanoid with a bright heart and swirling violet energy ribbons; grows to a central peak and fades."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep exactly the uploaded original 2048x682 PNG bytes and alpha values, including near-transparent pixels between poses. Do not resize, repack, crop, redraw, fabricate poses or activate without subsequent explicit approval.",
+  "notes": "Eighth darkness/void VFX in reserved library. Archive only; no changes to current Void Rift, active spells, combat, PWA precache, save or engine runtime."
+}

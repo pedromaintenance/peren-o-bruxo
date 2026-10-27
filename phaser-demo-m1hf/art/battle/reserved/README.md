@@ -72,3 +72,11 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - PNG 2048 × 475 RGBA; cinco quadros com larguras individuais e separações totalmente transparentes de 180, 149, 140 e 163 px entre as áreas visíveis
 - Arquivo e canal alfa preservados byte a byte; sem necessidade de recomposição, recorte ou espaçamento adicional
 - **Estado:** reservado; sem duração, alvo ou magia atribuídos; não carregado no Phaser, não pré-cacheado e não ativado em combate
+
+## Escuridão 8 — Espectro do Vazio
+- PNG original preservado: [dark-specter-08-source.png](dark-specter-08-source.png)
+- Mapeamento dos cinco quadros: [dark-specter-08.json](dark-specter-08.json)
+- PNG 2048 × 682 RGBA; cinco quadros de larguras individuais (396, 406, 432, 406 e 408 px)
+- Cortes em x = 396, 802, 1234 e 1640; há somente resíduos quase invisíveis de alfa 1 nessas colunas, portanto não são lacunas perfeitamente transparentes
+- Arquivo original preservado byte a byte; não houve recorte, redimensionamento nem processamento da transparência
+- **Estado:** reservado; sem duração, alvo ou magia atribuídos; não carregado no Phaser, não pré-cacheado e não ativado em combate
