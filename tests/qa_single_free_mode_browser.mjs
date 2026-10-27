@@ -26,7 +26,7 @@ try {
     if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener("controllerchange",resolve,{once:true}));
     const keys=await caches.keys();
     const active=keys.filter(x=>x.startsWith("peren-phaser-m1hf-preview-"));
-    if(active.length!==1||!/^peren-phaser-m1hf-preview-fire-[a-z0-9-]+-v\d+-\d{8}$/.test(active[0]))throw Error("Unexpected cache version: "+keys);
+    if(active.length!==1||!/^peren-phaser-m1hf-preview-[a-z0-9-]+-v\d+-\d{8}$/.test(active[0]))throw Error("Unexpected cache version: "+keys);
     for(const f of ["./modos.html","./campanha.html","./cronica.html"]){
       if(await caches.match(f))throw Error("Retired page persisted in cache: "+f);
     }

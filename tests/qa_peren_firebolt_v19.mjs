@@ -75,7 +75,7 @@ test("fire-lit character animates 0→3, stays on the idle actor's side and rest
 });
 test("PWA includes caster and basic spells with separate advanced assets preserved",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-fire-bolt-v23-20261026/);
+ assert.match(sw,/preview-magic-casting-ice-v24-20261026/);
  for(const p of ["./art/characters/peren/battler/casting/manifest.json",
                   "./art/characters/peren/battler/casting/peren-casting-fire.png",
                   "./art/battle/runtime-v84/sparks-v10.png",

@@ -5,12 +5,12 @@ import {chromium} from "playwright";
 import {mkdirSync} from "node:fs";
 
 const base=process.env.PEREN_BASE_URL||"http://127.0.0.1:8765/phaser-demo-m1hf";
-const expected={fire:"peren-v19-casting-fire",arcane:"peren-v84-void"};
+const expected={fire:"peren-v19-casting-fire",ice:"peren-v24-casting-ice",arcane:"peren-v84-void"};
 const browser=await chromium.launch({headless:true,args:["--no-sandbox","--enable-webgl","--use-gl=angle"]});
 mkdirSync("artifacts",{recursive:true});
 try {
   for(const [width,height] of [[390,844],[1280,800]]){
-    for(const [spell,texture] of [["fire",expected.fire],["arcane",expected.arcane]]){
+    for(const [spell,texture] of [["fire",expected.fire],["ice",expected.ice],["arcane",expected.arcane]]){
       const page=await browser.newPage({viewport:{width,height},serviceWorkers:"block"});
       const errors=[];
       page.on("pageerror",err=>errors.push(String(err)));
@@ -83,6 +83,20 @@ try {
         // rather than photographing the idle state after the effect has disappeared.
         await page.evaluate(({spell})=>{
           const scene=window.__perenLab.scene.getScene("BattleScene");
+          if(spell==="ice"){
+            if(window.__perenBattleArtV90?.castingIceEnabled!==true)throw Error("Transparent ice caster is unavailable");
+            window.__perenV24Ice={frames:[],enemyImpact:false,wrongFire:false};
+            window.__perenV24IceObserve=()=>{
+              for(const child of scene.children.list){
+                if(!child.active||!child.visible||child.alpha<=0)continue;
+                const key=child.texture?.key;
+                if(key==="peren-v24-casting-ice")window.__perenV24Ice.frames.push(Number(child.frame?.name));
+                if(key==="vfx-ice")window.__perenV24Ice.enemyImpact=true;
+                if(key==="vfx-fire")window.__perenV24Ice.wrongFire=true;
+              }
+            };
+            scene.events.on("update",window.__perenV24IceObserve);
+          }
           if(spell==="fire"){
             if(window.__perenBattleArtV90?.sparksEnabled!==true)throw Error("Casting sparks not available");
             if(window.__perenBattleArtV90?.flameEnabled!==true)throw Error("Enemy flame not available");
@@ -122,7 +136,7 @@ try {
             scene.events.on("update",window.__perenV19Observe);
           }
           window.__perenV85Animation=scene.animatePlayer(
-            spell==="fire"?"spell:mag-raio-de-fogo":"spell:mag-misseis-magicos",[]
+            spell==="fire"?"spell:mag-raio-de-fogo":spell==="ice"?"spell:mag-raio-de-gelo":"spell:mag-misseis-magicos",[]
           );
           return true;
         },{spell});
@@ -155,6 +169,16 @@ try {
         // Screenshot captures the battle; frame-by-frame checks below prove VFX.
         await page.screenshot({path:`artifacts/peren-v85-battle-${spell}-${width}.png`,fullPage:false});
         await page.evaluate(async()=>await window.__perenV85Animation);
+        if(spell==="ice"){
+          const ice=await page.evaluate(()=>{
+            const scene=window.__perenLab.scene.getScene("BattleScene");
+            scene.events.off("update",window.__perenV24IceObserve);
+            return window.__perenV24Ice;
+          });
+          assert.deepEqual([...new Set(ice.frames)],[0,1,2,3],"Ice caster must play all four approved frames");
+          assert.equal(ice.enemyImpact,true,"Existing ice impact remains until a new enemy asset is ready");
+          assert.equal(ice.wrongFire,false,"Ice must not call the old fire VFX");
+        }
         if(spell==="fire"){
           const fire=await page.evaluate(()=>{
             const scene=window.__perenLab.scene.getScene("BattleScene");
