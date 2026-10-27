@@ -38,6 +38,7 @@ on:
       - 'tests/qa_peren_smoke_v15.mjs'
       - 'tests/qa_peren_hellskull_v16.mjs'
       - 'tests/qa_peren_firebolt_v19.mjs'
+      - 'tests/qa_peren_casting_ice_v24.mjs'
       - 'tests/qa_peren_skullcloud_v17.mjs'
       - 'ferramentas/instalar_infernal_v90.py'
       - 'ferramentas/instalar_battle_v84.py'
@@ -94,6 +95,8 @@ jobs:
         run: node --test tests/qa_peren_skullcloud_v17.mjs
       - name: Basic Fire Bolt v19 — original fire-lit caster, hand sparks, enemy flame and PWA
         run: node --test tests/qa_peren_firebolt_v19.mjs
+      - name: Ice Casting v24 — verify approved RGBA PNG, four frames and offline cache
+        run: node --test tests/qa_peren_casting_ice_v24.mjs
       - name: Install Chromium
         run: |
           npm install --no-save --no-package-lock playwright@1.56.1
