@@ -1,0 +1,126 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-explosion-07",
+  "name": "Gelo 7 — Explosão",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência de Explosão de Gelo(1).png",
+    "originalSha256": "685748ddded0121639c4b69e2dcf08526b1cbf662c1534d39e16e319346b3463",
+    "storedFile": "ice-explosion-07-source.png",
+    "sourceVariant": "approved five-frame version with 120px transparent spacing",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2528,
+    "height": 672,
+    "bytes": 1395362,
+    "sha256": "3a1109c45e3c82dfe0a7e725301c8a52e2971bf8512e5839a2a45cda1a340b11",
+    "gitBlobSha": "5412d9d01f2e83a75d6db59fa3475221375d0bca"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored phases in a horizontal row, separated by 120 fully transparent pixels; variable-width frames",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "spacerPx": 120,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 83,
+        "width": 367,
+        "height": 572,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 487,
+        "y": 23,
+        "width": 371,
+        "height": 624,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 978,
+        "y": 31,
+        "width": 524,
+        "height": 641,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1622,
+        "y": 16,
+        "width": 392,
+        "height": 641,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 2134,
+        "y": 121,
+        "width": 394,
+        "height": 551,
+        "phase": "dissipation"
+      }
+    ],
+    "sourceStripRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 367,
+        "height": 672
+      },
+      {
+        "frame": 2,
+        "x": 487,
+        "y": 0,
+        "width": 371,
+        "height": 672
+      },
+      {
+        "frame": 3,
+        "x": 978,
+        "y": 0,
+        "width": 524,
+        "height": 672
+      },
+      {
+        "frame": 4,
+        "x": 1622,
+        "y": 0,
+        "width": 392,
+        "height": 672
+      },
+      {
+        "frame": 5,
+        "x": 2134,
+        "y": 0,
+        "width": 394,
+        "height": 672
+      }
+    ],
+    "cropStatus": "alpha-validated; five distinct variable-width bounding rectangles and four fully transparent 120px gaps. Do not use a uniform spritesheet frameWidth.",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five phases of blue crystalline ice eruption, expanding from low ice shards to a large burst of tall ice spires, then contracting and fading."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep the approved 2528x672 spaced PNG byte-for-byte unchanged, including transparency. No crop, redraw, resize, frame repacking or gameplay activation without explicit approval.",
+  "notes": "Gelo 7 — Explosão reserved for future use. Must not replace active Raio de Gelo casting-ice and ice-shards-v26 or other reserved ice effects. Mapping recorded only; timing and anchor still await future integration decisions."
+}
