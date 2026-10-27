@@ -1,0 +1,121 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-sigil-06",
+  "name": "Gelo 6 — Sigilo",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência de Sigilo de Gelo Mágico(1).png",
+    "originalSha256": "cfffd557c28ef83d5f2bb9fc515eb9704da46422e217ab7a41cd74e89a54fdf2",
+    "storedFile": "ice-sigil-06-source.png",
+    "sourceVariant": "previously approved version with 120px transparent gaps",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2528,
+    "height": 682,
+    "bytes": 1414174,
+    "sha256": "5d85013d7251e2fb541fd1c726cfc5a8b11983352dc5a2790a1d0e348c192f2a",
+    "gitBlobSha": "5fc0417d9beaba2f271a954d64727a7edd534db2"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored sigil phases arranged horizontally; variable-width frame cells with 120 fully transparent pixels between adjacent cells",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "spacerPx": 120,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 377,
+        "height": 682,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 497,
+        "y": 0,
+        "width": 410,
+        "height": 682,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 1027,
+        "y": 0,
+        "width": 476,
+        "height": 682,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1623,
+        "y": 0,
+        "width": 413,
+        "height": 682,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 2156,
+        "y": 0,
+        "width": 372,
+        "height": 682,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsThreshold10XYXY": [
+      [
+        36,
+        158,
+        362,
+        520
+      ],
+      [
+        505,
+        121,
+        906,
+        555
+      ],
+      [
+        1027,
+        67,
+        1502,
+        586
+      ],
+      [
+        1623,
+        122,
+        2021,
+        551
+      ],
+      [
+        2169,
+        159,
+        2489,
+        514
+      ]
+    ],
+    "cropStatus": "validated: 120px alpha-zero horizontal gaps, five variable-width source strips, no shared overlap; do not treat sheet as equal-width Phaser spritesheet",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five-stage bright blue magical ice sigil with eight-point crystalline star within a magic circle; illuminates, peaks, then fades."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Preserve the approved spaced PNG byte-identical at 2528x682 with all original transparency. Do not crop, rescale, redraw, repack, activate or change gameplay without future explicit approval.",
+  "notes": "Reserved only. Do not replace the active basic ice effect (casting-ice plus ice-shards-v26), or reserved Gelo 2–5. The source PNG is not a grid of constant-width frames; an eventual runtime animator must use the rectangles here and a duration explicitly decided later."
+}
