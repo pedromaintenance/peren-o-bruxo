@@ -25,3 +25,9 @@ Este diretório guarda imagens originais para possíveis integrações futuras a
 - **Estado:** reservado para uso futuro, sem duração, magia ou alvo atribuídos
 
 A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaços (ice-shards-v26)**.
+
+## Escuridão 1 — Rajada do Vazio
+- PNG espaçado e preservado: [dark-blast-01-source.png](dark-blast-01-source.png)
+- Mapeamento de cinco poses: [dark-blast-01.json](dark-blast-01.json)
+- PNG 2528 × 475 RGBA com quatro intervalos transparentes de 120 px; quadros de larguras variáveis
+- **Estado:** reservado; sem atribuição de magia, duração, pré-cache ou ativação no Phaser

@@ -1,0 +1,126 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-blast-01",
+  "name": "Escuridão 1 — Rajada do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Peren_Crescente_Vazio_5frames_80px(1).png",
+    "originalSha256": "1c569287fa8e634ad28f889f811545b053bac94fba168db6eab80deae9572668",
+    "storedFile": "dark-blast-01-source.png",
+    "sourceVariant": "approved RGBA edition with four 120-pixel transparent gaps between five poses",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2528,
+    "height": 475,
+    "bytes": 784751,
+    "sha256": "04cfec8059ef1711b4da596242f596dd3ffe90f387e1d13cfda1ab7fd0d7756a",
+    "gitBlobSha": "f4abeacadfaa5d426341e36793437b1ee9d18021"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored purple-black crescent blast phases in a single horizontal strip; variable-width frames with 120 fully transparent pixels between them",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "spacerPx": 120,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 380,
+        "height": 475,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 500,
+        "y": 0,
+        "width": 420,
+        "height": 475,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 1040,
+        "y": 0,
+        "width": 425,
+        "height": 475,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1585,
+        "y": 0,
+        "width": 415,
+        "height": 475,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 2120,
+        "y": 0,
+        "width": 408,
+        "height": 475,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsXYWH": [
+      {
+        "frame": 1,
+        "x": 80,
+        "y": 25,
+        "width": 223,
+        "height": 433
+      },
+      {
+        "frame": 2,
+        "x": 578,
+        "y": 13,
+        "width": 292,
+        "height": 446
+      },
+      {
+        "frame": 3,
+        "x": 1081,
+        "y": 15,
+        "width": 365,
+        "height": 447
+      },
+      {
+        "frame": 4,
+        "x": 1664,
+        "y": 13,
+        "width": 279,
+        "height": 452
+      },
+      {
+        "frame": 5,
+        "x": 2219,
+        "y": 15,
+        "width": 247,
+        "height": 442
+      }
+    ],
+    "cropStatus": "validated exactly against original RGBA pixels; four alpha-zero gaps of 120 px. Frame sizes differ; do not load with uniform spritesheet frameWidth.",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Dark purple and black crescent slash with violet luminous rim, materializing, expanding to a peak, then contracting and fading."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep approved 2528x475 spaced PNG byte-identical, with transparency; no redraw, cropping, resizing, repacking, animation timing decisions or gameplay activation unless separately approved.",
+  "notes": "First darkness asset in reserved library. Does not replace any current spell VFX, including Void Rift or other darkness battle effects; archival integration in main only."
+}
