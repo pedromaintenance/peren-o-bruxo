@@ -11,6 +11,8 @@ export const CONTRACT=Object.freeze({
  idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
  castingFire:{key:"peren-v19-casting-fire",file:"peren-casting-fire.png",path:CAST_ROOT+"peren-casting-fire.png",width:512,height:682,frames:4,durations:[250,300,300,300]},
  castingIce:{key:"peren-v24-casting-ice",file:"peren-casting-ice.png",path:CAST_ROOT+"peren-casting-ice.png",width:512,height:682,frames:4,durations:[250,300,300,300]},
+ // Preserve native height and replay seven authored cells over 15 timeline steps (900ms total).
+ castingDarkness:{key:"peren-v25-casting-darkness",file:"peren-casting-darkness.png",path:CAST_ROOT+"peren-casting-darkness.png",width:512,height:682,frames:7,playFrames:15,frameMs:60,sequence:[0,1,2,3,4,5,6,5,4,5,4,3,2,1,0]},
  infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,playFrames:7,frameMs:180,tailMs:320},
  void:{key:"peren-v84-void",file:"void.png",width:640,height:362,frames:11,frameMs:135},
  summon:{key:"peren-v84-summon",file:"summon.png",width:512,height:512,frames:8,
@@ -43,6 +45,7 @@ export const FIRE_OVERLAY_PRESET=Object.freeze(["sparks","flame"]);
 export const CINEMATIC_ACTIONS=Object.freeze({
  "spell:mag-raio-de-fogo":"infernal",
  "spell:mag-raio-de-gelo":"castingIce",
+ "spell:mag-escuridao":"castingDarkness",
  "spell:mag-misseis-magicos":"void"
 }); // Purely visual: existing spell and save logic is unchanged.
 export function getAnimationPlan(action){
@@ -252,6 +255,24 @@ export async function checkInstalledCastingIce(fetcher=fetch,cacheStore=typeof c
   return (await assetAvailability(CONTRACT.castingIce.path,fetcher,cacheStore)).ok;
  }catch{return false}
 }
+/** Validate the preserved seven-pose darkness atlas and its independent timing contract. */
+export async function checkInstalledCastingDarkness(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
+ try{
+  const response=await fetcher(CAST_ROOT+"manifest.json",{cache:"no-cache"});
+  if(!response?.ok)return false;
+  const marker=await response.json(),anim=marker?.animations?.find(a=>a.id==="peren-casting-darkness");
+  const atlas=anim?.atlas;
+  if(marker?.schema!=="peren.battle-casting/v1"||
+    anim?.file!=="peren-casting-darkness.png"||
+    atlas?.columns!==7||atlas?.rows!==1||atlas?.width!==3584||atlas?.height!==682||
+    atlas?.frameWidth!==512||atlas?.frameHeight!==682||
+    JSON.stringify(anim?.frames)!=="[0,1,2,3,4,5,6]"||
+    JSON.stringify(anim?.sequence)!=="[1,2,3,4,5,6,7,6,5,6,5,4,3,2,1]"||
+    anim?.frameMs!==60||anim?.durationMs!==900||
+    anim?.sha256!=="56741939ea593a08aed4f9e6d71e8f71b59c2314d2dd5e4162fabf5e0194c97d")return false;
+  return (await assetAvailability(CONTRACT.castingDarkness.path,fetcher,cacheStore)).ok;
+ }catch{return false}
+}
 /** Fogo 10 requires both the deployed PNG and a matching, verified metadata file. */
 export async function checkInstalledSkullcloud(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
  const spec=CONTRACT.skullcloud;
@@ -288,6 +309,7 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
   "Faíscas v10 carregadas: "+Boolean(result?.sparksEnabled),
   "Conjuração de Fogo v19: "+Boolean(result?.castingFireEnabled),
   "Conjuração de Gelo v24: "+Boolean(result?.castingIceEnabled),
+  "Conjuração de Escuridão v25: "+Boolean(result?.castingDarknessEnabled),
   "Chama v10: "+Boolean(result?.flameEnabled),
   "Composição visual: Faíscas na mão + Chama no inimigo",
   "BattleScene carregado: "+Boolean(doc.defaultView?.__perenLab?.scene?.getScene)
@@ -397,7 +419,7 @@ export function playVisualSequence(scene,id,{base=null}={}){
  const former=target?.visible??true;
  if(target?.active)target.setVisible(false);
  const compact=area.w<=620;
- const elementalCast=id==="castingFire"||id==="castingIce";
+ const elementalCast=id==="castingFire"||id==="castingIce"||id==="castingDarkness";
  const actor=scene.add.sprite(area.w*(elementalCast?(compact?.27:.25):(compact?.43:.30)),area.bottom-3,spec.key,0)
   .setOrigin(.5,1).setDepth(22);
  actor.setScale(Math.min(area.w*(elementalCast?(compact?.46:.38):(compact?.84:.64))/spec.width,
@@ -425,7 +447,7 @@ export function playVisualSequence(scene,id,{base=null}={}){
   function next(){
    if(done)return;
    if(current>=renderedFrames)return complete("complete");
-   actor.setFrame(current);
+   actor.setFrame(spec.sequence?.[current]??current);
    let duration=delays[current];
    if(id==="infernal"){
     if(current===renderedFrames-2)actor.setAlpha(.92);
@@ -794,12 +816,12 @@ function addControls(scene,doc){
  panel.append(details);
  scene.events.once("shutdown",()=>{details.remove()});
 }
-export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,castingFireEnabled=false,castingIceEnabled=false}={}){
+export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,castingFireEnabled=false,castingIceEnabled=false,castingDarknessEnabled=false}={}){
  if(scene.__perenV84Installed)return false;
  scene.__perenV84Installed=true;
  const originalPreload=scene.preload;
  scene.preload=function(){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[])];
   for(const a of assets)this.load.spritesheet(a.key,a.path||ROOT+a.file,{
     frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
   });
@@ -818,8 +840,8 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
   if(!effect)return originalPlayer.call(this,action,events);
   // Fire Bolt starts with the new fire-lit Peren sprite, not the grand Infernal cinematic.
   // Missing casting art is non-fatal: keep the idle sprite and basic VFX.
-  const fire=effect==="infernal",ice=effect==="castingIce";
-  const casterEffect=fire?(castingFireEnabled?"castingFire":null):ice?(castingIceEnabled?"castingIce":null):effect;
+  const fire=effect==="infernal",ice=effect==="castingIce",darkness=effect==="castingDarkness";
+  const casterEffect=fire?(castingFireEnabled?"castingFire":null):ice?(castingIceEnabled?"castingIce":null):darkness?(castingDarknessEnabled?"castingDarkness":null):effect;
   const fireOverlays=fire
    ?FIRE_OVERLAY_PRESET.filter(id=>id==="sparks"?sparksEnabled:flameEnabled)
      .map(id=>id==="sparks"?playSparksOverlay(this):playFlameOverlay(this))
@@ -847,7 +869,7 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
  // A player may have opened combat while the versioned manifest was fetched.
  // Hot-hydrate that already-running scene instead of waiting for the next battle.
  if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[])];
   const hydrate=()=>{
    if(!scene.peren?.active||scene.__v84Idle)return;
    scene.__v84Idle=useIdle(scene);
@@ -866,15 +888,15 @@ export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=
  const ready=await checkInstalledAssets(fetcher);
  if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
  // Check already published magic-specific character sheets and Fire Bolt effects.
- const [sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled]=await Promise.all([
-  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledCastingFire(fetcher),checkInstalledCastingIce(fetcher)
+ const [sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled]=await Promise.all([
+  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledCastingFire(fetcher),checkInstalledCastingIce(fetcher),checkInstalledCastingDarkness(fetcher)
  ]);
  for(let attempts=0;attempts<120;attempts++){
   const game=windowRef.__perenLab;
   if(game?.scene?.getScene){
    try{
     const scene=game.scene.getScene("BattleScene");
-    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled}),reason:"installed",sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled};
+    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled}),reason:"installed",sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled};
    }catch{}
   }
   await new Promise(r=>setTimeout(r,100));

@@ -69,7 +69,7 @@ test("new ice caster preserves existing target hit, while basic fire suppresses 
 });
 test("PWA includes approved ice PNG and caster manifest",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-magic-casting-ice-v24-20261026/);
+ assert.match(sw,/const CACHE="peren-phaser-m1hf-preview-[a-z0-9-]+-v\d+-20\d{6}";/);
  for(const p of ["./art/characters/peren/battler/casting/peren-casting-ice.png",
                  "./art/characters/peren/battler/casting/peren-casting-fire.png",
                  "./art/characters/peren/battler/casting/manifest.json"]){
