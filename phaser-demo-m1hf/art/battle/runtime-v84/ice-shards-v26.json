@@ -1,0 +1,42 @@
+{
+  "schema": "peren-ice-shards-v26",
+  "name": "Estilhaços",
+  "role": "enemy-hit-vfx",
+  "asset": "ice-shards-v26.png",
+  "frames": 5,
+  "frameSize": [
+    448,
+    682
+  ],
+  "dimensions": [
+    2240,
+    682
+  ],
+  "durations": [
+    115,
+    135,
+    165,
+    185,
+    205
+  ],
+  "delayMs": 345,
+  "sha256": "30466d8902282951b6557220006a4b7b5999abdbf5434b46aefe3d4ab9d8741f",
+  "source": {
+    "file": "Sequência de Explosão de Cristal de Gelo(1).png",
+    "dimensions": [
+      2048,
+      682
+    ],
+    "sha256": "c9d3e46ac48eeea0254ced1a24f34d37920cbefad5feae07c69014714e700e20",
+    "columnCuts": [
+      0,
+      420,
+      820,
+      1238,
+      1660,
+      2048
+    ],
+    "processing": "repack source columns into 5 transparent 448x682 cells; no resize, redraw or changed source pixels"
+  },
+  "scope": "Raio de Gelo only; character castingIce + one target-centered shards effect; no procedural frost or gameplay changes"
+}

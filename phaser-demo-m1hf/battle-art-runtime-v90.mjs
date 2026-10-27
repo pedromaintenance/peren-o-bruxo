@@ -11,6 +11,7 @@ export const CONTRACT=Object.freeze({
  idle:{key:"peren-v84-idle",file:"idle.png",width:560,height:821,frames:4,fps:4},
  castingFire:{key:"peren-v19-casting-fire",file:"peren-casting-fire.png",path:CAST_ROOT+"peren-casting-fire.png",width:512,height:682,frames:4,durations:[250,300,300,300]},
  castingIce:{key:"peren-v24-casting-ice",file:"peren-casting-ice.png",path:CAST_ROOT+"peren-casting-ice.png",width:512,height:682,frames:4,durations:[250,300,300,300]},
+ iceShards:{key:"peren-v26-ice-shards",file:"ice-shards-v26.png",width:448,height:682,frames:5,durations:[115,135,165,185,205],delayMs:345},
  // Preserve native height and replay seven authored cells over 15 timeline steps (900ms total).
  castingDarkness:{key:"peren-v25-casting-darkness",file:"peren-casting-darkness.png",path:CAST_ROOT+"peren-casting-darkness.png",width:512,height:682,frames:7,playFrames:15,frameMs:60,sequence:[0,1,2,3,4,5,6,5,4,5,4,3,2,1,0]},
  infernal:{key:"peren-v90-infernal",file:"infernal-v90.png",width:512,height:341,frames:8,playFrames:7,frameMs:180,tailMs:320},
@@ -255,6 +256,23 @@ export async function checkInstalledCastingIce(fetcher=fetch,cacheStore=typeof c
   return (await assetAvailability(CONTRACT.castingIce.path,fetcher,cacheStore)).ok;
  }catch{return false}
 }
+/** Estilhaços v26 is the only basic Ice Bolt impact, never the bundled procedural effect. */
+export async function checkInstalledIceShards(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
+ const spec=CONTRACT.iceShards;
+ try{
+  const response=await fetcher(ROOT+"ice-shards-v26.json",{cache:"no-cache"});
+  if(!response?.ok)return false;
+  const marker=await response.json();
+  if(marker?.schema!=="peren-ice-shards-v26"||
+     marker?.asset!==spec.file||marker?.frames!==spec.frames||
+     marker?.frameSize?.[0]!==spec.width||marker?.frameSize?.[1]!==spec.height||
+     marker?.dimensions?.[0]!==spec.width*spec.frames||marker?.dimensions?.[1]!==spec.height||
+     JSON.stringify(marker?.durations)!==JSON.stringify(spec.durations)||
+     marker?.delayMs!==spec.delayMs||
+     marker?.sha256!=="30466d8902282951b6557220006a4b7b5999abdbf5434b46aefe3d4ab9d8741f")return false;
+  return (await assetAvailability(spec.file,fetcher,cacheStore)).ok;
+ }catch{return false}
+}
 /** Validate the preserved seven-pose darkness atlas and its independent timing contract. */
 export async function checkInstalledCastingDarkness(fetcher=fetch,cacheStore=typeof caches==="undefined"?null:caches){
  try{
@@ -309,6 +327,7 @@ function renderBattleArtDiagnostics(doc,result,diagnostic){
   "Faíscas v10 carregadas: "+Boolean(result?.sparksEnabled),
   "Conjuração de Fogo v19: "+Boolean(result?.castingFireEnabled),
   "Conjuração de Gelo v24: "+Boolean(result?.castingIceEnabled),
+  "Estilhaços de Gelo v26 (impacto no alvo): "+Boolean(result?.iceShardsEnabled),
   "Conjuração de Escuridão v25: "+Boolean(result?.castingDarknessEnabled),
   "Chama v10: "+Boolean(result?.flameEnabled),
   "Composição visual: Faíscas na mão + Chama no inimigo",
@@ -534,6 +553,56 @@ export function playFlameOverlay(scene){
   timer=scene.time.delayedCall(spec.delayMs,()=>{
    if(done)return;
    for(const flame of flames)flame.setAlpha(1);
+   next();
+  });
+ });
+}
+/** Five original ice-crystal phases over the target creature. No new combat logic. */
+export function playIceShardsOverlay(scene){
+ const spec=CONTRACT.iceShards;
+ if(!contains(scene,spec.key))return Promise.resolve({played:false,reason:"missing-ice-shards"});
+ const a=battleArena(scene),compact=a.w<=620;
+ // Prefer the active enemy GameObject's actual bounds. Older builds expose
+ // only the right-hand battler slot, which matches the existing Flame anchor.
+ const candidates=[
+  scene.enemy?.sprite,scene.enemySprite,scene.foe?.sprite,scene.foeSprite,
+  scene.monster?.sprite,scene.mobSprite,scene.opponent?.sprite,scene.targetEnemy,
+  scene.enemy,scene.foe
+ ];
+ const target=candidates.find(sprite=>sprite?.active!==false&&Number.isFinite(sprite?.x)&&Number.isFinite(sprite?.y));
+ let x=a.w*(compact?.74:.75),y=a.top+a.height*.47;
+ let measuredWidth=0;
+ if(target){
+  const bounds=typeof target.getBounds==="function"?target.getBounds():null;
+  x=Number.isFinite(bounds?.centerX)?bounds.centerX:target.x;
+  y=Number.isFinite(bounds?.centerY)?bounds.centerY:target.y;
+  measuredWidth=Number.isFinite(bounds?.width)?bounds.width:(target.displayWidth||0);
+ }
+ const fitWidth=measuredWidth>0
+  ?Math.min(a.w*.36,Math.max(a.w*.19,measuredWidth*1.30))
+  :a.w*(compact?.33:.26);
+ const scale=Math.min(fitWidth/spec.width,a.height*.86/spec.height);
+ const sprite=scene.add.sprite(x,y,spec.key,0).setOrigin(.5,.5).setDepth(29).setScale(scale).setAlpha(0);
+ return new Promise(resolve=>{
+  let frame=0,timer=null,done=false;
+  const cancel=()=>finish("shutdown");
+  function finish(reason){
+   if(done)return;
+   done=true;timer?.remove?.(false);
+   scene.events.off("shutdown",cancel);
+   if(sprite.active)sprite.destroy();
+   resolve({played:reason==="complete",reason});
+  }
+  scene.events.once("shutdown",cancel);
+  function next(){
+   if(done)return;
+   if(frame>=spec.frames)return finish("complete");
+   sprite.setFrame(frame);
+   timer=scene.time.delayedCall(spec.durations[frame++],next);
+  }
+  timer=scene.time.delayedCall(spec.delayMs,()=>{
+   if(done)return;
+   sprite.setAlpha(1);
    next();
   });
  });
@@ -816,12 +885,12 @@ function addControls(scene,doc){
  panel.append(details);
  scene.events.once("shutdown",()=>{details.remove()});
 }
-export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,castingFireEnabled=false,castingIceEnabled=false,castingDarknessEnabled=false}={}){
+export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,flameEnabled=false,castingFireEnabled=false,castingIceEnabled=false,castingDarknessEnabled=false,iceShardsEnabled=false}={}){
  if(scene.__perenV84Installed)return false;
  scene.__perenV84Installed=true;
  const originalPreload=scene.preload;
  scene.preload=function(){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[]),...(iceShardsEnabled?[CONTRACT.iceShards]:[])];
   for(const a of assets)this.load.spritesheet(a.key,a.path||ROOT+a.file,{
     frameWidth:a.width,frameHeight:a.height,endFrame:a.frames-1
   });
@@ -842,6 +911,7 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
   // Missing casting art is non-fatal: keep the idle sprite and basic VFX.
   const fire=effect==="infernal",ice=effect==="castingIce",darkness=effect==="castingDarkness";
   const casterEffect=fire?(castingFireEnabled?"castingFire":null):ice?(castingIceEnabled?"castingIce":null):darkness?(castingDarknessEnabled?"castingDarkness":null):effect;
+  const iceOverlays=ice&&iceShardsEnabled?[playIceShardsOverlay(this)]:[];
   const fireOverlays=fire
    ?FIRE_OVERLAY_PRESET.filter(id=>id==="sparks"?sparksEnabled:flameEnabled)
      .map(id=>id==="sparks"?playSparksOverlay(this):playFlameOverlay(this))
@@ -850,13 +920,14 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
   // sprite for all spell actions containing "fogo". Skip THAT original
   // visual-only call for the basic Fire Bolt. Combat damage, mana,
   // counters and enemy responses belong to takeTurn/stepBattle and stay intact.
-  const originalAnimation=fire
-   ?Promise.resolve({played:false,reason:"legacy-procedural-fire-suppressed"})
+  const originalAnimation=(fire||ice)
+   ?Promise.resolve({played:false,reason:"legacy-procedural-element-suppressed"})
    :originalPlayer.call(this,action,events);
   const results=await Promise.allSettled([
    originalAnimation,
    casterEffect?playVisualSequence(this,casterEffect,{base:this.__v84Idle}):Promise.resolve({played:false,reason:"casting-asset-unavailable"}),
-   ...fireOverlays
+   ...fireOverlays,
+   ...iceOverlays
   ]);
   const failure=results.find(r=>r.status==="rejected");
   if(failure)throw failure.reason;
@@ -869,7 +940,7 @@ export function installOnBattleScene(scene,{doc=document,sparksEnabled=false,fla
  // A player may have opened combat while the versioned manifest was fetched.
  // Hot-hydrate that already-running scene instead of waiting for the next battle.
  if(scene.scene?.isActive?.() && scene.peren && !scene.__v84Idle && scene.load?.spritesheet){
-  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[])];
+  const assets=[CONTRACT.idle,CONTRACT.infernal,CONTRACT.void,CONTRACT.summon,...(sparksEnabled?[CONTRACT.sparks]:[]),...(flameEnabled?[CONTRACT.flame]:[]),...(castingFireEnabled?[CONTRACT.castingFire]:[]),...(castingIceEnabled?[CONTRACT.castingIce]:[]),...(castingDarknessEnabled?[CONTRACT.castingDarkness]:[]),...(iceShardsEnabled?[CONTRACT.iceShards]:[])];
   const hydrate=()=>{
    if(!scene.peren?.active||scene.__v84Idle)return;
    scene.__v84Idle=useIdle(scene);
@@ -888,15 +959,15 @@ export async function bootstrapBattleArt({windowRef=window,doc=document,fetcher=
  const ready=await checkInstalledAssets(fetcher);
  if(!ready)return {enabled:false,reason:"binary-assets-not-deployed"};
  // Check already published magic-specific character sheets and Fire Bolt effects.
- const [sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled]=await Promise.all([
-  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledCastingFire(fetcher),checkInstalledCastingIce(fetcher),checkInstalledCastingDarkness(fetcher)
+ const [sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled,iceShardsEnabled]=await Promise.all([
+  checkInstalledSparks(fetcher),checkInstalledFlame(fetcher),checkInstalledCastingFire(fetcher),checkInstalledCastingIce(fetcher),checkInstalledCastingDarkness(fetcher),checkInstalledIceShards(fetcher)
  ]);
  for(let attempts=0;attempts<120;attempts++){
   const game=windowRef.__perenLab;
   if(game?.scene?.getScene){
    try{
     const scene=game.scene.getScene("BattleScene");
-    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled}),reason:"installed",sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled};
+    return {enabled:installOnBattleScene(scene,{doc,sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled,iceShardsEnabled}),reason:"installed",sparksEnabled,flameEnabled,castingFireEnabled,castingIceEnabled,castingDarknessEnabled,iceShardsEnabled};
    }catch{}
   }
   await new Promise(r=>setTimeout(r,100));
