@@ -1,0 +1,74 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-blast-05",
+  "name": "Gelo 5 — Rajada",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Peren_Ice_Blast_Mirrored_5frames_40px(1).png",
+    "storedFile": "ice-blast-05-source.png",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 500,
+    "bytes": 991270,
+    "sha256": "ed7496edf2b293846cf85dd788824a30fe39df4656ca60b8764c3738b91f5b68",
+    "uploadStatus": "pending-binary-transfer"
+  },
+  "animationMap": {
+    "sourceLayout": "five authored ice-blast phases arranged horizontally; original full-width image is not a uniform frame atlas",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "visibleAlphaBoundsX": [
+      [
+        85,
+        292
+      ],
+      [
+        468,
+        745
+      ],
+      [
+        836,
+        1210
+      ],
+      [
+        1268,
+        1608
+      ],
+      [
+        1723,
+        1986
+      ]
+    ],
+    "provisionalColumnCutsX": [
+      0,
+      380,
+      790,
+      1240,
+      1670,
+      2048
+    ],
+    "cropStatus": "provisional; inspect before runtime repacking",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five-stage crescent-shaped blue crystalline ice burst, growing to a peak at phase 3 and dispersing in phases 4 and 5."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Preserve original PNG RGBA byte-identical including full 2048×500 canvas and transparency. Do not crop, resize, redraw or activate without approval.",
+  "notes": "Gelo 5 — Rajada. Distinct from active basic ice-shards-v26 and from reserved Gelo 2, 3, 4. Metadata committed; binary must be uploaded separately, then verified by SHA-256 before marking archived."
+}
