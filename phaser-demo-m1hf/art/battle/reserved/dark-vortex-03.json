@@ -1,0 +1,89 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-vortex-03",
+  "name": "Vazio 3 — Vórtice do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência do Vórtice do Vazio(1).png",
+    "originalSha256": "90ff1d26b5572ec7396d59a4f3ae0b4904184e7a1c26bc577db519fc48628ca9",
+    "storedFile": "dark-vortex-03-source.png",
+    "sourceVariant": "approved spaced 5-pose RGBA canvas with four 120px fully transparent gaps; original pixels preserved exactly",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2528,
+    "height": 672,
+    "bytes": 1609607,
+    "sha256": "3f0bfcdf41c0c281593a9f9d013d9a53eb6ce07e439adf882517f27469e9c87d",
+    "gitBlobSha": "d443435a06d04908354b1d6833b98cae4c453a0e"
+  },
+  "animationMap": {
+    "sourceLayout": "five manually defined variable-width horizontal strips; 120px alpha-zero gaps; vortex haze spans the full height of each strip",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "spacerPx": 120,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 410,
+        "height": 672,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 530,
+        "y": 0,
+        "width": 409,
+        "height": 672,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 1059,
+        "y": 0,
+        "width": 399,
+        "height": 672,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1578,
+        "y": 0,
+        "width": 414,
+        "height": 672,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 2112,
+        "y": 0,
+        "width": 416,
+        "height": 672,
+        "phase": "dissipation"
+      }
+    ],
+    "cropStatus": "verified pixel-for-pixel against original by removing transparent gaps; all four 120px gaps have alpha 0; frame widths vary and must not be parsed with a uniform spritesheet frameWidth.",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five stages of purple-black magical vortex, with whirling void spiral expanding to central peak then receding."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep exactly the approved 2528x672 PNG RGBA including opacity variations and 120px transparent gaps; no redraw, resize, re-cropping, repack or activation without explicit subsequent approval.",
+  "notes": "Third darkness/void VFX in reserved library; archival integration only. Do not replace current Void Rift, existing magic, PWA precache, combat runtime, save or other effects."
+}

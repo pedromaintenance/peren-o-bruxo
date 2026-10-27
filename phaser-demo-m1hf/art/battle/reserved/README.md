@@ -37,3 +37,10 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - Mapeamento dos cinco quadros: [dark-slashes-02.json](dark-slashes-02.json)
 - PNG 2048 × 475 RGBA; lacunas transparentes já existentes de 164, 127, 119 e 160 px; quadros com largura variável
 - **Estado:** reservado; sem atribuição de feitiço, temporização, pré-cache ou ativação no Phaser
+
+## Vazio 3 — Vórtice do Vazio
+- PNG espaçado e preservado: [dark-vortex-03-source.png](dark-vortex-03-source.png)
+- Mapeamento dos cinco quadros: [dark-vortex-03.json](dark-vortex-03.json)
+- PNG 2528 × 672 RGBA; cinco quadros com larguras individuais e quatro lacunas transparentes de 120 px
+- Pixels da arte original preservados integralmente; sem duração nem magia atribuídas
+- **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
