@@ -1,0 +1,99 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-tear-04",
+  "name": "Vazio 4 — Rasgo do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sprite Sheet de Portais Cósmicos Roxos(2).png",
+    "originalSha256": "cccab127bbbf24f0831931bb132fab36fff32477fdf32c319466cdf4b5790341",
+    "storedFile": "dark-tear-04-source.png",
+    "sourceVariant": "approved original 5-pose RGBA canvas with four 120px added transparent gutters; all source pixels preserved exactly",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "originalWidth": 2048,
+    "originalHeight": 682,
+    "width": 2528,
+    "height": 682,
+    "bytes": 1154069,
+    "sha256": "189aac4fa3839eccd7e1cf56881bf3deaaaac19ea65e052c35cb81ed357967dd",
+    "gitBlobSha": "9f27efc9328b8e1fc868be9ccc4b3ecc51905590"
+  },
+  "animationMap": {
+    "sourceLayout": "five manually segmented variable-width strips at fully-transparent original columns; four added 120px alpha-zero gaps; rift effects span variable heights within 682px source canvas",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceCutX": [
+      0,
+      421,
+      835,
+      1232,
+      1660,
+      2048
+    ],
+    "spacerPx": 120,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 421,
+        "height": 682,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 541,
+        "y": 0,
+        "width": 414,
+        "height": 682,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 1075,
+        "y": 0,
+        "width": 397,
+        "height": 682,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1592,
+        "y": 0,
+        "width": 428,
+        "height": 682,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 2140,
+        "y": 0,
+        "width": 388,
+        "height": 682,
+        "phase": "dissipation"
+      }
+    ],
+    "cropStatus": "verified pixel-for-pixel against uploaded PNG by removing added 120px gutters; all gutters fully alpha zero; frame widths vary and must not be parsed using uniform frameWidth",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five stages of a vertical purple-black void fissure from narrow opening to maximum rupture and closure."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep the archived source pixels exactly; retain 120px transparent gutters and alpha variations; do not redraw, resize, recrop, repack or activate without explicit subsequent approval.",
+  "notes": "Fourth darkness/void VFX in reserved library; archival integration only. Do not replace current Void Rift, existing magic, PWA precache, combat runtime, saves or other effects."
+}

@@ -44,3 +44,10 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - PNG 2528 × 672 RGBA; cinco quadros com larguras individuais e quatro lacunas transparentes de 120 px
 - Pixels da arte original preservados integralmente; sem duração nem magia atribuídas
 - **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
+
+## Vazio 4 — Rasgo do Vazio
+- PNG espaçado e preservado: [dark-tear-04-source.png](dark-tear-04-source.png)
+- Mapeamento dos cinco quadros: [dark-tear-04.json](dark-tear-04.json)
+- PNG 2528 × 682 RGBA derivado do original 2048 × 682, com quatro lacunas transparentes de 120 px e cinco quadros de larguras individuais
+- Os pixels e os níveis de transparência da arte original foram preservados integralmente; sem duração, alvo ou magia atribuídos
+- **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
