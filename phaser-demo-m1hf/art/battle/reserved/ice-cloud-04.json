@@ -1,0 +1,51 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-cloud-04",
+  "name": "Gelo 4 — Nuvem Gelada",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência de Explosão de Nevasca Mágica(1).png",
+    "storedFile": "ice-cloud-04-source.png",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 682,
+    "bytes": 1520489,
+    "sha256": "0f7d754fbfab5cba7329e99898a2d877b653666e2e4f3f516f4a01c855415c35"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored frost-cloud phases in one horizontal row",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "provisionalColumnCutsX": [
+      0,
+      410,
+      819,
+      1229,
+      1638,
+      2048
+    ],
+    "cropStatus": "estimated source strips only; review borders and centering before any runtime atlas is constructed",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Cold swirling bluish fog, snowflakes and crystal fragments expanding into a frosty magical cloud and then dispersing."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Keep original uploaded RGBA image byte-identical with its full 682px height; no cropping, repacking, redraw or resizing until explicitly requested.",
+  "notes": "Future effect only. The basic Raio de Gelo stays on casting-ice + ice-shards-v26 (Estilhaços)."
+}

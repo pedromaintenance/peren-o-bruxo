@@ -17,4 +17,11 @@ Este diretório guarda imagens originais para possíveis integrações futuras a
 - Divisões estimadas no JSON — **nenhum spritesheet de runtime foi produzido**
 - **Estado:** reservado para uso futuro, sem magia, alvo ou temporização atribuídos
 
+## Gelo 4 — Nuvem Gelada
+- Original imutável: [ice-cloud-04-source.png](ice-cloud-04-source.png)
+- Metadados: [ice-cloud-04.json](ice-cloud-04.json)
+- Cinco poses de nuvem/nevasca mágica em faixa horizontal; PNG 2048 × 682, RGBA
+- Recortes apenas aproximados no JSON — **não são quadros prontos para o Phaser**
+- **Estado:** reservado para uso futuro, sem duração, magia ou alvo atribuídos
+
 A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaços (ice-shards-v26)**.
