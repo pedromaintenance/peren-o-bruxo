@@ -35,7 +35,19 @@
       ],
       "sha256": "5264a9f2332341c98e4f76b7867e36e146822414ad64ca37ff559ce47f34fdc7",
       "description": "casting motions with warm light reflected on character; fire VFX remain separate"
+    },
+    {
+      "id": "peren-casting-ice",
+      "file": "peren-casting-ice.png",
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sha256": "2d39f3d6cea6d198ba3d49eec265cc7f9453c8c40132a9829e01857f428c9064",
+      "description": "Ice casting progression with authored transparent RGBA artwork; spell impacts separate"
     }
   ],
-  "integrationStatus": "peren-casting-fire integrated into beginner Fire Bolt visual only; peren-casting reserved for non-elemental spells; no combat or save rules modified"
+  "integrationStatus": "peren-casting-fire is used for Raio de Fogo; peren-casting-ice for Raio de Gelo; neutral caster reserved for other spells; combat/save rules unchanged"
 }
