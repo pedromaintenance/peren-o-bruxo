@@ -1,0 +1,51 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "ice-ring-02",
+  "name": "Gelo 2 — Anel",
+  "category": "ice",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Sequência do Círculo Mágico de Gelo(1).png",
+    "storedFile": "ice-ring-02-source.png",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 682,
+    "bytes": 1388610,
+    "sha256": "ed79a71e7ac4631750e9d8dd066714856e8b5875ae1f1cbadfa8c02f5727b28a"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored phases arranged horizontally",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "provisionalColumnCutsX": [
+      0,
+      398,
+      800,
+      1239,
+      1650,
+      2048
+    ],
+    "cropStatus": "approximate mapping only; do not use these cuts for gameplay without reviewing edges",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Blue ice crystals form and recede around a luminous circular magic ring."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Store original uploaded PNG unchanged. Never resize or regenerate without explicit later instruction.",
+  "notes": "Not the active Estilhaços (Ice 1) effect. Do not replace Ice Bolt's current casting-ice + ice-shards-v26 combination."
+}
