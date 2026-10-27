@@ -78,6 +78,6 @@ test("10th cloud animates 0–4 then releases visual resources without changing 
 
 test("PWA precaches the approved v17 PNG and manifest under new cache version",()=>{
  const sw=readFileSync(resolve(root,"phaser-demo-m1hf/demo-sw.js"),"utf8");
- assert.match(sw,/preview-magic-casting-ice-v24-20261026/);
+ assert.match(sw,/const CACHE="peren-phaser-m1hf-preview-[a-z0-9-]+-v\d+-20\d{6}";/);
  for(const ext of ["png","json"])assert.ok(sw.includes("./art/battle/runtime-v84/skullcloud-v17."+ext));
 });

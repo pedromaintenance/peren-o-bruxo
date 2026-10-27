@@ -47,7 +47,65 @@
       ],
       "sha256": "2d39f3d6cea6d198ba3d49eec265cc7f9453c8c40132a9829e01857f428c9064",
       "description": "Ice casting progression with authored transparent RGBA artwork; spell impacts separate"
+    },
+    {
+      "id": "peren-casting-darkness",
+      "file": "peren-casting-darkness.png",
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "sequence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        6,
+        5,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "frameMs": 60,
+      "durationMs": 900,
+      "atlas": {
+        "columns": 7,
+        "rows": 1,
+        "width": 3584,
+        "height": 682,
+        "frameWidth": 512,
+        "frameHeight": 682
+      },
+      "source": {
+        "name": "Sequência Cósmica do Mago do Vazio(2).png",
+        "width": 2048,
+        "height": 682,
+        "sha256": "ad48081375d6cae89edd57e8f1531b7ec25429cb73ca89286fa8911c2f37ffce",
+        "cropWidths": [
+          293,
+          293,
+          293,
+          293,
+          292,
+          292,
+          292
+        ],
+        "processing": "7 original source strips centered into 512x682 transparent cells, no pixel resampling or height changes"
+      },
+      "sha256": "56741939ea593a08aed4f9e6d71e8f71b59c2314d2dd5e4162fabf5e0194c97d",
+      "description": "Seven original purple darkness poses, 15-step palindrome-like casting pattern; visual only"
     }
   ],
-  "integrationStatus": "peren-casting-fire is used for Raio de Fogo; peren-casting-ice for Raio de Gelo; neutral caster reserved for other spells; combat/save rules unchanged"
+  "integrationStatus": "Raio de Fogo uses fire caster; Raio de Gelo uses ice caster; Escuridão uses darkness caster; all retain original combat and save mechanics."
 }
