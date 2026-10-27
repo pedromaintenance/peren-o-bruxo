@@ -1,0 +1,125 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-explosion-06",
+  "name": "Escuridão 6 — Explosão do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Peren_Explosao_Do_Vazio_5frames_80px(1).png",
+    "originalSha256": "20dacc079f43e7a302206ffc738646df3b0b1b59d5474e97f44d5680ae7c6e14",
+    "storedFile": "dark-explosion-06-source.png",
+    "sourceVariant": "original uploaded five-pose RGBA canvas, archived byte-for-byte; no changes to original transparency, size or spacing",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 475,
+    "bytes": 725935,
+    "sha256": "20dacc079f43e7a302206ffc738646df3b0b1b59d5474e97f44d5680ae7c6e14",
+    "gitBlobSha": "03d4ae8b2c24e5716a99154b30407949f7fc37db"
+  },
+  "animationMap": {
+    "sourceLayout": "five visual stages in a single horizontal strip, with non-uniform fully transparent gaps already present; variable-width cropping rectangles defined at alpha-zero columns; image not repacked",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "sourceCutX": [
+      0,
+      382,
+      800,
+      1245,
+      1662,
+      2048
+    ],
+    "fullyTransparentSeparationsPx": [
+      184,
+      134,
+      130,
+      170
+    ],
+    "spacerPx": null,
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "width": 382,
+        "height": 475,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 382,
+        "y": 0,
+        "width": 418,
+        "height": 475,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 800,
+        "y": 0,
+        "width": 445,
+        "height": 475,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1245,
+        "y": 0,
+        "width": 417,
+        "height": 475,
+        "phase": "fragmentation"
+      },
+      {
+        "frame": 5,
+        "x": 1662,
+        "y": 0,
+        "width": 386,
+        "height": 475,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsX": [
+      [
+        77,
+        290
+      ],
+      [
+        474,
+        733
+      ],
+      [
+        867,
+        1180
+      ],
+      [
+        1310,
+        1577
+      ],
+      [
+        1747,
+        1982
+      ]
+    ],
+    "cropStatus": "frame cut positions confirmed within completely transparent columns of unmodified source; widths vary and must not be parsed via a uniform spritesheet frameWidth",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Five purple-black radial magical explosion stages: ignition, growth, peak burst, fragmenting pulse, and fading fragments."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Retain original 2048x475 PNG exact bytes and alpha values. No redraw, resize, repack, fake frames, or combat activation without subsequent explicit approval.",
+  "notes": "Sixth darkness/void VFX in reserved library. Archival integration only. No changes to active Void Rift, combat, precache, save, or existing spells."
+}

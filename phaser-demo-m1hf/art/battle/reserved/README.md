@@ -58,3 +58,10 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - PNG 437 × 468 RGBA com transparência original preservada integralmente (arquivo idêntico ao enviado)
 - **Um único quadro estático**: não é spritesheet animado; sem quadros intermediários, duração, alvo ou magia atribuídos
 - **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
+
+## Escuridão 6 — Explosão do Vazio
+- PNG original sem modificações: [dark-explosion-06-source.png](dark-explosion-06-source.png)
+- Mapeamento dos cinco quadros: [dark-explosion-06.json](dark-explosion-06.json)
+- PNG 2048 × 475 RGBA; cinco quadros com larguras variáveis e lacunas transparentes originais de 184, 134, 130 e 170 px entre as áreas visíveis
+- Arte original preservada byte a byte; nenhum espaçamento adicional, redimensionamento ou alteração de transparência
+- **Estado:** reservado; sem duração, alvo ou magia atribuídos; não carregado no Phaser, não pré-cacheado e não ativado em combate
