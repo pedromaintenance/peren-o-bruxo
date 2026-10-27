@@ -1,0 +1,130 @@
+{
+  "schema": "peren.vfx-reserve/v1",
+  "id": "dark-slashes-02",
+  "name": "Escuridão 2 — Cortes do Vazio",
+  "category": "darkness",
+  "role": "potential-future-spell-vfx",
+  "lifecycle": "reserved",
+  "source": {
+    "originalFilename": "Peren_Cortes_Do_Vazio_5frames_80px(1).png",
+    "storedFile": "dark-slashes-02-source.png",
+    "sourceVariant": "original RGBA with pre-existing transparent gaps; no pixel alterations",
+    "format": "PNG",
+    "colorMode": "RGBA",
+    "width": 2048,
+    "height": 475,
+    "bytes": 906913,
+    "sha256": "34c7eccb5018b8fddb8798283c1c50a15857e2d85475d40c47609c318ffc909d",
+    "gitBlobSha": "cfcc0f7648489f9e87f5562aebe386c6d753b96d"
+  },
+  "animationMap": {
+    "sourceLayout": "five hand-authored violet/black crossed slash phases in one horizontal row, already separated by transparent nonuniform gaps",
+    "poseCount": 5,
+    "poseOrder": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "transparentGapWidthsPx": [
+      164,
+      127,
+      119,
+      160
+    ],
+    "frameRectanglesXYWH": [
+      {
+        "frame": 1,
+        "x": 65,
+        "y": 0,
+        "width": 237,
+        "height": 475,
+        "phase": "formation"
+      },
+      {
+        "frame": 2,
+        "x": 466,
+        "y": 0,
+        "width": 275,
+        "height": 475,
+        "phase": "expansion"
+      },
+      {
+        "frame": 3,
+        "x": 868,
+        "y": 0,
+        "width": 313,
+        "height": 475,
+        "phase": "peak"
+      },
+      {
+        "frame": 4,
+        "x": 1300,
+        "y": 0,
+        "width": 289,
+        "height": 475,
+        "phase": "contraction"
+      },
+      {
+        "frame": 5,
+        "x": 1749,
+        "y": 0,
+        "width": 230,
+        "height": 475,
+        "phase": "dissipation"
+      }
+    ],
+    "visibleAlphaBoundsXYWH": [
+      {
+        "frame": 1,
+        "x": 65,
+        "y": 128,
+        "width": 237,
+        "height": 265
+      },
+      {
+        "frame": 2,
+        "x": 466,
+        "y": 97,
+        "width": 275,
+        "height": 310
+      },
+      {
+        "frame": 3,
+        "x": 868,
+        "y": 62,
+        "width": 313,
+        "height": 364
+      },
+      {
+        "frame": 4,
+        "x": 1300,
+        "y": 91,
+        "width": 289,
+        "height": 323
+      },
+      {
+        "frame": 5,
+        "x": 1749,
+        "y": 125,
+        "width": 230,
+        "height": 271
+      }
+    ],
+    "cropStatus": "precise alpha>0 measurement on preserved original; nonuniform frame widths and gaps, do not load as equal-width Phaser spritesheet",
+    "confirmedFrameDurationMs": null,
+    "loop": null,
+    "targetAnchor": null,
+    "visualDescription": "Crossed purple and black void blades swell toward a large luminous crossed-slash burst and recede."
+  },
+  "runtime": {
+    "enabled": false,
+    "assignedSpellId": null,
+    "preloaded": false,
+    "precached": false,
+    "engineIntegration": null
+  },
+  "preservationPolicy": "Preserve the exact original 2048x475 RGBA PNG, including pre-existing transparency and nonuniform gaps; no resize, redraw, crop, frame repack or activation without explicit further instruction.",
+  "notes": "Second darkness asset, reserved alongside Escuridão 1 — Rajada do Vazio. No current Void Rift or other darkness attack VFX is replaced."
+}

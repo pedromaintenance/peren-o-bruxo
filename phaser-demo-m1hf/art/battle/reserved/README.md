@@ -31,3 +31,9 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - Mapeamento de cinco poses: [dark-blast-01.json](dark-blast-01.json)
 - PNG 2528 × 475 RGBA com quatro intervalos transparentes de 120 px; quadros de larguras variáveis
 - **Estado:** reservado; sem atribuição de magia, duração, pré-cache ou ativação no Phaser
+
+## Escuridão 2 — Cortes do Vazio
+- PNG original preservado: [dark-slashes-02-source.png](dark-slashes-02-source.png)
+- Mapeamento dos cinco quadros: [dark-slashes-02.json](dark-slashes-02.json)
+- PNG 2048 × 475 RGBA; lacunas transparentes já existentes de 164, 127, 119 e 160 px; quadros com largura variável
+- **Estado:** reservado; sem atribuição de feitiço, temporização, pré-cache ou ativação no Phaser
