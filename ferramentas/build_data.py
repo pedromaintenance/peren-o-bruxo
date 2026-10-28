@@ -333,6 +333,35 @@ for j in range(len(text)-2):
  nm=name if cat=='arma' else name+' da Carcaça'
  id='phb-'+slug(name)
  add_item({'id':id,'nome':nm,'categoria':cat,'tipo':'equipamento','valor':price,'nivel':min(5,max(1,round(price/115)+1)),'origem':'D&D_5e_Livro_do_Jogador_usuario','pagina_pdf':152 if cat=='arma' else 153,'referencia':name,'raridade':'comum','icone':'⚔️' if cat=='arma' else '🧰','ataque':5+int(price**.42) if cat=='arma' else 0})
+# Curadoria autoral do jogo. Aplicada APÓS geração combinatória para manter IDs estáveis
+# e permitir migrar os ingredientes um a um sem recalcular receitas antigas automaticamente.
+curadoria_path = Path(__file__).resolve().parent.parent/'data'/'curadoria_ingredientes.json'
+if curadoria_path.is_file():
+ curadoria = json.loads(curadoria_path.read_text(encoding='utf-8'))
+ regra = curadoria['politica']
+ revisados = 0
+ for item in ITEMS:
+  override = curadoria.get('itens', {}).get(item['id'])
+  if override:
+   attrs = override.get('atributos', [])
+   assert len(attrs) >= regra['minimo_por_ingrediente'], item['id']
+   assert all(isinstance(a.get('intensidade'), int) and regra['intensidade_minima'] <= a['intensidade'] <= regra['intensidade_maxima'] for a in attrs), item['id']
+   item.update(override)
+   revisados += 1
+  for anterior, atual in curadoria.get('renomeacoes_textuais', {}).items():
+   if anterior in item.get('nome', ''):
+    item['nome'] = item['nome'].replace(anterior, atual)
+ for receita in RECIPES:
+  for anterior, atual in curadoria.get('renomeacoes_textuais', {}).items():
+   if anterior in receita.get('nome', ''):
+    receita['nome'] = receita['nome'].replace(anterior, atual)
+  if any(x['item'] in curadoria.get('receitas_a_revisar_por_insumo', []) for x in receita['ingredientes']):
+   receita['revisao_alquimica_pendente'] = True
+   receita['nota_revisao'] = ('Receita criada antes da curadoria dos atributos da Pena de Gaivota. '
+                            'Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs.')
+ print('curadoria aplicada', revisados, 'ingrediente(s) revisado(s)')
+else:
+ raise FileNotFoundError('Curadoria de ingredientes ausente: '+str(curadoria_path))
 # Validate links
 ids={x['id'] for x in ITEMS}; recids={r['id'] for r in RECIPES};assert len(ids)==len(ITEMS);assert len(recids)==len(RECIPES)
 for r in RECIPES:
