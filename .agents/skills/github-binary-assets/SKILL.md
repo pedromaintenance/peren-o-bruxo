@@ -7,6 +7,10 @@ description: Publique PNG/WebP de Peren, o Bruxo diretamente no GitHub via ponte
 
 **Procedimento comprovado em 26/10/2026 no projeto O Mar de Sangue e adaptado ao Peren.** Para o repositório `pedromaintenance/peren-o-bruxo`, priorize a ponte Files/Google Drive quando o conector GitHub não puder receber diretamente o arquivo binário montado. Não declare o upload impossível nem transfira essa etapa ao usuário antes de tentar a ponte e confirmar os resultados. Fonte: https://github.com/pedromaintenance/o-mar-de-sangue/blob/main/.agents/skills/github-binary-assets/SKILL.md.
 
+## Falha recorrente: descoberta de ferramentas é obrigatória
+
+Antes de dizer que GitHub/Drive/Files está desconectado ou que um asset não pode ser publicado, executar `functions.exec` com `ALL_TOOLS.filter(t => /mcp__GitHub__|mcp__Google_Drive__|files__/.test(t.name))` e usar os métodos encontrados pelo objeto `tools`. O namespace `mcp__GitHub__` é **deferred**: não aparecer no menu de ferramentas de primeiro nível **não significa indisponibilidade**. Confirmar por chamada efetiva (por exemplo, `tools.mcp__GitHub__fetch_file`). Se um passo retornar erro, identificar o código e tentar as demais rotas documentadas; nunca converter um erro pontual de transferência de arquivo em falsa afirmação de que o conector não existe. A resposta deve distinguir conector presente, acesso efetivo, upload binário, commit, CI e Pages.
+
 ## Quando usar
 
 O usuário fornece imagem/spritesheet PNG/WebP para incluir, atualizar ou integrar no repositório do Peren. **Preserve exatamente o arquivo final aprovado**, sem redimensionar, redesenhar, recomprimir ou mudar transparência sem pedido. Se o usuário solicitar transformação (por exemplo, remover o fundo preto do `peren-casting-ice`), gere e valide essa versão primeiro; a partir dela, publique os mesmos bytes (hash idêntico). Não altere animações de outras magias, física, dano, mana, rotação, colisões ou saves sem autorização.
