@@ -1,0 +1,39 @@
+name: Peren — Anel animado e PWA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/anel.webp'
+      - 'assets/icons/anel-animation.json'
+      - 'assets/icons/sources/anel-5poses-original.png'
+      - 'sw.js'
+      - 'tests/qa_peren_anel_animation.mjs'
+      - 'tests/qa_peren_anel_browser.mjs'
+      - '.github/workflows/peren-ring-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify original and animated icon
+        run: node --test tests/qa_peren_anel_animation.mjs
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Start local site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/peren-ring-http.log 2>&1 &
+          for i in $(seq 1 25); do curl -fsS http://127.0.0.1:8765/assets/icons/anel.webp >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Verify animated WebP advances in Chromium
+        env:
+          PEREN_ORIGIN: http://127.0.0.1:8765
+        run: node tests/qa_peren_anel_browser.mjs

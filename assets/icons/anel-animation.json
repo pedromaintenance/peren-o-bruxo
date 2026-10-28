@@ -1,0 +1,47 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "replaces": "assets/icons/anel.webp",
+  "source": "assets/icons/sources/anel-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    689
+  ],
+  "sourceMode": "RGBA",
+  "sourceSha256": "e1d608ca48ee3d6a871a8af15ec36e221c36dab4f03a061520db443d0b263fea",
+  "sourceGitBlob": "2da9391f8b28b9f9519aada91721ddd375fd620a",
+  "backupPreviousStaticIcon": "assets/icons/sources/anel-legacy-static.webp",
+  "animation": "assets/icons/anel.webp",
+  "animationFormat": "Animated WebP lossless RGBA",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "uniqueSourcePoses": 5,
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationsMs": [
+    135,
+    135,
+    135,
+    135,
+    135,
+    135,
+    135,
+    135
+  ],
+  "loop": 0,
+  "outputBytes": 179170,
+  "outputSha256": "2f98e94bd2fbf9af9bad5d3a4fc6c4eb4e6cc2c6ab8f1de0fde5bbdbd01f8c75",
+  "outputGitBlob": "d24388e7d24e6de50c948e2a4db79936cfd481c6",
+  "processing": "Five equal horizontal source regions; crop centered on visible ring via alpha >=16 threshold; 350px square fixed region per pose; resize to 160x160; alpha residual <4 removed; original file unmodified.",
+  "integration": "Replaces image at existing assets/icons/anel.webp path; root game.js lineItem image loads it as a standard img. No changes to item data, saves or Phaser.",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028"
+}
