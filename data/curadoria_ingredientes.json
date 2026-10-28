@@ -37,12 +37,42 @@
         "Fly",
         "Restore Stamina"
       ]
+    },
+    "ing-mudcrab-chitin": {
+      "nome": "Carapaça de Caranguejo",
+      "descricao": "Carapaça de caranguejo com propriedades alquímicas de fortalecimento físico e proteção. Favorece especialmente a constituição, reforça a força e oferece resistência discreta a venenos.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Resist Poison"
+      ]
     }
   },
   "renomeacoes_textuais": {
-    "Pena de Gaivota de Portomonte": "Pena de Gaivota"
+    "Pena de Gaivota de Portomonte": "Pena de Gaivota",
+    "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo"
   },
   "receitas_a_revisar_por_insumo": [
-    "ing-felsaad-tern-feathers"
+    "ing-felsaad-tern-feathers",
+    "ing-mudcrab-chitin"
   ]
 }
