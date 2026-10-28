@@ -154,6 +154,41 @@
         "Fortify Speed"
       ],
       "raridade": "comum"
+    },
+    "ing-jarrin-root": {
+      "nome": "Raiz Botulínica",
+      "descricao": "Raiz extremamente tóxica, usada em preparados alquímicos que causam grave dano à saúde e debilitam constituição, destreza e força.",
+      "origem": "curadoria_original_carcaca",
+      "raridade": "epico",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 3
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Ravage Constitution",
+        "Ravage Dexterity",
+        "Ravage Strength"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -161,13 +196,15 @@
     "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo",
     "Pó de Vampiro de Vandar": "Pó de Vampiro",
     "Couro de Rato Carbonizado": "Couro de Rato",
-    "Penas de Falcão das Montanhas": "Penas de Falcão"
+    "Penas de Falcão das Montanhas": "Penas de Falcão",
+    "Raiz do Juramento Quebrado": "Raiz Botulínica"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
     "ing-mudcrab-chitin",
     "ing-vampire-dust",
     "ing-charred-skeever-hide",
-    "ing-hawk-feathers"
+    "ing-hawk-feathers",
+    "ing-jarrin-root"
   ]
 }
