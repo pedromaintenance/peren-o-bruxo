@@ -121,18 +121,48 @@
         "Resist Poison",
         "Inflict Disease"
       ]
+    },
+    "ing-hawk-feathers": {
+      "nome": "Penas de Falcão",
+      "descricao": "Penas de falcão associadas a visão muito distante, voo moderado e agilidade discreta.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "visao_a_distancia",
+          "nome": "Visão à Distância",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "nome": "Voo",
+          "intensidade": 2
+        },
+        {
+          "id": "velocidade",
+          "nome": "Velocidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Distant Vision",
+        "Fly",
+        "Fortify Speed"
+      ]
     }
   },
   "renomeacoes_textuais": {
     "Pena de Gaivota de Portomonte": "Pena de Gaivota",
     "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo",
     "Pó de Vampiro de Vandar": "Pó de Vampiro",
-    "Couro de Rato Carbonizado": "Couro de Rato"
+    "Couro de Rato Carbonizado": "Couro de Rato",
+    "Penas de Falcão das Montanhas": "Penas de Falcão"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
     "ing-mudcrab-chitin",
     "ing-vampire-dust",
-    "ing-charred-skeever-hide"
+    "ing-charred-skeever-hide",
+    "ing-hawk-feathers"
   ]
 }
