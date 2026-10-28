@@ -40,23 +40,41 @@
  },
  {
   "id": "ing-mudcrab-chitin",
-  "nome": "Quitina de Caranguejo Carmesim",
+  "nome": "Carapaça de Caranguejo",
   "categoria": "ingrediente",
   "tipo": "alquimia",
-  "origem": "adaptado_skyrim_alquimia",
+  "origem": "curadoria_original_carcaca",
   "referencia": "Mudcrab Chitin",
   "efeitos": [
-   "Resist Poison",
-   "Resist Fire",
-   "Restore Stamina",
-   "Cure Disease"
+   "Fortify Strength",
+   "Fortify Constitution",
+   "Resist Poison"
   ],
   "raridade": "comum",
   "valor": 14,
   "peso": 0.1,
   "zona": "alem-sul",
   "nivel": 2,
-  "icone": "🦋"
+  "icone": "🦋",
+  "descricao": "Carapaça de caranguejo com propriedades alquímicas de fortalecimento físico e proteção. Favorece especialmente a constituição, reforça a força e oferece resistência discreta a venenos.",
+  "atributos_revisados": true,
+  "atributos": [
+   {
+    "id": "aumentar_forca",
+    "nome": "Aumentar Força",
+    "intensidade": 2
+   },
+   {
+    "id": "aumentar_constituicao",
+    "nome": "Aumentar Constituição",
+    "intensidade": 3
+   },
+   {
+    "id": "resistencia_veneno",
+    "nome": "Resistência a Veneno",
+    "intensidade": 1
+   }
+  ]
  },
  {
   "id": "ing-vampire-dust",
@@ -2669,7 +2687,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-mudcrab-chitin",
-  "nome": "Elixir de Pena de Gaivota e Quitina de Caranguejo Carmesim",
+  "nome": "Elixir de Pena de Gaivota e Carapaça de Caranguejo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3182,7 +3200,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-vampire-dust",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro de Vandar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3199,7 +3217,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-charred-skeever-hide",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Couro de Rato Carbonizado",
+  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato Carbonizado",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3218,7 +3236,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-hawk-feathers",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão das Montanhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3235,7 +3253,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-falmer-ear",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Orelha de Troglodita",
+  "nome": "Elixir de Carapaça de Caranguejo e Orelha de Troglodita",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3252,7 +3270,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-troll-fat",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Gordura de Troll",
+  "nome": "Elixir de Carapaça de Caranguejo e Gordura de Troll",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3269,7 +3287,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-eye-of-sabre-cat",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Olho de Felino das Ilhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino das Ilhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3286,7 +3304,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-bear-claws",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Garras de Urso",
+  "nome": "Elixir de Carapaça de Caranguejo e Garras de Urso",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3303,7 +3321,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-ash-creep-cluster",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cachos de Cinza",
+  "nome": "Elixir de Carapaça de Caranguejo e Cachos de Cinza",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3320,7 +3338,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-berit-s-ashes",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cinzas de Um Escriba",
+  "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Um Escriba",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3337,7 +3355,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-bone-meal",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Farinha de Ossos",
+  "nome": "Elixir de Carapaça de Caranguejo e Farinha de Ossos",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3354,7 +3372,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-histcarp",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Carpa de Pedra",
+  "nome": "Elixir de Carapaça de Caranguejo e Carpa de Pedra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3371,7 +3389,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-large-antlers",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Chifres Grandes",
+  "nome": "Elixir de Carapaça de Caranguejo e Chifres Grandes",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3388,7 +3406,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-silverside-perch",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Perca Prateada",
+  "nome": "Elixir de Carapaça de Caranguejo e Perca Prateada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3405,7 +3423,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-yellow-mountain-flower",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Flor Amarela da Montanha",
+  "nome": "Elixir de Carapaça de Caranguejo e Flor Amarela da Montanha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3422,7 +3440,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-netch-jelly",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Gelatina de Netch",
+  "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Netch",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3439,7 +3457,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-powdered-mammoth-tusk",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Presa de Mamute em Pó",
+  "nome": "Elixir de Carapaça de Caranguejo e Presa de Mamute em Pó",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3456,7 +3474,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-grass-pod",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Vagem da Charneca",
+  "nome": "Elixir de Carapaça de Caranguejo e Vagem da Charneca",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3473,7 +3491,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-dragon-s-tongue",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Língua de Dragão",
+  "nome": "Elixir de Carapaça de Caranguejo e Língua de Dragão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3490,7 +3508,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-pearl",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pérola da Costa Sul",
+  "nome": "Elixir de Carapaça de Caranguejo e Pérola da Costa Sul",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3507,7 +3525,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-honeycomb",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Favo de Mel",
+  "nome": "Elixir de Carapaça de Caranguejo e Favo de Mel",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3524,7 +3542,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-hawk-beak",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Bico de Falcão",
+  "nome": "Elixir de Carapaça de Caranguejo e Bico de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3541,7 +3559,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-wisp-wrappings",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Faixas de Espírito",
+  "nome": "Elixir de Carapaça de Caranguejo e Faixas de Espírito",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3558,7 +3576,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-beehive-husk",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Casca de Colmeia",
+  "nome": "Elixir de Carapaça de Caranguejo e Casca de Colmeia",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3575,7 +3593,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-snowberries",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Frutas da Neve",
+  "nome": "Elixir de Carapaça de Caranguejo e Frutas da Neve",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3592,7 +3610,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-spawn-ash",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cinzas de Criatura",
+  "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Criatura",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3609,7 +3627,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-sabre-cat-tooth",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Dente de Felino",
+  "nome": "Elixir de Carapaça de Caranguejo e Dente de Felino",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3626,7 +3644,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-thistle-branch",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ramo de Cardo",
+  "nome": "Elixir de Carapaça de Caranguejo e Ramo de Cardo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3643,7 +3661,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-ashen-grass-pod",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Vagem Cinzenta",
+  "nome": "Elixir de Carapaça de Caranguejo e Vagem Cinzenta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3660,7 +3678,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-pine-thrush-egg",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovo de Tordo da Costa",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovo de Tordo da Costa",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3677,7 +3695,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-salmon-roe",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovas de Salmão",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovas de Salmão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3694,7 +3712,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-elves-ear",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Orelha de Elfo",
+  "nome": "Elixir de Carapaça de Caranguejo e Orelha de Elfo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3711,7 +3729,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-small-pearl",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pérola Pequena",
+  "nome": "Elixir de Carapaça de Caranguejo e Pérola Pequena",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3728,7 +3746,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-orange-dartwing",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Libélula Alaranjada",
+  "nome": "Elixir de Carapaça de Caranguejo e Libélula Alaranjada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3745,7 +3763,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-slaughterfish-egg",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovas de Peixe Carniceiro",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovas de Peixe Carniceiro",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3762,7 +3780,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-purple-mountain-flower",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Flor Violeta",
+  "nome": "Elixir de Carapaça de Caranguejo e Flor Violeta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3779,7 +3797,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-garlic",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Alho das Hortas",
+  "nome": "Elixir de Carapaça de Caranguejo e Alho das Hortas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3796,7 +3814,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-torchbug-thorax",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Tórax de Inseto-lanterna",
+  "nome": "Elixir de Carapaça de Caranguejo e Tórax de Inseto-lanterna",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3813,7 +3831,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-fly-amanita",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Amanita Rubra",
+  "nome": "Elixir de Carapaça de Caranguejo e Amanita Rubra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3830,7 +3848,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-bee",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Abelha",
+  "nome": "Elixir de Carapaça de Caranguejo e Abelha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3847,7 +3865,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-fire-salts",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Sais Ígneos",
+  "nome": "Elixir de Carapaça de Caranguejo e Sais Ígneos",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
