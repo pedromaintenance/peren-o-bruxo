@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url));
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const m=JSON.parse(read('assets/icons/elmo-animation.json'));
+test('original five-pose helmet preserved',()=>{const b=read(m.source);assert.equal(b.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([b.readUInt32BE(16),b.readUInt32BE(20)],m.sourceDimensions);assert.equal(sha(b),m.sourceSha256);assert.ok(read(m.backupPreviousStaticIcon).length>0);});
+test('animated helmet WebP integrity',()=>{const b=read(m.animation);assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');assert.ok(b.includes(Buffer.from('ANIM')));assert.equal((b.toString('ascii').match(/ANMF/g)||[]).length,5);assert.equal(sha(b),m.outputSha256);});
+test('inventory and PWA references',()=>{const game=read('game.js').toString(),sw=read('sw.js').toString();assert.ok(game.includes('elmo'));assert.ok(sw.includes("'elmo'"));assert.ok(sw.includes('helm-v1-20261028'));});
