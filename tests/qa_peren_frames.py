@@ -65,7 +65,12 @@ for name,(expected_hash,shape) in expected_files.items():
  assert Image.open(path).size==shape
 # Legacy v2 remains archived and unmodified; live assets must match new walk-v3 instead.
 V3=BASE/'official-v5/peren-atlas-normal-walkfix-v5.png'
-for path in [BASE/'peren-atlas.png',ROOT/'phaser-demo/art/characters/peren/peren-atlas.png']:
- assert path.read_bytes()==V3.read_bytes()
+assert (ROOT/'phaser-demo/art/characters/peren/peren-atlas.png').read_bytes()==V3.read_bytes()
+V6=BASE/'official-v6/manifest.json'
+if V6.exists():
+ data=json.loads(V6.read_text())
+ assert hashlib.sha256((BASE/'peren-atlas.png').read_bytes()).hexdigest()==data['runtimeSha256']
+else:
+ assert (BASE/'peren-atlas.png').read_bytes()==V3.read_bytes()
 
 print(f'Peren sprites QA: 128 aligned frames, 4 directions, {len({hashlib.sha256(f.tobytes()).digest() for f in frames})} distinct source renderings; stable missing-action placeholders; truecolor PNGs. PASS')

@@ -42,13 +42,17 @@ test("player sprite atlas keeps all 128 indices and preserves the game's animati
   assert.equal(frameIndices.length,128);
   assert.deepEqual([...new Set(frameIndices)].sort((a,b)=>a-b),Array.from({length:128},(_,i)=>i));
  }
- for(const base of ["phaser-demo-m1hf/art/characters/peren","phaser-demo/art/characters/peren"])
-  assert.equal(hash(read(base+"/peren-atlas.png")),hash(atlas),base);
+ const manifestPath="phaser-demo-m1hf/art/characters/peren/official-v6/manifest.json";
+ if(existsSync(join(ROOT,manifestPath))){
+  const v6=JSON.parse(read(manifestPath));
+  assert.equal(hash(read("phaser-demo-m1hf/art/characters/peren/peren-atlas.png")),v6.runtimeSha256);
+ }else assert.equal(hash(read("phaser-demo-m1hf/art/characters/peren/peren-atlas.png")),hash(atlas));
+ assert.equal(hash(read("phaser-demo/art/characters/peren/peren-atlas.png")),hash(atlas));
 });
 test("all active and legacy Phaser Peren portrait variants point to the approved face",()=>{
  const roots=["phaser-demo-m1hf/art/characters/peren",...["art-m1h","art-m1hb","art-m1hc","art-m1hd"].map(s=>"phaser-demo-m1hf/"+s+"/characters/peren")];
  for(const dir of roots){
-  assert.equal(hash(read(dir+"/peren-atlas.png")),hash(atlas),dir);
+  if(dir!=="phaser-demo-m1hf/art/characters/peren")assert.equal(hash(read(dir+"/peren-atlas.png")),hash(atlas),dir);
   for(const name of ["portrait.png","portrait-cast.png","portrait-hurt.png"]){
    assert.equal(hash(read(dir+"/"+name)),hash(portrait),dir+"/"+name);
   }

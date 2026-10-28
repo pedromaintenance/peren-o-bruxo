@@ -34,14 +34,14 @@ small{display:block;color:#b9c6bf}.notice{padding:13px;border-left:3px solid #dd
 <div class="card"><canvas width="48" height="64" data-dir="2" aria-label="Peren olhando para a direita"></canvas><strong>Direita</strong></div>
 <div class="card"><canvas width="48" height="64" data-dir="3" aria-label="Peren de costas"></canvas><strong>Costas</strong></div>
 </div>
-<p class="notice">ATUALIZAÇÃO V5: caminhada frontal ajustada com os novos frames do criador. Coletando ervas agora é uma animação própria em quatro direções, somente para plantas/ervas, com tempos 350/250/450/850 ms e reprodução única. Cogumelos e outras coletas mantêm a ação genérica anterior. Caminhada ferida continua com o mesmo visual aprovado, ativado automaticamente no jogo quando Peren estiver com até 50% dos PV máximos. O seletor desta galeria não altera saves.</p>
+<p class="notice">ATUALIZAÇÃO V6: quatro direções com cinco poses de origem (parado + quatro passos) integradas ao atlas principal. Animações de ataque, coleta, magia e ferimento preservadas. Atualização anterior V5: caminhada frontal ajustada com os novos frames do criador. Coletando ervas agora é uma animação própria em quatro direções, somente para plantas/ervas, com tempos 350/250/450/850 ms e reprodução única. Cogumelos e outras coletas mantêm a ação genérica anterior. Caminhada ferida continua com o mesmo visual aprovado, ativado automaticamente no jogo quando Peren estiver com até 50% dos PV máximos. O seletor desta galeria não altera saves.</p>
 <small id="status" role="status">Preparando atlas...</small>
 </main>
 <script>
 /* Enable direct-link offline installation for the official art gallery, too. */
 if("serviceWorker" in navigator)navigator.serviceWorker.register("./demo-sw.js").catch(()=>{});
 const picture=new Image();
-const normalAtlas="./art/characters/peren/official-v5/peren-atlas-normal-walkfix-v5.png";
+const normalAtlas="./art/characters/peren/peren-atlas.png";
 const woundedAtlas="./art/characters/peren/official-v4/peren-wounded-atlas.png";
 const herbAtlas="./art/characters/peren/official-v5/peren-atlas-herb-v5.png";
 const condition=document.getElementById("condition"),actionSelect=document.getElementById("action");
