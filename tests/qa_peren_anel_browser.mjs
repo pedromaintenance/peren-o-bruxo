@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {createHash} from "node:crypto";
 import {chromium} from "playwright";
 const origin=process.env.PEREN_ORIGIN||"http://127.0.0.1:8765";
 const browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
@@ -7,20 +8,22 @@ try{
  const errors=[];
  page.on("pageerror",e=>errors.push(String(e)));
  await page.goto(origin+"/",{waitUntil:"domcontentloaded"});
- const answer=await page.evaluate(async()=>{
-  const image=new Image();image.src="./assets/icons/anel.webp";
-  await image.decode();
-  const c=document.createElement("canvas");c.width=160;c.height=160;
-  const g=c.getContext("2d",{willReadFrequently:true});
-  const sample=()=>{g.clearRect(0,0,160,160);g.drawImage(image,0,0);let d=g.getImageData(0,0,160,160).data;let v=0;for(let i=0;i<d.length;i+=53)v=(v*33+d[i])>>>0;return v};
-  const first=sample();
-  await new Promise(r=>setTimeout(r,420));
-  const second=sample();
-  return {complete:image.complete,dimensions:[image.naturalWidth,image.naturalHeight],first,second};
+ const dim=await page.evaluate(async()=>{
+  const img=document.createElement("img");img.id="peren-ring-qa";img.src="./assets/icons/anel.webp";img.alt="Anel animado";
+  Object.assign(img.style,{position:"fixed",zIndex:"999999",left:"15px",top:"15px",width:"160px",height:"160px",background:"#18212a"});
+  document.body.appendChild(img);
+  await img.decode();
+  return [img.naturalWidth,img.naturalHeight];
  });
- assert.equal(answer.complete,true);
- assert.deepEqual(answer.dimensions,[160,160]);
- assert.notEqual(answer.first,answer.second,"animated webp must advance frames");
+ assert.deepEqual(dim,[160,160]);
+ const loc=page.locator("#peren-ring-qa");
+ const samples=[];
+ for(let i=0;i<5;i++){
+   await page.waitForTimeout(i===0?110:220);
+   const capture=await loc.screenshot({animations:"allow"});
+   samples.push(createHash("sha256").update(capture).digest("hex"));
+ }
+ assert.ok(new Set(samples).size>=2,"rendered WebP image must visibly animate");
  assert.deepEqual(errors,[]);
- console.log("PEREN RING BROWSER PASS",answer);
+ console.log("PEREN RING BROWSER PASS",samples);
 }finally{await browser.close()}
