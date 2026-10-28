@@ -1,0 +1,55 @@
+name: Peren — Instalar coleta universal v7
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'phaser-demo-m1hf/art/characters/peren/official-v7/peren-collect-v7-assets.zip'
+      - 'ferramentas/integrar_peren_coleta_v7.py'
+      - '.github/workflows/peren-collect-v7.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Dependências de imagem
+        run: python -m pip install --disable-pip-version-check 'Pillow>=10,<13'
+      - name: Instalar quatro direções e remover coleta exclusiva de ervas
+        run: python ferramentas/integrar_peren_coleta_v7.py
+      - name: Verificar sintaxe e imagens originais
+        run: |
+          node --check phaser-demo-m1hf/assets/game-B5Gp97dd.js
+          python tests/qa_peren_coleta_v7.py
+          python tests/qa_peren_walk_v6.py
+          python tests/qa_peren_wounded_v4.py
+          python tests/qa_peren_frames.py
+          node --test tests/qa_peren_coleta_v7.mjs tests/qa_peren_oficial.mjs tests/qa_peren_wounded_v4.mjs
+      - name: Instalar Chromium e Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Subir aplicação de teste
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/peren-collect-v7-http.log 2>&1 &
+          for i in $(seq 1 20); do curl -fsS http://127.0.0.1:8765/phaser-demo-m1hf/peren-arte.html >/dev/null && exit 0; sleep 1; done
+          cat /tmp/peren-collect-v7-http.log
+          exit 1
+      - name: Validar galeria e animação no navegador
+        env:
+          PEREN_BASE_URL: http://127.0.0.1:8765/phaser-demo-m1hf
+        run: timeout 90s node tests/qa_peren_coleta_v7_browser.mjs
+      - name: Publicar a integração validada na main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A phaser-demo-m1hf/art/characters/peren phaser-demo-m1hf/art-m1h phaser-demo-m1hf/art-m1hb phaser-demo-m1hf/art-m1hc phaser-demo-m1hf/art-m1hd phaser-demo/art/characters/peren phaser-demo-m1hf/assets/game-B5Gp97dd.js phaser-demo-m1hf/peren-arte.html phaser-demo-m1hf/demo-sw.js .github/workflows tests ferramentas
+          git diff --cached --quiet || (git commit -m 'Peren v7: ativar coleta universal em cinco quadros e remover erbiv5' && git push origin HEAD:main)
