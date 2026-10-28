@@ -407,46 +407,56 @@
     "sourceWalk": "official-v3/peren-caminhada-3x4-original-160x190.png",
     "provenance": "official-v6/manifest.json",
     "walkSource": "official-v6/peren-walk-4-directions-5frames-224x260.png",
-    "herbGather": {
-      "sheet": "peren-herb-atlas.png",
-      "source": "official-v5/source-herb-gather-4x4.png",
-      "frameMs": [
-        350,
-        250,
-        450,
-        850
-      ],
-      "oneShot": true,
-      "frameIndices": {
+    "runSource": "same four source walking poses at existing run animation rate",
+    "gatherV7": {
+      "texture": "peren-collect",
+      "sheet": "peren-collect-atlas.png",
+      "manifest": "official-v7/manifest.json",
+      "columns": 5,
+      "rows": 4,
+      "frameWidth": 48,
+      "frameHeight": 64,
+      "directionFrameNumbers": {
         "down": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "left": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "right": [
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "up": [
+          15,
           16,
           17,
           18,
           19
-        ],
-        "left": [
-          48,
-          49,
-          50,
-          51
-        ],
-        "right": [
-          80,
-          81,
-          82,
-          83
-        ],
-        "up": [
-          112,
-          113,
-          114,
-          115
         ]
       },
-      "eligibility": "node.sprite === 'herb' (excludes mushroom)",
-      "note": "Atlas separado e evento de coleta finalizado antes da recompensa; sem duplicar saves nem coleta"
-    },
-    "runSource": "same four source walking poses at existing run animation rate"
+      "durationsMs": [
+        300,
+        160,
+        220,
+        180,
+        360
+      ],
+      "repeat": 0,
+      "usedFor": "all collectable nodes, including herbs and mushrooms",
+      "note": "gather action frames in main 128-frame atlas are placeholders; runtime uses the dedicated 20-frame texture"
+    }
   },
   "legacyPaletteNotice": "O campo palette abaixo descreve a versão procedimental anterior, não as cores do pacote visual atual."
 }

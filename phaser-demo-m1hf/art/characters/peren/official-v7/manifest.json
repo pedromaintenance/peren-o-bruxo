@@ -1,0 +1,490 @@
+{
+  "schema": "peren.collect.v7",
+  "animation": "gather",
+  "description": "Unified pickup/gather animation for all collectable nodes. Replaces herb-specific animation.",
+  "cellWidth": 224,
+  "cellHeight": 260,
+  "columns": 5,
+  "rows": 4,
+  "normalizedAtlas": "peren-collect-4directions-5frames-224x260.png",
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "frameNames": [
+    "idle",
+    "lean",
+    "crouch_hand_to_ground",
+    "rise_empty_hand",
+    "stand_empty_hands"
+  ],
+  "frameDurationsMs": [
+    300,
+    160,
+    220,
+    180,
+    360
+  ],
+  "walkNote": "For gather action only; no object visible in hand.",
+  "runtimeReplacement": {
+    "preferredPolicy": "Create dedicated gather spritesheet `peren-collect-atlas-48x64.png` and register 4 one-shot animations with 5 frames each.",
+    "removeLegacyHerb": true,
+    "legacyFilesToRemove": [
+      "phaser-demo-m1hf/art/characters/peren/peren-herb-atlas.png",
+      "phaser-demo-m1hf/art/characters/peren/official-v5/peren-atlas-herb-v5.png"
+    ],
+    "logicChange": "Replace any herb-only branch with generic gather selection for all collectable nodes."
+  },
+  "sources": [
+    {
+      "direction": "down",
+      "label": "front_camera",
+      "file": "front_source_5frames_40px.png",
+      "size": [
+        1280,
+        260
+      ],
+      "sha256": "fd32d1479ee6f01f669f9f13df5884f4332bec89faae85c6fa6fdff56161aa52",
+      "gappedFrameRects": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 1,
+          "x": 264,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 2,
+          "x": 528,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 3,
+          "x": 792,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 4,
+          "x": 1056,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        }
+      ]
+    },
+    {
+      "direction": "left",
+      "label": "left",
+      "file": "left_source_5frames_40px.png",
+      "size": [
+        1280,
+        260
+      ],
+      "sha256": "43c7169205c79ece4cb9e9b900dc8b2aa88e4d6d575d1ccab1792f1a37fdea7a",
+      "gappedFrameRects": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 1,
+          "x": 264,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 2,
+          "x": 528,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 3,
+          "x": 792,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 4,
+          "x": 1056,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        }
+      ]
+    },
+    {
+      "direction": "right",
+      "label": "right",
+      "file": "right_source_5frames_40px.png",
+      "size": [
+        1280,
+        260
+      ],
+      "sha256": "851f2a3056c659f5d66bb3db61a01ff65da858336f351302a66a31df131c3bb0",
+      "gappedFrameRects": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 1,
+          "x": 264,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 2,
+          "x": 528,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 3,
+          "x": 792,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 4,
+          "x": 1056,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        }
+      ]
+    },
+    {
+      "direction": "up",
+      "label": "back",
+      "file": "back_source_5frames_40px.png",
+      "size": [
+        1280,
+        260
+      ],
+      "sha256": "24a1a2208c49c737628e0e3a2969de2cf73668f31e7d9eca3976aa36b632bc5a",
+      "gappedFrameRects": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 1,
+          "x": 264,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 2,
+          "x": 528,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 3,
+          "x": 792,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        },
+        {
+          "index": 4,
+          "x": 1056,
+          "y": 0,
+          "width": 224,
+          "height": 260
+        }
+      ]
+    }
+  ],
+  "normalizedFrameRects": {
+    "down": [
+      {
+        "index": 0,
+        "frame": 0,
+        "x": 0,
+        "y": 0,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 1,
+        "frame": 1,
+        "x": 224,
+        "y": 0,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 2,
+        "frame": 2,
+        "x": 448,
+        "y": 0,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 3,
+        "frame": 3,
+        "x": 672,
+        "y": 0,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 4,
+        "frame": 4,
+        "x": 896,
+        "y": 0,
+        "width": 224,
+        "height": 260
+      }
+    ],
+    "left": [
+      {
+        "index": 5,
+        "frame": 0,
+        "x": 0,
+        "y": 260,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 6,
+        "frame": 1,
+        "x": 224,
+        "y": 260,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 7,
+        "frame": 2,
+        "x": 448,
+        "y": 260,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 8,
+        "frame": 3,
+        "x": 672,
+        "y": 260,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 9,
+        "frame": 4,
+        "x": 896,
+        "y": 260,
+        "width": 224,
+        "height": 260
+      }
+    ],
+    "right": [
+      {
+        "index": 10,
+        "frame": 0,
+        "x": 0,
+        "y": 520,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 11,
+        "frame": 1,
+        "x": 224,
+        "y": 520,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 12,
+        "frame": 2,
+        "x": 448,
+        "y": 520,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 13,
+        "frame": 3,
+        "x": 672,
+        "y": 520,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 14,
+        "frame": 4,
+        "x": 896,
+        "y": 520,
+        "width": 224,
+        "height": 260
+      }
+    ],
+    "up": [
+      {
+        "index": 15,
+        "frame": 0,
+        "x": 0,
+        "y": 780,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 16,
+        "frame": 1,
+        "x": 224,
+        "y": 780,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 17,
+        "frame": 2,
+        "x": 448,
+        "y": 780,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 18,
+        "frame": 3,
+        "x": 672,
+        "y": 780,
+        "width": 224,
+        "height": 260
+      },
+      {
+        "index": 19,
+        "frame": 4,
+        "x": 896,
+        "y": 780,
+        "width": 224,
+        "height": 260
+      }
+    ]
+  },
+  "normalizedAtlasSha256": "6718000fd45e3bbb7a0af822b4f1767f5a50e5a5892cb53332ea9caf1c0ce8d7",
+  "runtimePreviewSha256": "366ea87248739b0ef8b5d22dd952b040281dc1479176fc4d5653103bf7cd52f6",
+  "suggestedRuntimeRegistration": {
+    "crop": [
+      25,
+      20,
+      199,
+      250
+    ],
+    "resize": [
+      44,
+      58
+    ],
+    "paste": [
+      2,
+      4
+    ]
+  },
+  "runtimeAsset": {
+    "file": "peren-collect-atlas-48x64.png",
+    "size": [
+      240,
+      256
+    ],
+    "layout": {
+      "columns": 5,
+      "rows": 4,
+      "frameWidth": 48,
+      "frameHeight": 64
+    },
+    "directions": [
+      "down",
+      "left",
+      "right",
+      "up"
+    ],
+    "frameIndices": {
+      "down": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "left": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "right": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "up": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    "durationsMs": [
+      300,
+      160,
+      220,
+      180,
+      360
+    ],
+    "sha256": "04f56f72784258066f082220882aa18f0c1bd97bac6b1f0ccb062a1258a6f59c",
+    "integration": "Preferred: load as a dedicated spritesheet for all gather actions; do not squeeze into the 4-frame main atlas contract.",
+    "crop": [
+      25,
+      20,
+      199,
+      250
+    ],
+    "paste": [
+      2,
+      4
+    ],
+    "scaled": [
+      44,
+      58
+    ]
+  }
+}

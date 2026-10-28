@@ -103,5 +103,8 @@
     ]
   },
   "otherFramesUnchanged": 112,
-  "note": "Independent herb atlas. No impact on wounded gait, saves, movement speed, mushroom collection or non-gather animations."
+  "note": "Independent herb atlas. No impact on wounded gait, saves, movement speed, mushroom collection or non-gather animations.",
+  "supersededBy": "official-v7/manifest.json",
+  "historicalOnly": true,
+  "removedHerbSpecificRuntime": true
 }
