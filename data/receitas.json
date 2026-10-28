@@ -53,7 +53,7 @@
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Pena de Gaivota e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pena de Gaivota e Couro de Rato",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -73,7 +73,8 @@
   "revisao_alquimica_pendente": true,
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
   "insumos_revisados": [
-   "ing-felsaad-tern-feathers"
+   "ing-felsaad-tern-feathers",
+   "ing-charred-skeever-hide"
   ]
  },
  {
@@ -779,7 +780,7 @@
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato Carbonizado",
+  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -798,7 +799,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-mudcrab-chitin"
+   "ing-mudcrab-chitin",
+   "ing-charred-skeever-hide"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -1754,7 +1756,7 @@
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Pó de Vampiro e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pó de Vampiro e Couro de Rato",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1773,7 +1775,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-vampire-dust"
+   "ing-vampire-dust",
+   "ing-charred-skeever-hide"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -2504,7 +2507,7 @@
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Couro de Rato Carbonizado e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Couro de Rato e Penas de Falcão das Montanhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2520,11 +2523,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-hawk-feathers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-orelha-de-troglodita",
-  "nome": "Elixir de Couro de Rato Carbonizado e Orelha de Troglodita",
+  "nome": "Elixir de Couro de Rato e Orelha de Troglodita",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2540,11 +2548,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-falmer-ear",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-cogumelo-do-imp",
-  "nome": "Elixir de Couro de Rato Carbonizado e Cogumelo do Imp",
+  "nome": "Elixir de Couro de Rato e Cogumelo do Imp",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2560,11 +2573,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-imp-stool",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-gordura-de-troll",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gordura de Troll",
+  "nome": "Elixir de Couro de Rato e Gordura de Troll",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2580,11 +2598,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-troll-fat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-asa-de-borboleta-da-foz",
-  "nome": "Elixir de Couro de Rato Carbonizado e Asa de Borboleta da Foz",
+  "nome": "Elixir de Couro de Rato e Asa de Borboleta da Foz",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2600,11 +2623,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-butterfly-wing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-coracao-de-demonio",
-  "nome": "Elixir de Couro de Rato Carbonizado e Coração de Demônio",
+  "nome": "Elixir de Couro de Rato e Coração de Demônio",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2620,11 +2648,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-daedra-heart",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-olho-de-felino-das-ilhas",
-  "nome": "Elixir de Couro de Rato Carbonizado e Olho de Felino das Ilhas",
+  "nome": "Elixir de Couro de Rato e Olho de Felino das Ilhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2640,11 +2673,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-eye-of-sabre-cat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-garras-de-urso",
-  "nome": "Elixir de Couro de Rato Carbonizado e Garras de Urso",
+  "nome": "Elixir de Couro de Rato e Garras de Urso",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2660,11 +2698,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-bear-claws",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-flor-azul-da-montanha",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Azul da Montanha",
+  "nome": "Elixir de Couro de Rato e Flor Azul da Montanha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2680,11 +2723,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-blue-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-fungo-de-bolha",
-  "nome": "Elixir de Couro de Rato Carbonizado e Fungo de Bolha",
+  "nome": "Elixir de Couro de Rato e Fungo de Bolha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2700,11 +2748,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-blisterwort",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ovo-de-tordo",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovo de Tordo",
+  "nome": "Elixir de Couro de Rato e Ovo de Tordo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2720,11 +2773,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-rock-warbler-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-carpa-de-pedra",
-  "nome": "Elixir de Couro de Rato Carbonizado e Carpa de Pedra",
+  "nome": "Elixir de Couro de Rato e Carpa de Pedra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2740,11 +2798,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-histcarp",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-chifres-grandes",
-  "nome": "Elixir de Couro de Rato Carbonizado e Chifres Grandes",
+  "nome": "Elixir de Couro de Rato e Chifres Grandes",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2760,11 +2823,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-large-antlers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-perca-prateada",
-  "nome": "Elixir de Couro de Rato Carbonizado e Perca Prateada",
+  "nome": "Elixir de Couro de Rato e Perca Prateada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2780,11 +2848,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-silverside-perch",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-trigo-da-costa",
-  "nome": "Elixir de Couro de Rato Carbonizado e Trigo da Costa",
+  "nome": "Elixir de Couro de Rato e Trigo da Costa",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2800,11 +2873,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-wheat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-flor-amarela-da-montanha",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Amarela da Montanha",
+  "nome": "Elixir de Couro de Rato e Flor Amarela da Montanha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2820,11 +2898,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-yellow-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-libelula-azul",
-  "nome": "Elixir de Couro de Rato Carbonizado e Libélula Azul",
+  "nome": "Elixir de Couro de Rato e Libélula Azul",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2840,11 +2923,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-blue-dartwing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-gelatina-de-netch",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gelatina de Netch",
+  "nome": "Elixir de Couro de Rato e Gelatina de Netch",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2860,11 +2948,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-netch-jelly",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-presa-de-mamute-em-po",
-  "nome": "Elixir de Couro de Rato Carbonizado e Presa de Mamute em Pó",
+  "nome": "Elixir de Couro de Rato e Presa de Mamute em Pó",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2880,11 +2973,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-powdered-mammoth-tusk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-vagem-da-charneca",
-  "nome": "Elixir de Couro de Rato Carbonizado e Vagem da Charneca",
+  "nome": "Elixir de Couro de Rato e Vagem da Charneca",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2900,11 +2998,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-grass-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-perola-da-costa-sul",
-  "nome": "Elixir de Couro de Rato Carbonizado e Pérola da Costa Sul",
+  "nome": "Elixir de Couro de Rato e Pérola da Costa Sul",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2920,11 +3023,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-favo-de-mel",
-  "nome": "Elixir de Couro de Rato Carbonizado e Favo de Mel",
+  "nome": "Elixir de Couro de Rato e Favo de Mel",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2940,11 +3048,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-honeycomb",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-bico-de-falcao",
-  "nome": "Elixir de Couro de Rato Carbonizado e Bico de Falcão",
+  "nome": "Elixir de Couro de Rato e Bico de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2960,11 +3073,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-hawk-beak",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-faixas-de-espirito",
-  "nome": "Elixir de Couro de Rato Carbonizado e Faixas de Espírito",
+  "nome": "Elixir de Couro de Rato e Faixas de Espírito",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2980,11 +3098,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-wisp-wrappings",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-casca-de-colmeia",
-  "nome": "Elixir de Couro de Rato Carbonizado e Casca de Colmeia",
+  "nome": "Elixir de Couro de Rato e Casca de Colmeia",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3000,11 +3123,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-beehive-husk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-dente-de-felino",
-  "nome": "Elixir de Couro de Rato Carbonizado e Dente de Felino",
+  "nome": "Elixir de Couro de Rato e Dente de Felino",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3020,11 +3148,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-sabre-cat-tooth",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ramo-de-cardo",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ramo de Cardo",
+  "nome": "Elixir de Couro de Rato e Ramo de Cardo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3040,11 +3173,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-thistle-branch",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-gelatina-de-saltador-das-cinzas",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Couro de Rato e Gelatina de Saltador das Cinzas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3060,11 +3198,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-ash-hopper-jelly",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ovo-de-tordo-da-costa",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovo de Tordo da Costa",
+  "nome": "Elixir de Couro de Rato e Ovo de Tordo da Costa",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3080,11 +3223,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-pine-thrush-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ovas-de-salmao",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovas de Salmão",
+  "nome": "Elixir de Couro de Rato e Ovas de Salmão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3100,11 +3248,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-salmon-roe",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-perola-pequena",
-  "nome": "Elixir de Couro de Rato Carbonizado e Pérola Pequena",
+  "nome": "Elixir de Couro de Rato e Pérola Pequena",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3120,11 +3273,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-small-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-libelula-alaranjada",
-  "nome": "Elixir de Couro de Rato Carbonizado e Libélula Alaranjada",
+  "nome": "Elixir de Couro de Rato e Libélula Alaranjada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3140,11 +3298,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-orange-dartwing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ovas-de-peixe-carniceiro",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovas de Peixe Carniceiro",
+  "nome": "Elixir de Couro de Rato e Ovas de Peixe Carniceiro",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3160,11 +3323,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-slaughterfish-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-flor-violeta",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Violeta",
+  "nome": "Elixir de Couro de Rato e Flor Violeta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3180,11 +3348,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-purple-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-alho-das-hortas",
-  "nome": "Elixir de Couro de Rato Carbonizado e Alho das Hortas",
+  "nome": "Elixir de Couro de Rato e Alho das Hortas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3200,11 +3373,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-garlic",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-torax-de-inseto-lanterna",
-  "nome": "Elixir de Couro de Rato Carbonizado e Tórax de Inseto-lanterna",
+  "nome": "Elixir de Couro de Rato e Tórax de Inseto-lanterna",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3220,11 +3398,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-torchbug-thorax",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-fungo-do-pantano",
-  "nome": "Elixir de Couro de Rato Carbonizado e Fungo do Pântano",
+  "nome": "Elixir de Couro de Rato e Fungo do Pântano",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3240,11 +3423,16 @@
   ],
   "resultado": "pot-charred-skeever-hide-swamp-fungal-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-abelha",
-  "nome": "Elixir de Couro de Rato Carbonizado e Abelha",
+  "nome": "Elixir de Couro de Rato e Abelha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -3260,7 +3448,12 @@
   ],
   "resultado": "pot-charred-skeever-hide-bee",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-charred-skeever-hide"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-carne-de-proscrito",
