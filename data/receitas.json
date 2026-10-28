@@ -27,7 +27,7 @@
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-po-de-vampiro-de-vandar",
-  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -47,7 +47,8 @@
   "revisao_alquimica_pendente": true,
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
   "insumos_revisados": [
-   "ing-felsaad-tern-feathers"
+   "ing-felsaad-tern-feathers",
+   "ing-vampire-dust"
   ]
  },
  {
@@ -752,7 +753,7 @@
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-po-de-vampiro-de-vandar",
-  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -771,7 +772,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-mudcrab-chitin"
+   "ing-mudcrab-chitin",
+   "ing-vampire-dust"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -1752,7 +1754,7 @@
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pó de Vampiro e Couro de Rato Carbonizado",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1768,11 +1770,16 @@
   ],
   "resultado": "pot-vampire-dust-charred-skeever-hide",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pó de Vampiro e Penas de Falcão das Montanhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1788,11 +1795,16 @@
   ],
   "resultado": "pot-vampire-dust-hawk-feathers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-musgo-parassol-de-eldroth",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Musgo Parassol de Eldroth",
+  "nome": "Elixir de Pó de Vampiro e Musgo Parassol de Eldroth",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1808,11 +1820,16 @@
   ],
   "resultado": "pot-vampire-dust-emperor-parasol-moss",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-raiz-velada",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Velada",
+  "nome": "Elixir de Pó de Vampiro e Raiz Velada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1828,11 +1845,16 @@
   ],
   "resultado": "pot-vampire-dust-nirnroot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-raiz-velada-rubra",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Velada Rubra",
+  "nome": "Elixir de Pó de Vampiro e Raiz Velada Rubra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1848,11 +1870,16 @@
   ],
   "resultado": "pot-vampire-dust-crimson-nirnroot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-ectoplasma-de-vandar",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Ectoplasma de Vandar",
+  "nome": "Elixir de Pó de Vampiro e Ectoplasma de Vandar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1868,11 +1895,16 @@
   ],
   "resultado": "pot-vampire-dust-ectoplasm",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-carne-de-proscrito",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Carne de Proscrito",
+  "nome": "Elixir de Pó de Vampiro e Carne de Proscrito",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1888,11 +1920,16 @@
   ],
   "resultado": "pot-vampire-dust-human-flesh",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-flor-vermelha-de-thargrid",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Flor Vermelha de Thargrid",
+  "nome": "Elixir de Pó de Vampiro e Flor Vermelha de Thargrid",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1908,11 +1945,16 @@
   ],
   "resultado": "pot-vampire-dust-red-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-ovos-de-verme-quitinoso",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Ovos de Verme Quitinoso",
+  "nome": "Elixir de Pó de Vampiro e Ovos de Verme Quitinoso",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1928,11 +1970,16 @@
   ],
   "resultado": "pot-vampire-dust-chaurus-eggs",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-asa-de-mariposa-lunar",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Asa de Mariposa Lunar",
+  "nome": "Elixir de Pó de Vampiro e Asa de Mariposa Lunar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1948,11 +1995,16 @@
   ],
   "resultado": "pot-vampire-dust-luna-moth-wing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-fungo-de-gualapoles",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Fungo de Gualápoles",
+  "nome": "Elixir de Pó de Vampiro e Fungo de Gualápoles",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1968,11 +2020,16 @@
   ],
   "resultado": "pot-vampire-dust-namira-s-rot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-craca-do-rio-ancestral",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Craca do Rio Ancestral",
+  "nome": "Elixir de Pó de Vampiro e Craca do Rio Ancestral",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1988,11 +2045,16 @@
   ],
   "resultado": "pot-vampire-dust-nordic-barnacle",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-cachos-de-cinza",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cachos de Cinza",
+  "nome": "Elixir de Pó de Vampiro e Cachos de Cinza",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2008,11 +2070,16 @@
   ],
   "resultado": "pot-vampire-dust-ash-creep-cluster",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-cachos-rastejantes",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cachos Rastejantes",
+  "nome": "Elixir de Pó de Vampiro e Cachos Rastejantes",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2028,11 +2095,16 @@
   ],
   "resultado": "pot-vampire-dust-creep-cluster",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-bagas-de-zimbro",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Bagas de Zimbro",
+  "nome": "Elixir de Pó de Vampiro e Bagas de Zimbro",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2048,11 +2120,16 @@
   ],
   "resultado": "pot-vampire-dust-juniper-berries",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-flor-de-brilho",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Flor de Brilho",
+  "nome": "Elixir de Pó de Vampiro e Flor de Brilho",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2068,11 +2145,16 @@
   ],
   "resultado": "pot-vampire-dust-gleamblossom",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-vagem-da-charneca",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Vagem da Charneca",
+  "nome": "Elixir de Pó de Vampiro e Vagem da Charneca",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2088,11 +2170,16 @@
   ],
   "resultado": "pot-vampire-dust-grass-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-perola-da-costa-sul",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Pérola da Costa Sul",
+  "nome": "Elixir de Pó de Vampiro e Pérola da Costa Sul",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2108,11 +2195,16 @@
   ],
   "resultado": "pot-vampire-dust-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-coracao-de-espinheiros",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Coração de Espinheiros",
+  "nome": "Elixir de Pó de Vampiro e Coração de Espinheiros",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2128,11 +2220,16 @@
   ],
   "resultado": "pot-vampire-dust-briar-heart",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-sais-da-geada",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Sais da Geada",
+  "nome": "Elixir de Pó de Vampiro e Sais da Geada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2148,11 +2245,16 @@
   ],
   "resultado": "pot-vampire-dust-frost-salts",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-dentes-de-espectro-gelado",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Dentes de Espectro Gelado",
+  "nome": "Elixir de Pó de Vampiro e Dentes de Espectro Gelado",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2168,11 +2270,16 @@
   ],
   "resultado": "pot-vampire-dust-ice-wraith-teeth",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-chapeu-branco",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Chapéu Branco",
+  "nome": "Elixir de Pó de Vampiro e Chapéu Branco",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2188,11 +2295,16 @@
   ],
   "resultado": "pot-vampire-dust-white-cap",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-oleo-de-automato-anao",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Óleo de Autômato Anão",
+  "nome": "Elixir de Pó de Vampiro e Óleo de Autômato Anão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2208,11 +2320,16 @@
   ],
   "resultado": "pot-vampire-dust-dwarven-oil",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-cogumelo-de-raiz",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cogumelo de Raiz",
+  "nome": "Elixir de Pó de Vampiro e Cogumelo de Raiz",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -2228,11 +2345,16 @@
   ],
   "resultado": "pot-vampire-dust-mora-tapinella",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-raiz-mestra",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Mestra",
+  "nome": "Elixir de Pó de Vampiro e Raiz Mestra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2248,11 +2370,16 @@
   ],
   "resultado": "pot-vampire-dust-taproot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-orelha-de-elfo",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Orelha de Elfo",
+  "nome": "Elixir de Pó de Vampiro e Orelha de Elfo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2268,11 +2395,16 @@
   ],
   "resultado": "pot-vampire-dust-elves-ear",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-alho-das-hortas",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Alho das Hortas",
+  "nome": "Elixir de Pó de Vampiro e Alho das Hortas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2288,11 +2420,16 @@
   ],
   "resultado": "pot-vampire-dust-garlic",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-liquen-gigante",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Líquen Gigante",
+  "nome": "Elixir de Pó de Vampiro e Líquen Gigante",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2308,11 +2445,16 @@
   ],
   "resultado": "pot-vampire-dust-giant-lichen",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-sais-igneos",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Sais Ígneos",
+  "nome": "Elixir de Pó de Vampiro e Sais Ígneos",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2328,11 +2470,16 @@
   ],
   "resultado": "pot-vampire-dust-fire-salts",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-acucar-lunar",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Açúcar Lunar",
+  "nome": "Elixir de Pó de Vampiro e Açúcar Lunar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -2348,7 +2495,12 @@
   ],
   "resultado": "pot-vampire-dust-moon-sugar",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-vampire-dust"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-penas-de-falcao-das-montanhas",
