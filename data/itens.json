@@ -78,23 +78,41 @@
  },
  {
   "id": "ing-vampire-dust",
-  "nome": "Pó de Vampiro de Vandar",
+  "nome": "Pó de Vampiro",
   "categoria": "ingrediente",
   "tipo": "alquimia",
-  "origem": "adaptado_skyrim_alquimia",
+  "origem": "curadoria_original_carcaca",
   "referencia": "Vampire Dust",
   "efeitos": [
-   "Regenerate Health",
+   "Vampirism",
    "Invisibility",
-   "Cure Disease",
-   "Restore Magicka"
+   "Regenerate Health"
   ],
   "raridade": "incomum",
   "valor": 19,
   "peso": 0.1,
   "zona": "boca-abismo",
   "nivel": 3,
-  "icone": "🧪"
+  "icone": "🧪",
+  "descricao": "Pó extraído de matéria vampírica, carregado de energia vital predatória. Potente para efeitos de vampirismo, pode ocultar a presença e favorece discretamente a regeneração da saúde.",
+  "atributos_revisados": true,
+  "atributos": [
+   {
+    "id": "vampirismo",
+    "nome": "Vampirismo",
+    "intensidade": 3
+   },
+   {
+    "id": "invisibilidade",
+    "nome": "Invisibilidade",
+    "intensidade": 2
+   },
+   {
+    "id": "regenerar_saude",
+    "nome": "Regenerar Saúde",
+    "intensidade": 1
+   }
+  ]
  },
  {
   "id": "ing-charred-skeever-hide",
@@ -2704,7 +2722,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-vampire-dust",
-  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3200,7 +3218,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-vampire-dust",
-  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3882,7 +3900,7 @@
  },
  {
   "id": "pot-vampire-dust-charred-skeever-hide",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pó de Vampiro e Couro de Rato Carbonizado",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3899,7 +3917,7 @@
  },
  {
   "id": "pot-vampire-dust-hawk-feathers",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pó de Vampiro e Penas de Falcão das Montanhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3916,7 +3934,7 @@
  },
  {
   "id": "pot-vampire-dust-emperor-parasol-moss",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Musgo Parassol de Eldroth",
+  "nome": "Elixir de Pó de Vampiro e Musgo Parassol de Eldroth",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3933,7 +3951,7 @@
  },
  {
   "id": "pot-vampire-dust-nirnroot",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Velada",
+  "nome": "Elixir de Pó de Vampiro e Raiz Velada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3950,7 +3968,7 @@
  },
  {
   "id": "pot-vampire-dust-crimson-nirnroot",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Velada Rubra",
+  "nome": "Elixir de Pó de Vampiro e Raiz Velada Rubra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3967,7 +3985,7 @@
  },
  {
   "id": "pot-vampire-dust-ectoplasm",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Ectoplasma de Vandar",
+  "nome": "Elixir de Pó de Vampiro e Ectoplasma de Vandar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3984,7 +4002,7 @@
  },
  {
   "id": "pot-vampire-dust-human-flesh",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Carne de Proscrito",
+  "nome": "Elixir de Pó de Vampiro e Carne de Proscrito",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4001,7 +4019,7 @@
  },
  {
   "id": "pot-vampire-dust-red-mountain-flower",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Flor Vermelha de Thargrid",
+  "nome": "Elixir de Pó de Vampiro e Flor Vermelha de Thargrid",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4018,7 +4036,7 @@
  },
  {
   "id": "pot-vampire-dust-chaurus-eggs",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Ovos de Verme Quitinoso",
+  "nome": "Elixir de Pó de Vampiro e Ovos de Verme Quitinoso",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4035,7 +4053,7 @@
  },
  {
   "id": "pot-vampire-dust-luna-moth-wing",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Asa de Mariposa Lunar",
+  "nome": "Elixir de Pó de Vampiro e Asa de Mariposa Lunar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4053,7 +4071,7 @@
  },
  {
   "id": "pot-vampire-dust-namira-s-rot",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Fungo de Gualápoles",
+  "nome": "Elixir de Pó de Vampiro e Fungo de Gualápoles",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4070,7 +4088,7 @@
  },
  {
   "id": "pot-vampire-dust-nordic-barnacle",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Craca do Rio Ancestral",
+  "nome": "Elixir de Pó de Vampiro e Craca do Rio Ancestral",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4087,7 +4105,7 @@
  },
  {
   "id": "pot-vampire-dust-ash-creep-cluster",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cachos de Cinza",
+  "nome": "Elixir de Pó de Vampiro e Cachos de Cinza",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4104,7 +4122,7 @@
  },
  {
   "id": "pot-vampire-dust-creep-cluster",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cachos Rastejantes",
+  "nome": "Elixir de Pó de Vampiro e Cachos Rastejantes",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4121,7 +4139,7 @@
  },
  {
   "id": "pot-vampire-dust-juniper-berries",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Bagas de Zimbro",
+  "nome": "Elixir de Pó de Vampiro e Bagas de Zimbro",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4138,7 +4156,7 @@
  },
  {
   "id": "pot-vampire-dust-gleamblossom",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Flor de Brilho",
+  "nome": "Elixir de Pó de Vampiro e Flor de Brilho",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4155,7 +4173,7 @@
  },
  {
   "id": "pot-vampire-dust-grass-pod",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Vagem da Charneca",
+  "nome": "Elixir de Pó de Vampiro e Vagem da Charneca",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4172,7 +4190,7 @@
  },
  {
   "id": "pot-vampire-dust-pearl",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Pérola da Costa Sul",
+  "nome": "Elixir de Pó de Vampiro e Pérola da Costa Sul",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4189,7 +4207,7 @@
  },
  {
   "id": "pot-vampire-dust-briar-heart",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Coração de Espinheiros",
+  "nome": "Elixir de Pó de Vampiro e Coração de Espinheiros",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4206,7 +4224,7 @@
  },
  {
   "id": "pot-vampire-dust-frost-salts",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Sais da Geada",
+  "nome": "Elixir de Pó de Vampiro e Sais da Geada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4223,7 +4241,7 @@
  },
  {
   "id": "pot-vampire-dust-ice-wraith-teeth",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Dentes de Espectro Gelado",
+  "nome": "Elixir de Pó de Vampiro e Dentes de Espectro Gelado",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4240,7 +4258,7 @@
  },
  {
   "id": "pot-vampire-dust-white-cap",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Chapéu Branco",
+  "nome": "Elixir de Pó de Vampiro e Chapéu Branco",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4257,7 +4275,7 @@
  },
  {
   "id": "pot-vampire-dust-dwarven-oil",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Óleo de Autômato Anão",
+  "nome": "Elixir de Pó de Vampiro e Óleo de Autômato Anão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4274,7 +4292,7 @@
  },
  {
   "id": "pot-vampire-dust-mora-tapinella",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Cogumelo de Raiz",
+  "nome": "Elixir de Pó de Vampiro e Cogumelo de Raiz",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4291,7 +4309,7 @@
  },
  {
   "id": "pot-vampire-dust-taproot",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Raiz Mestra",
+  "nome": "Elixir de Pó de Vampiro e Raiz Mestra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4308,7 +4326,7 @@
  },
  {
   "id": "pot-vampire-dust-elves-ear",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Orelha de Elfo",
+  "nome": "Elixir de Pó de Vampiro e Orelha de Elfo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4325,7 +4343,7 @@
  },
  {
   "id": "pot-vampire-dust-garlic",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Alho das Hortas",
+  "nome": "Elixir de Pó de Vampiro e Alho das Hortas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4342,7 +4360,7 @@
  },
  {
   "id": "pot-vampire-dust-giant-lichen",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Líquen Gigante",
+  "nome": "Elixir de Pó de Vampiro e Líquen Gigante",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4359,7 +4377,7 @@
  },
  {
   "id": "pot-vampire-dust-fire-salts",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Sais Ígneos",
+  "nome": "Elixir de Pó de Vampiro e Sais Ígneos",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4376,7 +4394,7 @@
  },
  {
   "id": "pot-vampire-dust-moon-sugar",
-  "nome": "Elixir de Pó de Vampiro de Vandar e Açúcar Lunar",
+  "nome": "Elixir de Pó de Vampiro e Açúcar Lunar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
