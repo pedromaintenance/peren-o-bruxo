@@ -1,0 +1,85 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "replaces": "assets/icons/armadura.webp",
+  "source": "assets/icons/sources/armadura-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    748
+  ],
+  "sourceMode": "RGBA",
+  "sourceSha256": "9f9b0ee07c30cf1838e51565e83412f397089415b31df062a02138e43cf90405",
+  "sourceGitBlob": "5bcfb2977e2af49c7e82e83bd26b674ec878ff05",
+  "backupPreviousStaticIcon": "assets/icons/sources/armadura-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "99795cdc805c82e54ec47afdc45beca401067654",
+  "animation": "assets/icons/armadura.webp",
+  "animationFormat": "Animated WebP lossless RGBA",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "uniqueSourcePoses": 5,
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationsMs": [
+    140,
+    140,
+    140,
+    140,
+    140,
+    140,
+    140,
+    140
+  ],
+  "loop": 0,
+  "outputBytes": 129654,
+  "outputSha256": "80c688b5f89f1ac77ece19796628e6f83d4cc55d71dd8906a2e61cc63e6cd706",
+  "outputGitBlob": "25cbc47ecfb1725489471410b513f23b5e9085a1",
+  "slices": [
+    {
+      "frame": 0,
+      "sourceX": [
+        0,
+        410
+      ]
+    },
+    {
+      "frame": 1,
+      "sourceX": [
+        410,
+        819
+      ]
+    },
+    {
+      "frame": 2,
+      "sourceX": [
+        819,
+        1229
+      ]
+    },
+    {
+      "frame": 3,
+      "sourceX": [
+        1229,
+        1638
+      ]
+    },
+    {
+      "frame": 4,
+      "sourceX": [
+        1638,
+        2048
+      ]
+    }
+  ],
+  "processing": "Five equal regions; fixed transparent 720x720 canvas keeps per-frame vertical movement and ground shadow. Crop source vertical 14..734 and center each region horizontally, resize to 160x160 with Lanczos; WebP animated lossless, alpha maintained. Original source bytes preserved untouched.",
+  "integration": "Replaces existing inventory item icon path with native animated WebP. HTML <img> in game.js continues to load same URL; no save, mechanics, Phaser, or catalog changes.",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028-bow-v1-20261028-armor-v1-20261028"
+}

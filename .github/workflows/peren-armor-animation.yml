@@ -1,0 +1,44 @@
+name: Peren — Armadura animada e PWA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/armadura.webp'
+      - 'assets/icons/armadura-animation.json'
+      - 'assets/icons/sources/armadura-5poses-original.png'
+      - 'sw.js'
+      - 'tests/qa_peren_armadura_animation.mjs'
+      - 'tests/qa_peren_armadura_browser.mjs'
+      - '.github/workflows/peren-armor-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify originals, WebP frames, references and game contract
+        run: |
+          node --check game.js
+          node --test tests/qa_peren_armadura_animation.mjs tests/qa_peren_arco_animation.mjs tests/qa_peren_anel_animation.mjs
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install chromium
+      - name: Start local site
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/peren-armor-http.log 2>&1 &
+          for i in $(seq 1 25); do curl -fsS http://127.0.0.1:8765/assets/icons/armadura.webp >/dev/null && exit 0; sleep 1; done
+          exit 1
+      - name: Validate animated WebP in real Chromium
+        env:
+          PEREN_ORIGIN: http://127.0.0.1:8765
+        run: |
+          node tests/qa_peren_armadura_browser.mjs
+          node tests/qa_peren_arco_browser.mjs
+          node tests/qa_peren_anel_browser.mjs
