@@ -52,12 +52,12 @@ A magia básica Raio de Gelo permanece usando somente **casting-ice + Estilhaço
 - Os pixels e os níveis de transparência da arte original foram preservados integralmente; sem duração, alvo ou magia atribuídos
 - **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
 
-## Vazio 5 — Portal
-- PNG original integral: [dark-portal-05-source.png](dark-portal-05-source.png)
-- Mapeamento e metadados: [dark-portal-05.json](dark-portal-05.json)
-- PNG 437 × 468 RGBA com transparência original preservada integralmente (arquivo idêntico ao enviado)
-- **Um único quadro estático**: não é spritesheet animado; sem quadros intermediários, duração, alvo ou magia atribuídos
-- **Estado:** reservado; não carregado no Phaser, não pré-cacheado e não ativado em combate
+## Escuridão 5 — Portal do Vazio (CORREÇÃO PENDENTE DE UPLOAD BINÁRIO)
+- **O arquivo atualmente armazenado nesta pasta está incorreto**: é um PNG estático 437 × 468 e seu manifesto antigo documenta apenas um quadro.
+- O criador forneceu um **novo original correto: 2048 × 682 RGBA, cinco poses horizontais**, nome recebido `Sequência de Portal Neon Violeta(1).png`, SHA-256 `12934d1519fac100cb7d69b365b0c6c432a111ec7e7344a7ea2892432e0cd54b`.
+- Substituir `dark-portal-05-source.png` e `dark-portal-05.json` **juntos** pelo pacote de correção. Não usar o manifesto de cinco poses enquanto o PNG antigo permanecer no GitHub.
+- Os recortes preparados para prévia são provisórios; cinco poses ≠ animação aprovada para runtime.
+- **Estado:** aguardando troca do PNG pelo original fornecido. Não ativar no Phaser, pré-cache ou combate.
 
 ## Escuridão 6 — Explosão do Vazio
 - PNG original sem modificações: [dark-explosion-06-source.png](dark-explosion-06-source.png)
