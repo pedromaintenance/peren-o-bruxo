@@ -53,6 +53,8 @@ Terceira ficha: **Pó de Vampiro** (`ing-vampire-dust`), mantendo a região ante
 
 Quarta ficha: **Couro de Rato** (`ing-charred-skeever-hide`), mantendo a localização anteriormente cadastrada em **Garganta**: **Diminuir Carisma 3**, **Resistência a Veneno 2**, **Infligir Doença 1**. O nome antigo *Couro de Rato Carbonizado* foi substituído no ingrediente e em 41 elixires/receitas, sem alterar IDs. Das 41 receitas que usam o ingrediente, três já estavam sinalizadas pela curadoria anterior, elevando o total cumulativo a **139 receitas distintas** para reavaliação. Não foram recalculados os efeitos das poções nem implementadas mecânicas novas automaticamente.
 
+Quinta ficha: **Penas de Falcão** (`ing-hawk-feathers`), mantendo a região cadastrada em **Thargrid**: **Visão à Distância 3**, **Voo 2**, **Velocidade 1**. Renomeados o ingrediente, 20 elixires e 20 receitas que antes continham *Penas de Falcão das Montanhas*, preservando todos os IDs. Das 20 receitas associadas ao ingrediente, quatro já estavam na fila de análise, elevando o total a **155 receitas distintas** aguardando revisão alquímica. O efeito técnico de Voo é `Fly`, compartilhado com a Pena de Gaivota; os novos atributos não conferem automaticamente mecânicas jogáveis.
+
 Fonte da curadoria: [`data/curadoria_ingredientes.json`](data/curadoria_ingredientes.json). O script de geração reaplica a curadoria após gerar a base combinatória para impedir que um novo build apague as decisões manuais.
 
 ## Publicação e instalação
