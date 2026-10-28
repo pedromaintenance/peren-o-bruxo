@@ -11,7 +11,7 @@ O dossiê da antiga campanha de Peren Kerrhylon fornece **referências conceitua
 O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas implementações técnicas do mesmo jogo**, não dois jogos ou duas histórias. O Phaser mantém cache e save de teste próprios para proteger o progresso do clássico.
 
 - [**Jogar Peren, o Bruxo — edição clássica**](https://pedromaintenance.github.io/peren-o-bruxo/)
-- [**Laboratório de Itens — receitas, sprites e variações**](https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/) — painel isolado para acompanhar todas as categorias, 2.316 receitas e o andamento artístico; lê os JSONs originais, exibe os ícones visuais compartilhados, permite anotar sprites/variações, auditar inconsistências e exportar o planejamento em JSON/CSV. **Não modifica os saves ou os dados jogáveis; anotações são locais ao navegador.**
+- [**Laboratório de Itens — atributos, receitas e assets**](https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/) — painel **somente leitura** do catálogo real (2.785 itens e 2.316 receitas), famílias visuais e pendências de sprites. Permite **exportar o JSON completo de cada item** ou copiá-lo para solicitar alterações em linguagem natural, que serão feitas no repositório. O painel não altera dados, não grava no navegador e não toca nos saves.
 - [**Jogar a prévia Phaser (Modo Livre)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
 - [**ROADMAP.md — desenvolvimento do único jogo**](ROADMAP.md)
 - [**Referências conceituais de Peren e Carcaça**](lore/peren/README.md)
@@ -39,6 +39,15 @@ O mesmo Peren de cabelo escuro, olhos azuis e manto dourado da arte aprovada apa
 **Atualização de assets v5:** aplicada a correção nova da caminhada frontal. O atlas de coleta de ervas foi integrado ao Phaser em 4 direções e 4 quadros com tempo 350/250/450/850 ms, executando uma única vez. **Somente nós marcados como `herb`** recebem essa animação (Raiz Velada, Musgo Suspenso e Musgo Parassol de Eldroth); cogumelos continuam na coleta genérica. Caminhada ferida e demais ações não foram alteradas. A [galeria de Peren](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/peren-arte.html) exibe o gesto novo em quatro direções, sem afetar saves.
 
 **A atualização não migra saves, não cria segundo modo e não altera economia ou combate.** O cache offline será atualizado; não limpe os dados do navegador para forçar a atualização.
+
+
+## Curadoria de ingredientes — regra canônica (28/10/2026)
+
+A base agora distingue os **efeitos legados** da compilação anterior dos **atributos revisados** para a Carcaça. A regra aprovada é: mínimo de **três atributos por ingrediente**, com atributos adicionais somente quando curados e **intensidade de 1 a 3**. A revisão será feita ingrediente a ingrediente; não converter automaticamente os 111 ingredientes nem presumir intensidades.
+
+Primeira ficha: **Pena de Gaivota** (`ing-felsaad-tern-feathers`), existente exclusivamente em **Portomonte**, influenciada pelo templo de Deméter: **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**. Nome simplificado no item, nos 30 elixires derivados e nas 30 receitas, sem trocar IDs. Essas receitas estão marcadas para reavaliação de correspondência alquímica à medida que os outros ingredientes forem revisados; a migração não recalcula combinações de forma prematura.
+
+Fonte da curadoria: [`data/curadoria_ingredientes.json`](data/curadoria_ingredientes.json). O script de geração reaplica a curadoria após gerar a base combinatória para impedir que um novo build apague as decisões manuais.
 
 ## Publicação e instalação
 
