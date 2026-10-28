@@ -1,0 +1,26 @@
+name: Peren — Regressão de caminhada e artes
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'phaser-demo-m1hf/peren-walk-v6.html'
+      - 'phaser-demo-m1hf/peren-arte.html'
+      - 'tests/qa_peren_oficial.mjs'
+      - '.github/workflows/peren-walk-v6-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Python dependencies
+        run: python -m pip install 'Pillow>=10,<13'
+      - name: Visual regressions and historical source contracts
+        run: |
+          python tests/qa_peren_frames.py
+          python tests/qa_peren_walk_v6.py
+          node --test tests/qa_peren_oficial.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_wounded_v4.mjs
