@@ -1,0 +1,125 @@
+{
+  "schema": "peren.walk.v6",
+  "name": "Peren Kerrhylon — Caminhada normal",
+  "school": null,
+  "sourcePackage": "peren-walk-originals.zip",
+  "directions": [
+    "down",
+    "left",
+    "right",
+    "up"
+  ],
+  "frameCountPerDirection": 5,
+  "frames": {
+    "idle": 0,
+    "walkingLoop": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "sourceDimensions": {
+    "down": [
+      1280,
+      260
+    ],
+    "left": [
+      2048,
+      682
+    ],
+    "right": [
+      1280,
+      260
+    ],
+    "up": [
+      1280,
+      260
+    ]
+  },
+  "sourceSha256": {
+    "down": "2309d029316f3514b668a7287b27fb2ffe60ea47edc2572a192909a465ee0cfd",
+    "left": "68a5119c572e2e9904aa532925ace1166ecd3935f8c7198a781cbcf3e396f278",
+    "right": "3e789e7c4d20b7a0b7e2dcad2499c4bf10114dba42b771a4b5844432b7ec6564",
+    "up": "7a28e6a7ad535b6ebcac14358729b8082e7298e87032f2ce9d347509fe3be84d"
+  },
+  "normalizedAtlas": "peren-walk-4-directions-5frames-224x260.png",
+  "normalizedFrameSize": [
+    224,
+    260
+  ],
+  "normalizedAtlasSize": [
+    1120,
+    1040
+  ],
+  "runtimeAtlas": "../peren-atlas.png",
+  "runtimeFrameSize": [
+    48,
+    64
+  ],
+  "modifiedActions": [
+    "idle",
+    "walk",
+    "run"
+  ],
+  "modifiedAtlasIndices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "unmodifiedAtlasFrames": 80,
+  "runUsesWalkFrames": true,
+  "walkFrameMs": 180,
+  "cropPolicy": {
+    "left": "fixed x centered per fifth, crop 328×380 at y=132..512; proportional Lanczos reduction to 224×260",
+    "down/right/up": "224×260 starting at x=264*n; four 40px transparent gutters"
+  },
+  "runtimeSha256": "17476ae14c407529d07d17bc7cc4e3a6d1a88842ab87609c5f4dcecc506f8f29",
+  "highResSha256": "e976e639f69f03423cd3d2d3ef84a8ff7ec8ce511019d0d902ac81037d3aea54",
+  "status": "integrated into normal field atlas; wounded atlas and gameplay untouched"
+}
