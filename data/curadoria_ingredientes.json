@@ -1,0 +1,48 @@
+{
+  "schema": "peren-atributos-ingredientes-v1",
+  "politica": {
+    "minimo_por_ingrediente": 3,
+    "maximo_por_ingrediente": null,
+    "intensidade_minima": 1,
+    "intensidade_maxima": 3,
+    "observacao": "3 atributos mínimos. Atributos extras somente quando definidos na curadoria; intensidade inteira de 1 a 3. Ingredientes ainda não revisados mantêm efeitos legados em caráter provisório."
+  },
+  "itens": {
+    "ing-felsaad-tern-feathers": {
+      "nome": "Pena de Gaivota",
+      "descricao": "Pena das gaivotas que só existem em Portomonte. A influência do templo de Deméter confere forte poder de cura de doenças, restaura moderadamente o vigor físico e conserva uma capacidade tênue de voo.",
+      "zona": "portomonte",
+      "zona_exclusiva": "portomonte",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "curar_doenca",
+          "nome": "Curar doença",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "nome": "Voar",
+          "intensidade": 1
+        },
+        {
+          "id": "restaurar_stamina",
+          "nome": "Restaurar stamina",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Cure Disease",
+        "Fly",
+        "Restore Stamina"
+      ]
+    }
+  },
+  "renomeacoes_textuais": {
+    "Pena de Gaivota de Portomonte": "Pena de Gaivota"
+  },
+  "receitas_a_revisar_por_insumo": [
+    "ing-felsaad-tern-feathers"
+  ]
+}
