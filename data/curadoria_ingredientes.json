@@ -65,14 +65,44 @@
         "Fortify Constitution",
         "Resist Poison"
       ]
+    },
+    "ing-vampire-dust": {
+      "nome": "Pó de Vampiro",
+      "descricao": "Pó extraído de matéria vampírica, carregado de energia vital predatória. Potente para efeitos de vampirismo, pode ocultar a presença e favorece discretamente a regeneração da saúde.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "vampirismo",
+          "nome": "Vampirismo",
+          "intensidade": 3
+        },
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Vampirism",
+        "Invisibility",
+        "Regenerate Health"
+      ]
     }
   },
   "renomeacoes_textuais": {
     "Pena de Gaivota de Portomonte": "Pena de Gaivota",
-    "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo"
+    "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo",
+    "Pó de Vampiro de Vandar": "Pó de Vampiro"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
-    "ing-mudcrab-chitin"
+    "ing-mudcrab-chitin",
+    "ing-vampire-dust"
   ]
 }
