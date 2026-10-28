@@ -51,5 +51,5 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A phaser-demo-m1hf/art/characters/peren phaser-demo-m1hf/art-m1h phaser-demo-m1hf/art-m1hb phaser-demo-m1hf/art-m1hc phaser-demo-m1hf/art-m1hd phaser-demo/art/characters/peren phaser-demo-m1hf/assets/game-B5Gp97dd.js phaser-demo-m1hf/peren-arte.html phaser-demo-m1hf/demo-sw.js .github/workflows tests ferramentas
+          git add -A phaser-demo-m1hf/art/characters/peren phaser-demo-m1hf/art-m1h phaser-demo-m1hf/art-m1hb phaser-demo-m1hf/art-m1hc phaser-demo-m1hf/art-m1hd phaser-demo/art/characters/peren phaser-demo-m1hf/assets/game-B5Gp97dd.js phaser-demo-m1hf/peren-arte.html phaser-demo-m1hf/demo-sw.js tests ferramentas
           git diff --cached --quiet || (git commit -m 'Peren v7: ativar coleta universal em cinco quadros e remover erbiv5' && git push origin HEAD:main)
