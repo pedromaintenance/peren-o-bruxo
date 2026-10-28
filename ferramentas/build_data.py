@@ -355,10 +355,13 @@ if curadoria_path.is_file():
   for anterior, atual in curadoria.get('renomeacoes_textuais', {}).items():
    if anterior in receita.get('nome', ''):
     receita['nome'] = receita['nome'].replace(anterior, atual)
-  if any(x['item'] in curadoria.get('receitas_a_revisar_por_insumo', []) for x in receita['ingredientes']):
+  revisados_na_receita = [x['item'] for x in receita['ingredientes'] if x['item'] in curadoria.get('receitas_a_revisar_por_insumo', [])]
+  if revisados_na_receita:
    receita['revisao_alquimica_pendente'] = True
-   receita['nota_revisao'] = ('Receita criada antes da curadoria dos atributos da Pena de Gaivota. '
-                            'Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs.')
+   receita['insumos_revisados'] = revisados_na_receita
+   receita['nota_revisao'] = ('Receita herdada da geração combinatória anterior à curadoria dos atributos. '
+                            'Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes '
+                            'forem revisados, preservando os IDs.')
  print('curadoria aplicada', revisados, 'ingrediente(s) revisado(s)')
 else:
  raise FileNotFoundError('Curadoria de ingredientes ausente: '+str(curadoria_path))
