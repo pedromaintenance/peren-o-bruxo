@@ -1,0 +1,37 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "source": "assets/icons/sources/escama-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    487
+  ],
+  "sourceSha256": "d409c7832e857739aed2e13aa4a704a1bf2197b28718dfbea538cd365f9bd915",
+  "sourceGitBlob": "d97cade82184f7e8bd6c6ae6bcdb39b672ea2a6d",
+  "backupPreviousStaticIcon": "assets/icons/sources/escama-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "6e29de07d4dbaf099a2744fdb210a0ab89e2c4d2",
+  "animation": "assets/icons/escama.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    175,
+    175,
+    175,
+    175,
+    175
+  ],
+  "loop": 0,
+  "outputSha256": "3ddbe441c031264f1f9c97650764d0dc004f89570c23a78e1c567ce864cb1866",
+  "outputGitBlob": "58b25898ca524da7be9fc2340dda69c2196d80bf",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028-bow-v1-20261028-armor-v1-20261028-crystal-v1-20261028-helm-v1-20261028-herb-v1-20261028-curadoria-ingredientes-v1-scale-v1-20261028",
+  "integration": "Existing icon path; game.js, saves and mechanics unchanged.",
+  "note": "Source from supplied ZIP (2048x487), frame PNGs used to compose animated output. ZIP atlas metadata dimensions differ from image; frame originals were used as frame source."
+}
