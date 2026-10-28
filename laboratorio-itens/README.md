@@ -35,12 +35,13 @@ Opcional: **Catálogo JSON** no topo exporta todos os itens, e **Exportar fila C
 - A primeira revisão é **Pena de Gaivota**, exclusiva de Portomonte, com **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**.
 - A segunda revisão é **Carapaça de Caranguejo**, com **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Mantida a região já cadastrada: Além Sul. Nenhum asset novo foi criado nesta etapa.
 - Terceira revisão: **Pó de Vampiro** (`ing-vampire-dust`): **Vampirismo 3**, **Invisibilidade 2**, **Regenerar Saúde 1**. Localização anteriormente cadastrada: Boca do Abismo. Sem mudança automática nas mecânicas de combate.
+- Quarta revisão: **Couro de Rato** (`ing-charred-skeever-hide`): **Diminuir Carisma 3**, **Resistência a Veneno 2**, **Infligir Doença 1**. Mantida a localização prévia em Garganta; nenhum asset exclusivo foi criado.
 
 O arquivo `data/curadoria_ingredientes.json` centraliza essas decisões para evitar que uma reconstrução do catálogo as reverta. O script `ferramentas/build_data.py` aplica a curadoria depois de gerar os objetos e receitas; IDs permanecem estáveis.
 
 ### Revisões de receitas ligadas
 
-A mudança de uma propriedade pode invalidar fórmulas combinatórias antigas. As **30 receitas que consomem Pena de Gaivota** e as **42 receitas que consomem Carapaça de Caranguejo** ficam marcadas com `revisao_alquimica_pendente` até que os atributos de seus outros ingredientes sejam avaliados. Uma receita utiliza ambos, resultando em **71 receitas distintas** pendentes antes de revisar o Pó de Vampiro. O campo `insumos_revisados` identifica quais ingredientes revisados motivaram a marcação. Com a terceira ficha (**32** receitas com Pó de Vampiro, das quais duas se sobrepõem às anteriores), há **101 receitas únicas** aguardando análise. Esta marcação **não** é a mesma coisa que erro estrutural de ID ou quantidade. Não refazer ou excluir receitas automaticamente.
+A mudança de uma propriedade pode invalidar fórmulas combinatórias antigas. As **30 receitas que consomem Pena de Gaivota** e as **42 receitas que consomem Carapaça de Caranguejo** ficam marcadas com `revisao_alquimica_pendente` até que os atributos de seus outros ingredientes sejam avaliados. Uma receita utiliza ambos, resultando em **71 receitas distintas** pendentes antes de revisar o Pó de Vampiro. O campo `insumos_revisados` identifica quais ingredientes revisados motivaram a marcação. Com a terceira ficha (**32** receitas com Pó de Vampiro, das quais duas se sobrepõem às anteriores), há **101 receitas únicas** aguardando análise. Com a quarta ficha (**41** receitas com Couro de Rato, das quais três já estavam na fila), há **139 receitas únicas** a reavaliar. Esta marcação **não** é a mesma coisa que erro estrutural de ID ou quantidade. Não refazer ou excluir receitas automaticamente.
 
 ## Situação de publicação e testes
 
