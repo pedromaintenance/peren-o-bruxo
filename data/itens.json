@@ -154,23 +154,41 @@
  },
  {
   "id": "ing-hawk-feathers",
-  "nome": "Penas de Falcão das Montanhas",
+  "nome": "Penas de Falcão",
   "categoria": "ingrediente",
   "tipo": "alquimia",
-  "origem": "adaptado_skyrim_alquimia",
+  "origem": "curadoria_original_carcaca",
   "referencia": "Hawk Feathers",
   "efeitos": [
-   "Fortify Sneak",
-   "Cure Disease",
-   "Fortify One-handed",
-   "Fortify Light Armor"
+   "Distant Vision",
+   "Fly",
+   "Fortify Speed"
   ],
   "raridade": "epico",
   "valor": 29,
   "peso": 0.1,
   "zona": "thargrid",
   "nivel": 5,
-  "icone": "🌿"
+  "icone": "🌿",
+  "descricao": "Penas de falcão associadas a visão muito distante, voo moderado e agilidade discreta.",
+  "atributos_revisados": true,
+  "atributos": [
+   {
+    "id": "visao_a_distancia",
+    "nome": "Visão à Distância",
+    "intensidade": 3
+   },
+   {
+    "id": "voar",
+    "nome": "Voo",
+    "intensidade": 2
+   },
+   {
+    "id": "velocidade",
+    "nome": "Velocidade",
+    "intensidade": 1
+   }
+  ]
  },
  {
   "id": "ing-jarrin-root",
@@ -2775,7 +2793,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-hawk-feathers",
-  "nome": "Elixir de Pena de Gaivota e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pena de Gaivota e Penas de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3272,7 +3290,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-hawk-feathers",
-  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3935,7 +3953,7 @@
  },
  {
   "id": "pot-vampire-dust-hawk-feathers",
-  "nome": "Elixir de Pó de Vampiro e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pó de Vampiro e Penas de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4429,7 +4447,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-hawk-feathers",
-  "nome": "Elixir de Couro de Rato e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Couro de Rato e Penas de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5076,7 +5094,7 @@
  },
  {
   "id": "pot-hawk-feathers-human-flesh",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Carne de Proscrito",
+  "nome": "Elixir de Penas de Falcão e Carne de Proscrito",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5093,7 +5111,7 @@
  },
  {
   "id": "pot-hawk-feathers-skeever-tail",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Cauda de Rato das Docas",
+  "nome": "Elixir de Penas de Falcão e Cauda de Rato das Docas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5110,7 +5128,7 @@
  },
  {
   "id": "pot-hawk-feathers-hanging-moss",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Musgo Suspenso",
+  "nome": "Elixir de Penas de Falcão e Musgo Suspenso",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5127,7 +5145,7 @@
  },
  {
   "id": "pot-hawk-feathers-luna-moth-wing",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Asa de Mariposa Lunar",
+  "nome": "Elixir de Penas de Falcão e Asa de Mariposa Lunar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5144,7 +5162,7 @@
  },
  {
   "id": "pot-hawk-feathers-bear-claws",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Garras de Urso",
+  "nome": "Elixir de Penas de Falcão e Garras de Urso",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5161,7 +5179,7 @@
  },
  {
   "id": "pot-hawk-feathers-canis-root",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Raiz Canina",
+  "nome": "Elixir de Penas de Falcão e Raiz Canina",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5178,7 +5196,7 @@
  },
  {
   "id": "pot-hawk-feathers-rock-warbler-egg",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Ovo de Tordo",
+  "nome": "Elixir de Penas de Falcão e Ovo de Tordo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5195,7 +5213,7 @@
  },
  {
   "id": "pot-hawk-feathers-frost-mirriam",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Mirra da Geada",
+  "nome": "Elixir de Penas de Falcão e Mirra da Geada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5212,7 +5230,7 @@
  },
  {
   "id": "pot-hawk-feathers-powdered-mammoth-tusk",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Presa de Mamute em Pó",
+  "nome": "Elixir de Penas de Falcão e Presa de Mamute em Pó",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5229,7 +5247,7 @@
  },
  {
   "id": "pot-hawk-feathers-honeycomb",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Favo de Mel",
+  "nome": "Elixir de Penas de Falcão e Favo de Mel",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5246,7 +5264,7 @@
  },
  {
   "id": "pot-hawk-feathers-beehive-husk",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Casca de Colmeia",
+  "nome": "Elixir de Penas de Falcão e Casca de Colmeia",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5264,7 +5282,7 @@
  },
  {
   "id": "pot-hawk-feathers-ash-hopper-jelly",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Penas de Falcão e Gelatina de Saltador das Cinzas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5281,7 +5299,7 @@
  },
  {
   "id": "pot-hawk-feathers-ashen-grass-pod",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Vagem Cinzenta",
+  "nome": "Elixir de Penas de Falcão e Vagem Cinzenta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5298,7 +5316,7 @@
  },
  {
   "id": "pot-hawk-feathers-small-pearl",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Pérola Pequena",
+  "nome": "Elixir de Penas de Falcão e Pérola Pequena",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5315,7 +5333,7 @@
  },
  {
   "id": "pot-hawk-feathers-abecean-longfin",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Peixe da Costa Escarlate",
+  "nome": "Elixir de Penas de Falcão e Peixe da Costa Escarlate",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5332,7 +5350,7 @@
  },
  {
   "id": "pot-hawk-feathers-purple-mountain-flower",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Flor Violeta",
+  "nome": "Elixir de Penas de Falcão e Flor Violeta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
