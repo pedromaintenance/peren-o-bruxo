@@ -1,0 +1,115 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "replaces": "assets/icons/arco.webp",
+  "source": "assets/icons/sources/arco-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    748
+  ],
+  "sourceMode": "RGBA",
+  "sourceSha256": "ed4959321cfbd9cfe1f809a7e8bcadabf52e35c9db5509370f90990052b59e17",
+  "sourceGitBlob": "06d1cc51a86cb31e9612453b19786a69ef52dff2",
+  "backupPreviousStaticIcon": "assets/icons/sources/arco-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "8d1124a487220ddddc64c7338e80b4edb6bdd09e",
+  "animation": "assets/icons/arco.webp",
+  "animationFormat": "Animated WebP lossless RGBA",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "uniqueSourcePoses": 5,
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationsMs": [
+    140,
+    140,
+    140,
+    140,
+    140,
+    140,
+    140,
+    140
+  ],
+  "loop": 0,
+  "outputBytes": 61210,
+  "outputSha256": "2ff7ea1fe2ec6c958c2d2875f414a6648e6443ad019127635d333a921692d096",
+  "outputGitBlob": "aac70f18787620c32de8b42748b186be1f41b8f6",
+  "sourceRegions": [
+    {
+      "pose": 0,
+      "region": [
+        0,
+        410
+      ],
+      "bbox": [
+        123,
+        22,
+        329,
+        719
+      ]
+    },
+    {
+      "pose": 1,
+      "region": [
+        410,
+        819
+      ],
+      "bbox": [
+        577,
+        19,
+        747,
+        719
+      ]
+    },
+    {
+      "pose": 2,
+      "region": [
+        819,
+        1229
+      ],
+      "bbox": [
+        995,
+        22,
+        1066,
+        718
+      ]
+    },
+    {
+      "pose": 3,
+      "region": [
+        1229,
+        1638
+      ],
+      "bbox": [
+        1327,
+        22,
+        1479,
+        719
+      ]
+    },
+    {
+      "pose": 4,
+      "region": [
+        1638,
+        2048
+      ],
+      "bbox": [
+        1721,
+        22,
+        1928,
+        719
+      ]
+    }
+  ],
+  "processing": "Five isolated horizontal source regions centered on alpha>=16 bounds; pasted on transparent common 748x748 canvas at identical scale and vertical registration; alpha<4 cleared only in derivative; resize 160x160; lossless animated WebP. Original unchanged.",
+  "integration": "Same assets/icons/arco.webp URL used by item images. No changes to gameplay, items, save data, or Phaser.",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028-bow-v1-20261028"
+}
