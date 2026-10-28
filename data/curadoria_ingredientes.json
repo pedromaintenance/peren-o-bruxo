@@ -36,7 +36,8 @@
         "Cure Disease",
         "Fly",
         "Restore Stamina"
-      ]
+      ],
+      "raridade": "comum"
     },
     "ing-mudcrab-chitin": {
       "nome": "Carapaça de Caranguejo",
@@ -64,7 +65,8 @@
         "Fortify Strength",
         "Fortify Constitution",
         "Resist Poison"
-      ]
+      ],
+      "raridade": "comum"
     },
     "ing-vampire-dust": {
       "nome": "Pó de Vampiro",
@@ -92,7 +94,8 @@
         "Vampirism",
         "Invisibility",
         "Regenerate Health"
-      ]
+      ],
+      "raridade": "raro"
     },
     "ing-charred-skeever-hide": {
       "nome": "Couro de Rato",
@@ -120,7 +123,8 @@
         "Reduce Charisma",
         "Resist Poison",
         "Inflict Disease"
-      ]
+      ],
+      "raridade": "comum"
     },
     "ing-hawk-feathers": {
       "nome": "Penas de Falcão",
@@ -148,7 +152,8 @@
         "Distant Vision",
         "Fly",
         "Fortify Speed"
-      ]
+      ],
+      "raridade": "comum"
     }
   },
   "renomeacoes_textuais": {
