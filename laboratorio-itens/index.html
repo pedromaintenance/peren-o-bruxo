@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0c151b">
+<meta name="description" content="Laboratório de itens, receitas, sprites e variações de Peren, o Bruxo.">
+<title>Laboratório de Itens · Peren, o Bruxo</title>
+<link rel="stylesheet" href="./app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a href="../" class="backlink">← Voltar ao jogo</a>
+    <div class="sigil" aria-hidden="true">✦</div>
+    <div class="brand"><span>ATELIÊ DA CARCAÇA</span><h1>Peren<br><em>O Bruxo</em></h1><p>LABORATÓRIO DE ITENS</p></div>
+    <nav aria-label="Navegação principal">
+      <button type="button" class="nav active" data-action="nav" data-tab="overview"><span>◈</span> Painel geral</button>
+      <button type="button" class="nav" data-action="nav" data-tab="catalog"><span>▦</span> Catálogo de itens</button>
+      <button type="button" class="nav" data-action="nav" data-tab="recipes"><span>⚗</span> Livro de receitas</button>
+      <button type="button" class="nav" data-action="nav" data-tab="families"><span>◇</span> Famílias e variações</button>
+      <button type="button" class="nav" data-action="nav" data-tab="pipeline"><span>☷</span> Fila de arte</button>
+      <button type="button" class="nav" data-action="nav" data-tab="diagnostics"><span>⌁</span> Auditoria de dados</button>
+    </nav>
+    <div class="sidebar-foot"><b>CONTROLE LOCAL</b><small>As anotações ficam apenas neste navegador. Exporte JSON para guardar ou versionar no GitHub.</small><div id="local-status">Preparando catálogo…</div></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div><span class="eyebrow">PRODUÇÃO VISUAL / DADOS / CRAFTING</span><div class="crumb" id="crumb">Visão geral</div></div><div class="top-actions"><a class="linkbtn" href="../" target="_self">Jogar ↗</a><button class="btn ghost" data-action="export">↓ Exportar JSON</button><button class="btn" data-action="import">↑ Importar</button><input id="import-file" type="file" accept=".json,application/json" hidden></div></header>
+    <main id="main" aria-live="polite"><div class="loading"><span class="loader"></span><h2>Abrindo os arquivos do mercador…</h2><p>Carregando itens e receitas originais do repositório.</p></div></main>
+    <footer class="footer">PEREN, O BRUXO — MERCADOR DA CARCAÇA <span>Laboratório isolado • não modifica o jogo, sua economia ou seus saves</span></footer>
+  </div>
+</div>
+<div id="modal" class="modal-backdrop" hidden><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div id="modal-content"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script defer src="./app.js"></script>
+</body>
+</html>
