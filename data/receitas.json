@@ -1,7 +1,7 @@
 [
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-quitina-de-caranguejo-carmesim",
-  "nome": "Elixir de Pena de Gaivota e Quitina de Caranguejo Carmesim",
+  "nome": "Elixir de Pena de Gaivota e Carapaça de Caranguejo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -19,7 +19,11 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers",
+   "ing-mudcrab-chitin"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-po-de-vampiro-de-vandar",
@@ -41,7 +45,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-couro-de-rato-carbonizado",
@@ -63,7 +70,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-penas-de-falcao-das-montanhas",
@@ -85,7 +95,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-raiz-velada",
@@ -107,7 +120,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-raiz-velada-rubra",
@@ -129,7 +145,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cogumelo-do-imp",
@@ -151,7 +170,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cauda-de-rato-das-docas",
@@ -173,7 +195,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-sais-do-vazio",
@@ -195,7 +220,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-asa-de-borboleta-da-foz",
@@ -217,7 +245,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-coracao-de-demonio",
@@ -239,7 +270,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-olho-de-felino-das-ilhas",
@@ -261,7 +295,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-asa-de-mariposa-lunar",
@@ -283,7 +320,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-flor-azul-da-montanha",
@@ -305,7 +345,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-galinha",
@@ -327,7 +370,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-falcao",
@@ -349,7 +395,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-fungo-de-bolha",
@@ -371,7 +420,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-tordo",
@@ -393,7 +445,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-trigo-da-costa",
@@ -415,7 +470,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-libelula-azul",
@@ -437,7 +495,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-flor-de-brilho",
@@ -459,7 +520,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-garra-de-bruxa",
@@ -481,7 +545,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-algodao-da-tundra",
@@ -503,7 +570,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-coroa-sangrenta",
@@ -525,7 +595,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-favo-de-mel",
@@ -547,7 +620,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-faixas-de-espirito",
@@ -569,7 +645,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-lavanda-selvagem",
@@ -591,7 +670,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-casca-de-colmeia",
@@ -613,7 +695,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-gelatina-de-saltador-das-cinzas",
@@ -635,7 +720,10 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-fungo-do-pantano",
@@ -657,11 +745,14 @@
   "quantidade": 1,
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
-  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
+  "insumos_revisados": [
+   "ing-felsaad-tern-feathers"
+  ]
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-po-de-vampiro-de-vandar",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Carapaça de Caranguejo e Pó de Vampiro de Vandar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -677,11 +768,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-vampire-dust",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Couro de Rato Carbonizado",
+  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato Carbonizado",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -697,11 +793,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-charred-skeever-hide",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão das Montanhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -717,11 +818,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-hawk-feathers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-orelha-de-troglodita",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Orelha de Troglodita",
+  "nome": "Elixir de Carapaça de Caranguejo e Orelha de Troglodita",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -737,11 +843,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-falmer-ear",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-gordura-de-troll",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Gordura de Troll",
+  "nome": "Elixir de Carapaça de Caranguejo e Gordura de Troll",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -757,11 +868,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-troll-fat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-olho-de-felino-das-ilhas",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Olho de Felino das Ilhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino das Ilhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -777,11 +893,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-eye-of-sabre-cat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-garras-de-urso",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Garras de Urso",
+  "nome": "Elixir de Carapaça de Caranguejo e Garras de Urso",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -797,11 +918,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-bear-claws",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-cachos-de-cinza",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cachos de Cinza",
+  "nome": "Elixir de Carapaça de Caranguejo e Cachos de Cinza",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -817,11 +943,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-ash-creep-cluster",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-cinzas-de-um-escriba",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cinzas de Um Escriba",
+  "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Um Escriba",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -837,11 +968,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-berit-s-ashes",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-farinha-de-ossos",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Farinha de Ossos",
+  "nome": "Elixir de Carapaça de Caranguejo e Farinha de Ossos",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -857,11 +993,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-bone-meal",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-carpa-de-pedra",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Carpa de Pedra",
+  "nome": "Elixir de Carapaça de Caranguejo e Carpa de Pedra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -877,11 +1018,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-histcarp",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-chifres-grandes",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Chifres Grandes",
+  "nome": "Elixir de Carapaça de Caranguejo e Chifres Grandes",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -897,11 +1043,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-large-antlers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-perca-prateada",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Perca Prateada",
+  "nome": "Elixir de Carapaça de Caranguejo e Perca Prateada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -917,11 +1068,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-silverside-perch",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-flor-amarela-da-montanha",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Flor Amarela da Montanha",
+  "nome": "Elixir de Carapaça de Caranguejo e Flor Amarela da Montanha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -937,11 +1093,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-yellow-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-gelatina-de-netch",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Gelatina de Netch",
+  "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Netch",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -957,11 +1118,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-netch-jelly",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-presa-de-mamute-em-po",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Presa de Mamute em Pó",
+  "nome": "Elixir de Carapaça de Caranguejo e Presa de Mamute em Pó",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -977,11 +1143,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-powdered-mammoth-tusk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-vagem-da-charneca",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Vagem da Charneca",
+  "nome": "Elixir de Carapaça de Caranguejo e Vagem da Charneca",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -997,11 +1168,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-grass-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-lingua-de-dragao",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Língua de Dragão",
+  "nome": "Elixir de Carapaça de Caranguejo e Língua de Dragão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1017,11 +1193,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-dragon-s-tongue",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-perola-da-costa-sul",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pérola da Costa Sul",
+  "nome": "Elixir de Carapaça de Caranguejo e Pérola da Costa Sul",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1037,11 +1218,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-favo-de-mel",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Favo de Mel",
+  "nome": "Elixir de Carapaça de Caranguejo e Favo de Mel",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1057,11 +1243,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-honeycomb",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-bico-de-falcao",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Bico de Falcão",
+  "nome": "Elixir de Carapaça de Caranguejo e Bico de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1077,11 +1268,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-hawk-beak",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-faixas-de-espirito",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Faixas de Espírito",
+  "nome": "Elixir de Carapaça de Caranguejo e Faixas de Espírito",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1097,11 +1293,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-wisp-wrappings",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-casca-de-colmeia",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Casca de Colmeia",
+  "nome": "Elixir de Carapaça de Caranguejo e Casca de Colmeia",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1117,11 +1318,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-beehive-husk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-frutas-da-neve",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Frutas da Neve",
+  "nome": "Elixir de Carapaça de Caranguejo e Frutas da Neve",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1137,11 +1343,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-snowberries",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-cinzas-de-criatura",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Cinzas de Criatura",
+  "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Criatura",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1157,11 +1368,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-spawn-ash",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-dente-de-felino",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Dente de Felino",
+  "nome": "Elixir de Carapaça de Caranguejo e Dente de Felino",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1177,11 +1393,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-sabre-cat-tooth",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-ramo-de-cardo",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ramo de Cardo",
+  "nome": "Elixir de Carapaça de Caranguejo e Ramo de Cardo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1197,11 +1418,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-thistle-branch",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-vagem-cinzenta",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Vagem Cinzenta",
+  "nome": "Elixir de Carapaça de Caranguejo e Vagem Cinzenta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1217,11 +1443,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-ashen-grass-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-ovo-de-tordo-da-costa",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovo de Tordo da Costa",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovo de Tordo da Costa",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1237,11 +1468,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-pine-thrush-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-ovas-de-salmao",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovas de Salmão",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovas de Salmão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1257,11 +1493,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-salmon-roe",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-orelha-de-elfo",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Orelha de Elfo",
+  "nome": "Elixir de Carapaça de Caranguejo e Orelha de Elfo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1277,11 +1518,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-elves-ear",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-perola-pequena",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Pérola Pequena",
+  "nome": "Elixir de Carapaça de Caranguejo e Pérola Pequena",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1297,11 +1543,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-small-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-libelula-alaranjada",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Libélula Alaranjada",
+  "nome": "Elixir de Carapaça de Caranguejo e Libélula Alaranjada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1317,11 +1568,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-orange-dartwing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-ovas-de-peixe-carniceiro",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Ovas de Peixe Carniceiro",
+  "nome": "Elixir de Carapaça de Caranguejo e Ovas de Peixe Carniceiro",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1337,11 +1593,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-slaughterfish-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-flor-violeta",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Flor Violeta",
+  "nome": "Elixir de Carapaça de Caranguejo e Flor Violeta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -1357,11 +1618,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-purple-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-alho-das-hortas",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Alho das Hortas",
+  "nome": "Elixir de Carapaça de Caranguejo e Alho das Hortas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -1377,11 +1643,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-garlic",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-torax-de-inseto-lanterna",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Tórax de Inseto-lanterna",
+  "nome": "Elixir de Carapaça de Caranguejo e Tórax de Inseto-lanterna",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1397,11 +1668,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-torchbug-thorax",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-amanita-rubra",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Amanita Rubra",
+  "nome": "Elixir de Carapaça de Caranguejo e Amanita Rubra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1417,11 +1693,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-fly-amanita",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-abelha",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Abelha",
+  "nome": "Elixir de Carapaça de Caranguejo e Abelha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -1437,11 +1718,16 @@
   ],
   "resultado": "pot-mudcrab-chitin-bee",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-sais-igneos",
-  "nome": "Elixir de Quitina de Caranguejo Carmesim e Sais Ígneos",
+  "nome": "Elixir de Carapaça de Caranguejo e Sais Ígneos",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1457,7 +1743,12 @@
   ],
   "resultado": "pot-mudcrab-chitin-fire-salts",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-couro-de-rato-carbonizado",
@@ -47013,7 +47304,12 @@
   ],
   "resultado": "ger-antidoto",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-mudcrab-chitin"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-protecao",
