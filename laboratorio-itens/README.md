@@ -33,12 +33,13 @@ Opcional: **Catálogo JSON** no topo exporta todos os itens, e **Exportar fila C
 - Ingredientes podem ter mais de 3 atributos se definidos na curadoria.
 - **Não atribuir intensidades arbitrárias a ingredientes ainda não revisados**. A lista legada de `efeitos` permanece como provisória e é identificada como tal na ficha.
 - A primeira revisão é **Pena de Gaivota**, exclusiva de Portomonte, com **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**.
+- A segunda revisão é **Carapaça de Caranguejo**, com **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Mantida a região já cadastrada: Além Sul. Nenhum asset novo foi criado nesta etapa.
 
 O arquivo `data/curadoria_ingredientes.json` centraliza essas decisões para evitar que uma reconstrução do catálogo as reverta. O script `ferramentas/build_data.py` aplica a curadoria depois de gerar os objetos e receitas; IDs permanecem estáveis.
 
 ### Revisões de receitas ligadas
 
-A mudança de uma propriedade pode invalidar fórmulas combinatórias antigas. As **30 receitas que consomem Pena de Gaivota** ficam marcadas com `revisao_alquimica_pendente` até que os atributos de seus outros ingredientes sejam avaliados. Esta marcação **não** é a mesma coisa que erro estrutural de ID ou quantidade. Não refazer ou excluir receitas automaticamente.
+A mudança de uma propriedade pode invalidar fórmulas combinatórias antigas. As **30 receitas que consomem Pena de Gaivota** e as **42 receitas que consomem Carapaça de Caranguejo** ficam marcadas com `revisao_alquimica_pendente` até que os atributos de seus outros ingredientes sejam avaliados. Uma receita utiliza ambos, resultando em **71 receitas distintas** pendentes. O campo `insumos_revisados` identifica quais ingredientes revisados motivaram a marcação. Esta marcação **não** é a mesma coisa que erro estrutural de ID ou quantidade. Não refazer ou excluir receitas automaticamente.
 
 ## Situação de publicação e testes
 
