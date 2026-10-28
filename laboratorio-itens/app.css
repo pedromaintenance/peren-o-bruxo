@@ -27,3 +27,8 @@ main{padding:28px clamp(16px,3.3vw,50px) 65px;max-width:1640px;margin:auto}.sect
 .intensity-ticks i{display:block;width:21px;height:9px;background:#253639;border:1px solid #465257;border-radius:2px}
 .intensity-ticks i.lit{background:linear-gradient(140deg,#e2c18a,#ad8043);border-color:#d6b577}
 @media(max-width:520px){.attribute-row{padding:12px 10px}.intensity{gap:6px}.intensity-ticks i{width:17px}.modal-actions .btn{flex:1 1 130px}}
+
+/* Resumo compacto das fichas curadas dentro da tabela de itens */
+.attrs-mini{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px}
+.attrs-mini span{border:1px solid #55604e;border-radius:5px;background:#2a332c;color:#dddbbd;padding:2px 5px;font-size:9px;white-space:nowrap}
+.attrs-mini b{color:var(--gold);margin-left:3px;font-variant-numeric:tabular-nums}
