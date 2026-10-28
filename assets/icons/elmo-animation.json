@@ -1,0 +1,37 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "replaces": "assets/icons/elmo.webp",
+  "source": "assets/icons/sources/elmo-5poses-original.png",
+  "sourceDimensions": [
+    3120,
+    760
+  ],
+  "sourceSha256": "995e77f62b503599098f8c727b8778e46ed8c5bc55889b92c826e3744f48cc47",
+  "sourceGitBlob": "b965e6d2801f74bc6f1e7fa6f5a2bd2de1743896",
+  "backupPreviousStaticIcon": "assets/icons/sources/elmo-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "f3b4ed9d3fc0251e8c49665c3b3dc6cbdb26fbea",
+  "animation": "assets/icons/elmo.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180,
+    180
+  ],
+  "loop": 0,
+  "outputBytes": 105246,
+  "outputSha256": "af0ae06cc3298b85aabaa948499d6e18869840ac98a6709912e1d649ef102281",
+  "outputGitBlob": "dd8080f621437a3b87f17b30ff81438411f93a96",
+  "integration": "Replace existing inventory icon with native animated WebP. Preserve original five-frame PNG and legacy icon. No gameplay or saves changes."
+}
