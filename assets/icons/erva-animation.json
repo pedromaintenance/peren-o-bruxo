@@ -1,0 +1,36 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "source": "assets/icons/sources/erva-5poses-original.png",
+  "sourceDimensions": [
+    2520,
+    660
+  ],
+  "sourceSha256": "2e4f019d93ab9f3b48f486783b5f16424adf550385736014d917e8c5a9f30491",
+  "sourceGitBlob": "54d81edf299d97e94f9fc80ff58d2d794e69d377",
+  "backupPreviousStaticIcon": "assets/icons/sources/erva-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "004050cdb7f9e6320ded20830532c20c706d27da",
+  "animation": "assets/icons/erva.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180,
+    180
+  ],
+  "loop": 0,
+  "outputSha256": "84e8bb0eb19ca596a92717ce384f395cd23a90c4a453eb5ab73a81bed8c964b2",
+  "outputGitBlob": "b5cc977e04a1d98f569380300882e38907daee9b",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028-bow-v1-20261028-armor-v1-20261028-crystal-v1-20261028-helm-v1-20261028-herb-v1-20261028",
+  "integration": "Existing item icon used by game.js. No gameplay or saves changed."
+}
