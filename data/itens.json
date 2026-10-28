@@ -1,23 +1,42 @@
 [
  {
   "id": "ing-felsaad-tern-feathers",
-  "nome": "Pena de Gaivota de Portomonte",
+  "nome": "Pena de Gaivota",
   "categoria": "ingrediente",
   "tipo": "alquimia",
-  "origem": "adaptado_skyrim_alquimia",
+  "origem": "curadoria_original_carcaca",
   "referencia": "Felsaad Tern Feathers",
   "efeitos": [
-   "Restore Health",
    "Cure Disease",
-   "Fortify Light Armor",
-   "Resist Magic"
+   "Fly",
+   "Restore Stamina"
   ],
   "raridade": "comum",
   "valor": 9,
   "peso": 0.1,
   "zona": "portomonte",
   "nivel": 1,
-  "icone": "🌿"
+  "icone": "🌿",
+  "descricao": "Pena das gaivotas que só existem em Portomonte. A influência do templo de Deméter confere forte poder de cura de doenças, restaura moderadamente o vigor físico e conserva uma capacidade tênue de voo.",
+  "zona_exclusiva": "portomonte",
+  "atributos_revisados": true,
+  "atributos": [
+   {
+    "id": "curar_doenca",
+    "nome": "Curar doença",
+    "intensidade": 3
+   },
+   {
+    "id": "voar",
+    "nome": "Voar",
+    "intensidade": 1
+   },
+   {
+    "id": "restaurar_stamina",
+    "nome": "Restaurar stamina",
+    "intensidade": 2
+   }
+  ]
  },
  {
   "id": "ing-mudcrab-chitin",
@@ -2650,7 +2669,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-mudcrab-chitin",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Quitina de Caranguejo Carmesim",
+  "nome": "Elixir de Pena de Gaivota e Quitina de Caranguejo Carmesim",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2667,7 +2686,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-vampire-dust",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro de Vandar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2684,7 +2703,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-charred-skeever-hide",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pena de Gaivota e Couro de Rato Carbonizado",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2702,7 +2721,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-hawk-feathers",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pena de Gaivota e Penas de Falcão das Montanhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2720,7 +2739,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-nirnroot",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Raiz Velada",
+  "nome": "Elixir de Pena de Gaivota e Raiz Velada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2737,7 +2756,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-crimson-nirnroot",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Raiz Velada Rubra",
+  "nome": "Elixir de Pena de Gaivota e Raiz Velada Rubra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2754,7 +2773,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-imp-stool",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Cogumelo do Imp",
+  "nome": "Elixir de Pena de Gaivota e Cogumelo do Imp",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2771,7 +2790,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-skeever-tail",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Cauda de Rato das Docas",
+  "nome": "Elixir de Pena de Gaivota e Cauda de Rato das Docas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2788,7 +2807,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-void-salts",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Sais do Vazio",
+  "nome": "Elixir de Pena de Gaivota e Sais do Vazio",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2805,7 +2824,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-butterfly-wing",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Asa de Borboleta da Foz",
+  "nome": "Elixir de Pena de Gaivota e Asa de Borboleta da Foz",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2822,7 +2841,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-daedra-heart",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Coração de Demônio",
+  "nome": "Elixir de Pena de Gaivota e Coração de Demônio",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2839,7 +2858,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-eye-of-sabre-cat",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Olho de Felino das Ilhas",
+  "nome": "Elixir de Pena de Gaivota e Olho de Felino das Ilhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2856,7 +2875,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-luna-moth-wing",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Asa de Mariposa Lunar",
+  "nome": "Elixir de Pena de Gaivota e Asa de Mariposa Lunar",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2873,7 +2892,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-blue-mountain-flower",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Flor Azul da Montanha",
+  "nome": "Elixir de Pena de Gaivota e Flor Azul da Montanha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2890,7 +2909,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-chicken-s-egg",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Galinha",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Galinha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2907,7 +2926,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-hawk-s-egg",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Falcão",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2924,7 +2943,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-blisterwort",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Fungo de Bolha",
+  "nome": "Elixir de Pena de Gaivota e Fungo de Bolha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2941,7 +2960,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-rock-warbler-egg",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Tordo",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Tordo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2958,7 +2977,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-wheat",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Trigo da Costa",
+  "nome": "Elixir de Pena de Gaivota e Trigo da Costa",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2975,7 +2994,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-blue-dartwing",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Libélula Azul",
+  "nome": "Elixir de Pena de Gaivota e Libélula Azul",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -2992,7 +3011,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-gleamblossom",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Flor de Brilho",
+  "nome": "Elixir de Pena de Gaivota e Flor de Brilho",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3009,7 +3028,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-hagraven-claw",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Garra de Bruxa",
+  "nome": "Elixir de Pena de Gaivota e Garra de Bruxa",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3026,7 +3045,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-tundra-cotton",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Algodão da Tundra",
+  "nome": "Elixir de Pena de Gaivota e Algodão da Tundra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3043,7 +3062,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-bleeding-crown",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Coroa Sangrenta",
+  "nome": "Elixir de Pena de Gaivota e Coroa Sangrenta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3060,7 +3079,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-honeycomb",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Favo de Mel",
+  "nome": "Elixir de Pena de Gaivota e Favo de Mel",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3077,7 +3096,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-wisp-wrappings",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Faixas de Espírito",
+  "nome": "Elixir de Pena de Gaivota e Faixas de Espírito",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3094,7 +3113,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-lavender",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Lavanda Selvagem",
+  "nome": "Elixir de Pena de Gaivota e Lavanda Selvagem",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3111,7 +3130,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-beehive-husk",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Casca de Colmeia",
+  "nome": "Elixir de Pena de Gaivota e Casca de Colmeia",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3128,7 +3147,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-ash-hopper-jelly",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Pena de Gaivota e Gelatina de Saltador das Cinzas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3146,7 +3165,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-swamp-fungal-pod",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Fungo do Pântano",
+  "nome": "Elixir de Pena de Gaivota e Fungo do Pântano",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
