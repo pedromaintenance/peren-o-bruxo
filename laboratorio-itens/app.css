@@ -14,3 +14,16 @@ main{padding:28px clamp(16px,3.3vw,50px) 65px;max-width:1640px;margin:auto}.sect
 @media(max-width:790px){.shell{display:block}.sidebar{position:static;height:auto;padding:10px 12px 12px;border-right:0;border-bottom:1px solid var(--line)}.backlink,.sigil,.sidebar-foot{display:none}.brand{padding:0;margin:0 0 9px;text-align:left;border:none}.brand h1{font-size:19px;display:inline;margin:0 10px}.brand>span{font-size:9px}.brand p{display:none}nav{display:flex;gap:5px;overflow-x:auto;scrollbar-width:thin;padding-bottom:3px}.nav{font-size:11px;padding:8px 10px;white-space:nowrap}.nav span{width:auto;margin-right:3px}.topbar{min-height:auto;padding:13px 16px;align-items:flex-start}.crumb{font-size:16px}.top-actions{justify-content:flex-end;gap:5px}.btn,.linkbtn{font-size:11px;padding:8px}.footer{padding:15px}main{padding:21px 14px 50px}.section-head h2{font-size:22px}.modal-top,.modal-body,.modal-actions{padding:14px}.form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}}
 @media(max-width:520px){.cards-metrics{gap:8px}.metric{padding:13px}.metric strong{font-size:23px}.metric span{font-size:9px}.families-grid{grid-template-columns:1fr}.top-actions .linkbtn{display:none}.preview{grid-template-columns:96px 1fr}.preview-img{width:96px;height:96px;font-size:44px}.pipeline{grid-template-columns:repeat(4,220px)}.section-head{gap:9px}.filters{gap:8px}.field{flex:1 1 135px}.field.search{flex:1 1 100%}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
+
+/* Atributos alquímicos: curadoria canônica com intensidade 1–3 */
+.attribute-list{margin-top:13px;border:1px solid var(--line);background:#101e23;border-radius:10px;overflow:hidden}
+.attribute-row{padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-top:1px solid var(--line)}
+.attribute-row:first-child{border-top:0}
+.attribute-row strong{display:block;font-size:13px;color:var(--ink)}
+.attribute-row small{display:block;margin-top:2px;font-family:ui-monospace,monospace;color:var(--muted)}
+.intensity{display:flex;align-items:center;gap:12px;flex:none}
+.intensity b{color:var(--gold);font-size:13px;font-variant-numeric:tabular-nums}
+.intensity-ticks{display:flex;gap:4px}
+.intensity-ticks i{display:block;width:21px;height:9px;background:#253639;border:1px solid #465257;border-radius:2px}
+.intensity-ticks i.lit{background:linear-gradient(140deg,#e2c18a,#ad8043);border-color:#d6b577}
+@media(max-width:520px){.attribute-row{padding:12px 10px}.intensity{gap:6px}.intensity-ticks i{width:17px}.modal-actions .btn{flex:1 1 130px}}
