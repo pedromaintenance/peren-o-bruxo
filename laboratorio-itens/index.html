@@ -22,12 +22,12 @@
       <button type="button" class="nav" data-action="nav" data-tab="pipeline"><span>☷</span> Fila de arte</button>
       <button type="button" class="nav" data-action="nav" data-tab="diagnostics"><span>⌁</span> Auditoria de dados</button>
     </nav>
-    <div class="sidebar-foot"><b>CONTROLE LOCAL</b><small>As anotações ficam apenas neste navegador. Exporte JSON para guardar ou versionar no GitHub.</small><div id="local-status">Preparando catálogo…</div></div>
+    <div class="sidebar-foot"><b>CONSULTA AO REPOSITÓRIO</b><small>Consulte os dados aqui. As correções de itens e o desenvolvimento dos assets são solicitados na conversa e publicados no GitHub.</small><div id="local-status">Preparando catálogo…</div></div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><div><span class="eyebrow">PRODUÇÃO VISUAL / DADOS / CRAFTING</span><div class="crumb" id="crumb">Visão geral</div></div><div class="top-actions"><a class="linkbtn" href="../" target="_self">Jogar ↗</a><button class="btn ghost" data-action="export">↓ Exportar JSON</button><button class="btn" data-action="import">↑ Importar</button><input id="import-file" type="file" accept=".json,application/json" hidden></div></header>
+    <header class="topbar"><div><span class="eyebrow">PRODUÇÃO VISUAL / DADOS / CRAFTING</span><div class="crumb" id="crumb">Visão geral</div></div><div class="top-actions"><a class="linkbtn" href="../" target="_self">Jogar ↗</a><button class="btn ghost" data-action="exportcatalog">↓ Catálogo JSON</button></div></header>
     <main id="main" aria-live="polite"><div class="loading"><span class="loader"></span><h2>Abrindo os arquivos do mercador…</h2><p>Carregando itens e receitas originais do repositório.</p></div></main>
-    <footer class="footer">PEREN, O BRUXO — MERCADOR DA CARCAÇA <span>Laboratório isolado • não modifica o jogo, sua economia ou seus saves</span></footer>
+    <footer class="footer">PEREN, O BRUXO — MERCADOR DA CARCAÇA <span>Painel de consulta • edições pelo chat e repositório • saves preservados</span></footer>
   </div>
 </div>
 <div id="modal" class="modal-backdrop" hidden><div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div id="modal-content"></div></div></div>
