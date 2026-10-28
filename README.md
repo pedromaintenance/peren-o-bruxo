@@ -47,6 +47,8 @@ A base agora distingue os **efeitos legados** da compilação anterior dos **atr
 
 Primeira ficha: **Pena de Gaivota** (`ing-felsaad-tern-feathers`), existente exclusivamente em **Portomonte**, influenciada pelo templo de Deméter: **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**. Nome simplificado no item, nos 30 elixires derivados e nas 30 receitas, sem trocar IDs. Essas receitas estão marcadas para reavaliação de correspondência alquímica à medida que os outros ingredientes forem revisados; a migração não recalcula combinações de forma prematura.
 
+Segunda ficha: **Carapaça de Caranguejo** (`ing-mudcrab-chitin`), mantendo a origem previamente cadastrada no Além Sul: **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Seu nome anterior, *Quitina de Caranguejo Carmesim*, foi substituído na ficha, em 41 elixires e nas 41 receitas correspondentes, sem alterar IDs. Das 42 receitas que consomem esse ingrediente, uma também utiliza a Pena de Gaivota: a fila atual contém **71 fórmulas distintas aguardando revisão alquímica**. Os efeitos das poções herdadas não foram recalculados, e a implementação jogável dos novos atributos dependerá de uma etapa mecânica específica.
+
 Fonte da curadoria: [`data/curadoria_ingredientes.json`](data/curadoria_ingredientes.json). O script de geração reaplica a curadoria após gerar a base combinatória para impedir que um novo build apague as decisões manuais.
 
 ## Publicação e instalação
