@@ -51,6 +51,8 @@ Segunda ficha: **Carapaça de Caranguejo** (`ing-mudcrab-chitin`), mantendo a or
 
 Terceira ficha: **Pó de Vampiro** (`ing-vampire-dust`), mantendo a região anteriormente definida (Boca do Abismo): **Vampirismo 3**, **Invisibilidade 2**, **Regenerar Saúde 1**. O nome anterior *Pó de Vampiro de Vandar* foi substituído no ingrediente e em 32 receitas/elixires, sem alterar IDs. Das 32 receitas vinculadas, duas já estavam pendentes devido à Pena de Gaivota ou à Carapaça de Caranguejo; o total cumulativo agora é de **101 receitas distintas** a reavaliar. A nova propriedade de vampirismo está documentada como atributo alquímico, sem presumir implementação de roubo de vida no motor.
 
+Quarta ficha: **Couro de Rato** (`ing-charred-skeever-hide`), mantendo a localização anteriormente cadastrada em **Garganta**: **Diminuir Carisma 3**, **Resistência a Veneno 2**, **Infligir Doença 1**. O nome antigo *Couro de Rato Carbonizado* foi substituído no ingrediente e em 41 elixires/receitas, sem alterar IDs. Das 41 receitas que usam o ingrediente, três já estavam sinalizadas pela curadoria anterior, elevando o total cumulativo a **139 receitas distintas** para reavaliação. Não foram recalculados os efeitos das poções nem implementadas mecânicas novas automaticamente.
+
 Fonte da curadoria: [`data/curadoria_ingredientes.json`](data/curadoria_ingredientes.json). O script de geração reaplica a curadoria após gerar a base combinatória para impedir que um novo build apague as decisões manuais.
 
 ## Publicação e instalação
