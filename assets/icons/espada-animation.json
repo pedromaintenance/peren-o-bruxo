@@ -1,0 +1,36 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "source": "assets/icons/sources/espada-axial-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    734
+  ],
+  "sourceSha256": "01d0ea672de1ae764a0256af220fb0089658377482209885b9d8da9d52d54770",
+  "sourceGitBlob": "8f8f6a217ff2377b204e2a0f8eec9364e3707a44",
+  "backupPreviousStaticIcon": "assets/icons/sources/espada-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "cf211c604130a98e64df3d40df5fd7b60490942c",
+  "animation": "assets/icons/espada.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    150,
+    150,
+    150,
+    150,
+    150
+  ],
+  "loop": 0,
+  "outputSha256": "58ecc21bf6576be28db97172d6928e02d12db02b4e77768bbf873f2de943ddce",
+  "outputGitBlob": "e258a9e699fd6ee013efad1c0e526a230490bf28",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-assets-20261028-alquimia-v5-sword-axial-v1-20261028",
+  "integration": "Existing sword item icon route. No save, game logic, combat, or economy changes."
+}
