@@ -93,16 +93,46 @@
         "Invisibility",
         "Regenerate Health"
       ]
+    },
+    "ing-charred-skeever-hide": {
+      "nome": "Couro de Rato",
+      "descricao": "Couro de rato utilizado em preparados alquímicos de efeito debilitante: reduz fortemente o carisma, oferece resistência moderada a venenos e pode transmitir doenças em baixa intensidade.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "diminuir_carisma",
+          "nome": "Diminuir Carisma",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "infligir_doenca",
+          "nome": "Infligir Doença",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Reduce Charisma",
+        "Resist Poison",
+        "Inflict Disease"
+      ]
     }
   },
   "renomeacoes_textuais": {
     "Pena de Gaivota de Portomonte": "Pena de Gaivota",
     "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo",
-    "Pó de Vampiro de Vandar": "Pó de Vampiro"
+    "Pó de Vampiro de Vandar": "Pó de Vampiro",
+    "Couro de Rato Carbonizado": "Couro de Rato"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
     "ing-mudcrab-chitin",
-    "ing-vampire-dust"
+    "ing-vampire-dust",
+    "ing-charred-skeever-hide"
   ]
 }
