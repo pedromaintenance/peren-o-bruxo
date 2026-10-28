@@ -23,4 +23,4 @@ jobs:
         run: |
           python tests/qa_peren_frames.py
           python tests/qa_peren_walk_v6.py
-          node --test tests/qa_peren_oficial.mjs tests/qa_peren_ervas_v5.mjs tests/qa_peren_wounded_v4.mjs
+          node --test tests/qa_peren_oficial.mjs tests/qa_peren_coleta_v7.mjs tests/qa_peren_wounded_v4.mjs
