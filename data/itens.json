@@ -116,23 +116,41 @@
  },
  {
   "id": "ing-charred-skeever-hide",
-  "nome": "Couro de Rato Carbonizado",
+  "nome": "Couro de Rato",
   "categoria": "ingrediente",
   "tipo": "alquimia",
-  "origem": "adaptado_skyrim_alquimia",
+  "origem": "curadoria_original_carcaca",
   "referencia": "Charred Skeever Hide",
   "efeitos": [
+   "Reduce Charisma",
    "Resist Poison",
-   "Restore Stamina",
-   "Cure Disease",
-   "Restore Health"
+   "Inflict Disease"
   ],
   "raridade": "raro",
   "valor": 24,
   "peso": 0.1,
   "zona": "garganta",
   "nivel": 4,
-  "icone": "🍄"
+  "icone": "🍄",
+  "descricao": "Couro de rato utilizado em preparados alquímicos de efeito debilitante: reduz fortemente o carisma, oferece resistência moderada a venenos e pode transmitir doenças em baixa intensidade.",
+  "atributos_revisados": true,
+  "atributos": [
+   {
+    "id": "diminuir_carisma",
+    "nome": "Diminuir Carisma",
+    "intensidade": 3
+   },
+   {
+    "id": "resistencia_veneno",
+    "nome": "Resistência a Veneno",
+    "intensidade": 2
+   },
+   {
+    "id": "infligir_doenca",
+    "nome": "Infligir Doença",
+    "intensidade": 1
+   }
+  ]
  },
  {
   "id": "ing-hawk-feathers",
@@ -2739,7 +2757,7 @@
  },
  {
   "id": "pot-felsaad-tern-feathers-charred-skeever-hide",
-  "nome": "Elixir de Pena de Gaivota e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pena de Gaivota e Couro de Rato",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3235,7 +3253,7 @@
  },
  {
   "id": "pot-mudcrab-chitin-charred-skeever-hide",
-  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato Carbonizado",
+  "nome": "Elixir de Carapaça de Caranguejo e Couro de Rato",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -3900,7 +3918,7 @@
  },
  {
   "id": "pot-vampire-dust-charred-skeever-hide",
-  "nome": "Elixir de Pó de Vampiro e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pó de Vampiro e Couro de Rato",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4411,7 +4429,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-hawk-feathers",
-  "nome": "Elixir de Couro de Rato Carbonizado e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Couro de Rato e Penas de Falcão das Montanhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4428,7 +4446,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-falmer-ear",
-  "nome": "Elixir de Couro de Rato Carbonizado e Orelha de Troglodita",
+  "nome": "Elixir de Couro de Rato e Orelha de Troglodita",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4445,7 +4463,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-imp-stool",
-  "nome": "Elixir de Couro de Rato Carbonizado e Cogumelo do Imp",
+  "nome": "Elixir de Couro de Rato e Cogumelo do Imp",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4462,7 +4480,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-troll-fat",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gordura de Troll",
+  "nome": "Elixir de Couro de Rato e Gordura de Troll",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4479,7 +4497,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-butterfly-wing",
-  "nome": "Elixir de Couro de Rato Carbonizado e Asa de Borboleta da Foz",
+  "nome": "Elixir de Couro de Rato e Asa de Borboleta da Foz",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4496,7 +4514,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-daedra-heart",
-  "nome": "Elixir de Couro de Rato Carbonizado e Coração de Demônio",
+  "nome": "Elixir de Couro de Rato e Coração de Demônio",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4513,7 +4531,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-eye-of-sabre-cat",
-  "nome": "Elixir de Couro de Rato Carbonizado e Olho de Felino das Ilhas",
+  "nome": "Elixir de Couro de Rato e Olho de Felino das Ilhas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4531,7 +4549,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-bear-claws",
-  "nome": "Elixir de Couro de Rato Carbonizado e Garras de Urso",
+  "nome": "Elixir de Couro de Rato e Garras de Urso",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4548,7 +4566,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-blue-mountain-flower",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Azul da Montanha",
+  "nome": "Elixir de Couro de Rato e Flor Azul da Montanha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4565,7 +4583,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-blisterwort",
-  "nome": "Elixir de Couro de Rato Carbonizado e Fungo de Bolha",
+  "nome": "Elixir de Couro de Rato e Fungo de Bolha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4582,7 +4600,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-rock-warbler-egg",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovo de Tordo",
+  "nome": "Elixir de Couro de Rato e Ovo de Tordo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4599,7 +4617,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-histcarp",
-  "nome": "Elixir de Couro de Rato Carbonizado e Carpa de Pedra",
+  "nome": "Elixir de Couro de Rato e Carpa de Pedra",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4616,7 +4634,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-large-antlers",
-  "nome": "Elixir de Couro de Rato Carbonizado e Chifres Grandes",
+  "nome": "Elixir de Couro de Rato e Chifres Grandes",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4633,7 +4651,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-silverside-perch",
-  "nome": "Elixir de Couro de Rato Carbonizado e Perca Prateada",
+  "nome": "Elixir de Couro de Rato e Perca Prateada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4650,7 +4668,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-wheat",
-  "nome": "Elixir de Couro de Rato Carbonizado e Trigo da Costa",
+  "nome": "Elixir de Couro de Rato e Trigo da Costa",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4667,7 +4685,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-yellow-mountain-flower",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Amarela da Montanha",
+  "nome": "Elixir de Couro de Rato e Flor Amarela da Montanha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4684,7 +4702,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-blue-dartwing",
-  "nome": "Elixir de Couro de Rato Carbonizado e Libélula Azul",
+  "nome": "Elixir de Couro de Rato e Libélula Azul",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4701,7 +4719,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-netch-jelly",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gelatina de Netch",
+  "nome": "Elixir de Couro de Rato e Gelatina de Netch",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4718,7 +4736,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-powdered-mammoth-tusk",
-  "nome": "Elixir de Couro de Rato Carbonizado e Presa de Mamute em Pó",
+  "nome": "Elixir de Couro de Rato e Presa de Mamute em Pó",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4735,7 +4753,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-grass-pod",
-  "nome": "Elixir de Couro de Rato Carbonizado e Vagem da Charneca",
+  "nome": "Elixir de Couro de Rato e Vagem da Charneca",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4752,7 +4770,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-pearl",
-  "nome": "Elixir de Couro de Rato Carbonizado e Pérola da Costa Sul",
+  "nome": "Elixir de Couro de Rato e Pérola da Costa Sul",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4769,7 +4787,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-honeycomb",
-  "nome": "Elixir de Couro de Rato Carbonizado e Favo de Mel",
+  "nome": "Elixir de Couro de Rato e Favo de Mel",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4786,7 +4804,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-hawk-beak",
-  "nome": "Elixir de Couro de Rato Carbonizado e Bico de Falcão",
+  "nome": "Elixir de Couro de Rato e Bico de Falcão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4803,7 +4821,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-wisp-wrappings",
-  "nome": "Elixir de Couro de Rato Carbonizado e Faixas de Espírito",
+  "nome": "Elixir de Couro de Rato e Faixas de Espírito",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4820,7 +4838,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-beehive-husk",
-  "nome": "Elixir de Couro de Rato Carbonizado e Casca de Colmeia",
+  "nome": "Elixir de Couro de Rato e Casca de Colmeia",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4837,7 +4855,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-sabre-cat-tooth",
-  "nome": "Elixir de Couro de Rato Carbonizado e Dente de Felino",
+  "nome": "Elixir de Couro de Rato e Dente de Felino",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4854,7 +4872,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-thistle-branch",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ramo de Cardo",
+  "nome": "Elixir de Couro de Rato e Ramo de Cardo",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4871,7 +4889,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-ash-hopper-jelly",
-  "nome": "Elixir de Couro de Rato Carbonizado e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Couro de Rato e Gelatina de Saltador das Cinzas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4888,7 +4906,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-pine-thrush-egg",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovo de Tordo da Costa",
+  "nome": "Elixir de Couro de Rato e Ovo de Tordo da Costa",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4905,7 +4923,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-salmon-roe",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovas de Salmão",
+  "nome": "Elixir de Couro de Rato e Ovas de Salmão",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4922,7 +4940,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-small-pearl",
-  "nome": "Elixir de Couro de Rato Carbonizado e Pérola Pequena",
+  "nome": "Elixir de Couro de Rato e Pérola Pequena",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4939,7 +4957,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-orange-dartwing",
-  "nome": "Elixir de Couro de Rato Carbonizado e Libélula Alaranjada",
+  "nome": "Elixir de Couro de Rato e Libélula Alaranjada",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4956,7 +4974,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-slaughterfish-egg",
-  "nome": "Elixir de Couro de Rato Carbonizado e Ovas de Peixe Carniceiro",
+  "nome": "Elixir de Couro de Rato e Ovas de Peixe Carniceiro",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4973,7 +4991,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-purple-mountain-flower",
-  "nome": "Elixir de Couro de Rato Carbonizado e Flor Violeta",
+  "nome": "Elixir de Couro de Rato e Flor Violeta",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -4990,7 +5008,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-garlic",
-  "nome": "Elixir de Couro de Rato Carbonizado e Alho das Hortas",
+  "nome": "Elixir de Couro de Rato e Alho das Hortas",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5007,7 +5025,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-torchbug-thorax",
-  "nome": "Elixir de Couro de Rato Carbonizado e Tórax de Inseto-lanterna",
+  "nome": "Elixir de Couro de Rato e Tórax de Inseto-lanterna",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5024,7 +5042,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-swamp-fungal-pod",
-  "nome": "Elixir de Couro de Rato Carbonizado e Fungo do Pântano",
+  "nome": "Elixir de Couro de Rato e Fungo do Pântano",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
@@ -5041,7 +5059,7 @@
  },
  {
   "id": "pot-charred-skeever-hide-bee",
-  "nome": "Elixir de Couro de Rato Carbonizado e Abelha",
+  "nome": "Elixir de Couro de Rato e Abelha",
   "categoria": "pocao",
   "tipo": "pocao",
   "efeitos": [
