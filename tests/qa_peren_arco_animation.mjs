@@ -30,7 +30,7 @@ test("arco.webp is a real transparent eight-frame animated WebP",()=>{
 });
 test("existing bow items use same icon path and root PWA includes cache update",()=>{
  const game=file("game.js").toString(),sw=file("sw.js").toString();
- assert.match(game,/n.includes\('arco'\)\?'arco':'martelo'/);
+ assert.match(game,/n\.includes\('arco'\)\?'arco':n\.includes\('martelo'\)/);
  assert.match(game,/assets\/icons\/\$\{iconAsset\(it\)\}\.webp/);
  assert.ok(sw.includes(m.cacheVersion));
  assert.ok(sw.includes("'arco'"));
