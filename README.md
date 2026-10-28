@@ -11,6 +11,7 @@ O dossiê da antiga campanha de Peren Kerrhylon fornece **referências conceitua
 O jogo clássico HTML/JS na raiz e a prévia experimental Phaser são **duas implementações técnicas do mesmo jogo**, não dois jogos ou duas histórias. O Phaser mantém cache e save de teste próprios para proteger o progresso do clássico.
 
 - [**Jogar Peren, o Bruxo — edição clássica**](https://pedromaintenance.github.io/peren-o-bruxo/)
+- [**Laboratório de Itens — receitas, sprites e variações**](https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/) — painel isolado para acompanhar todas as categorias, 2.316 receitas e o andamento artístico; lê os JSONs originais, exibe os ícones visuais compartilhados, permite anotar sprites/variações, auditar inconsistências e exportar o planejamento em JSON/CSV. **Não modifica os saves ou os dados jogáveis; anotações são locais ao navegador.**
 - [**Jogar a prévia Phaser (Modo Livre)**](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
 - [**ROADMAP.md — desenvolvimento do único jogo**](ROADMAP.md)
 - [**Referências conceituais de Peren e Carcaça**](lore/peren/README.md)
