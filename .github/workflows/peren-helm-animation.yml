@@ -1,0 +1,24 @@
+name: Peren — Elmo animado e PWA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/elmo.webp'
+      - 'assets/icons/elmo-animation.json'
+      - 'assets/icons/sources/elmo-5poses-original.png'
+      - 'sw.js'
+      - 'tests/qa_peren_elmo_animation.mjs'
+      - '.github/workflows/peren-helm-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check game.js
+      - run: node --test tests/qa_peren_elmo_animation.mjs
