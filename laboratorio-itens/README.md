@@ -1,48 +1,46 @@
 # Laboratório de Itens — Peren, o Bruxo
 
-Página pública: https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/
+Página: https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/
 
-## Escopo
+## Princípio operacional
 
-Ferramenta editorial **isolada** do sandbox Peren, o Bruxo — Mercador da Carcaça. Sua entrada não muda o inventário, o balanceamento, as receitas ou os saves do jogo.
+**Painel de consulta, não editor.** A curadoria de itens, receitas, intensidades e assets é discutida em linguagem natural na conversa e aplicada diretamente aos arquivos do repositório GitHub. Não há formulário de escrita, importação ou armazenamento local no HTML. O painel não altera os saves do jogo.
 
-Fontes lidas em tempo de execução:
-- \`../data/itens.json\`: os 2.785 itens da base original;
-- \`../data/receitas.json\`: as 2.316 receitas com estação, nível, insumos e resultado;
-- \`../data/manifesto_dados.json\`: identificação do corpus.
+## Fontes lidas no carregamento
 
-Os números exibidos pela interface são recalculados ao carregar o JSON. Se a base crescer, o laboratório atualiza as listagens e vínculos automaticamente.
+- `../data/itens.json` — catálogo canônico de 2.785 itens (contagem inicial).
+- `../data/receitas.json` — 2.316 receitas (contagem inicial).
+- `../data/manifesto_dados.json` — metadados da base.
+- `./estado-assets.json` — status visual versionado (preserva o planejamento no Git, não no navegador).
+- `../data/curadoria_ingredientes.json` — decisões aprovadas de atributos e intensidades, incorporadas ao catálogo canônico.
 
-## Telas
+O HTML exibe os 13 ícones genéricos compartilhados já usados pela edição clássica, mas **não os classifica como sprites únicos aprovados**.
 
-1. **Painel geral** — cobertura de sprites individuais, categorias, ofícios e insumos mais usados.
-2. **Catálogo de itens** — busca e filtros por categoria, raridade, situação e prioridade; ficha de produção visual.
-3. **Livro de receitas** — todas as fórmulas, ligação entre IDs e alertas estruturais.
-4. **Famílias e variações** — grupos por categoria/tipo, registro de master, estratégia, meta e contagem de variantes aprovadas.
-5. **Fila de arte** — quatro estados: sem sprite, criação, revisão/integração e aprovado.
-6. **Auditoria de dados** — quantidades de insumos inválidas, resultados sem ID e arte sem caminho vinculado.
+## Como revisar os itens por conversa
 
-A galeria reutiliza os **13 ícones compartilhados** da edição clássica em \`../assets/icons/\`: eles não são prova de sprite exclusivo. A ficha permite associar o caminho de um desenho individual ou sprite sheet existente no repositório.
+1. Abra **Catálogo de itens** e filtre por ingrediente, categoria ou nome.
+2. Clique em **Ver ficha** para conferir atributos, intensidade e relações de crafting; ou clique **↓ JSON** na própria linha.
+3. A ficha também tem **Copiar JSON** e **Exportar JSON do item**. O conteúdo exportado é o objeto original do item em `data/itens.json`, preservando seu ID e todos os campos (inclusive `atributos`).
+4. Envie o arquivo ou o texto na conversa e peça a alteração em linguagem natural, por exemplo: *“Altere os atributos da Pena de Gaivota”*.
+5. A atualização é aplicada ao repositório, com verificação dos vínculos de receitas e manutenção dos IDs. Atualize a página para consultar a nova versão.
 
-## Fluxo de produção
+Opcional: **Catálogo JSON** no topo exporta todos os itens, e **Exportar fila CSV** cria um relatório de assets.
 
-1. Abrir um item e conferir a imagem genérica da categoria.
-2. Marcar prioridade e situação.
-3. Informar um caminho, por exemplo \`assets/itens/raiz-velada.png\`, após adicionar o PNG/WebP ao GitHub.
-4. Descrever variantes uma por linha: \`nome | caminho | estado\`, com estados \`pendente\`, \`criacao\`, \`revisao\`, \`aprovado\`.
-5. Marcar aprovação somente após revisão visual e conferir a relação entre item e receita.
-6. Definir estratégia e meta em **Famílias**, para não criar centenas de sprites redundantes.
-7. Exportar **JSON** para backup e controle de versões. A fila em **CSV** é útil para planejamento externo.
+## Regra de atributos (curadoria)
 
-## Onde ficam as alterações
+- Cada ingrediente revisado precisa ter **pelo menos 3 atributos**.
+- A intensidade é **inteira entre 1 e 3**: 1 baixa, 2 média, 3 alta.
+- Ingredientes podem ter mais de 3 atributos se definidos na curadoria.
+- **Não atribuir intensidades arbitrárias a ingredientes ainda não revisados**. A lista legada de `efeitos` permanece como provisória e é identificada como tal na ficha.
+- A primeira revisão é **Pena de Gaivota**, exclusiva de Portomonte, com **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**.
 
-Todas as fichas editadas são armazenadas **somente no localStorage deste navegador** pela chave \`peren_item_lab_v1\`. Nunca são gravadas em \`peren_carcaca_save_v1\` nem nos saves do Phaser. O Pages é estático: **não envia modificações automaticamente ao GitHub**. A importação JSON substitui o planejamento local somente após confirmação do usuário.
+O arquivo `data/curadoria_ingredientes.json` centraliza essas decisões para evitar que uma reconstrução do catálogo as reverta. O script `ferramentas/build_data.py` aplica a curadoria depois de gerar os objetos e receitas; IDs permanecem estáveis.
 
-Para compartilhar o planejamento entre computadores, faça exportação/importação JSON ou registre o conteúdo exportado no controle de versão como documento de acompanhamento. Não publique a exportação como arquivo de jogo se houver comentários internos que você não queira tornar públicos.
+### Revisões de receitas ligadas
 
-## Validação
+A mudança de uma propriedade pode invalidar fórmulas combinatórias antigas. As **30 receitas que consomem Pena de Gaivota** ficam marcadas com `revisao_alquimica_pendente` até que os atributos de seus outros ingredientes sejam avaliados. Esta marcação **não** é a mesma coisa que erro estrutural de ID ou quantidade. Não refazer ou excluir receitas automaticamente.
 
-- \`app.js\` validado por parser JavaScript.
-- Fluxo de inicialização e renderização inicial testado com catálogo/receitas simulados, sem erros.
-- Rotas e arquivos adicionados à branch \`main\`; funcionamento final no Pages e validação de responsividade em dispositivos físicos devem ser conferidos após propagação da publicação.
-- Não é feita uma auditoria completa dos binários do repositório: **sem caminho mapeado** significa ausência de referência individual na base/registro, não necessariamente inexistência física da arte.
+## Situação de publicação e testes
+
+Arquivos da ferramenta são publicados na branch `main` e servidos como diretório estático do Pages. O código JavaScript foi inspecionado e suas rotas, fichas e exportação foram testadas; é recomendada conferência manual no endereço público e no aparelho após propagação do Pages. Atualização do cache do PWA não apaga o save.
+
