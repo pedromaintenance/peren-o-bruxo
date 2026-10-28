@@ -79,7 +79,7 @@
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Pena de Gaivota e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pena de Gaivota e Penas de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -99,7 +99,8 @@
   "revisao_alquimica_pendente": true,
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs.",
   "insumos_revisados": [
-   "ing-felsaad-tern-feathers"
+   "ing-felsaad-tern-feathers",
+   "ing-hawk-feathers"
   ]
  },
  {
@@ -806,7 +807,7 @@
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Carapaça de Caranguejo e Penas de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -825,7 +826,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-mudcrab-chitin"
+   "ing-mudcrab-chitin",
+   "ing-hawk-feathers"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -1782,7 +1784,7 @@
  },
  {
   "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Pó de Vampiro e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pó de Vampiro e Penas de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -1801,7 +1803,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-vampire-dust"
+   "ing-vampire-dust",
+   "ing-hawk-feathers"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -2507,7 +2510,7 @@
  },
  {
   "id": "rec-elixir-de-couro-de-rato-carbonizado-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Couro de Rato e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Couro de Rato e Penas de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -2526,7 +2529,8 @@
   "origem": "receita_original_carcaca",
   "revisao_alquimica_pendente": true,
   "insumos_revisados": [
-   "ing-charred-skeever-hide"
+   "ing-charred-skeever-hide",
+   "ing-hawk-feathers"
   ],
   "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
@@ -3457,7 +3461,7 @@
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-carne-de-proscrito",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Carne de Proscrito",
+  "nome": "Elixir de Penas de Falcão e Carne de Proscrito",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3473,11 +3477,16 @@
   ],
   "resultado": "pot-hawk-feathers-human-flesh",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-cauda-de-rato-das-docas",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Cauda de Rato das Docas",
+  "nome": "Elixir de Penas de Falcão e Cauda de Rato das Docas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3493,11 +3502,16 @@
   ],
   "resultado": "pot-hawk-feathers-skeever-tail",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-musgo-suspenso",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Musgo Suspenso",
+  "nome": "Elixir de Penas de Falcão e Musgo Suspenso",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3513,11 +3527,16 @@
   ],
   "resultado": "pot-hawk-feathers-hanging-moss",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-asa-de-mariposa-lunar",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Asa de Mariposa Lunar",
+  "nome": "Elixir de Penas de Falcão e Asa de Mariposa Lunar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3533,11 +3552,16 @@
   ],
   "resultado": "pot-hawk-feathers-luna-moth-wing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-garras-de-urso",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Garras de Urso",
+  "nome": "Elixir de Penas de Falcão e Garras de Urso",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3553,11 +3577,16 @@
   ],
   "resultado": "pot-hawk-feathers-bear-claws",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-raiz-canina",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Raiz Canina",
+  "nome": "Elixir de Penas de Falcão e Raiz Canina",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3573,11 +3602,16 @@
   ],
   "resultado": "pot-hawk-feathers-canis-root",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-ovo-de-tordo",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Ovo de Tordo",
+  "nome": "Elixir de Penas de Falcão e Ovo de Tordo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3593,11 +3627,16 @@
   ],
   "resultado": "pot-hawk-feathers-rock-warbler-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-mirra-da-geada",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Mirra da Geada",
+  "nome": "Elixir de Penas de Falcão e Mirra da Geada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3613,11 +3652,16 @@
   ],
   "resultado": "pot-hawk-feathers-frost-mirriam",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-presa-de-mamute-em-po",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Presa de Mamute em Pó",
+  "nome": "Elixir de Penas de Falcão e Presa de Mamute em Pó",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3633,11 +3677,16 @@
   ],
   "resultado": "pot-hawk-feathers-powdered-mammoth-tusk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-favo-de-mel",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Favo de Mel",
+  "nome": "Elixir de Penas de Falcão e Favo de Mel",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3653,11 +3702,16 @@
   ],
   "resultado": "pot-hawk-feathers-honeycomb",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-casca-de-colmeia",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Casca de Colmeia",
+  "nome": "Elixir de Penas de Falcão e Casca de Colmeia",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3673,11 +3727,16 @@
   ],
   "resultado": "pot-hawk-feathers-beehive-husk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-gelatina-de-saltador-das-cinzas",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Penas de Falcão e Gelatina de Saltador das Cinzas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3693,11 +3752,16 @@
   ],
   "resultado": "pot-hawk-feathers-ash-hopper-jelly",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-vagem-cinzenta",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Vagem Cinzenta",
+  "nome": "Elixir de Penas de Falcão e Vagem Cinzenta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3713,11 +3777,16 @@
   ],
   "resultado": "pot-hawk-feathers-ashen-grass-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-perola-pequena",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Pérola Pequena",
+  "nome": "Elixir de Penas de Falcão e Pérola Pequena",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3733,11 +3802,16 @@
   ],
   "resultado": "pot-hawk-feathers-small-pearl",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-peixe-da-costa-escarlate",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Peixe da Costa Escarlate",
+  "nome": "Elixir de Penas de Falcão e Peixe da Costa Escarlate",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3753,11 +3827,16 @@
   ],
   "resultado": "pot-hawk-feathers-abecean-longfin",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-flor-violeta",
-  "nome": "Elixir de Penas de Falcão das Montanhas e Flor Violeta",
+  "nome": "Elixir de Penas de Falcão e Flor Violeta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -3773,7 +3852,12 @@
   ],
   "resultado": "pot-hawk-feathers-purple-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "insumos_revisados": [
+   "ing-hawk-feathers"
+  ],
+  "nota_revisao": "Receita herdada da geração combinatória anterior à curadoria dos atributos. Reavaliar compatibilidade alquímica, efeitos e intensidades conforme os demais ingredientes forem revisados, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-betty-do-rio-ancestral",
