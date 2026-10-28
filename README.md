@@ -49,6 +49,8 @@ Primeira ficha: **Pena de Gaivota** (`ing-felsaad-tern-feathers`), existente exc
 
 Segunda ficha: **Carapaça de Caranguejo** (`ing-mudcrab-chitin`), mantendo a origem previamente cadastrada no Além Sul: **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Seu nome anterior, *Quitina de Caranguejo Carmesim*, foi substituído na ficha, em 41 elixires e nas 41 receitas correspondentes, sem alterar IDs. Das 42 receitas que consomem esse ingrediente, uma também utiliza a Pena de Gaivota: a fila atual contém **71 fórmulas distintas aguardando revisão alquímica**. Os efeitos das poções herdadas não foram recalculados, e a implementação jogável dos novos atributos dependerá de uma etapa mecânica específica.
 
+Terceira ficha: **Pó de Vampiro** (`ing-vampire-dust`), mantendo a região anteriormente definida (Boca do Abismo): **Vampirismo 3**, **Invisibilidade 2**, **Regenerar Saúde 1**. O nome anterior *Pó de Vampiro de Vandar* foi substituído no ingrediente e em 32 receitas/elixires, sem alterar IDs. Das 32 receitas vinculadas, duas já estavam pendentes devido à Pena de Gaivota ou à Carapaça de Caranguejo; o total cumulativo agora é de **101 receitas distintas** a reavaliar. A nova propriedade de vampirismo está documentada como atributo alquímico, sem presumir implementação de roubo de vida no motor.
+
 Fonte da curadoria: [`data/curadoria_ingredientes.json`](data/curadoria_ingredientes.json). O script de geração reaplica a curadoria após gerar a base combinatória para impedir que um novo build apague as decisões manuais.
 
 ## Publicação e instalação
