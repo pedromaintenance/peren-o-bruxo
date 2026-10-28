@@ -1,0 +1,47 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "replaces": "assets/icons/cristal.webp",
+  "source": "assets/icons/sources/cristal-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    547
+  ],
+  "sourceSha256": "54e43e4bca098f2c9ce5c72e58bb5261ffa2d26873ff16583feac4dde1a83bae",
+  "sourceGitBlob": "52dba24a3a95fae5c707fd2c5382e169de19e103",
+  "backupPreviousStaticIcon": "assets/icons/sources/cristal-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "f92c2075694a2faef2b4bb3344c1f64d7ec175b0",
+  "animation": "assets/icons/cristal.webp",
+  "animationFormat": "Animated WebP lossless RGBA",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "uniqueSourcePoses": 5,
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationsMs": [
+    150,
+    150,
+    150,
+    150,
+    150,
+    150,
+    150,
+    150
+  ],
+  "loop": 0,
+  "outputBytes": 105454,
+  "outputSha256": "286937e64870c9885e028f93a5ea250b64b8c37617a7dfb1490229c78a8ab438",
+  "outputGitBlob": "1c2e0bd43cbc2fdda8ee8c33db73eb37dc23897c",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-peren-auditado-ring-v1-20261028-bow-v1-20261028-armor-v1-20261028-crystal-v1-20261028",
+  "processing": "Original 5-pose PNG preserved; five source frames on a shared transparent canvas, animated ping-pong with ground shadow. Existing static icon backed up without modification.",
+  "integration": "Native animated WebP at existing game inventory icon path. No game.js, save, data, mechanics, or Phaser changes."
+}

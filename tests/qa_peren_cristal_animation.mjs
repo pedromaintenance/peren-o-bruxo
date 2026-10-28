@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url));
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const m=JSON.parse(read('assets/icons/cristal-animation.json'));
+test('preserve original five-pose crystal',()=>{const s=read(m.source);assert.equal(s.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.deepEqual([s.readUInt32BE(16),s.readUInt32BE(20)],m.sourceDimensions);assert.equal(sha(s),m.sourceSha256);assert.ok(read(m.backupPreviousStaticIcon).length>0);});
+test('animated crystal icon transparent and eight frames',()=>{const b=read(m.animation);assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');assert.ok(b.indexOf(Buffer.from('ANIM'))>0);assert.equal((b.toString('ascii').match(/ANMF/g)||[]).length,8);assert.deepEqual(m.outputDimensions,[160,160]);assert.deepEqual(m.timeline,[0,1,2,3,4,3,2,1]);assert.equal(sha(b),m.outputSha256);});
+test('inventory and PWA refer to crystal',()=>{const game=read('game.js').toString(),sw=read('sw.js').toString();assert.ok(game.includes('assets/icons/'));assert.ok(sw.includes("'cristal'"));assert.ok(sw.includes(m.cacheVersion));});
