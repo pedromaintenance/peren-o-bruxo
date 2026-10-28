@@ -1,7 +1,7 @@
 [
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-quitina-de-caranguejo-carmesim",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Quitina de Caranguejo Carmesim",
+  "nome": "Elixir de Pena de Gaivota e Quitina de Caranguejo Carmesim",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -17,11 +17,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-mudcrab-chitin",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-po-de-vampiro-de-vandar",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Pó de Vampiro de Vandar",
+  "nome": "Elixir de Pena de Gaivota e Pó de Vampiro de Vandar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -37,11 +39,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-vampire-dust",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-couro-de-rato-carbonizado",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Couro de Rato Carbonizado",
+  "nome": "Elixir de Pena de Gaivota e Couro de Rato Carbonizado",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -57,11 +61,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-charred-skeever-hide",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-penas-de-falcao-das-montanhas",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Penas de Falcão das Montanhas",
+  "nome": "Elixir de Pena de Gaivota e Penas de Falcão das Montanhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -77,11 +83,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-hawk-feathers",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-raiz-velada",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Raiz Velada",
+  "nome": "Elixir de Pena de Gaivota e Raiz Velada",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -97,11 +105,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-nirnroot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-raiz-velada-rubra",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Raiz Velada Rubra",
+  "nome": "Elixir de Pena de Gaivota e Raiz Velada Rubra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -117,11 +127,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-crimson-nirnroot",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cogumelo-do-imp",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Cogumelo do Imp",
+  "nome": "Elixir de Pena de Gaivota e Cogumelo do Imp",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -137,11 +149,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-imp-stool",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cauda-de-rato-das-docas",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Cauda de Rato das Docas",
+  "nome": "Elixir de Pena de Gaivota e Cauda de Rato das Docas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -157,11 +171,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-skeever-tail",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-sais-do-vazio",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Sais do Vazio",
+  "nome": "Elixir de Pena de Gaivota e Sais do Vazio",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -177,11 +193,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-void-salts",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-asa-de-borboleta-da-foz",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Asa de Borboleta da Foz",
+  "nome": "Elixir de Pena de Gaivota e Asa de Borboleta da Foz",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -197,11 +215,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-butterfly-wing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-coracao-de-demonio",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Coração de Demônio",
+  "nome": "Elixir de Pena de Gaivota e Coração de Demônio",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 8,
@@ -217,11 +237,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-daedra-heart",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-olho-de-felino-das-ilhas",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Olho de Felino das Ilhas",
+  "nome": "Elixir de Pena de Gaivota e Olho de Felino das Ilhas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -237,11 +259,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-eye-of-sabre-cat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-asa-de-mariposa-lunar",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Asa de Mariposa Lunar",
+  "nome": "Elixir de Pena de Gaivota e Asa de Mariposa Lunar",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 8,
@@ -257,11 +281,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-luna-moth-wing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-flor-azul-da-montanha",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Flor Azul da Montanha",
+  "nome": "Elixir de Pena de Gaivota e Flor Azul da Montanha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -277,11 +303,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-blue-mountain-flower",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-galinha",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Galinha",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Galinha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 8,
@@ -297,11 +325,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-chicken-s-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-falcao",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Falcão",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Falcão",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -317,11 +347,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-hawk-s-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-fungo-de-bolha",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Fungo de Bolha",
+  "nome": "Elixir de Pena de Gaivota e Fungo de Bolha",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -337,11 +369,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-blisterwort",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-ovo-de-tordo",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Ovo de Tordo",
+  "nome": "Elixir de Pena de Gaivota e Ovo de Tordo",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -357,11 +391,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-rock-warbler-egg",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-trigo-da-costa",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Trigo da Costa",
+  "nome": "Elixir de Pena de Gaivota e Trigo da Costa",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -377,11 +413,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-wheat",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-libelula-azul",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Libélula Azul",
+  "nome": "Elixir de Pena de Gaivota e Libélula Azul",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 8,
@@ -397,11 +435,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-blue-dartwing",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-flor-de-brilho",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Flor de Brilho",
+  "nome": "Elixir de Pena de Gaivota e Flor de Brilho",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -417,11 +457,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-gleamblossom",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-garra-de-bruxa",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Garra de Bruxa",
+  "nome": "Elixir de Pena de Gaivota e Garra de Bruxa",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -437,11 +479,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-hagraven-claw",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-algodao-da-tundra",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Algodão da Tundra",
+  "nome": "Elixir de Pena de Gaivota e Algodão da Tundra",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 24,
@@ -457,11 +501,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-tundra-cotton",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-coroa-sangrenta",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Coroa Sangrenta",
+  "nome": "Elixir de Pena de Gaivota e Coroa Sangrenta",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -477,11 +523,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-bleeding-crown",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-favo-de-mel",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Favo de Mel",
+  "nome": "Elixir de Pena de Gaivota e Favo de Mel",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -497,11 +545,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-honeycomb",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-faixas-de-espirito",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Faixas de Espírito",
+  "nome": "Elixir de Pena de Gaivota e Faixas de Espírito",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -517,11 +567,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-wisp-wrappings",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-lavanda-selvagem",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Lavanda Selvagem",
+  "nome": "Elixir de Pena de Gaivota e Lavanda Selvagem",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 32,
@@ -537,11 +589,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-lavender",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-casca-de-colmeia",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Casca de Colmeia",
+  "nome": "Elixir de Pena de Gaivota e Casca de Colmeia",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 40,
@@ -557,11 +611,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-beehive-husk",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-gelatina-de-saltador-das-cinzas",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Gelatina de Saltador das Cinzas",
+  "nome": "Elixir de Pena de Gaivota e Gelatina de Saltador das Cinzas",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 8,
@@ -577,11 +633,13 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-ash-hopper-jelly",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-fungo-do-pantano",
-  "nome": "Elixir de Pena de Gaivota de Portomonte e Fungo do Pântano",
+  "nome": "Elixir de Pena de Gaivota e Fungo do Pântano",
   "estacao": "alquimia",
   "pericia": "alquimia",
   "nivel": 16,
@@ -597,7 +655,9 @@
   ],
   "resultado": "pot-felsaad-tern-feathers-swamp-fungal-pod",
   "quantidade": 1,
-  "origem": "receita_original_carcaca"
+  "origem": "receita_original_carcaca",
+  "revisao_alquimica_pendente": true,
+  "nota_revisao": "Receita criada antes da curadoria dos atributos da Pena de Gaivota. Conferir compatibilidade e efeitos após revisão dos demais ingredientes, preservando os IDs."
  },
  {
   "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-po-de-vampiro-de-vandar",
