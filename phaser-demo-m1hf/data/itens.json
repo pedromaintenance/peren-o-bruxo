@@ -236,23 +236,40 @@
   },
   {
     "id": "ing-river-betty",
-    "nome": "Betty do Rio Ancestral",
+    "nome": "Betta do Rio",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "adaptado_skyrim_alquimia",
     "referencia": "River Betty",
     "efeitos": [
-      "Damage Health",
-      "Fortify Alteration",
-      "Slow",
-      "Fortify Carry Weight"
+      "Fortify Strength",
+      "Fortify Dexterity",
+      "Reduce Wisdom"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 3
+      },
+      {
+        "id": "diminuir_sabedoria",
+        "nome": "Diminuir Sabedoria",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-emperor-parasol-moss",
@@ -5391,7 +5408,7 @@
   },
   {
     "id": "pot-jarrin-root-river-betty",
-    "nome": "Elixir de Raiz Botulínica e Betty do Rio Ancestral",
+    "nome": "Elixir de Raiz Botulínica e Betta do Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6184,7 +6201,7 @@
   },
   {
     "id": "pot-river-betty-emperor-parasol-moss",
-    "nome": "Elixir de Betty do Rio Ancestral e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Betta do Rio e Musgo Parassol de Eldroth",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6201,7 +6218,7 @@
   },
   {
     "id": "pot-river-betty-nirnroot",
-    "nome": "Elixir de Betty do Rio Ancestral e Raiz Velada",
+    "nome": "Elixir de Betta do Rio e Raiz Velada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6218,7 +6235,7 @@
   },
   {
     "id": "pot-river-betty-crimson-nirnroot",
-    "nome": "Elixir de Betty do Rio Ancestral e Raiz Velada Rubra",
+    "nome": "Elixir de Betta do Rio e Raiz Velada Rubra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6235,7 +6252,7 @@
   },
   {
     "id": "pot-river-betty-deathbell",
-    "nome": "Elixir de Betty do Rio Ancestral e Sino da Morte",
+    "nome": "Elixir de Betta do Rio e Sino da Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6253,7 +6270,7 @@
   },
   {
     "id": "pot-river-betty-poison-bloom",
-    "nome": "Elixir de Betty do Rio Ancestral e Flor Venenosa da Garganta",
+    "nome": "Elixir de Betta do Rio e Flor Venenosa da Garganta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6272,7 +6289,7 @@
   },
   {
     "id": "pot-river-betty-ectoplasm",
-    "nome": "Elixir de Betty do Rio Ancestral e Ectoplasma de Vandar",
+    "nome": "Elixir de Betta do Rio e Ectoplasma de Vandar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6289,7 +6306,7 @@
   },
   {
     "id": "pot-river-betty-falmer-ear",
-    "nome": "Elixir de Betty do Rio Ancestral e Orelha de Troglodita",
+    "nome": "Elixir de Betta do Rio e Orelha de Troglodita",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6306,7 +6323,7 @@
   },
   {
     "id": "pot-river-betty-human-flesh",
-    "nome": "Elixir de Betty do Rio Ancestral e Carne de Proscrito",
+    "nome": "Elixir de Betta do Rio e Carne de Proscrito",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6323,7 +6340,7 @@
   },
   {
     "id": "pot-river-betty-human-heart",
-    "nome": "Elixir de Betty do Rio Ancestral e Coração Proibido",
+    "nome": "Elixir de Betta do Rio e Coração Proibido",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6340,7 +6357,7 @@
   },
   {
     "id": "pot-river-betty-imp-stool",
-    "nome": "Elixir de Betty do Rio Ancestral e Cogumelo do Imp",
+    "nome": "Elixir de Betta do Rio e Cogumelo do Imp",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6357,7 +6374,7 @@
   },
   {
     "id": "pot-river-betty-nightshade",
-    "nome": "Elixir de Betty do Rio Ancestral e Beladona Negra",
+    "nome": "Elixir de Betta do Rio e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6374,7 +6391,7 @@
   },
   {
     "id": "pot-river-betty-red-mountain-flower",
-    "nome": "Elixir de Betty do Rio Ancestral e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Betta do Rio e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6391,7 +6408,7 @@
   },
   {
     "id": "pot-river-betty-skeever-tail",
-    "nome": "Elixir de Betty do Rio Ancestral e Cauda de Rato das Docas",
+    "nome": "Elixir de Betta do Rio e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6408,7 +6425,7 @@
   },
   {
     "id": "pot-river-betty-small-antlers",
-    "nome": "Elixir de Betty do Rio Ancestral e Chifres Jovens",
+    "nome": "Elixir de Betta do Rio e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6425,7 +6442,7 @@
   },
   {
     "id": "pot-river-betty-troll-fat",
-    "nome": "Elixir de Betty do Rio Ancestral e Gordura de Troll",
+    "nome": "Elixir de Betta do Rio e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6442,7 +6459,7 @@
   },
   {
     "id": "pot-river-betty-void-salts",
-    "nome": "Elixir de Betty do Rio Ancestral e Sais do Vazio",
+    "nome": "Elixir de Betta do Rio e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6459,7 +6476,7 @@
   },
   {
     "id": "pot-river-betty-trama-root",
-    "nome": "Elixir de Betty do Rio Ancestral e Raiz de Trama",
+    "nome": "Elixir de Betta do Rio e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6477,7 +6494,7 @@
   },
   {
     "id": "pot-river-betty-burnt-spriggan-wood",
-    "nome": "Elixir de Betty do Rio Ancestral e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Betta do Rio e Madeira de Ent Carbonizado",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6495,7 +6512,7 @@
   },
   {
     "id": "pot-river-betty-spriggan-sap",
-    "nome": "Elixir de Betty do Rio Ancestral e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Betta do Rio e Seiva de Guardião Arbóreo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6512,7 +6529,7 @@
   },
   {
     "id": "pot-river-betty-giant-s-toe",
-    "nome": "Elixir de Betty do Rio Ancestral e Dedo de Gigante",
+    "nome": "Elixir de Betta do Rio e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6529,7 +6546,7 @@
   },
   {
     "id": "pot-river-betty-creep-cluster",
-    "nome": "Elixir de Betty do Rio Ancestral e Cachos Rastejantes",
+    "nome": "Elixir de Betta do Rio e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6546,7 +6563,7 @@
   },
   {
     "id": "pot-river-betty-large-antlers",
-    "nome": "Elixir de Betty do Rio Ancestral e Chifres Grandes",
+    "nome": "Elixir de Betta do Rio e Chifres Grandes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6563,7 +6580,7 @@
   },
   {
     "id": "pot-river-betty-netch-jelly",
-    "nome": "Elixir de Betty do Rio Ancestral e Gelatina de Netch",
+    "nome": "Elixir de Betta do Rio e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6580,7 +6597,7 @@
   },
   {
     "id": "pot-river-betty-grass-pod",
-    "nome": "Elixir de Betty do Rio Ancestral e Vagem da Charneca",
+    "nome": "Elixir de Betta do Rio e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6597,7 +6614,7 @@
   },
   {
     "id": "pot-river-betty-hawk-beak",
-    "nome": "Elixir de Betty do Rio Ancestral e Bico de Falcão",
+    "nome": "Elixir de Betta do Rio e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6614,7 +6631,7 @@
   },
   {
     "id": "pot-river-betty-scaly-pholiota",
-    "nome": "Elixir de Betty do Rio Ancestral e Cogumelo Escamoso",
+    "nome": "Elixir de Betta do Rio e Cogumelo Escamoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6631,7 +6648,7 @@
   },
   {
     "id": "pot-river-betty-wisp-wrappings",
-    "nome": "Elixir de Betty do Rio Ancestral e Faixas de Espírito",
+    "nome": "Elixir de Betta do Rio e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6648,7 +6665,7 @@
   },
   {
     "id": "pot-river-betty-salt-pile",
-    "nome": "Elixir de Betty do Rio Ancestral e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Betta do Rio e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
