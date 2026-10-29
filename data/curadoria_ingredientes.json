@@ -506,6 +506,296 @@
         "Restore Health",
         "Damage Health"
       ]
+    },
+    "ing-nightshade": {
+      "nome": "Beladona",
+      "descricao": "Planta tóxica de sombra, conhecida pelo dano lento e por interferir na recuperação mágica.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Damage Magicka Regen",
+        "Lingering Damage Stamina"
+      ]
+    },
+    "ing-red-mountain-flower": {
+      "nome": "Flor Vermelha",
+      "descricao": "Flor rubra usada em tônicos arcanos; recupera energia mágica, mas sua seiva concentrada pode ferir.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-skeever-tail": {
+      "nome": "Cauda de Rato",
+      "descricao": "Cauda de roedor das docas empregada em venenos debilitantes e preparos protetores de curta duração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_stamina",
+          "nome": "Diminuir Regeneração de Stamina",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Damage Stamina Regen",
+        "Fortify Light Armor"
+      ]
+    },
+    "ing-small-antlers": {
+      "nome": "Chifres Jovens",
+      "descricao": "Chifres imaturos moídos para unguentos de restauração e toxinas de efeito persistente.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Restoration",
+        "Weakness to Poison",
+        "Lingering Damage Stamina"
+      ]
+    },
+    "ing-troll-fat": {
+      "nome": "Gordura de Troll",
+      "descricao": "Gordura espessa de troll, útil em fortificantes e misturas que desencadeiam agressividade.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Strength",
+        "Frenzy"
+      ]
+    },
+    "ing-void-salts": {
+      "nome": "Sais do Vazio",
+      "descricao": "Cristais escuros associados ao Vazio; ampliam reservas arcanas, mas tornam o corpo vulnerável a descargas.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Magicka",
+        "Resist Magic",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-butterfly-wing": {
+      "nome": "Asa de Borboleta",
+      "descricao": "Asa delicada empregada em tônicos suaves de recuperação e preparados que debilitam energia arcana.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Damage Magicka",
+        "Lingering Damage Stamina"
+      ]
+    },
+    "ing-chaurus-eggs": {
+      "nome": "Ovos de Verme Quitinoso",
+      "descricao": "Ovos translúcidos de vermes subterrâneos, usados em extratos furtivos e fortificantes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_stamina",
+          "nome": "Aumentar Stamina",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Fortify Stamina",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-daedra-heart": {
+      "nome": "Coração de Demônio",
+      "descricao": "Órgão de natureza demoníaca, intensamente carregado de vitalidade e energia mágica instável.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fear",
+        "Damage Magicka"
+      ]
+    },
+    "ing-eye-of-sabre-cat": {
+      "nome": "Olho de Felino",
+      "descricao": "Olho preservado de grande felino, associado à recuperação do vigor e aos sentidos de caça.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_stamina",
+          "nome": "Restaurar Stamina",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Stamina",
+        "Fortify Perception",
+        "Restore Health"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -521,7 +811,12 @@
     "Ectoplasma de Vandar": "Ectoplasma",
     "Carne de Proscrito": "Carne Humana",
     "Coração Proibido": "Coração Humano",
-    "Cogumelo do Imp": "Fungo de Diabrete"
+    "Cogumelo do Imp": "Fungo de Diabrete",
+    "Beladona Negra": "Beladona",
+    "Flor Vermelha de Thargrid": "Flor Vermelha",
+    "Cauda de Rato das Docas": "Cauda de Rato",
+    "Asa de Borboleta da Foz": "Asa de Borboleta",
+    "Olho de Felino das Ilhas": "Olho de Felino"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -539,6 +834,16 @@
     "ing-falmer-ear",
     "ing-human-flesh",
     "ing-human-heart",
-    "ing-imp-stool"
+    "ing-imp-stool",
+    "ing-nightshade",
+    "ing-red-mountain-flower",
+    "ing-skeever-tail",
+    "ing-small-antlers",
+    "ing-troll-fat",
+    "ing-void-salts",
+    "ing-butterfly-wing",
+    "ing-chaurus-eggs",
+    "ing-daedra-heart",
+    "ing-eye-of-sabre-cat"
   ]
 }
