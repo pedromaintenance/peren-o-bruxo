@@ -2769,7 +2769,8 @@
     "efeitos": [
       "Fortify Magicka",
       "Restore Magicka",
-      "Paralysis"
+      "Paralysis",
+      "Vampirism"
     ],
     "raridade": "raro",
     "valor": 19,
@@ -2777,7 +2778,7 @@
     "zona": "portomonte",
     "nivel": 3,
     "icone": "🌿",
-    "descricao": "Núcleo vegetal espinhoso que concentra energia mágica, com efeitos imobilizantes.",
+    "descricao": "Núcleo vegetal espinhoso e parasitário que concentra energia mágica, imobiliza suas presas e absorve a vitalidade de outros seres para sustentar a própria existência.",
     "atributos_revisados": true,
     "atributos": [
       {
@@ -2794,6 +2795,11 @@
         "id": "paralisia",
         "nome": "Paralisia",
         "intensidade": 1
+      },
+      {
+        "id": "vampirismo",
+        "nome": "Vampirismo",
+        "intensidade": 2
       }
     ]
   },
