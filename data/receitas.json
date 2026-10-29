@@ -1810,7 +1810,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-musgo-parassol-de-eldroth",
-    "nome": "Elixir de Pó de Vampiro e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Pó de Vampiro e Musgo Parassol",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -1885,7 +1885,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Pó de Vampiro e Ectoplasma de Vandar",
+    "nome": "Elixir de Pó de Vampiro e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -3881,7 +3881,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-musgo-parassol-de-eldroth",
-    "nome": "Elixir de Raiz Botulínica e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Raiz Botulínica e Musgo Parassol",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -3961,7 +3961,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Raiz Botulínica e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Botulínica e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -3981,7 +3981,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Raiz Botulínica e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Botulínica e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4781,7 +4781,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-musgo-parassol-de-eldroth",
-    "nome": "Elixir de Betta do Rio e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Betta do Rio e Musgo Parassol",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4861,7 +4861,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Betta do Rio e Flor Venenosa da Garganta",
+    "nome": "Elixir de Betta do Rio e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4881,7 +4881,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Betta do Rio e Ectoplasma de Vandar",
+    "nome": "Elixir de Betta do Rio e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5341,7 +5341,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-raiz-velada",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Raiz Velada",
+    "nome": "Elixir de Musgo Parassol e Raiz Velada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5361,7 +5361,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-raiz-velada-rubra",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Raiz Velada Rubra",
+    "nome": "Elixir de Musgo Parassol e Raiz Velada Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5381,7 +5381,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-sino-da-morte",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Sino da Morte",
+    "nome": "Elixir de Musgo Parassol e Sino da Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5401,7 +5401,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor Venenosa da Garganta",
+    "nome": "Elixir de Musgo Parassol e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5421,7 +5421,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Ectoplasma de Vandar",
+    "nome": "Elixir de Musgo Parassol e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5441,7 +5441,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-orelha-de-troglodita",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Orelha de Troglodita",
+    "nome": "Elixir de Musgo Parassol e Orelha de Troglodita",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5461,7 +5461,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-carne-de-proscrito",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Carne de Proscrito",
+    "nome": "Elixir de Musgo Parassol e Carne de Proscrito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5481,7 +5481,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-coracao-proibido",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Coração Proibido",
+    "nome": "Elixir de Musgo Parassol e Coração Proibido",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5501,7 +5501,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-cogumelo-do-imp",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Cogumelo do Imp",
+    "nome": "Elixir de Musgo Parassol e Cogumelo do Imp",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5521,7 +5521,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-beladona-negra",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Beladona Negra",
+    "nome": "Elixir de Musgo Parassol e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5541,7 +5541,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Musgo Parassol e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5561,7 +5561,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Cauda de Rato das Docas",
+    "nome": "Elixir de Musgo Parassol e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5581,7 +5581,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-chifres-jovens",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Chifres Jovens",
+    "nome": "Elixir de Musgo Parassol e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5601,7 +5601,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-gordura-de-troll",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Gordura de Troll",
+    "nome": "Elixir de Musgo Parassol e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5621,7 +5621,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-sais-do-vazio",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Sais do Vazio",
+    "nome": "Elixir de Musgo Parassol e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5641,7 +5641,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Asa de Mariposa Lunar",
+    "nome": "Elixir de Musgo Parassol e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5661,7 +5661,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-fungo-de-gualapoles",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Fungo de Gualápoles",
+    "nome": "Elixir de Musgo Parassol e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5681,7 +5681,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Parassol e Craca do Rio Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5701,7 +5701,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-carpa-de-pedra",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Carpa de Pedra",
+    "nome": "Elixir de Musgo Parassol e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5721,7 +5721,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-bagas-de-zimbro",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Bagas de Zimbro",
+    "nome": "Elixir de Musgo Parassol e Bagas de Zimbro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5741,7 +5741,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-flor-de-brilho",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor de Brilho",
+    "nome": "Elixir de Musgo Parassol e Flor de Brilho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5761,7 +5761,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-lingua-de-dragao",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Língua de Dragão",
+    "nome": "Elixir de Musgo Parassol e Língua de Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5781,7 +5781,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-algodao-da-tundra",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Algodão da Tundra",
+    "nome": "Elixir de Musgo Parassol e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5801,7 +5801,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-coracao-de-espinheiros",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Coração de Espinheiros",
+    "nome": "Elixir de Musgo Parassol e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5821,7 +5821,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-uvas-de-jasmim",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Uvas de Jasmim",
+    "nome": "Elixir de Musgo Parassol e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5841,7 +5841,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-ovas-de-salmao",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Ovas de Salmão",
+    "nome": "Elixir de Musgo Parassol e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5861,7 +5861,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-alho-das-hortas",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Alho das Hortas",
+    "nome": "Elixir de Musgo Parassol e Alho das Hortas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5881,7 +5881,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-amanita-rubra",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Amanita Rubra",
+    "nome": "Elixir de Musgo Parassol e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5941,7 +5941,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Raiz Velada e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Velada e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5961,7 +5961,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Raiz Velada e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Velada e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -6661,7 +6661,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Raiz Velada Rubra e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6681,7 +6681,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Raiz Velada Rubra e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Velada Rubra e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7361,7 +7361,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-flor-venenosa-da-garganta",
-    "nome": "Elixir de Sino da Morte e Flor Venenosa da Garganta",
+    "nome": "Elixir de Sino da Morte e Flor Venenosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7381,7 +7381,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Sino da Morte e Ectoplasma de Vandar",
+    "nome": "Elixir de Sino da Morte e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7941,7 +7941,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-ectoplasma-de-vandar",
-    "nome": "Elixir de Flor Venenosa da Garganta e Ectoplasma de Vandar",
+    "nome": "Elixir de Flor Venenosa e Ectoplasma",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7961,7 +7961,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-orelha-de-troglodita",
-    "nome": "Elixir de Flor Venenosa da Garganta e Orelha de Troglodita",
+    "nome": "Elixir de Flor Venenosa e Orelha de Troglodita",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -7981,7 +7981,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-carne-de-proscrito",
-    "nome": "Elixir de Flor Venenosa da Garganta e Carne de Proscrito",
+    "nome": "Elixir de Flor Venenosa e Carne de Proscrito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8001,7 +8001,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-coracao-proibido",
-    "nome": "Elixir de Flor Venenosa da Garganta e Coração Proibido",
+    "nome": "Elixir de Flor Venenosa e Coração Proibido",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8021,7 +8021,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cogumelo-do-imp",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cogumelo do Imp",
+    "nome": "Elixir de Flor Venenosa e Cogumelo do Imp",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8041,7 +8041,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-beladona-negra",
-    "nome": "Elixir de Flor Venenosa da Garganta e Beladona Negra",
+    "nome": "Elixir de Flor Venenosa e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8061,7 +8061,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Flor Venenosa da Garganta e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Flor Venenosa e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8081,7 +8081,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Venenosa e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8101,7 +8101,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-chifres-jovens",
-    "nome": "Elixir de Flor Venenosa da Garganta e Chifres Jovens",
+    "nome": "Elixir de Flor Venenosa e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8121,7 +8121,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-gordura-de-troll",
-    "nome": "Elixir de Flor Venenosa da Garganta e Gordura de Troll",
+    "nome": "Elixir de Flor Venenosa e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8141,7 +8141,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-sais-do-vazio",
-    "nome": "Elixir de Flor Venenosa da Garganta e Sais do Vazio",
+    "nome": "Elixir de Flor Venenosa e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8161,7 +8161,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-coracao-de-demonio",
-    "nome": "Elixir de Flor Venenosa da Garganta e Coração de Demônio",
+    "nome": "Elixir de Flor Venenosa e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8181,7 +8181,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-fungo-de-gualapoles",
-    "nome": "Elixir de Flor Venenosa da Garganta e Fungo de Gualápoles",
+    "nome": "Elixir de Flor Venenosa e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8201,7 +8201,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-raiz-de-trama",
-    "nome": "Elixir de Flor Venenosa da Garganta e Raiz de Trama",
+    "nome": "Elixir de Flor Venenosa e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8221,7 +8221,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-madeira-de-ent-carbonizado",
-    "nome": "Elixir de Flor Venenosa da Garganta e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Flor Venenosa e Madeira de Ent Carbonizado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8241,7 +8241,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Flor Venenosa da Garganta e Peixe de Escamas Finas",
+    "nome": "Elixir de Flor Venenosa e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8261,7 +8261,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-dedo-de-gigante",
-    "nome": "Elixir de Flor Venenosa da Garganta e Dedo de Gigante",
+    "nome": "Elixir de Flor Venenosa e Dedo de Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8281,7 +8281,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cachos-rastejantes",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cachos Rastejantes",
+    "nome": "Elixir de Flor Venenosa e Cachos Rastejantes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8301,7 +8301,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-chifres-grandes",
-    "nome": "Elixir de Flor Venenosa da Garganta e Chifres Grandes",
+    "nome": "Elixir de Flor Venenosa e Chifres Grandes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8321,7 +8321,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-libelula-azul",
-    "nome": "Elixir de Flor Venenosa da Garganta e Libélula Azul",
+    "nome": "Elixir de Flor Venenosa e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8341,7 +8341,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-flor-de-brilho",
-    "nome": "Elixir de Flor Venenosa da Garganta e Flor de Brilho",
+    "nome": "Elixir de Flor Venenosa e Flor de Brilho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8361,7 +8361,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-gelatina-de-netch",
-    "nome": "Elixir de Flor Venenosa da Garganta e Gelatina de Netch",
+    "nome": "Elixir de Flor Venenosa e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8381,7 +8381,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Flor Venenosa da Garganta e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Venenosa e Presa de Mamute em Pó",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8401,7 +8401,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-bico-de-falcao",
-    "nome": "Elixir de Flor Venenosa da Garganta e Bico de Falcão",
+    "nome": "Elixir de Flor Venenosa e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8421,7 +8421,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cogumelo-escamoso",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cogumelo Escamoso",
+    "nome": "Elixir de Flor Venenosa e Cogumelo Escamoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8441,7 +8441,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-faixas-de-espirito",
-    "nome": "Elixir de Flor Venenosa da Garganta e Faixas de Espírito",
+    "nome": "Elixir de Flor Venenosa e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8461,7 +8461,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Flor Venenosa da Garganta e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Pilha de Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8481,7 +8481,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-orelha-de-troglodita",
-    "nome": "Elixir de Ectoplasma de Vandar e Orelha de Troglodita",
+    "nome": "Elixir de Ectoplasma e Orelha de Troglodita",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8501,7 +8501,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-carne-de-proscrito",
-    "nome": "Elixir de Ectoplasma de Vandar e Carne de Proscrito",
+    "nome": "Elixir de Ectoplasma e Carne de Proscrito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8521,7 +8521,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-coracao-proibido",
-    "nome": "Elixir de Ectoplasma de Vandar e Coração Proibido",
+    "nome": "Elixir de Ectoplasma e Coração Proibido",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8541,7 +8541,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cogumelo-do-imp",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo do Imp",
+    "nome": "Elixir de Ectoplasma e Cogumelo do Imp",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8561,7 +8561,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-beladona-negra",
-    "nome": "Elixir de Ectoplasma de Vandar e Beladona Negra",
+    "nome": "Elixir de Ectoplasma e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8581,7 +8581,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Ectoplasma de Vandar e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Ectoplasma e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8601,7 +8601,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Ectoplasma de Vandar e Cauda de Rato das Docas",
+    "nome": "Elixir de Ectoplasma e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8621,7 +8621,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-chifres-jovens",
-    "nome": "Elixir de Ectoplasma de Vandar e Chifres Jovens",
+    "nome": "Elixir de Ectoplasma e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8641,7 +8641,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-gordura-de-troll",
-    "nome": "Elixir de Ectoplasma de Vandar e Gordura de Troll",
+    "nome": "Elixir de Ectoplasma e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8661,7 +8661,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-sais-do-vazio",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais do Vazio",
+    "nome": "Elixir de Ectoplasma e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8681,7 +8681,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-poeira-luminosa",
-    "nome": "Elixir de Ectoplasma de Vandar e Poeira Luminosa",
+    "nome": "Elixir de Ectoplasma e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8701,7 +8701,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cachos-de-cinza",
-    "nome": "Elixir de Ectoplasma de Vandar e Cachos de Cinza",
+    "nome": "Elixir de Ectoplasma e Cachos de Cinza",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8721,7 +8721,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cachos-rastejantes",
-    "nome": "Elixir de Ectoplasma de Vandar e Cachos Rastejantes",
+    "nome": "Elixir de Ectoplasma e Cachos Rastejantes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8741,7 +8741,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-carpa-de-pedra",
-    "nome": "Elixir de Ectoplasma de Vandar e Carpa de Pedra",
+    "nome": "Elixir de Ectoplasma e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8761,7 +8761,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-vagem-da-charneca",
-    "nome": "Elixir de Ectoplasma de Vandar e Vagem da Charneca",
+    "nome": "Elixir de Ectoplasma e Vagem da Charneca",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8781,7 +8781,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-algodao-da-tundra",
-    "nome": "Elixir de Ectoplasma de Vandar e Algodão da Tundra",
+    "nome": "Elixir de Ectoplasma e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8801,7 +8801,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-perola-da-costa-sul",
-    "nome": "Elixir de Ectoplasma de Vandar e Pérola da Costa Sul",
+    "nome": "Elixir de Ectoplasma e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8821,7 +8821,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-coracao-de-espinheiros",
-    "nome": "Elixir de Ectoplasma de Vandar e Coração de Espinheiros",
+    "nome": "Elixir de Ectoplasma e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8841,7 +8841,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-faixas-de-espirito",
-    "nome": "Elixir de Ectoplasma de Vandar e Faixas de Espírito",
+    "nome": "Elixir de Ectoplasma e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8861,7 +8861,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-sais-da-geada",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais da Geada",
+    "nome": "Elixir de Ectoplasma e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8881,7 +8881,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-casca-de-colmeia",
-    "nome": "Elixir de Ectoplasma de Vandar e Casca de Colmeia",
+    "nome": "Elixir de Ectoplasma e Casca de Colmeia",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8901,7 +8901,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cogumelo-luminescente",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo Luminescente",
+    "nome": "Elixir de Ectoplasma e Cogumelo Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8921,7 +8921,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-chapeu-branco",
-    "nome": "Elixir de Ectoplasma de Vandar e Chapéu Branco",
+    "nome": "Elixir de Ectoplasma e Chapéu Branco",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8941,7 +8941,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-oleo-de-automato-anao",
-    "nome": "Elixir de Ectoplasma de Vandar e Óleo de Autômato Anão",
+    "nome": "Elixir de Ectoplasma e Óleo de Autômato Anão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8961,7 +8961,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cogumelo-de-raiz",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo de Raiz",
+    "nome": "Elixir de Ectoplasma e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8981,7 +8981,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-raiz-mestra",
-    "nome": "Elixir de Ectoplasma de Vandar e Raiz Mestra",
+    "nome": "Elixir de Ectoplasma e Raiz Mestra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9001,7 +9001,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-uvas-de-jasmim",
-    "nome": "Elixir de Ectoplasma de Vandar e Uvas de Jasmim",
+    "nome": "Elixir de Ectoplasma e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9021,7 +9021,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-ovas-de-salmao",
-    "nome": "Elixir de Ectoplasma de Vandar e Ovas de Salmão",
+    "nome": "Elixir de Ectoplasma e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9041,7 +9041,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-orelha-de-elfo",
-    "nome": "Elixir de Ectoplasma de Vandar e Orelha de Elfo",
+    "nome": "Elixir de Ectoplasma e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9061,7 +9061,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-liquen-gigante",
-    "nome": "Elixir de Ectoplasma de Vandar e Líquen Gigante",
+    "nome": "Elixir de Ectoplasma e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9081,7 +9081,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-sais-igneos",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais Ígneos",
+    "nome": "Elixir de Ectoplasma e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9101,7 +9101,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-acucar-lunar",
-    "nome": "Elixir de Ectoplasma de Vandar e Açúcar Lunar",
+    "nome": "Elixir de Ectoplasma e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,

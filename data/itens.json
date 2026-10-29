@@ -273,203 +273,383 @@
   },
   {
     "id": "ing-emperor-parasol-moss",
-    "nome": "Musgo Parassol de Eldroth",
+    "nome": "Musgo Parassol",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Emperor Parasol Moss",
     "efeitos": [
       "Regenerate Health",
-      "Damage Health",
-      "Fortify Two-handed",
-      "Fortify Magicka"
+      "Fortify Intelligence",
+      "Damage Health"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 3,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Musgo úmido que prolifera sobre madeira apodrecida; revigora tecidos, mas perturba a saúde em doses excessivas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_inteligencia",
+        "nome": "Aumentar Inteligência",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-nirnroot",
     "nome": "Raiz Velada",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Nirnroot",
     "efeitos": [
       "Invisibility",
-      "Damage Health",
-      "Damage Stamina",
-      "Resist Magic"
+      "Resist Magic",
+      "Damage Stamina"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 4,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Raiz luminescente que se oculta na vegetação e dificulta a percepção de quem a consome.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "invisibilidade",
+        "nome": "Invisibilidade",
+        "intensidade": 3
+      },
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-crimson-nirnroot",
     "nome": "Raiz Velada Rubra",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Crimson Nirnroot",
     "efeitos": [
       "Invisibility",
       "Damage Health",
-      "Damage Stamina",
-      "Resist Magic"
+      "Damage Stamina"
     ],
     "raridade": "epico",
     "valor": 29,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 5,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Variante carmesim de seiva concentrada; encobre o corpo à custa de intensa exaustão.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "invisibilidade",
+        "nome": "Invisibilidade",
+        "intensidade": 3
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 3
+      }
+    ]
   },
   {
     "id": "ing-deathbell",
     "nome": "Sino da Morte",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Deathbell",
     "efeitos": [
       "Damage Health",
-      "Ravage Stamina",
-      "Weakness to Poison",
-      "Slow"
+      "Slow",
+      "Weakness to Poison"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 1,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Flor de sino escuro usada em venenos para enfraquecer e retardar as vítimas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_velocidade",
+        "nome": "Diminuir Velocidade",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-poison-bloom",
-    "nome": "Flor Venenosa da Garganta",
+    "nome": "Flor Venenosa",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Poison Bloom",
     "efeitos": [
-      "Fortify Carry Weight",
       "Damage Health",
-      "Slow",
-      "Fear"
+      "Fear",
+      "Slow"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 2,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Flor de pétalas tóxicas encontrada em terrenos hostis; sua seiva causa debilidade e pavor.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 3
+      },
+      {
+        "id": "medo",
+        "nome": "Medo",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_velocidade",
+        "nome": "Diminuir Velocidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-ectoplasm",
-    "nome": "Ectoplasma de Vandar",
+    "nome": "Ectoplasma",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ectoplasm",
     "efeitos": [
-      "Fortify Destruction",
-      "Damage Health",
+      "Restore Magicka",
       "Fortify Magicka",
-      "Restore Magicka"
+      "Damage Health"
     ],
-    "raridade": "incomum",
+    "raridade": "raro",
     "valor": 19,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 3,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Resíduo espectral instável, capaz de alimentar conjurações e consumir a vitalidade do alquimista.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-falmer-ear",
     "nome": "Orelha de Troglodita",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Falmer Ear",
     "efeitos": [
       "Resist Poison",
-      "Damage Health",
-      "Fortify Lockpicking",
-      "Frenzy"
+      "Fortify Perception",
+      "Damage Health"
     ],
-    "raridade": "raro",
+    "raridade": "incomum",
     "valor": 24,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 4,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Tecido de criatura subterrânea empregado em tinturas de percepção e preparados venenosos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_percepcao",
+        "nome": "Aumentar Percepção",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-human-flesh",
     "nome": "Carne de Proscrito",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Human Flesh",
     "efeitos": [
+      "Paralysis",
       "Fortify Sneak",
-      "Damage Health",
-      "Restore Magicka",
-      "Paralysis"
+      "Damage Health"
     ],
-    "raridade": "epico",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 5,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Ingrediente macabro negociado às escondidas; associa furtividade, transe e efeitos paralisantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-human-heart",
     "nome": "Coração Proibido",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Human Heart",
     "efeitos": [
-      "Damage Magicka",
-      "Damage Health",
       "Frenzy",
-      "Damage Magicka Regen"
+      "Damage Magicka",
+      "Damage Health"
     ],
-    "raridade": "comum",
+    "raridade": "epico",
     "valor": 9,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 1,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Coração preservado por rituais obscuros, muito potente em misturas que alteram a vontade e drenam energia mágica.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 3
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-imp-stool",
     "nome": "Cogumelo do Imp",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Imp Stool",
     "efeitos": [
-      "Damage Health",
+      "Paralysis",
       "Restore Health",
-      "Lingering Damage Health",
-      "Paralysis"
+      "Damage Health"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 2,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Fungo de ambiente degradado, usado tanto como base medicinal quanto em toxinas imobilizantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 2
+      },
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-nightshade",
@@ -4011,7 +4191,7 @@
   },
   {
     "id": "pot-vampire-dust-emperor-parasol-moss",
-    "nome": "Elixir de Pó de Vampiro e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Pó de Vampiro e Musgo Parassol",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4062,7 +4242,7 @@
   },
   {
     "id": "pot-vampire-dust-ectoplasm",
-    "nome": "Elixir de Pó de Vampiro e Ectoplasma de Vandar",
+    "nome": "Elixir de Pó de Vampiro e Ectoplasma",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5425,7 +5605,7 @@
   },
   {
     "id": "pot-jarrin-root-emperor-parasol-moss",
-    "nome": "Elixir de Raiz Botulínica e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Raiz Botulínica e Musgo Parassol",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5495,7 +5675,7 @@
   },
   {
     "id": "pot-jarrin-root-poison-bloom",
-    "nome": "Elixir de Raiz Botulínica e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Botulínica e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5512,7 +5692,7 @@
   },
   {
     "id": "pot-jarrin-root-ectoplasm",
-    "nome": "Elixir de Raiz Botulínica e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Botulínica e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6201,7 +6381,7 @@
   },
   {
     "id": "pot-river-betty-emperor-parasol-moss",
-    "nome": "Elixir de Betta do Rio e Musgo Parassol de Eldroth",
+    "nome": "Elixir de Betta do Rio e Musgo Parassol",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6270,7 +6450,7 @@
   },
   {
     "id": "pot-river-betty-poison-bloom",
-    "nome": "Elixir de Betta do Rio e Flor Venenosa da Garganta",
+    "nome": "Elixir de Betta do Rio e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6289,7 +6469,7 @@
   },
   {
     "id": "pot-river-betty-ectoplasm",
-    "nome": "Elixir de Betta do Rio e Ectoplasma de Vandar",
+    "nome": "Elixir de Betta do Rio e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6682,7 +6862,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-nirnroot",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Raiz Velada",
+    "nome": "Elixir de Musgo Parassol e Raiz Velada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6699,7 +6879,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-crimson-nirnroot",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Raiz Velada Rubra",
+    "nome": "Elixir de Musgo Parassol e Raiz Velada Rubra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6716,7 +6896,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-deathbell",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Sino da Morte",
+    "nome": "Elixir de Musgo Parassol e Sino da Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6733,7 +6913,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-poison-bloom",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor Venenosa da Garganta",
+    "nome": "Elixir de Musgo Parassol e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6750,7 +6930,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-ectoplasm",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Ectoplasma de Vandar",
+    "nome": "Elixir de Musgo Parassol e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6768,7 +6948,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-falmer-ear",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Orelha de Troglodita",
+    "nome": "Elixir de Musgo Parassol e Orelha de Troglodita",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6785,7 +6965,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-human-flesh",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Carne de Proscrito",
+    "nome": "Elixir de Musgo Parassol e Carne de Proscrito",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6802,7 +6982,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-human-heart",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Coração Proibido",
+    "nome": "Elixir de Musgo Parassol e Coração Proibido",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6819,7 +6999,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-imp-stool",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Cogumelo do Imp",
+    "nome": "Elixir de Musgo Parassol e Cogumelo do Imp",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6836,7 +7016,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-nightshade",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Beladona Negra",
+    "nome": "Elixir de Musgo Parassol e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6853,7 +7033,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-red-mountain-flower",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Musgo Parassol e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6871,7 +7051,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-skeever-tail",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Cauda de Rato das Docas",
+    "nome": "Elixir de Musgo Parassol e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6888,7 +7068,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-small-antlers",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Chifres Jovens",
+    "nome": "Elixir de Musgo Parassol e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6905,7 +7085,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-troll-fat",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Gordura de Troll",
+    "nome": "Elixir de Musgo Parassol e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6923,7 +7103,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-void-salts",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Sais do Vazio",
+    "nome": "Elixir de Musgo Parassol e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6941,7 +7121,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-luna-moth-wing",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Asa de Mariposa Lunar",
+    "nome": "Elixir de Musgo Parassol e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6958,7 +7138,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-namira-s-rot",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Fungo de Gualápoles",
+    "nome": "Elixir de Musgo Parassol e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6975,7 +7155,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-nordic-barnacle",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Parassol e Craca do Rio Ancestral",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6992,7 +7172,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-histcarp",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Carpa de Pedra",
+    "nome": "Elixir de Musgo Parassol e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7009,7 +7189,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-juniper-berries",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Bagas de Zimbro",
+    "nome": "Elixir de Musgo Parassol e Bagas de Zimbro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7026,7 +7206,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-gleamblossom",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Flor de Brilho",
+    "nome": "Elixir de Musgo Parassol e Flor de Brilho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7043,7 +7223,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-dragon-s-tongue",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Língua de Dragão",
+    "nome": "Elixir de Musgo Parassol e Língua de Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7060,7 +7240,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-tundra-cotton",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Algodão da Tundra",
+    "nome": "Elixir de Musgo Parassol e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7077,7 +7257,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-briar-heart",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Coração de Espinheiros",
+    "nome": "Elixir de Musgo Parassol e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7094,7 +7274,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-jazbay-grapes",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Uvas de Jasmim",
+    "nome": "Elixir de Musgo Parassol e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7111,7 +7291,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-salmon-roe",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Ovas de Salmão",
+    "nome": "Elixir de Musgo Parassol e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7128,7 +7308,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-garlic",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Alho das Hortas",
+    "nome": "Elixir de Musgo Parassol e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7145,7 +7325,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-fly-amanita",
-    "nome": "Elixir de Musgo Parassol de Eldroth e Amanita Rubra",
+    "nome": "Elixir de Musgo Parassol e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7199,7 +7379,7 @@
   },
   {
     "id": "pot-nirnroot-poison-bloom",
-    "nome": "Elixir de Raiz Velada e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Velada e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7216,7 +7396,7 @@
   },
   {
     "id": "pot-nirnroot-ectoplasm",
-    "nome": "Elixir de Raiz Velada e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Velada e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7813,7 +7993,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-poison-bloom",
-    "nome": "Elixir de Raiz Velada Rubra e Flor Venenosa da Garganta",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7830,7 +8010,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-ectoplasm",
-    "nome": "Elixir de Raiz Velada Rubra e Ectoplasma de Vandar",
+    "nome": "Elixir de Raiz Velada Rubra e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8410,7 +8590,7 @@
   },
   {
     "id": "pot-deathbell-poison-bloom",
-    "nome": "Elixir de Sino da Morte e Flor Venenosa da Garganta",
+    "nome": "Elixir de Sino da Morte e Flor Venenosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8428,7 +8608,7 @@
   },
   {
     "id": "pot-deathbell-ectoplasm",
-    "nome": "Elixir de Sino da Morte e Ectoplasma de Vandar",
+    "nome": "Elixir de Sino da Morte e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8905,7 +9085,7 @@
   },
   {
     "id": "pot-poison-bloom-ectoplasm",
-    "nome": "Elixir de Flor Venenosa da Garganta e Ectoplasma de Vandar",
+    "nome": "Elixir de Flor Venenosa e Ectoplasma",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8922,7 +9102,7 @@
   },
   {
     "id": "pot-poison-bloom-falmer-ear",
-    "nome": "Elixir de Flor Venenosa da Garganta e Orelha de Troglodita",
+    "nome": "Elixir de Flor Venenosa e Orelha de Troglodita",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8939,7 +9119,7 @@
   },
   {
     "id": "pot-poison-bloom-human-flesh",
-    "nome": "Elixir de Flor Venenosa da Garganta e Carne de Proscrito",
+    "nome": "Elixir de Flor Venenosa e Carne de Proscrito",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8956,7 +9136,7 @@
   },
   {
     "id": "pot-poison-bloom-human-heart",
-    "nome": "Elixir de Flor Venenosa da Garganta e Coração Proibido",
+    "nome": "Elixir de Flor Venenosa e Coração Proibido",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8973,7 +9153,7 @@
   },
   {
     "id": "pot-poison-bloom-imp-stool",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cogumelo do Imp",
+    "nome": "Elixir de Flor Venenosa e Cogumelo do Imp",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8990,7 +9170,7 @@
   },
   {
     "id": "pot-poison-bloom-nightshade",
-    "nome": "Elixir de Flor Venenosa da Garganta e Beladona Negra",
+    "nome": "Elixir de Flor Venenosa e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9007,7 +9187,7 @@
   },
   {
     "id": "pot-poison-bloom-red-mountain-flower",
-    "nome": "Elixir de Flor Venenosa da Garganta e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Flor Venenosa e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9024,7 +9204,7 @@
   },
   {
     "id": "pot-poison-bloom-skeever-tail",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Venenosa e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9041,7 +9221,7 @@
   },
   {
     "id": "pot-poison-bloom-small-antlers",
-    "nome": "Elixir de Flor Venenosa da Garganta e Chifres Jovens",
+    "nome": "Elixir de Flor Venenosa e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9058,7 +9238,7 @@
   },
   {
     "id": "pot-poison-bloom-troll-fat",
-    "nome": "Elixir de Flor Venenosa da Garganta e Gordura de Troll",
+    "nome": "Elixir de Flor Venenosa e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9075,7 +9255,7 @@
   },
   {
     "id": "pot-poison-bloom-void-salts",
-    "nome": "Elixir de Flor Venenosa da Garganta e Sais do Vazio",
+    "nome": "Elixir de Flor Venenosa e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9092,7 +9272,7 @@
   },
   {
     "id": "pot-poison-bloom-daedra-heart",
-    "nome": "Elixir de Flor Venenosa da Garganta e Coração de Demônio",
+    "nome": "Elixir de Flor Venenosa e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9109,7 +9289,7 @@
   },
   {
     "id": "pot-poison-bloom-namira-s-rot",
-    "nome": "Elixir de Flor Venenosa da Garganta e Fungo de Gualápoles",
+    "nome": "Elixir de Flor Venenosa e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9126,7 +9306,7 @@
   },
   {
     "id": "pot-poison-bloom-trama-root",
-    "nome": "Elixir de Flor Venenosa da Garganta e Raiz de Trama",
+    "nome": "Elixir de Flor Venenosa e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9144,7 +9324,7 @@
   },
   {
     "id": "pot-poison-bloom-burnt-spriggan-wood",
-    "nome": "Elixir de Flor Venenosa da Garganta e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Flor Venenosa e Madeira de Ent Carbonizado",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9161,7 +9341,7 @@
   },
   {
     "id": "pot-poison-bloom-cyrodilic-spadetail",
-    "nome": "Elixir de Flor Venenosa da Garganta e Peixe de Escamas Finas",
+    "nome": "Elixir de Flor Venenosa e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9178,7 +9358,7 @@
   },
   {
     "id": "pot-poison-bloom-giant-s-toe",
-    "nome": "Elixir de Flor Venenosa da Garganta e Dedo de Gigante",
+    "nome": "Elixir de Flor Venenosa e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9195,7 +9375,7 @@
   },
   {
     "id": "pot-poison-bloom-creep-cluster",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cachos Rastejantes",
+    "nome": "Elixir de Flor Venenosa e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9212,7 +9392,7 @@
   },
   {
     "id": "pot-poison-bloom-large-antlers",
-    "nome": "Elixir de Flor Venenosa da Garganta e Chifres Grandes",
+    "nome": "Elixir de Flor Venenosa e Chifres Grandes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9229,7 +9409,7 @@
   },
   {
     "id": "pot-poison-bloom-blue-dartwing",
-    "nome": "Elixir de Flor Venenosa da Garganta e Libélula Azul",
+    "nome": "Elixir de Flor Venenosa e Libélula Azul",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9246,7 +9426,7 @@
   },
   {
     "id": "pot-poison-bloom-gleamblossom",
-    "nome": "Elixir de Flor Venenosa da Garganta e Flor de Brilho",
+    "nome": "Elixir de Flor Venenosa e Flor de Brilho",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9263,7 +9443,7 @@
   },
   {
     "id": "pot-poison-bloom-netch-jelly",
-    "nome": "Elixir de Flor Venenosa da Garganta e Gelatina de Netch",
+    "nome": "Elixir de Flor Venenosa e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9281,7 +9461,7 @@
   },
   {
     "id": "pot-poison-bloom-powdered-mammoth-tusk",
-    "nome": "Elixir de Flor Venenosa da Garganta e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Venenosa e Presa de Mamute em Pó",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9298,7 +9478,7 @@
   },
   {
     "id": "pot-poison-bloom-hawk-beak",
-    "nome": "Elixir de Flor Venenosa da Garganta e Bico de Falcão",
+    "nome": "Elixir de Flor Venenosa e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9315,7 +9495,7 @@
   },
   {
     "id": "pot-poison-bloom-scaly-pholiota",
-    "nome": "Elixir de Flor Venenosa da Garganta e Cogumelo Escamoso",
+    "nome": "Elixir de Flor Venenosa e Cogumelo Escamoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9332,7 +9512,7 @@
   },
   {
     "id": "pot-poison-bloom-wisp-wrappings",
-    "nome": "Elixir de Flor Venenosa da Garganta e Faixas de Espírito",
+    "nome": "Elixir de Flor Venenosa e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9349,7 +9529,7 @@
   },
   {
     "id": "pot-poison-bloom-salt-pile",
-    "nome": "Elixir de Flor Venenosa da Garganta e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9366,7 +9546,7 @@
   },
   {
     "id": "pot-ectoplasm-falmer-ear",
-    "nome": "Elixir de Ectoplasma de Vandar e Orelha de Troglodita",
+    "nome": "Elixir de Ectoplasma e Orelha de Troglodita",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9383,7 +9563,7 @@
   },
   {
     "id": "pot-ectoplasm-human-flesh",
-    "nome": "Elixir de Ectoplasma de Vandar e Carne de Proscrito",
+    "nome": "Elixir de Ectoplasma e Carne de Proscrito",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9401,7 +9581,7 @@
   },
   {
     "id": "pot-ectoplasm-human-heart",
-    "nome": "Elixir de Ectoplasma de Vandar e Coração Proibido",
+    "nome": "Elixir de Ectoplasma e Coração Proibido",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9418,7 +9598,7 @@
   },
   {
     "id": "pot-ectoplasm-imp-stool",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo do Imp",
+    "nome": "Elixir de Ectoplasma e Cogumelo do Imp",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9435,7 +9615,7 @@
   },
   {
     "id": "pot-ectoplasm-nightshade",
-    "nome": "Elixir de Ectoplasma de Vandar e Beladona Negra",
+    "nome": "Elixir de Ectoplasma e Beladona Negra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9453,7 +9633,7 @@
   },
   {
     "id": "pot-ectoplasm-red-mountain-flower",
-    "nome": "Elixir de Ectoplasma de Vandar e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Ectoplasma e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9472,7 +9652,7 @@
   },
   {
     "id": "pot-ectoplasm-skeever-tail",
-    "nome": "Elixir de Ectoplasma de Vandar e Cauda de Rato das Docas",
+    "nome": "Elixir de Ectoplasma e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9489,7 +9669,7 @@
   },
   {
     "id": "pot-ectoplasm-small-antlers",
-    "nome": "Elixir de Ectoplasma de Vandar e Chifres Jovens",
+    "nome": "Elixir de Ectoplasma e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9506,7 +9686,7 @@
   },
   {
     "id": "pot-ectoplasm-troll-fat",
-    "nome": "Elixir de Ectoplasma de Vandar e Gordura de Troll",
+    "nome": "Elixir de Ectoplasma e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9523,7 +9703,7 @@
   },
   {
     "id": "pot-ectoplasm-void-salts",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais do Vazio",
+    "nome": "Elixir de Ectoplasma e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9541,7 +9721,7 @@
   },
   {
     "id": "pot-ectoplasm-glow-dust",
-    "nome": "Elixir de Ectoplasma de Vandar e Poeira Luminosa",
+    "nome": "Elixir de Ectoplasma e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9558,7 +9738,7 @@
   },
   {
     "id": "pot-ectoplasm-ash-creep-cluster",
-    "nome": "Elixir de Ectoplasma de Vandar e Cachos de Cinza",
+    "nome": "Elixir de Ectoplasma e Cachos de Cinza",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9575,7 +9755,7 @@
   },
   {
     "id": "pot-ectoplasm-creep-cluster",
-    "nome": "Elixir de Ectoplasma de Vandar e Cachos Rastejantes",
+    "nome": "Elixir de Ectoplasma e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9592,7 +9772,7 @@
   },
   {
     "id": "pot-ectoplasm-histcarp",
-    "nome": "Elixir de Ectoplasma de Vandar e Carpa de Pedra",
+    "nome": "Elixir de Ectoplasma e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9609,7 +9789,7 @@
   },
   {
     "id": "pot-ectoplasm-grass-pod",
-    "nome": "Elixir de Ectoplasma de Vandar e Vagem da Charneca",
+    "nome": "Elixir de Ectoplasma e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9626,7 +9806,7 @@
   },
   {
     "id": "pot-ectoplasm-tundra-cotton",
-    "nome": "Elixir de Ectoplasma de Vandar e Algodão da Tundra",
+    "nome": "Elixir de Ectoplasma e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9643,7 +9823,7 @@
   },
   {
     "id": "pot-ectoplasm-pearl",
-    "nome": "Elixir de Ectoplasma de Vandar e Pérola da Costa Sul",
+    "nome": "Elixir de Ectoplasma e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9660,7 +9840,7 @@
   },
   {
     "id": "pot-ectoplasm-briar-heart",
-    "nome": "Elixir de Ectoplasma de Vandar e Coração de Espinheiros",
+    "nome": "Elixir de Ectoplasma e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9678,7 +9858,7 @@
   },
   {
     "id": "pot-ectoplasm-wisp-wrappings",
-    "nome": "Elixir de Ectoplasma de Vandar e Faixas de Espírito",
+    "nome": "Elixir de Ectoplasma e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9695,7 +9875,7 @@
   },
   {
     "id": "pot-ectoplasm-frost-salts",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais da Geada",
+    "nome": "Elixir de Ectoplasma e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9712,7 +9892,7 @@
   },
   {
     "id": "pot-ectoplasm-beehive-husk",
-    "nome": "Elixir de Ectoplasma de Vandar e Casca de Colmeia",
+    "nome": "Elixir de Ectoplasma e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9729,7 +9909,7 @@
   },
   {
     "id": "pot-ectoplasm-glowing-mushroom",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo Luminescente",
+    "nome": "Elixir de Ectoplasma e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9746,7 +9926,7 @@
   },
   {
     "id": "pot-ectoplasm-white-cap",
-    "nome": "Elixir de Ectoplasma de Vandar e Chapéu Branco",
+    "nome": "Elixir de Ectoplasma e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9763,7 +9943,7 @@
   },
   {
     "id": "pot-ectoplasm-dwarven-oil",
-    "nome": "Elixir de Ectoplasma de Vandar e Óleo de Autômato Anão",
+    "nome": "Elixir de Ectoplasma e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9780,7 +9960,7 @@
   },
   {
     "id": "pot-ectoplasm-mora-tapinella",
-    "nome": "Elixir de Ectoplasma de Vandar e Cogumelo de Raiz",
+    "nome": "Elixir de Ectoplasma e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9797,7 +9977,7 @@
   },
   {
     "id": "pot-ectoplasm-taproot",
-    "nome": "Elixir de Ectoplasma de Vandar e Raiz Mestra",
+    "nome": "Elixir de Ectoplasma e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9814,7 +9994,7 @@
   },
   {
     "id": "pot-ectoplasm-jazbay-grapes",
-    "nome": "Elixir de Ectoplasma de Vandar e Uvas de Jasmim",
+    "nome": "Elixir de Ectoplasma e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9831,7 +10011,7 @@
   },
   {
     "id": "pot-ectoplasm-salmon-roe",
-    "nome": "Elixir de Ectoplasma de Vandar e Ovas de Salmão",
+    "nome": "Elixir de Ectoplasma e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9848,7 +10028,7 @@
   },
   {
     "id": "pot-ectoplasm-elves-ear",
-    "nome": "Elixir de Ectoplasma de Vandar e Orelha de Elfo",
+    "nome": "Elixir de Ectoplasma e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9865,7 +10045,7 @@
   },
   {
     "id": "pot-ectoplasm-giant-lichen",
-    "nome": "Elixir de Ectoplasma de Vandar e Líquen Gigante",
+    "nome": "Elixir de Ectoplasma e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9882,7 +10062,7 @@
   },
   {
     "id": "pot-ectoplasm-fire-salts",
-    "nome": "Elixir de Ectoplasma de Vandar e Sais Ígneos",
+    "nome": "Elixir de Ectoplasma e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9899,7 +10079,7 @@
   },
   {
     "id": "pot-ectoplasm-moon-sugar",
-    "nome": "Elixir de Ectoplasma de Vandar e Açúcar Lunar",
+    "nome": "Elixir de Ectoplasma e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
