@@ -1009,7 +1009,8 @@
     "efeitos": [
       "Fortify Dexterity",
       "Fortify Perception",
-      "Restore Health"
+      "Restore Health",
+      "Far Sight"
     ],
     "raridade": "incomum",
     "valor": 14,
@@ -1034,6 +1035,11 @@
         "id": "restaurar_saude",
         "nome": "Restaurar Saúde",
         "intensidade": 1
+      },
+      {
+        "id": "visao_a_distancia",
+        "nome": "Visão à Distância",
+        "intensidade": 2
       }
     ]
   },
