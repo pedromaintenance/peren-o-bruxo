@@ -211,3 +211,11 @@ const efeitosGerados = [...contagem]
 - O efeito `curar_doenca` passa de 1 a 2 ingredientes na curadoria: **Pena de Gaivota III + Alho II**. A dupla também compartilha `aumentar_constituicao`, portanto a futura mistura dinâmica ativará ambos.
 - **Não foi alterado** motor clássico, dados de itens/receitas, Phaser nem saves. As receitas antigas não passam a ser geradas automaticamente até integração futura.
 - **Próxima decisão:** Cauda de Rato (`ing-skeever-tail`) — proposta adicionar `infligir_doenca` II.
+
+## Ciclo 5 — decisão aprovada: Cauda de Rato (29/10/2026)
+
+- **Aprovado:** adicionar `infligir_doenca` (**Infligir Doença II**) a `ing-skeever-tail` (Cauda de Rato).
+- Mantidos todos os três atributos anteriores e o ID. Adicionado também o rótulo compatível `Inflict Disease` à lista legada `efeitos`, para consistência de metadados.
+- O efeito `infligir_doenca` passa a ter dois ingredientes: Couro de Rato I e Cauda de Rato II. Uma futura mistura entre os dois ativará Infligir Doença; efeitos restantes só ativam se houver duas fontes.
+- **Não alterados:** `data/itens.json`, `data/receitas.json`, runtime clássico, Phaser ou saves. Motor dinâmico ainda não integrado.
+- **Próxima ficha para decisão:** Olho de Felino (`ing-eye-of-sabre-cat`) — adicionar `visao_a_distancia` II.
