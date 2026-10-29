@@ -3991,7 +3991,8 @@
     "efeitos": [
       "Resist Fire",
       "Fortify Strength",
-      "Frenzy"
+      "Frenzy",
+      "Reduce Wisdom"
     ],
     "raridade": "incomum",
     "valor": 29,
@@ -4015,6 +4016,11 @@
       {
         "id": "frenesi",
         "nome": "Frenesi",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_sabedoria",
+        "nome": "Diminuir Sabedoria",
         "intensidade": 2
       }
     ]
