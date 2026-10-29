@@ -1666,6 +1666,296 @@
         "Fortify Constitution",
         "Reduce Dexterity"
       ]
+    },
+    "ing-silverside-perch": {
+      "nome": "Perca Prateada",
+      "descricao": "Peixe de escamas claras utilizado em tônicos de resistência ao frio.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Constitution",
+        "Resist Frost",
+        "Reduce Strength"
+      ]
+    },
+    "ing-wheat": {
+      "nome": "Trigo",
+      "descricao": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-yellow-mountain-flower": {
+      "nome": "Flor Amarela da Montanha",
+      "descricao": "Flor de altitude usada em remédios protetores e preparados de restauração.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Restoration",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-blue-dartwing": {
+      "nome": "Libélula Azul",
+      "descricao": "Inseto de águas rasas usado em preparados de agilidade e proteção elétrica.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Shock",
+        "Fear"
+      ]
+    },
+    "ing-gleamblossom": {
+      "nome": "Flor Luminescente",
+      "descricao": "Flor de brilho tênue cuja seiva reúne propriedades medicinais e entorpecentes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Resist Magic",
+        "Paralysis"
+      ]
+    },
+    "ing-netch-jelly": {
+      "nome": "Gelatina de Netch",
+      "descricao": "Gelatina translúcida de criatura flutuante, apreciada em fórmulas de imobilização.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Carry Weight",
+        "Fortify Constitution",
+        "Paralysis"
+      ]
+    },
+    "ing-powdered-mammoth-tusk": {
+      "nome": "Pó de Presa de Mamute",
+      "descricao": "Presa fossilizada reduzida a pó para unguentos de vigor e caçadas rituais.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Sneak",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-grass-pod": {
+      "nome": "Vagem da Charneca",
+      "descricao": "Vagem de solo úmido utilizada em remédios contra venenos e preparados arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Alteration",
+        "Restore Magicka"
+      ]
+    },
+    "ing-dragon-s-tongue": {
+      "nome": "Língua-de-Dragão",
+      "descricao": "Planta de flores vivas cujo nome popular evoca a língua de um dragão.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ilusao",
+          "nome": "Aumentar Ilusão",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carisma",
+          "nome": "Aumentar Carisma",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Illusion",
+        "Fortify Charisma"
+      ]
+    },
+    "ing-hagraven-claw": {
+      "nome": "Garra de Bruxa",
+      "descricao": "Garra de feiticeira monstruosa empregada em encantamentos e proteções arcanas.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Resist Magic",
+        "Lingering Damage Magicka"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -1700,7 +1990,11 @@
     "Cinzas de Escriba": "Cinzas Mortuárias",
     "Chifres Grandes": "Chifres de Cervo Adulto",
     "Cachos Rastejantes": "Tufo Rastejante",
-    "Chifres de Cervo Adulto": "Chifres de Alce"
+    "Chifres de Cervo Adulto": "Chifres de Alce",
+    "Trigo da Costa": "Trigo",
+    "Flor de Brilho": "Flor Luminescente",
+    "Presa de Mamute em Pó": "Pó de Presa de Mamute",
+    "Língua de Dragão": "Língua-de-Dragão"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -1758,7 +2052,17 @@
     "ing-frost-mirriam",
     "ing-histcarp",
     "ing-juniper-berries",
-    "ing-large-antlers"
+    "ing-large-antlers",
+    "ing-silverside-perch",
+    "ing-wheat",
+    "ing-yellow-mountain-flower",
+    "ing-blue-dartwing",
+    "ing-gleamblossom",
+    "ing-netch-jelly",
+    "ing-powdered-mammoth-tusk",
+    "ing-grass-pod",
+    "ing-dragon-s-tongue",
+    "ing-hagraven-claw"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
