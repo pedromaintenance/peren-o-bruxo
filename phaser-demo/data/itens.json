@@ -1036,172 +1036,315 @@
     "nome": "Poeira Luminosa",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Glow Dust",
     "efeitos": [
-      "Damage Magicka",
       "Fortify Destruction",
-      "Damage Magicka Regen",
-      "Resist Shock"
+      "Resist Shock",
+      "Damage Magicka"
     ],
     "raridade": "incomum",
     "valor": 19,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 3,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Pó cintilante empregado para canalizar descargas arcanas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destruicao",
+        "nome": "Aumentar Destruição",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-hagraven-feathers",
-    "nome": "Penas de Bruxa das Sombras",
+    "nome": "Penas de Bruxa",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Hagraven Feathers",
     "efeitos": [
-      "Damage Magicka",
+      "Fortify Conjuration",
       "Frenzy",
-      "Weakness to Shock",
-      "Fortify Conjuration"
+      "Weakness to Shock"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 4,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Penas carregadas de feitiçaria e agressividade ritual.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 3
+      },
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_eletricidade",
+        "nome": "Fraqueza à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-hanging-moss",
-    "nome": "Musgo Suspenso",
+    "nome": "Musgo Pendente",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Hanging Moss",
     "efeitos": [
+      "Fortify Health",
       "Damage Magicka",
-      "Fortify One-handed",
-      "Damage Magicka Regen",
-      "Fortify Health"
+      "Damage Magicka Regen"
     ],
-    "raridade": "epico",
+    "raridade": "comum",
     "valor": 29,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 5,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Musgo fibroso que cresce sob pedras e galhos úmidos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_saude",
+        "nome": "Aumentar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_regeneracao_magia",
+        "nome": "Diminuir Regeneração de Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-luna-moth-wing",
     "nome": "Asa de Mariposa Lunar",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Luna Moth Wing",
     "efeitos": [
-      "Damage Magicka",
       "Invisibility",
       "Regenerate Health",
-      "Fortify Light Armor"
+      "Damage Magicka"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 9,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 1,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Asas de inseto noturno usadas em preparados de ocultação.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "invisibilidade",
+        "nome": "Invisibilidade",
+        "intensidade": 2
+      },
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-namira-s-rot",
     "nome": "Fungo de Gualápoles",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Namira's Rot",
     "efeitos": [
-      "Damage Magicka",
-      "Fortify Lockpicking",
+      "Fear",
       "Regenerate Health",
-      "Fear"
+      "Damage Magicka"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 2,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Fungo de decomposição associado a rituais soturnos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "medo",
+        "nome": "Medo",
+        "intensidade": 2
+      },
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-nordic-barnacle",
-    "nome": "Craca do Rio Ancestral",
+    "nome": "Craca de Rio",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Nordic Barnacle",
     "efeitos": [
-      "Damage Magicka",
-      "Fortify Pickpocket",
+      "Waterbreathing",
       "Regenerate Health",
-      "Waterbreathing"
+      "Damage Magicka"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 3,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Craca de água doce coletada em rochas e embarcações.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "respirar_na_agua",
+        "nome": "Respirar na Água",
+        "intensidade": 2
+      },
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-trama-root",
     "nome": "Raiz de Trama",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Trama Root",
     "efeitos": [
-      "Damage Magicka",
       "Slow",
-      "Weakness to Shock",
-      "Fortify Carry Weight"
+      "Fortify Carry Weight",
+      "Weakness to Shock"
     ],
-    "raridade": "raro",
+    "raridade": "incomum",
     "valor": 24,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 4,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Raiz resistente de fibras entrelaçadas usada em compostos debilitantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "diminuir_velocidade",
+        "nome": "Diminuir Velocidade",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_carga",
+        "nome": "Aumentar Capacidade de Carga",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_eletricidade",
+        "nome": "Fraqueza à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-ancestor-moth-wing",
     "nome": "Asa de Mariposa Ancestral",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ancestor Moth Wing",
     "efeitos": [
       "Fortify Enchanting",
-      "Damage Stamina",
-      "Damage Magicka Regen",
-      "Fortify Conjuration"
+      "Fortify Conjuration",
+      "Damage Stamina"
     ],
-    "raridade": "epico",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 5,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Asa de mariposa associada à evocação e à inscrição de encantamentos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-bear-claws",
     "nome": "Garras de Urso",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Bear Claws",
     "efeitos": [
       "Restore Stamina",
-      "Fortify One-handed",
-      "Damage Magicka Regen",
+      "Fortify Strength",
       "Fortify Health"
     ],
     "raridade": "comum",
@@ -1209,27 +1352,64 @@
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 1,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Garras maceradas para extratos de vigor e combate.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_stamina",
+        "nome": "Restaurar Stamina",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_saude",
+        "nome": "Aumentar Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-blue-butterfly-wing",
     "nome": "Asa de Borboleta Azul",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Blue Butterfly Wing",
     "efeitos": [
       "Fortify Enchanting",
       "Damage Stamina",
-      "Damage Magicka Regen",
-      "Fortify Conjuration"
+      "Damage Magicka Regen"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 2,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Asa azul delicada utilizada na preparação de elixires arcanos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_regeneracao_magia",
+        "nome": "Diminuir Regeneração de Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-blue-mountain-flower",
@@ -4525,7 +4705,7 @@
   },
   {
     "id": "pot-vampire-dust-nordic-barnacle",
-    "nome": "Elixir de Pó de Vampiro e Craca do Rio Ancestral",
+    "nome": "Elixir de Pó de Vampiro e Craca de Rio",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5529,7 +5709,7 @@
   },
   {
     "id": "pot-hawk-feathers-hanging-moss",
-    "nome": "Elixir de Penas de Falcão e Musgo Suspenso",
+    "nome": "Elixir de Penas de Falcão e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6148,7 +6328,7 @@
   },
   {
     "id": "pot-jarrin-root-hagraven-feathers",
-    "nome": "Elixir de Raiz Botulínica e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Raiz Botulínica e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6165,7 +6345,7 @@
   },
   {
     "id": "pot-jarrin-root-hanging-moss",
-    "nome": "Elixir de Raiz Botulínica e Musgo Suspenso",
+    "nome": "Elixir de Raiz Botulínica e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6217,7 +6397,7 @@
   },
   {
     "id": "pot-jarrin-root-nordic-barnacle",
-    "nome": "Elixir de Raiz Botulínica e Craca do Rio Ancestral",
+    "nome": "Elixir de Raiz Botulínica e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7335,7 +7515,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-nordic-barnacle",
-    "nome": "Elixir de Musgo Parassol e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Parassol e Craca de Rio",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10432,7 +10612,7 @@
   },
   {
     "id": "pot-falmer-ear-hagraven-feathers",
-    "nome": "Elixir de Orelha de Troglodita e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Orelha de Troglodita e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11407,7 +11587,7 @@
   },
   {
     "id": "pot-human-heart-hagraven-feathers",
-    "nome": "Elixir de Coração Humano e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração Humano e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11425,7 +11605,7 @@
   },
   {
     "id": "pot-human-heart-hanging-moss",
-    "nome": "Elixir de Coração Humano e Musgo Suspenso",
+    "nome": "Elixir de Coração Humano e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11477,7 +11657,7 @@
   },
   {
     "id": "pot-human-heart-nordic-barnacle",
-    "nome": "Elixir de Coração Humano e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração Humano e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12279,7 +12459,7 @@
   },
   {
     "id": "pot-nightshade-hanging-moss",
-    "nome": "Elixir de Beladona e Musgo Suspenso",
+    "nome": "Elixir de Beladona e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13630,7 +13810,7 @@
   },
   {
     "id": "pot-troll-fat-hagraven-feathers",
-    "nome": "Elixir de Gordura de Troll e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Gordura de Troll e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13818,7 +13998,7 @@
   },
   {
     "id": "pot-void-salts-hagraven-feathers",
-    "nome": "Elixir de Sais do Vazio e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Sais do Vazio e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14178,7 +14358,7 @@
   },
   {
     "id": "pot-butterfly-wing-hagraven-feathers",
-    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14195,7 +14375,7 @@
   },
   {
     "id": "pot-butterfly-wing-hanging-moss",
-    "nome": "Elixir de Asa de Borboleta e Musgo Suspenso",
+    "nome": "Elixir de Asa de Borboleta e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14246,7 +14426,7 @@
   },
   {
     "id": "pot-butterfly-wing-nordic-barnacle",
-    "nome": "Elixir de Asa de Borboleta e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Borboleta e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14535,7 +14715,7 @@
   },
   {
     "id": "pot-chaurus-eggs-hagraven-feathers",
-    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14552,7 +14732,7 @@
   },
   {
     "id": "pot-chaurus-eggs-hanging-moss",
-    "nome": "Elixir de Ovo de Verme Gigante e Musgo Suspenso",
+    "nome": "Elixir de Ovo de Verme Gigante e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14604,7 +14784,7 @@
   },
   {
     "id": "pot-chaurus-eggs-nordic-barnacle",
-    "nome": "Elixir de Ovo de Verme Gigante e Craca do Rio Ancestral",
+    "nome": "Elixir de Ovo de Verme Gigante e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14894,7 +15074,7 @@
   },
   {
     "id": "pot-daedra-heart-hagraven-feathers",
-    "nome": "Elixir de Coração de Demônio e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração de Demônio e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14911,7 +15091,7 @@
   },
   {
     "id": "pot-daedra-heart-hanging-moss",
-    "nome": "Elixir de Coração de Demônio e Musgo Suspenso",
+    "nome": "Elixir de Coração de Demônio e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14963,7 +15143,7 @@
   },
   {
     "id": "pot-daedra-heart-nordic-barnacle",
-    "nome": "Elixir de Coração de Demônio e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração de Demônio e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15339,7 +15519,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-hagraven-feathers",
-    "nome": "Elixir de Olho de Felino e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Olho de Felino e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15356,7 +15536,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-hanging-moss",
-    "nome": "Elixir de Olho de Felino e Musgo Suspenso",
+    "nome": "Elixir de Olho de Felino e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15407,7 +15587,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-nordic-barnacle",
-    "nome": "Elixir de Olho de Felino e Craca do Rio Ancestral",
+    "nome": "Elixir de Olho de Felino e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15935,7 +16115,7 @@
   },
   {
     "id": "pot-glow-dust-hagraven-feathers",
-    "nome": "Elixir de Poeira Luminosa e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Poeira Luminosa e Penas de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15952,7 +16132,7 @@
   },
   {
     "id": "pot-glow-dust-hanging-moss",
-    "nome": "Elixir de Poeira Luminosa e Musgo Suspenso",
+    "nome": "Elixir de Poeira Luminosa e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16004,7 +16184,7 @@
   },
   {
     "id": "pot-glow-dust-nordic-barnacle",
-    "nome": "Elixir de Poeira Luminosa e Craca do Rio Ancestral",
+    "nome": "Elixir de Poeira Luminosa e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16396,7 +16576,7 @@
   },
   {
     "id": "pot-hagraven-feathers-hanging-moss",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Musgo Suspenso",
+    "nome": "Elixir de Penas de Bruxa e Musgo Pendente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16413,7 +16593,7 @@
   },
   {
     "id": "pot-hagraven-feathers-luna-moth-wing",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Mariposa Lunar",
+    "nome": "Elixir de Penas de Bruxa e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16430,7 +16610,7 @@
   },
   {
     "id": "pot-hagraven-feathers-namira-s-rot",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Fungo de Gualápoles",
+    "nome": "Elixir de Penas de Bruxa e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16447,7 +16627,7 @@
   },
   {
     "id": "pot-hagraven-feathers-nordic-barnacle",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Craca do Rio Ancestral",
+    "nome": "Elixir de Penas de Bruxa e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16464,7 +16644,7 @@
   },
   {
     "id": "pot-hagraven-feathers-trama-root",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Raiz de Trama",
+    "nome": "Elixir de Penas de Bruxa e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16482,7 +16662,7 @@
   },
   {
     "id": "pot-hagraven-feathers-ancestor-moth-wing",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Penas de Bruxa e Asa de Mariposa Ancestral",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16499,7 +16679,7 @@
   },
   {
     "id": "pot-hagraven-feathers-blue-butterfly-wing",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Borboleta Azul",
+    "nome": "Elixir de Penas de Bruxa e Asa de Borboleta Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16516,7 +16696,7 @@
   },
   {
     "id": "pot-hagraven-feathers-blue-mountain-flower",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Flor Azul da Montanha",
+    "nome": "Elixir de Penas de Bruxa e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16533,7 +16713,7 @@
   },
   {
     "id": "pot-hagraven-feathers-chaurus-hunter-antennae",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Penas de Bruxa e Antena do Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16550,7 +16730,7 @@
   },
   {
     "id": "pot-hagraven-feathers-berit-s-ashes",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Cinzas de Um Escriba",
+    "nome": "Elixir de Penas de Bruxa e Cinzas de Um Escriba",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16567,7 +16747,7 @@
   },
   {
     "id": "pot-hagraven-feathers-blisterwort",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Fungo de Bolha",
+    "nome": "Elixir de Penas de Bruxa e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16584,7 +16764,7 @@
   },
   {
     "id": "pot-hagraven-feathers-bone-meal",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Farinha de Ossos",
+    "nome": "Elixir de Penas de Bruxa e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16601,7 +16781,7 @@
   },
   {
     "id": "pot-hagraven-feathers-boar-tusk",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Presa de Javali",
+    "nome": "Elixir de Penas de Bruxa e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16618,7 +16798,7 @@
   },
   {
     "id": "pot-hagraven-feathers-frost-salts",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Sais da Geada",
+    "nome": "Elixir de Penas de Bruxa e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16635,7 +16815,7 @@
   },
   {
     "id": "pot-hagraven-feathers-lavender",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Lavanda Selvagem",
+    "nome": "Elixir de Penas de Bruxa e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16652,7 +16832,7 @@
   },
   {
     "id": "pot-hagraven-feathers-ashen-grass-pod",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Vagem Cinzenta",
+    "nome": "Elixir de Penas de Bruxa e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16669,7 +16849,7 @@
   },
   {
     "id": "pot-hagraven-feathers-fly-amanita",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Amanita Rubra",
+    "nome": "Elixir de Penas de Bruxa e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16686,7 +16866,7 @@
   },
   {
     "id": "pot-hagraven-feathers-giant-lichen",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Líquen Gigante",
+    "nome": "Elixir de Penas de Bruxa e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16703,7 +16883,7 @@
   },
   {
     "id": "pot-hagraven-feathers-bee",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Abelha",
+    "nome": "Elixir de Penas de Bruxa e Abelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16720,7 +16900,7 @@
   },
   {
     "id": "pot-hanging-moss-luna-moth-wing",
-    "nome": "Elixir de Musgo Suspenso e Asa de Mariposa Lunar",
+    "nome": "Elixir de Musgo Pendente e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16737,7 +16917,7 @@
   },
   {
     "id": "pot-hanging-moss-namira-s-rot",
-    "nome": "Elixir de Musgo Suspenso e Fungo de Gualápoles",
+    "nome": "Elixir de Musgo Pendente e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16754,7 +16934,7 @@
   },
   {
     "id": "pot-hanging-moss-nordic-barnacle",
-    "nome": "Elixir de Musgo Suspenso e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Pendente e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16771,7 +16951,7 @@
   },
   {
     "id": "pot-hanging-moss-trama-root",
-    "nome": "Elixir de Musgo Suspenso e Raiz de Trama",
+    "nome": "Elixir de Musgo Pendente e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16788,7 +16968,7 @@
   },
   {
     "id": "pot-hanging-moss-ancestor-moth-wing",
-    "nome": "Elixir de Musgo Suspenso e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Musgo Pendente e Asa de Mariposa Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16805,7 +16985,7 @@
   },
   {
     "id": "pot-hanging-moss-bear-claws",
-    "nome": "Elixir de Musgo Suspenso e Garras de Urso",
+    "nome": "Elixir de Musgo Pendente e Garras de Urso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16824,7 +17004,7 @@
   },
   {
     "id": "pot-hanging-moss-blue-butterfly-wing",
-    "nome": "Elixir de Musgo Suspenso e Asa de Borboleta Azul",
+    "nome": "Elixir de Musgo Pendente e Asa de Borboleta Azul",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16841,7 +17021,7 @@
   },
   {
     "id": "pot-hanging-moss-blue-mountain-flower",
-    "nome": "Elixir de Musgo Suspenso e Flor Azul da Montanha",
+    "nome": "Elixir de Musgo Pendente e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16859,7 +17039,7 @@
   },
   {
     "id": "pot-hanging-moss-burnt-spriggan-wood",
-    "nome": "Elixir de Musgo Suspenso e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Musgo Pendente e Madeira de Ent Carbonizado",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16876,7 +17056,7 @@
   },
   {
     "id": "pot-hanging-moss-chaurus-hunter-antennae",
-    "nome": "Elixir de Musgo Suspenso e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Musgo Pendente e Antena do Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16893,7 +17073,7 @@
   },
   {
     "id": "pot-hanging-moss-chicken-s-egg",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Galinha",
+    "nome": "Elixir de Musgo Pendente e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16910,7 +17090,7 @@
   },
   {
     "id": "pot-hanging-moss-hawk-s-egg",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Falcão",
+    "nome": "Elixir de Musgo Pendente e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16927,7 +17107,7 @@
   },
   {
     "id": "pot-hanging-moss-spider-egg",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Aranha",
+    "nome": "Elixir de Musgo Pendente e Ovo de Aranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16944,7 +17124,7 @@
   },
   {
     "id": "pot-hanging-moss-spriggan-sap",
-    "nome": "Elixir de Musgo Suspenso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Musgo Pendente e Seiva de Guardião Arbóreo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16961,7 +17141,7 @@
   },
   {
     "id": "pot-hanging-moss-canis-root",
-    "nome": "Elixir de Musgo Suspenso e Raiz Canina",
+    "nome": "Elixir de Musgo Pendente e Raiz Canina",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16978,7 +17158,7 @@
   },
   {
     "id": "pot-hanging-moss-giant-s-toe",
-    "nome": "Elixir de Musgo Suspenso e Dedo de Gigante",
+    "nome": "Elixir de Musgo Pendente e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16995,7 +17175,7 @@
   },
   {
     "id": "pot-hanging-moss-rock-warbler-egg",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Tordo",
+    "nome": "Elixir de Musgo Pendente e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17012,7 +17192,7 @@
   },
   {
     "id": "pot-hanging-moss-wheat",
-    "nome": "Elixir de Musgo Suspenso e Trigo da Costa",
+    "nome": "Elixir de Musgo Pendente e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17029,7 +17209,7 @@
   },
   {
     "id": "pot-hanging-moss-yellow-mountain-flower",
-    "nome": "Elixir de Musgo Suspenso e Flor Amarela da Montanha",
+    "nome": "Elixir de Musgo Pendente e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17046,7 +17226,7 @@
   },
   {
     "id": "pot-hanging-moss-boar-tusk",
-    "nome": "Elixir de Musgo Suspenso e Presa de Javali",
+    "nome": "Elixir de Musgo Pendente e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17063,7 +17243,7 @@
   },
   {
     "id": "pot-hanging-moss-glowing-mushroom",
-    "nome": "Elixir de Musgo Suspenso e Cogumelo Luminescente",
+    "nome": "Elixir de Musgo Pendente e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17080,7 +17260,7 @@
   },
   {
     "id": "pot-hanging-moss-small-pearl",
-    "nome": "Elixir de Musgo Suspenso e Pérola Pequena",
+    "nome": "Elixir de Musgo Pendente e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17115,7 +17295,7 @@
   },
   {
     "id": "pot-luna-moth-wing-nordic-barnacle",
-    "nome": "Elixir de Asa de Mariposa Lunar e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Mariposa Lunar e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17286,7 +17466,7 @@
   },
   {
     "id": "pot-namira-s-rot-nordic-barnacle",
-    "nome": "Elixir de Fungo de Gualápoles e Craca do Rio Ancestral",
+    "nome": "Elixir de Fungo de Gualápoles e Craca de Rio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17492,7 +17672,7 @@
   },
   {
     "id": "pot-nordic-barnacle-trama-root",
-    "nome": "Elixir de Craca do Rio Ancestral e Raiz de Trama",
+    "nome": "Elixir de Craca de Rio e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17509,7 +17689,7 @@
   },
   {
     "id": "pot-nordic-barnacle-chicken-s-egg",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovo de Galinha",
+    "nome": "Elixir de Craca de Rio e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17526,7 +17706,7 @@
   },
   {
     "id": "pot-nordic-barnacle-hawk-s-egg",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovo de Falcão",
+    "nome": "Elixir de Craca de Rio e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17543,7 +17723,7 @@
   },
   {
     "id": "pot-nordic-barnacle-histcarp",
-    "nome": "Elixir de Craca do Rio Ancestral e Carpa de Pedra",
+    "nome": "Elixir de Craca de Rio e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17560,7 +17740,7 @@
   },
   {
     "id": "pot-nordic-barnacle-juniper-berries",
-    "nome": "Elixir de Craca do Rio Ancestral e Bagas de Zimbro",
+    "nome": "Elixir de Craca de Rio e Bagas de Zimbro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17577,7 +17757,7 @@
   },
   {
     "id": "pot-nordic-barnacle-blue-dartwing",
-    "nome": "Elixir de Craca do Rio Ancestral e Libélula Azul",
+    "nome": "Elixir de Craca de Rio e Libélula Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17594,7 +17774,7 @@
   },
   {
     "id": "pot-nordic-barnacle-gleamblossom",
-    "nome": "Elixir de Craca do Rio Ancestral e Flor de Brilho",
+    "nome": "Elixir de Craca de Rio e Flor de Brilho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17611,7 +17791,7 @@
   },
   {
     "id": "pot-nordic-barnacle-salmon-roe",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovas de Salmão",
+    "nome": "Elixir de Craca de Rio e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17628,7 +17808,7 @@
   },
   {
     "id": "pot-nordic-barnacle-orange-dartwing",
-    "nome": "Elixir de Craca do Rio Ancestral e Libélula Alaranjada",
+    "nome": "Elixir de Craca de Rio e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17645,7 +17825,7 @@
   },
   {
     "id": "pot-nordic-barnacle-slaughterfish-egg",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Craca de Rio e Ovas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17662,7 +17842,7 @@
   },
   {
     "id": "pot-nordic-barnacle-garlic",
-    "nome": "Elixir de Craca do Rio Ancestral e Alho das Hortas",
+    "nome": "Elixir de Craca de Rio e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [

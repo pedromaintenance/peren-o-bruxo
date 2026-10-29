@@ -1621,7 +1621,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Pó de Vampiro e Craca do Rio Ancestral",
+    "nome": "Elixir de Pó de Vampiro e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -2801,7 +2801,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-musgo-suspenso",
-    "nome": "Elixir de Penas de Falcão e Musgo Suspenso",
+    "nome": "Elixir de Penas de Falcão e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3521,7 +3521,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Raiz Botulínica e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Raiz Botulínica e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3541,7 +3541,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-musgo-suspenso",
-    "nome": "Elixir de Raiz Botulínica e Musgo Suspenso",
+    "nome": "Elixir de Raiz Botulínica e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3601,7 +3601,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Raiz Botulínica e Craca do Rio Ancestral",
+    "nome": "Elixir de Raiz Botulínica e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4901,7 +4901,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Musgo Parassol e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Parassol e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8521,7 +8521,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Orelha de Troglodita e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Orelha de Troglodita e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9661,7 +9661,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Coração Humano e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração Humano e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9681,7 +9681,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-musgo-suspenso",
-    "nome": "Elixir de Coração Humano e Musgo Suspenso",
+    "nome": "Elixir de Coração Humano e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9741,7 +9741,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Coração Humano e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração Humano e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10681,7 +10681,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-musgo-suspenso",
-    "nome": "Elixir de Beladona e Musgo Suspenso",
+    "nome": "Elixir de Beladona e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12261,7 +12261,7 @@
   },
   {
     "id": "rec-elixir-de-gordura-de-troll-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Gordura de Troll e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Gordura de Troll e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12481,7 +12481,7 @@
   },
   {
     "id": "rec-elixir-de-sais-do-vazio-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Sais do Vazio e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Sais do Vazio e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12901,7 +12901,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12921,7 +12921,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-musgo-suspenso",
-    "nome": "Elixir de Asa de Borboleta e Musgo Suspenso",
+    "nome": "Elixir de Asa de Borboleta e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12981,7 +12981,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Asa de Borboleta e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Borboleta e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13321,7 +13321,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13341,7 +13341,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-musgo-suspenso",
-    "nome": "Elixir de Ovo de Verme Gigante e Musgo Suspenso",
+    "nome": "Elixir de Ovo de Verme Gigante e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13401,7 +13401,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Ovo de Verme Gigante e Craca do Rio Ancestral",
+    "nome": "Elixir de Ovo de Verme Gigante e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13741,7 +13741,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Coração de Demônio e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração de Demônio e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13761,7 +13761,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-musgo-suspenso",
-    "nome": "Elixir de Coração de Demônio e Musgo Suspenso",
+    "nome": "Elixir de Coração de Demônio e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13821,7 +13821,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Coração de Demônio e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração de Demônio e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14261,7 +14261,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Olho de Felino e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Olho de Felino e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14281,7 +14281,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-musgo-suspenso",
-    "nome": "Elixir de Olho de Felino e Musgo Suspenso",
+    "nome": "Elixir de Olho de Felino e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14341,7 +14341,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Olho de Felino e Craca do Rio Ancestral",
+    "nome": "Elixir de Olho de Felino e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14961,7 +14961,7 @@
   },
   {
     "id": "rec-elixir-de-poeira-luminosa-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Poeira Luminosa e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Poeira Luminosa e Penas de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14981,7 +14981,7 @@
   },
   {
     "id": "rec-elixir-de-poeira-luminosa-e-musgo-suspenso",
-    "nome": "Elixir de Poeira Luminosa e Musgo Suspenso",
+    "nome": "Elixir de Poeira Luminosa e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15041,7 +15041,7 @@
   },
   {
     "id": "rec-elixir-de-poeira-luminosa-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Poeira Luminosa e Craca do Rio Ancestral",
+    "nome": "Elixir de Poeira Luminosa e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -15501,7 +15501,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-musgo-suspenso",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Musgo Suspenso",
+    "nome": "Elixir de Penas de Bruxa e Musgo Pendente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15521,7 +15521,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Mariposa Lunar",
+    "nome": "Elixir de Penas de Bruxa e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15541,7 +15541,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-fungo-de-gualapoles",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Fungo de Gualápoles",
+    "nome": "Elixir de Penas de Bruxa e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15561,7 +15561,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Craca do Rio Ancestral",
+    "nome": "Elixir de Penas de Bruxa e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15581,7 +15581,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-raiz-de-trama",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Raiz de Trama",
+    "nome": "Elixir de Penas de Bruxa e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15601,7 +15601,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-asa-de-mariposa-ancestral",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Penas de Bruxa e Asa de Mariposa Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15621,7 +15621,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-asa-de-borboleta-azul",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Asa de Borboleta Azul",
+    "nome": "Elixir de Penas de Bruxa e Asa de Borboleta Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15641,7 +15641,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-flor-azul-da-montanha",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Flor Azul da Montanha",
+    "nome": "Elixir de Penas de Bruxa e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15661,7 +15661,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Penas de Bruxa e Antena do Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15681,7 +15681,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Cinzas de Um Escriba",
+    "nome": "Elixir de Penas de Bruxa e Cinzas de Um Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15701,7 +15701,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-fungo-de-bolha",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Fungo de Bolha",
+    "nome": "Elixir de Penas de Bruxa e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15721,7 +15721,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-farinha-de-ossos",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Farinha de Ossos",
+    "nome": "Elixir de Penas de Bruxa e Farinha de Ossos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15741,7 +15741,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-presa-de-javali",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Presa de Javali",
+    "nome": "Elixir de Penas de Bruxa e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15761,7 +15761,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-sais-da-geada",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Sais da Geada",
+    "nome": "Elixir de Penas de Bruxa e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15781,7 +15781,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-lavanda-selvagem",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Lavanda Selvagem",
+    "nome": "Elixir de Penas de Bruxa e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15801,7 +15801,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-vagem-cinzenta",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Vagem Cinzenta",
+    "nome": "Elixir de Penas de Bruxa e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15821,7 +15821,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-amanita-rubra",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Amanita Rubra",
+    "nome": "Elixir de Penas de Bruxa e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15841,7 +15841,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-liquen-gigante",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Líquen Gigante",
+    "nome": "Elixir de Penas de Bruxa e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15861,7 +15861,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-abelha",
-    "nome": "Elixir de Penas de Bruxa das Sombras e Abelha",
+    "nome": "Elixir de Penas de Bruxa e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -15881,7 +15881,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Musgo Suspenso e Asa de Mariposa Lunar",
+    "nome": "Elixir de Musgo Pendente e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15901,7 +15901,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-fungo-de-gualapoles",
-    "nome": "Elixir de Musgo Suspenso e Fungo de Gualápoles",
+    "nome": "Elixir de Musgo Pendente e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15921,7 +15921,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Musgo Suspenso e Craca do Rio Ancestral",
+    "nome": "Elixir de Musgo Pendente e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15941,7 +15941,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-raiz-de-trama",
-    "nome": "Elixir de Musgo Suspenso e Raiz de Trama",
+    "nome": "Elixir de Musgo Pendente e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15961,7 +15961,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-asa-de-mariposa-ancestral",
-    "nome": "Elixir de Musgo Suspenso e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Musgo Pendente e Asa de Mariposa Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15981,7 +15981,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-garras-de-urso",
-    "nome": "Elixir de Musgo Suspenso e Garras de Urso",
+    "nome": "Elixir de Musgo Pendente e Garras de Urso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16001,7 +16001,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-asa-de-borboleta-azul",
-    "nome": "Elixir de Musgo Suspenso e Asa de Borboleta Azul",
+    "nome": "Elixir de Musgo Pendente e Asa de Borboleta Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16021,7 +16021,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-flor-azul-da-montanha",
-    "nome": "Elixir de Musgo Suspenso e Flor Azul da Montanha",
+    "nome": "Elixir de Musgo Pendente e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16041,7 +16041,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-madeira-de-ent-carbonizado",
-    "nome": "Elixir de Musgo Suspenso e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Musgo Pendente e Madeira de Ent Carbonizado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16061,7 +16061,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Musgo Suspenso e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Musgo Pendente e Antena do Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16081,7 +16081,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-ovo-de-galinha",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Galinha",
+    "nome": "Elixir de Musgo Pendente e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16101,7 +16101,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-ovo-de-falcao",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Falcão",
+    "nome": "Elixir de Musgo Pendente e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16121,7 +16121,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-ovo-de-aranha",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Aranha",
+    "nome": "Elixir de Musgo Pendente e Ovo de Aranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16141,7 +16141,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-seiva-de-guardiao-arboreo",
-    "nome": "Elixir de Musgo Suspenso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Musgo Pendente e Seiva de Guardião Arbóreo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16161,7 +16161,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-raiz-canina",
-    "nome": "Elixir de Musgo Suspenso e Raiz Canina",
+    "nome": "Elixir de Musgo Pendente e Raiz Canina",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16181,7 +16181,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-dedo-de-gigante",
-    "nome": "Elixir de Musgo Suspenso e Dedo de Gigante",
+    "nome": "Elixir de Musgo Pendente e Dedo de Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16201,7 +16201,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-ovo-de-tordo",
-    "nome": "Elixir de Musgo Suspenso e Ovo de Tordo",
+    "nome": "Elixir de Musgo Pendente e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16221,7 +16221,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-trigo-da-costa",
-    "nome": "Elixir de Musgo Suspenso e Trigo da Costa",
+    "nome": "Elixir de Musgo Pendente e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16241,7 +16241,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Musgo Suspenso e Flor Amarela da Montanha",
+    "nome": "Elixir de Musgo Pendente e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16261,7 +16261,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-presa-de-javali",
-    "nome": "Elixir de Musgo Suspenso e Presa de Javali",
+    "nome": "Elixir de Musgo Pendente e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16281,7 +16281,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-cogumelo-luminescente",
-    "nome": "Elixir de Musgo Suspenso e Cogumelo Luminescente",
+    "nome": "Elixir de Musgo Pendente e Cogumelo Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16301,7 +16301,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-perola-pequena",
-    "nome": "Elixir de Musgo Suspenso e Pérola Pequena",
+    "nome": "Elixir de Musgo Pendente e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16341,7 +16341,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-lunar-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Asa de Mariposa Lunar e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Mariposa Lunar e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16541,7 +16541,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-gualapoles-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Fungo de Gualápoles e Craca do Rio Ancestral",
+    "nome": "Elixir de Fungo de Gualápoles e Craca de Rio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16781,7 +16781,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-raiz-de-trama",
-    "nome": "Elixir de Craca do Rio Ancestral e Raiz de Trama",
+    "nome": "Elixir de Craca de Rio e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -16801,7 +16801,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-ovo-de-galinha",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovo de Galinha",
+    "nome": "Elixir de Craca de Rio e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16821,7 +16821,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-ovo-de-falcao",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovo de Falcão",
+    "nome": "Elixir de Craca de Rio e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16841,7 +16841,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-carpa-de-pedra",
-    "nome": "Elixir de Craca do Rio Ancestral e Carpa de Pedra",
+    "nome": "Elixir de Craca de Rio e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16861,7 +16861,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-bagas-de-zimbro",
-    "nome": "Elixir de Craca do Rio Ancestral e Bagas de Zimbro",
+    "nome": "Elixir de Craca de Rio e Bagas de Zimbro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16881,7 +16881,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-libelula-azul",
-    "nome": "Elixir de Craca do Rio Ancestral e Libélula Azul",
+    "nome": "Elixir de Craca de Rio e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16901,7 +16901,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-flor-de-brilho",
-    "nome": "Elixir de Craca do Rio Ancestral e Flor de Brilho",
+    "nome": "Elixir de Craca de Rio e Flor de Brilho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16921,7 +16921,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-ovas-de-salmao",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovas de Salmão",
+    "nome": "Elixir de Craca de Rio e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16941,7 +16941,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-libelula-alaranjada",
-    "nome": "Elixir de Craca do Rio Ancestral e Libélula Alaranjada",
+    "nome": "Elixir de Craca de Rio e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16961,7 +16961,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Craca do Rio Ancestral e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Craca de Rio e Ovas de Peixe Carniceiro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -16981,7 +16981,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-alho-das-hortas",
-    "nome": "Elixir de Craca do Rio Ancestral e Alho das Hortas",
+    "nome": "Elixir de Craca de Rio e Alho das Hortas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
