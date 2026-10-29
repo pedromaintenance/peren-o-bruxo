@@ -1376,6 +1376,296 @@
         "Frenzy",
         "Reduce Strength"
       ]
+    },
+    "ing-bone-meal": {
+      "nome": "Farinha de Ossos",
+      "descricao": "Ossos moídos empregados em preparados de resistência e conjuração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Conjuration",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-canis-root": {
+      "nome": "Raiz Canina",
+      "descricao": "Raiz dura usada em venenos imobilizantes e preparados de precisão.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Fortify Dexterity",
+        "Reduce Strength"
+      ]
+    },
+    "ing-cyrodilic-spadetail": {
+      "nome": "Peixe de Escamas Finas",
+      "descricao": "Peixe de água doce cuja carne pode ser usada em tônicos ou preparados que debilitam.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Restoration",
+        "Fear",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-giant-s-toe": {
+      "nome": "Dedo de Gigante",
+      "descricao": "Parte corpórea de gigante empregada em tônicos de robustez.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-rock-warbler-egg": {
+      "nome": "Ovo de Tordo",
+      "descricao": "Ovo de pequena ave usado como base de preparados curativos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Dexterity",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-creep-cluster": {
+      "nome": "Cachos Rastejantes",
+      "descricao": "Cachos de trepadeira rasteira usados em extratos para carga e recuperação arcana.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Carry Weight",
+        "Restore Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-frost-mirriam": {
+      "nome": "Mirra da Geada",
+      "descricao": "Erva aromática de áreas frias utilizada em poções de ocultação e proteção contra geada.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Resist Frost",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-histcarp": {
+      "nome": "Carpa de Pedra",
+      "descricao": "Carpa resistente empregada em preparados aquáticos e arcanos.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Fortify Magicka",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-juniper-berries": {
+      "nome": "Bagas de Zimbro",
+      "descricao": "Bagas aromáticas para unguentos de recuperação e precisão.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Fortify Dexterity",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-large-antlers": {
+      "nome": "Chifres de Cervo Adulto",
+      "descricao": "Chifres maduros moídos para preparados de força e firmeza corporal.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -1407,7 +1697,8 @@
     "Antena de Caçador Quitinoso": "Antena de Verme Gigante",
     "Seiva de Guardião Arbóreo": "Seiva de Ent",
     "Cachos de Cinza": "Tufo Cinzento",
-    "Cinzas de Escriba": "Cinzas Mortuárias"
+    "Cinzas de Escriba": "Cinzas Mortuárias",
+    "Chifres Grandes": "Chifres de Cervo Adulto"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -1455,7 +1746,17 @@
     "ing-spriggan-sap",
     "ing-ash-creep-cluster",
     "ing-berit-s-ashes",
-    "ing-blisterwort"
+    "ing-blisterwort",
+    "ing-bone-meal",
+    "ing-canis-root",
+    "ing-cyrodilic-spadetail",
+    "ing-giant-s-toe",
+    "ing-rock-warbler-egg",
+    "ing-creep-cluster",
+    "ing-frost-mirriam",
+    "ing-histcarp",
+    "ing-juniper-berries",
+    "ing-large-antlers"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
