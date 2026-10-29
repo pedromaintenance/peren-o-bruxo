@@ -1205,7 +1205,8 @@
     "efeitos": [
       "Fear",
       "Regenerate Health",
-      "Damage Magicka"
+      "Damage Magicka",
+      "Reduce Charisma"
     ],
     "raridade": "comum",
     "valor": 14,
@@ -1213,7 +1214,7 @@
     "zona": "thargrid",
     "nivel": 2,
     "icone": "🍄",
-    "descricao": "Fungo de decomposição associado a rituais soturnos.",
+    "descricao": "Fungo de decomposição associado a rituais soturnos, cuja influência sobrenatural torna a presença de quem o utiliza perturbadora e socialmente repulsiva, enfraquecendo seu Carisma sem necessariamente alterar sua aparência.",
     "atributos_revisados": true,
     "atributos": [
       {
@@ -1230,6 +1231,11 @@
         "id": "dano_magia",
         "nome": "Dano à Magia",
         "intensidade": 1
+      },
+      {
+        "id": "diminuir_carisma",
+        "nome": "Diminuir Carisma",
+        "intensidade": 2
       }
     ]
   },
