@@ -2993,12 +2993,18 @@
           "id": "aumentar_constituicao",
           "nome": "Aumentar Constituição",
           "intensidade": 1
+        },
+        {
+          "id": "curar_doenca",
+          "nome": "Curar Doença",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Regenerate Health",
         "Resist Poison",
-        "Fortify Constitution"
+        "Fortify Constitution",
+        "Cure Disease"
       ]
     },
     "ing-torchbug-thorax": {

@@ -203,3 +203,11 @@ const efeitosGerados = [...contagem]
 3. Inspecionar as implementações exatas de Phaser e o armazenamento de saves (não apenas a existência de diretórios).
 4. Produzir **teste de compatibilidade** antes de mexer em `receitas.json` e `itens.json`.
 5. Consultar a divergência Pena de Gaivota (README ≠ curadoria) antes de alterar definições.
+
+## Ciclo 4 — decisão aprovada: Alho (29/10/2026)
+
+- **Aprovado pelo criador:** adicionar `curar_doenca` / **Curar Doença II** ao ingrediente `ing-garlic` (Alho), preservando seus três atributos anteriores e ID.
+- Curadoria ativa atualizada em `data/curadoria_ingredientes.json` com o quarto atributo e equivalente legado `Cure Disease` para consistência interna de metadados.
+- O efeito `curar_doenca` passa de 1 a 2 ingredientes na curadoria: **Pena de Gaivota III + Alho II**. A dupla também compartilha `aumentar_constituicao`, portanto a futura mistura dinâmica ativará ambos.
+- **Não foi alterado** motor clássico, dados de itens/receitas, Phaser nem saves. As receitas antigas não passam a ser geradas automaticamente até integração futura.
+- **Próxima decisão:** Cauda de Rato (`ing-skeever-tail`) — proposta adicionar `infligir_doenca` II.
