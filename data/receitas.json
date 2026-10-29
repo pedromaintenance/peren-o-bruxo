@@ -1333,7 +1333,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-frutas-da-neve",
-    "nome": "Elixir de Carapaça de Caranguejo e Frutas da Neve",
+    "nome": "Elixir de Carapaça de Caranguejo e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -1383,7 +1383,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-dente-de-felino",
-    "nome": "Elixir de Carapaça de Caranguejo e Dente de Felino",
+    "nome": "Elixir de Carapaça de Caranguejo e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3136,7 +3136,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-dente-de-felino",
-    "nome": "Elixir de Couro de Rato e Dente de Felino",
+    "nome": "Elixir de Couro de Rato e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7781,7 +7781,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-dente-de-felino",
-    "nome": "Elixir de Sino da Morte e Dente de Felino",
+    "nome": "Elixir de Sino da Morte e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12901,7 +12901,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-dente-de-felino",
-    "nome": "Elixir de Chifres de Cervo e Dente de Felino",
+    "nome": "Elixir de Chifres de Cervo e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14341,7 +14341,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-dente-de-felino",
-    "nome": "Elixir de Ovo de Verme Gigante e Dente de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15481,7 +15481,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-dente-de-felino",
-    "nome": "Elixir de Olho de Felino e Dente de Felino",
+    "nome": "Elixir de Olho de Felino e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16201,7 +16201,7 @@
   },
   {
     "id": "rec-elixir-de-poeira-luminosa-e-frutas-da-neve",
-    "nome": "Elixir de Poeira Luminosa e Frutas da Neve",
+    "nome": "Elixir de Poeira Luminosa e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -18421,7 +18421,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-ancestral-e-frutas-da-neve",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Frutas da Neve",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -18941,7 +18941,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-dente-de-felino",
-    "nome": "Elixir de Garras de Urso e Dente de Felino",
+    "nome": "Elixir de Garras de Urso e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19461,7 +19461,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-azul-e-frutas-da-neve",
-    "nome": "Elixir de Asa de Borboleta Azul e Frutas da Neve",
+    "nome": "Elixir de Asa de Borboleta Azul e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -20481,7 +20481,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-frutas-da-neve",
-    "nome": "Elixir de Antena de Verme Gigante e Frutas da Neve",
+    "nome": "Elixir de Antena de Verme Gigante e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21281,7 +21281,7 @@
   },
   {
     "id": "rec-elixir-de-seiva-de-guardiao-arboreo-e-frutas-da-neve",
-    "nome": "Elixir de Seiva de Ent e Frutas da Neve",
+    "nome": "Elixir de Seiva de Ent e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21321,7 +21321,7 @@
   },
   {
     "id": "rec-elixir-de-seiva-de-guardiao-arboreo-e-dente-de-felino",
-    "nome": "Elixir de Seiva de Ent e Dente de Felino",
+    "nome": "Elixir de Seiva de Ent e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21561,7 +21561,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-de-cinza-e-frutas-da-neve",
-    "nome": "Elixir de Tufo Cinzento e Frutas da Neve",
+    "nome": "Elixir de Tufo Cinzento e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21901,7 +21901,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-frutas-da-neve",
-    "nome": "Elixir de Cinzas Mortuárias e Frutas da Neve",
+    "nome": "Elixir de Cinzas Mortuárias e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -22261,7 +22261,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-bolha-e-dente-de-felino",
-    "nome": "Elixir de Fungo de Bolha e Dente de Felino",
+    "nome": "Elixir de Fungo de Bolha e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -22501,7 +22501,7 @@
   },
   {
     "id": "rec-elixir-de-farinha-de-ossos-e-frutas-da-neve",
-    "nome": "Elixir de Farinha de Ossos e Frutas da Neve",
+    "nome": "Elixir de Farinha de Ossos e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24481,7 +24481,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-frutas-da-neve",
-    "nome": "Elixir de Mirra da Geada e Frutas da Neve",
+    "nome": "Elixir de Mirra da Geada e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24961,7 +24961,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-dente-de-felino",
-    "nome": "Elixir de Carpa de Pedra e Dente de Felino",
+    "nome": "Elixir de Carpa de Pedra e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25601,7 +25601,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-dente-de-felino",
-    "nome": "Elixir de Chifres de Alce e Dente de Felino",
+    "nome": "Elixir de Chifres de Alce e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26021,7 +26021,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-frutas-da-neve",
-    "nome": "Elixir de Perca Prateada e Frutas da Neve",
+    "nome": "Elixir de Perca Prateada e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26041,7 +26041,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-dente-de-felino",
-    "nome": "Elixir de Perca Prateada e Dente de Felino",
+    "nome": "Elixir de Perca Prateada e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26801,7 +26801,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-frutas-da-neve",
-    "nome": "Elixir de Libélula Azul e Frutas da Neve",
+    "nome": "Elixir de Libélula Azul e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -27261,7 +27261,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-dente-de-felino",
-    "nome": "Elixir de Gelatina de Medusa e Dente de Felino",
+    "nome": "Elixir de Gelatina de Medusa e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -27601,7 +27601,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-dente-de-felino",
-    "nome": "Elixir de Pó de Presa de Mamute e Dente de Felino",
+    "nome": "Elixir de Pó de Presa de Mamute e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -28261,7 +28261,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-frutas-da-neve",
-    "nome": "Elixir de Língua-de-Dragão e Frutas da Neve",
+    "nome": "Elixir de Língua-de-Dragão e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -28521,7 +28521,7 @@
   },
   {
     "id": "rec-elixir-de-garra-de-bruxa-e-frutas-da-neve",
-    "nome": "Elixir de Garra de Bruxa e Frutas da Neve",
+    "nome": "Elixir de Garra de Bruxa e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -29001,7 +29001,7 @@
   },
   {
     "id": "rec-elixir-de-coroa-sangrenta-e-dente-de-felino",
-    "nome": "Elixir de Coroa Sangrenta e Dente de Felino",
+    "nome": "Elixir de Coroa Sangrenta e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29441,7 +29441,7 @@
   },
   {
     "id": "rec-elixir-de-perola-da-costa-sul-e-frutas-da-neve",
-    "nome": "Elixir de Pérola e Frutas da Neve",
+    "nome": "Elixir de Pérola e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -29461,7 +29461,7 @@
   },
   {
     "id": "rec-elixir-de-perola-da-costa-sul-e-dente-de-felino",
-    "nome": "Elixir de Pérola e Dente de Felino",
+    "nome": "Elixir de Pérola e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29901,7 +29901,7 @@
   },
   {
     "id": "rec-elixir-de-escamas-de-peixe-carniceiro-e-frutas-da-neve",
-    "nome": "Elixir de Escamas de Piranha e Frutas da Neve",
+    "nome": "Elixir de Escamas de Piranha e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -29941,7 +29941,7 @@
   },
   {
     "id": "rec-elixir-de-escamas-de-peixe-carniceiro-e-dente-de-felino",
-    "nome": "Elixir de Escamas de Piranha e Dente de Felino",
+    "nome": "Elixir de Escamas de Piranha e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -30481,7 +30481,7 @@
   },
   {
     "id": "rec-elixir-de-favo-de-mel-e-dente-de-felino",
-    "nome": "Elixir de Favo de Mel e Dente de Felino",
+    "nome": "Elixir de Favo de Mel e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -30781,7 +30781,7 @@
   },
   {
     "id": "rec-elixir-de-bico-de-falcao-e-frutas-da-neve",
-    "nome": "Elixir de Bico de Falcão e Frutas da Neve",
+    "nome": "Elixir de Bico de Falcão e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -30801,7 +30801,7 @@
   },
   {
     "id": "rec-elixir-de-bico-de-falcao-e-dente-de-felino",
-    "nome": "Elixir de Bico de Falcão e Dente de Felino",
+    "nome": "Elixir de Bico de Falcão e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -31281,7 +31281,7 @@
   },
   {
     "id": "rec-elixir-de-faixas-de-espirito-e-dente-de-felino",
-    "nome": "Elixir de Faixas de Espírito e Dente de Felino",
+    "nome": "Elixir de Faixas de Espírito e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -31461,7 +31461,7 @@
   },
   {
     "id": "rec-elixir-de-sais-da-geada-e-frutas-da-neve",
-    "nome": "Elixir de Sais da Geada e Frutas da Neve",
+    "nome": "Elixir de Sais da Geada e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32021,7 +32021,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-luminescente-e-frutas-da-neve",
-    "nome": "Elixir de Cogumelo Luminescente e Frutas da Neve",
+    "nome": "Elixir de Cogumelo Luminescente e Bagas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32041,7 +32041,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-luminescente-e-dente-de-felino",
-    "nome": "Elixir de Cogumelo Luminescente e Dente de Felino",
+    "nome": "Elixir de Cogumelo Luminescente e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32121,7 +32121,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-cinzas-de-criatura",
-    "nome": "Elixir de Frutas da Neve e Cinzas de Criatura",
+    "nome": "Elixir de Bagas da Neve e Cinzas de Criatura",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32141,7 +32141,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-ramo-de-cardo",
-    "nome": "Elixir de Frutas da Neve e Ramo de Cardo",
+    "nome": "Elixir de Bagas da Neve e Ramo de Cardo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32161,7 +32161,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Frutas da Neve e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Bagas da Neve e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32181,7 +32181,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-vagem-cinzenta",
-    "nome": "Elixir de Frutas da Neve e Vagem Cinzenta",
+    "nome": "Elixir de Bagas da Neve e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32201,7 +32201,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Frutas da Neve e Ovo de Tordo da Costa",
+    "nome": "Elixir de Bagas da Neve e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32221,7 +32221,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-orelha-de-elfo",
-    "nome": "Elixir de Frutas da Neve e Orelha de Elfo",
+    "nome": "Elixir de Bagas da Neve e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32241,7 +32241,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-perola-pequena",
-    "nome": "Elixir de Frutas da Neve e Pérola Pequena",
+    "nome": "Elixir de Bagas da Neve e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32261,7 +32261,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-flor-violeta",
-    "nome": "Elixir de Frutas da Neve e Flor Violeta",
+    "nome": "Elixir de Bagas da Neve e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32281,7 +32281,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-amanita-rubra",
-    "nome": "Elixir de Frutas da Neve e Amanita Rubra",
+    "nome": "Elixir de Bagas da Neve e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32301,7 +32301,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-fungo-do-pantano",
-    "nome": "Elixir de Frutas da Neve e Fungo do Pântano",
+    "nome": "Elixir de Bagas da Neve e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32321,7 +32321,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-sais-igneos",
-    "nome": "Elixir de Frutas da Neve e Sais Ígneos",
+    "nome": "Elixir de Bagas da Neve e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32341,7 +32341,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-acucar-lunar",
-    "nome": "Elixir de Frutas da Neve e Açúcar Lunar",
+    "nome": "Elixir de Bagas da Neve e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32541,7 +32541,7 @@
   },
   {
     "id": "rec-elixir-de-dentes-de-espectro-gelado-e-dente-de-felino",
-    "nome": "Elixir de Dentes de Espectro Gelado e Dente de Felino",
+    "nome": "Elixir de Dentes de Espectro Gelado e Dente de Grande Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32701,7 +32701,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-ramo-de-cardo",
-    "nome": "Elixir de Dente de Felino e Ramo de Cardo",
+    "nome": "Elixir de Dente de Grande Felino e Ramo de Cardo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32721,7 +32721,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-chapeu-branco",
-    "nome": "Elixir de Dente de Felino e Chapéu Branco",
+    "nome": "Elixir de Dente de Grande Felino e Chapéu Branco",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32741,7 +32741,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Dente de Felino e Ovo de Tordo da Costa",
+    "nome": "Elixir de Dente de Grande Felino e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32761,7 +32761,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-ovas-de-salmao",
-    "nome": "Elixir de Dente de Felino e Ovas de Salmão",
+    "nome": "Elixir de Dente de Grande Felino e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32781,7 +32781,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-perola-pequena",
-    "nome": "Elixir de Dente de Felino e Pérola Pequena",
+    "nome": "Elixir de Dente de Grande Felino e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32801,7 +32801,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-libelula-alaranjada",
-    "nome": "Elixir de Dente de Felino e Libélula Alaranjada",
+    "nome": "Elixir de Dente de Grande Felino e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32821,7 +32821,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Dente de Felino e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dente de Grande Felino e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32841,7 +32841,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-flor-violeta",
-    "nome": "Elixir de Dente de Felino e Flor Violeta",
+    "nome": "Elixir de Dente de Grande Felino e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32861,7 +32861,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Dente de Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Dente de Grande Felino e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32881,7 +32881,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-liquen-gigante",
-    "nome": "Elixir de Dente de Felino e Líquen Gigante",
+    "nome": "Elixir de Dente de Grande Felino e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32901,7 +32901,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-abelha",
-    "nome": "Elixir de Dente de Felino e Abelha",
+    "nome": "Elixir de Dente de Grande Felino e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,

@@ -2936,192 +2936,353 @@
     "nome": "Sais da Geada",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Frost Salts",
     "efeitos": [
       "Resist Frost",
-      "Weakness to Fire",
       "Restore Magicka",
-      "Fortify Conjuration"
+      "Weakness to Fire"
     ],
-    "raridade": "incomum",
+    "raridade": "raro",
     "valor": 19,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 3,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Cristais gélidos usados em resistência ao frio e conjuração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 3
+      },
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-lavender",
     "nome": "Lavanda Selvagem",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Lavender",
     "efeitos": [
       "Resist Magic",
-      "Fortify Stamina",
-      "Ravage Magicka",
+      "Fortify Constitution",
       "Fortify Conjuration"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 4,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Erva aromática que acalma e favorece a concentração em rituais.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-beehive-husk",
     "nome": "Casca de Colmeia",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Beehive Husk",
     "efeitos": [
       "Resist Poison",
-      "Fortify Destruction",
-      "Fortify Light Armor",
-      "Fortify Sneak"
+      "Fortify Sneak",
+      "Fortify Light Armor"
     ],
-    "raridade": "epico",
+    "raridade": "comum",
     "valor": 29,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 5,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Fragmentos de colmeia empregados em unguentos contra veneno e preparados de ocultação.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 1
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-glowing-mushroom",
     "nome": "Cogumelo Luminescente",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Glowing Mushroom",
     "efeitos": [
       "Fortify Destruction",
       "Fortify Smithing",
-      "Resist Shock",
-      "Fortify Health"
+      "Resist Shock"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 1,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Fungo brilhante empregado em elixires para artesãos e feiticeiros.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destruicao",
+        "nome": "Aumentar Destruição",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_ferraria",
+        "nome": "Aumentar Ferraria",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-snowberries",
-    "nome": "Frutas da Neve",
+    "nome": "Bagas da Neve",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Snowberries",
     "efeitos": [
+      "Resist Frost",
       "Resist Fire",
-      "Fortify Enchanting",
-      "Resist Shock",
-      "Resist Frost"
+      "Fortify Enchanting"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 2,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Pequenas bagas resistentes a extremos de temperatura.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 1
+      },
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-spawn-ash",
     "nome": "Cinzas de Criatura",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Spawn Ash",
     "efeitos": [
       "Resist Fire",
       "Fortify Enchanting",
-      "Ravage Stamina",
-      "Ravage Magicka"
+      "Reduce Constitution"
     ],
     "raridade": "incomum",
     "valor": 19,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 3,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Cinzas de criatura sobrenatural, úteis em encantamentos e fórmulas debilitantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-ice-wraith-teeth",
     "nome": "Dentes de Espectro Gelado",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ice Wraith Teeth",
     "efeitos": [
       "Invisibility",
       "Fortify Heavy Armor",
-      "Weakness to Fire",
-      "Weakness to Frost"
+      "Weakness to Fire"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 4,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Dentes espectrais gelados capazes de velar a presença do portador.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "invisibilidade",
+        "nome": "Invisibilidade",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-sabre-cat-tooth",
-    "nome": "Dente de Felino",
+    "nome": "Dente de Grande Felino",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Sabre Cat Tooth",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Strength",
       "Fortify Heavy Armor",
-      "Fortify Smithing",
       "Weakness to Poison"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 5,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Presa afiada de predador, empregada em tônicos de vigor e proteção.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-thistle-branch",
     "nome": "Ramo de Cardo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Thistle Branch",
     "efeitos": [
       "Resist Poison",
       "Fortify Heavy Armor",
-      "Ravage Stamina",
-      "Resist Frost"
+      "Reduce Dexterity"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 1,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Ramo espinhoso usado em antídotos e preparações de resistência.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-white-cap",
     "nome": "Chapéu Branco",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "White Cap",
     "efeitos": [
-      "Fortify Heavy Armor",
       "Restore Magicka",
-      "Ravage Magicka",
+      "Fortify Heavy Armor",
       "Weakness to Frost"
     ],
     "raridade": "comum",
@@ -3129,7 +3290,26 @@
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Cogumelo pálido usado em fórmulas para recuperar energia mágica.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_gelo",
+        "nome": "Fraqueza ao Gelo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-dwarven-oil",
@@ -4948,7 +5128,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-snowberries",
-    "nome": "Elixir de Carapaça de Caranguejo e Frutas da Neve",
+    "nome": "Elixir de Carapaça de Caranguejo e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4982,7 +5162,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-sabre-cat-tooth",
-    "nome": "Elixir de Carapaça de Caranguejo e Dente de Felino",
+    "nome": "Elixir de Carapaça de Caranguejo e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6174,7 +6354,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-sabre-cat-tooth",
-    "nome": "Elixir de Couro de Rato e Dente de Felino",
+    "nome": "Elixir de Couro de Rato e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10029,7 +10209,7 @@
   },
   {
     "id": "pot-deathbell-sabre-cat-tooth",
-    "nome": "Elixir de Sino da Morte e Dente de Felino",
+    "nome": "Elixir de Sino da Morte e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14410,7 +14590,7 @@
   },
   {
     "id": "pot-small-antlers-sabre-cat-tooth",
-    "nome": "Elixir de Chifres de Cervo e Dente de Felino",
+    "nome": "Elixir de Chifres de Cervo e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15640,7 +15820,7 @@
   },
   {
     "id": "pot-chaurus-eggs-sabre-cat-tooth",
-    "nome": "Elixir de Ovo de Verme Gigante e Dente de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16614,7 +16794,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-sabre-cat-tooth",
-    "nome": "Elixir de Olho de Felino e Dente de Felino",
+    "nome": "Elixir de Olho de Felino e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17228,7 +17408,7 @@
   },
   {
     "id": "pot-glow-dust-snowberries",
-    "nome": "Elixir de Poeira Luminosa e Frutas da Neve",
+    "nome": "Elixir de Poeira Luminosa e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19134,7 +19314,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-snowberries",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Frutas da Neve",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19577,7 +19757,7 @@
   },
   {
     "id": "pot-bear-claws-sabre-cat-tooth",
-    "nome": "Elixir de Garras de Urso e Dente de Felino",
+    "nome": "Elixir de Garras de Urso e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20028,7 +20208,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-snowberries",
-    "nome": "Elixir de Asa de Borboleta Azul e Frutas da Neve",
+    "nome": "Elixir de Asa de Borboleta Azul e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20902,7 +21082,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-snowberries",
-    "nome": "Elixir de Antena de Verme Gigante e Frutas da Neve",
+    "nome": "Elixir de Antena de Verme Gigante e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21586,7 +21766,7 @@
   },
   {
     "id": "pot-spriggan-sap-snowberries",
-    "nome": "Elixir de Seiva de Ent e Frutas da Neve",
+    "nome": "Elixir de Seiva de Ent e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21620,7 +21800,7 @@
   },
   {
     "id": "pot-spriggan-sap-sabre-cat-tooth",
-    "nome": "Elixir de Seiva de Ent e Dente de Felino",
+    "nome": "Elixir de Seiva de Ent e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21826,7 +22006,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-snowberries",
-    "nome": "Elixir de Tufo Cinzento e Frutas da Neve",
+    "nome": "Elixir de Tufo Cinzento e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22118,7 +22298,7 @@
   },
   {
     "id": "pot-berit-s-ashes-snowberries",
-    "nome": "Elixir de Cinzas Mortuárias e Frutas da Neve",
+    "nome": "Elixir de Cinzas Mortuárias e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22426,7 +22606,7 @@
   },
   {
     "id": "pot-blisterwort-sabre-cat-tooth",
-    "nome": "Elixir de Fungo de Bolha e Dente de Felino",
+    "nome": "Elixir de Fungo de Bolha e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22630,7 +22810,7 @@
   },
   {
     "id": "pot-bone-meal-snowberries",
-    "nome": "Elixir de Farinha de Ossos e Frutas da Neve",
+    "nome": "Elixir de Farinha de Ossos e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24322,7 +24502,7 @@
   },
   {
     "id": "pot-frost-mirriam-snowberries",
-    "nome": "Elixir de Mirra da Geada e Frutas da Neve",
+    "nome": "Elixir de Mirra da Geada e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24733,7 +24913,7 @@
   },
   {
     "id": "pot-histcarp-sabre-cat-tooth",
-    "nome": "Elixir de Carpa de Pedra e Dente de Felino",
+    "nome": "Elixir de Carpa de Pedra e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25280,7 +25460,7 @@
   },
   {
     "id": "pot-large-antlers-sabre-cat-tooth",
-    "nome": "Elixir de Chifres de Alce e Dente de Felino",
+    "nome": "Elixir de Chifres de Alce e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25639,7 +25819,7 @@
   },
   {
     "id": "pot-silverside-perch-snowberries",
-    "nome": "Elixir de Perca Prateada e Frutas da Neve",
+    "nome": "Elixir de Perca Prateada e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25656,7 +25836,7 @@
   },
   {
     "id": "pot-silverside-perch-sabre-cat-tooth",
-    "nome": "Elixir de Perca Prateada e Dente de Felino",
+    "nome": "Elixir de Perca Prateada e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26306,7 +26486,7 @@
   },
   {
     "id": "pot-blue-dartwing-snowberries",
-    "nome": "Elixir de Libélula Azul e Frutas da Neve",
+    "nome": "Elixir de Libélula Azul e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26703,7 +26883,7 @@
   },
   {
     "id": "pot-netch-jelly-sabre-cat-tooth",
-    "nome": "Elixir de Gelatina de Medusa e Dente de Felino",
+    "nome": "Elixir de Gelatina de Medusa e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26992,7 +27172,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-sabre-cat-tooth",
-    "nome": "Elixir de Pó de Presa de Mamute e Dente de Felino",
+    "nome": "Elixir de Pó de Presa de Mamute e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27555,7 +27735,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-snowberries",
-    "nome": "Elixir de Língua-de-Dragão e Frutas da Neve",
+    "nome": "Elixir de Língua-de-Dragão e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27778,7 +27958,7 @@
   },
   {
     "id": "pot-hagraven-claw-snowberries",
-    "nome": "Elixir de Garra de Bruxa e Frutas da Neve",
+    "nome": "Elixir de Garra de Bruxa e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28188,7 +28368,7 @@
   },
   {
     "id": "pot-bleeding-crown-sabre-cat-tooth",
-    "nome": "Elixir de Coroa Sangrenta e Dente de Felino",
+    "nome": "Elixir de Coroa Sangrenta e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -28565,7 +28745,7 @@
   },
   {
     "id": "pot-pearl-snowberries",
-    "nome": "Elixir de Pérola e Frutas da Neve",
+    "nome": "Elixir de Pérola e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28582,7 +28762,7 @@
   },
   {
     "id": "pot-pearl-sabre-cat-tooth",
-    "nome": "Elixir de Pérola e Dente de Felino",
+    "nome": "Elixir de Pérola e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28957,7 +29137,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-snowberries",
-    "nome": "Elixir de Escamas de Piranha e Frutas da Neve",
+    "nome": "Elixir de Escamas de Piranha e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28991,7 +29171,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-sabre-cat-tooth",
-    "nome": "Elixir de Escamas de Piranha e Dente de Felino",
+    "nome": "Elixir de Escamas de Piranha e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29451,7 +29631,7 @@
   },
   {
     "id": "pot-honeycomb-sabre-cat-tooth",
-    "nome": "Elixir de Favo de Mel e Dente de Felino",
+    "nome": "Elixir de Favo de Mel e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29708,7 +29888,7 @@
   },
   {
     "id": "pot-hawk-beak-snowberries",
-    "nome": "Elixir de Bico de Falcão e Frutas da Neve",
+    "nome": "Elixir de Bico de Falcão e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29726,7 +29906,7 @@
   },
   {
     "id": "pot-hawk-beak-sabre-cat-tooth",
-    "nome": "Elixir de Bico de Falcão e Dente de Felino",
+    "nome": "Elixir de Bico de Falcão e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30140,7 +30320,7 @@
   },
   {
     "id": "pot-wisp-wrappings-sabre-cat-tooth",
-    "nome": "Elixir de Faixas de Espírito e Dente de Felino",
+    "nome": "Elixir de Faixas de Espírito e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30293,7 +30473,7 @@
   },
   {
     "id": "pot-frost-salts-snowberries",
-    "nome": "Elixir de Sais da Geada e Frutas da Neve",
+    "nome": "Elixir de Sais da Geada e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30771,7 +30951,7 @@
   },
   {
     "id": "pot-glowing-mushroom-snowberries",
-    "nome": "Elixir de Cogumelo Luminescente e Frutas da Neve",
+    "nome": "Elixir de Cogumelo Luminescente e Bagas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30788,7 +30968,7 @@
   },
   {
     "id": "pot-glowing-mushroom-sabre-cat-tooth",
-    "nome": "Elixir de Cogumelo Luminescente e Dente de Felino",
+    "nome": "Elixir de Cogumelo Luminescente e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30856,7 +31036,7 @@
   },
   {
     "id": "pot-snowberries-spawn-ash",
-    "nome": "Elixir de Frutas da Neve e Cinzas de Criatura",
+    "nome": "Elixir de Bagas da Neve e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30874,7 +31054,7 @@
   },
   {
     "id": "pot-snowberries-thistle-branch",
-    "nome": "Elixir de Frutas da Neve e Ramo de Cardo",
+    "nome": "Elixir de Bagas da Neve e Ramo de Cardo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30891,7 +31071,7 @@
   },
   {
     "id": "pot-snowberries-ash-hopper-jelly",
-    "nome": "Elixir de Frutas da Neve e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Bagas da Neve e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30908,7 +31088,7 @@
   },
   {
     "id": "pot-snowberries-ashen-grass-pod",
-    "nome": "Elixir de Frutas da Neve e Vagem Cinzenta",
+    "nome": "Elixir de Bagas da Neve e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30925,7 +31105,7 @@
   },
   {
     "id": "pot-snowberries-pine-thrush-egg",
-    "nome": "Elixir de Frutas da Neve e Ovo de Tordo da Costa",
+    "nome": "Elixir de Bagas da Neve e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30942,7 +31122,7 @@
   },
   {
     "id": "pot-snowberries-elves-ear",
-    "nome": "Elixir de Frutas da Neve e Orelha de Elfo",
+    "nome": "Elixir de Bagas da Neve e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30959,7 +31139,7 @@
   },
   {
     "id": "pot-snowberries-small-pearl",
-    "nome": "Elixir de Frutas da Neve e Pérola Pequena",
+    "nome": "Elixir de Bagas da Neve e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30976,7 +31156,7 @@
   },
   {
     "id": "pot-snowberries-purple-mountain-flower",
-    "nome": "Elixir de Frutas da Neve e Flor Violeta",
+    "nome": "Elixir de Bagas da Neve e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30993,7 +31173,7 @@
   },
   {
     "id": "pot-snowberries-fly-amanita",
-    "nome": "Elixir de Frutas da Neve e Amanita Rubra",
+    "nome": "Elixir de Bagas da Neve e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31010,7 +31190,7 @@
   },
   {
     "id": "pot-snowberries-swamp-fungal-pod",
-    "nome": "Elixir de Frutas da Neve e Fungo do Pântano",
+    "nome": "Elixir de Bagas da Neve e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31027,7 +31207,7 @@
   },
   {
     "id": "pot-snowberries-fire-salts",
-    "nome": "Elixir de Frutas da Neve e Sais Ígneos",
+    "nome": "Elixir de Bagas da Neve e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31044,7 +31224,7 @@
   },
   {
     "id": "pot-snowberries-moon-sugar",
-    "nome": "Elixir de Frutas da Neve e Açúcar Lunar",
+    "nome": "Elixir de Bagas da Neve e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31215,7 +31395,7 @@
   },
   {
     "id": "pot-ice-wraith-teeth-sabre-cat-tooth",
-    "nome": "Elixir de Dentes de Espectro Gelado e Dente de Felino",
+    "nome": "Elixir de Dentes de Espectro Gelado e Dente de Grande Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31352,7 +31532,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-thistle-branch",
-    "nome": "Elixir de Dente de Felino e Ramo de Cardo",
+    "nome": "Elixir de Dente de Grande Felino e Ramo de Cardo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31369,7 +31549,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-white-cap",
-    "nome": "Elixir de Dente de Felino e Chapéu Branco",
+    "nome": "Elixir de Dente de Grande Felino e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31386,7 +31566,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-pine-thrush-egg",
-    "nome": "Elixir de Dente de Felino e Ovo de Tordo da Costa",
+    "nome": "Elixir de Dente de Grande Felino e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31404,7 +31584,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-salmon-roe",
-    "nome": "Elixir de Dente de Felino e Ovas de Salmão",
+    "nome": "Elixir de Dente de Grande Felino e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31421,7 +31601,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-small-pearl",
-    "nome": "Elixir de Dente de Felino e Pérola Pequena",
+    "nome": "Elixir de Dente de Grande Felino e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31438,7 +31618,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-orange-dartwing",
-    "nome": "Elixir de Dente de Felino e Libélula Alaranjada",
+    "nome": "Elixir de Dente de Grande Felino e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31455,7 +31635,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-abecean-longfin",
-    "nome": "Elixir de Dente de Felino e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dente de Grande Felino e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31472,7 +31652,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-purple-mountain-flower",
-    "nome": "Elixir de Dente de Felino e Flor Violeta",
+    "nome": "Elixir de Dente de Grande Felino e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31489,7 +31669,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-torchbug-thorax",
-    "nome": "Elixir de Dente de Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Dente de Grande Felino e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31506,7 +31686,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-giant-lichen",
-    "nome": "Elixir de Dente de Felino e Líquen Gigante",
+    "nome": "Elixir de Dente de Grande Felino e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31523,7 +31703,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-bee",
-    "nome": "Elixir de Dente de Felino e Abelha",
+    "nome": "Elixir de Dente de Grande Felino e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
