@@ -86,3 +86,41 @@ escolher sprite por família de recipiente/efeitos, não por receita única
 
 - **Ciclo 1 (29/10/2026):** 111 ingredientes, 53 IDs de efeitos, 9 isolados; 12 primeiras fichas enumeradas; regra de crafting emergente registrada; nenhuma mutação do gameplay.
 - **Para retomada do chat:** ler este arquivo **antes** de sugerir alterações. A meta é maximizar descoberta e conectividade, não equilibrar combate.
+
+
+## Ciclo 2 — propostas de conectividade dos 9 efeitos isolados (29/10/2026)
+
+**Status: propostas, NÃO aplicadas à curadoria.** Todos os ingredientes sugeridos já existem no catálogo; acrescentar um quarto atributo requer curadoria explícita. Intensidades abaixo são hipóteses de trabalho (1–3), não dados canônicos.
+
+| Efeito isolado | Novo ingrediente-par sugerido (ID) | Intensidade proposta | Razão ficcional | Risco a verificar |
+|---|---|---:|---|---|
+| `curar_doenca` | Alho (`ing-garlic`) | 2 | Planta associada a proteção contra enfermidades; já tem regeneração e resistência a veneno | Não confundir resistência a veneno com cura de doença |
+| `vampirismo` | Coração de Espinheiros (`ing-briar-heart`) | 2 | Coração ritualmente animado que pode absorver vida de outros seres | Precisar definir absorção de vida versus regeneração |
+| `diminuir_carisma` | Fungo de Gualápoles (`ing-namira-s-rot`) | 2 | Fungo corruptor, associado a medo e degradação social/sensorial | Carisma é atributo complexo: evitar confundir aparência com carisma |
+| `infligir_doenca` | Cauda de Rato (`ing-skeever-tail`) | 2 | Vetor de patógenos plausível na ficção alquímica | Diferenciar doença de dano à saúde |
+| `visao_a_distancia` | Olho de Felino (`ing-eye-of-sabre-cat`) | 2 | Órgão visual predatório já associado à percepção | Distinguir visão à distância de bônus genérico de percepção |
+| `velocidade` | Libélula Azul (`ing-blue-dartwing`) | 2 | Mobilidade veloz e ágil, já com aumento de Destreza | Diferenciar deslocamento de velocidade de reação/Destreza |
+| `diminuir_sabedoria` | Amanita Rubra (`ing-fly-amanita`) | 2 | Cogumelo fantástico relacionado a frenesi/desorientação | O efeito não deve implicar farmacologia real nem igualar frenesia a redução de sabedoria |
+| `aumentar_inteligencia` | Raiz Mestra (`ing-taproot`) | 2 | Raiz de tradição arcana que já manipula regeneração e restauração mágicas | Fundamentação fraca: exigir lore ou substituir candidato |
+| `diminuir_magia` | Garra de Bruxa (`ing-hagraven-claw`) | 2 | Garra ritual já associada a dano de magia, potencial para supressão | **Dano à Magia não é necessariamente Diminuir Magia:** definir semântica |
+
+### Verificação preliminar dos candidatos
+
+- Todos os nove IDs candidatos constam no catálogo atual e nenhum deles contém o respectivo efeito antes da proposta.
+- Cada adição criaria pelo menos um par válido para o efeito isolado, **se** o motor adotar a regra de interseção.
+- Não introduzimos ingredientes novos, não removemos atributos existentes e não reduzimos qualquer potência.
+- A proposta de `aumentar_inteligencia` é de confiança **baixa**; `diminuir_magia` é **média/baixa**, pois há possível sobreposição semântica com `dano_magia`.
+- As demais são hipóteses ficcionais coerentes, ainda sujeitas à análise de descrições, lore e consequências das combinações.
+
+### Questões identificadas para a próxima auditoria
+
+1. **Colisão de nomes:** o catálogo contém dois IDs diferentes chamados *Ovo de Tordo* (`ing-rock-warbler-egg`, `ing-pine-thrush-egg`), com propriedades distintas. Decidir nomes que permitam distingui-los sem alterar IDs.
+2. **Taxonomia de efeitos:** estabelecer distinções objetivas entre `dano_magia` / `diminuir_magia`, `aumentar_percepcao` / `visao_a_distancia`, `aumentar_destreza` / `velocidade` e `dano_saude` / `infligir_doenca`.
+3. **Misturas de múltiplos ingredientes:** a condição de ativação por duas fontes deve ser contada **por efeito**, não por quantidade total de ingredientes. Um efeito com uma única fonte em um frasco de três ingredientes não ativa.
+4. **Sprites:** escolha por família visual; evitar nomes de arquivos associados a cada receita específica.
+
+### Próxima etapa segura
+
+Auditar as descrições existentes dos nove candidatos e testar combinações novas **em simulação**, comparando com efeitos legados, antes de propor uma mudança de dados ativa. Depois, localizar pontos de consumo de receitas no clássico e no Phaser para planejar integração reversível.
+
+**Rastro:** segundo ciclo não modifica `data/curadoria_ingredientes.json`, `data/itens.json`, `data/receitas.json` nem runtime.
