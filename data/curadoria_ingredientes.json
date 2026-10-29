@@ -2828,7 +2828,7 @@
       ]
     },
     "ing-orange-dartwing": {
-      "nome": "Libélula Alaranjada",
+      "nome": "Libélula Laranja",
       "descricao": "Libélula de margens quentes, utilizada em preparados de agilidade e toxinas suaves.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -2886,7 +2886,7 @@
       ]
     },
     "ing-abecean-longfin": {
-      "nome": "Peixe da Costa Escarlate",
+      "nome": "Peixe-Espada do Sangue",
       "descricao": "Peixe costeiro de escamas avermelhadas usado em infusões discretas e curativas.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -2915,7 +2915,7 @@
       ]
     },
     "ing-salt-pile": {
-      "nome": "Sal do Mar de Sangue",
+      "nome": "Sal do Sangue",
       "descricao": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -3166,7 +3166,10 @@
     "Ovas de Peixe Carniceiro": "Ovas de Piranha",
     "Pilha de Sal do Mar de Sangue": "Sal do Mar de Sangue",
     "Alho das Hortas": "Alho",
-    "Tórax de Inseto-lanterna": "Tórax de Vaga-lume"
+    "Tórax de Inseto-lanterna": "Tórax de Vaga-lume",
+    "Libélula Alaranjada": "Libélula Laranja",
+    "Peixe da Costa Escarlate": "Peixe-Espada do Sangue",
+    "Sal do Mar de Sangue": "Sal do Sangue"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
