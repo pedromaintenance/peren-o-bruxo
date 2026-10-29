@@ -4076,80 +4076,152 @@
     "nome": "Líquen Gigante",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Giant Lichen",
     "efeitos": [
       "Restore Magicka",
       "Ravage Health",
-      "Weakness to Poison",
-      "Weakness to Shock"
+      "Weakness to Poison"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 3,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Líquen espesso de ambientes úmidos, usado em tônicos arcanos e venenos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-bee",
     "nome": "Abelha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Bee",
     "efeitos": [
-      "Restore Stamina",
-      "Ravage Stamina",
-      "Weakness to Shock",
-      "Regenerate Stamina"
+      "Fortify Dexterity",
+      "Reduce Constitution",
+      "Weakness to Shock"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 4,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Inseto polinizador usado em tônicos de disposição, com risco de reações adversas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_eletricidade",
+        "nome": "Fraqueza à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-fire-salts",
     "nome": "Sais Ígneos",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Fire Salts",
     "efeitos": [
+      "Resist Fire",
       "Regenerate Magicka",
-      "Weakness to Frost",
-      "Restore Magicka",
-      "Resist Fire"
+      "Weakness to Frost"
     ],
-    "raridade": "epico",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 5,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Cristais quentes de origem sobrenatural, valiosos em fórmulas de proteção contra fogo.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 3
+      },
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_gelo",
+        "nome": "Fraqueza ao Gelo",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-moon-sugar",
     "nome": "Açúcar Lunar",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Moon Sugar",
     "efeitos": [
+      "Restore Magicka",
       "Regenerate Magicka",
-      "Resist Frost",
-      "Weakness to Fire",
-      "Restore Magicka"
+      "Weakness to Fire"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 9,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 1,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Cristais adocicados de brilho pálido, usados em elixires de restauração arcana.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "mat-ferro-bruto",
