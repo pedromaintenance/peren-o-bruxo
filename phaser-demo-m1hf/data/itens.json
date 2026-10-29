@@ -3427,7 +3427,8 @@
     "efeitos": [
       "Regenerate Magicka",
       "Restore Magicka",
-      "Weakness to Magic"
+      "Weakness to Magic",
+      "Fortify Intelligence"
     ],
     "raridade": "raro",
     "valor": 29,
@@ -3435,7 +3436,7 @@
     "zona": "ironwood",
     "nivel": 5,
     "icone": "🦋",
-    "descricao": "Raiz profunda carregada de seiva encantada, valiosa para a recuperação de magia.",
+    "descricao": "Raiz profunda carregada de seiva encantada, cujas ramificações formam uma rede de memória vegetal que conserva impressões e conhecimentos absorvidos do ambiente; sua seiva favorece a recuperação de magia e pode ampliar a Inteligência.",
     "atributos_revisados": true,
     "atributos": [
       {
@@ -3452,6 +3453,11 @@
         "id": "fraqueza_magia",
         "nome": "Fraqueza à Magia",
         "intensidade": 1
+      },
+      {
+        "id": "aumentar_inteligencia",
+        "nome": "Aumentar Inteligência",
+        "intensidade": 2
       }
     ]
   },
