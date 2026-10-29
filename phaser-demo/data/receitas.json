@@ -361,7 +361,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-trigo-da-costa",
-    "nome": "Elixir de Pena de Gaivota e Trigo da Costa",
+    "nome": "Elixir de Pena de Gaivota e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -401,7 +401,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-flor-de-brilho",
-    "nome": "Elixir de Pena de Gaivota e Flor de Brilho",
+    "nome": "Elixir de Pena de Gaivota e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -901,7 +901,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Carapaça de Caranguejo e Presa de Mamute em Pó",
+    "nome": "Elixir de Carapaça de Caranguejo e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -941,7 +941,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-lingua-de-dragao",
-    "nome": "Elixir de Carapaça de Caranguejo e Língua de Dragão",
+    "nome": "Elixir de Carapaça de Caranguejo e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -1701,7 +1701,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-flor-de-brilho",
-    "nome": "Elixir de Pó de Vampiro e Flor de Brilho",
+    "nome": "Elixir de Pó de Vampiro e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -2281,7 +2281,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-trigo-da-costa",
-    "nome": "Elixir de Couro de Rato e Trigo da Costa",
+    "nome": "Elixir de Couro de Rato e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2361,7 +2361,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Couro de Rato e Presa de Mamute em Pó",
+    "nome": "Elixir de Couro de Rato e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2921,7 +2921,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Penas de Falcão e Presa de Mamute em Pó",
+    "nome": "Elixir de Penas de Falcão e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -4961,7 +4961,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-flor-de-brilho",
-    "nome": "Elixir de Musgo Parassol e Flor de Brilho",
+    "nome": "Elixir de Musgo Parassol e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4981,7 +4981,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-lingua-de-dragao",
-    "nome": "Elixir de Musgo Parassol e Língua de Dragão",
+    "nome": "Elixir de Musgo Parassol e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5721,7 +5721,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-flor-de-brilho",
-    "nome": "Elixir de Raiz Velada e Flor de Brilho",
+    "nome": "Elixir de Raiz Velada e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -6441,7 +6441,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-flor-de-brilho",
-    "nome": "Elixir de Raiz Velada Rubra e Flor de Brilho",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7561,7 +7561,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-flor-de-brilho",
-    "nome": "Elixir de Flor Venenosa e Flor de Brilho",
+    "nome": "Elixir de Flor Venenosa e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7601,7 +7601,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Flor Venenosa e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Venenosa e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9021,7 +9021,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-flor-de-brilho",
-    "nome": "Elixir de Carne Humana e Flor de Brilho",
+    "nome": "Elixir de Carne Humana e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9061,7 +9061,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Carne Humana e Presa de Mamute em Pó",
+    "nome": "Elixir de Carne Humana e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10301,7 +10301,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-trigo-da-costa",
-    "nome": "Elixir de Fungo de Diabrete e Trigo da Costa",
+    "nome": "Elixir de Fungo de Diabrete e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10341,7 +10341,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-flor-de-brilho",
-    "nome": "Elixir de Fungo de Diabrete e Flor de Brilho",
+    "nome": "Elixir de Fungo de Diabrete e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -11781,7 +11781,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-trigo-da-costa",
-    "nome": "Elixir de Cauda de Rato e Trigo da Costa",
+    "nome": "Elixir de Cauda de Rato e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12341,7 +12341,7 @@
   },
   {
     "id": "rec-elixir-de-gordura-de-troll-e-lingua-de-dragao",
-    "nome": "Elixir de Gordura de Troll e Língua de Dragão",
+    "nome": "Elixir de Gordura de Troll e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -12581,7 +12581,7 @@
   },
   {
     "id": "rec-elixir-de-sais-do-vazio-e-flor-de-brilho",
-    "nome": "Elixir de Sais do Vazio e Flor de Brilho",
+    "nome": "Elixir de Sais do Vazio e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -13121,7 +13121,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-trigo-da-costa",
-    "nome": "Elixir de Asa de Borboleta e Trigo da Costa",
+    "nome": "Elixir de Asa de Borboleta e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13161,7 +13161,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-lingua-de-dragao",
-    "nome": "Elixir de Asa de Borboleta e Língua de Dragão",
+    "nome": "Elixir de Asa de Borboleta e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14081,7 +14081,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-trigo-da-costa",
-    "nome": "Elixir de Coração de Demônio e Trigo da Costa",
+    "nome": "Elixir de Coração de Demônio e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14141,7 +14141,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-flor-de-brilho",
-    "nome": "Elixir de Coração de Demônio e Flor de Brilho",
+    "nome": "Elixir de Coração de Demônio e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14181,7 +14181,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Coração de Demônio e Presa de Mamute em Pó",
+    "nome": "Elixir de Coração de Demônio e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14541,7 +14541,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-trigo-da-costa",
-    "nome": "Elixir de Olho de Felino e Trigo da Costa",
+    "nome": "Elixir de Olho de Felino e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14601,7 +14601,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Olho de Felino e Presa de Mamute em Pó",
+    "nome": "Elixir de Olho de Felino e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -16221,7 +16221,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-trigo-da-costa",
-    "nome": "Elixir de Musgo Pendente e Trigo da Costa",
+    "nome": "Elixir de Musgo Pendente e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -16421,7 +16421,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-lunar-e-flor-de-brilho",
-    "nome": "Elixir de Asa de Mariposa Lunar e Flor de Brilho",
+    "nome": "Elixir de Asa de Mariposa Lunar e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -16661,7 +16661,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-gualapoles-e-flor-de-brilho",
-    "nome": "Elixir de Fungo de Gualápoles e Flor de Brilho",
+    "nome": "Elixir de Fungo de Gualápoles e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -16701,7 +16701,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-gualapoles-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Fungo de Gualápoles e Presa de Mamute em Pó",
+    "nome": "Elixir de Fungo de Gualápoles e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -16901,7 +16901,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-flor-de-brilho",
-    "nome": "Elixir de Craca de Rio e Flor de Brilho",
+    "nome": "Elixir de Craca de Rio e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17961,7 +17961,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-trigo-da-costa",
-    "nome": "Elixir de Garras de Urso e Trigo da Costa",
+    "nome": "Elixir de Garras de Urso e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -18021,7 +18021,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Garras de Urso e Presa de Mamute em Pó",
+    "nome": "Elixir de Garras de Urso e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -18941,7 +18941,7 @@
   },
   {
     "id": "rec-elixir-de-flor-azul-da-montanha-e-trigo-da-costa",
-    "nome": "Elixir de Flor Azul da Montanha e Trigo da Costa",
+    "nome": "Elixir de Flor Azul da Montanha e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -19261,7 +19261,7 @@
   },
   {
     "id": "rec-elixir-de-madeira-de-ent-carbonizado-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Presa de Mamute em Pó",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -19821,7 +19821,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-galinha-e-flor-de-brilho",
-    "nome": "Elixir de Ovo de Galinha e Flor de Brilho",
+    "nome": "Elixir de Ovo de Galinha e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -20021,7 +20021,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-falcao-e-flor-de-brilho",
-    "nome": "Elixir de Ovo de Falcão e Flor de Brilho",
+    "nome": "Elixir de Ovo de Falcão e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -20701,7 +20701,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-de-cinza-e-lingua-de-dragao",
-    "nome": "Elixir de Tufo Cinzento e Língua de Dragão",
+    "nome": "Elixir de Tufo Cinzento e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21041,7 +21041,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-lingua-de-dragao",
-    "nome": "Elixir de Cinzas Mortuárias e Língua de Dragão",
+    "nome": "Elixir de Cinzas Mortuárias e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21401,7 +21401,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-bolha-e-trigo-da-costa",
-    "nome": "Elixir de Fungo de Bolha e Trigo da Costa",
+    "nome": "Elixir de Fungo de Bolha e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21641,7 +21641,7 @@
   },
   {
     "id": "rec-elixir-de-farinha-de-ossos-e-lingua-de-dragao",
-    "nome": "Elixir de Farinha de Ossos e Língua de Dragão",
+    "nome": "Elixir de Farinha de Ossos e Língua-de-Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -21981,7 +21981,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-canina-e-flor-de-brilho",
-    "nome": "Elixir de Raiz Canina e Flor de Brilho",
+    "nome": "Elixir de Raiz Canina e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -22201,7 +22201,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-flor-de-brilho",
-    "nome": "Elixir de Peixe de Escamas Finas e Flor de Brilho",
+    "nome": "Elixir de Peixe de Escamas Finas e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -22241,7 +22241,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Peixe de Escamas Finas e Presa de Mamute em Pó",
+    "nome": "Elixir de Peixe de Escamas Finas e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -22521,7 +22521,7 @@
   },
   {
     "id": "rec-elixir-de-dedo-de-gigante-e-trigo-da-costa",
-    "nome": "Elixir de Dedo de Gigante e Trigo da Costa",
+    "nome": "Elixir de Dedo de Gigante e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -22701,7 +22701,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-e-trigo-da-costa",
-    "nome": "Elixir de Ovo de Tordo e Trigo da Costa",
+    "nome": "Elixir de Ovo de Tordo e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23021,7 +23021,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-trigo-da-costa",
-    "nome": "Elixir de Tufo Rastejante e Trigo da Costa",
+    "nome": "Elixir de Tufo Rastejante e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23521,7 +23521,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-trigo-da-costa",
-    "nome": "Elixir de Mirra da Geada e Trigo da Costa",
+    "nome": "Elixir de Mirra da Geada e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23561,7 +23561,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Mirra da Geada e Presa de Mamute em Pó",
+    "nome": "Elixir de Mirra da Geada e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23981,7 +23981,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-trigo-da-costa",
-    "nome": "Elixir de Carpa de Pedra e Trigo da Costa",
+    "nome": "Elixir de Carpa de Pedra e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -24041,7 +24041,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Carpa de Pedra e Presa de Mamute em Pó",
+    "nome": "Elixir de Carpa de Pedra e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -24401,7 +24401,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-trigo-da-costa",
-    "nome": "Elixir de Bagas de Zimbro e Trigo da Costa",
+    "nome": "Elixir de Bagas de Zimbro e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24441,7 +24441,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-flor-de-brilho",
-    "nome": "Elixir de Bagas de Zimbro e Flor de Brilho",
+    "nome": "Elixir de Bagas de Zimbro e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -24461,7 +24461,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Bagas de Zimbro e Presa de Mamute em Pó",
+    "nome": "Elixir de Bagas de Zimbro e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24621,7 +24621,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-trigo-da-costa",
-    "nome": "Elixir de Chifres de Alce e Trigo da Costa",
+    "nome": "Elixir de Chifres de Alce e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24681,7 +24681,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Chifres de Alce e Presa de Mamute em Pó",
+    "nome": "Elixir de Chifres de Alce e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25041,7 +25041,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-trigo-da-costa",
-    "nome": "Elixir de Perca Prateada e Trigo da Costa",
+    "nome": "Elixir de Perca Prateada e Trigo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25101,7 +25101,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Perca Prateada e Presa de Mamute em Pó",
+    "nome": "Elixir de Perca Prateada e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25521,7 +25521,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Trigo da Costa e Flor Amarela da Montanha",
+    "nome": "Elixir de Trigo e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25541,7 +25541,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-libelula-azul",
-    "nome": "Elixir de Trigo da Costa e Libélula Azul",
+    "nome": "Elixir de Trigo e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25561,7 +25561,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-garra-de-bruxa",
-    "nome": "Elixir de Trigo da Costa e Garra de Bruxa",
+    "nome": "Elixir de Trigo e Garra de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25581,7 +25581,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-presa-de-javali",
-    "nome": "Elixir de Trigo da Costa e Presa de Javali",
+    "nome": "Elixir de Trigo e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25601,7 +25601,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-cogumelo-luminescente",
-    "nome": "Elixir de Trigo da Costa e Cogumelo Luminescente",
+    "nome": "Elixir de Trigo e Cogumelo Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25621,7 +25621,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Trigo da Costa e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Trigo e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25641,7 +25641,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-flor-violeta",
-    "nome": "Elixir de Trigo da Costa e Flor Violeta",
+    "nome": "Elixir de Trigo e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25661,7 +25661,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Trigo da Costa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Trigo e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25681,7 +25681,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-fungo-do-pantano",
-    "nome": "Elixir de Trigo da Costa e Fungo do Pântano",
+    "nome": "Elixir de Trigo e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25901,7 +25901,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-flor-de-brilho",
-    "nome": "Elixir de Libélula Azul e Flor de Brilho",
+    "nome": "Elixir de Libélula Azul e Flor Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25941,7 +25941,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Libélula Azul e Presa de Mamute em Pó",
+    "nome": "Elixir de Libélula Azul e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26141,7 +26141,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-gelatina-de-netch",
-    "nome": "Elixir de Flor de Brilho e Gelatina de Netch",
+    "nome": "Elixir de Flor Luminescente e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26161,7 +26161,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Flor de Brilho e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Luminescente e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26181,7 +26181,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-garra-de-bruxa",
-    "nome": "Elixir de Flor de Brilho e Garra de Bruxa",
+    "nome": "Elixir de Flor Luminescente e Garra de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -26201,7 +26201,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-algodao-da-tundra",
-    "nome": "Elixir de Flor de Brilho e Algodão da Tundra",
+    "nome": "Elixir de Flor Luminescente e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26221,7 +26221,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-coroa-sangrenta",
-    "nome": "Elixir de Flor de Brilho e Coroa Sangrenta",
+    "nome": "Elixir de Flor Luminescente e Coroa Sangrenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26241,7 +26241,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-coracao-de-espinheiros",
-    "nome": "Elixir de Flor de Brilho e Coração de Espinheiros",
+    "nome": "Elixir de Flor Luminescente e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26261,7 +26261,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-faixas-de-espirito",
-    "nome": "Elixir de Flor de Brilho e Faixas de Espírito",
+    "nome": "Elixir de Flor Luminescente e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -26281,7 +26281,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-lavanda-selvagem",
-    "nome": "Elixir de Flor de Brilho e Lavanda Selvagem",
+    "nome": "Elixir de Flor Luminescente e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26301,7 +26301,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-alho-das-hortas",
-    "nome": "Elixir de Flor de Brilho e Alho das Hortas",
+    "nome": "Elixir de Flor Luminescente e Alho das Hortas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26321,7 +26321,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-fungo-do-pantano",
-    "nome": "Elixir de Flor de Brilho e Fungo do Pântano",
+    "nome": "Elixir de Flor Luminescente e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -26341,7 +26341,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Gelatina de Netch e Presa de Mamute em Pó",
+    "nome": "Elixir de Gelatina de Netch e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26661,7 +26661,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-coroa-sangrenta",
-    "nome": "Elixir de Presa de Mamute em Pó e Coroa Sangrenta",
+    "nome": "Elixir de Pó de Presa de Mamute e Coroa Sangrenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26681,7 +26681,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-perola-da-costa-sul",
-    "nome": "Elixir de Presa de Mamute em Pó e Pérola da Costa Sul",
+    "nome": "Elixir de Pó de Presa de Mamute e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26701,7 +26701,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-favo-de-mel",
-    "nome": "Elixir de Presa de Mamute em Pó e Favo de Mel",
+    "nome": "Elixir de Pó de Presa de Mamute e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26721,7 +26721,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-bico-de-falcao",
-    "nome": "Elixir de Presa de Mamute em Pó e Bico de Falcão",
+    "nome": "Elixir de Pó de Presa de Mamute e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26741,7 +26741,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-faixas-de-espirito",
-    "nome": "Elixir de Presa de Mamute em Pó e Faixas de Espírito",
+    "nome": "Elixir de Pó de Presa de Mamute e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26761,7 +26761,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-sais-da-geada",
-    "nome": "Elixir de Presa de Mamute em Pó e Sais da Geada",
+    "nome": "Elixir de Pó de Presa de Mamute e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26781,7 +26781,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-casca-de-colmeia",
-    "nome": "Elixir de Presa de Mamute em Pó e Casca de Colmeia",
+    "nome": "Elixir de Pó de Presa de Mamute e Casca de Colmeia",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26801,7 +26801,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-dentes-de-espectro-gelado",
-    "nome": "Elixir de Presa de Mamute em Pó e Dentes de Espectro Gelado",
+    "nome": "Elixir de Pó de Presa de Mamute e Dentes de Espectro Gelado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26821,7 +26821,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-dente-de-felino",
-    "nome": "Elixir de Presa de Mamute em Pó e Dente de Felino",
+    "nome": "Elixir de Pó de Presa de Mamute e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26841,7 +26841,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-vagem-cinzenta",
-    "nome": "Elixir de Presa de Mamute em Pó e Vagem Cinzenta",
+    "nome": "Elixir de Pó de Presa de Mamute e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26861,7 +26861,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Presa de Mamute em Pó e Ovo de Tordo da Costa",
+    "nome": "Elixir de Pó de Presa de Mamute e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26881,7 +26881,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-ovas-de-salmao",
-    "nome": "Elixir de Presa de Mamute em Pó e Ovas de Salmão",
+    "nome": "Elixir de Pó de Presa de Mamute e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26901,7 +26901,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-perola-pequena",
-    "nome": "Elixir de Presa de Mamute em Pó e Pérola Pequena",
+    "nome": "Elixir de Pó de Presa de Mamute e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26921,7 +26921,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-libelula-alaranjada",
-    "nome": "Elixir de Presa de Mamute em Pó e Libélula Alaranjada",
+    "nome": "Elixir de Pó de Presa de Mamute e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26941,7 +26941,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Presa de Mamute em Pó e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pó de Presa de Mamute e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26961,7 +26961,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-flor-violeta",
-    "nome": "Elixir de Presa de Mamute em Pó e Flor Violeta",
+    "nome": "Elixir de Pó de Presa de Mamute e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26981,7 +26981,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Presa de Mamute em Pó e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27001,7 +27001,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-abelha",
-    "nome": "Elixir de Presa de Mamute em Pó e Abelha",
+    "nome": "Elixir de Pó de Presa de Mamute e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27021,7 +27021,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-acucar-lunar",
-    "nome": "Elixir de Presa de Mamute em Pó e Açúcar Lunar",
+    "nome": "Elixir de Pó de Presa de Mamute e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27421,7 +27421,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-garra-de-bruxa",
-    "nome": "Elixir de Língua de Dragão e Garra de Bruxa",
+    "nome": "Elixir de Língua-de-Dragão e Garra de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -27441,7 +27441,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-algodao-da-tundra",
-    "nome": "Elixir de Língua de Dragão e Algodão da Tundra",
+    "nome": "Elixir de Língua-de-Dragão e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27461,7 +27461,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-cogumelo-escamoso",
-    "nome": "Elixir de Língua de Dragão e Cogumelo Escamoso",
+    "nome": "Elixir de Língua-de-Dragão e Cogumelo Escamoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -27481,7 +27481,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-frutas-da-neve",
-    "nome": "Elixir de Língua de Dragão e Frutas da Neve",
+    "nome": "Elixir de Língua-de-Dragão e Frutas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -27501,7 +27501,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-cinzas-de-criatura",
-    "nome": "Elixir de Língua de Dragão e Cinzas de Criatura",
+    "nome": "Elixir de Língua-de-Dragão e Cinzas de Criatura",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27521,7 +27521,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-oleo-de-automato-anao",
-    "nome": "Elixir de Língua de Dragão e Óleo de Autômato Anão",
+    "nome": "Elixir de Língua-de-Dragão e Óleo de Autômato Anão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27541,7 +27541,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-cogumelo-de-raiz",
-    "nome": "Elixir de Língua de Dragão e Cogumelo de Raiz",
+    "nome": "Elixir de Língua-de-Dragão e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27561,7 +27561,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-raiz-mestra",
-    "nome": "Elixir de Língua de Dragão e Raiz Mestra",
+    "nome": "Elixir de Língua-de-Dragão e Raiz Mestra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -27581,7 +27581,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-vagem-cinzenta",
-    "nome": "Elixir de Língua de Dragão e Vagem Cinzenta",
+    "nome": "Elixir de Língua-de-Dragão e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -27601,7 +27601,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-orelha-de-elfo",
-    "nome": "Elixir de Língua de Dragão e Orelha de Elfo",
+    "nome": "Elixir de Língua-de-Dragão e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -27621,7 +27621,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-amanita-rubra",
-    "nome": "Elixir de Língua de Dragão e Amanita Rubra",
+    "nome": "Elixir de Língua-de-Dragão e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -27641,7 +27641,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-sais-igneos",
-    "nome": "Elixir de Língua de Dragão e Sais Ígneos",
+    "nome": "Elixir de Língua-de-Dragão e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,

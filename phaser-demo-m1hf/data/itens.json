@@ -2176,72 +2176,125 @@
     "nome": "Perca Prateada",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Silverside Perch",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Constitution",
       "Resist Frost",
-      "Ravage Health",
-      "Damage Stamina Regen"
+      "Reduce Strength"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 3,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Peixe de escamas claras utilizado em tônicos de resistência ao frio.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_forca",
+        "nome": "Diminuir Força",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-wheat",
-    "nome": "Trigo da Costa",
+    "nome": "Trigo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Wheat",
     "efeitos": [
-      "Lingering Damage Magicka",
       "Restore Health",
-      "Fortify Health",
-      "Damage Stamina Regen"
+      "Fortify Constitution",
+      "Reduce Dexterity"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 4,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-yellow-mountain-flower",
     "nome": "Flor Amarela da Montanha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Yellow Mountain Flower",
     "efeitos": [
       "Resist Poison",
       "Fortify Restoration",
-      "Fortify Health",
-      "Damage Stamina Regen"
+      "Fortify Constitution"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 5,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Flor de altitude usada em remédios protetores e preparados de restauração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_restauracao",
+        "nome": "Aumentar Restauração",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-blue-dartwing",
     "nome": "Libélula Azul",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Blue Dartwing",
     "efeitos": [
+      "Fortify Dexterity",
       "Resist Shock",
-      "Fortify Pickpocket",
-      "Restore Health",
       "Fear"
     ],
     "raridade": "comum",
@@ -2249,127 +2302,254 @@
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 1,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Inseto de águas rasas usado em preparados de agilidade e proteção elétrica.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 2
+      },
+      {
+        "id": "medo",
+        "nome": "Medo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-gleamblossom",
-    "nome": "Flor de Brilho",
+    "nome": "Flor Luminescente",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Gleamblossom",
     "efeitos": [
       "Regenerate Health",
       "Resist Magic",
-      "Paralysis",
-      "Fear"
+      "Paralysis"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 2,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Flor de brilho tênue cuja seiva reúne propriedades medicinais e entorpecentes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-netch-jelly",
     "nome": "Gelatina de Netch",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Netch Jelly",
     "efeitos": [
       "Fortify Carry Weight",
-      "Restore Stamina",
-      "Paralysis",
-      "Fear"
+      "Fortify Constitution",
+      "Paralysis"
     ],
     "raridade": "incomum",
     "valor": 19,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 3,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Gelatina translúcida de criatura flutuante, apreciada em fórmulas de imobilização.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_carga",
+        "nome": "Aumentar Capacidade de Carga",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-powdered-mammoth-tusk",
-    "nome": "Presa de Mamute em Pó",
+    "nome": "Pó de Presa de Mamute",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Powdered Mammoth Tusk",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Strength",
       "Fortify Sneak",
-      "Weakness to Fire",
-      "Fear"
+      "Weakness to Fire"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 4,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Presa fossilizada reduzida a pó para unguentos de vigor e caçadas rituais.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-grass-pod",
     "nome": "Vagem da Charneca",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Grass Pod",
     "efeitos": [
       "Resist Poison",
       "Fortify Alteration",
-      "Restore Magicka",
-      "Ravage Magicka"
+      "Restore Magicka"
     ],
-    "raridade": "epico",
+    "raridade": "comum",
     "valor": 29,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 5,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Vagem de solo úmido utilizada em remédios contra venenos e preparados arcanos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_alteracao",
+        "nome": "Aumentar Alteração",
+        "intensidade": 2
+      },
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-dragon-s-tongue",
-    "nome": "Língua de Dragão",
+    "nome": "Língua-de-Dragão",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Dragon's Tongue",
     "efeitos": [
-      "Fortify Barter",
-      "Fortify Two-handed",
       "Resist Fire",
-      "Fortify Illusion"
+      "Fortify Illusion",
+      "Fortify Charisma"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 9,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 1,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Planta de flores vivas cujo nome popular evoca a língua de um dragão.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_ilusao",
+        "nome": "Aumentar Ilusão",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_carisma",
+        "nome": "Aumentar Carisma",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-hagraven-claw",
     "nome": "Garra de Bruxa",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Hagraven Claw",
     "efeitos": [
-      "Fortify Barter",
       "Fortify Enchanting",
-      "Lingering Damage Magicka",
-      "Resist Magic"
+      "Resist Magic",
+      "Lingering Damage Magicka"
     ],
-    "raridade": "comum",
+    "raridade": "raro",
     "valor": 14,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Garra de feiticeira monstruosa empregada em encantamentos e proteções arcanas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 3
+      },
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-tundra-cotton",
@@ -3990,7 +4170,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-wheat",
-    "nome": "Elixir de Pena de Gaivota e Trigo da Costa",
+    "nome": "Elixir de Pena de Gaivota e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4024,7 +4204,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-gleamblossom",
-    "nome": "Elixir de Pena de Gaivota e Flor de Brilho",
+    "nome": "Elixir de Pena de Gaivota e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4452,7 +4632,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-powdered-mammoth-tusk",
-    "nome": "Elixir de Carapaça de Caranguejo e Presa de Mamute em Pó",
+    "nome": "Elixir de Carapaça de Caranguejo e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4486,7 +4666,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-dragon-s-tongue",
-    "nome": "Elixir de Carapaça de Caranguejo e Língua de Dragão",
+    "nome": "Elixir de Carapaça de Caranguejo e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5133,7 +5313,7 @@
   },
   {
     "id": "pot-vampire-dust-gleamblossom",
-    "nome": "Elixir de Pó de Vampiro e Flor de Brilho",
+    "nome": "Elixir de Pó de Vampiro e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5627,7 +5807,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-wheat",
-    "nome": "Elixir de Couro de Rato e Trigo da Costa",
+    "nome": "Elixir de Couro de Rato e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5695,7 +5875,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-powdered-mammoth-tusk",
-    "nome": "Elixir de Couro de Rato e Presa de Mamute em Pó",
+    "nome": "Elixir de Couro de Rato e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6171,7 +6351,7 @@
   },
   {
     "id": "pot-hawk-feathers-powdered-mammoth-tusk",
-    "nome": "Elixir de Penas de Falcão e Presa de Mamute em Pó",
+    "nome": "Elixir de Penas de Falcão e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7926,7 +8106,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-gleamblossom",
-    "nome": "Elixir de Musgo Parassol e Flor de Brilho",
+    "nome": "Elixir de Musgo Parassol e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7943,7 +8123,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-dragon-s-tongue",
-    "nome": "Elixir de Musgo Parassol e Língua de Dragão",
+    "nome": "Elixir de Musgo Parassol e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8577,7 +8757,7 @@
   },
   {
     "id": "pot-nirnroot-gleamblossom",
-    "nome": "Elixir de Raiz Velada e Flor de Brilho",
+    "nome": "Elixir de Raiz Velada e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9191,7 +9371,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-gleamblossom",
-    "nome": "Elixir de Raiz Velada Rubra e Flor de Brilho",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10146,7 +10326,7 @@
   },
   {
     "id": "pot-poison-bloom-gleamblossom",
-    "nome": "Elixir de Flor Venenosa e Flor de Brilho",
+    "nome": "Elixir de Flor Venenosa e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10181,7 +10361,7 @@
   },
   {
     "id": "pot-poison-bloom-powdered-mammoth-tusk",
-    "nome": "Elixir de Flor Venenosa e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Venenosa e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11399,7 +11579,7 @@
   },
   {
     "id": "pot-human-flesh-gleamblossom",
-    "nome": "Elixir de Carne Humana e Flor de Brilho",
+    "nome": "Elixir de Carne Humana e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11433,7 +11613,7 @@
   },
   {
     "id": "pot-human-flesh-powdered-mammoth-tusk",
-    "nome": "Elixir de Carne Humana e Presa de Mamute em Pó",
+    "nome": "Elixir de Carne Humana e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12493,7 +12673,7 @@
   },
   {
     "id": "pot-imp-stool-wheat",
-    "nome": "Elixir de Fungo de Diabrete e Trigo da Costa",
+    "nome": "Elixir de Fungo de Diabrete e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12527,7 +12707,7 @@
   },
   {
     "id": "pot-imp-stool-gleamblossom",
-    "nome": "Elixir de Fungo de Diabrete e Flor de Brilho",
+    "nome": "Elixir de Fungo de Diabrete e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13761,7 +13941,7 @@
   },
   {
     "id": "pot-skeever-tail-wheat",
-    "nome": "Elixir de Cauda de Rato e Trigo da Costa",
+    "nome": "Elixir de Cauda de Rato e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14238,7 +14418,7 @@
   },
   {
     "id": "pot-troll-fat-dragon-s-tongue",
-    "nome": "Elixir de Gordura de Troll e Língua de Dragão",
+    "nome": "Elixir de Gordura de Troll e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14443,7 +14623,7 @@
   },
   {
     "id": "pot-void-salts-gleamblossom",
-    "nome": "Elixir de Sais do Vazio e Flor de Brilho",
+    "nome": "Elixir de Sais do Vazio e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14905,7 +15085,7 @@
   },
   {
     "id": "pot-butterfly-wing-wheat",
-    "nome": "Elixir de Asa de Borboleta e Trigo da Costa",
+    "nome": "Elixir de Asa de Borboleta e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14939,7 +15119,7 @@
   },
   {
     "id": "pot-butterfly-wing-dragon-s-tongue",
-    "nome": "Elixir de Asa de Borboleta e Língua de Dragão",
+    "nome": "Elixir de Asa de Borboleta e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15724,7 +15904,7 @@
   },
   {
     "id": "pot-daedra-heart-wheat",
-    "nome": "Elixir de Coração de Demônio e Trigo da Costa",
+    "nome": "Elixir de Coração de Demônio e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15777,7 +15957,7 @@
   },
   {
     "id": "pot-daedra-heart-gleamblossom",
-    "nome": "Elixir de Coração de Demônio e Flor de Brilho",
+    "nome": "Elixir de Coração de Demônio e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15811,7 +15991,7 @@
   },
   {
     "id": "pot-daedra-heart-powdered-mammoth-tusk",
-    "nome": "Elixir de Coração de Demônio e Presa de Mamute em Pó",
+    "nome": "Elixir de Coração de Demônio e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16118,7 +16298,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-wheat",
-    "nome": "Elixir de Olho de Felino e Trigo da Costa",
+    "nome": "Elixir de Olho de Felino e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16169,7 +16349,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-powdered-mammoth-tusk",
-    "nome": "Elixir de Olho de Felino e Presa de Mamute em Pó",
+    "nome": "Elixir de Olho de Felino e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17552,7 +17732,7 @@
   },
   {
     "id": "pot-hanging-moss-wheat",
-    "nome": "Elixir de Musgo Pendente e Trigo da Costa",
+    "nome": "Elixir de Musgo Pendente e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17724,7 +17904,7 @@
   },
   {
     "id": "pot-luna-moth-wing-gleamblossom",
-    "nome": "Elixir de Asa de Mariposa Lunar e Flor de Brilho",
+    "nome": "Elixir de Asa de Mariposa Lunar e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17929,7 +18109,7 @@
   },
   {
     "id": "pot-namira-s-rot-gleamblossom",
-    "nome": "Elixir de Fungo de Gualápoles e Flor de Brilho",
+    "nome": "Elixir de Fungo de Gualápoles e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17964,7 +18144,7 @@
   },
   {
     "id": "pot-namira-s-rot-powdered-mammoth-tusk",
-    "nome": "Elixir de Fungo de Gualápoles e Presa de Mamute em Pó",
+    "nome": "Elixir de Fungo de Gualápoles e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18134,7 +18314,7 @@
   },
   {
     "id": "pot-nordic-barnacle-gleamblossom",
-    "nome": "Elixir de Craca de Rio e Flor de Brilho",
+    "nome": "Elixir de Craca de Rio e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19047,7 +19227,7 @@
   },
   {
     "id": "pot-bear-claws-wheat",
-    "nome": "Elixir de Garras de Urso e Trigo da Costa",
+    "nome": "Elixir de Garras de Urso e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19098,7 +19278,7 @@
   },
   {
     "id": "pot-bear-claws-powdered-mammoth-tusk",
-    "nome": "Elixir de Garras de Urso e Presa de Mamute em Pó",
+    "nome": "Elixir de Garras de Urso e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19890,7 +20070,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-wheat",
-    "nome": "Elixir de Flor Azul da Montanha e Trigo da Costa",
+    "nome": "Elixir de Flor Azul da Montanha e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20164,7 +20344,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-powdered-mammoth-tusk",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Presa de Mamute em Pó",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20647,7 +20827,7 @@
   },
   {
     "id": "pot-chicken-s-egg-gleamblossom",
-    "nome": "Elixir de Ovo de Galinha e Flor de Brilho",
+    "nome": "Elixir de Ovo de Galinha e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20817,7 +20997,7 @@
   },
   {
     "id": "pot-hawk-s-egg-gleamblossom",
-    "nome": "Elixir de Ovo de Falcão e Flor de Brilho",
+    "nome": "Elixir de Ovo de Falcão e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21398,7 +21578,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-dragon-s-tongue",
-    "nome": "Elixir de Tufo Cinzento e Língua de Dragão",
+    "nome": "Elixir de Tufo Cinzento e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21690,7 +21870,7 @@
   },
   {
     "id": "pot-berit-s-ashes-dragon-s-tongue",
-    "nome": "Elixir de Cinzas Mortuárias e Língua de Dragão",
+    "nome": "Elixir de Cinzas Mortuárias e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21998,7 +22178,7 @@
   },
   {
     "id": "pot-blisterwort-wheat",
-    "nome": "Elixir de Fungo de Bolha e Trigo da Costa",
+    "nome": "Elixir de Fungo de Bolha e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22202,7 +22382,7 @@
   },
   {
     "id": "pot-bone-meal-dragon-s-tongue",
-    "nome": "Elixir de Farinha de Ossos e Língua de Dragão",
+    "nome": "Elixir de Farinha de Ossos e Língua-de-Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22493,7 +22673,7 @@
   },
   {
     "id": "pot-canis-root-gleamblossom",
-    "nome": "Elixir de Raiz Canina e Flor de Brilho",
+    "nome": "Elixir de Raiz Canina e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22680,7 +22860,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-gleamblossom",
-    "nome": "Elixir de Peixe de Escamas Finas e Flor de Brilho",
+    "nome": "Elixir de Peixe de Escamas Finas e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -22714,7 +22894,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-powdered-mammoth-tusk",
-    "nome": "Elixir de Peixe de Escamas Finas e Presa de Mamute em Pó",
+    "nome": "Elixir de Peixe de Escamas Finas e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -22953,7 +23133,7 @@
   },
   {
     "id": "pot-giant-s-toe-wheat",
-    "nome": "Elixir de Dedo de Gigante e Trigo da Costa",
+    "nome": "Elixir de Dedo de Gigante e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23108,7 +23288,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-wheat",
-    "nome": "Elixir de Ovo de Tordo e Trigo da Costa",
+    "nome": "Elixir de Ovo de Tordo e Trigo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23380,7 +23560,7 @@
   },
   {
     "id": "pot-creep-cluster-wheat",
-    "nome": "Elixir de Tufo Rastejante e Trigo da Costa",
+    "nome": "Elixir de Tufo Rastejante e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23809,7 +23989,7 @@
   },
   {
     "id": "pot-frost-mirriam-wheat",
-    "nome": "Elixir de Mirra da Geada e Trigo da Costa",
+    "nome": "Elixir de Mirra da Geada e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23843,7 +24023,7 @@
   },
   {
     "id": "pot-frost-mirriam-powdered-mammoth-tusk",
-    "nome": "Elixir de Mirra da Geada e Presa de Mamute em Pó",
+    "nome": "Elixir de Mirra da Geada e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24203,7 +24383,7 @@
   },
   {
     "id": "pot-histcarp-wheat",
-    "nome": "Elixir de Carpa de Pedra e Trigo da Costa",
+    "nome": "Elixir de Carpa de Pedra e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24254,7 +24434,7 @@
   },
   {
     "id": "pot-histcarp-powdered-mammoth-tusk",
-    "nome": "Elixir de Carpa de Pedra e Presa de Mamute em Pó",
+    "nome": "Elixir de Carpa de Pedra e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24562,7 +24742,7 @@
   },
   {
     "id": "pot-juniper-berries-wheat",
-    "nome": "Elixir de Bagas de Zimbro e Trigo da Costa",
+    "nome": "Elixir de Bagas de Zimbro e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24596,7 +24776,7 @@
   },
   {
     "id": "pot-juniper-berries-gleamblossom",
-    "nome": "Elixir de Bagas de Zimbro e Flor de Brilho",
+    "nome": "Elixir de Bagas de Zimbro e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24613,7 +24793,7 @@
   },
   {
     "id": "pot-juniper-berries-powdered-mammoth-tusk",
-    "nome": "Elixir de Bagas de Zimbro e Presa de Mamute em Pó",
+    "nome": "Elixir de Bagas de Zimbro e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24750,7 +24930,7 @@
   },
   {
     "id": "pot-large-antlers-wheat",
-    "nome": "Elixir de Chifres de Alce e Trigo da Costa",
+    "nome": "Elixir de Chifres de Alce e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24801,7 +24981,7 @@
   },
   {
     "id": "pot-large-antlers-powdered-mammoth-tusk",
-    "nome": "Elixir de Chifres de Alce e Presa de Mamute em Pó",
+    "nome": "Elixir de Chifres de Alce e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25108,7 +25288,7 @@
   },
   {
     "id": "pot-silverside-perch-wheat",
-    "nome": "Elixir de Perca Prateada e Trigo da Costa",
+    "nome": "Elixir de Perca Prateada e Trigo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25159,7 +25339,7 @@
   },
   {
     "id": "pot-silverside-perch-powdered-mammoth-tusk",
-    "nome": "Elixir de Perca Prateada e Presa de Mamute em Pó",
+    "nome": "Elixir de Perca Prateada e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25519,7 +25699,7 @@
   },
   {
     "id": "pot-wheat-yellow-mountain-flower",
-    "nome": "Elixir de Trigo da Costa e Flor Amarela da Montanha",
+    "nome": "Elixir de Trigo e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25537,7 +25717,7 @@
   },
   {
     "id": "pot-wheat-blue-dartwing",
-    "nome": "Elixir de Trigo da Costa e Libélula Azul",
+    "nome": "Elixir de Trigo e Libélula Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25554,7 +25734,7 @@
   },
   {
     "id": "pot-wheat-hagraven-claw",
-    "nome": "Elixir de Trigo da Costa e Garra de Bruxa",
+    "nome": "Elixir de Trigo e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25571,7 +25751,7 @@
   },
   {
     "id": "pot-wheat-boar-tusk",
-    "nome": "Elixir de Trigo da Costa e Presa de Javali",
+    "nome": "Elixir de Trigo e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25588,7 +25768,7 @@
   },
   {
     "id": "pot-wheat-glowing-mushroom",
-    "nome": "Elixir de Trigo da Costa e Cogumelo Luminescente",
+    "nome": "Elixir de Trigo e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25605,7 +25785,7 @@
   },
   {
     "id": "pot-wheat-ash-hopper-jelly",
-    "nome": "Elixir de Trigo da Costa e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Trigo e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25622,7 +25802,7 @@
   },
   {
     "id": "pot-wheat-purple-mountain-flower",
-    "nome": "Elixir de Trigo da Costa e Flor Violeta",
+    "nome": "Elixir de Trigo e Flor Violeta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25639,7 +25819,7 @@
   },
   {
     "id": "pot-wheat-torchbug-thorax",
-    "nome": "Elixir de Trigo da Costa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Trigo e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25656,7 +25836,7 @@
   },
   {
     "id": "pot-wheat-swamp-fungal-pod",
-    "nome": "Elixir de Trigo da Costa e Fungo do Pântano",
+    "nome": "Elixir de Trigo e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25844,7 +26024,7 @@
   },
   {
     "id": "pot-blue-dartwing-gleamblossom",
-    "nome": "Elixir de Libélula Azul e Flor de Brilho",
+    "nome": "Elixir de Libélula Azul e Flor Luminescente",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25878,7 +26058,7 @@
   },
   {
     "id": "pot-blue-dartwing-powdered-mammoth-tusk",
-    "nome": "Elixir de Libélula Azul e Presa de Mamute em Pó",
+    "nome": "Elixir de Libélula Azul e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26050,7 +26230,7 @@
   },
   {
     "id": "pot-gleamblossom-netch-jelly",
-    "nome": "Elixir de Flor de Brilho e Gelatina de Netch",
+    "nome": "Elixir de Flor Luminescente e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26068,7 +26248,7 @@
   },
   {
     "id": "pot-gleamblossom-powdered-mammoth-tusk",
-    "nome": "Elixir de Flor de Brilho e Presa de Mamute em Pó",
+    "nome": "Elixir de Flor Luminescente e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26085,7 +26265,7 @@
   },
   {
     "id": "pot-gleamblossom-hagraven-claw",
-    "nome": "Elixir de Flor de Brilho e Garra de Bruxa",
+    "nome": "Elixir de Flor Luminescente e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26102,7 +26282,7 @@
   },
   {
     "id": "pot-gleamblossom-tundra-cotton",
-    "nome": "Elixir de Flor de Brilho e Algodão da Tundra",
+    "nome": "Elixir de Flor Luminescente e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26119,7 +26299,7 @@
   },
   {
     "id": "pot-gleamblossom-bleeding-crown",
-    "nome": "Elixir de Flor de Brilho e Coroa Sangrenta",
+    "nome": "Elixir de Flor Luminescente e Coroa Sangrenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26136,7 +26316,7 @@
   },
   {
     "id": "pot-gleamblossom-briar-heart",
-    "nome": "Elixir de Flor de Brilho e Coração de Espinheiros",
+    "nome": "Elixir de Flor Luminescente e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26153,7 +26333,7 @@
   },
   {
     "id": "pot-gleamblossom-wisp-wrappings",
-    "nome": "Elixir de Flor de Brilho e Faixas de Espírito",
+    "nome": "Elixir de Flor Luminescente e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26170,7 +26350,7 @@
   },
   {
     "id": "pot-gleamblossom-lavender",
-    "nome": "Elixir de Flor de Brilho e Lavanda Selvagem",
+    "nome": "Elixir de Flor Luminescente e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26187,7 +26367,7 @@
   },
   {
     "id": "pot-gleamblossom-garlic",
-    "nome": "Elixir de Flor de Brilho e Alho das Hortas",
+    "nome": "Elixir de Flor Luminescente e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26204,7 +26384,7 @@
   },
   {
     "id": "pot-gleamblossom-swamp-fungal-pod",
-    "nome": "Elixir de Flor de Brilho e Fungo do Pântano",
+    "nome": "Elixir de Flor Luminescente e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26221,7 +26401,7 @@
   },
   {
     "id": "pot-netch-jelly-powdered-mammoth-tusk",
-    "nome": "Elixir de Gelatina de Netch e Presa de Mamute em Pó",
+    "nome": "Elixir de Gelatina de Netch e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26496,7 +26676,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-bleeding-crown",
-    "nome": "Elixir de Presa de Mamute em Pó e Coroa Sangrenta",
+    "nome": "Elixir de Pó de Presa de Mamute e Coroa Sangrenta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26513,7 +26693,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-pearl",
-    "nome": "Elixir de Presa de Mamute em Pó e Pérola da Costa Sul",
+    "nome": "Elixir de Pó de Presa de Mamute e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26530,7 +26710,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-honeycomb",
-    "nome": "Elixir de Presa de Mamute em Pó e Favo de Mel",
+    "nome": "Elixir de Pó de Presa de Mamute e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26547,7 +26727,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-hawk-beak",
-    "nome": "Elixir de Presa de Mamute em Pó e Bico de Falcão",
+    "nome": "Elixir de Pó de Presa de Mamute e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26564,7 +26744,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-wisp-wrappings",
-    "nome": "Elixir de Presa de Mamute em Pó e Faixas de Espírito",
+    "nome": "Elixir de Pó de Presa de Mamute e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26581,7 +26761,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-frost-salts",
-    "nome": "Elixir de Presa de Mamute em Pó e Sais da Geada",
+    "nome": "Elixir de Pó de Presa de Mamute e Sais da Geada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26598,7 +26778,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-beehive-husk",
-    "nome": "Elixir de Presa de Mamute em Pó e Casca de Colmeia",
+    "nome": "Elixir de Pó de Presa de Mamute e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26615,7 +26795,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-ice-wraith-teeth",
-    "nome": "Elixir de Presa de Mamute em Pó e Dentes de Espectro Gelado",
+    "nome": "Elixir de Pó de Presa de Mamute e Dentes de Espectro Gelado",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26632,7 +26812,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-sabre-cat-tooth",
-    "nome": "Elixir de Presa de Mamute em Pó e Dente de Felino",
+    "nome": "Elixir de Pó de Presa de Mamute e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26649,7 +26829,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-ashen-grass-pod",
-    "nome": "Elixir de Presa de Mamute em Pó e Vagem Cinzenta",
+    "nome": "Elixir de Pó de Presa de Mamute e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26666,7 +26846,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-pine-thrush-egg",
-    "nome": "Elixir de Presa de Mamute em Pó e Ovo de Tordo da Costa",
+    "nome": "Elixir de Pó de Presa de Mamute e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26683,7 +26863,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-salmon-roe",
-    "nome": "Elixir de Presa de Mamute em Pó e Ovas de Salmão",
+    "nome": "Elixir de Pó de Presa de Mamute e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26700,7 +26880,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-small-pearl",
-    "nome": "Elixir de Presa de Mamute em Pó e Pérola Pequena",
+    "nome": "Elixir de Pó de Presa de Mamute e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26717,7 +26897,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-orange-dartwing",
-    "nome": "Elixir de Presa de Mamute em Pó e Libélula Alaranjada",
+    "nome": "Elixir de Pó de Presa de Mamute e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26734,7 +26914,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-abecean-longfin",
-    "nome": "Elixir de Presa de Mamute em Pó e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pó de Presa de Mamute e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26751,7 +26931,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-purple-mountain-flower",
-    "nome": "Elixir de Presa de Mamute em Pó e Flor Violeta",
+    "nome": "Elixir de Pó de Presa de Mamute e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26769,7 +26949,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-torchbug-thorax",
-    "nome": "Elixir de Presa de Mamute em Pó e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26786,7 +26966,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-bee",
-    "nome": "Elixir de Presa de Mamute em Pó e Abelha",
+    "nome": "Elixir de Pó de Presa de Mamute e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26803,7 +26983,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-moon-sugar",
-    "nome": "Elixir de Presa de Mamute em Pó e Açúcar Lunar",
+    "nome": "Elixir de Pó de Presa de Mamute e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -27144,7 +27324,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-hagraven-claw",
-    "nome": "Elixir de Língua de Dragão e Garra de Bruxa",
+    "nome": "Elixir de Língua-de-Dragão e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27161,7 +27341,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-tundra-cotton",
-    "nome": "Elixir de Língua de Dragão e Algodão da Tundra",
+    "nome": "Elixir de Língua-de-Dragão e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27178,7 +27358,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-scaly-pholiota",
-    "nome": "Elixir de Língua de Dragão e Cogumelo Escamoso",
+    "nome": "Elixir de Língua-de-Dragão e Cogumelo Escamoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27195,7 +27375,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-snowberries",
-    "nome": "Elixir de Língua de Dragão e Frutas da Neve",
+    "nome": "Elixir de Língua-de-Dragão e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27212,7 +27392,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-spawn-ash",
-    "nome": "Elixir de Língua de Dragão e Cinzas de Criatura",
+    "nome": "Elixir de Língua-de-Dragão e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27229,7 +27409,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-dwarven-oil",
-    "nome": "Elixir de Língua de Dragão e Óleo de Autômato Anão",
+    "nome": "Elixir de Língua-de-Dragão e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27246,7 +27426,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-mora-tapinella",
-    "nome": "Elixir de Língua de Dragão e Cogumelo de Raiz",
+    "nome": "Elixir de Língua-de-Dragão e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27263,7 +27443,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-taproot",
-    "nome": "Elixir de Língua de Dragão e Raiz Mestra",
+    "nome": "Elixir de Língua-de-Dragão e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27280,7 +27460,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-ashen-grass-pod",
-    "nome": "Elixir de Língua de Dragão e Vagem Cinzenta",
+    "nome": "Elixir de Língua-de-Dragão e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27297,7 +27477,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-elves-ear",
-    "nome": "Elixir de Língua de Dragão e Orelha de Elfo",
+    "nome": "Elixir de Língua-de-Dragão e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27314,7 +27494,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-fly-amanita",
-    "nome": "Elixir de Língua de Dragão e Amanita Rubra",
+    "nome": "Elixir de Língua-de-Dragão e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27332,7 +27512,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-fire-salts",
-    "nome": "Elixir de Língua de Dragão e Sais Ígneos",
+    "nome": "Elixir de Língua-de-Dragão e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
