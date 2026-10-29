@@ -1813,7 +1813,7 @@
       ]
     },
     "ing-netch-jelly": {
-      "nome": "Gelatina de Netch",
+      "nome": "Gelatina de Medusa",
       "descricao": "Gelatina translúcida de criatura flutuante, apreciada em fórmulas de imobilização.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -1994,7 +1994,8 @@
     "Trigo da Costa": "Trigo",
     "Flor de Brilho": "Flor Luminescente",
     "Presa de Mamute em Pó": "Pó de Presa de Mamute",
-    "Língua de Dragão": "Língua-de-Dragão"
+    "Língua de Dragão": "Língua-de-Dragão",
+    "Gelatina de Netch": "Gelatina de Medusa"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
