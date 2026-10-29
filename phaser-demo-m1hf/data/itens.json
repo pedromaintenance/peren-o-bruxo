@@ -3313,7 +3313,7 @@
   },
   {
     "id": "ing-dwarven-oil",
-    "nome": "Óleo de Autômato Anão",
+    "nome": "Óleo de Autômato",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -3427,7 +3427,7 @@
   },
   {
     "id": "ing-ash-hopper-jelly",
-    "nome": "Gelatina de Saltador das Cinzas",
+    "nome": "Gelatina de Gafanhoto",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -4880,7 +4880,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-ash-hopper-jelly",
-    "nome": "Elixir de Pena de Gaivota e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Pena de Gaivota e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5972,7 +5972,7 @@
   },
   {
     "id": "pot-vampire-dust-dwarven-oil",
-    "nome": "Elixir de Pó de Vampiro e Óleo de Autômato Anão",
+    "nome": "Elixir de Pó de Vampiro e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6568,7 +6568,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-ash-hopper-jelly",
-    "nome": "Elixir de Couro de Rato e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Couro de Rato e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6943,7 +6943,7 @@
   },
   {
     "id": "pot-hawk-feathers-ash-hopper-jelly",
-    "nome": "Elixir de Penas de Falcão e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Penas de Falcão e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11383,7 +11383,7 @@
   },
   {
     "id": "pot-ectoplasm-dwarven-oil",
-    "nome": "Elixir de Ectoplasma e Óleo de Autômato Anão",
+    "nome": "Elixir de Ectoplasma e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12273,7 +12273,7 @@
   },
   {
     "id": "pot-human-flesh-dwarven-oil",
-    "nome": "Elixir de Carne Humana e Óleo de Autômato Anão",
+    "nome": "Elixir de Carne Humana e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13332,7 +13332,7 @@
   },
   {
     "id": "pot-imp-stool-ash-hopper-jelly",
-    "nome": "Elixir de Fungo de Diabrete e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14055,7 +14055,7 @@
   },
   {
     "id": "pot-red-mountain-flower-dwarven-oil",
-    "nome": "Elixir de Flor Vermelha e Óleo de Autômato Anão",
+    "nome": "Elixir de Flor Vermelha e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14549,7 +14549,7 @@
   },
   {
     "id": "pot-skeever-tail-ash-hopper-jelly",
-    "nome": "Elixir de Cauda de Rato e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Cauda de Rato e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15710,7 +15710,7 @@
   },
   {
     "id": "pot-butterfly-wing-ash-hopper-jelly",
-    "nome": "Elixir de Asa de Borboleta e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Asa de Borboleta e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16548,7 +16548,7 @@
   },
   {
     "id": "pot-daedra-heart-ash-hopper-jelly",
-    "nome": "Elixir de Coração de Demônio e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Coração de Demônio e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16991,7 +16991,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-ash-hopper-jelly",
-    "nome": "Elixir de Olho de Felino e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Olho de Felino e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17605,7 +17605,7 @@
   },
   {
     "id": "pot-glow-dust-ash-hopper-jelly",
-    "nome": "Elixir de Poeira Luminosa e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Poeira Luminosa e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18512,7 +18512,7 @@
   },
   {
     "id": "pot-luna-moth-wing-ash-hopper-jelly",
-    "nome": "Elixir de Asa de Mariposa Lunar e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Asa de Mariposa Lunar e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20730,7 +20730,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-ash-hopper-jelly",
-    "nome": "Elixir de Flor Azul da Montanha e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Flor Azul da Montanha e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22803,7 +22803,7 @@
   },
   {
     "id": "pot-blisterwort-ash-hopper-jelly",
-    "nome": "Elixir de Fungo de Bolha e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Fungo de Bolha e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23879,7 +23879,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-dwarven-oil",
-    "nome": "Elixir de Ovo de Tordo e Óleo de Autômato Anão",
+    "nome": "Elixir de Ovo de Tordo e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23913,7 +23913,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-ash-hopper-jelly",
-    "nome": "Elixir de Ovo de Tordo e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Ovo de Tordo e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24288,7 +24288,7 @@
   },
   {
     "id": "pot-creep-cluster-dwarven-oil",
-    "nome": "Elixir de Tufo Rastejante e Óleo de Autômato Anão",
+    "nome": "Elixir de Tufo Rastejante e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26325,7 +26325,7 @@
   },
   {
     "id": "pot-wheat-ash-hopper-jelly",
-    "nome": "Elixir de Trigo e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Trigo e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26683,7 +26683,7 @@
   },
   {
     "id": "pot-blue-dartwing-ash-hopper-jelly",
-    "nome": "Elixir de Libélula Azul e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Libélula Azul e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27677,7 +27677,7 @@
   },
   {
     "id": "pot-grass-pod-dwarven-oil",
-    "nome": "Elixir de Vagem da Charneca e Óleo de Autômato Anão",
+    "nome": "Elixir de Vagem da Charneca e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27949,7 +27949,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-dwarven-oil",
-    "nome": "Elixir de Língua-de-Dragão e Óleo de Autômato Anão",
+    "nome": "Elixir de Língua-de-Dragão e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28976,7 +28976,7 @@
   },
   {
     "id": "pot-pearl-dwarven-oil",
-    "nome": "Elixir de Pérola e Óleo de Autômato Anão",
+    "nome": "Elixir de Pérola e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29027,7 +29027,7 @@
   },
   {
     "id": "pot-pearl-ash-hopper-jelly",
-    "nome": "Elixir de Pérola e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Pérola e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29573,7 +29573,7 @@
   },
   {
     "id": "pot-briar-heart-dwarven-oil",
-    "nome": "Elixir de Coração de Espinheiros e Óleo de Autômato Anão",
+    "nome": "Elixir de Coração de Espinheiros e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29845,7 +29845,7 @@
   },
   {
     "id": "pot-honeycomb-ash-hopper-jelly",
-    "nome": "Elixir de Favo de Mel e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Favo de Mel e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30120,7 +30120,7 @@
   },
   {
     "id": "pot-hawk-beak-ash-hopper-jelly",
-    "nome": "Elixir de Bico de Falcão e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Bico de Falcão e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30310,7 +30310,7 @@
   },
   {
     "id": "pot-scaly-pholiota-dwarven-oil",
-    "nome": "Elixir de Cogumelo Escamoso e Óleo de Autômato Anão",
+    "nome": "Elixir de Cogumelo Escamoso e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30721,7 +30721,7 @@
   },
   {
     "id": "pot-frost-salts-dwarven-oil",
-    "nome": "Elixir de Sais da Geada e Óleo de Autômato Anão",
+    "nome": "Elixir de Sais da Geada e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31029,7 +31029,7 @@
   },
   {
     "id": "pot-beehive-husk-ash-hopper-jelly",
-    "nome": "Elixir de Casca de Colmeia e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Casca de Colmeia e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31165,7 +31165,7 @@
   },
   {
     "id": "pot-glowing-mushroom-ash-hopper-jelly",
-    "nome": "Elixir de Cogumelo Luminescente e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Cogumelo Luminescente e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31251,7 +31251,7 @@
   },
   {
     "id": "pot-snowberries-ash-hopper-jelly",
-    "nome": "Elixir de Bagas da Neve e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Bagas da Neve e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31627,7 +31627,7 @@
   },
   {
     "id": "pot-ice-wraith-teeth-ash-hopper-jelly",
-    "nome": "Elixir de Dentes de Espectro Gelado e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Dentes de Espectro Gelado e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32036,7 +32036,7 @@
   },
   {
     "id": "pot-white-cap-dwarven-oil",
-    "nome": "Elixir de Chapéu Branco e Óleo de Autômato Anão",
+    "nome": "Elixir de Chapéu Branco e Óleo de Autômato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32087,7 +32087,7 @@
   },
   {
     "id": "pot-white-cap-ash-hopper-jelly",
-    "nome": "Elixir de Chapéu Branco e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Chapéu Branco e Gelatina de Gafanhoto",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32225,7 +32225,7 @@
   },
   {
     "id": "pot-dwarven-oil-mora-tapinella",
-    "nome": "Elixir de Óleo de Autômato Anão e Cogumelo de Raiz",
+    "nome": "Elixir de Óleo de Autômato e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32243,7 +32243,7 @@
   },
   {
     "id": "pot-dwarven-oil-taproot",
-    "nome": "Elixir de Óleo de Autômato Anão e Raiz Mestra",
+    "nome": "Elixir de Óleo de Autômato e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32263,7 +32263,7 @@
   },
   {
     "id": "pot-dwarven-oil-jazbay-grapes",
-    "nome": "Elixir de Óleo de Autômato Anão e Uvas de Jasmim",
+    "nome": "Elixir de Óleo de Autômato e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32281,7 +32281,7 @@
   },
   {
     "id": "pot-dwarven-oil-salmon-roe",
-    "nome": "Elixir de Óleo de Autômato Anão e Ovas de Salmão",
+    "nome": "Elixir de Óleo de Autômato e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32298,7 +32298,7 @@
   },
   {
     "id": "pot-dwarven-oil-elves-ear",
-    "nome": "Elixir de Óleo de Autômato Anão e Orelha-de-Elfo",
+    "nome": "Elixir de Óleo de Autômato e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32315,7 +32315,7 @@
   },
   {
     "id": "pot-dwarven-oil-salt-pile",
-    "nome": "Elixir de Óleo de Autômato Anão e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Óleo de Autômato e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32333,7 +32333,7 @@
   },
   {
     "id": "pot-dwarven-oil-garlic",
-    "nome": "Elixir de Óleo de Autômato Anão e Alho das Hortas",
+    "nome": "Elixir de Óleo de Autômato e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32350,7 +32350,7 @@
   },
   {
     "id": "pot-dwarven-oil-torchbug-thorax",
-    "nome": "Elixir de Óleo de Autômato Anão e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Óleo de Autômato e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32367,7 +32367,7 @@
   },
   {
     "id": "pot-dwarven-oil-giant-lichen",
-    "nome": "Elixir de Óleo de Autômato Anão e Líquen Gigante",
+    "nome": "Elixir de Óleo de Autômato e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32384,7 +32384,7 @@
   },
   {
     "id": "pot-dwarven-oil-fire-salts",
-    "nome": "Elixir de Óleo de Autômato Anão e Sais Ígneos",
+    "nome": "Elixir de Óleo de Autômato e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32402,7 +32402,7 @@
   },
   {
     "id": "pot-dwarven-oil-moon-sugar",
-    "nome": "Elixir de Óleo de Autômato Anão e Açúcar Lunar",
+    "nome": "Elixir de Óleo de Autômato e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32748,7 +32748,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-pine-thrush-egg",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Ovo de Tordo da Costa",
+    "nome": "Elixir de Gelatina de Gafanhoto e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32765,7 +32765,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-elves-ear",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Orelha-de-Elfo",
+    "nome": "Elixir de Gelatina de Gafanhoto e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32782,7 +32782,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-abecean-longfin",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Peixe da Costa Escarlate",
+    "nome": "Elixir de Gelatina de Gafanhoto e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32799,7 +32799,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-swamp-fungal-pod",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Fungo do Pântano",
+    "nome": "Elixir de Gelatina de Gafanhoto e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32817,7 +32817,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-fire-salts",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Sais Ígneos",
+    "nome": "Elixir de Gelatina de Gafanhoto e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
