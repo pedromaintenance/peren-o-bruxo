@@ -2074,7 +2074,7 @@
       ]
     },
     "ing-slaughterfish-scales": {
-      "nome": "Escamas de Peixe Carniceiro",
+      "nome": "Escamas de Piranha",
       "descricao": "Escamas grossas usadas em preparados protetores e antídotos para ambientes gelados.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -2286,7 +2286,8 @@
     "Presa de Mamute em Pó": "Pó de Presa de Mamute",
     "Língua de Dragão": "Língua-de-Dragão",
     "Gelatina de Netch": "Gelatina de Medusa",
-    "Pérola da Costa Sul": "Pérola"
+    "Pérola da Costa Sul": "Pérola",
+    "Escamas de Peixe Carniceiro": "Escamas de Piranha"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
