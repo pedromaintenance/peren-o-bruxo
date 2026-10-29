@@ -737,7 +737,8 @@
     "efeitos": [
       "Damage Health",
       "Reduce Constitution",
-      "Fortify Dexterity"
+      "Fortify Dexterity",
+      "Inflict Disease"
     ],
     "raridade": "comum",
     "valor": 29,
@@ -762,6 +763,11 @@
         "id": "aumentar_destreza",
         "nome": "Aumentar Destreza",
         "intensidade": 1
+      },
+      {
+        "id": "infligir_doenca",
+        "nome": "Infligir Doença",
+        "intensidade": 2
       }
     ]
   },
