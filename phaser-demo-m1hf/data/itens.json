@@ -3696,190 +3696,351 @@
     "nome": "Libélula Alaranjada",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Orange Dartwing",
     "efeitos": [
+      "Fortify Dexterity",
       "Ravage Magicka",
-      "Restore Stamina",
-      "Fortify Pickpocket",
       "Lingering Damage Health"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 3,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Libélula de margens quentes, utilizada em preparados de agilidade e toxinas suaves.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_magia",
+        "nome": "Diminuir Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-slaughterfish-egg",
-    "nome": "Ovas de Peixe Carniceiro",
+    "nome": "Ovas de Piranha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Slaughterfish Egg",
     "efeitos": [
       "Resist Poison",
-      "Fortify Pickpocket",
-      "Fortify Stamina",
+      "Fortify Dexterity",
       "Lingering Damage Health"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 4,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Ovas de peixe predador utilizadas em antídotos e compostos corrosivos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-abecean-longfin",
     "nome": "Peixe da Costa Escarlate",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Abecean Longfin",
     "efeitos": [
       "Fortify Sneak",
-      "Weakness to Frost",
-      "Weakness to Poison",
-      "Fortify Restoration"
+      "Fortify Restoration",
+      "Weakness to Frost"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 5,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Peixe costeiro de escamas avermelhadas usado em infusões discretas e curativas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_restauracao",
+        "nome": "Aumentar Restauração",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_gelo",
+        "nome": "Fraqueza ao Gelo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-salt-pile",
-    "nome": "Pilha de Sal do Mar de Sangue",
+    "nome": "Sal do Mar de Sangue",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Salt Pile",
     "efeitos": [
       "Regenerate Magicka",
-      "Slow",
       "Fortify Restoration",
-      "Weakness to Magic"
+      "Reduce Dexterity"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 1,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_restauracao",
+        "nome": "Aumentar Restauração",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-purple-mountain-flower",
     "nome": "Flor Violeta",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Purple Mountain Flower",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Dexterity",
       "Fortify Sneak",
-      "Resist Frost",
-      "Lingering Damage Magicka"
+      "Resist Frost"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 2,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Flor resistente às encostas e à bruma fria, utilizada em preparados de furtividade.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 1
+      },
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-garlic",
-    "nome": "Alho das Hortas",
+    "nome": "Alho",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Garlic",
     "efeitos": [
       "Regenerate Health",
-      "Regenerate Magicka",
-      "Fortify Stamina",
-      "Resist Poison"
+      "Resist Poison",
+      "Fortify Constitution"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 3,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_saude",
+        "nome": "Regenerar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-torchbug-thorax",
-    "nome": "Tórax de Inseto-lanterna",
+    "nome": "Tórax de Vaga-lume",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Torchbug Thorax",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Dexterity",
       "Lingering Damage Magicka",
-      "Fortify Stamina",
       "Weakness to Magic"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 4,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Órgão luminescente de inseto utilizado em compostos sensoriais e arcanos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_magia",
+        "nome": "Fraqueza à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-fly-amanita",
     "nome": "Amanita Rubra",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Fly Amanita",
     "efeitos": [
       "Resist Fire",
-      "Fortify Two-handed",
-      "Frenzy",
-      "Regenerate Stamina"
+      "Fortify Strength",
+      "Frenzy"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 5,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Cogumelo vermelho de propriedades psicoativas, utilizado em preparações de combate.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-scathecraw",
     "nome": "Espinho-da-Morte",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Scathecraw",
     "efeitos": [
-      "Ravage Magicka",
       "Ravage Health",
-      "Ravage Stamina",
-      "Lingering Damage Health"
+      "Ravage Magicka",
+      "Reduce Constitution"
     ],
-    "raridade": "comum",
+    "raridade": "raro",
     "valor": 9,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 1,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Espinho de planta nociva, macerado em fórmulas que debilitam corpo e energia arcana.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 3
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-swamp-fungal-pod",
     "nome": "Fungo do Pântano",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Swamp Fungal Pod",
     "efeitos": [
-      "Lingering Damage Magicka",
       "Restore Health",
       "Paralysis",
       "Resist Shock"
@@ -3889,7 +4050,26 @@
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Fungo úmido de propriedades ambivalentes: pode curar ou imobilizar.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-giant-lichen",
@@ -5478,7 +5658,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-slaughterfish-egg",
-    "nome": "Elixir de Carapaça de Caranguejo e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Carapaça de Caranguejo e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5512,7 +5692,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-garlic",
-    "nome": "Elixir de Carapaça de Caranguejo e Alho das Hortas",
+    "nome": "Elixir de Carapaça de Caranguejo e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5529,7 +5709,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-torchbug-thorax",
-    "nome": "Elixir de Carapaça de Caranguejo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Carapaça de Caranguejo e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6040,7 +6220,7 @@
   },
   {
     "id": "pot-vampire-dust-garlic",
-    "nome": "Elixir de Pó de Vampiro e Alho das Hortas",
+    "nome": "Elixir de Pó de Vampiro e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6653,7 +6833,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-slaughterfish-egg",
-    "nome": "Elixir de Couro de Rato e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Couro de Rato e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6687,7 +6867,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-garlic",
-    "nome": "Elixir de Couro de Rato e Alho das Hortas",
+    "nome": "Elixir de Couro de Rato e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6704,7 +6884,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-torchbug-thorax",
-    "nome": "Elixir de Couro de Rato e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Couro de Rato e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8285,7 +8465,7 @@
   },
   {
     "id": "pot-river-betty-salt-pile",
-    "nome": "Elixir de Betta do Rio e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Betta do Rio e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8748,7 +8928,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-garlic",
-    "nome": "Elixir de Musgo Parassol e Alho das Hortas",
+    "nome": "Elixir de Musgo Parassol e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10457,7 +10637,7 @@
   },
   {
     "id": "pot-deathbell-salt-pile",
-    "nome": "Elixir de Sino da Morte e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Sino da Morte e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10969,7 +11149,7 @@
   },
   {
     "id": "pot-poison-bloom-salt-pile",
-    "nome": "Elixir de Flor Venenosa e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11879,7 +12059,7 @@
   },
   {
     "id": "pot-falmer-ear-slaughterfish-egg",
-    "nome": "Elixir de Orelha de Troglodita e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Orelha de Troglodita e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11896,7 +12076,7 @@
   },
   {
     "id": "pot-falmer-ear-garlic",
-    "nome": "Elixir de Orelha de Troglodita e Alho das Hortas",
+    "nome": "Elixir de Orelha de Troglodita e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13366,7 +13546,7 @@
   },
   {
     "id": "pot-imp-stool-slaughterfish-egg",
-    "nome": "Elixir de Fungo de Diabrete e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14839,7 +15019,7 @@
   },
   {
     "id": "pot-small-antlers-salt-pile",
-    "nome": "Elixir de Chifres de Cervo e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15026,7 +15206,7 @@
   },
   {
     "id": "pot-troll-fat-slaughterfish-egg",
-    "nome": "Elixir de Gordura de Troll e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Gordura de Troll e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15043,7 +15223,7 @@
   },
   {
     "id": "pot-troll-fat-garlic",
-    "nome": "Elixir de Gordura de Troll e Alho das Hortas",
+    "nome": "Elixir de Gordura de Troll e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16034,7 +16214,7 @@
   },
   {
     "id": "pot-chaurus-eggs-slaughterfish-egg",
-    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16068,7 +16248,7 @@
   },
   {
     "id": "pot-chaurus-eggs-garlic",
-    "nome": "Elixir de Ovo de Verme Gigante e Alho das Hortas",
+    "nome": "Elixir de Ovo de Verme Gigante e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16085,7 +16265,7 @@
   },
   {
     "id": "pot-chaurus-eggs-torchbug-thorax",
-    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17110,7 +17290,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-torchbug-thorax",
-    "nome": "Elixir de Olho de Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Olho de Felino e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18529,7 +18709,7 @@
   },
   {
     "id": "pot-luna-moth-wing-garlic",
-    "nome": "Elixir de Asa de Mariposa Lunar e Alho das Hortas",
+    "nome": "Elixir de Asa de Mariposa Lunar e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18735,7 +18915,7 @@
   },
   {
     "id": "pot-namira-s-rot-garlic",
-    "nome": "Elixir de Fungo de Gualápoles e Alho das Hortas",
+    "nome": "Elixir de Fungo de Gualápoles e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18905,7 +19085,7 @@
   },
   {
     "id": "pot-nordic-barnacle-slaughterfish-egg",
-    "nome": "Elixir de Craca de Rio e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Craca de Rio e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18922,7 +19102,7 @@
   },
   {
     "id": "pot-nordic-barnacle-garlic",
-    "nome": "Elixir de Craca de Rio e Alho das Hortas",
+    "nome": "Elixir de Craca de Rio e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19092,7 +19272,7 @@
   },
   {
     "id": "pot-trama-root-salt-pile",
-    "nome": "Elixir de Raiz de Trama e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz de Trama e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20040,7 +20220,7 @@
   },
   {
     "id": "pot-bear-claws-torchbug-thorax",
-    "nome": "Elixir de Garras de Urso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Garras de Urso e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20969,7 +21149,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-salt-pile",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23502,7 +23682,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-salt-pile",
-    "nome": "Elixir de Peixe de Escamas Finas e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe de Escamas Finas e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23964,7 +24144,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-salt-pile",
-    "nome": "Elixir de Ovo de Tordo e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Ovo de Tordo e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23981,7 +24161,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-torchbug-thorax",
-    "nome": "Elixir de Ovo de Tordo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Tordo e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24375,7 +24555,7 @@
   },
   {
     "id": "pot-creep-cluster-salt-pile",
-    "nome": "Elixir de Tufo Rastejante e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24392,7 +24572,7 @@
   },
   {
     "id": "pot-creep-cluster-torchbug-thorax",
-    "nome": "Elixir de Tufo Rastejante e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Tufo Rastejante e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -25214,7 +25394,7 @@
   },
   {
     "id": "pot-histcarp-torchbug-thorax",
-    "nome": "Elixir de Carpa de Pedra e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Carpa de Pedra e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25418,7 +25598,7 @@
   },
   {
     "id": "pot-juniper-berries-garlic",
-    "nome": "Elixir de Bagas de Zimbro e Alho das Hortas",
+    "nome": "Elixir de Bagas de Zimbro e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25725,7 +25905,7 @@
   },
   {
     "id": "pot-large-antlers-slaughterfish-egg",
-    "nome": "Elixir de Chifres de Alce e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Chifres de Alce e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25742,7 +25922,7 @@
   },
   {
     "id": "pot-large-antlers-salt-pile",
-    "nome": "Elixir de Chifres de Alce e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25776,7 +25956,7 @@
   },
   {
     "id": "pot-large-antlers-garlic",
-    "nome": "Elixir de Chifres de Alce e Alho das Hortas",
+    "nome": "Elixir de Chifres de Alce e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25793,7 +25973,7 @@
   },
   {
     "id": "pot-large-antlers-torchbug-thorax",
-    "nome": "Elixir de Chifres de Alce e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Chifres de Alce e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26154,7 +26334,7 @@
   },
   {
     "id": "pot-silverside-perch-torchbug-thorax",
-    "nome": "Elixir de Perca Prateada e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Perca Prateada e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26359,7 +26539,7 @@
   },
   {
     "id": "pot-wheat-torchbug-thorax",
-    "nome": "Elixir de Trigo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Trigo e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26496,7 +26676,7 @@
   },
   {
     "id": "pot-yellow-mountain-flower-slaughterfish-egg",
-    "nome": "Elixir de Flor Amarela da Montanha e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Flor Amarela da Montanha e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26530,7 +26710,7 @@
   },
   {
     "id": "pot-yellow-mountain-flower-salt-pile",
-    "nome": "Elixir de Flor Amarela da Montanha e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Amarela da Montanha e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26547,7 +26727,7 @@
   },
   {
     "id": "pot-yellow-mountain-flower-garlic",
-    "nome": "Elixir de Flor Amarela da Montanha e Alho das Hortas",
+    "nome": "Elixir de Flor Amarela da Montanha e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26735,7 +26915,7 @@
   },
   {
     "id": "pot-blue-dartwing-slaughterfish-egg",
-    "nome": "Elixir de Libélula Azul e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Libélula Azul e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26907,7 +27087,7 @@
   },
   {
     "id": "pot-gleamblossom-garlic",
-    "nome": "Elixir de Flor Luminescente e Alho das Hortas",
+    "nome": "Elixir de Flor Luminescente e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27165,7 +27345,7 @@
   },
   {
     "id": "pot-netch-jelly-torchbug-thorax",
-    "nome": "Elixir de Gelatina de Medusa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Gelatina de Medusa e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27489,7 +27669,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-torchbug-thorax",
-    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27762,7 +27942,7 @@
   },
   {
     "id": "pot-grass-pod-slaughterfish-egg",
-    "nome": "Elixir de Vagem da Charneca e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Vagem da Charneca e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27779,7 +27959,7 @@
   },
   {
     "id": "pot-grass-pod-garlic",
-    "nome": "Elixir de Vagem da Charneca e Alho das Hortas",
+    "nome": "Elixir de Vagem da Charneca e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28189,7 +28369,7 @@
   },
   {
     "id": "pot-hagraven-claw-torchbug-thorax",
-    "nome": "Elixir de Garra de Bruxa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Garra de Bruxa e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -28735,7 +28915,7 @@
   },
   {
     "id": "pot-boar-tusk-slaughterfish-egg",
-    "nome": "Elixir de Presa de Javali e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Presa de Javali e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28752,7 +28932,7 @@
   },
   {
     "id": "pot-boar-tusk-garlic",
-    "nome": "Elixir de Presa de Javali e Alho das Hortas",
+    "nome": "Elixir de Presa de Javali e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28769,7 +28949,7 @@
   },
   {
     "id": "pot-boar-tusk-torchbug-thorax",
-    "nome": "Elixir de Presa de Javali e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Presa de Javali e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29147,7 +29327,7 @@
   },
   {
     "id": "pot-pearl-torchbug-thorax",
-    "nome": "Elixir de Pérola e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pérola e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29454,7 +29634,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-slaughterfish-egg",
-    "nome": "Elixir de Escamas de Piranha e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Escamas de Piranha e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29947,7 +30127,7 @@
   },
   {
     "id": "pot-honeycomb-torchbug-thorax",
-    "nome": "Elixir de Favo de Mel e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Favo de Mel e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30225,7 +30405,7 @@
   },
   {
     "id": "pot-hawk-beak-torchbug-thorax",
-    "nome": "Elixir de Bico de Falcão e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Bico de Falcão e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30381,7 +30561,7 @@
   },
   {
     "id": "pot-scaly-pholiota-salt-pile",
-    "nome": "Elixir de Cogumelo Escamoso e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Cogumelo Escamoso e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -30398,7 +30578,7 @@
   },
   {
     "id": "pot-scaly-pholiota-torchbug-thorax",
-    "nome": "Elixir de Cogumelo Escamoso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Cogumelo Escamoso e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -30602,7 +30782,7 @@
   },
   {
     "id": "pot-wisp-wrappings-torchbug-thorax",
-    "nome": "Elixir de Faixas de Espírito e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Faixas de Espírito e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30927,7 +31107,7 @@
   },
   {
     "id": "pot-lavender-slaughterfish-egg",
-    "nome": "Elixir de Lavanda Selvagem e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Lavanda Selvagem e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30944,7 +31124,7 @@
   },
   {
     "id": "pot-lavender-garlic",
-    "nome": "Elixir de Lavanda Selvagem e Alho das Hortas",
+    "nome": "Elixir de Lavanda Selvagem e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30961,7 +31141,7 @@
   },
   {
     "id": "pot-lavender-torchbug-thorax",
-    "nome": "Elixir de Lavanda Selvagem e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Lavanda Selvagem e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31063,7 +31243,7 @@
   },
   {
     "id": "pot-beehive-husk-slaughterfish-egg",
-    "nome": "Elixir de Casca de Colmeia e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Casca de Colmeia e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31114,7 +31294,7 @@
   },
   {
     "id": "pot-beehive-husk-garlic",
-    "nome": "Elixir de Casca de Colmeia e Alho das Hortas",
+    "nome": "Elixir de Casca de Colmeia e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31849,7 +32029,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-torchbug-thorax",
-    "nome": "Elixir de Dente de Grande Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Dente de Grande Felino e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31934,7 +32114,7 @@
   },
   {
     "id": "pot-thistle-branch-slaughterfish-egg",
-    "nome": "Elixir de Ramo de Cardo e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ramo de Cardo e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31968,7 +32148,7 @@
   },
   {
     "id": "pot-thistle-branch-garlic",
-    "nome": "Elixir de Ramo de Cardo e Alho das Hortas",
+    "nome": "Elixir de Ramo de Cardo e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32315,7 +32495,7 @@
   },
   {
     "id": "pot-dwarven-oil-salt-pile",
-    "nome": "Elixir de Óleo de Autômato e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Óleo de Autômato e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32333,7 +32513,7 @@
   },
   {
     "id": "pot-dwarven-oil-garlic",
-    "nome": "Elixir de Óleo de Autômato e Alho das Hortas",
+    "nome": "Elixir de Óleo de Autômato e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32350,7 +32530,7 @@
   },
   {
     "id": "pot-dwarven-oil-torchbug-thorax",
-    "nome": "Elixir de Óleo de Autômato e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Óleo de Autômato e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32472,7 +32652,7 @@
   },
   {
     "id": "pot-mora-tapinella-slaughterfish-egg",
-    "nome": "Elixir de Cogumelo de Raiz e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Cogumelo de Raiz e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32643,7 +32823,7 @@
   },
   {
     "id": "pot-taproot-salt-pile",
-    "nome": "Elixir de Raiz Mestra e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz Mestra e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32661,7 +32841,7 @@
   },
   {
     "id": "pot-taproot-garlic",
-    "nome": "Elixir de Raiz Mestra e Alho das Hortas",
+    "nome": "Elixir de Raiz Mestra e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32678,7 +32858,7 @@
   },
   {
     "id": "pot-taproot-torchbug-thorax",
-    "nome": "Elixir de Raiz Mestra e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Raiz Mestra e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33055,7 +33235,7 @@
   },
   {
     "id": "pot-pine-thrush-egg-torchbug-thorax",
-    "nome": "Elixir de Ovo de Tordo da Costa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Tordo da Costa e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33141,7 +33321,7 @@
   },
   {
     "id": "pot-jazbay-grapes-salt-pile",
-    "nome": "Elixir de Uvas de Jasmim e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Uvas de Jasmim e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33159,7 +33339,7 @@
   },
   {
     "id": "pot-jazbay-grapes-garlic",
-    "nome": "Elixir de Uvas de Jasmim e Alho das Hortas",
+    "nome": "Elixir de Uvas de Jasmim e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33176,7 +33356,7 @@
   },
   {
     "id": "pot-jazbay-grapes-torchbug-thorax",
-    "nome": "Elixir de Uvas de Jasmim e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Uvas de Jasmim e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33295,7 +33475,7 @@
   },
   {
     "id": "pot-salmon-roe-salt-pile",
-    "nome": "Elixir de Ovas de Salmão e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Ovas de Salmão e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33329,7 +33509,7 @@
   },
   {
     "id": "pot-salmon-roe-garlic",
-    "nome": "Elixir de Ovas de Salmão e Alho das Hortas",
+    "nome": "Elixir de Ovas de Salmão e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33346,7 +33526,7 @@
   },
   {
     "id": "pot-salmon-roe-torchbug-thorax",
-    "nome": "Elixir de Ovas de Salmão e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovas de Salmão e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33535,7 +33715,7 @@
   },
   {
     "id": "pot-small-pearl-salt-pile",
-    "nome": "Elixir de Pérola Pequena e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Pérola Pequena e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33570,7 +33750,7 @@
   },
   {
     "id": "pot-small-pearl-torchbug-thorax",
-    "nome": "Elixir de Pérola Pequena e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pérola Pequena e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33621,7 +33801,7 @@
   },
   {
     "id": "pot-orange-dartwing-slaughterfish-egg",
-    "nome": "Elixir de Libélula Alaranjada e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Libélula Alaranjada e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33656,7 +33836,7 @@
   },
   {
     "id": "pot-orange-dartwing-torchbug-thorax",
-    "nome": "Elixir de Libélula Alaranjada e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Libélula Alaranjada e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33708,7 +33888,7 @@
   },
   {
     "id": "pot-slaughterfish-egg-garlic",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Alho das Hortas",
+    "nome": "Elixir de Ovas de Piranha e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33726,7 +33906,7 @@
   },
   {
     "id": "pot-slaughterfish-egg-torchbug-thorax",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovas de Piranha e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33743,7 +33923,7 @@
   },
   {
     "id": "pot-slaughterfish-egg-scathecraw",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Espinho-da-Morte",
+    "nome": "Elixir de Ovas de Piranha e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33760,7 +33940,7 @@
   },
   {
     "id": "pot-abecean-longfin-salt-pile",
-    "nome": "Elixir de Peixe da Costa Escarlate e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe da Costa Escarlate e Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33828,7 +34008,7 @@
   },
   {
     "id": "pot-salt-pile-garlic",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Alho das Hortas",
+    "nome": "Elixir de Sal do Mar de Sangue e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33845,7 +34025,7 @@
   },
   {
     "id": "pot-salt-pile-torchbug-thorax",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Sal do Mar de Sangue e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33862,7 +34042,7 @@
   },
   {
     "id": "pot-salt-pile-fire-salts",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Sais Ígneos",
+    "nome": "Elixir de Sal do Mar de Sangue e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33879,7 +34059,7 @@
   },
   {
     "id": "pot-salt-pile-moon-sugar",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Açúcar Lunar",
+    "nome": "Elixir de Sal do Mar de Sangue e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33896,7 +34076,7 @@
   },
   {
     "id": "pot-purple-mountain-flower-torchbug-thorax",
-    "nome": "Elixir de Flor Violeta e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Flor Violeta e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33965,7 +34145,7 @@
   },
   {
     "id": "pot-garlic-torchbug-thorax",
-    "nome": "Elixir de Alho das Hortas e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Alho e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33982,7 +34162,7 @@
   },
   {
     "id": "pot-garlic-fire-salts",
-    "nome": "Elixir de Alho das Hortas e Sais Ígneos",
+    "nome": "Elixir de Alho e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33999,7 +34179,7 @@
   },
   {
     "id": "pot-garlic-moon-sugar",
-    "nome": "Elixir de Alho das Hortas e Açúcar Lunar",
+    "nome": "Elixir de Alho e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -34016,7 +34196,7 @@
   },
   {
     "id": "pot-torchbug-thorax-swamp-fungal-pod",
-    "nome": "Elixir de Tórax de Inseto-lanterna e Fungo do Pântano",
+    "nome": "Elixir de Tórax de Vaga-lume e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -34033,7 +34213,7 @@
   },
   {
     "id": "pot-torchbug-thorax-bee",
-    "nome": "Elixir de Tórax de Inseto-lanterna e Abelha",
+    "nome": "Elixir de Tórax de Vaga-lume e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [

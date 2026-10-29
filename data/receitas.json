@@ -1583,7 +1583,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Carapaça de Caranguejo e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Carapaça de Caranguejo e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -1633,7 +1633,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-alho-das-hortas",
-    "nome": "Elixir de Carapaça de Caranguejo e Alho das Hortas",
+    "nome": "Elixir de Carapaça de Caranguejo e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -1658,7 +1658,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Carapaça de Caranguejo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Carapaça de Caranguejo e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2410,7 +2410,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-alho-das-hortas",
-    "nome": "Elixir de Pó de Vampiro e Alho das Hortas",
+    "nome": "Elixir de Pó de Vampiro e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -3311,7 +3311,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Couro de Rato e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Couro de Rato e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3361,7 +3361,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-alho-das-hortas",
-    "nome": "Elixir de Couro de Rato e Alho das Hortas",
+    "nome": "Elixir de Couro de Rato e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3386,7 +3386,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Couro de Rato e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Couro de Rato e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5321,7 +5321,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Betta do Rio e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Betta do Rio e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -5861,7 +5861,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-alho-das-hortas",
-    "nome": "Elixir de Musgo Parassol e Alho das Hortas",
+    "nome": "Elixir de Musgo Parassol e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7861,7 +7861,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Sino da Morte e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Sino da Morte e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -8461,7 +8461,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Flor Venenosa e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9521,7 +9521,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Orelha de Troglodita e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Orelha de Troglodita e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9541,7 +9541,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-alho-das-hortas",
-    "nome": "Elixir de Orelha de Troglodita e Alho das Hortas",
+    "nome": "Elixir de Orelha de Troglodita e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11261,7 +11261,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Fungo de Diabrete e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12981,7 +12981,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres de Cervo e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -13201,7 +13201,7 @@
   },
   {
     "id": "rec-elixir-de-gordura-de-troll-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Gordura de Troll e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Gordura de Troll e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13221,7 +13221,7 @@
   },
   {
     "id": "rec-elixir-de-gordura-de-troll-e-alho-das-hortas",
-    "nome": "Elixir de Gordura de Troll e Alho das Hortas",
+    "nome": "Elixir de Gordura de Troll e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14381,7 +14381,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14421,7 +14421,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-alho-das-hortas",
-    "nome": "Elixir de Ovo de Verme Gigante e Alho das Hortas",
+    "nome": "Elixir de Ovo de Verme Gigante e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14441,7 +14441,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15641,7 +15641,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Olho de Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Olho de Felino e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -17301,7 +17301,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-lunar-e-alho-das-hortas",
-    "nome": "Elixir de Asa de Mariposa Lunar e Alho das Hortas",
+    "nome": "Elixir de Asa de Mariposa Lunar e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17541,7 +17541,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-gualapoles-e-alho-das-hortas",
-    "nome": "Elixir de Fungo de Gualápoles e Alho das Hortas",
+    "nome": "Elixir de Fungo de Gualápoles e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17741,7 +17741,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Craca de Rio e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Craca de Rio e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -17761,7 +17761,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-alho-das-hortas",
-    "nome": "Elixir de Craca de Rio e Alho das Hortas",
+    "nome": "Elixir de Craca de Rio e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17961,7 +17961,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-de-trama-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Raiz de Trama e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz de Trama e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -19061,7 +19061,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Garras de Urso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Garras de Urso e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -20141,7 +20141,7 @@
   },
   {
     "id": "rec-elixir-de-madeira-de-ent-carbonizado-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23101,7 +23101,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Peixe de Escamas Finas e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe de Escamas Finas e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23641,7 +23641,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Ovo de Tordo e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Ovo de Tordo e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -23661,7 +23661,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovo de Tordo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Tordo e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24121,7 +24121,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Tufo Rastejante e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24141,7 +24141,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Tufo Rastejante e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Tufo Rastejante e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25101,7 +25101,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Carpa de Pedra e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Carpa de Pedra e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25341,7 +25341,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-alho-das-hortas",
-    "nome": "Elixir de Bagas de Zimbro e Alho das Hortas",
+    "nome": "Elixir de Bagas de Zimbro e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25701,7 +25701,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Chifres de Alce e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Chifres de Alce e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25721,7 +25721,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres de Alce e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25761,7 +25761,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-alho-das-hortas",
-    "nome": "Elixir de Chifres de Alce e Alho das Hortas",
+    "nome": "Elixir de Chifres de Alce e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25781,7 +25781,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Chifres de Alce e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Chifres de Alce e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26201,7 +26201,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Perca Prateada e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Perca Prateada e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26441,7 +26441,7 @@
   },
   {
     "id": "rec-elixir-de-trigo-da-costa-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Trigo e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Trigo e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26601,7 +26601,7 @@
   },
   {
     "id": "rec-elixir-de-flor-amarela-da-montanha-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Flor Amarela da Montanha e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Flor Amarela da Montanha e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26641,7 +26641,7 @@
   },
   {
     "id": "rec-elixir-de-flor-amarela-da-montanha-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Flor Amarela da Montanha e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Amarela da Montanha e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26661,7 +26661,7 @@
   },
   {
     "id": "rec-elixir-de-flor-amarela-da-montanha-e-alho-das-hortas",
-    "nome": "Elixir de Flor Amarela da Montanha e Alho das Hortas",
+    "nome": "Elixir de Flor Amarela da Montanha e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26881,7 +26881,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Libélula Azul e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Libélula Azul e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27081,7 +27081,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-alho-das-hortas",
-    "nome": "Elixir de Flor Luminescente e Alho das Hortas",
+    "nome": "Elixir de Flor Luminescente e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27381,7 +27381,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Gelatina de Medusa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Gelatina de Medusa e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27761,7 +27761,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pó de Presa de Mamute e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -28081,7 +28081,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-da-charneca-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Vagem da Charneca e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Vagem da Charneca e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -28101,7 +28101,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-da-charneca-e-alho-das-hortas",
-    "nome": "Elixir de Vagem da Charneca e Alho das Hortas",
+    "nome": "Elixir de Vagem da Charneca e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -28581,7 +28581,7 @@
   },
   {
     "id": "rec-elixir-de-garra-de-bruxa-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Garra de Bruxa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Garra de Bruxa e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -29221,7 +29221,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-javali-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Presa de Javali e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Presa de Javali e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29241,7 +29241,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-javali-e-alho-das-hortas",
-    "nome": "Elixir de Presa de Javali e Alho das Hortas",
+    "nome": "Elixir de Presa de Javali e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29261,7 +29261,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-javali-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Presa de Javali e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Presa de Javali e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29701,7 +29701,7 @@
   },
   {
     "id": "rec-elixir-de-perola-da-costa-sul-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Pérola e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pérola e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -30061,7 +30061,7 @@
   },
   {
     "id": "rec-elixir-de-escamas-de-peixe-carniceiro-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Escamas de Piranha e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Escamas de Piranha e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -30641,7 +30641,7 @@
   },
   {
     "id": "rec-elixir-de-favo-de-mel-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Favo de Mel e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Favo de Mel e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -30961,7 +30961,7 @@
   },
   {
     "id": "rec-elixir-de-bico-de-falcao-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Bico de Falcão e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Bico de Falcão e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -31141,7 +31141,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-escamoso-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Cogumelo Escamoso e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Cogumelo Escamoso e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -31161,7 +31161,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-escamoso-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Cogumelo Escamoso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Cogumelo Escamoso e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31401,7 +31401,7 @@
   },
   {
     "id": "rec-elixir-de-faixas-de-espirito-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Faixas de Espírito e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Faixas de Espírito e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31781,7 +31781,7 @@
   },
   {
     "id": "rec-elixir-de-lavanda-selvagem-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Lavanda Selvagem e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Lavanda Selvagem e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31801,7 +31801,7 @@
   },
   {
     "id": "rec-elixir-de-lavanda-selvagem-e-alho-das-hortas",
-    "nome": "Elixir de Lavanda Selvagem e Alho das Hortas",
+    "nome": "Elixir de Lavanda Selvagem e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31821,7 +31821,7 @@
   },
   {
     "id": "rec-elixir-de-lavanda-selvagem-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Lavanda Selvagem e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Lavanda Selvagem e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31941,7 +31941,7 @@
   },
   {
     "id": "rec-elixir-de-casca-de-colmeia-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Casca de Colmeia e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Casca de Colmeia e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32001,7 +32001,7 @@
   },
   {
     "id": "rec-elixir-de-casca-de-colmeia-e-alho-das-hortas",
-    "nome": "Elixir de Casca de Colmeia e Alho das Hortas",
+    "nome": "Elixir de Casca de Colmeia e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32861,7 +32861,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Dente de Grande Felino e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Dente de Grande Felino e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32961,7 +32961,7 @@
   },
   {
     "id": "rec-elixir-de-ramo-de-cardo-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Ramo de Cardo e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ramo de Cardo e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33001,7 +33001,7 @@
   },
   {
     "id": "rec-elixir-de-ramo-de-cardo-e-alho-das-hortas",
-    "nome": "Elixir de Ramo de Cardo e Alho das Hortas",
+    "nome": "Elixir de Ramo de Cardo e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33401,7 +33401,7 @@
   },
   {
     "id": "rec-elixir-de-oleo-de-automato-anao-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Óleo de Autômato e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Óleo de Autômato e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33421,7 +33421,7 @@
   },
   {
     "id": "rec-elixir-de-oleo-de-automato-anao-e-alho-das-hortas",
-    "nome": "Elixir de Óleo de Autômato e Alho das Hortas",
+    "nome": "Elixir de Óleo de Autômato e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33441,7 +33441,7 @@
   },
   {
     "id": "rec-elixir-de-oleo-de-automato-anao-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Óleo de Autômato e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Óleo de Autômato e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33581,7 +33581,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-de-raiz-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Cogumelo de Raiz e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Cogumelo de Raiz e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33781,7 +33781,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-mestra-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Raiz Mestra e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz Mestra e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33801,7 +33801,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-mestra-e-alho-das-hortas",
-    "nome": "Elixir de Raiz Mestra e Alho das Hortas",
+    "nome": "Elixir de Raiz Mestra e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33821,7 +33821,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-mestra-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Raiz Mestra e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Raiz Mestra e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34261,7 +34261,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-da-costa-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovo de Tordo da Costa e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Tordo da Costa e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34361,7 +34361,7 @@
   },
   {
     "id": "rec-elixir-de-uvas-de-jasmim-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Uvas de Jasmim e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Uvas de Jasmim e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34381,7 +34381,7 @@
   },
   {
     "id": "rec-elixir-de-uvas-de-jasmim-e-alho-das-hortas",
-    "nome": "Elixir de Uvas de Jasmim e Alho das Hortas",
+    "nome": "Elixir de Uvas de Jasmim e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34401,7 +34401,7 @@
   },
   {
     "id": "rec-elixir-de-uvas-de-jasmim-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Uvas de Jasmim e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Uvas de Jasmim e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34541,7 +34541,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-salmao-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Ovas de Salmão e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Ovas de Salmão e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34581,7 +34581,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-salmao-e-alho-das-hortas",
-    "nome": "Elixir de Ovas de Salmão e Alho das Hortas",
+    "nome": "Elixir de Ovas de Salmão e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34601,7 +34601,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-salmao-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovas de Salmão e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovas de Salmão e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34821,7 +34821,7 @@
   },
   {
     "id": "rec-elixir-de-perola-pequena-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Pérola Pequena e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Pérola Pequena e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -34861,7 +34861,7 @@
   },
   {
     "id": "rec-elixir-de-perola-pequena-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Pérola Pequena e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pérola Pequena e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34921,7 +34921,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Libélula Alaranjada e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Libélula Alaranjada e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34961,7 +34961,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Libélula Alaranjada e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Libélula Alaranjada e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35021,7 +35021,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-peixe-carniceiro-e-alho-das-hortas",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Alho das Hortas",
+    "nome": "Elixir de Ovas de Piranha e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35041,7 +35041,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-peixe-carniceiro-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovas de Piranha e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35061,7 +35061,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-peixe-carniceiro-e-espinho-da-morte",
-    "nome": "Elixir de Ovas de Peixe Carniceiro e Espinho-da-Morte",
+    "nome": "Elixir de Ovas de Piranha e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35081,7 +35081,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-da-costa-escarlate-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Peixe da Costa Escarlate e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe da Costa Escarlate e Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35161,7 +35161,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-alho-das-hortas",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Alho das Hortas",
+    "nome": "Elixir de Sal do Mar de Sangue e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -35181,7 +35181,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Sal do Mar de Sangue e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35201,7 +35201,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-sais-igneos",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Sais Ígneos",
+    "nome": "Elixir de Sal do Mar de Sangue e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35221,7 +35221,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-acucar-lunar",
-    "nome": "Elixir de Pilha de Sal do Mar de Sangue e Açúcar Lunar",
+    "nome": "Elixir de Sal do Mar de Sangue e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -35241,7 +35241,7 @@
   },
   {
     "id": "rec-elixir-de-flor-violeta-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Flor Violeta e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Flor Violeta e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35321,7 +35321,7 @@
   },
   {
     "id": "rec-elixir-de-alho-das-hortas-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Alho das Hortas e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Alho e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35341,7 +35341,7 @@
   },
   {
     "id": "rec-elixir-de-alho-das-hortas-e-sais-igneos",
-    "nome": "Elixir de Alho das Hortas e Sais Ígneos",
+    "nome": "Elixir de Alho e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35361,7 +35361,7 @@
   },
   {
     "id": "rec-elixir-de-alho-das-hortas-e-acucar-lunar",
-    "nome": "Elixir de Alho das Hortas e Açúcar Lunar",
+    "nome": "Elixir de Alho e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -35381,7 +35381,7 @@
   },
   {
     "id": "rec-elixir-de-torax-de-inseto-lanterna-e-fungo-do-pantano",
-    "nome": "Elixir de Tórax de Inseto-lanterna e Fungo do Pântano",
+    "nome": "Elixir de Tórax de Vaga-lume e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35401,7 +35401,7 @@
   },
   {
     "id": "rec-elixir-de-torax-de-inseto-lanterna-e-abelha",
-    "nome": "Elixir de Tórax de Inseto-lanterna e Abelha",
+    "nome": "Elixir de Tórax de Vaga-lume e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
