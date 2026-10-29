@@ -257,3 +257,13 @@ Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à
 - Acrescentado metadado legado `Reduce Charisma`. O efeito agora tem duas fontes na curadoria: Couro de Rato III e Fungo de Gualápoles II. O par compartilha Diminuir Carisma.
 - Sem mudanças no motor clássico, Phaser, itens, receitas ou saves. O crafting dinâmico continua pendente.
 - **Próxima ficha para decisão:** Raiz Mestra (`ing-taproot`), possível `aumentar_inteligencia` II, antes suspensa por fundamentação fraca; apresentar alternativa e solicitar decisão do criador.
+
+## Ciclo 11 — decisão aprovada: Raiz Mestra (29/10/2026)
+
+- **Aprovado pelo criador:** adicionar `aumentar_inteligencia` (**Aumentar Inteligência II**) à Raiz Mestra (`ing-taproot`), mantendo seus três atributos anteriores.
+- **Descrição canônica revista:** “Raiz profunda carregada de seiva encantada, cujas ramificações formam uma rede de memória vegetal que conserva impressões e conhecimentos absorvidos do ambiente; sua seiva favorece a recuperação de magia e pode ampliar a Inteligência.”
+- A rede subterrânea de raízes funciona como memória vegetal; sua seiva pode ampliar temporariamente a cognição, além de recuperar energia mágica. Esse é um elemento ficcional da Carcaça.
+- Metadado legado `Fortify Intelligence` acrescentado; sem integração automática à fabricação.
+- `aumentar_inteligencia` passa a ter duas fontes na curadoria: Musgo Parassol I e Raiz Mestra II. A mistura futura poderá ativar Aumentar Inteligência.
+- **Não alterados:** runtime clássico, Phaser, itens, receitas e saves.
+- **Próxima decisão:** Garra de Bruxa (`ing-hagraven-claw`) para `diminuir_magia` II, distinguindo diminuição temporária da capacidade mágica do dano à reserva atual.
