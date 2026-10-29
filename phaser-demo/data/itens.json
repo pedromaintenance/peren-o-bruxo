@@ -653,75 +653,128 @@
   },
   {
     "id": "ing-nightshade",
-    "nome": "Beladona Negra",
+    "nome": "Beladona",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Nightshade",
     "efeitos": [
-      "Fortify Destruction",
       "Damage Health",
       "Damage Magicka Regen",
       "Lingering Damage Stamina"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 3,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Planta tóxica de sombra, conhecida pelo dano lento e por interferir na recuperação mágica.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_regeneracao_magia",
+        "nome": "Diminuir Regeneração de Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-red-mountain-flower",
-    "nome": "Flor Vermelha de Thargrid",
+    "nome": "Flor Vermelha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Red Mountain Flower",
     "efeitos": [
       "Restore Magicka",
-      "Damage Health",
       "Fortify Magicka",
-      "Ravage Magicka"
+      "Damage Health"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 4,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Flor rubra usada em tônicos arcanos; recupera energia mágica, mas sua seiva concentrada pode ferir.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-skeever-tail",
-    "nome": "Cauda de Rato das Docas",
+    "nome": "Cauda de Rato",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Skeever Tail",
     "efeitos": [
       "Damage Health",
-      "Ravage Health",
-      "Fortify Light Armor",
-      "Damage Stamina Regen"
+      "Damage Stamina Regen",
+      "Fortify Light Armor"
     ],
-    "raridade": "epico",
+    "raridade": "comum",
     "valor": 29,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 5,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Cauda de roedor das docas empregada em venenos debilitantes e preparos protetores de curta duração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_regeneracao_stamina",
+        "nome": "Diminuir Regeneração de Stamina",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-small-antlers",
     "nome": "Chifres Jovens",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Small Antlers",
     "efeitos": [
-      "Damage Health",
-      "Weakness to Poison",
       "Fortify Restoration",
+      "Weakness to Poison",
       "Lingering Damage Stamina"
     ],
     "raridade": "comum",
@@ -729,127 +782,254 @@
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 1,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Chifres imaturos moídos para unguentos de restauração e toxinas de efeito persistente.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_restauracao",
+        "nome": "Aumentar Restauração",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-troll-fat",
     "nome": "Gordura de Troll",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Troll Fat",
     "efeitos": [
       "Resist Poison",
-      "Damage Health",
-      "Fortify Two-handed",
+      "Fortify Strength",
       "Frenzy"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 2,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Gordura espessa de troll, útil em fortificantes e misturas que desencadeiam agressividade.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_veneno",
+        "nome": "Resistência a Veneno",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-void-salts",
     "nome": "Sais do Vazio",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Void Salts",
     "efeitos": [
-      "Damage Health",
       "Fortify Magicka",
-      "Weakness to Shock",
-      "Resist Magic"
+      "Resist Magic",
+      "Weakness to Shock"
     ],
-    "raridade": "incomum",
+    "raridade": "raro",
     "valor": 19,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 3,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Cristais escuros associados ao Vazio; ampliam reservas arcanas, mas tornam o corpo vulnerável a descargas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_eletricidade",
+        "nome": "Fraqueza à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-butterfly-wing",
-    "nome": "Asa de Borboleta da Foz",
+    "nome": "Asa de Borboleta",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Butterfly Wing",
     "efeitos": [
-      "Damage Magicka",
-      "Fortify Barter",
       "Restore Health",
+      "Damage Magicka",
       "Lingering Damage Stamina"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 4,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Asa delicada empregada em tônicos suaves de recuperação e preparados que debilitam energia arcana.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_stamina",
+        "nome": "Dano à Stamina",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-chaurus-eggs",
     "nome": "Ovos de Verme Quitinoso",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Chaurus Eggs",
     "efeitos": [
-      "Damage Magicka",
       "Invisibility",
       "Fortify Stamina",
       "Weakness to Poison"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 5,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Ovos translúcidos de vermes subterrâneos, usados em extratos furtivos e fortificantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "invisibilidade",
+        "nome": "Invisibilidade",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_stamina",
+        "nome": "Aumentar Stamina",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-daedra-heart",
     "nome": "Coração de Demônio",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Daedra Heart",
     "efeitos": [
-      "Damage Magicka",
-      "Fear",
       "Restore Health",
-      "Damage Stamina Regen"
+      "Fear",
+      "Damage Magicka"
     ],
-    "raridade": "comum",
+    "raridade": "epico",
     "valor": 9,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 1,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Órgão de natureza demoníaca, intensamente carregado de vitalidade e energia mágica instável.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 3
+      },
+      {
+        "id": "medo",
+        "nome": "Medo",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_magia",
+        "nome": "Dano à Magia",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-eye-of-sabre-cat",
-    "nome": "Olho de Felino das Ilhas",
+    "nome": "Olho de Felino",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Eye of Sabre Cat",
     "efeitos": [
-      "Damage Magicka",
       "Restore Stamina",
-      "Restore Health",
-      "Ravage Health"
+      "Fortify Perception",
+      "Restore Health"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Olho preservado de grande felino, associado à recuperação do vigor e aos sentidos de caça.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_stamina",
+        "nome": "Restaurar Stamina",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_percepcao",
+        "nome": "Aumentar Percepção",
+        "intensidade": 2
+      },
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-glow-dust",
@@ -3083,7 +3263,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-skeever-tail",
-    "nome": "Elixir de Pena de Gaivota e Cauda de Rato das Docas",
+    "nome": "Elixir de Pena de Gaivota e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -3117,7 +3297,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-butterfly-wing",
-    "nome": "Elixir de Pena de Gaivota e Asa de Borboleta da Foz",
+    "nome": "Elixir de Pena de Gaivota e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -3151,7 +3331,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-eye-of-sabre-cat",
-    "nome": "Elixir de Pena de Gaivota e Olho de Felino das Ilhas",
+    "nome": "Elixir de Pena de Gaivota e Olho de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -3562,7 +3742,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-eye-of-sabre-cat",
-    "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino das Ilhas",
+    "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4276,7 +4456,7 @@
   },
   {
     "id": "pot-vampire-dust-red-mountain-flower",
-    "nome": "Elixir de Pó de Vampiro e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Pó de Vampiro e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4736,7 +4916,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-butterfly-wing",
-    "nome": "Elixir de Couro de Rato e Asa de Borboleta da Foz",
+    "nome": "Elixir de Couro de Rato e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4770,7 +4950,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-eye-of-sabre-cat",
-    "nome": "Elixir de Couro de Rato e Olho de Felino das Ilhas",
+    "nome": "Elixir de Couro de Rato e Olho de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5332,7 +5512,7 @@
   },
   {
     "id": "pot-hawk-feathers-skeever-tail",
-    "nome": "Elixir de Penas de Falcão e Cauda de Rato das Docas",
+    "nome": "Elixir de Penas de Falcão e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5779,7 +5959,7 @@
   },
   {
     "id": "pot-jarrin-root-nightshade",
-    "nome": "Elixir de Raiz Botulínica e Beladona Negra",
+    "nome": "Elixir de Raiz Botulínica e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5797,7 +5977,7 @@
   },
   {
     "id": "pot-jarrin-root-red-mountain-flower",
-    "nome": "Elixir de Raiz Botulínica e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Botulínica e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5814,7 +5994,7 @@
   },
   {
     "id": "pot-jarrin-root-skeever-tail",
-    "nome": "Elixir de Raiz Botulínica e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Botulínica e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5882,7 +6062,7 @@
   },
   {
     "id": "pot-jarrin-root-butterfly-wing",
-    "nome": "Elixir de Raiz Botulínica e Asa de Borboleta da Foz",
+    "nome": "Elixir de Raiz Botulínica e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5933,7 +6113,7 @@
   },
   {
     "id": "pot-jarrin-root-eye-of-sabre-cat",
-    "nome": "Elixir de Raiz Botulínica e Olho de Felino das Ilhas",
+    "nome": "Elixir de Raiz Botulínica e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6554,7 +6734,7 @@
   },
   {
     "id": "pot-river-betty-nightshade",
-    "nome": "Elixir de Betta do Rio e Beladona Negra",
+    "nome": "Elixir de Betta do Rio e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6571,7 +6751,7 @@
   },
   {
     "id": "pot-river-betty-red-mountain-flower",
-    "nome": "Elixir de Betta do Rio e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Betta do Rio e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6588,7 +6768,7 @@
   },
   {
     "id": "pot-river-betty-skeever-tail",
-    "nome": "Elixir de Betta do Rio e Cauda de Rato das Docas",
+    "nome": "Elixir de Betta do Rio e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7016,7 +7196,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-nightshade",
-    "nome": "Elixir de Musgo Parassol e Beladona Negra",
+    "nome": "Elixir de Musgo Parassol e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7033,7 +7213,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-red-mountain-flower",
-    "nome": "Elixir de Musgo Parassol e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Musgo Parassol e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7051,7 +7231,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-skeever-tail",
-    "nome": "Elixir de Musgo Parassol e Cauda de Rato das Docas",
+    "nome": "Elixir de Musgo Parassol e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7481,7 +7661,7 @@
   },
   {
     "id": "pot-nirnroot-nightshade",
-    "nome": "Elixir de Raiz Velada e Beladona Negra",
+    "nome": "Elixir de Raiz Velada e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7498,7 +7678,7 @@
   },
   {
     "id": "pot-nirnroot-red-mountain-flower",
-    "nome": "Elixir de Raiz Velada e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Velada e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7515,7 +7695,7 @@
   },
   {
     "id": "pot-nirnroot-skeever-tail",
-    "nome": "Elixir de Raiz Velada e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Velada e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8095,7 +8275,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-nightshade",
-    "nome": "Elixir de Raiz Velada Rubra e Beladona Negra",
+    "nome": "Elixir de Raiz Velada Rubra e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8112,7 +8292,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-red-mountain-flower",
-    "nome": "Elixir de Raiz Velada Rubra e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8129,7 +8309,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-skeever-tail",
-    "nome": "Elixir de Raiz Velada Rubra e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Velada Rubra e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8693,7 +8873,7 @@
   },
   {
     "id": "pot-deathbell-nightshade",
-    "nome": "Elixir de Sino da Morte e Beladona Negra",
+    "nome": "Elixir de Sino da Morte e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8710,7 +8890,7 @@
   },
   {
     "id": "pot-deathbell-red-mountain-flower",
-    "nome": "Elixir de Sino da Morte e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Sino da Morte e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8727,7 +8907,7 @@
   },
   {
     "id": "pot-deathbell-skeever-tail",
-    "nome": "Elixir de Sino da Morte e Cauda de Rato das Docas",
+    "nome": "Elixir de Sino da Morte e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9170,7 +9350,7 @@
   },
   {
     "id": "pot-poison-bloom-nightshade",
-    "nome": "Elixir de Flor Venenosa e Beladona Negra",
+    "nome": "Elixir de Flor Venenosa e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9187,7 +9367,7 @@
   },
   {
     "id": "pot-poison-bloom-red-mountain-flower",
-    "nome": "Elixir de Flor Venenosa e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Flor Venenosa e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9204,7 +9384,7 @@
   },
   {
     "id": "pot-poison-bloom-skeever-tail",
-    "nome": "Elixir de Flor Venenosa e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Venenosa e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9615,7 +9795,7 @@
   },
   {
     "id": "pot-ectoplasm-nightshade",
-    "nome": "Elixir de Ectoplasma e Beladona Negra",
+    "nome": "Elixir de Ectoplasma e Beladona",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9633,7 +9813,7 @@
   },
   {
     "id": "pot-ectoplasm-red-mountain-flower",
-    "nome": "Elixir de Ectoplasma e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Ectoplasma e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9652,7 +9832,7 @@
   },
   {
     "id": "pot-ectoplasm-skeever-tail",
-    "nome": "Elixir de Ectoplasma e Cauda de Rato das Docas",
+    "nome": "Elixir de Ectoplasma e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10148,7 +10328,7 @@
   },
   {
     "id": "pot-falmer-ear-nightshade",
-    "nome": "Elixir de Orelha de Troglodita e Beladona Negra",
+    "nome": "Elixir de Orelha de Troglodita e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10165,7 +10345,7 @@
   },
   {
     "id": "pot-falmer-ear-red-mountain-flower",
-    "nome": "Elixir de Orelha de Troglodita e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Orelha de Troglodita e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10182,7 +10362,7 @@
   },
   {
     "id": "pot-falmer-ear-skeever-tail",
-    "nome": "Elixir de Orelha de Troglodita e Cauda de Rato das Docas",
+    "nome": "Elixir de Orelha de Troglodita e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10525,7 +10705,7 @@
   },
   {
     "id": "pot-human-flesh-nightshade",
-    "nome": "Elixir de Carne Humana e Beladona Negra",
+    "nome": "Elixir de Carne Humana e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10542,7 +10722,7 @@
   },
   {
     "id": "pot-human-flesh-red-mountain-flower",
-    "nome": "Elixir de Carne Humana e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Carne Humana e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10560,7 +10740,7 @@
   },
   {
     "id": "pot-human-flesh-skeever-tail",
-    "nome": "Elixir de Carne Humana e Cauda de Rato das Docas",
+    "nome": "Elixir de Carne Humana e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11037,7 +11217,7 @@
   },
   {
     "id": "pot-human-heart-nightshade",
-    "nome": "Elixir de Coração Humano e Beladona Negra",
+    "nome": "Elixir de Coração Humano e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11055,7 +11235,7 @@
   },
   {
     "id": "pot-human-heart-red-mountain-flower",
-    "nome": "Elixir de Coração Humano e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Coração Humano e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11072,7 +11252,7 @@
   },
   {
     "id": "pot-human-heart-skeever-tail",
-    "nome": "Elixir de Coração Humano e Cauda de Rato das Docas",
+    "nome": "Elixir de Coração Humano e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11141,7 +11321,7 @@
   },
   {
     "id": "pot-human-heart-butterfly-wing",
-    "nome": "Elixir de Coração Humano e Asa de Borboleta da Foz",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11192,7 +11372,7 @@
   },
   {
     "id": "pot-human-heart-eye-of-sabre-cat",
-    "nome": "Elixir de Coração Humano e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração Humano e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11552,7 +11732,7 @@
   },
   {
     "id": "pot-imp-stool-nightshade",
-    "nome": "Elixir de Fungo de Diabrete e Beladona Negra",
+    "nome": "Elixir de Fungo de Diabrete e Beladona",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11569,7 +11749,7 @@
   },
   {
     "id": "pot-imp-stool-red-mountain-flower",
-    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11586,7 +11766,7 @@
   },
   {
     "id": "pot-imp-stool-skeever-tail",
-    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato das Docas",
+    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11654,7 +11834,7 @@
   },
   {
     "id": "pot-imp-stool-butterfly-wing",
-    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta da Foz",
+    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11688,7 +11868,7 @@
   },
   {
     "id": "pot-imp-stool-eye-of-sabre-cat",
-    "nome": "Elixir de Fungo de Diabrete e Olho de Felino das Ilhas",
+    "nome": "Elixir de Fungo de Diabrete e Olho de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11978,7 +12158,7 @@
   },
   {
     "id": "pot-nightshade-red-mountain-flower",
-    "nome": "Elixir de Beladona Negra e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Beladona e Flor Vermelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11995,7 +12175,7 @@
   },
   {
     "id": "pot-nightshade-skeever-tail",
-    "nome": "Elixir de Beladona Negra e Cauda de Rato das Docas",
+    "nome": "Elixir de Beladona e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12012,7 +12192,7 @@
   },
   {
     "id": "pot-nightshade-small-antlers",
-    "nome": "Elixir de Beladona Negra e Chifres Jovens",
+    "nome": "Elixir de Beladona e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12030,7 +12210,7 @@
   },
   {
     "id": "pot-nightshade-troll-fat",
-    "nome": "Elixir de Beladona Negra e Gordura de Troll",
+    "nome": "Elixir de Beladona e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12047,7 +12227,7 @@
   },
   {
     "id": "pot-nightshade-void-salts",
-    "nome": "Elixir de Beladona Negra e Sais do Vazio",
+    "nome": "Elixir de Beladona e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12064,7 +12244,7 @@
   },
   {
     "id": "pot-nightshade-butterfly-wing",
-    "nome": "Elixir de Beladona Negra e Asa de Borboleta da Foz",
+    "nome": "Elixir de Beladona e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12081,7 +12261,7 @@
   },
   {
     "id": "pot-nightshade-glow-dust",
-    "nome": "Elixir de Beladona Negra e Poeira Luminosa",
+    "nome": "Elixir de Beladona e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12099,7 +12279,7 @@
   },
   {
     "id": "pot-nightshade-hanging-moss",
-    "nome": "Elixir de Beladona Negra e Musgo Suspenso",
+    "nome": "Elixir de Beladona e Musgo Suspenso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12116,7 +12296,7 @@
   },
   {
     "id": "pot-nightshade-ancestor-moth-wing",
-    "nome": "Elixir de Beladona Negra e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Beladona e Asa de Mariposa Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12133,7 +12313,7 @@
   },
   {
     "id": "pot-nightshade-bear-claws",
-    "nome": "Elixir de Beladona Negra e Garras de Urso",
+    "nome": "Elixir de Beladona e Garras de Urso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12150,7 +12330,7 @@
   },
   {
     "id": "pot-nightshade-blue-butterfly-wing",
-    "nome": "Elixir de Beladona Negra e Asa de Borboleta Azul",
+    "nome": "Elixir de Beladona e Asa de Borboleta Azul",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12167,7 +12347,7 @@
   },
   {
     "id": "pot-nightshade-blue-mountain-flower",
-    "nome": "Elixir de Beladona Negra e Flor Azul da Montanha",
+    "nome": "Elixir de Beladona e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12184,7 +12364,7 @@
   },
   {
     "id": "pot-nightshade-burnt-spriggan-wood",
-    "nome": "Elixir de Beladona Negra e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Beladona e Madeira de Ent Carbonizado",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12201,7 +12381,7 @@
   },
   {
     "id": "pot-nightshade-chaurus-hunter-antennae",
-    "nome": "Elixir de Beladona Negra e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Beladona e Antena do Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12218,7 +12398,7 @@
   },
   {
     "id": "pot-nightshade-chicken-s-egg",
-    "nome": "Elixir de Beladona Negra e Ovo de Galinha",
+    "nome": "Elixir de Beladona e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12236,7 +12416,7 @@
   },
   {
     "id": "pot-nightshade-hawk-s-egg",
-    "nome": "Elixir de Beladona Negra e Ovo de Falcão",
+    "nome": "Elixir de Beladona e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12254,7 +12434,7 @@
   },
   {
     "id": "pot-nightshade-spider-egg",
-    "nome": "Elixir de Beladona Negra e Ovo de Aranha",
+    "nome": "Elixir de Beladona e Ovo de Aranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12271,7 +12451,7 @@
   },
   {
     "id": "pot-nightshade-spriggan-sap",
-    "nome": "Elixir de Beladona Negra e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Beladona e Seiva de Guardião Arbóreo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12288,7 +12468,7 @@
   },
   {
     "id": "pot-nightshade-ash-creep-cluster",
-    "nome": "Elixir de Beladona Negra e Cachos de Cinza",
+    "nome": "Elixir de Beladona e Cachos de Cinza",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12305,7 +12485,7 @@
   },
   {
     "id": "pot-nightshade-wisp-wrappings",
-    "nome": "Elixir de Beladona Negra e Faixas de Espírito",
+    "nome": "Elixir de Beladona e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12322,7 +12502,7 @@
   },
   {
     "id": "pot-nightshade-beehive-husk",
-    "nome": "Elixir de Beladona Negra e Casca de Colmeia",
+    "nome": "Elixir de Beladona e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12339,7 +12519,7 @@
   },
   {
     "id": "pot-nightshade-glowing-mushroom",
-    "nome": "Elixir de Beladona Negra e Cogumelo Luminescente",
+    "nome": "Elixir de Beladona e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12356,7 +12536,7 @@
   },
   {
     "id": "pot-red-mountain-flower-skeever-tail",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Vermelha e Cauda de Rato",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12373,7 +12553,7 @@
   },
   {
     "id": "pot-red-mountain-flower-small-antlers",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Chifres Jovens",
+    "nome": "Elixir de Flor Vermelha e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12390,7 +12570,7 @@
   },
   {
     "id": "pot-red-mountain-flower-troll-fat",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Gordura de Troll",
+    "nome": "Elixir de Flor Vermelha e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12407,7 +12587,7 @@
   },
   {
     "id": "pot-red-mountain-flower-void-salts",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais do Vazio",
+    "nome": "Elixir de Flor Vermelha e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12425,7 +12605,7 @@
   },
   {
     "id": "pot-red-mountain-flower-creep-cluster",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cachos Rastejantes",
+    "nome": "Elixir de Flor Vermelha e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12442,7 +12622,7 @@
   },
   {
     "id": "pot-red-mountain-flower-frost-mirriam",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Mirra da Geada",
+    "nome": "Elixir de Flor Vermelha e Mirra da Geada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12459,7 +12639,7 @@
   },
   {
     "id": "pot-red-mountain-flower-histcarp",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Carpa de Pedra",
+    "nome": "Elixir de Flor Vermelha e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12476,7 +12656,7 @@
   },
   {
     "id": "pot-red-mountain-flower-grass-pod",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Vagem da Charneca",
+    "nome": "Elixir de Flor Vermelha e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12494,7 +12674,7 @@
   },
   {
     "id": "pot-red-mountain-flower-tundra-cotton",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Algodão da Tundra",
+    "nome": "Elixir de Flor Vermelha e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12511,7 +12691,7 @@
   },
   {
     "id": "pot-red-mountain-flower-pearl",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Pérola da Costa Sul",
+    "nome": "Elixir de Flor Vermelha e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12528,7 +12708,7 @@
   },
   {
     "id": "pot-red-mountain-flower-briar-heart",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Coração de Espinheiros",
+    "nome": "Elixir de Flor Vermelha e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12546,7 +12726,7 @@
   },
   {
     "id": "pot-red-mountain-flower-frost-salts",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais da Geada",
+    "nome": "Elixir de Flor Vermelha e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12563,7 +12743,7 @@
   },
   {
     "id": "pot-red-mountain-flower-lavender",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Lavanda Selvagem",
+    "nome": "Elixir de Flor Vermelha e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12580,7 +12760,7 @@
   },
   {
     "id": "pot-red-mountain-flower-spawn-ash",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cinzas de Criatura",
+    "nome": "Elixir de Flor Vermelha e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12597,7 +12777,7 @@
   },
   {
     "id": "pot-red-mountain-flower-white-cap",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Chapéu Branco",
+    "nome": "Elixir de Flor Vermelha e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12615,7 +12795,7 @@
   },
   {
     "id": "pot-red-mountain-flower-dwarven-oil",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Óleo de Autômato Anão",
+    "nome": "Elixir de Flor Vermelha e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12632,7 +12812,7 @@
   },
   {
     "id": "pot-red-mountain-flower-mora-tapinella",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cogumelo de Raiz",
+    "nome": "Elixir de Flor Vermelha e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12649,7 +12829,7 @@
   },
   {
     "id": "pot-red-mountain-flower-taproot",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Raiz Mestra",
+    "nome": "Elixir de Flor Vermelha e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12666,7 +12846,7 @@
   },
   {
     "id": "pot-red-mountain-flower-jazbay-grapes",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Uvas de Jasmim",
+    "nome": "Elixir de Flor Vermelha e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12683,7 +12863,7 @@
   },
   {
     "id": "pot-red-mountain-flower-salmon-roe",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Ovas de Salmão",
+    "nome": "Elixir de Flor Vermelha e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12700,7 +12880,7 @@
   },
   {
     "id": "pot-red-mountain-flower-elves-ear",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Orelha de Elfo",
+    "nome": "Elixir de Flor Vermelha e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12717,7 +12897,7 @@
   },
   {
     "id": "pot-red-mountain-flower-orange-dartwing",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Libélula Alaranjada",
+    "nome": "Elixir de Flor Vermelha e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12734,7 +12914,7 @@
   },
   {
     "id": "pot-red-mountain-flower-scathecraw",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Espinho-da-Morte",
+    "nome": "Elixir de Flor Vermelha e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12751,7 +12931,7 @@
   },
   {
     "id": "pot-red-mountain-flower-giant-lichen",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Líquen Gigante",
+    "nome": "Elixir de Flor Vermelha e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12768,7 +12948,7 @@
   },
   {
     "id": "pot-red-mountain-flower-fire-salts",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais Ígneos",
+    "nome": "Elixir de Flor Vermelha e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12785,7 +12965,7 @@
   },
   {
     "id": "pot-red-mountain-flower-moon-sugar",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Açúcar Lunar",
+    "nome": "Elixir de Flor Vermelha e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12802,7 +12982,7 @@
   },
   {
     "id": "pot-skeever-tail-small-antlers",
-    "nome": "Elixir de Cauda de Rato das Docas e Chifres Jovens",
+    "nome": "Elixir de Cauda de Rato e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12819,7 +12999,7 @@
   },
   {
     "id": "pot-skeever-tail-troll-fat",
-    "nome": "Elixir de Cauda de Rato das Docas e Gordura de Troll",
+    "nome": "Elixir de Cauda de Rato e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12836,7 +13016,7 @@
   },
   {
     "id": "pot-skeever-tail-void-salts",
-    "nome": "Elixir de Cauda de Rato das Docas e Sais do Vazio",
+    "nome": "Elixir de Cauda de Rato e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12853,7 +13033,7 @@
   },
   {
     "id": "pot-skeever-tail-daedra-heart",
-    "nome": "Elixir de Cauda de Rato das Docas e Coração de Demônio",
+    "nome": "Elixir de Cauda de Rato e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12870,7 +13050,7 @@
   },
   {
     "id": "pot-skeever-tail-eye-of-sabre-cat",
-    "nome": "Elixir de Cauda de Rato das Docas e Olho de Felino das Ilhas",
+    "nome": "Elixir de Cauda de Rato e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12887,7 +13067,7 @@
   },
   {
     "id": "pot-skeever-tail-luna-moth-wing",
-    "nome": "Elixir de Cauda de Rato das Docas e Asa de Mariposa Lunar",
+    "nome": "Elixir de Cauda de Rato e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12904,7 +13084,7 @@
   },
   {
     "id": "pot-skeever-tail-cyrodilic-spadetail",
-    "nome": "Elixir de Cauda de Rato das Docas e Peixe de Escamas Finas",
+    "nome": "Elixir de Cauda de Rato e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12921,7 +13101,7 @@
   },
   {
     "id": "pot-skeever-tail-giant-s-toe",
-    "nome": "Elixir de Cauda de Rato das Docas e Dedo de Gigante",
+    "nome": "Elixir de Cauda de Rato e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12938,7 +13118,7 @@
   },
   {
     "id": "pot-skeever-tail-creep-cluster",
-    "nome": "Elixir de Cauda de Rato das Docas e Cachos Rastejantes",
+    "nome": "Elixir de Cauda de Rato e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12955,7 +13135,7 @@
   },
   {
     "id": "pot-skeever-tail-frost-mirriam",
-    "nome": "Elixir de Cauda de Rato das Docas e Mirra da Geada",
+    "nome": "Elixir de Cauda de Rato e Mirra da Geada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12972,7 +13152,7 @@
   },
   {
     "id": "pot-skeever-tail-histcarp",
-    "nome": "Elixir de Cauda de Rato das Docas e Carpa de Pedra",
+    "nome": "Elixir de Cauda de Rato e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12989,7 +13169,7 @@
   },
   {
     "id": "pot-skeever-tail-juniper-berries",
-    "nome": "Elixir de Cauda de Rato das Docas e Bagas de Zimbro",
+    "nome": "Elixir de Cauda de Rato e Bagas de Zimbro",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13006,7 +13186,7 @@
   },
   {
     "id": "pot-skeever-tail-large-antlers",
-    "nome": "Elixir de Cauda de Rato das Docas e Chifres Grandes",
+    "nome": "Elixir de Cauda de Rato e Chifres Grandes",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13023,7 +13203,7 @@
   },
   {
     "id": "pot-skeever-tail-silverside-perch",
-    "nome": "Elixir de Cauda de Rato das Docas e Perca Prateada",
+    "nome": "Elixir de Cauda de Rato e Perca Prateada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13041,7 +13221,7 @@
   },
   {
     "id": "pot-skeever-tail-wheat",
-    "nome": "Elixir de Cauda de Rato das Docas e Trigo da Costa",
+    "nome": "Elixir de Cauda de Rato e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13058,7 +13238,7 @@
   },
   {
     "id": "pot-skeever-tail-yellow-mountain-flower",
-    "nome": "Elixir de Cauda de Rato das Docas e Flor Amarela da Montanha",
+    "nome": "Elixir de Cauda de Rato e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13075,7 +13255,7 @@
   },
   {
     "id": "pot-skeever-tail-honeycomb",
-    "nome": "Elixir de Cauda de Rato das Docas e Favo de Mel",
+    "nome": "Elixir de Cauda de Rato e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13092,7 +13272,7 @@
   },
   {
     "id": "pot-skeever-tail-beehive-husk",
-    "nome": "Elixir de Cauda de Rato das Docas e Casca de Colmeia",
+    "nome": "Elixir de Cauda de Rato e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13109,7 +13289,7 @@
   },
   {
     "id": "pot-skeever-tail-ash-hopper-jelly",
-    "nome": "Elixir de Cauda de Rato das Docas e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Cauda de Rato e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13126,7 +13306,7 @@
   },
   {
     "id": "pot-skeever-tail-jazbay-grapes",
-    "nome": "Elixir de Cauda de Rato das Docas e Uvas de Jasmim",
+    "nome": "Elixir de Cauda de Rato e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13143,7 +13323,7 @@
   },
   {
     "id": "pot-skeever-tail-scathecraw",
-    "nome": "Elixir de Cauda de Rato das Docas e Espinho-da-Morte",
+    "nome": "Elixir de Cauda de Rato e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13160,7 +13340,7 @@
   },
   {
     "id": "pot-skeever-tail-giant-lichen",
-    "nome": "Elixir de Cauda de Rato das Docas e Líquen Gigante",
+    "nome": "Elixir de Cauda de Rato e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13211,7 +13391,7 @@
   },
   {
     "id": "pot-small-antlers-butterfly-wing",
-    "nome": "Elixir de Chifres Jovens e Asa de Borboleta da Foz",
+    "nome": "Elixir de Chifres Jovens e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13928,7 +14108,7 @@
   },
   {
     "id": "pot-butterfly-wing-chaurus-eggs",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Asa de Borboleta e Ovos de Verme Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13945,7 +14125,7 @@
   },
   {
     "id": "pot-butterfly-wing-daedra-heart",
-    "nome": "Elixir de Asa de Borboleta da Foz e Coração de Demônio",
+    "nome": "Elixir de Asa de Borboleta e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13963,7 +14143,7 @@
   },
   {
     "id": "pot-butterfly-wing-eye-of-sabre-cat",
-    "nome": "Elixir de Asa de Borboleta da Foz e Olho de Felino das Ilhas",
+    "nome": "Elixir de Asa de Borboleta e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13981,7 +14161,7 @@
   },
   {
     "id": "pot-butterfly-wing-glow-dust",
-    "nome": "Elixir de Asa de Borboleta da Foz e Poeira Luminosa",
+    "nome": "Elixir de Asa de Borboleta e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13998,7 +14178,7 @@
   },
   {
     "id": "pot-butterfly-wing-hagraven-feathers",
-    "nome": "Elixir de Asa de Borboleta da Foz e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa das Sombras",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14015,7 +14195,7 @@
   },
   {
     "id": "pot-butterfly-wing-hanging-moss",
-    "nome": "Elixir de Asa de Borboleta da Foz e Musgo Suspenso",
+    "nome": "Elixir de Asa de Borboleta e Musgo Suspenso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14032,7 +14212,7 @@
   },
   {
     "id": "pot-butterfly-wing-luna-moth-wing",
-    "nome": "Elixir de Asa de Borboleta da Foz e Asa de Mariposa Lunar",
+    "nome": "Elixir de Asa de Borboleta e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14049,7 +14229,7 @@
   },
   {
     "id": "pot-butterfly-wing-namira-s-rot",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo de Gualápoles",
+    "nome": "Elixir de Asa de Borboleta e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14066,7 +14246,7 @@
   },
   {
     "id": "pot-butterfly-wing-nordic-barnacle",
-    "nome": "Elixir de Asa de Borboleta da Foz e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Borboleta e Craca do Rio Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14083,7 +14263,7 @@
   },
   {
     "id": "pot-butterfly-wing-trama-root",
-    "nome": "Elixir de Asa de Borboleta da Foz e Raiz de Trama",
+    "nome": "Elixir de Asa de Borboleta e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14100,7 +14280,7 @@
   },
   {
     "id": "pot-butterfly-wing-blue-mountain-flower",
-    "nome": "Elixir de Asa de Borboleta da Foz e Flor Azul da Montanha",
+    "nome": "Elixir de Asa de Borboleta e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14117,7 +14297,7 @@
   },
   {
     "id": "pot-butterfly-wing-chicken-s-egg",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Galinha",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14134,7 +14314,7 @@
   },
   {
     "id": "pot-butterfly-wing-hawk-s-egg",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Falcão",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14151,7 +14331,7 @@
   },
   {
     "id": "pot-butterfly-wing-blisterwort",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo de Bolha",
+    "nome": "Elixir de Asa de Borboleta e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14168,7 +14348,7 @@
   },
   {
     "id": "pot-butterfly-wing-rock-warbler-egg",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Tordo",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14185,7 +14365,7 @@
   },
   {
     "id": "pot-butterfly-wing-wheat",
-    "nome": "Elixir de Asa de Borboleta da Foz e Trigo da Costa",
+    "nome": "Elixir de Asa de Borboleta e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14202,7 +14382,7 @@
   },
   {
     "id": "pot-butterfly-wing-blue-dartwing",
-    "nome": "Elixir de Asa de Borboleta da Foz e Libélula Azul",
+    "nome": "Elixir de Asa de Borboleta e Libélula Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14219,7 +14399,7 @@
   },
   {
     "id": "pot-butterfly-wing-dragon-s-tongue",
-    "nome": "Elixir de Asa de Borboleta da Foz e Língua de Dragão",
+    "nome": "Elixir de Asa de Borboleta e Língua de Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14236,7 +14416,7 @@
   },
   {
     "id": "pot-butterfly-wing-hagraven-claw",
-    "nome": "Elixir de Asa de Borboleta da Foz e Garra de Bruxa",
+    "nome": "Elixir de Asa de Borboleta e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14253,7 +14433,7 @@
   },
   {
     "id": "pot-butterfly-wing-tundra-cotton",
-    "nome": "Elixir de Asa de Borboleta da Foz e Algodão da Tundra",
+    "nome": "Elixir de Asa de Borboleta e Algodão da Tundra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14270,7 +14450,7 @@
   },
   {
     "id": "pot-butterfly-wing-ash-hopper-jelly",
-    "nome": "Elixir de Asa de Borboleta da Foz e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Asa de Borboleta e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14287,7 +14467,7 @@
   },
   {
     "id": "pot-butterfly-wing-swamp-fungal-pod",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo do Pântano",
+    "nome": "Elixir de Asa de Borboleta e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14321,7 +14501,7 @@
   },
   {
     "id": "pot-chaurus-eggs-eye-of-sabre-cat",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino das Ilhas",
+    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14679,7 +14859,7 @@
   },
   {
     "id": "pot-daedra-heart-eye-of-sabre-cat",
-    "nome": "Elixir de Coração de Demônio e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração de Demônio e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15142,7 +15322,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-glow-dust",
-    "nome": "Elixir de Olho de Felino das Ilhas e Poeira Luminosa",
+    "nome": "Elixir de Olho de Felino e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15159,7 +15339,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-hagraven-feathers",
-    "nome": "Elixir de Olho de Felino das Ilhas e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Olho de Felino e Penas de Bruxa das Sombras",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15176,7 +15356,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-hanging-moss",
-    "nome": "Elixir de Olho de Felino das Ilhas e Musgo Suspenso",
+    "nome": "Elixir de Olho de Felino e Musgo Suspenso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15193,7 +15373,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-luna-moth-wing",
-    "nome": "Elixir de Olho de Felino das Ilhas e Asa de Mariposa Lunar",
+    "nome": "Elixir de Olho de Felino e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15210,7 +15390,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-namira-s-rot",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo de Gualápoles",
+    "nome": "Elixir de Olho de Felino e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15227,7 +15407,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-nordic-barnacle",
-    "nome": "Elixir de Olho de Felino das Ilhas e Craca do Rio Ancestral",
+    "nome": "Elixir de Olho de Felino e Craca do Rio Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15244,7 +15424,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-trama-root",
-    "nome": "Elixir de Olho de Felino das Ilhas e Raiz de Trama",
+    "nome": "Elixir de Olho de Felino e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15261,7 +15441,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-bear-claws",
-    "nome": "Elixir de Olho de Felino das Ilhas e Garras de Urso",
+    "nome": "Elixir de Olho de Felino e Garras de Urso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15278,7 +15458,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-blue-mountain-flower",
-    "nome": "Elixir de Olho de Felino das Ilhas e Flor Azul da Montanha",
+    "nome": "Elixir de Olho de Felino e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15295,7 +15475,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-blisterwort",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo de Bolha",
+    "nome": "Elixir de Olho de Felino e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15312,7 +15492,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-cyrodilic-spadetail",
-    "nome": "Elixir de Olho de Felino das Ilhas e Peixe de Escamas Finas",
+    "nome": "Elixir de Olho de Felino e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15329,7 +15509,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-rock-warbler-egg",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovo de Tordo",
+    "nome": "Elixir de Olho de Felino e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15346,7 +15526,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-histcarp",
-    "nome": "Elixir de Olho de Felino das Ilhas e Carpa de Pedra",
+    "nome": "Elixir de Olho de Felino e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15363,7 +15543,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-large-antlers",
-    "nome": "Elixir de Olho de Felino das Ilhas e Chifres Grandes",
+    "nome": "Elixir de Olho de Felino e Chifres Grandes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15380,7 +15560,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-silverside-perch",
-    "nome": "Elixir de Olho de Felino das Ilhas e Perca Prateada",
+    "nome": "Elixir de Olho de Felino e Perca Prateada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15398,7 +15578,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-wheat",
-    "nome": "Elixir de Olho de Felino das Ilhas e Trigo da Costa",
+    "nome": "Elixir de Olho de Felino e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15415,7 +15595,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-blue-dartwing",
-    "nome": "Elixir de Olho de Felino das Ilhas e Libélula Azul",
+    "nome": "Elixir de Olho de Felino e Libélula Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15432,7 +15612,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-netch-jelly",
-    "nome": "Elixir de Olho de Felino das Ilhas e Gelatina de Netch",
+    "nome": "Elixir de Olho de Felino e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15449,7 +15629,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-powdered-mammoth-tusk",
-    "nome": "Elixir de Olho de Felino das Ilhas e Presa de Mamute em Pó",
+    "nome": "Elixir de Olho de Felino e Presa de Mamute em Pó",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15466,7 +15646,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-pearl",
-    "nome": "Elixir de Olho de Felino das Ilhas e Pérola da Costa Sul",
+    "nome": "Elixir de Olho de Felino e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15483,7 +15663,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-honeycomb",
-    "nome": "Elixir de Olho de Felino das Ilhas e Favo de Mel",
+    "nome": "Elixir de Olho de Felino e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15500,7 +15680,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-hawk-beak",
-    "nome": "Elixir de Olho de Felino das Ilhas e Bico de Falcão",
+    "nome": "Elixir de Olho de Felino e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15517,7 +15697,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-wisp-wrappings",
-    "nome": "Elixir de Olho de Felino das Ilhas e Faixas de Espírito",
+    "nome": "Elixir de Olho de Felino e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15534,7 +15714,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-sabre-cat-tooth",
-    "nome": "Elixir de Olho de Felino das Ilhas e Dente de Felino",
+    "nome": "Elixir de Olho de Felino e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15551,7 +15731,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-ash-hopper-jelly",
-    "nome": "Elixir de Olho de Felino das Ilhas e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Olho de Felino e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15568,7 +15748,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-pine-thrush-egg",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovo de Tordo da Costa",
+    "nome": "Elixir de Olho de Felino e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15585,7 +15765,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-jazbay-grapes",
-    "nome": "Elixir de Olho de Felino das Ilhas e Uvas de Jasmim",
+    "nome": "Elixir de Olho de Felino e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15602,7 +15782,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-salmon-roe",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovas de Salmão",
+    "nome": "Elixir de Olho de Felino e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15619,7 +15799,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-small-pearl",
-    "nome": "Elixir de Olho de Felino das Ilhas e Pérola Pequena",
+    "nome": "Elixir de Olho de Felino e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15636,7 +15816,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-orange-dartwing",
-    "nome": "Elixir de Olho de Felino das Ilhas e Libélula Alaranjada",
+    "nome": "Elixir de Olho de Felino e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15653,7 +15833,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-purple-mountain-flower",
-    "nome": "Elixir de Olho de Felino das Ilhas e Flor Violeta",
+    "nome": "Elixir de Olho de Felino e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15670,7 +15850,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-torchbug-thorax",
-    "nome": "Elixir de Olho de Felino das Ilhas e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Olho de Felino e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15687,7 +15867,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-scathecraw",
-    "nome": "Elixir de Olho de Felino das Ilhas e Espinho-da-Morte",
+    "nome": "Elixir de Olho de Felino e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15704,7 +15884,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-swamp-fungal-pod",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo do Pântano",
+    "nome": "Elixir de Olho de Felino e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15721,7 +15901,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-giant-lichen",
-    "nome": "Elixir de Olho de Felino das Ilhas e Líquen Gigante",
+    "nome": "Elixir de Olho de Felino e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15738,7 +15918,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-bee",
-    "nome": "Elixir de Olho de Felino das Ilhas e Abelha",
+    "nome": "Elixir de Olho de Felino e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [

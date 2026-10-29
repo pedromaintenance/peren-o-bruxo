@@ -141,7 +141,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Pena de Gaivota e Cauda de Rato das Docas",
+    "nome": "Elixir de Pena de Gaivota e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -181,7 +181,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Pena de Gaivota e Asa de Borboleta da Foz",
+    "nome": "Elixir de Pena de Gaivota e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -221,7 +221,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Pena de Gaivota e Olho de Felino das Ilhas",
+    "nome": "Elixir de Pena de Gaivota e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -701,7 +701,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino das Ilhas",
+    "nome": "Elixir de Carapaça de Caranguejo e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -1541,7 +1541,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Pó de Vampiro e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Pó de Vampiro e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2081,7 +2081,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Couro de Rato e Asa de Borboleta da Foz",
+    "nome": "Elixir de Couro de Rato e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2121,7 +2121,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Couro de Rato e Olho de Felino das Ilhas",
+    "nome": "Elixir de Couro de Rato e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2781,7 +2781,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Penas de Falcão e Cauda de Rato das Docas",
+    "nome": "Elixir de Penas de Falcão e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3301,7 +3301,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-beladona-negra",
-    "nome": "Elixir de Raiz Botulínica e Beladona Negra",
+    "nome": "Elixir de Raiz Botulínica e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -3321,7 +3321,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Raiz Botulínica e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Botulínica e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3341,7 +3341,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Raiz Botulínica e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Botulínica e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3421,7 +3421,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Raiz Botulínica e Asa de Borboleta da Foz",
+    "nome": "Elixir de Raiz Botulínica e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3481,7 +3481,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Raiz Botulínica e Olho de Felino das Ilhas",
+    "nome": "Elixir de Raiz Botulínica e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4201,7 +4201,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-beladona-negra",
-    "nome": "Elixir de Betta do Rio e Beladona Negra",
+    "nome": "Elixir de Betta do Rio e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4221,7 +4221,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Betta do Rio e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Betta do Rio e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -4241,7 +4241,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Betta do Rio e Cauda de Rato das Docas",
+    "nome": "Elixir de Betta do Rio e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -4741,7 +4741,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-beladona-negra",
-    "nome": "Elixir de Musgo Parassol e Beladona Negra",
+    "nome": "Elixir de Musgo Parassol e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4761,7 +4761,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Musgo Parassol e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Musgo Parassol e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -4781,7 +4781,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Musgo Parassol e Cauda de Rato das Docas",
+    "nome": "Elixir de Musgo Parassol e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5281,7 +5281,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-beladona-negra",
-    "nome": "Elixir de Raiz Velada e Beladona Negra",
+    "nome": "Elixir de Raiz Velada e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5301,7 +5301,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Raiz Velada e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Velada e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5321,7 +5321,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Raiz Velada e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Velada e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6001,7 +6001,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-beladona-negra",
-    "nome": "Elixir de Raiz Velada Rubra e Beladona Negra",
+    "nome": "Elixir de Raiz Velada Rubra e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6021,7 +6021,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Raiz Velada Rubra e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Raiz Velada Rubra e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6041,7 +6041,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Raiz Velada Rubra e Cauda de Rato das Docas",
+    "nome": "Elixir de Raiz Velada Rubra e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6701,7 +6701,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-beladona-negra",
-    "nome": "Elixir de Sino da Morte e Beladona Negra",
+    "nome": "Elixir de Sino da Morte e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -6721,7 +6721,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Sino da Morte e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Sino da Morte e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -6741,7 +6741,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Sino da Morte e Cauda de Rato das Docas",
+    "nome": "Elixir de Sino da Morte e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7261,7 +7261,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-beladona-negra",
-    "nome": "Elixir de Flor Venenosa e Beladona Negra",
+    "nome": "Elixir de Flor Venenosa e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7281,7 +7281,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Flor Venenosa e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Flor Venenosa e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -7301,7 +7301,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Flor Venenosa e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Venenosa e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7781,7 +7781,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-beladona-negra",
-    "nome": "Elixir de Ectoplasma e Beladona Negra",
+    "nome": "Elixir de Ectoplasma e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7801,7 +7801,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Ectoplasma e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Ectoplasma e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -7821,7 +7821,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Ectoplasma e Cauda de Rato das Docas",
+    "nome": "Elixir de Ectoplasma e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8401,7 +8401,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-beladona-negra",
-    "nome": "Elixir de Orelha de Troglodita e Beladona Negra",
+    "nome": "Elixir de Orelha de Troglodita e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8421,7 +8421,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Orelha de Troglodita e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Orelha de Troglodita e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8441,7 +8441,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Orelha de Troglodita e Cauda de Rato das Docas",
+    "nome": "Elixir de Orelha de Troglodita e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8841,7 +8841,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-beladona-negra",
-    "nome": "Elixir de Carne Humana e Beladona Negra",
+    "nome": "Elixir de Carne Humana e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8861,7 +8861,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Carne Humana e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Carne Humana e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8881,7 +8881,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Carne Humana e Cauda de Rato das Docas",
+    "nome": "Elixir de Carne Humana e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9441,7 +9441,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-beladona-negra",
-    "nome": "Elixir de Coração Humano e Beladona Negra",
+    "nome": "Elixir de Coração Humano e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9461,7 +9461,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Coração Humano e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Coração Humano e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9481,7 +9481,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Coração Humano e Cauda de Rato das Docas",
+    "nome": "Elixir de Coração Humano e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9561,7 +9561,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Coração Humano e Asa de Borboleta da Foz",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9621,7 +9621,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Coração Humano e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração Humano e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10041,7 +10041,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-beladona-negra",
-    "nome": "Elixir de Fungo de Diabrete e Beladona Negra",
+    "nome": "Elixir de Fungo de Diabrete e Beladona",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10061,7 +10061,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10081,7 +10081,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato das Docas",
+    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10161,7 +10161,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta da Foz",
+    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10201,7 +10201,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Fungo de Diabrete e Olho de Felino das Ilhas",
+    "nome": "Elixir de Fungo de Diabrete e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10541,7 +10541,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Beladona Negra e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Beladona e Flor Vermelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10561,7 +10561,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Beladona Negra e Cauda de Rato das Docas",
+    "nome": "Elixir de Beladona e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10581,7 +10581,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-chifres-jovens",
-    "nome": "Elixir de Beladona Negra e Chifres Jovens",
+    "nome": "Elixir de Beladona e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10601,7 +10601,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-gordura-de-troll",
-    "nome": "Elixir de Beladona Negra e Gordura de Troll",
+    "nome": "Elixir de Beladona e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10621,7 +10621,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-sais-do-vazio",
-    "nome": "Elixir de Beladona Negra e Sais do Vazio",
+    "nome": "Elixir de Beladona e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10641,7 +10641,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Beladona Negra e Asa de Borboleta da Foz",
+    "nome": "Elixir de Beladona e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10661,7 +10661,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-poeira-luminosa",
-    "nome": "Elixir de Beladona Negra e Poeira Luminosa",
+    "nome": "Elixir de Beladona e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10681,7 +10681,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-musgo-suspenso",
-    "nome": "Elixir de Beladona Negra e Musgo Suspenso",
+    "nome": "Elixir de Beladona e Musgo Suspenso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10701,7 +10701,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-asa-de-mariposa-ancestral",
-    "nome": "Elixir de Beladona Negra e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Beladona e Asa de Mariposa Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10721,7 +10721,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-garras-de-urso",
-    "nome": "Elixir de Beladona Negra e Garras de Urso",
+    "nome": "Elixir de Beladona e Garras de Urso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10741,7 +10741,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-asa-de-borboleta-azul",
-    "nome": "Elixir de Beladona Negra e Asa de Borboleta Azul",
+    "nome": "Elixir de Beladona e Asa de Borboleta Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10761,7 +10761,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-flor-azul-da-montanha",
-    "nome": "Elixir de Beladona Negra e Flor Azul da Montanha",
+    "nome": "Elixir de Beladona e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10781,7 +10781,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-madeira-de-ent-carbonizado",
-    "nome": "Elixir de Beladona Negra e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Beladona e Madeira de Ent Carbonizado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10801,7 +10801,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Beladona Negra e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Beladona e Antena do Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10821,7 +10821,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-ovo-de-galinha",
-    "nome": "Elixir de Beladona Negra e Ovo de Galinha",
+    "nome": "Elixir de Beladona e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10841,7 +10841,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-ovo-de-falcao",
-    "nome": "Elixir de Beladona Negra e Ovo de Falcão",
+    "nome": "Elixir de Beladona e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10861,7 +10861,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-ovo-de-aranha",
-    "nome": "Elixir de Beladona Negra e Ovo de Aranha",
+    "nome": "Elixir de Beladona e Ovo de Aranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10881,7 +10881,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-seiva-de-guardiao-arboreo",
-    "nome": "Elixir de Beladona Negra e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Beladona e Seiva de Guardião Arbóreo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10901,7 +10901,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-cachos-de-cinza",
-    "nome": "Elixir de Beladona Negra e Cachos de Cinza",
+    "nome": "Elixir de Beladona e Cachos de Cinza",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10921,7 +10921,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-faixas-de-espirito",
-    "nome": "Elixir de Beladona Negra e Faixas de Espírito",
+    "nome": "Elixir de Beladona e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10941,7 +10941,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-casca-de-colmeia",
-    "nome": "Elixir de Beladona Negra e Casca de Colmeia",
+    "nome": "Elixir de Beladona e Casca de Colmeia",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10961,7 +10961,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-cogumelo-luminescente",
-    "nome": "Elixir de Beladona Negra e Cogumelo Luminescente",
+    "nome": "Elixir de Beladona e Cogumelo Luminescente",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10981,7 +10981,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cauda de Rato das Docas",
+    "nome": "Elixir de Flor Vermelha e Cauda de Rato",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11001,7 +11001,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-chifres-jovens",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Chifres Jovens",
+    "nome": "Elixir de Flor Vermelha e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11021,7 +11021,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-gordura-de-troll",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Gordura de Troll",
+    "nome": "Elixir de Flor Vermelha e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11041,7 +11041,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-sais-do-vazio",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais do Vazio",
+    "nome": "Elixir de Flor Vermelha e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11061,7 +11061,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-cachos-rastejantes",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cachos Rastejantes",
+    "nome": "Elixir de Flor Vermelha e Cachos Rastejantes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11081,7 +11081,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-mirra-da-geada",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Mirra da Geada",
+    "nome": "Elixir de Flor Vermelha e Mirra da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11101,7 +11101,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-carpa-de-pedra",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Carpa de Pedra",
+    "nome": "Elixir de Flor Vermelha e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11121,7 +11121,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-vagem-da-charneca",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Vagem da Charneca",
+    "nome": "Elixir de Flor Vermelha e Vagem da Charneca",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11141,7 +11141,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-algodao-da-tundra",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Algodão da Tundra",
+    "nome": "Elixir de Flor Vermelha e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11161,7 +11161,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-perola-da-costa-sul",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Pérola da Costa Sul",
+    "nome": "Elixir de Flor Vermelha e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11181,7 +11181,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-coracao-de-espinheiros",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Coração de Espinheiros",
+    "nome": "Elixir de Flor Vermelha e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11201,7 +11201,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-sais-da-geada",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais da Geada",
+    "nome": "Elixir de Flor Vermelha e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11221,7 +11221,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-lavanda-selvagem",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Lavanda Selvagem",
+    "nome": "Elixir de Flor Vermelha e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11241,7 +11241,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-cinzas-de-criatura",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cinzas de Criatura",
+    "nome": "Elixir de Flor Vermelha e Cinzas de Criatura",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11261,7 +11261,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-chapeu-branco",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Chapéu Branco",
+    "nome": "Elixir de Flor Vermelha e Chapéu Branco",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11281,7 +11281,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-oleo-de-automato-anao",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Óleo de Autômato Anão",
+    "nome": "Elixir de Flor Vermelha e Óleo de Autômato Anão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11301,7 +11301,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-cogumelo-de-raiz",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Cogumelo de Raiz",
+    "nome": "Elixir de Flor Vermelha e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11321,7 +11321,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-raiz-mestra",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Raiz Mestra",
+    "nome": "Elixir de Flor Vermelha e Raiz Mestra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11341,7 +11341,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-uvas-de-jasmim",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Uvas de Jasmim",
+    "nome": "Elixir de Flor Vermelha e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11361,7 +11361,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-ovas-de-salmao",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Ovas de Salmão",
+    "nome": "Elixir de Flor Vermelha e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11381,7 +11381,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-orelha-de-elfo",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Orelha de Elfo",
+    "nome": "Elixir de Flor Vermelha e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11401,7 +11401,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-libelula-alaranjada",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Libélula Alaranjada",
+    "nome": "Elixir de Flor Vermelha e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11421,7 +11421,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-espinho-da-morte",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Espinho-da-Morte",
+    "nome": "Elixir de Flor Vermelha e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11441,7 +11441,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-liquen-gigante",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Líquen Gigante",
+    "nome": "Elixir de Flor Vermelha e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11461,7 +11461,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-sais-igneos",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Sais Ígneos",
+    "nome": "Elixir de Flor Vermelha e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11481,7 +11481,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-acucar-lunar",
-    "nome": "Elixir de Flor Vermelha de Thargrid e Açúcar Lunar",
+    "nome": "Elixir de Flor Vermelha e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11501,7 +11501,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-chifres-jovens",
-    "nome": "Elixir de Cauda de Rato das Docas e Chifres Jovens",
+    "nome": "Elixir de Cauda de Rato e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11521,7 +11521,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-gordura-de-troll",
-    "nome": "Elixir de Cauda de Rato das Docas e Gordura de Troll",
+    "nome": "Elixir de Cauda de Rato e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11541,7 +11541,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-sais-do-vazio",
-    "nome": "Elixir de Cauda de Rato das Docas e Sais do Vazio",
+    "nome": "Elixir de Cauda de Rato e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11561,7 +11561,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-coracao-de-demonio",
-    "nome": "Elixir de Cauda de Rato das Docas e Coração de Demônio",
+    "nome": "Elixir de Cauda de Rato e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11581,7 +11581,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Cauda de Rato das Docas e Olho de Felino das Ilhas",
+    "nome": "Elixir de Cauda de Rato e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11601,7 +11601,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Cauda de Rato das Docas e Asa de Mariposa Lunar",
+    "nome": "Elixir de Cauda de Rato e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11621,7 +11621,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Cauda de Rato das Docas e Peixe de Escamas Finas",
+    "nome": "Elixir de Cauda de Rato e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11641,7 +11641,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-dedo-de-gigante",
-    "nome": "Elixir de Cauda de Rato das Docas e Dedo de Gigante",
+    "nome": "Elixir de Cauda de Rato e Dedo de Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11661,7 +11661,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-cachos-rastejantes",
-    "nome": "Elixir de Cauda de Rato das Docas e Cachos Rastejantes",
+    "nome": "Elixir de Cauda de Rato e Cachos Rastejantes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11681,7 +11681,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-mirra-da-geada",
-    "nome": "Elixir de Cauda de Rato das Docas e Mirra da Geada",
+    "nome": "Elixir de Cauda de Rato e Mirra da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11701,7 +11701,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-carpa-de-pedra",
-    "nome": "Elixir de Cauda de Rato das Docas e Carpa de Pedra",
+    "nome": "Elixir de Cauda de Rato e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11721,7 +11721,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-bagas-de-zimbro",
-    "nome": "Elixir de Cauda de Rato das Docas e Bagas de Zimbro",
+    "nome": "Elixir de Cauda de Rato e Bagas de Zimbro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11741,7 +11741,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-chifres-grandes",
-    "nome": "Elixir de Cauda de Rato das Docas e Chifres Grandes",
+    "nome": "Elixir de Cauda de Rato e Chifres Grandes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11761,7 +11761,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-perca-prateada",
-    "nome": "Elixir de Cauda de Rato das Docas e Perca Prateada",
+    "nome": "Elixir de Cauda de Rato e Perca Prateada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11781,7 +11781,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-trigo-da-costa",
-    "nome": "Elixir de Cauda de Rato das Docas e Trigo da Costa",
+    "nome": "Elixir de Cauda de Rato e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11801,7 +11801,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Cauda de Rato das Docas e Flor Amarela da Montanha",
+    "nome": "Elixir de Cauda de Rato e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11821,7 +11821,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-favo-de-mel",
-    "nome": "Elixir de Cauda de Rato das Docas e Favo de Mel",
+    "nome": "Elixir de Cauda de Rato e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11841,7 +11841,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-casca-de-colmeia",
-    "nome": "Elixir de Cauda de Rato das Docas e Casca de Colmeia",
+    "nome": "Elixir de Cauda de Rato e Casca de Colmeia",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11861,7 +11861,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Cauda de Rato das Docas e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Cauda de Rato e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11881,7 +11881,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-uvas-de-jasmim",
-    "nome": "Elixir de Cauda de Rato das Docas e Uvas de Jasmim",
+    "nome": "Elixir de Cauda de Rato e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11901,7 +11901,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-espinho-da-morte",
-    "nome": "Elixir de Cauda de Rato das Docas e Espinho-da-Morte",
+    "nome": "Elixir de Cauda de Rato e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11921,7 +11921,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-liquen-gigante",
-    "nome": "Elixir de Cauda de Rato das Docas e Líquen Gigante",
+    "nome": "Elixir de Cauda de Rato e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11981,7 +11981,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Chifres Jovens e Asa de Borboleta da Foz",
+    "nome": "Elixir de Chifres Jovens e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12821,7 +12821,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Asa de Borboleta e Ovos de Verme Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12841,7 +12841,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-coracao-de-demonio",
-    "nome": "Elixir de Asa de Borboleta da Foz e Coração de Demônio",
+    "nome": "Elixir de Asa de Borboleta e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12861,7 +12861,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Asa de Borboleta da Foz e Olho de Felino das Ilhas",
+    "nome": "Elixir de Asa de Borboleta e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12881,7 +12881,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-poeira-luminosa",
-    "nome": "Elixir de Asa de Borboleta da Foz e Poeira Luminosa",
+    "nome": "Elixir de Asa de Borboleta e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12901,7 +12901,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Asa de Borboleta da Foz e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Asa de Borboleta e Penas de Bruxa das Sombras",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12921,7 +12921,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-musgo-suspenso",
-    "nome": "Elixir de Asa de Borboleta da Foz e Musgo Suspenso",
+    "nome": "Elixir de Asa de Borboleta e Musgo Suspenso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12941,7 +12941,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Asa de Borboleta da Foz e Asa de Mariposa Lunar",
+    "nome": "Elixir de Asa de Borboleta e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12961,7 +12961,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-fungo-de-gualapoles",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo de Gualápoles",
+    "nome": "Elixir de Asa de Borboleta e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12981,7 +12981,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Asa de Borboleta da Foz e Craca do Rio Ancestral",
+    "nome": "Elixir de Asa de Borboleta e Craca do Rio Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13001,7 +13001,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-raiz-de-trama",
-    "nome": "Elixir de Asa de Borboleta da Foz e Raiz de Trama",
+    "nome": "Elixir de Asa de Borboleta e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13021,7 +13021,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-flor-azul-da-montanha",
-    "nome": "Elixir de Asa de Borboleta da Foz e Flor Azul da Montanha",
+    "nome": "Elixir de Asa de Borboleta e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13041,7 +13041,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-ovo-de-galinha",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Galinha",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13061,7 +13061,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-ovo-de-falcao",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Falcão",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13081,7 +13081,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-fungo-de-bolha",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo de Bolha",
+    "nome": "Elixir de Asa de Borboleta e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13101,7 +13101,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-ovo-de-tordo",
-    "nome": "Elixir de Asa de Borboleta da Foz e Ovo de Tordo",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13121,7 +13121,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-trigo-da-costa",
-    "nome": "Elixir de Asa de Borboleta da Foz e Trigo da Costa",
+    "nome": "Elixir de Asa de Borboleta e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13141,7 +13141,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-libelula-azul",
-    "nome": "Elixir de Asa de Borboleta da Foz e Libélula Azul",
+    "nome": "Elixir de Asa de Borboleta e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13161,7 +13161,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-lingua-de-dragao",
-    "nome": "Elixir de Asa de Borboleta da Foz e Língua de Dragão",
+    "nome": "Elixir de Asa de Borboleta e Língua de Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13181,7 +13181,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-garra-de-bruxa",
-    "nome": "Elixir de Asa de Borboleta da Foz e Garra de Bruxa",
+    "nome": "Elixir de Asa de Borboleta e Garra de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13201,7 +13201,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-algodao-da-tundra",
-    "nome": "Elixir de Asa de Borboleta da Foz e Algodão da Tundra",
+    "nome": "Elixir de Asa de Borboleta e Algodão da Tundra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13221,7 +13221,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Asa de Borboleta da Foz e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Asa de Borboleta e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13241,7 +13241,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-fungo-do-pantano",
-    "nome": "Elixir de Asa de Borboleta da Foz e Fungo do Pântano",
+    "nome": "Elixir de Asa de Borboleta e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -13281,7 +13281,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino das Ilhas",
+    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13701,7 +13701,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Coração de Demônio e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração de Demônio e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14241,7 +14241,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-poeira-luminosa",
-    "nome": "Elixir de Olho de Felino das Ilhas e Poeira Luminosa",
+    "nome": "Elixir de Olho de Felino e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14261,7 +14261,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Olho de Felino das Ilhas e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Olho de Felino e Penas de Bruxa das Sombras",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14281,7 +14281,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-musgo-suspenso",
-    "nome": "Elixir de Olho de Felino das Ilhas e Musgo Suspenso",
+    "nome": "Elixir de Olho de Felino e Musgo Suspenso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14301,7 +14301,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Olho de Felino das Ilhas e Asa de Mariposa Lunar",
+    "nome": "Elixir de Olho de Felino e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14321,7 +14321,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-fungo-de-gualapoles",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo de Gualápoles",
+    "nome": "Elixir de Olho de Felino e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14341,7 +14341,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Olho de Felino das Ilhas e Craca do Rio Ancestral",
+    "nome": "Elixir de Olho de Felino e Craca do Rio Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14361,7 +14361,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-raiz-de-trama",
-    "nome": "Elixir de Olho de Felino das Ilhas e Raiz de Trama",
+    "nome": "Elixir de Olho de Felino e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14381,7 +14381,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-garras-de-urso",
-    "nome": "Elixir de Olho de Felino das Ilhas e Garras de Urso",
+    "nome": "Elixir de Olho de Felino e Garras de Urso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14401,7 +14401,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-flor-azul-da-montanha",
-    "nome": "Elixir de Olho de Felino das Ilhas e Flor Azul da Montanha",
+    "nome": "Elixir de Olho de Felino e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14421,7 +14421,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-fungo-de-bolha",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo de Bolha",
+    "nome": "Elixir de Olho de Felino e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14441,7 +14441,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Olho de Felino das Ilhas e Peixe de Escamas Finas",
+    "nome": "Elixir de Olho de Felino e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14461,7 +14461,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-ovo-de-tordo",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovo de Tordo",
+    "nome": "Elixir de Olho de Felino e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14481,7 +14481,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-carpa-de-pedra",
-    "nome": "Elixir de Olho de Felino das Ilhas e Carpa de Pedra",
+    "nome": "Elixir de Olho de Felino e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14501,7 +14501,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-chifres-grandes",
-    "nome": "Elixir de Olho de Felino das Ilhas e Chifres Grandes",
+    "nome": "Elixir de Olho de Felino e Chifres Grandes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14521,7 +14521,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-perca-prateada",
-    "nome": "Elixir de Olho de Felino das Ilhas e Perca Prateada",
+    "nome": "Elixir de Olho de Felino e Perca Prateada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14541,7 +14541,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-trigo-da-costa",
-    "nome": "Elixir de Olho de Felino das Ilhas e Trigo da Costa",
+    "nome": "Elixir de Olho de Felino e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14561,7 +14561,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-libelula-azul",
-    "nome": "Elixir de Olho de Felino das Ilhas e Libélula Azul",
+    "nome": "Elixir de Olho de Felino e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14581,7 +14581,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-gelatina-de-netch",
-    "nome": "Elixir de Olho de Felino das Ilhas e Gelatina de Netch",
+    "nome": "Elixir de Olho de Felino e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14601,7 +14601,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Olho de Felino das Ilhas e Presa de Mamute em Pó",
+    "nome": "Elixir de Olho de Felino e Presa de Mamute em Pó",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14621,7 +14621,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-perola-da-costa-sul",
-    "nome": "Elixir de Olho de Felino das Ilhas e Pérola da Costa Sul",
+    "nome": "Elixir de Olho de Felino e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14641,7 +14641,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-favo-de-mel",
-    "nome": "Elixir de Olho de Felino das Ilhas e Favo de Mel",
+    "nome": "Elixir de Olho de Felino e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14661,7 +14661,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-bico-de-falcao",
-    "nome": "Elixir de Olho de Felino das Ilhas e Bico de Falcão",
+    "nome": "Elixir de Olho de Felino e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14681,7 +14681,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-faixas-de-espirito",
-    "nome": "Elixir de Olho de Felino das Ilhas e Faixas de Espírito",
+    "nome": "Elixir de Olho de Felino e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14701,7 +14701,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-dente-de-felino",
-    "nome": "Elixir de Olho de Felino das Ilhas e Dente de Felino",
+    "nome": "Elixir de Olho de Felino e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14721,7 +14721,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Olho de Felino das Ilhas e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Olho de Felino e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14741,7 +14741,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovo de Tordo da Costa",
+    "nome": "Elixir de Olho de Felino e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14761,7 +14761,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-uvas-de-jasmim",
-    "nome": "Elixir de Olho de Felino das Ilhas e Uvas de Jasmim",
+    "nome": "Elixir de Olho de Felino e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14781,7 +14781,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-ovas-de-salmao",
-    "nome": "Elixir de Olho de Felino das Ilhas e Ovas de Salmão",
+    "nome": "Elixir de Olho de Felino e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14801,7 +14801,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-perola-pequena",
-    "nome": "Elixir de Olho de Felino das Ilhas e Pérola Pequena",
+    "nome": "Elixir de Olho de Felino e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14821,7 +14821,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-libelula-alaranjada",
-    "nome": "Elixir de Olho de Felino das Ilhas e Libélula Alaranjada",
+    "nome": "Elixir de Olho de Felino e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14841,7 +14841,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-flor-violeta",
-    "nome": "Elixir de Olho de Felino das Ilhas e Flor Violeta",
+    "nome": "Elixir de Olho de Felino e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14861,7 +14861,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Olho de Felino das Ilhas e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Olho de Felino e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -14881,7 +14881,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-espinho-da-morte",
-    "nome": "Elixir de Olho de Felino das Ilhas e Espinho-da-Morte",
+    "nome": "Elixir de Olho de Felino e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14901,7 +14901,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-fungo-do-pantano",
-    "nome": "Elixir de Olho de Felino das Ilhas e Fungo do Pântano",
+    "nome": "Elixir de Olho de Felino e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -14921,7 +14921,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-liquen-gigante",
-    "nome": "Elixir de Olho de Felino das Ilhas e Líquen Gigante",
+    "nome": "Elixir de Olho de Felino e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14941,7 +14941,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-abelha",
-    "nome": "Elixir de Olho de Felino das Ilhas e Abelha",
+    "nome": "Elixir de Olho de Felino e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
