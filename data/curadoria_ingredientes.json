@@ -2826,6 +2826,296 @@
         "Resist Frost",
         "Fortify Restoration"
       ]
+    },
+    "ing-orange-dartwing": {
+      "nome": "Libélula Alaranjada",
+      "descricao": "Libélula de margens quentes, utilizada em preparados de agilidade e toxinas suaves.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_magia",
+          "nome": "Diminuir Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Ravage Magicka",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-slaughterfish-egg": {
+      "nome": "Ovas de Piranha",
+      "descricao": "Ovas de peixe predador utilizadas em antídotos e compostos corrosivos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Dexterity",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-abecean-longfin": {
+      "nome": "Peixe da Costa Escarlate",
+      "descricao": "Peixe costeiro de escamas avermelhadas usado em infusões discretas e curativas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Fortify Restoration",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-salt-pile": {
+      "nome": "Sal do Mar de Sangue",
+      "descricao": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Fortify Restoration",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-purple-mountain-flower": {
+      "nome": "Flor Violeta",
+      "descricao": "Flor resistente às encostas e à bruma fria, utilizada em preparados de furtividade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Fortify Sneak",
+        "Resist Frost"
+      ]
+    },
+    "ing-garlic": {
+      "nome": "Alho",
+      "descricao": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Resist Poison",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-torchbug-thorax": {
+      "nome": "Tórax de Vaga-lume",
+      "descricao": "Órgão luminescente de inseto utilizado em compostos sensoriais e arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Lingering Damage Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-fly-amanita": {
+      "nome": "Amanita Rubra",
+      "descricao": "Cogumelo vermelho de propriedades psicoativas, utilizado em preparações de combate.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Strength",
+        "Frenzy"
+      ]
+    },
+    "ing-scathecraw": {
+      "nome": "Espinho-da-Morte",
+      "descricao": "Espinho de planta nociva, macerado em fórmulas que debilitam corpo e energia arcana.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Ravage Health",
+        "Ravage Magicka",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-swamp-fungal-pod": {
+      "nome": "Fungo do Pântano",
+      "descricao": "Fungo úmido de propriedades ambivalentes: pode curar ou imobilizar.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Paralysis",
+        "Resist Shock"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -2872,7 +3162,11 @@
     "Dente de Felino": "Dente de Grande Felino",
     "Orelha de Elfo": "Orelha-de-Elfo",
     "Óleo de Autômato Anão": "Óleo de Autômato",
-    "Gelatina de Saltador das Cinzas": "Gelatina de Gafanhoto"
+    "Gelatina de Saltador das Cinzas": "Gelatina de Gafanhoto",
+    "Ovas de Peixe Carniceiro": "Ovas de Piranha",
+    "Pilha de Sal do Mar de Sangue": "Sal do Mar de Sangue",
+    "Alho das Hortas": "Alho",
+    "Tórax de Inseto-lanterna": "Tórax de Vaga-lume"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -2970,7 +3264,17 @@
     "ing-jazbay-grapes",
     "ing-salmon-roe",
     "ing-elves-ear",
-    "ing-small-pearl"
+    "ing-small-pearl",
+    "ing-orange-dartwing",
+    "ing-slaughterfish-egg",
+    "ing-abecean-longfin",
+    "ing-salt-pile",
+    "ing-purple-mountain-flower",
+    "ing-garlic",
+    "ing-torchbug-thorax",
+    "ing-fly-amanita",
+    "ing-scathecraw",
+    "ing-swamp-fungal-pod"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
