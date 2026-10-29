@@ -1,0 +1,36 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "source": "assets/icons/sources/osso-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    455
+  ],
+  "sourceSha256": "8846834535cabd2f26f15bf8ba6eff1a0600a60db71a329d5e61a3b59e34f5d7",
+  "sourceGitBlob": "f7ab97c2968a4e6d6197085a9ffbf5274b9756dd",
+  "backupPreviousStaticIcon": "assets/icons/sources/osso-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "26430cdcda46c0599b26f758af22a325d4393112",
+  "animation": "assets/icons/osso.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180,
+    180
+  ],
+  "loop": 0,
+  "outputSha256": "9e0f8040186fd35e408dadbfa9eb246203a7af6a6392e7daa397008b3ba84642",
+  "outputGitBlob": "2ff71b3ccde810693022c042eb9423a6759b525a",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-assets-20261028-alquimia-v5-sword-axial-v1-grimorio-anim-v1-20261028-hammer-spin-v1-20261029-hammer-nineframes-v2-feather-gaivota-v1-exact-item-v2-osso-float-v1-20261029",
+  "integration": "Existing game.js maps bone materials to assets/icons/osso.webp; no gameplay or saves changed."
+}
