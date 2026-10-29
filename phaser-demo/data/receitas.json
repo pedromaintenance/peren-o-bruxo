@@ -121,7 +121,7 @@
   },
   {
     "id": "rec-elixir-de-pena-de-gaivota-de-portomonte-e-cogumelo-do-imp",
-    "nome": "Elixir de Pena de Gaivota e Cogumelo do Imp",
+    "nome": "Elixir de Pena de Gaivota e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -1521,7 +1521,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-carne-de-proscrito",
-    "nome": "Elixir de Pó de Vampiro e Carne de Proscrito",
+    "nome": "Elixir de Pó de Vampiro e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -2041,7 +2041,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-cogumelo-do-imp",
-    "nome": "Elixir de Couro de Rato e Cogumelo do Imp",
+    "nome": "Elixir de Couro de Rato e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -2761,7 +2761,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-carne-de-proscrito",
-    "nome": "Elixir de Penas de Falcão e Carne de Proscrito",
+    "nome": "Elixir de Penas de Falcão e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3241,7 +3241,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-carne-de-proscrito",
-    "nome": "Elixir de Raiz Botulínica e Carne de Proscrito",
+    "nome": "Elixir de Raiz Botulínica e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3261,7 +3261,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-coracao-proibido",
-    "nome": "Elixir de Raiz Botulínica e Coração Proibido",
+    "nome": "Elixir de Raiz Botulínica e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -3281,7 +3281,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-cogumelo-do-imp",
-    "nome": "Elixir de Raiz Botulínica e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Botulínica e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4141,7 +4141,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-carne-de-proscrito",
-    "nome": "Elixir de Betta do Rio e Carne de Proscrito",
+    "nome": "Elixir de Betta do Rio e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -4161,7 +4161,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-coracao-proibido",
-    "nome": "Elixir de Betta do Rio e Coração Proibido",
+    "nome": "Elixir de Betta do Rio e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4181,7 +4181,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-cogumelo-do-imp",
-    "nome": "Elixir de Betta do Rio e Cogumelo do Imp",
+    "nome": "Elixir de Betta do Rio e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4681,7 +4681,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-carne-de-proscrito",
-    "nome": "Elixir de Musgo Parassol e Carne de Proscrito",
+    "nome": "Elixir de Musgo Parassol e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -4701,7 +4701,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-coracao-proibido",
-    "nome": "Elixir de Musgo Parassol e Coração Proibido",
+    "nome": "Elixir de Musgo Parassol e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -4721,7 +4721,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-cogumelo-do-imp",
-    "nome": "Elixir de Musgo Parassol e Cogumelo do Imp",
+    "nome": "Elixir de Musgo Parassol e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5221,7 +5221,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-carne-de-proscrito",
-    "nome": "Elixir de Raiz Velada e Carne de Proscrito",
+    "nome": "Elixir de Raiz Velada e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5241,7 +5241,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-coracao-proibido",
-    "nome": "Elixir de Raiz Velada e Coração Proibido",
+    "nome": "Elixir de Raiz Velada e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5261,7 +5261,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-cogumelo-do-imp",
-    "nome": "Elixir de Raiz Velada e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Velada e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5941,7 +5941,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-carne-de-proscrito",
-    "nome": "Elixir de Raiz Velada Rubra e Carne de Proscrito",
+    "nome": "Elixir de Raiz Velada Rubra e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5961,7 +5961,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-coracao-proibido",
-    "nome": "Elixir de Raiz Velada Rubra e Coração Proibido",
+    "nome": "Elixir de Raiz Velada Rubra e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5981,7 +5981,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-cogumelo-do-imp",
-    "nome": "Elixir de Raiz Velada Rubra e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Velada Rubra e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6641,7 +6641,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-carne-de-proscrito",
-    "nome": "Elixir de Sino da Morte e Carne de Proscrito",
+    "nome": "Elixir de Sino da Morte e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6661,7 +6661,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-coracao-proibido",
-    "nome": "Elixir de Sino da Morte e Coração Proibido",
+    "nome": "Elixir de Sino da Morte e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -6681,7 +6681,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-cogumelo-do-imp",
-    "nome": "Elixir de Sino da Morte e Cogumelo do Imp",
+    "nome": "Elixir de Sino da Morte e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7201,7 +7201,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-carne-de-proscrito",
-    "nome": "Elixir de Flor Venenosa e Carne de Proscrito",
+    "nome": "Elixir de Flor Venenosa e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7221,7 +7221,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-coracao-proibido",
-    "nome": "Elixir de Flor Venenosa e Coração Proibido",
+    "nome": "Elixir de Flor Venenosa e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7241,7 +7241,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cogumelo-do-imp",
-    "nome": "Elixir de Flor Venenosa e Cogumelo do Imp",
+    "nome": "Elixir de Flor Venenosa e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7721,7 +7721,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-carne-de-proscrito",
-    "nome": "Elixir de Ectoplasma e Carne de Proscrito",
+    "nome": "Elixir de Ectoplasma e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7741,7 +7741,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-coracao-proibido",
-    "nome": "Elixir de Ectoplasma e Coração Proibido",
+    "nome": "Elixir de Ectoplasma e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7761,7 +7761,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cogumelo-do-imp",
-    "nome": "Elixir de Ectoplasma e Cogumelo do Imp",
+    "nome": "Elixir de Ectoplasma e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8341,7 +8341,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-carne-de-proscrito",
-    "nome": "Elixir de Orelha de Troglodita e Carne de Proscrito",
+    "nome": "Elixir de Orelha de Troglodita e Carne Humana",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8361,7 +8361,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-coracao-proibido",
-    "nome": "Elixir de Orelha de Troglodita e Coração Proibido",
+    "nome": "Elixir de Orelha de Troglodita e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8381,7 +8381,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-cogumelo-do-imp",
-    "nome": "Elixir de Orelha de Troglodita e Cogumelo do Imp",
+    "nome": "Elixir de Orelha de Troglodita e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8801,7 +8801,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-coracao-proibido",
-    "nome": "Elixir de Carne de Proscrito e Coração Proibido",
+    "nome": "Elixir de Carne Humana e Coração Humano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8821,7 +8821,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cogumelo-do-imp",
-    "nome": "Elixir de Carne de Proscrito e Cogumelo do Imp",
+    "nome": "Elixir de Carne Humana e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8841,7 +8841,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-beladona-negra",
-    "nome": "Elixir de Carne de Proscrito e Beladona Negra",
+    "nome": "Elixir de Carne Humana e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8861,7 +8861,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Carne de Proscrito e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Carne Humana e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8881,7 +8881,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Carne de Proscrito e Cauda de Rato das Docas",
+    "nome": "Elixir de Carne Humana e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8901,7 +8901,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-chifres-jovens",
-    "nome": "Elixir de Carne de Proscrito e Chifres Jovens",
+    "nome": "Elixir de Carne Humana e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8921,7 +8921,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-gordura-de-troll",
-    "nome": "Elixir de Carne de Proscrito e Gordura de Troll",
+    "nome": "Elixir de Carne Humana e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8941,7 +8941,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-sais-do-vazio",
-    "nome": "Elixir de Carne de Proscrito e Sais do Vazio",
+    "nome": "Elixir de Carne Humana e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8961,7 +8961,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-raiz-canina",
-    "nome": "Elixir de Carne de Proscrito e Raiz Canina",
+    "nome": "Elixir de Carne Humana e Raiz Canina",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -8981,7 +8981,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cachos-rastejantes",
-    "nome": "Elixir de Carne de Proscrito e Cachos Rastejantes",
+    "nome": "Elixir de Carne Humana e Cachos Rastejantes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9001,7 +9001,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-mirra-da-geada",
-    "nome": "Elixir de Carne de Proscrito e Mirra da Geada",
+    "nome": "Elixir de Carne Humana e Mirra da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9021,7 +9021,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-flor-de-brilho",
-    "nome": "Elixir de Carne de Proscrito e Flor de Brilho",
+    "nome": "Elixir de Carne Humana e Flor de Brilho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9041,7 +9041,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-gelatina-de-netch",
-    "nome": "Elixir de Carne de Proscrito e Gelatina de Netch",
+    "nome": "Elixir de Carne Humana e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9061,7 +9061,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Carne de Proscrito e Presa de Mamute em Pó",
+    "nome": "Elixir de Carne Humana e Presa de Mamute em Pó",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9081,7 +9081,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-vagem-da-charneca",
-    "nome": "Elixir de Carne de Proscrito e Vagem da Charneca",
+    "nome": "Elixir de Carne Humana e Vagem da Charneca",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9101,7 +9101,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-perola-da-costa-sul",
-    "nome": "Elixir de Carne de Proscrito e Pérola da Costa Sul",
+    "nome": "Elixir de Carne Humana e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9121,7 +9121,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-coracao-de-espinheiros",
-    "nome": "Elixir de Carne de Proscrito e Coração de Espinheiros",
+    "nome": "Elixir de Carne Humana e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9141,7 +9141,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-sais-da-geada",
-    "nome": "Elixir de Carne de Proscrito e Sais da Geada",
+    "nome": "Elixir de Carne Humana e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9161,7 +9161,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-casca-de-colmeia",
-    "nome": "Elixir de Carne de Proscrito e Casca de Colmeia",
+    "nome": "Elixir de Carne Humana e Casca de Colmeia",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9181,7 +9181,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-chapeu-branco",
-    "nome": "Elixir de Carne de Proscrito e Chapéu Branco",
+    "nome": "Elixir de Carne Humana e Chapéu Branco",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9201,7 +9201,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-oleo-de-automato-anao",
-    "nome": "Elixir de Carne de Proscrito e Óleo de Autômato Anão",
+    "nome": "Elixir de Carne Humana e Óleo de Autômato Anão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9221,7 +9221,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cogumelo-de-raiz",
-    "nome": "Elixir de Carne de Proscrito e Cogumelo de Raiz",
+    "nome": "Elixir de Carne Humana e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9241,7 +9241,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-raiz-mestra",
-    "nome": "Elixir de Carne de Proscrito e Raiz Mestra",
+    "nome": "Elixir de Carne Humana e Raiz Mestra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9261,7 +9261,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-vagem-cinzenta",
-    "nome": "Elixir de Carne de Proscrito e Vagem Cinzenta",
+    "nome": "Elixir de Carne Humana e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9281,7 +9281,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-orelha-de-elfo",
-    "nome": "Elixir de Carne de Proscrito e Orelha de Elfo",
+    "nome": "Elixir de Carne Humana e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9301,7 +9301,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Carne de Proscrito e Peixe da Costa Escarlate",
+    "nome": "Elixir de Carne Humana e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9321,7 +9321,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-flor-violeta",
-    "nome": "Elixir de Carne de Proscrito e Flor Violeta",
+    "nome": "Elixir de Carne Humana e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9341,7 +9341,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-fungo-do-pantano",
-    "nome": "Elixir de Carne de Proscrito e Fungo do Pântano",
+    "nome": "Elixir de Carne Humana e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9361,7 +9361,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-liquen-gigante",
-    "nome": "Elixir de Carne de Proscrito e Líquen Gigante",
+    "nome": "Elixir de Carne Humana e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9381,7 +9381,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-sais-igneos",
-    "nome": "Elixir de Carne de Proscrito e Sais Ígneos",
+    "nome": "Elixir de Carne Humana e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9401,7 +9401,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-acucar-lunar",
-    "nome": "Elixir de Carne de Proscrito e Açúcar Lunar",
+    "nome": "Elixir de Carne Humana e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9421,7 +9421,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-cogumelo-do-imp",
-    "nome": "Elixir de Coração Proibido e Cogumelo do Imp",
+    "nome": "Elixir de Coração Humano e Fungo de Diabrete",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9441,7 +9441,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-beladona-negra",
-    "nome": "Elixir de Coração Proibido e Beladona Negra",
+    "nome": "Elixir de Coração Humano e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9461,7 +9461,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Coração Proibido e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Coração Humano e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9481,7 +9481,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Coração Proibido e Cauda de Rato das Docas",
+    "nome": "Elixir de Coração Humano e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9501,7 +9501,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-chifres-jovens",
-    "nome": "Elixir de Coração Proibido e Chifres Jovens",
+    "nome": "Elixir de Coração Humano e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9521,7 +9521,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-gordura-de-troll",
-    "nome": "Elixir de Coração Proibido e Gordura de Troll",
+    "nome": "Elixir de Coração Humano e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9541,7 +9541,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-sais-do-vazio",
-    "nome": "Elixir de Coração Proibido e Sais do Vazio",
+    "nome": "Elixir de Coração Humano e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9561,7 +9561,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Coração Proibido e Asa de Borboleta da Foz",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta da Foz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9581,7 +9581,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Coração Proibido e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Coração Humano e Ovos de Verme Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9601,7 +9601,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-coracao-de-demonio",
-    "nome": "Elixir de Coração Proibido e Coração de Demônio",
+    "nome": "Elixir de Coração Humano e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9621,7 +9621,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Coração Proibido e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração Humano e Olho de Felino das Ilhas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9641,7 +9641,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-poeira-luminosa",
-    "nome": "Elixir de Coração Proibido e Poeira Luminosa",
+    "nome": "Elixir de Coração Humano e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9661,7 +9661,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Coração Proibido e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração Humano e Penas de Bruxa das Sombras",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9681,7 +9681,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-musgo-suspenso",
-    "nome": "Elixir de Coração Proibido e Musgo Suspenso",
+    "nome": "Elixir de Coração Humano e Musgo Suspenso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9701,7 +9701,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Coração Proibido e Asa de Mariposa Lunar",
+    "nome": "Elixir de Coração Humano e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9721,7 +9721,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-fungo-de-gualapoles",
-    "nome": "Elixir de Coração Proibido e Fungo de Gualápoles",
+    "nome": "Elixir de Coração Humano e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9741,7 +9741,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Coração Proibido e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração Humano e Craca do Rio Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9761,7 +9761,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-raiz-de-trama",
-    "nome": "Elixir de Coração Proibido e Raiz de Trama",
+    "nome": "Elixir de Coração Humano e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9781,7 +9781,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-asa-de-mariposa-ancestral",
-    "nome": "Elixir de Coração Proibido e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Coração Humano e Asa de Mariposa Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9801,7 +9801,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-garras-de-urso",
-    "nome": "Elixir de Coração Proibido e Garras de Urso",
+    "nome": "Elixir de Coração Humano e Garras de Urso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9821,7 +9821,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-asa-de-borboleta-azul",
-    "nome": "Elixir de Coração Proibido e Asa de Borboleta Azul",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9841,7 +9841,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-flor-azul-da-montanha",
-    "nome": "Elixir de Coração Proibido e Flor Azul da Montanha",
+    "nome": "Elixir de Coração Humano e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9861,7 +9861,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-madeira-de-ent-carbonizado",
-    "nome": "Elixir de Coração Proibido e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Coração Humano e Madeira de Ent Carbonizado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9881,7 +9881,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Coração Proibido e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Coração Humano e Antena do Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9901,7 +9901,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-ovo-de-galinha",
-    "nome": "Elixir de Coração Proibido e Ovo de Galinha",
+    "nome": "Elixir de Coração Humano e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9921,7 +9921,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-ovo-de-falcao",
-    "nome": "Elixir de Coração Proibido e Ovo de Falcão",
+    "nome": "Elixir de Coração Humano e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -9941,7 +9941,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-ovo-de-aranha",
-    "nome": "Elixir de Coração Proibido e Ovo de Aranha",
+    "nome": "Elixir de Coração Humano e Ovo de Aranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9961,7 +9961,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-seiva-de-guardiao-arboreo",
-    "nome": "Elixir de Coração Proibido e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Coração Humano e Seiva de Guardião Arbóreo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -9981,7 +9981,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-fungo-de-bolha",
-    "nome": "Elixir de Coração Proibido e Fungo de Bolha",
+    "nome": "Elixir de Coração Humano e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10001,7 +10001,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-presa-de-javali",
-    "nome": "Elixir de Coração Proibido e Presa de Javali",
+    "nome": "Elixir de Coração Humano e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10021,7 +10021,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-amanita-rubra",
-    "nome": "Elixir de Coração Proibido e Amanita Rubra",
+    "nome": "Elixir de Coração Humano e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10041,7 +10041,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-beladona-negra",
-    "nome": "Elixir de Cogumelo do Imp e Beladona Negra",
+    "nome": "Elixir de Fungo de Diabrete e Beladona Negra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10061,7 +10061,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-flor-vermelha-de-thargrid",
-    "nome": "Elixir de Cogumelo do Imp e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha de Thargrid",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10081,7 +10081,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-cauda-de-rato-das-docas",
-    "nome": "Elixir de Cogumelo do Imp e Cauda de Rato das Docas",
+    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato das Docas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10101,7 +10101,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-chifres-jovens",
-    "nome": "Elixir de Cogumelo do Imp e Chifres Jovens",
+    "nome": "Elixir de Fungo de Diabrete e Chifres Jovens",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10121,7 +10121,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-gordura-de-troll",
-    "nome": "Elixir de Cogumelo do Imp e Gordura de Troll",
+    "nome": "Elixir de Fungo de Diabrete e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10141,7 +10141,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-sais-do-vazio",
-    "nome": "Elixir de Cogumelo do Imp e Sais do Vazio",
+    "nome": "Elixir de Fungo de Diabrete e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10161,7 +10161,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Cogumelo do Imp e Asa de Borboleta da Foz",
+    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta da Foz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10181,7 +10181,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-coracao-de-demonio",
-    "nome": "Elixir de Cogumelo do Imp e Coração de Demônio",
+    "nome": "Elixir de Fungo de Diabrete e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10201,7 +10201,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Cogumelo do Imp e Olho de Felino das Ilhas",
+    "nome": "Elixir de Fungo de Diabrete e Olho de Felino das Ilhas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10221,7 +10221,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-flor-azul-da-montanha",
-    "nome": "Elixir de Cogumelo do Imp e Flor Azul da Montanha",
+    "nome": "Elixir de Fungo de Diabrete e Flor Azul da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10241,7 +10241,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-fungo-de-bolha",
-    "nome": "Elixir de Cogumelo do Imp e Fungo de Bolha",
+    "nome": "Elixir de Fungo de Diabrete e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10261,7 +10261,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-raiz-canina",
-    "nome": "Elixir de Cogumelo do Imp e Raiz Canina",
+    "nome": "Elixir de Fungo de Diabrete e Raiz Canina",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10281,7 +10281,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-ovo-de-tordo",
-    "nome": "Elixir de Cogumelo do Imp e Ovo de Tordo",
+    "nome": "Elixir de Fungo de Diabrete e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10301,7 +10301,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-trigo-da-costa",
-    "nome": "Elixir de Cogumelo do Imp e Trigo da Costa",
+    "nome": "Elixir de Fungo de Diabrete e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10321,7 +10321,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-libelula-azul",
-    "nome": "Elixir de Cogumelo do Imp e Libélula Azul",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Azul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10341,7 +10341,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-flor-de-brilho",
-    "nome": "Elixir de Cogumelo do Imp e Flor de Brilho",
+    "nome": "Elixir de Fungo de Diabrete e Flor de Brilho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10361,7 +10361,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-gelatina-de-netch",
-    "nome": "Elixir de Cogumelo do Imp e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10381,7 +10381,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-escamas-de-peixe-carniceiro",
-    "nome": "Elixir de Cogumelo do Imp e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Escamas de Peixe Carniceiro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10401,7 +10401,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-coracao-de-espinheiros",
-    "nome": "Elixir de Cogumelo do Imp e Coração de Espinheiros",
+    "nome": "Elixir de Fungo de Diabrete e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10421,7 +10421,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-cogumelo-de-raiz",
-    "nome": "Elixir de Cogumelo do Imp e Cogumelo de Raiz",
+    "nome": "Elixir de Fungo de Diabrete e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10441,7 +10441,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-gelatina-de-saltador-das-cinzas",
-    "nome": "Elixir de Cogumelo do Imp e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Saltador das Cinzas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10461,7 +10461,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-libelula-alaranjada",
-    "nome": "Elixir de Cogumelo do Imp e Libélula Alaranjada",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10481,7 +10481,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Cogumelo do Imp e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Ovas de Peixe Carniceiro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -10501,7 +10501,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-espinho-da-morte",
-    "nome": "Elixir de Cogumelo do Imp e Espinho-da-Morte",
+    "nome": "Elixir de Fungo de Diabrete e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10521,7 +10521,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-fungo-do-pantano",
-    "nome": "Elixir de Cogumelo do Imp e Fungo do Pântano",
+    "nome": "Elixir de Fungo de Diabrete e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,

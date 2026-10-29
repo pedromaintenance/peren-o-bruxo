@@ -539,7 +539,7 @@
   },
   {
     "id": "ing-human-flesh",
-    "nome": "Carne de Proscrito",
+    "nome": "Carne Humana",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -577,7 +577,7 @@
   },
   {
     "id": "ing-human-heart",
-    "nome": "Coração Proibido",
+    "nome": "Coração Humano",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -615,7 +615,7 @@
   },
   {
     "id": "ing-imp-stool",
-    "nome": "Cogumelo do Imp",
+    "nome": "Fungo de Diabrete",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -3066,7 +3066,7 @@
   },
   {
     "id": "pot-felsaad-tern-feathers-imp-stool",
-    "nome": "Elixir de Pena de Gaivota e Cogumelo do Imp",
+    "nome": "Elixir de Pena de Gaivota e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4259,7 +4259,7 @@
   },
   {
     "id": "pot-vampire-dust-human-flesh",
-    "nome": "Elixir de Pó de Vampiro e Carne de Proscrito",
+    "nome": "Elixir de Pó de Vampiro e Carne Humana",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4702,7 +4702,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-imp-stool",
-    "nome": "Elixir de Couro de Rato e Cogumelo do Imp",
+    "nome": "Elixir de Couro de Rato e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5315,7 +5315,7 @@
   },
   {
     "id": "pot-hawk-feathers-human-flesh",
-    "nome": "Elixir de Penas de Falcão e Carne de Proscrito",
+    "nome": "Elixir de Penas de Falcão e Carne Humana",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5726,7 +5726,7 @@
   },
   {
     "id": "pot-jarrin-root-human-flesh",
-    "nome": "Elixir de Raiz Botulínica e Carne de Proscrito",
+    "nome": "Elixir de Raiz Botulínica e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5743,7 +5743,7 @@
   },
   {
     "id": "pot-jarrin-root-human-heart",
-    "nome": "Elixir de Raiz Botulínica e Coração Proibido",
+    "nome": "Elixir de Raiz Botulínica e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -5762,7 +5762,7 @@
   },
   {
     "id": "pot-jarrin-root-imp-stool",
-    "nome": "Elixir de Raiz Botulínica e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Botulínica e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6503,7 +6503,7 @@
   },
   {
     "id": "pot-river-betty-human-flesh",
-    "nome": "Elixir de Betta do Rio e Carne de Proscrito",
+    "nome": "Elixir de Betta do Rio e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6520,7 +6520,7 @@
   },
   {
     "id": "pot-river-betty-human-heart",
-    "nome": "Elixir de Betta do Rio e Coração Proibido",
+    "nome": "Elixir de Betta do Rio e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6537,7 +6537,7 @@
   },
   {
     "id": "pot-river-betty-imp-stool",
-    "nome": "Elixir de Betta do Rio e Cogumelo do Imp",
+    "nome": "Elixir de Betta do Rio e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6965,7 +6965,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-human-flesh",
-    "nome": "Elixir de Musgo Parassol e Carne de Proscrito",
+    "nome": "Elixir de Musgo Parassol e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6982,7 +6982,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-human-heart",
-    "nome": "Elixir de Musgo Parassol e Coração Proibido",
+    "nome": "Elixir de Musgo Parassol e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6999,7 +6999,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-imp-stool",
-    "nome": "Elixir de Musgo Parassol e Cogumelo do Imp",
+    "nome": "Elixir de Musgo Parassol e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7430,7 +7430,7 @@
   },
   {
     "id": "pot-nirnroot-human-flesh",
-    "nome": "Elixir de Raiz Velada e Carne de Proscrito",
+    "nome": "Elixir de Raiz Velada e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7447,7 +7447,7 @@
   },
   {
     "id": "pot-nirnroot-human-heart",
-    "nome": "Elixir de Raiz Velada e Coração Proibido",
+    "nome": "Elixir de Raiz Velada e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7464,7 +7464,7 @@
   },
   {
     "id": "pot-nirnroot-imp-stool",
-    "nome": "Elixir de Raiz Velada e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Velada e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8044,7 +8044,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-human-flesh",
-    "nome": "Elixir de Raiz Velada Rubra e Carne de Proscrito",
+    "nome": "Elixir de Raiz Velada Rubra e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8061,7 +8061,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-human-heart",
-    "nome": "Elixir de Raiz Velada Rubra e Coração Proibido",
+    "nome": "Elixir de Raiz Velada Rubra e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8078,7 +8078,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-imp-stool",
-    "nome": "Elixir de Raiz Velada Rubra e Cogumelo do Imp",
+    "nome": "Elixir de Raiz Velada Rubra e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8642,7 +8642,7 @@
   },
   {
     "id": "pot-deathbell-human-flesh",
-    "nome": "Elixir de Sino da Morte e Carne de Proscrito",
+    "nome": "Elixir de Sino da Morte e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8659,7 +8659,7 @@
   },
   {
     "id": "pot-deathbell-human-heart",
-    "nome": "Elixir de Sino da Morte e Coração Proibido",
+    "nome": "Elixir de Sino da Morte e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8676,7 +8676,7 @@
   },
   {
     "id": "pot-deathbell-imp-stool",
-    "nome": "Elixir de Sino da Morte e Cogumelo do Imp",
+    "nome": "Elixir de Sino da Morte e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9119,7 +9119,7 @@
   },
   {
     "id": "pot-poison-bloom-human-flesh",
-    "nome": "Elixir de Flor Venenosa e Carne de Proscrito",
+    "nome": "Elixir de Flor Venenosa e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9136,7 +9136,7 @@
   },
   {
     "id": "pot-poison-bloom-human-heart",
-    "nome": "Elixir de Flor Venenosa e Coração Proibido",
+    "nome": "Elixir de Flor Venenosa e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9153,7 +9153,7 @@
   },
   {
     "id": "pot-poison-bloom-imp-stool",
-    "nome": "Elixir de Flor Venenosa e Cogumelo do Imp",
+    "nome": "Elixir de Flor Venenosa e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9563,7 +9563,7 @@
   },
   {
     "id": "pot-ectoplasm-human-flesh",
-    "nome": "Elixir de Ectoplasma e Carne de Proscrito",
+    "nome": "Elixir de Ectoplasma e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9581,7 +9581,7 @@
   },
   {
     "id": "pot-ectoplasm-human-heart",
-    "nome": "Elixir de Ectoplasma e Coração Proibido",
+    "nome": "Elixir de Ectoplasma e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9598,7 +9598,7 @@
   },
   {
     "id": "pot-ectoplasm-imp-stool",
-    "nome": "Elixir de Ectoplasma e Cogumelo do Imp",
+    "nome": "Elixir de Ectoplasma e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10096,7 +10096,7 @@
   },
   {
     "id": "pot-falmer-ear-human-flesh",
-    "nome": "Elixir de Orelha de Troglodita e Carne de Proscrito",
+    "nome": "Elixir de Orelha de Troglodita e Carne Humana",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10113,7 +10113,7 @@
   },
   {
     "id": "pot-falmer-ear-human-heart",
-    "nome": "Elixir de Orelha de Troglodita e Coração Proibido",
+    "nome": "Elixir de Orelha de Troglodita e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10131,7 +10131,7 @@
   },
   {
     "id": "pot-falmer-ear-imp-stool",
-    "nome": "Elixir de Orelha de Troglodita e Cogumelo do Imp",
+    "nome": "Elixir de Orelha de Troglodita e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10490,7 +10490,7 @@
   },
   {
     "id": "pot-human-flesh-human-heart",
-    "nome": "Elixir de Carne de Proscrito e Coração Proibido",
+    "nome": "Elixir de Carne Humana e Coração Humano",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10507,7 +10507,7 @@
   },
   {
     "id": "pot-human-flesh-imp-stool",
-    "nome": "Elixir de Carne de Proscrito e Cogumelo do Imp",
+    "nome": "Elixir de Carne Humana e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10525,7 +10525,7 @@
   },
   {
     "id": "pot-human-flesh-nightshade",
-    "nome": "Elixir de Carne de Proscrito e Beladona Negra",
+    "nome": "Elixir de Carne Humana e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10542,7 +10542,7 @@
   },
   {
     "id": "pot-human-flesh-red-mountain-flower",
-    "nome": "Elixir de Carne de Proscrito e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Carne Humana e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10560,7 +10560,7 @@
   },
   {
     "id": "pot-human-flesh-skeever-tail",
-    "nome": "Elixir de Carne de Proscrito e Cauda de Rato das Docas",
+    "nome": "Elixir de Carne Humana e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10577,7 +10577,7 @@
   },
   {
     "id": "pot-human-flesh-small-antlers",
-    "nome": "Elixir de Carne de Proscrito e Chifres Jovens",
+    "nome": "Elixir de Carne Humana e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10594,7 +10594,7 @@
   },
   {
     "id": "pot-human-flesh-troll-fat",
-    "nome": "Elixir de Carne de Proscrito e Gordura de Troll",
+    "nome": "Elixir de Carne Humana e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10611,7 +10611,7 @@
   },
   {
     "id": "pot-human-flesh-void-salts",
-    "nome": "Elixir de Carne de Proscrito e Sais do Vazio",
+    "nome": "Elixir de Carne Humana e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10628,7 +10628,7 @@
   },
   {
     "id": "pot-human-flesh-canis-root",
-    "nome": "Elixir de Carne de Proscrito e Raiz Canina",
+    "nome": "Elixir de Carne Humana e Raiz Canina",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10645,7 +10645,7 @@
   },
   {
     "id": "pot-human-flesh-creep-cluster",
-    "nome": "Elixir de Carne de Proscrito e Cachos Rastejantes",
+    "nome": "Elixir de Carne Humana e Cachos Rastejantes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10662,7 +10662,7 @@
   },
   {
     "id": "pot-human-flesh-frost-mirriam",
-    "nome": "Elixir de Carne de Proscrito e Mirra da Geada",
+    "nome": "Elixir de Carne Humana e Mirra da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10679,7 +10679,7 @@
   },
   {
     "id": "pot-human-flesh-gleamblossom",
-    "nome": "Elixir de Carne de Proscrito e Flor de Brilho",
+    "nome": "Elixir de Carne Humana e Flor de Brilho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10696,7 +10696,7 @@
   },
   {
     "id": "pot-human-flesh-netch-jelly",
-    "nome": "Elixir de Carne de Proscrito e Gelatina de Netch",
+    "nome": "Elixir de Carne Humana e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10713,7 +10713,7 @@
   },
   {
     "id": "pot-human-flesh-powdered-mammoth-tusk",
-    "nome": "Elixir de Carne de Proscrito e Presa de Mamute em Pó",
+    "nome": "Elixir de Carne Humana e Presa de Mamute em Pó",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10730,7 +10730,7 @@
   },
   {
     "id": "pot-human-flesh-grass-pod",
-    "nome": "Elixir de Carne de Proscrito e Vagem da Charneca",
+    "nome": "Elixir de Carne Humana e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10747,7 +10747,7 @@
   },
   {
     "id": "pot-human-flesh-pearl",
-    "nome": "Elixir de Carne de Proscrito e Pérola da Costa Sul",
+    "nome": "Elixir de Carne Humana e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10764,7 +10764,7 @@
   },
   {
     "id": "pot-human-flesh-briar-heart",
-    "nome": "Elixir de Carne de Proscrito e Coração de Espinheiros",
+    "nome": "Elixir de Carne Humana e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10782,7 +10782,7 @@
   },
   {
     "id": "pot-human-flesh-frost-salts",
-    "nome": "Elixir de Carne de Proscrito e Sais da Geada",
+    "nome": "Elixir de Carne Humana e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10799,7 +10799,7 @@
   },
   {
     "id": "pot-human-flesh-beehive-husk",
-    "nome": "Elixir de Carne de Proscrito e Casca de Colmeia",
+    "nome": "Elixir de Carne Humana e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10816,7 +10816,7 @@
   },
   {
     "id": "pot-human-flesh-white-cap",
-    "nome": "Elixir de Carne de Proscrito e Chapéu Branco",
+    "nome": "Elixir de Carne Humana e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10833,7 +10833,7 @@
   },
   {
     "id": "pot-human-flesh-dwarven-oil",
-    "nome": "Elixir de Carne de Proscrito e Óleo de Autômato Anão",
+    "nome": "Elixir de Carne Humana e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10850,7 +10850,7 @@
   },
   {
     "id": "pot-human-flesh-mora-tapinella",
-    "nome": "Elixir de Carne de Proscrito e Cogumelo de Raiz",
+    "nome": "Elixir de Carne Humana e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10867,7 +10867,7 @@
   },
   {
     "id": "pot-human-flesh-taproot",
-    "nome": "Elixir de Carne de Proscrito e Raiz Mestra",
+    "nome": "Elixir de Carne Humana e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10884,7 +10884,7 @@
   },
   {
     "id": "pot-human-flesh-ashen-grass-pod",
-    "nome": "Elixir de Carne de Proscrito e Vagem Cinzenta",
+    "nome": "Elixir de Carne Humana e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10901,7 +10901,7 @@
   },
   {
     "id": "pot-human-flesh-elves-ear",
-    "nome": "Elixir de Carne de Proscrito e Orelha de Elfo",
+    "nome": "Elixir de Carne Humana e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10918,7 +10918,7 @@
   },
   {
     "id": "pot-human-flesh-abecean-longfin",
-    "nome": "Elixir de Carne de Proscrito e Peixe da Costa Escarlate",
+    "nome": "Elixir de Carne Humana e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10935,7 +10935,7 @@
   },
   {
     "id": "pot-human-flesh-purple-mountain-flower",
-    "nome": "Elixir de Carne de Proscrito e Flor Violeta",
+    "nome": "Elixir de Carne Humana e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10952,7 +10952,7 @@
   },
   {
     "id": "pot-human-flesh-swamp-fungal-pod",
-    "nome": "Elixir de Carne de Proscrito e Fungo do Pântano",
+    "nome": "Elixir de Carne Humana e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10969,7 +10969,7 @@
   },
   {
     "id": "pot-human-flesh-giant-lichen",
-    "nome": "Elixir de Carne de Proscrito e Líquen Gigante",
+    "nome": "Elixir de Carne Humana e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10986,7 +10986,7 @@
   },
   {
     "id": "pot-human-flesh-fire-salts",
-    "nome": "Elixir de Carne de Proscrito e Sais Ígneos",
+    "nome": "Elixir de Carne Humana e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11003,7 +11003,7 @@
   },
   {
     "id": "pot-human-flesh-moon-sugar",
-    "nome": "Elixir de Carne de Proscrito e Açúcar Lunar",
+    "nome": "Elixir de Carne Humana e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11020,7 +11020,7 @@
   },
   {
     "id": "pot-human-heart-imp-stool",
-    "nome": "Elixir de Coração Proibido e Cogumelo do Imp",
+    "nome": "Elixir de Coração Humano e Fungo de Diabrete",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11037,7 +11037,7 @@
   },
   {
     "id": "pot-human-heart-nightshade",
-    "nome": "Elixir de Coração Proibido e Beladona Negra",
+    "nome": "Elixir de Coração Humano e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11055,7 +11055,7 @@
   },
   {
     "id": "pot-human-heart-red-mountain-flower",
-    "nome": "Elixir de Coração Proibido e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Coração Humano e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11072,7 +11072,7 @@
   },
   {
     "id": "pot-human-heart-skeever-tail",
-    "nome": "Elixir de Coração Proibido e Cauda de Rato das Docas",
+    "nome": "Elixir de Coração Humano e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11089,7 +11089,7 @@
   },
   {
     "id": "pot-human-heart-small-antlers",
-    "nome": "Elixir de Coração Proibido e Chifres Jovens",
+    "nome": "Elixir de Coração Humano e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11106,7 +11106,7 @@
   },
   {
     "id": "pot-human-heart-troll-fat",
-    "nome": "Elixir de Coração Proibido e Gordura de Troll",
+    "nome": "Elixir de Coração Humano e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11124,7 +11124,7 @@
   },
   {
     "id": "pot-human-heart-void-salts",
-    "nome": "Elixir de Coração Proibido e Sais do Vazio",
+    "nome": "Elixir de Coração Humano e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11141,7 +11141,7 @@
   },
   {
     "id": "pot-human-heart-butterfly-wing",
-    "nome": "Elixir de Coração Proibido e Asa de Borboleta da Foz",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta da Foz",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11158,7 +11158,7 @@
   },
   {
     "id": "pot-human-heart-chaurus-eggs",
-    "nome": "Elixir de Coração Proibido e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Coração Humano e Ovos de Verme Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11175,7 +11175,7 @@
   },
   {
     "id": "pot-human-heart-daedra-heart",
-    "nome": "Elixir de Coração Proibido e Coração de Demônio",
+    "nome": "Elixir de Coração Humano e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11192,7 +11192,7 @@
   },
   {
     "id": "pot-human-heart-eye-of-sabre-cat",
-    "nome": "Elixir de Coração Proibido e Olho de Felino das Ilhas",
+    "nome": "Elixir de Coração Humano e Olho de Felino das Ilhas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11209,7 +11209,7 @@
   },
   {
     "id": "pot-human-heart-glow-dust",
-    "nome": "Elixir de Coração Proibido e Poeira Luminosa",
+    "nome": "Elixir de Coração Humano e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11227,7 +11227,7 @@
   },
   {
     "id": "pot-human-heart-hagraven-feathers",
-    "nome": "Elixir de Coração Proibido e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Coração Humano e Penas de Bruxa das Sombras",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11245,7 +11245,7 @@
   },
   {
     "id": "pot-human-heart-hanging-moss",
-    "nome": "Elixir de Coração Proibido e Musgo Suspenso",
+    "nome": "Elixir de Coração Humano e Musgo Suspenso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11263,7 +11263,7 @@
   },
   {
     "id": "pot-human-heart-luna-moth-wing",
-    "nome": "Elixir de Coração Proibido e Asa de Mariposa Lunar",
+    "nome": "Elixir de Coração Humano e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11280,7 +11280,7 @@
   },
   {
     "id": "pot-human-heart-namira-s-rot",
-    "nome": "Elixir de Coração Proibido e Fungo de Gualápoles",
+    "nome": "Elixir de Coração Humano e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11297,7 +11297,7 @@
   },
   {
     "id": "pot-human-heart-nordic-barnacle",
-    "nome": "Elixir de Coração Proibido e Craca do Rio Ancestral",
+    "nome": "Elixir de Coração Humano e Craca do Rio Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11314,7 +11314,7 @@
   },
   {
     "id": "pot-human-heart-trama-root",
-    "nome": "Elixir de Coração Proibido e Raiz de Trama",
+    "nome": "Elixir de Coração Humano e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11331,7 +11331,7 @@
   },
   {
     "id": "pot-human-heart-ancestor-moth-wing",
-    "nome": "Elixir de Coração Proibido e Asa de Mariposa Ancestral",
+    "nome": "Elixir de Coração Humano e Asa de Mariposa Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11348,7 +11348,7 @@
   },
   {
     "id": "pot-human-heart-bear-claws",
-    "nome": "Elixir de Coração Proibido e Garras de Urso",
+    "nome": "Elixir de Coração Humano e Garras de Urso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11365,7 +11365,7 @@
   },
   {
     "id": "pot-human-heart-blue-butterfly-wing",
-    "nome": "Elixir de Coração Proibido e Asa de Borboleta Azul",
+    "nome": "Elixir de Coração Humano e Asa de Borboleta Azul",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11382,7 +11382,7 @@
   },
   {
     "id": "pot-human-heart-blue-mountain-flower",
-    "nome": "Elixir de Coração Proibido e Flor Azul da Montanha",
+    "nome": "Elixir de Coração Humano e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11399,7 +11399,7 @@
   },
   {
     "id": "pot-human-heart-burnt-spriggan-wood",
-    "nome": "Elixir de Coração Proibido e Madeira de Ent Carbonizado",
+    "nome": "Elixir de Coração Humano e Madeira de Ent Carbonizado",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11416,7 +11416,7 @@
   },
   {
     "id": "pot-human-heart-chaurus-hunter-antennae",
-    "nome": "Elixir de Coração Proibido e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Coração Humano e Antena do Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11433,7 +11433,7 @@
   },
   {
     "id": "pot-human-heart-chicken-s-egg",
-    "nome": "Elixir de Coração Proibido e Ovo de Galinha",
+    "nome": "Elixir de Coração Humano e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11450,7 +11450,7 @@
   },
   {
     "id": "pot-human-heart-hawk-s-egg",
-    "nome": "Elixir de Coração Proibido e Ovo de Falcão",
+    "nome": "Elixir de Coração Humano e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11467,7 +11467,7 @@
   },
   {
     "id": "pot-human-heart-spider-egg",
-    "nome": "Elixir de Coração Proibido e Ovo de Aranha",
+    "nome": "Elixir de Coração Humano e Ovo de Aranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11484,7 +11484,7 @@
   },
   {
     "id": "pot-human-heart-spriggan-sap",
-    "nome": "Elixir de Coração Proibido e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Coração Humano e Seiva de Guardião Arbóreo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11501,7 +11501,7 @@
   },
   {
     "id": "pot-human-heart-blisterwort",
-    "nome": "Elixir de Coração Proibido e Fungo de Bolha",
+    "nome": "Elixir de Coração Humano e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11518,7 +11518,7 @@
   },
   {
     "id": "pot-human-heart-boar-tusk",
-    "nome": "Elixir de Coração Proibido e Presa de Javali",
+    "nome": "Elixir de Coração Humano e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11535,7 +11535,7 @@
   },
   {
     "id": "pot-human-heart-fly-amanita",
-    "nome": "Elixir de Coração Proibido e Amanita Rubra",
+    "nome": "Elixir de Coração Humano e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11552,7 +11552,7 @@
   },
   {
     "id": "pot-imp-stool-nightshade",
-    "nome": "Elixir de Cogumelo do Imp e Beladona Negra",
+    "nome": "Elixir de Fungo de Diabrete e Beladona Negra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11569,7 +11569,7 @@
   },
   {
     "id": "pot-imp-stool-red-mountain-flower",
-    "nome": "Elixir de Cogumelo do Imp e Flor Vermelha de Thargrid",
+    "nome": "Elixir de Fungo de Diabrete e Flor Vermelha de Thargrid",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11586,7 +11586,7 @@
   },
   {
     "id": "pot-imp-stool-skeever-tail",
-    "nome": "Elixir de Cogumelo do Imp e Cauda de Rato das Docas",
+    "nome": "Elixir de Fungo de Diabrete e Cauda de Rato das Docas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11603,7 +11603,7 @@
   },
   {
     "id": "pot-imp-stool-small-antlers",
-    "nome": "Elixir de Cogumelo do Imp e Chifres Jovens",
+    "nome": "Elixir de Fungo de Diabrete e Chifres Jovens",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11620,7 +11620,7 @@
   },
   {
     "id": "pot-imp-stool-troll-fat",
-    "nome": "Elixir de Cogumelo do Imp e Gordura de Troll",
+    "nome": "Elixir de Fungo de Diabrete e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11637,7 +11637,7 @@
   },
   {
     "id": "pot-imp-stool-void-salts",
-    "nome": "Elixir de Cogumelo do Imp e Sais do Vazio",
+    "nome": "Elixir de Fungo de Diabrete e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11654,7 +11654,7 @@
   },
   {
     "id": "pot-imp-stool-butterfly-wing",
-    "nome": "Elixir de Cogumelo do Imp e Asa de Borboleta da Foz",
+    "nome": "Elixir de Fungo de Diabrete e Asa de Borboleta da Foz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11671,7 +11671,7 @@
   },
   {
     "id": "pot-imp-stool-daedra-heart",
-    "nome": "Elixir de Cogumelo do Imp e Coração de Demônio",
+    "nome": "Elixir de Fungo de Diabrete e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11688,7 +11688,7 @@
   },
   {
     "id": "pot-imp-stool-eye-of-sabre-cat",
-    "nome": "Elixir de Cogumelo do Imp e Olho de Felino das Ilhas",
+    "nome": "Elixir de Fungo de Diabrete e Olho de Felino das Ilhas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11705,7 +11705,7 @@
   },
   {
     "id": "pot-imp-stool-blue-mountain-flower",
-    "nome": "Elixir de Cogumelo do Imp e Flor Azul da Montanha",
+    "nome": "Elixir de Fungo de Diabrete e Flor Azul da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11722,7 +11722,7 @@
   },
   {
     "id": "pot-imp-stool-blisterwort",
-    "nome": "Elixir de Cogumelo do Imp e Fungo de Bolha",
+    "nome": "Elixir de Fungo de Diabrete e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11739,7 +11739,7 @@
   },
   {
     "id": "pot-imp-stool-canis-root",
-    "nome": "Elixir de Cogumelo do Imp e Raiz Canina",
+    "nome": "Elixir de Fungo de Diabrete e Raiz Canina",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11756,7 +11756,7 @@
   },
   {
     "id": "pot-imp-stool-rock-warbler-egg",
-    "nome": "Elixir de Cogumelo do Imp e Ovo de Tordo",
+    "nome": "Elixir de Fungo de Diabrete e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11773,7 +11773,7 @@
   },
   {
     "id": "pot-imp-stool-wheat",
-    "nome": "Elixir de Cogumelo do Imp e Trigo da Costa",
+    "nome": "Elixir de Fungo de Diabrete e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11790,7 +11790,7 @@
   },
   {
     "id": "pot-imp-stool-blue-dartwing",
-    "nome": "Elixir de Cogumelo do Imp e Libélula Azul",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Azul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11807,7 +11807,7 @@
   },
   {
     "id": "pot-imp-stool-gleamblossom",
-    "nome": "Elixir de Cogumelo do Imp e Flor de Brilho",
+    "nome": "Elixir de Fungo de Diabrete e Flor de Brilho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11824,7 +11824,7 @@
   },
   {
     "id": "pot-imp-stool-netch-jelly",
-    "nome": "Elixir de Cogumelo do Imp e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11841,7 +11841,7 @@
   },
   {
     "id": "pot-imp-stool-slaughterfish-scales",
-    "nome": "Elixir de Cogumelo do Imp e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Escamas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11858,7 +11858,7 @@
   },
   {
     "id": "pot-imp-stool-briar-heart",
-    "nome": "Elixir de Cogumelo do Imp e Coração de Espinheiros",
+    "nome": "Elixir de Fungo de Diabrete e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11875,7 +11875,7 @@
   },
   {
     "id": "pot-imp-stool-mora-tapinella",
-    "nome": "Elixir de Cogumelo do Imp e Cogumelo de Raiz",
+    "nome": "Elixir de Fungo de Diabrete e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11892,7 +11892,7 @@
   },
   {
     "id": "pot-imp-stool-ash-hopper-jelly",
-    "nome": "Elixir de Cogumelo do Imp e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11909,7 +11909,7 @@
   },
   {
     "id": "pot-imp-stool-orange-dartwing",
-    "nome": "Elixir de Cogumelo do Imp e Libélula Alaranjada",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11926,7 +11926,7 @@
   },
   {
     "id": "pot-imp-stool-slaughterfish-egg",
-    "nome": "Elixir de Cogumelo do Imp e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Ovas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11943,7 +11943,7 @@
   },
   {
     "id": "pot-imp-stool-scathecraw",
-    "nome": "Elixir de Cogumelo do Imp e Espinho-da-Morte",
+    "nome": "Elixir de Fungo de Diabrete e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11960,7 +11960,7 @@
   },
   {
     "id": "pot-imp-stool-swamp-fungal-pod",
-    "nome": "Elixir de Cogumelo do Imp e Fungo do Pântano",
+    "nome": "Elixir de Fungo de Diabrete e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
