@@ -350,3 +350,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 ## Ciclo 22 — Coração de Demônio: manutenção aprovada (29/10/2026)
 
 O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III, Medo III e Aumentar Carisma III. Nome, descrição, raridade épica e ID permanecem. Seus 13 parceiros alquímicos são suficientes; potência III não exige redução. Não houve autorização para atributo novo, alteração de lore ou transformação. Somente esta documentação deve ser atualizada, sem modificar a curadoria, receitas, itens, runtime ou saves. Próxima ficha: Musgo Pendente (`ing-hanging-moss`).
+
+## Ciclo 23 — decisão concluída: Musgo Pendente (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha de Musgo Pendente (`ing-hanging-moss`).
+- Preservados **Aumentar Saúde II**, **Dano à Magia I** e **Diminuir Regeneração de Magia I**, além de nome, descrição, raridade comum e ID.
+- São 14 ingredientes parceiros no estado auditado. A ampliação da descrição sobre vitalidade orgânica e interferência mágica foi somente uma hipótese, **não aprovada**.
+- **Somente o dossiê foi atualizado.** Não alterar curadoria, itens, receitas, motor clássico, Phaser ou saves nesta decisão.
+- **Próxima ficha:** Penas de Bruxa (`ing-hagraven-feathers`), a apresentar para aprovação individual.
