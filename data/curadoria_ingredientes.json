@@ -27,15 +27,15 @@
           "intensidade": 1
         },
         {
-          "id": "restaurar_stamina",
-          "nome": "Restaurar stamina",
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
           "intensidade": 2
         }
       ],
       "efeitos": [
         "Cure Disease",
         "Fly",
-        "Restore Stamina"
+        "Fortify Constitution"
       ],
       "raridade": "comum"
     },
@@ -264,15 +264,15 @@
           "intensidade": 2
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
           "intensidade": 1
         }
       ],
       "efeitos": [
         "Invisibility",
         "Resist Magic",
-        "Damage Stamina"
+        "Reduce Dexterity"
       ]
     },
     "ing-crimson-nirnroot": {
@@ -293,15 +293,15 @@
           "intensidade": 2
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
           "intensidade": 3
         }
       ],
       "efeitos": [
         "Invisibility",
         "Damage Health",
-        "Damage Stamina"
+        "Reduce Constitution"
       ]
     },
     "ing-deathbell": {
@@ -699,15 +699,15 @@
           "intensidade": 1
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
           "intensidade": 1
         }
       ],
       "efeitos": [
         "Restore Health",
         "Damage Magicka",
-        "Lingering Damage Stamina"
+        "Reduce Strength"
       ]
     },
     "ing-chaurus-eggs": {
@@ -1018,15 +1018,15 @@
           "intensidade": 2
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
           "intensidade": 1
         }
       ],
       "efeitos": [
         "Fortify Enchanting",
         "Fortify Conjuration",
-        "Damage Stamina"
+        "Reduce Constitution"
       ]
     },
     "ing-bear-claws": {
@@ -1037,8 +1037,8 @@
       "atributos_revisados": true,
       "atributos": [
         {
-          "id": "restaurar_stamina",
-          "nome": "Restaurar Stamina",
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
           "intensidade": 2
         },
         {
@@ -1053,7 +1053,7 @@
         }
       ],
       "efeitos": [
-        "Restore Stamina",
+        "Fortify Constitution",
         "Fortify Strength",
         "Fortify Health"
       ]
@@ -1150,5 +1150,8 @@
     "ing-ancestor-moth-wing",
     "ing-bear-claws",
     "ing-blue-butterfly-wing"
-  ]
+  ],
+  "regras_alquimia": {
+    "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
+  }
 }
