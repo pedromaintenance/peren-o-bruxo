@@ -216,6 +216,296 @@
         "Fortify Dexterity",
         "Reduce Wisdom"
       ]
+    },
+    "ing-emperor-parasol-moss": {
+      "nome": "Musgo Parassol",
+      "descricao": "Musgo úmido que prolifera sobre madeira apodrecida; revigora tecidos, mas perturba a saúde em doses excessivas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_inteligencia",
+          "nome": "Aumentar Inteligência",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Fortify Intelligence",
+        "Damage Health"
+      ]
+    },
+    "ing-nirnroot": {
+      "nome": "Raiz Velada",
+      "descricao": "Raiz luminescente que se oculta na vegetação e dificulta a percepção de quem a consome.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Resist Magic",
+        "Damage Stamina"
+      ]
+    },
+    "ing-crimson-nirnroot": {
+      "nome": "Raiz Velada Rubra",
+      "descricao": "Variante carmesim de seiva concentrada; encobre o corpo à custa de intensa exaustão.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 3
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Damage Health",
+        "Damage Stamina"
+      ]
+    },
+    "ing-deathbell": {
+      "nome": "Sino da Morte",
+      "descricao": "Flor de sino escuro usada em venenos para enfraquecer e retardar as vítimas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Slow",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-poison-bloom": {
+      "nome": "Flor Venenosa",
+      "descricao": "Flor de pétalas tóxicas encontrada em terrenos hostis; sua seiva causa debilidade e pavor.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Fear",
+        "Slow"
+      ]
+    },
+    "ing-ectoplasm": {
+      "nome": "Ectoplasma",
+      "descricao": "Resíduo espectral instável, capaz de alimentar conjurações e consumir a vitalidade do alquimista.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-falmer-ear": {
+      "nome": "Orelha de Troglodita",
+      "descricao": "Tecido de criatura subterrânea empregado em tinturas de percepção e preparados venenosos.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Perception",
+        "Damage Health"
+      ]
+    },
+    "ing-human-flesh": {
+      "nome": "Carne de Proscrito",
+      "descricao": "Ingrediente macabro negociado às escondidas; associa furtividade, transe e efeitos paralisantes.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Fortify Sneak",
+        "Damage Health"
+      ]
+    },
+    "ing-human-heart": {
+      "nome": "Coração Proibido",
+      "descricao": "Coração preservado por rituais obscuros, muito potente em misturas que alteram a vontade e drenam energia mágica.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Frenzy",
+        "Damage Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-imp-stool": {
+      "nome": "Cogumelo do Imp",
+      "descricao": "Fungo de ambiente degradado, usado tanto como base medicinal quanto em toxinas imobilizantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Restore Health",
+        "Damage Health"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -225,7 +515,10 @@
     "Couro de Rato Carbonizado": "Couro de Rato",
     "Penas de Falcão das Montanhas": "Penas de Falcão",
     "Raiz do Juramento Quebrado": "Raiz Botulínica",
-    "Betty do Rio Ancestral": "Betta do Rio"
+    "Betty do Rio Ancestral": "Betta do Rio",
+    "Musgo Parassol de Eldroth": "Musgo Parassol",
+    "Flor Venenosa da Garganta": "Flor Venenosa",
+    "Ectoplasma de Vandar": "Ectoplasma"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -233,6 +526,16 @@
     "ing-vampire-dust",
     "ing-charred-skeever-hide",
     "ing-hawk-feathers",
-    "ing-jarrin-root"
+    "ing-jarrin-root",
+    "ing-emperor-parasol-moss",
+    "ing-nirnroot",
+    "ing-crimson-nirnroot",
+    "ing-deathbell",
+    "ing-poison-bloom",
+    "ing-ectoplasm",
+    "ing-falmer-ear",
+    "ing-human-flesh",
+    "ing-human-heart",
+    "ing-imp-stool"
   ]
 }
