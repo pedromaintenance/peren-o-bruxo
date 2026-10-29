@@ -3116,6 +3116,122 @@
         "Paralysis",
         "Resist Shock"
       ]
+    },
+    "ing-giant-lichen": {
+      "nome": "Líquen Gigante",
+      "descricao": "Líquen espesso de ambientes úmidos, usado em tônicos arcanos e venenos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Ravage Health",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-bee": {
+      "nome": "Abelha",
+      "descricao": "Inseto polinizador usado em tônicos de disposição, com risco de reações adversas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Reduce Constitution",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-fire-salts": {
+      "nome": "Sais Ígneos",
+      "descricao": "Cristais quentes de origem sobrenatural, valiosos em fórmulas de proteção contra fogo.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 3
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Regenerate Magicka",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-moon-sugar": {
+      "nome": "Açúcar Lunar",
+      "descricao": "Cristais adocicados de brilho pálido, usados em elixires de restauração arcana.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Regenerate Magicka",
+        "Weakness to Fire"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -3277,7 +3393,11 @@
     "ing-torchbug-thorax",
     "ing-fly-amanita",
     "ing-scathecraw",
-    "ing-swamp-fungal-pod"
+    "ing-swamp-fungal-pod",
+    "ing-giant-lichen",
+    "ing-bee",
+    "ing-fire-salts",
+    "ing-moon-sugar"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
