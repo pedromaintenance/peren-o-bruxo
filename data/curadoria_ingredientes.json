@@ -2246,6 +2246,296 @@
         "Fortify Destruction",
         "Reduce Constitution"
       ]
+    },
+    "ing-frost-salts": {
+      "nome": "Sais da Geada",
+      "descricao": "Cristais gélidos usados em resistência ao frio e conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Frost",
+        "Restore Magicka",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-lavender": {
+      "nome": "Lavanda Selvagem",
+      "descricao": "Erva aromática que acalma e favorece a concentração em rituais.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Constitution",
+        "Fortify Conjuration"
+      ]
+    },
+    "ing-beehive-husk": {
+      "nome": "Casca de Colmeia",
+      "descricao": "Fragmentos de colmeia empregados em unguentos contra veneno e preparados de ocultação.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Sneak",
+        "Fortify Light Armor"
+      ]
+    },
+    "ing-glowing-mushroom": {
+      "nome": "Cogumelo Luminescente",
+      "descricao": "Fungo brilhante empregado em elixires para artesãos e feiticeiros.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "nome": "Aumentar Ferraria",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Destruction",
+        "Fortify Smithing",
+        "Resist Shock"
+      ]
+    },
+    "ing-snowberries": {
+      "nome": "Bagas da Neve",
+      "descricao": "Pequenas bagas resistentes a extremos de temperatura.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Frost",
+        "Resist Fire",
+        "Fortify Enchanting"
+      ]
+    },
+    "ing-spawn-ash": {
+      "nome": "Cinzas de Criatura",
+      "descricao": "Cinzas de criatura sobrenatural, úteis em encantamentos e fórmulas debilitantes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Enchanting",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-ice-wraith-teeth": {
+      "nome": "Dentes de Espectro Gelado",
+      "descricao": "Dentes espectrais gelados capazes de velar a presença do portador.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Fortify Heavy Armor",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-sabre-cat-tooth": {
+      "nome": "Dente de Grande Felino",
+      "descricao": "Presa afiada de predador, empregada em tônicos de vigor e proteção.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Heavy Armor",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-thistle-branch": {
+      "nome": "Ramo de Cardo",
+      "descricao": "Ramo espinhoso usado em antídotos e preparações de resistência.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Heavy Armor",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-white-cap": {
+      "nome": "Chapéu Branco",
+      "descricao": "Cogumelo pálido usado em fórmulas para recuperar energia mágica.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Heavy Armor",
+        "Weakness to Frost"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -2287,7 +2577,9 @@
     "Língua de Dragão": "Língua-de-Dragão",
     "Gelatina de Netch": "Gelatina de Medusa",
     "Pérola da Costa Sul": "Pérola",
-    "Escamas de Peixe Carniceiro": "Escamas de Piranha"
+    "Escamas de Peixe Carniceiro": "Escamas de Piranha",
+    "Frutas da Neve": "Bagas da Neve",
+    "Dente de Felino": "Dente de Grande Felino"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -2365,7 +2657,17 @@
     "ing-honeycomb",
     "ing-hawk-beak",
     "ing-scaly-pholiota",
-    "ing-wisp-wrappings"
+    "ing-wisp-wrappings",
+    "ing-frost-salts",
+    "ing-lavender",
+    "ing-beehive-husk",
+    "ing-glowing-mushroom",
+    "ing-snowberries",
+    "ing-spawn-ash",
+    "ing-ice-wraith-teeth",
+    "ing-sabre-cat-tooth",
+    "ing-thistle-branch",
+    "ing-white-cap"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
