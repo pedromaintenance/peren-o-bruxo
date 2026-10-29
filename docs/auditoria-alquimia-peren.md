@@ -296,3 +296,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - Foram identificados 9 ingredientes parceiros, distribuídos pelas três propriedades. A explicação hipotética das fibras condutoras **não foi aprovada** e portanto não foi incluída na descrição.
 - **Somente este dossiê foi atualizado**; nenhum arquivo de curadoria, receita, motor ou save foi modificado.
 - **Próxima ficha para decisão:** Seiva de Ent (`ing-spriggan-sap`), com 9 parceiros; não modificar antes de nova aprovação.
+
+## Ciclo 16 — decisão concluída: Seiva de Ent (29/10/2026)
+
+- **Decisão expressa do criador:** manter integralmente sem alterações a ficha da Seiva de Ent (`ing-spriggan-sap`).
+- Permanecem **Aumentar Encantamento III**, **Aumentar Alteração II** e **Aumentar Ferraria II**; também se mantêm a descrição, raridade rara e identidade/ID.
+- Os nove parceiros já encontrados justificam sua conectividade. A expansão hipotética da descrição sobre transformação da matéria **não foi aprovada** e não deve ser aplicada.
+- **Somente este dossiê foi atualizado**; o JSON de curadoria, itens, receitas, motores e saves não sofreram alterações.
+- **Próxima ficha participativa:** Cogumelo Escamoso (`ing-scaly-pholiota`), com nove parceiros. Analisar e solicitar decisão sem alterar previamente.
