@@ -1,0 +1,25 @@
+name: Peren — Poção animada e PWA
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/pocao.webp'
+      - 'assets/icons/pocao-animation.json'
+      - 'assets/icons/sources/pocao-5poses-original.png'
+      - 'sw.js'
+      - 'tests/qa_peren_pocao_animation.mjs'
+      - '.github/workflows/peren-pocao-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate potion animation, source and inventory
+        run: node --test tests/qa_peren_pocao_animation.mjs

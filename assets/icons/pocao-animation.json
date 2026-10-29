@@ -1,0 +1,36 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "source": "assets/icons/sources/pocao-5poses-original.png",
+  "sourceDimensions": [
+    2048,
+    682
+  ],
+  "sourceSha256": "d123c2a7e60c570500988d3980fedd56193fbdc93952323140829aa1c9e3438a",
+  "sourceGitBlob": "82dbaf6c848193996ddc1cd39a82a43523633062",
+  "backupPreviousStaticIcon": "assets/icons/sources/pocao-legacy-static.webp",
+  "backupPreviousStaticGitBlob": "2f037b49c5bb1ef465d8e0d085a7fa87964c6b69",
+  "animation": "assets/icons/pocao.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "durationsMs": [
+    180,
+    180,
+    180,
+    180,
+    180
+  ],
+  "loop": 0,
+  "outputSha256": "c21fcf610c176493d7bcba142164b1050793a3de5d3d8a5c434ea8d2403104c5",
+  "outputGitBlob": "dd230e2c9e07507b2a4d9b1ad41ad440719e33bb",
+  "cacheVersion": "peren-mercador-carcaca-0.1.4-assets-20261028-alquimia-v5-sword-axial-v1-grimorio-anim-v1-20261028-hammer-spin-v1-20261029-hammer-nineframes-v2-feather-gaivota-v1-exact-item-v2-osso-float-v1-20261029-pocao-5frames-v1-20261029",
+  "integration": "Existing game.js maps potions and consumables to assets/icons/pocao.webp; no gameplay or saves changed."
+}
