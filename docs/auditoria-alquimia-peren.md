@@ -366,3 +366,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - Há 15 parceiros por interseção de efeitos. A proposta de aprofundar a descrição ritual ou de incluir um quarto atributo **não foi aprovada**.
 - **Alteração apenas documental:** `data/curadoria_ingredientes.json`, itens, receitas, motores e saves não foram modificados.
 - **Próxima ficha para decisão:** Peixe-Espada do Sangue (`ing-abecean-longfin`), sem alterações prévias.
+
+## Ciclo 25 — decisão concluída: Peixe-Espada do Sangue (29/10/2026)
+
+- **Decisão explícita do criador:** manter a ficha de Peixe-Espada do Sangue (`ing-abecean-longfin`) integralmente sem alterações.
+- Permanecem **Aumentar Furtividade II**, **Aumentar Restauração II** e **Fraqueza ao Gelo I**, além do nome, descrição, raridade incomum e ID.
+- Possui 15 parceiros por efeito coincidente. A sugestão de aprofundar o habitat ou biologia no Mar de Sangue não foi aprovada e não deve ser incorporada automaticamente.
+- **Alteração apenas documental**; curadoria, itens, receitas, motores e saves não modificados.
+- **Próxima ficha participativa:** Craca de Rio (`ing-nordic-barnacle`), com 16 parceiros, aguardando decisão do criador.
