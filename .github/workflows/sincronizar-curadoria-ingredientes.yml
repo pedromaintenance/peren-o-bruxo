@@ -1,0 +1,71 @@
+name: Sincronizar catálogo de ingredientes
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/curadoria_ingredientes.json'
+      - '.github/workflows/sincronizar-curadoria-ingredientes.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Aplicar curadoria aos catálogos publicados
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('.')
+          curadoria=json.loads((root/'data/curadoria_ingredientes.json').read_text(encoding='utf-8'))
+          overrides=curadoria['itens']
+          renames=curadoria.get('renomeacoes_textuais',{})
+          total=0
+          for directory in (root/'data', root/'phaser-demo/data', root/'phaser-demo-m1hf/data'):
+              path=directory/'itens.json'
+              if not path.is_file():
+                  continue
+              items=json.loads(path.read_text(encoding='utf-8'))
+              changed=False
+              for item in items:
+                  override=overrides.get(item.get('id'))
+                  if override:
+                      for key,value in override.items():
+                          if item.get(key)!=value:
+                              item[key]=value
+                              changed=True
+                  for before,after in renames.items():
+                      if before in item.get('nome',''):
+                          item['nome']=item['nome'].replace(before,after)
+                          changed=True
+              if changed:
+                  path.write_text(json.dumps(items,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+                  total+=1
+                  print('Atualizado:',path)
+              recipes_path=directory/'receitas.json'
+              if recipes_path.is_file():
+                  recipes=json.loads(recipes_path.read_text(encoding='utf-8'))
+                  recipes_changed=False
+                  for recipe in recipes:
+                      for before,after in renames.items():
+                          if before in recipe.get('nome',''):
+                              recipe['nome']=recipe['nome'].replace(before,after)
+                              recipes_changed=True
+                  if recipes_changed:
+                      recipes_path.write_text(json.dumps(recipes,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+                      print('Receitas renomeadas:',recipes_path)
+          print('Catálogos de itens atualizados:',total)
+          PY
+      - name: Publicar dados atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/itens.json data/receitas.json phaser-demo/data/itens.json phaser-demo/data/receitas.json phaser-demo-m1hf/data/itens.json phaser-demo-m1hf/data/receitas.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build(alquimia): sincronizar catálogos com curadoria"
+            git push
+          fi
