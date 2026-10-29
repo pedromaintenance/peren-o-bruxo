@@ -2307,7 +2307,8 @@
     "efeitos": [
       "Fortify Dexterity",
       "Resist Shock",
-      "Fear"
+      "Fear",
+      "Speed"
     ],
     "raridade": "comum",
     "valor": 9,
@@ -2332,6 +2333,11 @@
         "id": "medo",
         "nome": "Medo",
         "intensidade": 1
+      },
+      {
+        "id": "velocidade",
+        "nome": "Velocidade",
+        "intensidade": 2
       }
     ]
   },
