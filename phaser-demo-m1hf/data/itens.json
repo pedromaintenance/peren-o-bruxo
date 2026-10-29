@@ -3316,91 +3316,162 @@
     "nome": "Óleo de Autômato Anão",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Dwarven Oil",
     "efeitos": [
       "Regenerate Magicka",
       "Restore Magicka",
-      "Weakness to Magic",
-      "Fortify Illusion"
+      "Weakness to Magic"
     ],
     "raridade": "incomum",
     "valor": 19,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 3,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Lubrificante arcano retirado de mecanismos anões, utilizado em preparações de energia mágica.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_magia",
+        "nome": "Fraqueza à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-mora-tapinella",
     "nome": "Cogumelo de Raiz",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Mora Tapinella",
     "efeitos": [
-      "Regenerate Stamina",
       "Restore Magicka",
-      "Lingering Damage Health",
-      "Fortify Illusion"
+      "Fortify Constitution",
+      "Lingering Damage Health"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 4,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Fungo de madeira úmida empregado em preparados arcanos e debilitantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-taproot",
     "nome": "Raiz Mestra",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Taproot",
     "efeitos": [
       "Regenerate Magicka",
       "Restore Magicka",
-      "Weakness to Magic",
-      "Fortify Illusion"
+      "Weakness to Magic"
     ],
-    "raridade": "epico",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 5,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Raiz profunda carregada de seiva encantada, valiosa para a recuperação de magia.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_magia",
+        "nome": "Fraqueza à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-ash-hopper-jelly",
     "nome": "Gelatina de Saltador das Cinzas",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ash Hopper Jelly",
     "efeitos": [
       "Resist Shock",
-      "Weakness to Frost",
       "Restore Health",
-      "Fortify Light Armor"
+      "Weakness to Frost"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 9,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 1,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Secreção de criatura das terras queimadas, usada em pomadas curativas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 2
+      },
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_gelo",
+        "nome": "Fraqueza ao Gelo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-ashen-grass-pod",
     "nome": "Vagem Cinzenta",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ashen Grass Pod",
     "efeitos": [
       "Fortify Sneak",
-      "Fortify Lockpicking",
       "Resist Fire",
       "Weakness to Shock"
     ],
@@ -3409,99 +3480,189 @@
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 2,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Vagem de áreas queimadas usada em compostos furtivos e resistentes ao calor.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_furtividade",
+        "nome": "Aumentar Furtividade",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_eletricidade",
+        "nome": "Fraqueza à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-pine-thrush-egg",
-    "nome": "Ovo de Tordo da Costa",
+    "nome": "Ovo de Tordo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Pine Thrush Egg",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Dexterity",
       "Resist Shock",
-      "Fortify Lockpicking",
       "Weakness to Poison"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 3,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Ovo pequeno de ave silvestre empregado em tinturas de agilidade.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_veneno",
+        "nome": "Fraqueza a Veneno",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-jazbay-grapes",
     "nome": "Uvas de Jasmim",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Jazbay Grapes",
     "efeitos": [
       "Regenerate Magicka",
       "Fortify Magicka",
-      "Ravage Health",
-      "Weakness to Magic"
+      "Ravage Health"
     ],
-    "raridade": "raro",
+    "raridade": "incomum",
     "valor": 24,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 4,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Uvas perfumadas utilizadas em preparados mágicos, embora seu extrato concentrado seja nocivo.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-salmon-roe",
     "nome": "Ovas de Salmão",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Salmon Roe",
     "efeitos": [
-      "Restore Stamina",
+      "Waterbreathing",
       "Regenerate Magicka",
-      "Fortify Magicka",
-      "Waterbreathing"
+      "Fortify Constitution"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 5,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Ovas de peixe utilizadas em elixires de respiração aquática e concentração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "respirar_na_agua",
+        "nome": "Respirar na Água",
+        "intensidade": 2
+      },
+      {
+        "id": "regenerar_magia",
+        "nome": "Regenerar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-elves-ear",
-    "nome": "Orelha de Elfo",
+    "nome": "Orelha-de-Elfo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Elves Ear",
     "efeitos": [
-      "Resist Fire",
-      "Weakness to Frost",
       "Restore Magicka",
-      "Fortify Marksman"
+      "Resist Fire",
+      "Weakness to Frost"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 1,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Fungo em forma de orelha que cresce em troncos e serve de base a preparações mágicas.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 1
+      },
+      {
+        "id": "fraqueza_gelo",
+        "nome": "Fraqueza ao Gelo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-small-pearl",
     "nome": "Pérola Pequena",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Small Pearl",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Dexterity",
       "Resist Frost",
-      "Fortify One-handed",
       "Fortify Restoration"
     ],
     "raridade": "comum",
@@ -3509,7 +3670,26 @@
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 2,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Pérola diminuta utilizada em tônicos restauradores e amuletos.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 1
+      },
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_restauracao",
+        "nome": "Aumentar Restauração",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-orange-dartwing",
@@ -5247,7 +5427,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-elves-ear",
-    "nome": "Elixir de Carapaça de Caranguejo e Orelha de Elfo",
+    "nome": "Elixir de Carapaça de Caranguejo e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5843,7 +6023,7 @@
   },
   {
     "id": "pot-vampire-dust-elves-ear",
-    "nome": "Elixir de Pó de Vampiro e Orelha de Elfo",
+    "nome": "Elixir de Pó de Vampiro e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11288,7 +11468,7 @@
   },
   {
     "id": "pot-ectoplasm-elves-ear",
-    "nome": "Elixir de Ectoplasma e Orelha de Elfo",
+    "nome": "Elixir de Ectoplasma e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12161,7 +12341,7 @@
   },
   {
     "id": "pot-human-flesh-elves-ear",
-    "nome": "Elixir de Carne Humana e Orelha de Elfo",
+    "nome": "Elixir de Carne Humana e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13960,7 +14140,7 @@
   },
   {
     "id": "pot-red-mountain-flower-elves-ear",
-    "nome": "Elixir de Flor Vermelha e Orelha de Elfo",
+    "nome": "Elixir de Flor Vermelha e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21681,7 +21861,7 @@
   },
   {
     "id": "pot-spider-egg-elves-ear",
-    "nome": "Elixir de Ovo de Aranha e Orelha de Elfo",
+    "nome": "Elixir de Ovo de Aranha e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22074,7 +22254,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-elves-ear",
-    "nome": "Elixir de Tufo Cinzento e Orelha de Elfo",
+    "nome": "Elixir de Tufo Cinzento e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22367,7 +22547,7 @@
   },
   {
     "id": "pot-berit-s-ashes-elves-ear",
-    "nome": "Elixir de Cinzas Mortuárias e Orelha de Elfo",
+    "nome": "Elixir de Cinzas Mortuárias e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22879,7 +23059,7 @@
   },
   {
     "id": "pot-bone-meal-elves-ear",
-    "nome": "Elixir de Farinha de Ossos e Orelha de Elfo",
+    "nome": "Elixir de Farinha de Ossos e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23084,7 +23264,7 @@
   },
   {
     "id": "pot-canis-root-elves-ear",
-    "nome": "Elixir de Raiz Canina e Orelha de Elfo",
+    "nome": "Elixir de Raiz Canina e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24178,7 +24358,7 @@
   },
   {
     "id": "pot-creep-cluster-elves-ear",
-    "nome": "Elixir de Tufo Rastejante e Orelha de Elfo",
+    "nome": "Elixir de Tufo Rastejante e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25221,7 +25401,7 @@
   },
   {
     "id": "pot-juniper-berries-elves-ear",
-    "nome": "Elixir de Bagas de Zimbro e Orelha de Elfo",
+    "nome": "Elixir de Bagas de Zimbro e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27548,7 +27728,7 @@
   },
   {
     "id": "pot-grass-pod-elves-ear",
-    "nome": "Elixir de Vagem da Charneca e Orelha de Elfo",
+    "nome": "Elixir de Vagem da Charneca e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27837,7 +28017,7 @@
   },
   {
     "id": "pot-dragon-s-tongue-elves-ear",
-    "nome": "Elixir de Língua-de-Dragão e Orelha de Elfo",
+    "nome": "Elixir de Língua-de-Dragão e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28899,7 +29079,7 @@
   },
   {
     "id": "pot-pearl-elves-ear",
-    "nome": "Elixir de Pérola e Orelha de Elfo",
+    "nome": "Elixir de Pérola e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29478,7 +29658,7 @@
   },
   {
     "id": "pot-briar-heart-elves-ear",
-    "nome": "Elixir de Coração de Espinheiros e Orelha de Elfo",
+    "nome": "Elixir de Coração de Espinheiros e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30592,7 +30772,7 @@
   },
   {
     "id": "pot-frost-salts-elves-ear",
-    "nome": "Elixir de Sais da Geada e Orelha de Elfo",
+    "nome": "Elixir de Sais da Geada e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31122,7 +31302,7 @@
   },
   {
     "id": "pot-snowberries-elves-ear",
-    "nome": "Elixir de Bagas da Neve e Orelha de Elfo",
+    "nome": "Elixir de Bagas da Neve e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31292,7 +31472,7 @@
   },
   {
     "id": "pot-spawn-ash-elves-ear",
-    "nome": "Elixir de Cinzas de Criatura e Orelha de Elfo",
+    "nome": "Elixir de Cinzas de Criatura e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31464,7 +31644,7 @@
   },
   {
     "id": "pot-ice-wraith-teeth-elves-ear",
-    "nome": "Elixir de Dentes de Espectro Gelado e Orelha de Elfo",
+    "nome": "Elixir de Dentes de Espectro Gelado e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31924,7 +32104,7 @@
   },
   {
     "id": "pot-white-cap-elves-ear",
-    "nome": "Elixir de Chapéu Branco e Orelha de Elfo",
+    "nome": "Elixir de Chapéu Branco e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32118,7 +32298,7 @@
   },
   {
     "id": "pot-dwarven-oil-elves-ear",
-    "nome": "Elixir de Óleo de Autômato Anão e Orelha de Elfo",
+    "nome": "Elixir de Óleo de Autômato Anão e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32258,7 +32438,7 @@
   },
   {
     "id": "pot-mora-tapinella-elves-ear",
-    "nome": "Elixir de Cogumelo de Raiz e Orelha de Elfo",
+    "nome": "Elixir de Cogumelo de Raiz e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32446,7 +32626,7 @@
   },
   {
     "id": "pot-taproot-elves-ear",
-    "nome": "Elixir de Raiz Mestra e Orelha de Elfo",
+    "nome": "Elixir de Raiz Mestra e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32585,7 +32765,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-elves-ear",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Orelha de Elfo",
+    "nome": "Elixir de Gelatina de Saltador das Cinzas e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32671,7 +32851,7 @@
   },
   {
     "id": "pot-ashen-grass-pod-elves-ear",
-    "nome": "Elixir de Vagem Cinzenta e Orelha de Elfo",
+    "nome": "Elixir de Vagem Cinzenta e Orelha-de-Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33234,7 +33414,7 @@
   },
   {
     "id": "pot-elves-ear-abecean-longfin",
-    "nome": "Elixir de Orelha de Elfo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Orelha-de-Elfo e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33251,7 +33431,7 @@
   },
   {
     "id": "pot-elves-ear-fly-amanita",
-    "nome": "Elixir de Orelha de Elfo e Amanita Rubra",
+    "nome": "Elixir de Orelha-de-Elfo e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33268,7 +33448,7 @@
   },
   {
     "id": "pot-elves-ear-giant-lichen",
-    "nome": "Elixir de Orelha de Elfo e Líquen Gigante",
+    "nome": "Elixir de Orelha-de-Elfo e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33285,7 +33465,7 @@
   },
   {
     "id": "pot-elves-ear-fire-salts",
-    "nome": "Elixir de Orelha de Elfo e Sais Ígneos",
+    "nome": "Elixir de Orelha-de-Elfo e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33304,7 +33484,7 @@
   },
   {
     "id": "pot-elves-ear-moon-sugar",
-    "nome": "Elixir de Orelha de Elfo e Açúcar Lunar",
+    "nome": "Elixir de Orelha-de-Elfo e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [

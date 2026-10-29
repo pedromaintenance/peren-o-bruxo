@@ -1508,7 +1508,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-orelha-de-elfo",
-    "nome": "Elixir de Carapaça de Caranguejo e Orelha de Elfo",
+    "nome": "Elixir de Carapaça de Caranguejo e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -2385,7 +2385,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-orelha-de-elfo",
-    "nome": "Elixir de Pó de Vampiro e Orelha de Elfo",
+    "nome": "Elixir de Pó de Vampiro e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9041,7 +9041,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-orelha-de-elfo",
-    "nome": "Elixir de Ectoplasma e Orelha de Elfo",
+    "nome": "Elixir de Ectoplasma e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -10061,7 +10061,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-orelha-de-elfo",
-    "nome": "Elixir de Carne Humana e Orelha de Elfo",
+    "nome": "Elixir de Carne Humana e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12161,7 +12161,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-orelha-de-elfo",
-    "nome": "Elixir de Flor Vermelha e Orelha de Elfo",
+    "nome": "Elixir de Flor Vermelha e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21181,7 +21181,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-aranha-e-orelha-de-elfo",
-    "nome": "Elixir de Ovo de Aranha e Orelha de Elfo",
+    "nome": "Elixir de Ovo de Aranha e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -21641,7 +21641,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-de-cinza-e-orelha-de-elfo",
-    "nome": "Elixir de Tufo Cinzento e Orelha de Elfo",
+    "nome": "Elixir de Tufo Cinzento e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21981,7 +21981,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-orelha-de-elfo",
-    "nome": "Elixir de Cinzas Mortuárias e Orelha de Elfo",
+    "nome": "Elixir de Cinzas Mortuárias e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -22581,7 +22581,7 @@
   },
   {
     "id": "rec-elixir-de-farinha-de-ossos-e-orelha-de-elfo",
-    "nome": "Elixir de Farinha de Ossos e Orelha de Elfo",
+    "nome": "Elixir de Farinha de Ossos e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -22821,7 +22821,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-canina-e-orelha-de-elfo",
-    "nome": "Elixir de Raiz Canina e Orelha de Elfo",
+    "nome": "Elixir de Raiz Canina e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24101,7 +24101,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-orelha-de-elfo",
-    "nome": "Elixir de Tufo Rastejante e Orelha de Elfo",
+    "nome": "Elixir de Tufo Rastejante e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25321,7 +25321,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-orelha-de-elfo",
-    "nome": "Elixir de Bagas de Zimbro e Orelha de Elfo",
+    "nome": "Elixir de Bagas de Zimbro e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -28041,7 +28041,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-da-charneca-e-orelha-de-elfo",
-    "nome": "Elixir de Vagem da Charneca e Orelha de Elfo",
+    "nome": "Elixir de Vagem da Charneca e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -28381,7 +28381,7 @@
   },
   {
     "id": "rec-elixir-de-lingua-de-dragao-e-orelha-de-elfo",
-    "nome": "Elixir de Língua-de-Dragão e Orelha de Elfo",
+    "nome": "Elixir de Língua-de-Dragão e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -29621,7 +29621,7 @@
   },
   {
     "id": "rec-elixir-de-perola-da-costa-sul-e-orelha-de-elfo",
-    "nome": "Elixir de Pérola e Orelha de Elfo",
+    "nome": "Elixir de Pérola e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -30301,7 +30301,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-espinheiros-e-orelha-de-elfo",
-    "nome": "Elixir de Coração de Espinheiros e Orelha de Elfo",
+    "nome": "Elixir de Coração de Espinheiros e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -31601,7 +31601,7 @@
   },
   {
     "id": "rec-elixir-de-sais-da-geada-e-orelha-de-elfo",
-    "nome": "Elixir de Sais da Geada e Orelha de Elfo",
+    "nome": "Elixir de Sais da Geada e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32221,7 +32221,7 @@
   },
   {
     "id": "rec-elixir-de-frutas-da-neve-e-orelha-de-elfo",
-    "nome": "Elixir de Bagas da Neve e Orelha de Elfo",
+    "nome": "Elixir de Bagas da Neve e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -32421,7 +32421,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-criatura-e-orelha-de-elfo",
-    "nome": "Elixir de Cinzas de Criatura e Orelha de Elfo",
+    "nome": "Elixir de Cinzas de Criatura e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32621,7 +32621,7 @@
   },
   {
     "id": "rec-elixir-de-dentes-de-espectro-gelado-e-orelha-de-elfo",
-    "nome": "Elixir de Dentes de Espectro Gelado e Orelha de Elfo",
+    "nome": "Elixir de Dentes de Espectro Gelado e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33161,7 +33161,7 @@
   },
   {
     "id": "rec-elixir-de-chapeu-branco-e-orelha-de-elfo",
-    "nome": "Elixir de Chapéu Branco e Orelha de Elfo",
+    "nome": "Elixir de Chapéu Branco e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -33381,7 +33381,7 @@
   },
   {
     "id": "rec-elixir-de-oleo-de-automato-anao-e-orelha-de-elfo",
-    "nome": "Elixir de Óleo de Autômato Anão e Orelha de Elfo",
+    "nome": "Elixir de Óleo de Autômato Anão e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33541,7 +33541,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-de-raiz-e-orelha-de-elfo",
-    "nome": "Elixir de Cogumelo de Raiz e Orelha de Elfo",
+    "nome": "Elixir de Cogumelo de Raiz e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33761,7 +33761,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-mestra-e-orelha-de-elfo",
-    "nome": "Elixir de Raiz Mestra e Orelha de Elfo",
+    "nome": "Elixir de Raiz Mestra e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33921,7 +33921,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-saltador-das-cinzas-e-orelha-de-elfo",
-    "nome": "Elixir de Gelatina de Saltador das Cinzas e Orelha de Elfo",
+    "nome": "Elixir de Gelatina de Saltador das Cinzas e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -34021,7 +34021,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-cinzenta-e-orelha-de-elfo",
-    "nome": "Elixir de Vagem Cinzenta e Orelha de Elfo",
+    "nome": "Elixir de Vagem Cinzenta e Orelha-de-Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -34681,7 +34681,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Orelha de Elfo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Orelha-de-Elfo e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34701,7 +34701,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-amanita-rubra",
-    "nome": "Elixir de Orelha de Elfo e Amanita Rubra",
+    "nome": "Elixir de Orelha-de-Elfo e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34721,7 +34721,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-liquen-gigante",
-    "nome": "Elixir de Orelha de Elfo e Líquen Gigante",
+    "nome": "Elixir de Orelha-de-Elfo e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -34741,7 +34741,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-sais-igneos",
-    "nome": "Elixir de Orelha de Elfo e Sais Ígneos",
+    "nome": "Elixir de Orelha-de-Elfo e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34761,7 +34761,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-acucar-lunar",
-    "nome": "Elixir de Orelha de Elfo e Açúcar Lunar",
+    "nome": "Elixir de Orelha-de-Elfo e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
