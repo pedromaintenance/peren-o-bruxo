@@ -23,8 +23,8 @@ test('Pena de Gaivota uses genuine animated transparent WebP',()=>{
 test('only Pena de Gaivota gets its dedicated inventory icon',()=>{
   const game=read('game.js').toString();
   const lab=read('laboratorio-itens/app.js').toString();
-  assert.match(game,/if\(n\.includes\('pena de gaivota'\)\)return 'pena-gaivota'/);
-  assert.match(lab,/if\(n\.includes\('pena de gaivota'\)\)return 'pena-gaivota'/);
+  assert.match(game,/if\(n\.trim\(\)==='pena de gaivota'\)return 'pena-gaivota'/);
+  assert.match(lab,/if\(n\.trim\(\)==='pena de gaivota'\)return 'pena-gaivota'/);
   assert.match(game,/assets\/icons\/\$\{iconAsset\(it\)\}\.webp/);
 });
 test('root PWA preloads the new icon under a new cache version',()=>{
