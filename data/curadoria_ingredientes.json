@@ -795,12 +795,18 @@
           "id": "restaurar_saude",
           "nome": "Restaurar Saúde",
           "intensidade": 1
+        },
+        {
+          "id": "visao_a_distancia",
+          "nome": "Visão à Distância",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Fortify Dexterity",
         "Fortify Perception",
-        "Restore Health"
+        "Restore Health",
+        "Far Sight"
       ]
     },
     "ing-glow-dust": {

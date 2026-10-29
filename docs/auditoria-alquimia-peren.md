@@ -219,3 +219,11 @@ const efeitosGerados = [...contagem]
 - O efeito `infligir_doenca` passa a ter dois ingredientes: Couro de Rato I e Cauda de Rato II. Uma futura mistura entre os dois ativará Infligir Doença; efeitos restantes só ativam se houver duas fontes.
 - **Não alterados:** `data/itens.json`, `data/receitas.json`, runtime clássico, Phaser ou saves. Motor dinâmico ainda não integrado.
 - **Próxima ficha para decisão:** Olho de Felino (`ing-eye-of-sabre-cat`) — adicionar `visao_a_distancia` II.
+
+## Ciclo 6 — decisão aprovada: Olho de Felino (29/10/2026)
+
+- **Aprovado pelo criador:** acrescentar `visao_a_distancia` (**Visão à Distância II**) a `ing-eye-of-sabre-cat` (Olho de Felino).
+- Preservados os três atributos anteriores, descrição, raridade e ID. Adicionado o equivalente textual `Far Sight` ao campo legado `efeitos` para manter coerência de metadados (não equivale à integração do motor).
+- Efeito antes isolado em Penas de Falcão III agora possui duas fontes: Olho de Felino II e Penas de Falcão III. O par compartilha Visão à Distância, sem compartilhar os outros efeitos.
+- Sem alterações no motor clássico, Phaser, receitas fixas, itens ou saves. O crafting dinâmico continua pendente.
+- **Próxima ficha:** Libélula Azul (`ing-blue-dartwing`) — sugestão `velocidade` II, condicionada à decisão do criador.
