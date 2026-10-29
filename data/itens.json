@@ -2547,7 +2547,8 @@
     "efeitos": [
       "Fortify Enchanting",
       "Resist Magic",
-      "Lingering Damage Magicka"
+      "Lingering Damage Magicka",
+      "Reduce Magicka"
     ],
     "raridade": "raro",
     "valor": 14,
@@ -2555,7 +2556,7 @@
     "zona": "garganta",
     "nivel": 2,
     "icone": "🧪",
-    "descricao": "Garra de feiticeira monstruosa empregada em encantamentos e proteções arcanas.",
+    "descricao": "Garra de feiticeira monstruosa utilizada em encantamentos, proteções e maldições capazes de reprimir temporariamente a capacidade mágica de outras criaturas.",
     "atributos_revisados": true,
     "atributos": [
       {
@@ -2572,6 +2573,11 @@
         "id": "dano_magia",
         "nome": "Dano à Magia",
         "intensidade": 1
+      },
+      {
+        "id": "diminuir_magia",
+        "nome": "Diminuir Magia",
+        "intensidade": 2
       }
     ]
   },
