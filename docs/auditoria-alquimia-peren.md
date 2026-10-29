@@ -320,3 +320,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - O ingrediente apresenta 10 parceiros; Poeira Luminosa compartilha Aumentar Destruição e Resistência à Eletricidade, oferecendo combinação de dois efeitos. Expansão energética ou metalúrgica da descrição foi apenas proposta, **não aprovada**.
 - Atualizado **somente o dossiê**; `data/curadoria_ingredientes.json`, receitas, itens, runtimes e saves permanecem intocados neste ciclo.
 - **Próxima ficha participativa:** Couro de Rato (`ing-charred-skeever-hide`), para avaliação de coerência e conectividade, sem alteração automática.
+
+## Ciclo 19 — decisão concluída: Couro de Rato (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha de Couro de Rato (`ing-charred-skeever-hide`).
+- Preservados **Diminuir Carisma III**, **Resistência a Veneno II** e **Infligir Doença I**, além de nome, descrição, raridade comum e ID.
+- Onze parceiros detectados; entre eles Fungo de Gualápoles (Diminuir Carisma), Cauda de Rato (Infligir Doença) e Alho (Resistência a Veneno). Não foi autorizada reformulação narrativa nem atributo adicional.
+- **Somente este dossiê foi atualizado.** Não modificar JSON de curadoria, itens, receitas, runtimes ou saves nesta decisão.
+- **Próxima ficha participativa:** Pó de Vampiro (`ing-vampire-dust`), com doze parceiros; apresentar para aprovação sem mudanças prévias.
