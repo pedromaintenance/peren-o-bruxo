@@ -1561,7 +1561,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Pó de Vampiro e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Pó de Vampiro e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3361,7 +3361,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-chifres-jovens",
-    "nome": "Elixir de Raiz Botulínica e Chifres Jovens",
+    "nome": "Elixir de Raiz Botulínica e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -3441,7 +3441,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Raiz Botulínica e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Botulínica e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -4261,7 +4261,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-chifres-jovens",
-    "nome": "Elixir de Betta do Rio e Chifres Jovens",
+    "nome": "Elixir de Betta do Rio e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -4801,7 +4801,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-parassol-de-eldroth-e-chifres-jovens",
-    "nome": "Elixir de Musgo Parassol e Chifres Jovens",
+    "nome": "Elixir de Musgo Parassol e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5341,7 +5341,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-chifres-jovens",
-    "nome": "Elixir de Raiz Velada e Chifres Jovens",
+    "nome": "Elixir de Raiz Velada e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5401,7 +5401,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Raiz Velada e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Velada e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6061,7 +6061,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-chifres-jovens",
-    "nome": "Elixir de Raiz Velada Rubra e Chifres Jovens",
+    "nome": "Elixir de Raiz Velada Rubra e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6121,7 +6121,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Raiz Velada Rubra e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Velada Rubra e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6761,7 +6761,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-chifres-jovens",
-    "nome": "Elixir de Sino da Morte e Chifres Jovens",
+    "nome": "Elixir de Sino da Morte e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -6821,7 +6821,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Sino da Morte e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Sino da Morte e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7321,7 +7321,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-chifres-jovens",
-    "nome": "Elixir de Flor Venenosa e Chifres Jovens",
+    "nome": "Elixir de Flor Venenosa e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7841,7 +7841,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-chifres-jovens",
-    "nome": "Elixir de Ectoplasma e Chifres Jovens",
+    "nome": "Elixir de Ectoplasma e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8461,7 +8461,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-troglodita-e-chifres-jovens",
-    "nome": "Elixir de Orelha de Troglodita e Chifres Jovens",
+    "nome": "Elixir de Orelha de Troglodita e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -8901,7 +8901,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-chifres-jovens",
-    "nome": "Elixir de Carne Humana e Chifres Jovens",
+    "nome": "Elixir de Carne Humana e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -9501,7 +9501,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-chifres-jovens",
-    "nome": "Elixir de Coração Humano e Chifres Jovens",
+    "nome": "Elixir de Coração Humano e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9581,7 +9581,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Coração Humano e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Coração Humano e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10101,7 +10101,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-chifres-jovens",
-    "nome": "Elixir de Fungo de Diabrete e Chifres Jovens",
+    "nome": "Elixir de Fungo de Diabrete e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10581,7 +10581,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-chifres-jovens",
-    "nome": "Elixir de Beladona e Chifres Jovens",
+    "nome": "Elixir de Beladona e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -11001,7 +11001,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-chifres-jovens",
-    "nome": "Elixir de Flor Vermelha e Chifres Jovens",
+    "nome": "Elixir de Flor Vermelha e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -11501,7 +11501,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-chifres-jovens",
-    "nome": "Elixir de Cauda de Rato e Chifres Jovens",
+    "nome": "Elixir de Cauda de Rato e Chifres de Cervo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11941,7 +11941,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-gordura-de-troll",
-    "nome": "Elixir de Chifres Jovens e Gordura de Troll",
+    "nome": "Elixir de Chifres de Cervo e Gordura de Troll",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -11961,7 +11961,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-sais-do-vazio",
-    "nome": "Elixir de Chifres Jovens e Sais do Vazio",
+    "nome": "Elixir de Chifres de Cervo e Sais do Vazio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -11981,7 +11981,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-asa-de-borboleta-da-foz",
-    "nome": "Elixir de Chifres Jovens e Asa de Borboleta",
+    "nome": "Elixir de Chifres de Cervo e Asa de Borboleta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12001,7 +12001,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Chifres Jovens e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12021,7 +12021,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-ovo-de-galinha",
-    "nome": "Elixir de Chifres Jovens e Ovo de Galinha",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -12041,7 +12041,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-ovo-de-falcao",
-    "nome": "Elixir de Chifres Jovens e Ovo de Falcão",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -12061,7 +12061,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Chifres Jovens e Peixe de Escamas Finas",
+    "nome": "Elixir de Chifres de Cervo e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12081,7 +12081,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Chifres Jovens e Flor Amarela da Montanha",
+    "nome": "Elixir de Chifres de Cervo e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12101,7 +12101,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-coroa-sangrenta",
-    "nome": "Elixir de Chifres Jovens e Coroa Sangrenta",
+    "nome": "Elixir de Chifres de Cervo e Coroa Sangrenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12121,7 +12121,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-dente-de-felino",
-    "nome": "Elixir de Chifres Jovens e Dente de Felino",
+    "nome": "Elixir de Chifres de Cervo e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12141,7 +12141,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Chifres Jovens e Ovo de Tordo da Costa",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -12161,7 +12161,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-perola-pequena",
-    "nome": "Elixir de Chifres Jovens e Pérola Pequena",
+    "nome": "Elixir de Chifres de Cervo e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -12181,7 +12181,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Chifres Jovens e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chifres de Cervo e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12201,7 +12201,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres Jovens e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Pilha de Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -12221,7 +12221,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-liquen-gigante",
-    "nome": "Elixir de Chifres Jovens e Líquen Gigante",
+    "nome": "Elixir de Chifres de Cervo e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -12821,7 +12821,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-da-foz-e-ovos-de-verme-quitinoso",
-    "nome": "Elixir de Asa de Borboleta e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Verme Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13261,7 +13261,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-coracao-de-demonio",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Coração de Demônio",
+    "nome": "Elixir de Ovo de Verme Gigante e Coração de Demônio",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13281,7 +13281,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-olho-de-felino-das-ilhas",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Olho de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13301,7 +13301,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-poeira-luminosa",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Poeira Luminosa",
+    "nome": "Elixir de Ovo de Verme Gigante e Poeira Luminosa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13321,7 +13321,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-penas-de-bruxa-das-sombras",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa das Sombras",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13341,7 +13341,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-musgo-suspenso",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Musgo Suspenso",
+    "nome": "Elixir de Ovo de Verme Gigante e Musgo Suspenso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13361,7 +13361,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-asa-de-mariposa-lunar",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Asa de Mariposa Lunar",
+    "nome": "Elixir de Ovo de Verme Gigante e Asa de Mariposa Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13381,7 +13381,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-fungo-de-gualapoles",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Fungo de Gualápoles",
+    "nome": "Elixir de Ovo de Verme Gigante e Fungo de Gualápoles",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13401,7 +13401,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-craca-do-rio-ancestral",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Craca do Rio Ancestral",
+    "nome": "Elixir de Ovo de Verme Gigante e Craca do Rio Ancestral",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13421,7 +13421,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-raiz-de-trama",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Raiz de Trama",
+    "nome": "Elixir de Ovo de Verme Gigante e Raiz de Trama",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13441,7 +13441,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-cachos-de-cinza",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Cachos de Cinza",
+    "nome": "Elixir de Ovo de Verme Gigante e Cachos de Cinza",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13461,7 +13461,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-chifres-grandes",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Chifres Grandes",
+    "nome": "Elixir de Ovo de Verme Gigante e Chifres Grandes",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13481,7 +13481,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-coroa-sangrenta",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Coroa Sangrenta",
+    "nome": "Elixir de Ovo de Verme Gigante e Coroa Sangrenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13501,7 +13501,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-presa-de-javali",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Presa de Javali",
+    "nome": "Elixir de Ovo de Verme Gigante e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13521,7 +13521,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-lavanda-selvagem",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Lavanda Selvagem",
+    "nome": "Elixir de Ovo de Verme Gigante e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13541,7 +13541,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-dentes-de-espectro-gelado",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Dentes de Espectro Gelado",
+    "nome": "Elixir de Ovo de Verme Gigante e Dentes de Espectro Gelado",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13561,7 +13561,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-dente-de-felino",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Dente de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13581,7 +13581,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Ovo de Tordo da Costa",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13601,7 +13601,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Peixe Carniceiro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13621,7 +13621,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Verme Gigante e Peixe da Costa Escarlate",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13641,7 +13641,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-alho-das-hortas",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Alho das Hortas",
+    "nome": "Elixir de Ovo de Verme Gigante e Alho das Hortas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13661,7 +13661,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -13681,7 +13681,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-liquen-gigante",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Líquen Gigante",
+    "nome": "Elixir de Ovo de Verme Gigante e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,

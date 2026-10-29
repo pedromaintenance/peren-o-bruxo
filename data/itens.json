@@ -660,10 +660,10 @@
     "referencia": "Nightshade",
     "efeitos": [
       "Damage Health",
-      "Damage Magicka Regen",
-      "Lingering Damage Stamina"
+      "Fortify Magicka",
+      "Fortify Illusion"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 19,
     "peso": 0.1,
     "zona": "ironwood",
@@ -675,17 +675,17 @@
       {
         "id": "dano_saude",
         "nome": "Dano à Saúde",
-        "intensidade": 2
+        "intensidade": 3
       },
       {
-        "id": "diminuir_regeneracao_magia",
-        "nome": "Diminuir Regeneração de Magia",
-        "intensidade": 2
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 3
       },
       {
-        "id": "dano_stamina",
-        "nome": "Dano à Stamina",
-        "intensidade": 1
+        "id": "aumentar_ilusao",
+        "nome": "Aumentar Ilusão",
+        "intensidade": 2
       }
     ]
   },
@@ -736,8 +736,8 @@
     "referencia": "Skeever Tail",
     "efeitos": [
       "Damage Health",
-      "Damage Stamina Regen",
-      "Fortify Light Armor"
+      "Reduce Constitution",
+      "Fortify Dexterity"
     ],
     "raridade": "comum",
     "valor": 29,
@@ -754,20 +754,20 @@
         "intensidade": 1
       },
       {
-        "id": "diminuir_regeneracao_stamina",
-        "nome": "Diminuir Regeneração de Stamina",
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
         "intensidade": 2
       },
       {
-        "id": "aumentar_defesa",
-        "nome": "Aumentar Defesa",
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
         "intensidade": 1
       }
     ]
   },
   {
     "id": "ing-small-antlers",
-    "nome": "Chifres Jovens",
+    "nome": "Chifres de Cervo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -775,7 +775,7 @@
     "efeitos": [
       "Fortify Restoration",
       "Weakness to Poison",
-      "Lingering Damage Stamina"
+      "Fortify Dexterity"
     ],
     "raridade": "comum",
     "valor": 9,
@@ -797,8 +797,8 @@
         "intensidade": 1
       },
       {
-        "id": "dano_stamina",
-        "nome": "Dano à Stamina",
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
         "intensidade": 1
       }
     ]
@@ -919,17 +919,17 @@
   },
   {
     "id": "ing-chaurus-eggs",
-    "nome": "Ovos de Verme Quitinoso",
+    "nome": "Ovo de Verme Gigante",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
     "referencia": "Chaurus Eggs",
     "efeitos": [
       "Invisibility",
-      "Fortify Stamina",
+      "Fortify Constitution",
       "Weakness to Poison"
     ],
-    "raridade": "incomum",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "shadar-riverie",
@@ -944,8 +944,8 @@
         "intensidade": 2
       },
       {
-        "id": "aumentar_stamina",
-        "nome": "Aumentar Stamina",
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
         "intensidade": 2
       },
       {
@@ -963,9 +963,9 @@
     "origem": "curadoria_original_carcaca",
     "referencia": "Daedra Heart",
     "efeitos": [
-      "Restore Health",
+      "Fortify Magicka",
       "Fear",
-      "Damage Magicka"
+      "Fortify Charisma"
     ],
     "raridade": "epico",
     "valor": 9,
@@ -977,19 +977,19 @@
     "atributos_revisados": true,
     "atributos": [
       {
-        "id": "restaurar_saude",
-        "nome": "Restaurar Saúde",
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
         "intensidade": 3
       },
       {
         "id": "medo",
         "nome": "Medo",
-        "intensidade": 2
+        "intensidade": 3
       },
       {
-        "id": "dano_magia",
-        "nome": "Dano à Magia",
-        "intensidade": 2
+        "id": "aumentar_carisma",
+        "nome": "Aumentar Carisma",
+        "intensidade": 3
       }
     ]
   },
@@ -1001,7 +1001,7 @@
     "origem": "curadoria_original_carcaca",
     "referencia": "Eye of Sabre Cat",
     "efeitos": [
-      "Restore Stamina",
+      "Fortify Dexterity",
       "Fortify Perception",
       "Restore Health"
     ],
@@ -1015,8 +1015,8 @@
     "atributos_revisados": true,
     "atributos": [
       {
-        "id": "restaurar_stamina",
-        "nome": "Restaurar Stamina",
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
         "intensidade": 2
       },
       {
@@ -4473,7 +4473,7 @@
   },
   {
     "id": "pot-vampire-dust-chaurus-eggs",
-    "nome": "Elixir de Pó de Vampiro e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Pó de Vampiro e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6011,7 +6011,7 @@
   },
   {
     "id": "pot-jarrin-root-small-antlers",
-    "nome": "Elixir de Raiz Botulínica e Chifres Jovens",
+    "nome": "Elixir de Raiz Botulínica e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6079,7 +6079,7 @@
   },
   {
     "id": "pot-jarrin-root-chaurus-eggs",
-    "nome": "Elixir de Raiz Botulínica e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Botulínica e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6785,7 +6785,7 @@
   },
   {
     "id": "pot-river-betty-small-antlers",
-    "nome": "Elixir de Betta do Rio e Chifres Jovens",
+    "nome": "Elixir de Betta do Rio e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7248,7 +7248,7 @@
   },
   {
     "id": "pot-emperor-parasol-moss-small-antlers",
-    "nome": "Elixir de Musgo Parassol e Chifres Jovens",
+    "nome": "Elixir de Musgo Parassol e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7712,7 +7712,7 @@
   },
   {
     "id": "pot-nirnroot-small-antlers",
-    "nome": "Elixir de Raiz Velada e Chifres Jovens",
+    "nome": "Elixir de Raiz Velada e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7764,7 +7764,7 @@
   },
   {
     "id": "pot-nirnroot-chaurus-eggs",
-    "nome": "Elixir de Raiz Velada e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Velada e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8326,7 +8326,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-small-antlers",
-    "nome": "Elixir de Raiz Velada Rubra e Chifres Jovens",
+    "nome": "Elixir de Raiz Velada Rubra e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8378,7 +8378,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-chaurus-eggs",
-    "nome": "Elixir de Raiz Velada Rubra e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Raiz Velada Rubra e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8924,7 +8924,7 @@
   },
   {
     "id": "pot-deathbell-small-antlers",
-    "nome": "Elixir de Sino da Morte e Chifres Jovens",
+    "nome": "Elixir de Sino da Morte e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8976,7 +8976,7 @@
   },
   {
     "id": "pot-deathbell-chaurus-eggs",
-    "nome": "Elixir de Sino da Morte e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Sino da Morte e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9401,7 +9401,7 @@
   },
   {
     "id": "pot-poison-bloom-small-antlers",
-    "nome": "Elixir de Flor Venenosa e Chifres Jovens",
+    "nome": "Elixir de Flor Venenosa e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9849,7 +9849,7 @@
   },
   {
     "id": "pot-ectoplasm-small-antlers",
-    "nome": "Elixir de Ectoplasma e Chifres Jovens",
+    "nome": "Elixir de Ectoplasma e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10379,7 +10379,7 @@
   },
   {
     "id": "pot-falmer-ear-small-antlers",
-    "nome": "Elixir de Orelha de Troglodita e Chifres Jovens",
+    "nome": "Elixir de Orelha de Troglodita e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10757,7 +10757,7 @@
   },
   {
     "id": "pot-human-flesh-small-antlers",
-    "nome": "Elixir de Carne Humana e Chifres Jovens",
+    "nome": "Elixir de Carne Humana e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11269,7 +11269,7 @@
   },
   {
     "id": "pot-human-heart-small-antlers",
-    "nome": "Elixir de Coração Humano e Chifres Jovens",
+    "nome": "Elixir de Coração Humano e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11338,7 +11338,7 @@
   },
   {
     "id": "pot-human-heart-chaurus-eggs",
-    "nome": "Elixir de Coração Humano e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Coração Humano e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11783,7 +11783,7 @@
   },
   {
     "id": "pot-imp-stool-small-antlers",
-    "nome": "Elixir de Fungo de Diabrete e Chifres Jovens",
+    "nome": "Elixir de Fungo de Diabrete e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12192,7 +12192,7 @@
   },
   {
     "id": "pot-nightshade-small-antlers",
-    "nome": "Elixir de Beladona e Chifres Jovens",
+    "nome": "Elixir de Beladona e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12553,7 +12553,7 @@
   },
   {
     "id": "pot-red-mountain-flower-small-antlers",
-    "nome": "Elixir de Flor Vermelha e Chifres Jovens",
+    "nome": "Elixir de Flor Vermelha e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12982,7 +12982,7 @@
   },
   {
     "id": "pot-skeever-tail-small-antlers",
-    "nome": "Elixir de Cauda de Rato e Chifres Jovens",
+    "nome": "Elixir de Cauda de Rato e Chifres de Cervo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13357,7 +13357,7 @@
   },
   {
     "id": "pot-small-antlers-troll-fat",
-    "nome": "Elixir de Chifres Jovens e Gordura de Troll",
+    "nome": "Elixir de Chifres de Cervo e Gordura de Troll",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13374,7 +13374,7 @@
   },
   {
     "id": "pot-small-antlers-void-salts",
-    "nome": "Elixir de Chifres Jovens e Sais do Vazio",
+    "nome": "Elixir de Chifres de Cervo e Sais do Vazio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13391,7 +13391,7 @@
   },
   {
     "id": "pot-small-antlers-butterfly-wing",
-    "nome": "Elixir de Chifres Jovens e Asa de Borboleta",
+    "nome": "Elixir de Chifres de Cervo e Asa de Borboleta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13408,7 +13408,7 @@
   },
   {
     "id": "pot-small-antlers-chaurus-eggs",
-    "nome": "Elixir de Chifres Jovens e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13425,7 +13425,7 @@
   },
   {
     "id": "pot-small-antlers-chicken-s-egg",
-    "nome": "Elixir de Chifres Jovens e Ovo de Galinha",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13442,7 +13442,7 @@
   },
   {
     "id": "pot-small-antlers-hawk-s-egg",
-    "nome": "Elixir de Chifres Jovens e Ovo de Falcão",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13459,7 +13459,7 @@
   },
   {
     "id": "pot-small-antlers-cyrodilic-spadetail",
-    "nome": "Elixir de Chifres Jovens e Peixe de Escamas Finas",
+    "nome": "Elixir de Chifres de Cervo e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13476,7 +13476,7 @@
   },
   {
     "id": "pot-small-antlers-yellow-mountain-flower",
-    "nome": "Elixir de Chifres Jovens e Flor Amarela da Montanha",
+    "nome": "Elixir de Chifres de Cervo e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13493,7 +13493,7 @@
   },
   {
     "id": "pot-small-antlers-bleeding-crown",
-    "nome": "Elixir de Chifres Jovens e Coroa Sangrenta",
+    "nome": "Elixir de Chifres de Cervo e Coroa Sangrenta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13510,7 +13510,7 @@
   },
   {
     "id": "pot-small-antlers-sabre-cat-tooth",
-    "nome": "Elixir de Chifres Jovens e Dente de Felino",
+    "nome": "Elixir de Chifres de Cervo e Dente de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13527,7 +13527,7 @@
   },
   {
     "id": "pot-small-antlers-pine-thrush-egg",
-    "nome": "Elixir de Chifres Jovens e Ovo de Tordo da Costa",
+    "nome": "Elixir de Chifres de Cervo e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13544,7 +13544,7 @@
   },
   {
     "id": "pot-small-antlers-small-pearl",
-    "nome": "Elixir de Chifres Jovens e Pérola Pequena",
+    "nome": "Elixir de Chifres de Cervo e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13561,7 +13561,7 @@
   },
   {
     "id": "pot-small-antlers-abecean-longfin",
-    "nome": "Elixir de Chifres Jovens e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chifres de Cervo e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13579,7 +13579,7 @@
   },
   {
     "id": "pot-small-antlers-salt-pile",
-    "nome": "Elixir de Chifres Jovens e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13596,7 +13596,7 @@
   },
   {
     "id": "pot-small-antlers-giant-lichen",
-    "nome": "Elixir de Chifres Jovens e Líquen Gigante",
+    "nome": "Elixir de Chifres de Cervo e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14108,7 +14108,7 @@
   },
   {
     "id": "pot-butterfly-wing-chaurus-eggs",
-    "nome": "Elixir de Asa de Borboleta e Ovos de Verme Quitinoso",
+    "nome": "Elixir de Asa de Borboleta e Ovo de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14484,7 +14484,7 @@
   },
   {
     "id": "pot-chaurus-eggs-daedra-heart",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Coração de Demônio",
+    "nome": "Elixir de Ovo de Verme Gigante e Coração de Demônio",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14501,7 +14501,7 @@
   },
   {
     "id": "pot-chaurus-eggs-eye-of-sabre-cat",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Olho de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Olho de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14518,7 +14518,7 @@
   },
   {
     "id": "pot-chaurus-eggs-glow-dust",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Poeira Luminosa",
+    "nome": "Elixir de Ovo de Verme Gigante e Poeira Luminosa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14535,7 +14535,7 @@
   },
   {
     "id": "pot-chaurus-eggs-hagraven-feathers",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Penas de Bruxa das Sombras",
+    "nome": "Elixir de Ovo de Verme Gigante e Penas de Bruxa das Sombras",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14552,7 +14552,7 @@
   },
   {
     "id": "pot-chaurus-eggs-hanging-moss",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Musgo Suspenso",
+    "nome": "Elixir de Ovo de Verme Gigante e Musgo Suspenso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14569,7 +14569,7 @@
   },
   {
     "id": "pot-chaurus-eggs-luna-moth-wing",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Asa de Mariposa Lunar",
+    "nome": "Elixir de Ovo de Verme Gigante e Asa de Mariposa Lunar",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14587,7 +14587,7 @@
   },
   {
     "id": "pot-chaurus-eggs-namira-s-rot",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Fungo de Gualápoles",
+    "nome": "Elixir de Ovo de Verme Gigante e Fungo de Gualápoles",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14604,7 +14604,7 @@
   },
   {
     "id": "pot-chaurus-eggs-nordic-barnacle",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Craca do Rio Ancestral",
+    "nome": "Elixir de Ovo de Verme Gigante e Craca do Rio Ancestral",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14621,7 +14621,7 @@
   },
   {
     "id": "pot-chaurus-eggs-trama-root",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Raiz de Trama",
+    "nome": "Elixir de Ovo de Verme Gigante e Raiz de Trama",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14638,7 +14638,7 @@
   },
   {
     "id": "pot-chaurus-eggs-ash-creep-cluster",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Cachos de Cinza",
+    "nome": "Elixir de Ovo de Verme Gigante e Cachos de Cinza",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14655,7 +14655,7 @@
   },
   {
     "id": "pot-chaurus-eggs-large-antlers",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Chifres Grandes",
+    "nome": "Elixir de Ovo de Verme Gigante e Chifres Grandes",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14672,7 +14672,7 @@
   },
   {
     "id": "pot-chaurus-eggs-bleeding-crown",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Coroa Sangrenta",
+    "nome": "Elixir de Ovo de Verme Gigante e Coroa Sangrenta",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14689,7 +14689,7 @@
   },
   {
     "id": "pot-chaurus-eggs-boar-tusk",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Presa de Javali",
+    "nome": "Elixir de Ovo de Verme Gigante e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14706,7 +14706,7 @@
   },
   {
     "id": "pot-chaurus-eggs-lavender",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Lavanda Selvagem",
+    "nome": "Elixir de Ovo de Verme Gigante e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14723,7 +14723,7 @@
   },
   {
     "id": "pot-chaurus-eggs-ice-wraith-teeth",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Dentes de Espectro Gelado",
+    "nome": "Elixir de Ovo de Verme Gigante e Dentes de Espectro Gelado",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14740,7 +14740,7 @@
   },
   {
     "id": "pot-chaurus-eggs-sabre-cat-tooth",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Dente de Felino",
+    "nome": "Elixir de Ovo de Verme Gigante e Dente de Felino",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14757,7 +14757,7 @@
   },
   {
     "id": "pot-chaurus-eggs-pine-thrush-egg",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Ovo de Tordo da Costa",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14774,7 +14774,7 @@
   },
   {
     "id": "pot-chaurus-eggs-slaughterfish-egg",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Ovo de Verme Gigante e Ovas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14791,7 +14791,7 @@
   },
   {
     "id": "pot-chaurus-eggs-abecean-longfin",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Verme Gigante e Peixe da Costa Escarlate",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14808,7 +14808,7 @@
   },
   {
     "id": "pot-chaurus-eggs-garlic",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Alho das Hortas",
+    "nome": "Elixir de Ovo de Verme Gigante e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14825,7 +14825,7 @@
   },
   {
     "id": "pot-chaurus-eggs-torchbug-thorax",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Ovo de Verme Gigante e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14842,7 +14842,7 @@
   },
   {
     "id": "pot-chaurus-eggs-giant-lichen",
-    "nome": "Elixir de Ovos de Verme Quitinoso e Líquen Gigante",
+    "nome": "Elixir de Ovo de Verme Gigante e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
