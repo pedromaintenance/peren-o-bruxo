@@ -796,6 +796,296 @@
         "Fortify Perception",
         "Restore Health"
       ]
+    },
+    "ing-glow-dust": {
+      "nome": "Poeira Luminosa",
+      "descricao": "Pó cintilante empregado para canalizar descargas arcanas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Destruction",
+        "Resist Shock",
+        "Damage Magicka"
+      ]
+    },
+    "ing-hagraven-feathers": {
+      "nome": "Penas de Bruxa",
+      "descricao": "Penas carregadas de feitiçaria e agressividade ritual.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 3
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Conjuration",
+        "Frenzy",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-hanging-moss": {
+      "nome": "Musgo Pendente",
+      "descricao": "Musgo fibroso que cresce sob pedras e galhos úmidos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_saude",
+          "nome": "Aumentar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Health",
+        "Damage Magicka",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-luna-moth-wing": {
+      "nome": "Asa de Mariposa Lunar",
+      "descricao": "Asas de inseto noturno usadas em preparados de ocultação.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Regenerate Health",
+        "Damage Magicka"
+      ]
+    },
+    "ing-namira-s-rot": {
+      "nome": "Fungo de Gualápoles",
+      "descricao": "Fungo de decomposição associado a rituais soturnos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fear",
+        "Regenerate Health",
+        "Damage Magicka"
+      ]
+    },
+    "ing-nordic-barnacle": {
+      "nome": "Craca de Rio",
+      "descricao": "Craca de água doce coletada em rochas e embarcações.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Regenerate Health",
+        "Damage Magicka"
+      ]
+    },
+    "ing-trama-root": {
+      "nome": "Raiz de Trama",
+      "descricao": "Raiz resistente de fibras entrelaçadas usada em compostos debilitantes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Slow",
+        "Fortify Carry Weight",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-ancestor-moth-wing": {
+      "nome": "Asa de Mariposa Ancestral",
+      "descricao": "Asa de mariposa associada à evocação e à inscrição de encantamentos.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Conjuration",
+        "Damage Stamina"
+      ]
+    },
+    "ing-bear-claws": {
+      "nome": "Garras de Urso",
+      "descricao": "Garras maceradas para extratos de vigor e combate.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_stamina",
+          "nome": "Restaurar Stamina",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_saude",
+          "nome": "Aumentar Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Stamina",
+        "Fortify Strength",
+        "Fortify Health"
+      ]
+    },
+    "ing-blue-butterfly-wing": {
+      "nome": "Asa de Borboleta Azul",
+      "descricao": "Asa azul delicada utilizada na preparação de elixires arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_stamina",
+          "nome": "Dano à Stamina",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Damage Stamina",
+        "Damage Magicka Regen"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -818,7 +1108,10 @@
     "Asa de Borboleta da Foz": "Asa de Borboleta",
     "Olho de Felino das Ilhas": "Olho de Felino",
     "Chifres Jovens": "Chifres de Cervo",
-    "Ovos de Verme Quitinoso": "Ovo de Verme Gigante"
+    "Ovos de Verme Quitinoso": "Ovo de Verme Gigante",
+    "Penas de Bruxa das Sombras": "Penas de Bruxa",
+    "Musgo Suspenso": "Musgo Pendente",
+    "Craca do Rio Ancestral": "Craca de Rio"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -846,6 +1139,16 @@
     "ing-butterfly-wing",
     "ing-chaurus-eggs",
     "ing-daedra-heart",
-    "ing-eye-of-sabre-cat"
+    "ing-eye-of-sabre-cat",
+    "ing-glow-dust",
+    "ing-hagraven-feathers",
+    "ing-hanging-moss",
+    "ing-luna-moth-wing",
+    "ing-namira-s-rot",
+    "ing-nordic-barnacle",
+    "ing-trama-root",
+    "ing-ancestor-moth-wing",
+    "ing-bear-claws",
+    "ing-blue-butterfly-wing"
   ]
 }
