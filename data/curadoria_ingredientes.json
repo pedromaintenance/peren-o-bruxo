@@ -1787,12 +1787,18 @@
           "id": "medo",
           "nome": "Medo",
           "intensidade": 1
+        },
+        {
+          "id": "velocidade",
+          "nome": "Velocidade",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Fortify Dexterity",
         "Resist Shock",
-        "Fear"
+        "Fear",
+        "Speed"
       ]
     },
     "ing-gleamblossom": {

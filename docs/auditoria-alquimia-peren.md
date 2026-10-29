@@ -227,3 +227,11 @@ const efeitosGerados = [...contagem]
 - Efeito antes isolado em Penas de Falcão III agora possui duas fontes: Olho de Felino II e Penas de Falcão III. O par compartilha Visão à Distância, sem compartilhar os outros efeitos.
 - Sem alterações no motor clássico, Phaser, receitas fixas, itens ou saves. O crafting dinâmico continua pendente.
 - **Próxima ficha:** Libélula Azul (`ing-blue-dartwing`) — sugestão `velocidade` II, condicionada à decisão do criador.
+
+## Ciclo 7 — decisão aprovada: Libélula Azul (29/10/2026)
+
+- **Aprovado pelo criador:** adicionar `velocidade` (**Velocidade II**) à Libélula Azul (`ing-blue-dartwing`).
+- Preservados três atributos anteriores, descrição, raridade e ID; adicionado `Speed` ao campo legado `efeitos` para consistência descritiva, sem afirmar compatibilidade runtime.
+- Velocidade passa de uma fonte (Penas de Falcão I) a duas (Libélula Azul II + Penas de Falcão I). Essa combinação compartilha apenas Velocidade e poderá gerar uma preparação correspondente quando o sistema dinâmico existir.
+- Não foram alterados `data/itens.json`, `data/receitas.json`, Phaser, runtime clássico ou saves.
+- **Próxima proposta para decisão:** Amanita Rubra (`ing-fly-amanita`) — adicionar `diminuir_sabedoria` II, permanecendo a distinção entre psicotropismo fictício, frenesi e debilitação de discernimento.
