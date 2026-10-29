@@ -382,3 +382,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - São 16 parceiros por efeito coincidente. A hipótese de aprofundamento sobre o Rio Ancestral não foi aprovada; não inventar habitat específico.
 - **Somente o dossiê foi atualizado**: curadoria, itens, receitas, motores e saves intactos.
 - **Próxima ficha participativa:** Fungo de Bolha (`ing-blisterwort`), sem alterações prévias.
+
+## Ciclo 27 — decisão concluída: Fungo de Bolha (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha do Fungo de Bolha (`ing-blisterwort`).
+- Permanecem **Restaurar Saúde II**, **Frenesi II** e **Diminuir Força I**; preservados nome, descrição, raridade comum e ID.
+- O ingrediente tem 16 parceiros por interseção de efeitos; Asa de Borboleta compartilha Restaurar Saúde e Diminuir Força. Não houve aprovação para aprofundamento da descrição nem quarto atributo.
+- **Somente o documento de auditoria foi alterado.** Nenhuma mudança na curadoria, receitas, itens, jogo ou saves.
+- **Próximo ingrediente para deliberação:** Mirra da Geada (`ing-frost-mirriam`), com 16 parceiros.
