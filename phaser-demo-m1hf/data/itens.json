@@ -1489,7 +1489,7 @@
   },
   {
     "id": "ing-chaurus-hunter-antennae",
-    "nome": "Antena de Caçador Quitinoso",
+    "nome": "Antena de Verme Gigante",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -1641,7 +1641,7 @@
   },
   {
     "id": "ing-spriggan-sap",
-    "nome": "Seiva de Guardião Arbóreo",
+    "nome": "Seiva de Ent",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -1679,7 +1679,7 @@
   },
   {
     "id": "ing-ash-creep-cluster",
-    "nome": "Cachos de Cinza",
+    "nome": "Tufo Cinzento",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -1717,7 +1717,7 @@
   },
   {
     "id": "ing-berit-s-ashes",
-    "nome": "Cinzas de Escriba",
+    "nome": "Cinzas Mortuárias",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -4136,7 +4136,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-ash-creep-cluster",
-    "nome": "Elixir de Carapaça de Caranguejo e Cachos de Cinza",
+    "nome": "Elixir de Carapaça de Caranguejo e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4153,7 +4153,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-berit-s-ashes",
-    "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Escriba",
+    "nome": "Elixir de Carapaça de Caranguejo e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -4902,7 +4902,7 @@
   },
   {
     "id": "pot-vampire-dust-ash-creep-cluster",
-    "nome": "Elixir de Pó de Vampiro e Cachos de Cinza",
+    "nome": "Elixir de Pó de Vampiro e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6698,7 +6698,7 @@
   },
   {
     "id": "pot-jarrin-root-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Botulínica e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Raiz Botulínica e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6768,7 +6768,7 @@
   },
   {
     "id": "pot-jarrin-root-spriggan-sap",
-    "nome": "Elixir de Raiz Botulínica e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Raiz Botulínica e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6785,7 +6785,7 @@
   },
   {
     "id": "pot-jarrin-root-ash-creep-cluster",
-    "nome": "Elixir de Raiz Botulínica e Cachos de Cinza",
+    "nome": "Elixir de Raiz Botulínica e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6802,7 +6802,7 @@
   },
   {
     "id": "pot-jarrin-root-berit-s-ashes",
-    "nome": "Elixir de Raiz Botulínica e Cinzas de Escriba",
+    "nome": "Elixir de Raiz Botulínica e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -7232,7 +7232,7 @@
   },
   {
     "id": "pot-river-betty-spriggan-sap",
-    "nome": "Elixir de Betta do Rio e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Betta do Rio e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8192,7 +8192,7 @@
   },
   {
     "id": "pot-nirnroot-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Velada e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8260,7 +8260,7 @@
   },
   {
     "id": "pot-nirnroot-ash-creep-cluster",
-    "nome": "Elixir de Raiz Velada e Cachos de Cinza",
+    "nome": "Elixir de Raiz Velada e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8278,7 +8278,7 @@
   },
   {
     "id": "pot-nirnroot-berit-s-ashes",
-    "nome": "Elixir de Raiz Velada e Cinzas de Escriba",
+    "nome": "Elixir de Raiz Velada e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8806,7 +8806,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Velada Rubra e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada Rubra e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8874,7 +8874,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-ash-creep-cluster",
-    "nome": "Elixir de Raiz Velada Rubra e Cachos de Cinza",
+    "nome": "Elixir de Raiz Velada Rubra e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8892,7 +8892,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-berit-s-ashes",
-    "nome": "Elixir de Raiz Velada Rubra e Cinzas de Escriba",
+    "nome": "Elixir de Raiz Velada Rubra e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9387,7 +9387,7 @@
   },
   {
     "id": "pot-deathbell-berit-s-ashes",
-    "nome": "Elixir de Sino da Morte e Cinzas de Escriba",
+    "nome": "Elixir de Sino da Morte e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10278,7 +10278,7 @@
   },
   {
     "id": "pot-ectoplasm-ash-creep-cluster",
-    "nome": "Elixir de Ectoplasma e Cachos de Cinza",
+    "nome": "Elixir de Ectoplasma e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11956,7 +11956,7 @@
   },
   {
     "id": "pot-human-heart-chaurus-hunter-antennae",
-    "nome": "Elixir de Coração Humano e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Coração Humano e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12024,7 +12024,7 @@
   },
   {
     "id": "pot-human-heart-spriggan-sap",
-    "nome": "Elixir de Coração Humano e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Coração Humano e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12741,7 +12741,7 @@
   },
   {
     "id": "pot-nightshade-chaurus-hunter-antennae",
-    "nome": "Elixir de Beladona e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Beladona e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12811,7 +12811,7 @@
   },
   {
     "id": "pot-nightshade-spriggan-sap",
-    "nome": "Elixir de Beladona e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Beladona e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12828,7 +12828,7 @@
   },
   {
     "id": "pot-nightshade-ash-creep-cluster",
-    "nome": "Elixir de Beladona e Cachos de Cinza",
+    "nome": "Elixir de Beladona e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -14998,7 +14998,7 @@
   },
   {
     "id": "pot-chaurus-eggs-ash-creep-cluster",
-    "nome": "Elixir de Ovo de Verme Gigante e Cachos de Cinza",
+    "nome": "Elixir de Ovo de Verme Gigante e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16483,7 +16483,7 @@
   },
   {
     "id": "pot-glow-dust-chaurus-hunter-antennae",
-    "nome": "Elixir de Poeira Luminosa e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Poeira Luminosa e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16551,7 +16551,7 @@
   },
   {
     "id": "pot-glow-dust-spriggan-sap",
-    "nome": "Elixir de Poeira Luminosa e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Poeira Luminosa e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16568,7 +16568,7 @@
   },
   {
     "id": "pot-glow-dust-ash-creep-cluster",
-    "nome": "Elixir de Poeira Luminosa e Cachos de Cinza",
+    "nome": "Elixir de Poeira Luminosa e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16893,7 +16893,7 @@
   },
   {
     "id": "pot-hagraven-feathers-chaurus-hunter-antennae",
-    "nome": "Elixir de Penas de Bruxa e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Penas de Bruxa e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16910,7 +16910,7 @@
   },
   {
     "id": "pot-hagraven-feathers-berit-s-ashes",
-    "nome": "Elixir de Penas de Bruxa e Cinzas de Escriba",
+    "nome": "Elixir de Penas de Bruxa e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17236,7 +17236,7 @@
   },
   {
     "id": "pot-hanging-moss-chaurus-hunter-antennae",
-    "nome": "Elixir de Musgo Pendente e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Musgo Pendente e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17304,7 +17304,7 @@
   },
   {
     "id": "pot-hanging-moss-spriggan-sap",
-    "nome": "Elixir de Musgo Pendente e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Musgo Pendente e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17510,7 +17510,7 @@
   },
   {
     "id": "pot-luna-moth-wing-ash-creep-cluster",
-    "nome": "Elixir de Asa de Mariposa Lunar e Cachos de Cinza",
+    "nome": "Elixir de Asa de Mariposa Lunar e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18315,7 +18315,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-chaurus-hunter-antennae",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18387,7 +18387,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-spriggan-sap",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18405,7 +18405,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-ash-creep-cluster",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Cachos de Cinza",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18422,7 +18422,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-berit-s-ashes",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas de Escriba",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18680,7 +18680,7 @@
   },
   {
     "id": "pot-bear-claws-chaurus-hunter-antennae",
-    "nome": "Elixir de Garras de Urso e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Garras de Urso e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18748,7 +18748,7 @@
   },
   {
     "id": "pot-bear-claws-spriggan-sap",
-    "nome": "Elixir de Garras de Urso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Garras de Urso e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19209,7 +19209,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-chaurus-hunter-antennae",
-    "nome": "Elixir de Asa de Borboleta Azul e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Asa de Borboleta Azul e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19281,7 +19281,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-spriggan-sap",
-    "nome": "Elixir de Asa de Borboleta Azul e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Asa de Borboleta Azul e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19299,7 +19299,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-ash-creep-cluster",
-    "nome": "Elixir de Asa de Borboleta Azul e Cachos de Cinza",
+    "nome": "Elixir de Asa de Borboleta Azul e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19316,7 +19316,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-berit-s-ashes",
-    "nome": "Elixir de Asa de Borboleta Azul e Cinzas de Escriba",
+    "nome": "Elixir de Asa de Borboleta Azul e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19539,7 +19539,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-chaurus-hunter-antennae",
-    "nome": "Elixir de Flor Azul da Montanha e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Flor Azul da Montanha e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19608,7 +19608,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-spriggan-sap",
-    "nome": "Elixir de Flor Azul da Montanha e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Flor Azul da Montanha e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19625,7 +19625,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-berit-s-ashes",
-    "nome": "Elixir de Flor Azul da Montanha e Cinzas de Escriba",
+    "nome": "Elixir de Flor Azul da Montanha e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19864,7 +19864,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-chaurus-hunter-antennae",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Antena de Caçador Quitinoso",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Antena de Verme Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19932,7 +19932,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-spriggan-sap",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20103,7 +20103,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-chicken-s-egg",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Galinha",
+    "nome": "Elixir de Antena de Verme Gigante e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20120,7 +20120,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-hawk-s-egg",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Falcão",
+    "nome": "Elixir de Antena de Verme Gigante e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20137,7 +20137,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spider-egg",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Aranha",
+    "nome": "Elixir de Antena de Verme Gigante e Ovo de Aranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20155,7 +20155,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spriggan-sap",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Antena de Verme Gigante e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20173,7 +20173,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-ash-creep-cluster",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Cachos de Cinza",
+    "nome": "Elixir de Antena de Verme Gigante e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20190,7 +20190,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-berit-s-ashes",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Escriba",
+    "nome": "Elixir de Antena de Verme Gigante e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20208,7 +20208,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-blisterwort",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Fungo de Bolha",
+    "nome": "Elixir de Antena de Verme Gigante e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20225,7 +20225,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-bone-meal",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Farinha de Ossos",
+    "nome": "Elixir de Antena de Verme Gigante e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20243,7 +20243,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-canis-root",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Raiz Canina",
+    "nome": "Elixir de Antena de Verme Gigante e Raiz Canina",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20260,7 +20260,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-cyrodilic-spadetail",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Peixe de Escamas Finas",
+    "nome": "Elixir de Antena de Verme Gigante e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20277,7 +20277,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-giant-s-toe",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Dedo de Gigante",
+    "nome": "Elixir de Antena de Verme Gigante e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20294,7 +20294,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-rock-warbler-egg",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Tordo",
+    "nome": "Elixir de Antena de Verme Gigante e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20311,7 +20311,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-hagraven-claw",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Garra de Bruxa",
+    "nome": "Elixir de Antena de Verme Gigante e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20328,7 +20328,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-frost-salts",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Sais da Geada",
+    "nome": "Elixir de Antena de Verme Gigante e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20345,7 +20345,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-lavender",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Lavanda Selvagem",
+    "nome": "Elixir de Antena de Verme Gigante e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20362,7 +20362,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-snowberries",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Frutas da Neve",
+    "nome": "Elixir de Antena de Verme Gigante e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20379,7 +20379,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spawn-ash",
-    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Criatura",
+    "nome": "Elixir de Antena de Verme Gigante e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20433,7 +20433,7 @@
   },
   {
     "id": "pot-chicken-s-egg-spriggan-sap",
-    "nome": "Elixir de Ovo de Galinha e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Ovo de Galinha e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20603,7 +20603,7 @@
   },
   {
     "id": "pot-hawk-s-egg-spriggan-sap",
-    "nome": "Elixir de Ovo de Falcão e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Ovo de Falcão e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20756,7 +20756,7 @@
   },
   {
     "id": "pot-spider-egg-spriggan-sap",
-    "nome": "Elixir de Ovo de Aranha e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Ovo de Aranha e Seiva de Ent",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20773,7 +20773,7 @@
   },
   {
     "id": "pot-spider-egg-ash-creep-cluster",
-    "nome": "Elixir de Ovo de Aranha e Cachos de Cinza",
+    "nome": "Elixir de Ovo de Aranha e Tufo Cinzento",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20790,7 +20790,7 @@
   },
   {
     "id": "pot-spider-egg-berit-s-ashes",
-    "nome": "Elixir de Ovo de Aranha e Cinzas de Escriba",
+    "nome": "Elixir de Ovo de Aranha e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20978,7 +20978,7 @@
   },
   {
     "id": "pot-spriggan-sap-blisterwort",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Fungo de Bolha",
+    "nome": "Elixir de Seiva de Ent e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20995,7 +20995,7 @@
   },
   {
     "id": "pot-spriggan-sap-grass-pod",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Vagem da Charneca",
+    "nome": "Elixir de Seiva de Ent e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21012,7 +21012,7 @@
   },
   {
     "id": "pot-spriggan-sap-hagraven-claw",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Garra de Bruxa",
+    "nome": "Elixir de Seiva de Ent e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21029,7 +21029,7 @@
   },
   {
     "id": "pot-spriggan-sap-glowing-mushroom",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Cogumelo Luminescente",
+    "nome": "Elixir de Seiva de Ent e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21046,7 +21046,7 @@
   },
   {
     "id": "pot-spriggan-sap-snowberries",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Frutas da Neve",
+    "nome": "Elixir de Seiva de Ent e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21063,7 +21063,7 @@
   },
   {
     "id": "pot-spriggan-sap-spawn-ash",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Cinzas de Criatura",
+    "nome": "Elixir de Seiva de Ent e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21080,7 +21080,7 @@
   },
   {
     "id": "pot-spriggan-sap-sabre-cat-tooth",
-    "nome": "Elixir de Seiva de Guardião Arbóreo e Dente de Felino",
+    "nome": "Elixir de Seiva de Ent e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21097,7 +21097,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-berit-s-ashes",
-    "nome": "Elixir de Cachos de Cinza e Cinzas de Escriba",
+    "nome": "Elixir de Tufo Cinzento e Cinzas Mortuárias",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21115,7 +21115,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-blisterwort",
-    "nome": "Elixir de Cachos de Cinza e Fungo de Bolha",
+    "nome": "Elixir de Tufo Cinzento e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21132,7 +21132,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-bone-meal",
-    "nome": "Elixir de Cachos de Cinza e Farinha de Ossos",
+    "nome": "Elixir de Tufo Cinzento e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21150,7 +21150,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-canis-root",
-    "nome": "Elixir de Cachos de Cinza e Raiz Canina",
+    "nome": "Elixir de Tufo Cinzento e Raiz Canina",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21167,7 +21167,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-cyrodilic-spadetail",
-    "nome": "Elixir de Cachos de Cinza e Peixe de Escamas Finas",
+    "nome": "Elixir de Tufo Cinzento e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21184,7 +21184,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-giant-s-toe",
-    "nome": "Elixir de Cachos de Cinza e Dedo de Gigante",
+    "nome": "Elixir de Tufo Cinzento e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21201,7 +21201,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-rock-warbler-egg",
-    "nome": "Elixir de Cachos de Cinza e Ovo de Tordo",
+    "nome": "Elixir de Tufo Cinzento e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21218,7 +21218,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-dragon-s-tongue",
-    "nome": "Elixir de Cachos de Cinza e Língua de Dragão",
+    "nome": "Elixir de Tufo Cinzento e Língua de Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21235,7 +21235,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-wisp-wrappings",
-    "nome": "Elixir de Cachos de Cinza e Faixas de Espírito",
+    "nome": "Elixir de Tufo Cinzento e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21252,7 +21252,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-beehive-husk",
-    "nome": "Elixir de Cachos de Cinza e Casca de Colmeia",
+    "nome": "Elixir de Tufo Cinzento e Casca de Colmeia",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21269,7 +21269,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-glowing-mushroom",
-    "nome": "Elixir de Cachos de Cinza e Cogumelo Luminescente",
+    "nome": "Elixir de Tufo Cinzento e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21286,7 +21286,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-snowberries",
-    "nome": "Elixir de Cachos de Cinza e Frutas da Neve",
+    "nome": "Elixir de Tufo Cinzento e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21303,7 +21303,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-spawn-ash",
-    "nome": "Elixir de Cachos de Cinza e Cinzas de Criatura",
+    "nome": "Elixir de Tufo Cinzento e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21320,7 +21320,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-ice-wraith-teeth",
-    "nome": "Elixir de Cachos de Cinza e Dentes de Espectro Gelado",
+    "nome": "Elixir de Tufo Cinzento e Dentes de Espectro Gelado",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21337,7 +21337,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-ashen-grass-pod",
-    "nome": "Elixir de Cachos de Cinza e Vagem Cinzenta",
+    "nome": "Elixir de Tufo Cinzento e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21354,7 +21354,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-elves-ear",
-    "nome": "Elixir de Cachos de Cinza e Orelha de Elfo",
+    "nome": "Elixir de Tufo Cinzento e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21371,7 +21371,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-fly-amanita",
-    "nome": "Elixir de Cachos de Cinza e Amanita Rubra",
+    "nome": "Elixir de Tufo Cinzento e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21388,7 +21388,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-fire-salts",
-    "nome": "Elixir de Cachos de Cinza e Sais Ígneos",
+    "nome": "Elixir de Tufo Cinzento e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21405,7 +21405,7 @@
   },
   {
     "id": "pot-berit-s-ashes-blisterwort",
-    "nome": "Elixir de Cinzas de Escriba e Fungo de Bolha",
+    "nome": "Elixir de Cinzas Mortuárias e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21422,7 +21422,7 @@
   },
   {
     "id": "pot-berit-s-ashes-bone-meal",
-    "nome": "Elixir de Cinzas de Escriba e Farinha de Ossos",
+    "nome": "Elixir de Cinzas Mortuárias e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21442,7 +21442,7 @@
   },
   {
     "id": "pot-berit-s-ashes-canis-root",
-    "nome": "Elixir de Cinzas de Escriba e Raiz Canina",
+    "nome": "Elixir de Cinzas Mortuárias e Raiz Canina",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21459,7 +21459,7 @@
   },
   {
     "id": "pot-berit-s-ashes-cyrodilic-spadetail",
-    "nome": "Elixir de Cinzas de Escriba e Peixe de Escamas Finas",
+    "nome": "Elixir de Cinzas Mortuárias e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21476,7 +21476,7 @@
   },
   {
     "id": "pot-berit-s-ashes-giant-s-toe",
-    "nome": "Elixir de Cinzas de Escriba e Dedo de Gigante",
+    "nome": "Elixir de Cinzas Mortuárias e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21493,7 +21493,7 @@
   },
   {
     "id": "pot-berit-s-ashes-rock-warbler-egg",
-    "nome": "Elixir de Cinzas de Escriba e Ovo de Tordo",
+    "nome": "Elixir de Cinzas Mortuárias e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21510,7 +21510,7 @@
   },
   {
     "id": "pot-berit-s-ashes-dragon-s-tongue",
-    "nome": "Elixir de Cinzas de Escriba e Língua de Dragão",
+    "nome": "Elixir de Cinzas Mortuárias e Língua de Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21527,7 +21527,7 @@
   },
   {
     "id": "pot-berit-s-ashes-honeycomb",
-    "nome": "Elixir de Cinzas de Escriba e Favo de Mel",
+    "nome": "Elixir de Cinzas Mortuárias e Favo de Mel",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21544,7 +21544,7 @@
   },
   {
     "id": "pot-berit-s-ashes-frost-salts",
-    "nome": "Elixir de Cinzas de Escriba e Sais da Geada",
+    "nome": "Elixir de Cinzas Mortuárias e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21561,7 +21561,7 @@
   },
   {
     "id": "pot-berit-s-ashes-lavender",
-    "nome": "Elixir de Cinzas de Escriba e Lavanda Selvagem",
+    "nome": "Elixir de Cinzas Mortuárias e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21578,7 +21578,7 @@
   },
   {
     "id": "pot-berit-s-ashes-snowberries",
-    "nome": "Elixir de Cinzas de Escriba e Frutas da Neve",
+    "nome": "Elixir de Cinzas Mortuárias e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21595,7 +21595,7 @@
   },
   {
     "id": "pot-berit-s-ashes-spawn-ash",
-    "nome": "Elixir de Cinzas de Escriba e Cinzas de Criatura",
+    "nome": "Elixir de Cinzas Mortuárias e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21613,7 +21613,7 @@
   },
   {
     "id": "pot-berit-s-ashes-thistle-branch",
-    "nome": "Elixir de Cinzas de Escriba e Ramo de Cardo",
+    "nome": "Elixir de Cinzas Mortuárias e Ramo de Cardo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21630,7 +21630,7 @@
   },
   {
     "id": "pot-berit-s-ashes-ashen-grass-pod",
-    "nome": "Elixir de Cinzas de Escriba e Vagem Cinzenta",
+    "nome": "Elixir de Cinzas Mortuárias e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21647,7 +21647,7 @@
   },
   {
     "id": "pot-berit-s-ashes-elves-ear",
-    "nome": "Elixir de Cinzas de Escriba e Orelha de Elfo",
+    "nome": "Elixir de Cinzas Mortuárias e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21664,7 +21664,7 @@
   },
   {
     "id": "pot-berit-s-ashes-fly-amanita",
-    "nome": "Elixir de Cinzas de Escriba e Amanita Rubra",
+    "nome": "Elixir de Cinzas Mortuárias e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21681,7 +21681,7 @@
   },
   {
     "id": "pot-berit-s-ashes-scathecraw",
-    "nome": "Elixir de Cinzas de Escriba e Espinho-da-Morte",
+    "nome": "Elixir de Cinzas Mortuárias e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21698,7 +21698,7 @@
   },
   {
     "id": "pot-berit-s-ashes-bee",
-    "nome": "Elixir de Cinzas de Escriba e Abelha",
+    "nome": "Elixir de Cinzas Mortuárias e Abelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21715,7 +21715,7 @@
   },
   {
     "id": "pot-berit-s-ashes-fire-salts",
-    "nome": "Elixir de Cinzas de Escriba e Sais Ígneos",
+    "nome": "Elixir de Cinzas Mortuárias e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
