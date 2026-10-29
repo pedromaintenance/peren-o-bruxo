@@ -2538,7 +2538,7 @@
       ]
     },
     "ing-dwarven-oil": {
-      "nome": "Óleo de Autômato Anão",
+      "nome": "Óleo de Autômato",
       "descricao": "Lubrificante arcano retirado de mecanismos anões, utilizado em preparações de energia mágica.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -2625,7 +2625,7 @@
       ]
     },
     "ing-ash-hopper-jelly": {
-      "nome": "Gelatina de Saltador das Cinzas",
+      "nome": "Gelatina de Gafanhoto",
       "descricao": "Secreção de criatura das terras queimadas, usada em pomadas curativas.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -2870,7 +2870,9 @@
     "Escamas de Peixe Carniceiro": "Escamas de Piranha",
     "Frutas da Neve": "Bagas da Neve",
     "Dente de Felino": "Dente de Grande Felino",
-    "Orelha de Elfo": "Orelha-de-Elfo"
+    "Orelha de Elfo": "Orelha-de-Elfo",
+    "Óleo de Autômato Anão": "Óleo de Autômato",
+    "Gelatina de Saltador das Cinzas": "Gelatina de Gafanhoto"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
