@@ -2536,6 +2536,296 @@
         "Fortify Heavy Armor",
         "Weakness to Frost"
       ]
+    },
+    "ing-dwarven-oil": {
+      "nome": "Óleo de Autômato Anão",
+      "descricao": "Lubrificante arcano retirado de mecanismos anões, utilizado em preparações de energia mágica.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Restore Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-mora-tapinella": {
+      "nome": "Cogumelo de Raiz",
+      "descricao": "Fungo de madeira úmida empregado em preparados arcanos e debilitantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Constitution",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-taproot": {
+      "nome": "Raiz Mestra",
+      "descricao": "Raiz profunda carregada de seiva encantada, valiosa para a recuperação de magia.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Restore Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-ash-hopper-jelly": {
+      "nome": "Gelatina de Saltador das Cinzas",
+      "descricao": "Secreção de criatura das terras queimadas, usada em pomadas curativas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Shock",
+        "Restore Health",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-ashen-grass-pod": {
+      "nome": "Vagem Cinzenta",
+      "descricao": "Vagem de áreas queimadas usada em compostos furtivos e resistentes ao calor.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Resist Fire",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-pine-thrush-egg": {
+      "nome": "Ovo de Tordo",
+      "descricao": "Ovo pequeno de ave silvestre empregado em tinturas de agilidade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Shock",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-jazbay-grapes": {
+      "nome": "Uvas de Jasmim",
+      "descricao": "Uvas perfumadas utilizadas em preparados mágicos, embora seu extrato concentrado seja nocivo.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Fortify Magicka",
+        "Ravage Health"
+      ]
+    },
+    "ing-salmon-roe": {
+      "nome": "Ovas de Salmão",
+      "descricao": "Ovas de peixe utilizadas em elixires de respiração aquática e concentração.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Regenerate Magicka",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-elves-ear": {
+      "nome": "Orelha-de-Elfo",
+      "descricao": "Fungo em forma de orelha que cresce em troncos e serve de base a preparações mágicas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Resist Fire",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-small-pearl": {
+      "nome": "Pérola Pequena",
+      "descricao": "Pérola diminuta utilizada em tônicos restauradores e amuletos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Frost",
+        "Fortify Restoration"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -2579,7 +2869,8 @@
     "Pérola da Costa Sul": "Pérola",
     "Escamas de Peixe Carniceiro": "Escamas de Piranha",
     "Frutas da Neve": "Bagas da Neve",
-    "Dente de Felino": "Dente de Grande Felino"
+    "Dente de Felino": "Dente de Grande Felino",
+    "Orelha de Elfo": "Orelha-de-Elfo"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -2667,7 +2958,17 @@
     "ing-ice-wraith-teeth",
     "ing-sabre-cat-tooth",
     "ing-thistle-branch",
-    "ing-white-cap"
+    "ing-white-cap",
+    "ing-dwarven-oil",
+    "ing-mora-tapinella",
+    "ing-taproot",
+    "ing-ash-hopper-jelly",
+    "ing-ashen-grass-pod",
+    "ing-pine-thrush-egg",
+    "ing-jazbay-grapes",
+    "ing-salmon-roe",
+    "ing-elves-ear",
+    "ing-small-pearl"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
