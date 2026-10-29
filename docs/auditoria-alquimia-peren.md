@@ -124,3 +124,82 @@ escolher sprite por família de recipiente/efeitos, não por receita única
 Auditar as descrições existentes dos nove candidatos e testar combinações novas **em simulação**, comparando com efeitos legados, antes de propor uma mudança de dados ativa. Depois, localizar pontos de consumo de receitas no clássico e no Phaser para planejar integração reversível.
 
 **Rastro:** segundo ciclo não modifica `data/curadoria_ingredientes.json`, `data/itens.json`, `data/receitas.json` nem runtime.
+
+
+## Ciclo 3 — validação das descrições e integração (29/10/2026)
+
+**Fonte da avaliação:** descrições e atributos vigentes dos nove ingredientes candidatos em `data/curadoria_ingredientes.json`; inspeção estática de `game.js` e diretórios `phaser-demo-m1hf/` e `laboratorio-itens/`. Não foram executados testes em navegador. **Nenhum dado jogável alterado.**
+
+### Validação dos nove candidatos da etapa anterior
+
+| Efeito desejado | Candidato | Compatibilidade com descrição atual | Decisão da auditoria |
+|---|---|---|---|
+| Curar Doença | Alho | Alta: bulbo usado tradicionalmente em remédios/proteção | **Recomendado** como quarto atributo II |
+| Vampirismo | Coração de Espinheiros | Baixa/média: concentração de energia mágica, sem referência explícita a drenagem vital | **Suspenso** até justificar a transferência de vitalidade no lore |
+| Diminuir Carisma | Fungo de Gualápoles | Baixa: decomposição e ritos soturnos não implicam necessariamente diminuição de carisma | **Suspenso**; avaliar maldição social/repulsa sobrenatural em vez de aparência |
+| Infligir Doença | Cauda de Rato | Alta: roedor de docas, venenos debilitantes | **Recomendado** como quarto atributo II |
+| Visão à Distância | Olho de Felino | Alta: sentido de caça, já possui Aumentar Percepção II | **Recomendado** como quarto atributo II, distinguir de percepção geral |
+| Velocidade | Libélula Azul | Alta: inseto ágil, efeito de destreza preexistente | **Recomendado** como quarto atributo II, velocidade física ≠ destreza |
+| Diminuir Sabedoria | Amanita Rubra | Média/alta: cogumelo psicoativo usado em preparações de combate, já tem Frenesi | **Recomendado sob definição** como quarto atributo II; efeito fantástico, não alegação farmacológica |
+| Aumentar Inteligência | Raiz Mestra | Baixa: descrição afirma recuperação mágica, não cognição | **Suspenso**; buscar ingrediente de memória/conhecimento mais coerente |
+| Diminuir Magia | Garra de Bruxa | Média: encantamento e proteção arcanas, já causa Dano à Magia I | **Suspenso** enquanto não diferenciar supressão temporária e dano à reserva |
+
+**Resultado:** cinco candidatos com fundamentação suficiente para recomendação editorial, quatro suspensos. **Nenhum está aprovado para ser aplicado automaticamente.** Não se deve declarar os nove efeitos resolvidos enquanto não houver mudança de dados validada.
+
+### Semântica de efeitos proposta
+
+- `dano_magia`: dano direto ou degradação da reserva atual de magia; não confundir com redução do máximo.
+- `diminuir_magia`: redução temporária da capacidade máxima de magia (ou potência arcana, conforme futura definição); escolha **ainda aberta** para compatibilidade com mecânicas reais.
+- `aumentar_percepcao`: melhora geral de percepção sensorial/atenção.
+- `visao_a_distancia`: capacidade de ver detalhes/alvos em distância superior à normal; não confundir com visão remota através de paredes.
+- `aumentar_destreza`: melhora coordenação, precisão ou testes relacionados ao atributo.
+- `velocidade`: melhora deslocamento/mobilidade, não aumenta automaticamente Destreza.
+- `dano_saude`: perda imediata de pontos de vida.
+- `infligir_doenca`: aplica estado de doença com consequências próprias, mesmo sem dano imediato.
+- `diminuir_sabedoria`: debilita discernimento/julgamento; não precisa representar doença real.
+- `vampirismo`: retira vitalidade de alvo para beneficiar usuário (definir aplicação, custo e limite de alvo).
+
+Todas essas são **definições de design propostas**, sujeitas a revisão conforme o motor e a interface.
+
+### Integração observada no clássico
+
+Em `game.js`, a lista `FILES` carrega `itens`, `receitas` e outros JSON, mas **não** `curadoria_ingredientes`; portanto não se pode afirmar que os atributos revisados já governam o craft clássico.
+
+- `setupIndex` indexa `receitas` por ID.
+- `canCraft(r)` verifica acesso à receita, perícia, nível e estoque de ingredientes.
+- `craftView()` filtra `DB.receitas` por estação e nome.
+- `craft(id)` recebe um ID de receita, valida e consome materiais.
+- Para substituir crafting alquímico comum, será necessário integrar a curadoria ao carregamento, implementar gerador de efeitos, criar representação serializável do produto e atualizar UI/inventário.
+- Não substituir diretamente `craft(id)` de todas as estações: preservar forja, alimentos, encantamento, rituais e receitas especiais.
+
+### Integração Phaser e laboratório
+
+- A edição Phaser possui **cópias próprias** de `data/itens.json` e `data/receitas.json`, além de módulos e assets próprios. A mudança no JSON da raiz **não sincronizará** automaticamente a prévia Phaser; localizar o código runtime exato antes de editar.
+- O laboratório possui `laboratorio-itens/app.js`, `README.md` e painel somente leitura. Futuramente deve mostrar a conectividade de atributos e prévia de combinações sem gravar nada.
+- A arquitetura deverá manter ambas as experiências técnicas como o mesmo jogo e preservar saves com versionamento e migração aditiva.
+
+### Contrato de algoritmo recomendado (não implementado)
+
+```js
+// ilustração conceitual, não código do runtime
+const contagem = new Map();
+for (const ingrediente of ingredientesDistintos) {
+  for (const efeito of ingrediente.atributos) {
+    if (!contagem.has(efeito.id)) contagem.set(efeito.id, []);
+    contagem.get(efeito.id).push({ ingrediente: ingrediente.id, intensidade: efeito.intensidade });
+  }
+}
+const efeitosGerados = [...contagem]
+  .filter(([, origens]) => origens.length >= 2)
+  .map(([id, origens]) => ({ id, origens, potencia: calcularPotencia(origens, processo) }));
+```
+
+**Invariantes:** IDs de ingrediente não duplicados no conjunto considerado; ordem de seleção não altera o resultado; potência determinística para mesmos materiais/processo; efeitos independentes não se anulam automaticamente; classificação visual não cria item fixo nem sprite individual; não interpretar um efeito com fonte única como ativado por haver três ingredientes no total.
+
+### Pendências e próximos passos
+
+1. Resolver os quatro candidatos suspensos com análise comparativa do restante da lore/descrições. Pode-se preferir acrescentar atributos novos em ingredientes atuais a alterar os nove ingredientes-fonte.
+2. Simular, sem mutação, o impacto das cinco propostas recomendadas sobre o grafo de combinações e a frequência dos efeitos.
+3. Inspecionar as implementações exatas de Phaser e o armazenamento de saves (não apenas a existência de diretórios).
+4. Produzir **teste de compatibilidade** antes de mexer em `receitas.json` e `itens.json`.
+5. Consultar a divergência Pena de Gaivota (README ≠ curadoria) antes de alterar definições.
