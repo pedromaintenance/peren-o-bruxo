@@ -328,3 +328,12 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - Onze parceiros detectados; entre eles Fungo de Gualápoles (Diminuir Carisma), Cauda de Rato (Infligir Doença) e Alho (Resistência a Veneno). Não foi autorizada reformulação narrativa nem atributo adicional.
 - **Somente este dossiê foi atualizado.** Não modificar JSON de curadoria, itens, receitas, runtimes ou saves nesta decisão.
 - **Próxima ficha participativa:** Pó de Vampiro (`ing-vampire-dust`), com doze parceiros; apresentar para aprovação sem mudanças prévias.
+
+## Ciclo 20 — decisão concluída: Pó de Vampiro (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha do Pó de Vampiro (`ing-vampire-dust`).
+- Preservados **Vampirismo III**, **Invisibilidade II** e **Regenerar Saúde I**, além de descrição, raridade rara, nome e ID.
+- Possui 12 parceiros no catálogo auditado; Coração de Espinheiros compartilha Vampirismo, e Asa de Mariposa Lunar compartilha Invisibilidade e Regenerar Saúde.
+- **Continua válida a decisão canônica anterior:** Vampirismo pode causar transformação gradual em vampiro. Essa regra não exige alterar a ficha do Pó de Vampiro, nem foi implementada no runtime.
+- **Somente o dossiê foi atualizado**; curadoria, itens, receitas, runtimes e saves inalterados neste ciclo.
+- **Próxima ficha participativa:** Língua-de-Dragão (`ing-dragon-s-tongue`). Solicitar decisão antes de qualquer alteração.
