@@ -304,3 +304,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - Os nove parceiros já encontrados justificam sua conectividade. A expansão hipotética da descrição sobre transformação da matéria **não foi aprovada** e não deve ser aplicada.
 - **Somente este dossiê foi atualizado**; o JSON de curadoria, itens, receitas, motores e saves não sofreram alterações.
 - **Próxima ficha participativa:** Cogumelo Escamoso (`ing-scaly-pholiota`), com nove parceiros. Analisar e solicitar decisão sem alterar previamente.
+
+## Ciclo 17 — decisão concluída: Cogumelo Escamoso (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha do Cogumelo Escamoso (`ing-scaly-pholiota`).
+- Permanecem **Aumentar Capacidade de Carga II**, **Aumentar Ilusão II** e **Fraqueza à Magia I**, além de descrição, raridade comum, nome e ID.
+- Observação de conectividade: 9 parceiros; Tufo Rastejante compartilha dois efeitos (Capacidade de Carga e Fraqueza à Magia). Não adicionar um quarto atributo apenas para elevar conectividade.
+- **Somente o dossiê foi atualizado**, sem modificar curadoria, itens, receitas, motor ou saves.
+- **Próxima ficha para decisão:** Cogumelo Luminescente (`ing-glowing-mushroom`), mantendo a revisão participativa.
