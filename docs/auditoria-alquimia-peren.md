@@ -358,3 +358,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - São 14 ingredientes parceiros no estado auditado. A ampliação da descrição sobre vitalidade orgânica e interferência mágica foi somente uma hipótese, **não aprovada**.
 - **Somente o dossiê foi atualizado.** Não alterar curadoria, itens, receitas, motor clássico, Phaser ou saves nesta decisão.
 - **Próxima ficha:** Penas de Bruxa (`ing-hagraven-feathers`), a apresentar para aprovação individual.
+
+## Ciclo 24 — decisão concluída: Penas de Bruxa (29/10/2026)
+
+- **Decisão explícita do criador:** manter a ficha de Penas de Bruxa (`ing-hagraven-feathers`) integralmente sem alterações.
+- Permanecem **Aumentar Conjuração III**, **Frenesi II**, **Fraqueza à Eletricidade I**, nome, descrição, raridade rara e ID.
+- Há 15 parceiros por interseção de efeitos. A proposta de aprofundar a descrição ritual ou de incluir um quarto atributo **não foi aprovada**.
+- **Alteração apenas documental:** `data/curadoria_ingredientes.json`, itens, receitas, motores e saves não foram modificados.
+- **Próxima ficha para decisão:** Peixe-Espada do Sangue (`ing-abecean-longfin`), sem alterações prévias.
