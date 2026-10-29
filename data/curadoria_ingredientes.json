@@ -189,6 +189,33 @@
         "Ravage Dexterity",
         "Ravage Strength"
       ]
+    },
+    "ing-river-betty": {
+      "nome": "Betta do Rio",
+      "raridade": "incomum",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "nome": "Diminuir Sabedoria",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Dexterity",
+        "Reduce Wisdom"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -197,7 +224,8 @@
     "Pó de Vampiro de Vandar": "Pó de Vampiro",
     "Couro de Rato Carbonizado": "Couro de Rato",
     "Penas de Falcão das Montanhas": "Penas de Falcão",
-    "Raiz do Juramento Quebrado": "Raiz Botulínica"
+    "Raiz do Juramento Quebrado": "Raiz Botulínica",
+    "Betty do Rio Ancestral": "Betta do Rio"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
