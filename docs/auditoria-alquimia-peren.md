@@ -374,3 +374,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - Possui 15 parceiros por efeito coincidente. A sugestão de aprofundar o habitat ou biologia no Mar de Sangue não foi aprovada e não deve ser incorporada automaticamente.
 - **Alteração apenas documental**; curadoria, itens, receitas, motores e saves não modificados.
 - **Próxima ficha participativa:** Craca de Rio (`ing-nordic-barnacle`), com 16 parceiros, aguardando decisão do criador.
+
+## Ciclo 26 — decisão concluída: Craca de Rio (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha da Craca de Rio (`ing-nordic-barnacle`).
+- Preservados **Respirar na Água II**, **Regenerar Saúde I** e **Dano à Magia I**, além do nome, descrição, raridade comum e ID.
+- São 16 parceiros por efeito coincidente. A hipótese de aprofundamento sobre o Rio Ancestral não foi aprovada; não inventar habitat específico.
+- **Somente o dossiê foi atualizado**: curadoria, itens, receitas, motores e saves intactos.
+- **Próxima ficha participativa:** Fungo de Bolha (`ing-blisterwort`), sem alterações prévias.
