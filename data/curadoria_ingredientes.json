@@ -927,7 +927,7 @@
     },
     "ing-namira-s-rot": {
       "nome": "Fungo de Gualápoles",
-      "descricao": "Fungo de decomposição associado a rituais soturnos.",
+      "descricao": "Fungo de decomposição associado a rituais soturnos, cuja influência sobrenatural torna a presença de quem o utiliza perturbadora e socialmente repulsiva, enfraquecendo seu Carisma sem necessariamente alterar sua aparência.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
       "atributos_revisados": true,
@@ -946,12 +946,18 @@
           "id": "dano_magia",
           "nome": "Dano à Magia",
           "intensidade": 1
+        },
+        {
+          "id": "diminuir_carisma",
+          "nome": "Diminuir Carisma",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Fear",
         "Regenerate Health",
-        "Damage Magicka"
+        "Damage Magicka",
+        "Reduce Charisma"
       ]
     },
     "ing-nordic-barnacle": {

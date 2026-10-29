@@ -248,3 +248,12 @@ Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à
 - **Decisão de design expressa:** Vampirismo **deve poder transformar alguém em vampiro com o tempo**. A progressão da transformação, condições, duração, acúmulo de exposição, resistência/reversão e consequências permanecem para definição futura; **não reduzir Vampirismo a simples drenagem de pontos de vida**.
 - Não alterados runtime clássico, Phaser, `data/itens.json`, `data/receitas.json` ou saves. Alteração somente na curadoria e documentação.
 - **Próxima ficha para decisão:** Fungo de Gualápoles (`ing-namira-s-rot`), possível `diminuir_carisma` II; associação ainda depende de justificativa de repulsa sobrenatural versus aspecto físico.
+
+## Ciclo 10 — decisão aprovada: Fungo de Gualápoles (29/10/2026)
+
+- **Aprovado pelo criador:** adicionar `diminuir_carisma` (**Diminuir Carisma II**) ao Fungo de Gualápoles (`ing-namira-s-rot`).
+- **Descrição canônica revisada:** “Fungo de decomposição associado a rituais soturnos, cuja influência sobrenatural torna a presença de quem o utiliza perturbadora e socialmente repulsiva, enfraquecendo seu Carisma sem necessariamente alterar sua aparência.”
+- A repulsa é **sobrenatural**, ligada à presença social e força de personalidade, e não se reduz à aparência física ou ao odor. Preservados os três efeitos anteriores e ID.
+- Acrescentado metadado legado `Reduce Charisma`. O efeito agora tem duas fontes na curadoria: Couro de Rato III e Fungo de Gualápoles II. O par compartilha Diminuir Carisma.
+- Sem mudanças no motor clássico, Phaser, itens, receitas ou saves. O crafting dinâmico continua pendente.
+- **Próxima ficha para decisão:** Raiz Mestra (`ing-taproot`), possível `aumentar_inteligencia` II, antes suspensa por fundamentação fraca; apresentar alternativa e solicitar decisão do criador.
