@@ -1983,7 +1983,7 @@
   },
   {
     "id": "ing-creep-cluster",
-    "nome": "Cachos Rastejantes",
+    "nome": "Tufo Rastejante",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -2135,7 +2135,7 @@
   },
   {
     "id": "ing-large-antlers",
-    "nome": "Chifres de Cervo Adulto",
+    "nome": "Chifres de Alce",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -4384,7 +4384,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-large-antlers",
-    "nome": "Elixir de Carapaça de Caranguejo e Chifres de Cervo Adulto",
+    "nome": "Elixir de Carapaça de Caranguejo e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5099,7 +5099,7 @@
   },
   {
     "id": "pot-vampire-dust-creep-cluster",
-    "nome": "Elixir de Pó de Vampiro e Cachos Rastejantes",
+    "nome": "Elixir de Pó de Vampiro e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5593,7 +5593,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-large-antlers",
-    "nome": "Elixir de Couro de Rato e Chifres de Cervo Adulto",
+    "nome": "Elixir de Couro de Rato e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7446,7 +7446,7 @@
   },
   {
     "id": "pot-river-betty-creep-cluster",
-    "nome": "Elixir de Betta do Rio e Cachos Rastejantes",
+    "nome": "Elixir de Betta do Rio e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7463,7 +7463,7 @@
   },
   {
     "id": "pot-river-betty-large-antlers",
-    "nome": "Elixir de Betta do Rio e Chifres de Cervo Adulto",
+    "nome": "Elixir de Betta do Rio e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -9601,7 +9601,7 @@
   },
   {
     "id": "pot-deathbell-large-antlers",
-    "nome": "Elixir de Sino da Morte e Chifres de Cervo Adulto",
+    "nome": "Elixir de Sino da Morte e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10095,7 +10095,7 @@
   },
   {
     "id": "pot-poison-bloom-creep-cluster",
-    "nome": "Elixir de Flor Venenosa e Cachos Rastejantes",
+    "nome": "Elixir de Flor Venenosa e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10112,7 +10112,7 @@
   },
   {
     "id": "pot-poison-bloom-large-antlers",
-    "nome": "Elixir de Flor Venenosa e Chifres de Cervo Adulto",
+    "nome": "Elixir de Flor Venenosa e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10475,7 +10475,7 @@
   },
   {
     "id": "pot-ectoplasm-creep-cluster",
-    "nome": "Elixir de Ectoplasma e Cachos Rastejantes",
+    "nome": "Elixir de Ectoplasma e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11365,7 +11365,7 @@
   },
   {
     "id": "pot-human-flesh-creep-cluster",
-    "nome": "Elixir de Carne Humana e Cachos Rastejantes",
+    "nome": "Elixir de Carne Humana e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13145,7 +13145,7 @@
   },
   {
     "id": "pot-red-mountain-flower-creep-cluster",
-    "nome": "Elixir de Flor Vermelha e Cachos Rastejantes",
+    "nome": "Elixir de Flor Vermelha e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13658,7 +13658,7 @@
   },
   {
     "id": "pot-skeever-tail-creep-cluster",
-    "nome": "Elixir de Cauda de Rato e Cachos Rastejantes",
+    "nome": "Elixir de Cauda de Rato e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -13726,7 +13726,7 @@
   },
   {
     "id": "pot-skeever-tail-large-antlers",
-    "nome": "Elixir de Cauda de Rato e Chifres de Cervo Adulto",
+    "nome": "Elixir de Cauda de Rato e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15195,7 +15195,7 @@
   },
   {
     "id": "pot-chaurus-eggs-large-antlers",
-    "nome": "Elixir de Ovo de Verme Gigante e Chifres de Cervo Adulto",
+    "nome": "Elixir de Ovo de Verme Gigante e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15622,7 +15622,7 @@
   },
   {
     "id": "pot-daedra-heart-creep-cluster",
-    "nome": "Elixir de Coração de Demônio e Cachos Rastejantes",
+    "nome": "Elixir de Coração de Demônio e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15690,7 +15690,7 @@
   },
   {
     "id": "pot-daedra-heart-large-antlers",
-    "nome": "Elixir de Coração de Demônio e Chifres de Cervo Adulto",
+    "nome": "Elixir de Coração de Demônio e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16083,7 +16083,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-large-antlers",
-    "nome": "Elixir de Olho de Felino e Chifres de Cervo Adulto",
+    "nome": "Elixir de Olho de Felino e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18253,7 +18253,7 @@
   },
   {
     "id": "pot-trama-root-creep-cluster",
-    "nome": "Elixir de Raiz de Trama e Cachos Rastejantes",
+    "nome": "Elixir de Raiz de Trama e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18270,7 +18270,7 @@
   },
   {
     "id": "pot-trama-root-large-antlers",
-    "nome": "Elixir de Raiz de Trama e Chifres de Cervo Adulto",
+    "nome": "Elixir de Raiz de Trama e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19013,7 +19013,7 @@
   },
   {
     "id": "pot-bear-claws-large-antlers",
-    "nome": "Elixir de Garras de Urso e Chifres de Cervo Adulto",
+    "nome": "Elixir de Garras de Urso e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20147,7 +20147,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-large-antlers",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Chifres de Cervo Adulto",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22850,7 +22850,7 @@
   },
   {
     "id": "pot-giant-s-toe-creep-cluster",
-    "nome": "Elixir de Dedo de Gigante e Cachos Rastejantes",
+    "nome": "Elixir de Dedo de Gigante e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22919,7 +22919,7 @@
   },
   {
     "id": "pot-giant-s-toe-large-antlers",
-    "nome": "Elixir de Dedo de Gigante e Chifres de Cervo Adulto",
+    "nome": "Elixir de Dedo de Gigante e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23091,7 +23091,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-creep-cluster",
-    "nome": "Elixir de Ovo de Tordo e Cachos Rastejantes",
+    "nome": "Elixir de Ovo de Tordo e Tufo Rastejante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23295,7 +23295,7 @@
   },
   {
     "id": "pot-creep-cluster-frost-mirriam",
-    "nome": "Elixir de Cachos Rastejantes e Mirra da Geada",
+    "nome": "Elixir de Tufo Rastejante e Mirra da Geada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23312,7 +23312,7 @@
   },
   {
     "id": "pot-creep-cluster-histcarp",
-    "nome": "Elixir de Cachos Rastejantes e Carpa de Pedra",
+    "nome": "Elixir de Tufo Rastejante e Carpa de Pedra",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23329,7 +23329,7 @@
   },
   {
     "id": "pot-creep-cluster-juniper-berries",
-    "nome": "Elixir de Cachos Rastejantes e Bagas de Zimbro",
+    "nome": "Elixir de Tufo Rastejante e Bagas de Zimbro",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23346,7 +23346,7 @@
   },
   {
     "id": "pot-creep-cluster-large-antlers",
-    "nome": "Elixir de Cachos Rastejantes e Chifres de Cervo Adulto",
+    "nome": "Elixir de Tufo Rastejante e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23363,7 +23363,7 @@
   },
   {
     "id": "pot-creep-cluster-silverside-perch",
-    "nome": "Elixir de Cachos Rastejantes e Perca Prateada",
+    "nome": "Elixir de Tufo Rastejante e Perca Prateada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23380,7 +23380,7 @@
   },
   {
     "id": "pot-creep-cluster-wheat",
-    "nome": "Elixir de Cachos Rastejantes e Trigo da Costa",
+    "nome": "Elixir de Tufo Rastejante e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23397,7 +23397,7 @@
   },
   {
     "id": "pot-creep-cluster-yellow-mountain-flower",
-    "nome": "Elixir de Cachos Rastejantes e Flor Amarela da Montanha",
+    "nome": "Elixir de Tufo Rastejante e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23414,7 +23414,7 @@
   },
   {
     "id": "pot-creep-cluster-netch-jelly",
-    "nome": "Elixir de Cachos Rastejantes e Gelatina de Netch",
+    "nome": "Elixir de Tufo Rastejante e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23431,7 +23431,7 @@
   },
   {
     "id": "pot-creep-cluster-grass-pod",
-    "nome": "Elixir de Cachos Rastejantes e Vagem da Charneca",
+    "nome": "Elixir de Tufo Rastejante e Vagem da Charneca",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23448,7 +23448,7 @@
   },
   {
     "id": "pot-creep-cluster-pearl",
-    "nome": "Elixir de Cachos Rastejantes e Pérola da Costa Sul",
+    "nome": "Elixir de Tufo Rastejante e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23465,7 +23465,7 @@
   },
   {
     "id": "pot-creep-cluster-briar-heart",
-    "nome": "Elixir de Cachos Rastejantes e Coração de Espinheiros",
+    "nome": "Elixir de Tufo Rastejante e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23482,7 +23482,7 @@
   },
   {
     "id": "pot-creep-cluster-hawk-beak",
-    "nome": "Elixir de Cachos Rastejantes e Bico de Falcão",
+    "nome": "Elixir de Tufo Rastejante e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23499,7 +23499,7 @@
   },
   {
     "id": "pot-creep-cluster-scaly-pholiota",
-    "nome": "Elixir de Cachos Rastejantes e Cogumelo Escamoso",
+    "nome": "Elixir de Tufo Rastejante e Cogumelo Escamoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23517,7 +23517,7 @@
   },
   {
     "id": "pot-creep-cluster-wisp-wrappings",
-    "nome": "Elixir de Cachos Rastejantes e Faixas de Espírito",
+    "nome": "Elixir de Tufo Rastejante e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23534,7 +23534,7 @@
   },
   {
     "id": "pot-creep-cluster-frost-salts",
-    "nome": "Elixir de Cachos Rastejantes e Sais da Geada",
+    "nome": "Elixir de Tufo Rastejante e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23551,7 +23551,7 @@
   },
   {
     "id": "pot-creep-cluster-white-cap",
-    "nome": "Elixir de Cachos Rastejantes e Chapéu Branco",
+    "nome": "Elixir de Tufo Rastejante e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23568,7 +23568,7 @@
   },
   {
     "id": "pot-creep-cluster-dwarven-oil",
-    "nome": "Elixir de Cachos Rastejantes e Óleo de Autômato Anão",
+    "nome": "Elixir de Tufo Rastejante e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23586,7 +23586,7 @@
   },
   {
     "id": "pot-creep-cluster-mora-tapinella",
-    "nome": "Elixir de Cachos Rastejantes e Cogumelo de Raiz",
+    "nome": "Elixir de Tufo Rastejante e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23603,7 +23603,7 @@
   },
   {
     "id": "pot-creep-cluster-taproot",
-    "nome": "Elixir de Cachos Rastejantes e Raiz Mestra",
+    "nome": "Elixir de Tufo Rastejante e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23621,7 +23621,7 @@
   },
   {
     "id": "pot-creep-cluster-jazbay-grapes",
-    "nome": "Elixir de Cachos Rastejantes e Uvas de Jasmim",
+    "nome": "Elixir de Tufo Rastejante e Uvas de Jasmim",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23638,7 +23638,7 @@
   },
   {
     "id": "pot-creep-cluster-elves-ear",
-    "nome": "Elixir de Cachos Rastejantes e Orelha de Elfo",
+    "nome": "Elixir de Tufo Rastejante e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23655,7 +23655,7 @@
   },
   {
     "id": "pot-creep-cluster-salt-pile",
-    "nome": "Elixir de Cachos Rastejantes e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23672,7 +23672,7 @@
   },
   {
     "id": "pot-creep-cluster-torchbug-thorax",
-    "nome": "Elixir de Cachos Rastejantes e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Tufo Rastejante e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23689,7 +23689,7 @@
   },
   {
     "id": "pot-creep-cluster-giant-lichen",
-    "nome": "Elixir de Cachos Rastejantes e Líquen Gigante",
+    "nome": "Elixir de Tufo Rastejante e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23706,7 +23706,7 @@
   },
   {
     "id": "pot-creep-cluster-fire-salts",
-    "nome": "Elixir de Cachos Rastejantes e Sais Ígneos",
+    "nome": "Elixir de Tufo Rastejante e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23723,7 +23723,7 @@
   },
   {
     "id": "pot-creep-cluster-moon-sugar",
-    "nome": "Elixir de Cachos Rastejantes e Açúcar Lunar",
+    "nome": "Elixir de Tufo Rastejante e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23774,7 +23774,7 @@
   },
   {
     "id": "pot-frost-mirriam-large-antlers",
-    "nome": "Elixir de Mirra da Geada e Chifres de Cervo Adulto",
+    "nome": "Elixir de Mirra da Geada e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24167,7 +24167,7 @@
   },
   {
     "id": "pot-histcarp-large-antlers",
-    "nome": "Elixir de Carpa de Pedra e Chifres de Cervo Adulto",
+    "nome": "Elixir de Carpa de Pedra e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24528,7 +24528,7 @@
   },
   {
     "id": "pot-juniper-berries-large-antlers",
-    "nome": "Elixir de Bagas de Zimbro e Chifres de Cervo Adulto",
+    "nome": "Elixir de Bagas de Zimbro e Chifres de Alce",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24732,7 +24732,7 @@
   },
   {
     "id": "pot-large-antlers-silverside-perch",
-    "nome": "Elixir de Chifres de Cervo Adulto e Perca Prateada",
+    "nome": "Elixir de Chifres de Alce e Perca Prateada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24750,7 +24750,7 @@
   },
   {
     "id": "pot-large-antlers-wheat",
-    "nome": "Elixir de Chifres de Cervo Adulto e Trigo da Costa",
+    "nome": "Elixir de Chifres de Alce e Trigo da Costa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24767,7 +24767,7 @@
   },
   {
     "id": "pot-large-antlers-yellow-mountain-flower",
-    "nome": "Elixir de Chifres de Cervo Adulto e Flor Amarela da Montanha",
+    "nome": "Elixir de Chifres de Alce e Flor Amarela da Montanha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24784,7 +24784,7 @@
   },
   {
     "id": "pot-large-antlers-netch-jelly",
-    "nome": "Elixir de Chifres de Cervo Adulto e Gelatina de Netch",
+    "nome": "Elixir de Chifres de Alce e Gelatina de Netch",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24801,7 +24801,7 @@
   },
   {
     "id": "pot-large-antlers-powdered-mammoth-tusk",
-    "nome": "Elixir de Chifres de Cervo Adulto e Presa de Mamute em Pó",
+    "nome": "Elixir de Chifres de Alce e Presa de Mamute em Pó",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24818,7 +24818,7 @@
   },
   {
     "id": "pot-large-antlers-boar-tusk",
-    "nome": "Elixir de Chifres de Cervo Adulto e Presa de Javali",
+    "nome": "Elixir de Chifres de Alce e Presa de Javali",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24835,7 +24835,7 @@
   },
   {
     "id": "pot-large-antlers-pearl",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pérola da Costa Sul",
+    "nome": "Elixir de Chifres de Alce e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24852,7 +24852,7 @@
   },
   {
     "id": "pot-large-antlers-honeycomb",
-    "nome": "Elixir de Chifres de Cervo Adulto e Favo de Mel",
+    "nome": "Elixir de Chifres de Alce e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24869,7 +24869,7 @@
   },
   {
     "id": "pot-large-antlers-hawk-beak",
-    "nome": "Elixir de Chifres de Cervo Adulto e Bico de Falcão",
+    "nome": "Elixir de Chifres de Alce e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24886,7 +24886,7 @@
   },
   {
     "id": "pot-large-antlers-wisp-wrappings",
-    "nome": "Elixir de Chifres de Cervo Adulto e Faixas de Espírito",
+    "nome": "Elixir de Chifres de Alce e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24903,7 +24903,7 @@
   },
   {
     "id": "pot-large-antlers-lavender",
-    "nome": "Elixir de Chifres de Cervo Adulto e Lavanda Selvagem",
+    "nome": "Elixir de Chifres de Alce e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24920,7 +24920,7 @@
   },
   {
     "id": "pot-large-antlers-sabre-cat-tooth",
-    "nome": "Elixir de Chifres de Cervo Adulto e Dente de Felino",
+    "nome": "Elixir de Chifres de Alce e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24937,7 +24937,7 @@
   },
   {
     "id": "pot-large-antlers-pine-thrush-egg",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovo de Tordo da Costa",
+    "nome": "Elixir de Chifres de Alce e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24954,7 +24954,7 @@
   },
   {
     "id": "pot-large-antlers-salmon-roe",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovas de Salmão",
+    "nome": "Elixir de Chifres de Alce e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24971,7 +24971,7 @@
   },
   {
     "id": "pot-large-antlers-small-pearl",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pérola Pequena",
+    "nome": "Elixir de Chifres de Alce e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24988,7 +24988,7 @@
   },
   {
     "id": "pot-large-antlers-orange-dartwing",
-    "nome": "Elixir de Chifres de Cervo Adulto e Libélula Alaranjada",
+    "nome": "Elixir de Chifres de Alce e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25005,7 +25005,7 @@
   },
   {
     "id": "pot-large-antlers-slaughterfish-egg",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Chifres de Alce e Ovas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25022,7 +25022,7 @@
   },
   {
     "id": "pot-large-antlers-salt-pile",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Pilha de Sal do Mar de Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25039,7 +25039,7 @@
   },
   {
     "id": "pot-large-antlers-purple-mountain-flower",
-    "nome": "Elixir de Chifres de Cervo Adulto e Flor Violeta",
+    "nome": "Elixir de Chifres de Alce e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25056,7 +25056,7 @@
   },
   {
     "id": "pot-large-antlers-garlic",
-    "nome": "Elixir de Chifres de Cervo Adulto e Alho das Hortas",
+    "nome": "Elixir de Chifres de Alce e Alho das Hortas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25073,7 +25073,7 @@
   },
   {
     "id": "pot-large-antlers-torchbug-thorax",
-    "nome": "Elixir de Chifres de Cervo Adulto e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Chifres de Alce e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25091,7 +25091,7 @@
   },
   {
     "id": "pot-large-antlers-bee",
-    "nome": "Elixir de Chifres de Cervo Adulto e Abelha",
+    "nome": "Elixir de Chifres de Alce e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [

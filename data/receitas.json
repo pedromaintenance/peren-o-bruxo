@@ -1033,7 +1033,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-chifres-grandes",
-    "nome": "Elixir de Carapaça de Caranguejo e Chifres de Cervo Adulto",
+    "nome": "Elixir de Carapaça de Caranguejo e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -2085,7 +2085,7 @@
   },
   {
     "id": "rec-elixir-de-po-de-vampiro-de-vandar-e-cachos-rastejantes",
-    "nome": "Elixir de Pó de Vampiro e Cachos Rastejantes",
+    "nome": "Elixir de Pó de Vampiro e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -2811,7 +2811,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-chifres-grandes",
-    "nome": "Elixir de Couro de Rato e Chifres de Cervo Adulto",
+    "nome": "Elixir de Couro de Rato e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -5181,7 +5181,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-cachos-rastejantes",
-    "nome": "Elixir de Betta do Rio e Cachos Rastejantes",
+    "nome": "Elixir de Betta do Rio e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -5201,7 +5201,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-chifres-grandes",
-    "nome": "Elixir de Betta do Rio e Chifres de Cervo Adulto",
+    "nome": "Elixir de Betta do Rio e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7701,7 +7701,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-chifres-grandes",
-    "nome": "Elixir de Sino da Morte e Chifres de Cervo Adulto",
+    "nome": "Elixir de Sino da Morte e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8281,7 +8281,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-cachos-rastejantes",
-    "nome": "Elixir de Flor Venenosa e Cachos Rastejantes",
+    "nome": "Elixir de Flor Venenosa e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -8301,7 +8301,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-chifres-grandes",
-    "nome": "Elixir de Flor Venenosa e Chifres de Cervo Adulto",
+    "nome": "Elixir de Flor Venenosa e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -8721,7 +8721,7 @@
   },
   {
     "id": "rec-elixir-de-ectoplasma-de-vandar-e-cachos-rastejantes",
-    "nome": "Elixir de Ectoplasma e Cachos Rastejantes",
+    "nome": "Elixir de Ectoplasma e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9761,7 +9761,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-cachos-rastejantes",
-    "nome": "Elixir de Carne Humana e Cachos Rastejantes",
+    "nome": "Elixir de Carne Humana e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11841,7 +11841,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-cachos-rastejantes",
-    "nome": "Elixir de Flor Vermelha e Cachos Rastejantes",
+    "nome": "Elixir de Flor Vermelha e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12441,7 +12441,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-cachos-rastejantes",
-    "nome": "Elixir de Cauda de Rato e Cachos Rastejantes",
+    "nome": "Elixir de Cauda de Rato e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12521,7 +12521,7 @@
   },
   {
     "id": "rec-elixir-de-cauda-de-rato-das-docas-e-chifres-grandes",
-    "nome": "Elixir de Cauda de Rato e Chifres de Cervo Adulto",
+    "nome": "Elixir de Cauda de Rato e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14241,7 +14241,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-chifres-grandes",
-    "nome": "Elixir de Ovo de Verme Gigante e Chifres de Cervo Adulto",
+    "nome": "Elixir de Ovo de Verme Gigante e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -14741,7 +14741,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-cachos-rastejantes",
-    "nome": "Elixir de Coração de Demônio e Cachos Rastejantes",
+    "nome": "Elixir de Coração de Demônio e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14821,7 +14821,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-chifres-grandes",
-    "nome": "Elixir de Coração de Demônio e Chifres de Cervo Adulto",
+    "nome": "Elixir de Coração de Demônio e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -15281,7 +15281,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-chifres-grandes",
-    "nome": "Elixir de Olho de Felino e Chifres de Cervo Adulto",
+    "nome": "Elixir de Olho de Felino e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -17821,7 +17821,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-de-trama-e-cachos-rastejantes",
-    "nome": "Elixir de Raiz de Trama e Cachos Rastejantes",
+    "nome": "Elixir de Raiz de Trama e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -17841,7 +17841,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-de-trama-e-chifres-grandes",
-    "nome": "Elixir de Raiz de Trama e Chifres de Cervo Adulto",
+    "nome": "Elixir de Raiz de Trama e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -18701,7 +18701,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-chifres-grandes",
-    "nome": "Elixir de Garras de Urso e Chifres de Cervo Adulto",
+    "nome": "Elixir de Garras de Urso e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -20021,7 +20021,7 @@
   },
   {
     "id": "rec-elixir-de-madeira-de-ent-carbonizado-e-chifres-grandes",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Chifres de Cervo Adulto",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23181,7 +23181,7 @@
   },
   {
     "id": "rec-elixir-de-dedo-de-gigante-e-cachos-rastejantes",
-    "nome": "Elixir de Dedo de Gigante e Cachos Rastejantes",
+    "nome": "Elixir de Dedo de Gigante e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23261,7 +23261,7 @@
   },
   {
     "id": "rec-elixir-de-dedo-de-gigante-e-chifres-grandes",
-    "nome": "Elixir de Dedo de Gigante e Chifres de Cervo Adulto",
+    "nome": "Elixir de Dedo de Gigante e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -23461,7 +23461,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-e-cachos-rastejantes",
-    "nome": "Elixir de Ovo de Tordo e Cachos Rastejantes",
+    "nome": "Elixir de Ovo de Tordo e Tufo Rastejante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23701,7 +23701,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-mirra-da-geada",
-    "nome": "Elixir de Cachos Rastejantes e Mirra da Geada",
+    "nome": "Elixir de Tufo Rastejante e Mirra da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23721,7 +23721,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-carpa-de-pedra",
-    "nome": "Elixir de Cachos Rastejantes e Carpa de Pedra",
+    "nome": "Elixir de Tufo Rastejante e Carpa de Pedra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23741,7 +23741,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-bagas-de-zimbro",
-    "nome": "Elixir de Cachos Rastejantes e Bagas de Zimbro",
+    "nome": "Elixir de Tufo Rastejante e Bagas de Zimbro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23761,7 +23761,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-chifres-grandes",
-    "nome": "Elixir de Cachos Rastejantes e Chifres de Cervo Adulto",
+    "nome": "Elixir de Tufo Rastejante e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23781,7 +23781,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-perca-prateada",
-    "nome": "Elixir de Cachos Rastejantes e Perca Prateada",
+    "nome": "Elixir de Tufo Rastejante e Perca Prateada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23801,7 +23801,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-trigo-da-costa",
-    "nome": "Elixir de Cachos Rastejantes e Trigo da Costa",
+    "nome": "Elixir de Tufo Rastejante e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23821,7 +23821,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Cachos Rastejantes e Flor Amarela da Montanha",
+    "nome": "Elixir de Tufo Rastejante e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23841,7 +23841,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-gelatina-de-netch",
-    "nome": "Elixir de Cachos Rastejantes e Gelatina de Netch",
+    "nome": "Elixir de Tufo Rastejante e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23861,7 +23861,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-vagem-da-charneca",
-    "nome": "Elixir de Cachos Rastejantes e Vagem da Charneca",
+    "nome": "Elixir de Tufo Rastejante e Vagem da Charneca",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23881,7 +23881,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-perola-da-costa-sul",
-    "nome": "Elixir de Cachos Rastejantes e Pérola da Costa Sul",
+    "nome": "Elixir de Tufo Rastejante e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23901,7 +23901,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-coracao-de-espinheiros",
-    "nome": "Elixir de Cachos Rastejantes e Coração de Espinheiros",
+    "nome": "Elixir de Tufo Rastejante e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23921,7 +23921,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-bico-de-falcao",
-    "nome": "Elixir de Cachos Rastejantes e Bico de Falcão",
+    "nome": "Elixir de Tufo Rastejante e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23941,7 +23941,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-cogumelo-escamoso",
-    "nome": "Elixir de Cachos Rastejantes e Cogumelo Escamoso",
+    "nome": "Elixir de Tufo Rastejante e Cogumelo Escamoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23961,7 +23961,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-faixas-de-espirito",
-    "nome": "Elixir de Cachos Rastejantes e Faixas de Espírito",
+    "nome": "Elixir de Tufo Rastejante e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23981,7 +23981,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-sais-da-geada",
-    "nome": "Elixir de Cachos Rastejantes e Sais da Geada",
+    "nome": "Elixir de Tufo Rastejante e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24001,7 +24001,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-chapeu-branco",
-    "nome": "Elixir de Cachos Rastejantes e Chapéu Branco",
+    "nome": "Elixir de Tufo Rastejante e Chapéu Branco",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24021,7 +24021,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-oleo-de-automato-anao",
-    "nome": "Elixir de Cachos Rastejantes e Óleo de Autômato Anão",
+    "nome": "Elixir de Tufo Rastejante e Óleo de Autômato Anão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24041,7 +24041,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-cogumelo-de-raiz",
-    "nome": "Elixir de Cachos Rastejantes e Cogumelo de Raiz",
+    "nome": "Elixir de Tufo Rastejante e Cogumelo de Raiz",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24061,7 +24061,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-raiz-mestra",
-    "nome": "Elixir de Cachos Rastejantes e Raiz Mestra",
+    "nome": "Elixir de Tufo Rastejante e Raiz Mestra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -24081,7 +24081,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-uvas-de-jasmim",
-    "nome": "Elixir de Cachos Rastejantes e Uvas de Jasmim",
+    "nome": "Elixir de Tufo Rastejante e Uvas de Jasmim",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24101,7 +24101,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-orelha-de-elfo",
-    "nome": "Elixir de Cachos Rastejantes e Orelha de Elfo",
+    "nome": "Elixir de Tufo Rastejante e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24121,7 +24121,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Cachos Rastejantes e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Pilha de Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24141,7 +24141,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Cachos Rastejantes e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Tufo Rastejante e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24161,7 +24161,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-liquen-gigante",
-    "nome": "Elixir de Cachos Rastejantes e Líquen Gigante",
+    "nome": "Elixir de Tufo Rastejante e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24181,7 +24181,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-sais-igneos",
-    "nome": "Elixir de Cachos Rastejantes e Sais Ígneos",
+    "nome": "Elixir de Tufo Rastejante e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -24201,7 +24201,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-acucar-lunar",
-    "nome": "Elixir de Cachos Rastejantes e Açúcar Lunar",
+    "nome": "Elixir de Tufo Rastejante e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24261,7 +24261,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-chifres-grandes",
-    "nome": "Elixir de Mirra da Geada e Chifres de Cervo Adulto",
+    "nome": "Elixir de Mirra da Geada e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24721,7 +24721,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-chifres-grandes",
-    "nome": "Elixir de Carpa de Pedra e Chifres de Cervo Adulto",
+    "nome": "Elixir de Carpa de Pedra e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25141,7 +25141,7 @@
   },
   {
     "id": "rec-elixir-de-bagas-de-zimbro-e-chifres-grandes",
-    "nome": "Elixir de Bagas de Zimbro e Chifres de Cervo Adulto",
+    "nome": "Elixir de Bagas de Zimbro e Chifres de Alce",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25381,7 +25381,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-perca-prateada",
-    "nome": "Elixir de Chifres de Cervo Adulto e Perca Prateada",
+    "nome": "Elixir de Chifres de Alce e Perca Prateada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25401,7 +25401,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-trigo-da-costa",
-    "nome": "Elixir de Chifres de Cervo Adulto e Trigo da Costa",
+    "nome": "Elixir de Chifres de Alce e Trigo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25421,7 +25421,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-flor-amarela-da-montanha",
-    "nome": "Elixir de Chifres de Cervo Adulto e Flor Amarela da Montanha",
+    "nome": "Elixir de Chifres de Alce e Flor Amarela da Montanha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25441,7 +25441,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-gelatina-de-netch",
-    "nome": "Elixir de Chifres de Cervo Adulto e Gelatina de Netch",
+    "nome": "Elixir de Chifres de Alce e Gelatina de Netch",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25461,7 +25461,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Chifres de Cervo Adulto e Presa de Mamute em Pó",
+    "nome": "Elixir de Chifres de Alce e Presa de Mamute em Pó",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25481,7 +25481,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-presa-de-javali",
-    "nome": "Elixir de Chifres de Cervo Adulto e Presa de Javali",
+    "nome": "Elixir de Chifres de Alce e Presa de Javali",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25501,7 +25501,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-perola-da-costa-sul",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pérola da Costa Sul",
+    "nome": "Elixir de Chifres de Alce e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25521,7 +25521,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-favo-de-mel",
-    "nome": "Elixir de Chifres de Cervo Adulto e Favo de Mel",
+    "nome": "Elixir de Chifres de Alce e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25541,7 +25541,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-bico-de-falcao",
-    "nome": "Elixir de Chifres de Cervo Adulto e Bico de Falcão",
+    "nome": "Elixir de Chifres de Alce e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25561,7 +25561,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-faixas-de-espirito",
-    "nome": "Elixir de Chifres de Cervo Adulto e Faixas de Espírito",
+    "nome": "Elixir de Chifres de Alce e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25581,7 +25581,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-lavanda-selvagem",
-    "nome": "Elixir de Chifres de Cervo Adulto e Lavanda Selvagem",
+    "nome": "Elixir de Chifres de Alce e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25601,7 +25601,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-dente-de-felino",
-    "nome": "Elixir de Chifres de Cervo Adulto e Dente de Felino",
+    "nome": "Elixir de Chifres de Alce e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25621,7 +25621,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovo de Tordo da Costa",
+    "nome": "Elixir de Chifres de Alce e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25641,7 +25641,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-ovas-de-salmao",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovas de Salmão",
+    "nome": "Elixir de Chifres de Alce e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25661,7 +25661,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-perola-pequena",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pérola Pequena",
+    "nome": "Elixir de Chifres de Alce e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25681,7 +25681,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-libelula-alaranjada",
-    "nome": "Elixir de Chifres de Cervo Adulto e Libélula Alaranjada",
+    "nome": "Elixir de Chifres de Alce e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25701,7 +25701,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Chifres de Cervo Adulto e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Chifres de Alce e Ovas de Peixe Carniceiro",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25721,7 +25721,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres de Cervo Adulto e Pilha de Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Pilha de Sal do Mar de Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25741,7 +25741,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-flor-violeta",
-    "nome": "Elixir de Chifres de Cervo Adulto e Flor Violeta",
+    "nome": "Elixir de Chifres de Alce e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -25761,7 +25761,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-alho-das-hortas",
-    "nome": "Elixir de Chifres de Cervo Adulto e Alho das Hortas",
+    "nome": "Elixir de Chifres de Alce e Alho das Hortas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25781,7 +25781,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Chifres de Cervo Adulto e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Chifres de Alce e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -25801,7 +25801,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-abelha",
-    "nome": "Elixir de Chifres de Cervo Adulto e Abelha",
+    "nome": "Elixir de Chifres de Alce e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
