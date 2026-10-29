@@ -881,7 +881,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-gelatina-de-netch",
-    "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Netch",
+    "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -2341,7 +2341,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-gelatina-de-netch",
-    "nome": "Elixir de Couro de Rato e Gelatina de Netch",
+    "nome": "Elixir de Couro de Rato e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -4441,7 +4441,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-gelatina-de-netch",
-    "nome": "Elixir de Betta do Rio e Gelatina de Netch",
+    "nome": "Elixir de Betta do Rio e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -7581,7 +7581,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-gelatina-de-netch",
-    "nome": "Elixir de Flor Venenosa e Gelatina de Netch",
+    "nome": "Elixir de Flor Venenosa e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -9041,7 +9041,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-gelatina-de-netch",
-    "nome": "Elixir de Carne Humana e Gelatina de Netch",
+    "nome": "Elixir de Carne Humana e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10361,7 +10361,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-gelatina-de-netch",
-    "nome": "Elixir de Fungo de Diabrete e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14161,7 +14161,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-de-demonio-e-gelatina-de-netch",
-    "nome": "Elixir de Coração de Demônio e Gelatina de Netch",
+    "nome": "Elixir de Coração de Demônio e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -14581,7 +14581,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-gelatina-de-netch",
-    "nome": "Elixir de Olho de Felino e Gelatina de Netch",
+    "nome": "Elixir de Olho de Felino e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -16681,7 +16681,7 @@
   },
   {
     "id": "rec-elixir-de-fungo-de-gualapoles-e-gelatina-de-netch",
-    "nome": "Elixir de Fungo de Gualápoles e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Gualápoles e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17081,7 +17081,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-de-trama-e-gelatina-de-netch",
-    "nome": "Elixir de Raiz de Trama e Gelatina de Netch",
+    "nome": "Elixir de Raiz de Trama e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -18001,7 +18001,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-gelatina-de-netch",
-    "nome": "Elixir de Garras de Urso e Gelatina de Netch",
+    "nome": "Elixir de Garras de Urso e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -22001,7 +22001,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-canina-e-gelatina-de-netch",
-    "nome": "Elixir de Raiz Canina e Gelatina de Netch",
+    "nome": "Elixir de Raiz Canina e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -22221,7 +22221,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-gelatina-de-netch",
-    "nome": "Elixir de Peixe de Escamas Finas e Gelatina de Netch",
+    "nome": "Elixir de Peixe de Escamas Finas e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -22561,7 +22561,7 @@
   },
   {
     "id": "rec-elixir-de-dedo-de-gigante-e-gelatina-de-netch",
-    "nome": "Elixir de Dedo de Gigante e Gelatina de Netch",
+    "nome": "Elixir de Dedo de Gigante e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -23061,7 +23061,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-gelatina-de-netch",
-    "nome": "Elixir de Tufo Rastejante e Gelatina de Netch",
+    "nome": "Elixir de Tufo Rastejante e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24021,7 +24021,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-gelatina-de-netch",
-    "nome": "Elixir de Carpa de Pedra e Gelatina de Netch",
+    "nome": "Elixir de Carpa de Pedra e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -24661,7 +24661,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-gelatina-de-netch",
-    "nome": "Elixir de Chifres de Alce e Gelatina de Netch",
+    "nome": "Elixir de Chifres de Alce e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25081,7 +25081,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-gelatina-de-netch",
-    "nome": "Elixir de Perca Prateada e Gelatina de Netch",
+    "nome": "Elixir de Perca Prateada e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25921,7 +25921,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-gelatina-de-netch",
-    "nome": "Elixir de Libélula Azul e Gelatina de Netch",
+    "nome": "Elixir de Libélula Azul e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26141,7 +26141,7 @@
   },
   {
     "id": "rec-elixir-de-flor-de-brilho-e-gelatina-de-netch",
-    "nome": "Elixir de Flor Luminescente e Gelatina de Netch",
+    "nome": "Elixir de Flor Luminescente e Gelatina de Medusa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26341,7 +26341,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-presa-de-mamute-em-po",
-    "nome": "Elixir de Gelatina de Netch e Pó de Presa de Mamute",
+    "nome": "Elixir de Gelatina de Medusa e Pó de Presa de Mamute",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26361,7 +26361,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-perola-da-costa-sul",
-    "nome": "Elixir de Gelatina de Netch e Pérola da Costa Sul",
+    "nome": "Elixir de Gelatina de Medusa e Pérola da Costa Sul",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26381,7 +26381,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-coracao-de-espinheiros",
-    "nome": "Elixir de Gelatina de Netch e Coração de Espinheiros",
+    "nome": "Elixir de Gelatina de Medusa e Coração de Espinheiros",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26401,7 +26401,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-favo-de-mel",
-    "nome": "Elixir de Gelatina de Netch e Favo de Mel",
+    "nome": "Elixir de Gelatina de Medusa e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26421,7 +26421,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-bico-de-falcao",
-    "nome": "Elixir de Gelatina de Netch e Bico de Falcão",
+    "nome": "Elixir de Gelatina de Medusa e Bico de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26441,7 +26441,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-cogumelo-escamoso",
-    "nome": "Elixir de Gelatina de Netch e Cogumelo Escamoso",
+    "nome": "Elixir de Gelatina de Medusa e Cogumelo Escamoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26461,7 +26461,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-faixas-de-espirito",
-    "nome": "Elixir de Gelatina de Netch e Faixas de Espírito",
+    "nome": "Elixir de Gelatina de Medusa e Faixas de Espírito",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26481,7 +26481,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-dente-de-felino",
-    "nome": "Elixir de Gelatina de Netch e Dente de Felino",
+    "nome": "Elixir de Gelatina de Medusa e Dente de Felino",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26501,7 +26501,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-ovo-de-tordo-da-costa",
-    "nome": "Elixir de Gelatina de Netch e Ovo de Tordo da Costa",
+    "nome": "Elixir de Gelatina de Medusa e Ovo de Tordo da Costa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26521,7 +26521,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-ovas-de-salmao",
-    "nome": "Elixir de Gelatina de Netch e Ovas de Salmão",
+    "nome": "Elixir de Gelatina de Medusa e Ovas de Salmão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26541,7 +26541,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-perola-pequena",
-    "nome": "Elixir de Gelatina de Netch e Pérola Pequena",
+    "nome": "Elixir de Gelatina de Medusa e Pérola Pequena",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26561,7 +26561,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-libelula-alaranjada",
-    "nome": "Elixir de Gelatina de Netch e Libélula Alaranjada",
+    "nome": "Elixir de Gelatina de Medusa e Libélula Alaranjada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26581,7 +26581,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-flor-violeta",
-    "nome": "Elixir de Gelatina de Netch e Flor Violeta",
+    "nome": "Elixir de Gelatina de Medusa e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26601,7 +26601,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Gelatina de Netch e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Gelatina de Medusa e Tórax de Inseto-lanterna",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -26621,7 +26621,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-fungo-do-pantano",
-    "nome": "Elixir de Gelatina de Netch e Fungo do Pântano",
+    "nome": "Elixir de Gelatina de Medusa e Fungo do Pântano",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26641,7 +26641,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-abelha",
-    "nome": "Elixir de Gelatina de Netch e Abelha",
+    "nome": "Elixir de Gelatina de Medusa e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,

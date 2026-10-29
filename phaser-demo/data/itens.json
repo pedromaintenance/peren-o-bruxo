@@ -2363,7 +2363,7 @@
   },
   {
     "id": "ing-netch-jelly",
-    "nome": "Gelatina de Netch",
+    "nome": "Gelatina de Medusa",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -4615,7 +4615,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-netch-jelly",
-    "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Netch",
+    "nome": "Elixir de Carapaça de Caranguejo e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5858,7 +5858,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-netch-jelly",
-    "nome": "Elixir de Couro de Rato e Gelatina de Netch",
+    "nome": "Elixir de Couro de Rato e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7660,7 +7660,7 @@
   },
   {
     "id": "pot-river-betty-netch-jelly",
-    "nome": "Elixir de Betta do Rio e Gelatina de Netch",
+    "nome": "Elixir de Betta do Rio e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10343,7 +10343,7 @@
   },
   {
     "id": "pot-poison-bloom-netch-jelly",
-    "nome": "Elixir de Flor Venenosa e Gelatina de Netch",
+    "nome": "Elixir de Flor Venenosa e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11596,7 +11596,7 @@
   },
   {
     "id": "pot-human-flesh-netch-jelly",
-    "nome": "Elixir de Carne Humana e Gelatina de Netch",
+    "nome": "Elixir de Carne Humana e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12724,7 +12724,7 @@
   },
   {
     "id": "pot-imp-stool-netch-jelly",
-    "nome": "Elixir de Fungo de Diabrete e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Diabrete e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -15974,7 +15974,7 @@
   },
   {
     "id": "pot-daedra-heart-netch-jelly",
-    "nome": "Elixir de Coração de Demônio e Gelatina de Netch",
+    "nome": "Elixir de Coração de Demônio e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16332,7 +16332,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-netch-jelly",
-    "nome": "Elixir de Olho de Felino e Gelatina de Netch",
+    "nome": "Elixir de Olho de Felino e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18127,7 +18127,7 @@
   },
   {
     "id": "pot-namira-s-rot-netch-jelly",
-    "nome": "Elixir de Fungo de Gualápoles e Gelatina de Netch",
+    "nome": "Elixir de Fungo de Gualápoles e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18467,7 +18467,7 @@
   },
   {
     "id": "pot-trama-root-netch-jelly",
-    "nome": "Elixir de Raiz de Trama e Gelatina de Netch",
+    "nome": "Elixir de Raiz de Trama e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19261,7 +19261,7 @@
   },
   {
     "id": "pot-bear-claws-netch-jelly",
-    "nome": "Elixir de Garras de Urso e Gelatina de Netch",
+    "nome": "Elixir de Garras de Urso e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22690,7 +22690,7 @@
   },
   {
     "id": "pot-canis-root-netch-jelly",
-    "nome": "Elixir de Raiz Canina e Gelatina de Netch",
+    "nome": "Elixir de Raiz Canina e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -22877,7 +22877,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-netch-jelly",
-    "nome": "Elixir de Peixe de Escamas Finas e Gelatina de Netch",
+    "nome": "Elixir de Peixe de Escamas Finas e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -23169,7 +23169,7 @@
   },
   {
     "id": "pot-giant-s-toe-netch-jelly",
-    "nome": "Elixir de Dedo de Gigante e Gelatina de Netch",
+    "nome": "Elixir de Dedo de Gigante e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23594,7 +23594,7 @@
   },
   {
     "id": "pot-creep-cluster-netch-jelly",
-    "nome": "Elixir de Tufo Rastejante e Gelatina de Netch",
+    "nome": "Elixir de Tufo Rastejante e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24417,7 +24417,7 @@
   },
   {
     "id": "pot-histcarp-netch-jelly",
-    "nome": "Elixir de Carpa de Pedra e Gelatina de Netch",
+    "nome": "Elixir de Carpa de Pedra e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24964,7 +24964,7 @@
   },
   {
     "id": "pot-large-antlers-netch-jelly",
-    "nome": "Elixir de Chifres de Alce e Gelatina de Netch",
+    "nome": "Elixir de Chifres de Alce e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25322,7 +25322,7 @@
   },
   {
     "id": "pot-silverside-perch-netch-jelly",
-    "nome": "Elixir de Perca Prateada e Gelatina de Netch",
+    "nome": "Elixir de Perca Prateada e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26041,7 +26041,7 @@
   },
   {
     "id": "pot-blue-dartwing-netch-jelly",
-    "nome": "Elixir de Libélula Azul e Gelatina de Netch",
+    "nome": "Elixir de Libélula Azul e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -26230,7 +26230,7 @@
   },
   {
     "id": "pot-gleamblossom-netch-jelly",
-    "nome": "Elixir de Flor Luminescente e Gelatina de Netch",
+    "nome": "Elixir de Flor Luminescente e Gelatina de Medusa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26401,7 +26401,7 @@
   },
   {
     "id": "pot-netch-jelly-powdered-mammoth-tusk",
-    "nome": "Elixir de Gelatina de Netch e Pó de Presa de Mamute",
+    "nome": "Elixir de Gelatina de Medusa e Pó de Presa de Mamute",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26419,7 +26419,7 @@
   },
   {
     "id": "pot-netch-jelly-pearl",
-    "nome": "Elixir de Gelatina de Netch e Pérola da Costa Sul",
+    "nome": "Elixir de Gelatina de Medusa e Pérola da Costa Sul",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26436,7 +26436,7 @@
   },
   {
     "id": "pot-netch-jelly-briar-heart",
-    "nome": "Elixir de Gelatina de Netch e Coração de Espinheiros",
+    "nome": "Elixir de Gelatina de Medusa e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26453,7 +26453,7 @@
   },
   {
     "id": "pot-netch-jelly-honeycomb",
-    "nome": "Elixir de Gelatina de Netch e Favo de Mel",
+    "nome": "Elixir de Gelatina de Medusa e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26470,7 +26470,7 @@
   },
   {
     "id": "pot-netch-jelly-hawk-beak",
-    "nome": "Elixir de Gelatina de Netch e Bico de Falcão",
+    "nome": "Elixir de Gelatina de Medusa e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26488,7 +26488,7 @@
   },
   {
     "id": "pot-netch-jelly-scaly-pholiota",
-    "nome": "Elixir de Gelatina de Netch e Cogumelo Escamoso",
+    "nome": "Elixir de Gelatina de Medusa e Cogumelo Escamoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26505,7 +26505,7 @@
   },
   {
     "id": "pot-netch-jelly-wisp-wrappings",
-    "nome": "Elixir de Gelatina de Netch e Faixas de Espírito",
+    "nome": "Elixir de Gelatina de Medusa e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26523,7 +26523,7 @@
   },
   {
     "id": "pot-netch-jelly-sabre-cat-tooth",
-    "nome": "Elixir de Gelatina de Netch e Dente de Felino",
+    "nome": "Elixir de Gelatina de Medusa e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26540,7 +26540,7 @@
   },
   {
     "id": "pot-netch-jelly-pine-thrush-egg",
-    "nome": "Elixir de Gelatina de Netch e Ovo de Tordo da Costa",
+    "nome": "Elixir de Gelatina de Medusa e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26557,7 +26557,7 @@
   },
   {
     "id": "pot-netch-jelly-salmon-roe",
-    "nome": "Elixir de Gelatina de Netch e Ovas de Salmão",
+    "nome": "Elixir de Gelatina de Medusa e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26574,7 +26574,7 @@
   },
   {
     "id": "pot-netch-jelly-small-pearl",
-    "nome": "Elixir de Gelatina de Netch e Pérola Pequena",
+    "nome": "Elixir de Gelatina de Medusa e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26591,7 +26591,7 @@
   },
   {
     "id": "pot-netch-jelly-orange-dartwing",
-    "nome": "Elixir de Gelatina de Netch e Libélula Alaranjada",
+    "nome": "Elixir de Gelatina de Medusa e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26608,7 +26608,7 @@
   },
   {
     "id": "pot-netch-jelly-purple-mountain-flower",
-    "nome": "Elixir de Gelatina de Netch e Flor Violeta",
+    "nome": "Elixir de Gelatina de Medusa e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26625,7 +26625,7 @@
   },
   {
     "id": "pot-netch-jelly-torchbug-thorax",
-    "nome": "Elixir de Gelatina de Netch e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Gelatina de Medusa e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26642,7 +26642,7 @@
   },
   {
     "id": "pot-netch-jelly-swamp-fungal-pod",
-    "nome": "Elixir de Gelatina de Netch e Fungo do Pântano",
+    "nome": "Elixir de Gelatina de Medusa e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26659,7 +26659,7 @@
   },
   {
     "id": "pot-netch-jelly-bee",
-    "nome": "Elixir de Gelatina de Netch e Abelha",
+    "nome": "Elixir de Gelatina de Medusa e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
