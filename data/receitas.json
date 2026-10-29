@@ -1558,7 +1558,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-libelula-alaranjada",
-    "nome": "Elixir de Carapaça de Caranguejo e Libélula Alaranjada",
+    "nome": "Elixir de Carapaça de Caranguejo e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -3286,7 +3286,7 @@
   },
   {
     "id": "rec-elixir-de-couro-de-rato-carbonizado-e-libelula-alaranjada",
-    "nome": "Elixir de Couro de Rato e Libélula Alaranjada",
+    "nome": "Elixir de Couro de Rato e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -3811,7 +3811,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-falcao-das-montanhas-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Penas de Falcão e Peixe da Costa Escarlate",
+    "nome": "Elixir de Penas de Falcão e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5321,7 +5321,7 @@
   },
   {
     "id": "rec-elixir-de-betty-do-rio-ancestral-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Betta do Rio e Sal do Mar de Sangue",
+    "nome": "Elixir de Betta do Rio e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -7841,7 +7841,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Sino da Morte e Peixe da Costa Escarlate",
+    "nome": "Elixir de Sino da Morte e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -7861,7 +7861,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Sino da Morte e Sal do Mar de Sangue",
+    "nome": "Elixir de Sino da Morte e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -8461,7 +8461,7 @@
   },
   {
     "id": "rec-elixir-de-flor-venenosa-da-garganta-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Flor Venenosa e Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -10081,7 +10081,7 @@
   },
   {
     "id": "rec-elixir-de-carne-de-proscrito-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Carne Humana e Peixe da Costa Escarlate",
+    "nome": "Elixir de Carne Humana e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -11241,7 +11241,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-do-imp-e-libelula-alaranjada",
-    "nome": "Elixir de Fungo de Diabrete e Libélula Alaranjada",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -12181,7 +12181,7 @@
   },
   {
     "id": "rec-elixir-de-flor-vermelha-de-thargrid-e-libelula-alaranjada",
-    "nome": "Elixir de Flor Vermelha e Libélula Alaranjada",
+    "nome": "Elixir de Flor Vermelha e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -12961,7 +12961,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Chifres de Cervo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chifres de Cervo e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -12981,7 +12981,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-jovens-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres de Cervo e Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -14401,7 +14401,7 @@
   },
   {
     "id": "rec-elixir-de-ovos-de-verme-quitinoso-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Ovo de Verme Gigante e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Verme Gigante e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15601,7 +15601,7 @@
   },
   {
     "id": "rec-elixir-de-olho-de-felino-das-ilhas-e-libelula-alaranjada",
-    "nome": "Elixir de Olho de Felino e Libélula Alaranjada",
+    "nome": "Elixir de Olho de Felino e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17721,7 +17721,7 @@
   },
   {
     "id": "rec-elixir-de-craca-do-rio-ancestral-e-libelula-alaranjada",
-    "nome": "Elixir de Craca de Rio e Libélula Alaranjada",
+    "nome": "Elixir de Craca de Rio e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -17961,7 +17961,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-de-trama-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Raiz de Trama e Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz de Trama e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -19021,7 +19021,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-libelula-alaranjada",
-    "nome": "Elixir de Garras de Urso e Libélula Alaranjada",
+    "nome": "Elixir de Garras de Urso e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -20141,7 +20141,7 @@
   },
   {
     "id": "rec-elixir-de-madeira-de-ent-carbonizado-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Mar de Sangue",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -23081,7 +23081,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Peixe de Escamas Finas e Peixe da Costa Escarlate",
+    "nome": "Elixir de Peixe de Escamas Finas e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23101,7 +23101,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-de-escamas-finas-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Peixe de Escamas Finas e Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe de Escamas Finas e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -23641,7 +23641,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Ovo de Tordo e Sal do Mar de Sangue",
+    "nome": "Elixir de Ovo de Tordo e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -24121,7 +24121,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-rastejantes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Tufo Rastejante e Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -24601,7 +24601,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-libelula-alaranjada",
-    "nome": "Elixir de Mirra da Geada e Libélula Alaranjada",
+    "nome": "Elixir de Mirra da Geada e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -24621,7 +24621,7 @@
   },
   {
     "id": "rec-elixir-de-mirra-da-geada-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Mirra da Geada e Peixe da Costa Escarlate",
+    "nome": "Elixir de Mirra da Geada e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25061,7 +25061,7 @@
   },
   {
     "id": "rec-elixir-de-carpa-de-pedra-e-libelula-alaranjada",
-    "nome": "Elixir de Carpa de Pedra e Libélula Alaranjada",
+    "nome": "Elixir de Carpa de Pedra e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -25681,7 +25681,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-libelula-alaranjada",
-    "nome": "Elixir de Chifres de Alce e Libélula Alaranjada",
+    "nome": "Elixir de Chifres de Alce e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -25721,7 +25721,7 @@
   },
   {
     "id": "rec-elixir-de-chifres-grandes-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Chifres de Alce e Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -26161,7 +26161,7 @@
   },
   {
     "id": "rec-elixir-de-perca-prateada-e-libelula-alaranjada",
-    "nome": "Elixir de Perca Prateada e Libélula Alaranjada",
+    "nome": "Elixir de Perca Prateada e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -26621,7 +26621,7 @@
   },
   {
     "id": "rec-elixir-de-flor-amarela-da-montanha-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Flor Amarela da Montanha e Peixe da Costa Escarlate",
+    "nome": "Elixir de Flor Amarela da Montanha e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26641,7 +26641,7 @@
   },
   {
     "id": "rec-elixir-de-flor-amarela-da-montanha-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Flor Amarela da Montanha e Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Amarela da Montanha e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -26861,7 +26861,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-azul-e-libelula-alaranjada",
-    "nome": "Elixir de Libélula Azul e Libélula Alaranjada",
+    "nome": "Elixir de Libélula Azul e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27341,7 +27341,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-netch-e-libelula-alaranjada",
-    "nome": "Elixir de Gelatina de Medusa e Libélula Alaranjada",
+    "nome": "Elixir de Gelatina de Medusa e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -27701,7 +27701,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-libelula-alaranjada",
-    "nome": "Elixir de Pó de Presa de Mamute e Libélula Alaranjada",
+    "nome": "Elixir de Pó de Presa de Mamute e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -27721,7 +27721,7 @@
   },
   {
     "id": "rec-elixir-de-presa-de-mamute-em-po-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Pó de Presa de Mamute e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pó de Presa de Mamute e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -28061,7 +28061,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-da-charneca-e-libelula-alaranjada",
-    "nome": "Elixir de Vagem da Charneca e Libélula Alaranjada",
+    "nome": "Elixir de Vagem da Charneca e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29041,7 +29041,7 @@
   },
   {
     "id": "rec-elixir-de-coroa-sangrenta-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Coroa Sangrenta e Peixe da Costa Escarlate",
+    "nome": "Elixir de Coroa Sangrenta e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -29661,7 +29661,7 @@
   },
   {
     "id": "rec-elixir-de-perola-da-costa-sul-e-libelula-alaranjada",
-    "nome": "Elixir de Pérola e Libélula Alaranjada",
+    "nome": "Elixir de Pérola e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -30041,7 +30041,7 @@
   },
   {
     "id": "rec-elixir-de-escamas-de-peixe-carniceiro-e-libelula-alaranjada",
-    "nome": "Elixir de Escamas de Piranha e Libélula Alaranjada",
+    "nome": "Elixir de Escamas de Piranha e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -30601,7 +30601,7 @@
   },
   {
     "id": "rec-elixir-de-favo-de-mel-e-libelula-alaranjada",
-    "nome": "Elixir de Favo de Mel e Libélula Alaranjada",
+    "nome": "Elixir de Favo de Mel e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -30921,7 +30921,7 @@
   },
   {
     "id": "rec-elixir-de-bico-de-falcao-e-libelula-alaranjada",
-    "nome": "Elixir de Bico de Falcão e Libélula Alaranjada",
+    "nome": "Elixir de Bico de Falcão e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -31141,7 +31141,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-escamoso-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Cogumelo Escamoso e Sal do Mar de Sangue",
+    "nome": "Elixir de Cogumelo Escamoso e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -31361,7 +31361,7 @@
   },
   {
     "id": "rec-elixir-de-faixas-de-espirito-e-libelula-alaranjada",
-    "nome": "Elixir de Faixas de Espírito e Libélula Alaranjada",
+    "nome": "Elixir de Faixas de Espírito e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -31761,7 +31761,7 @@
   },
   {
     "id": "rec-elixir-de-lavanda-selvagem-e-libelula-alaranjada",
-    "nome": "Elixir de Lavanda Selvagem e Libélula Alaranjada",
+    "nome": "Elixir de Lavanda Selvagem e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -31961,7 +31961,7 @@
   },
   {
     "id": "rec-elixir-de-casca-de-colmeia-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Casca de Colmeia e Peixe da Costa Escarlate",
+    "nome": "Elixir de Casca de Colmeia e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32441,7 +32441,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-criatura-e-libelula-alaranjada",
-    "nome": "Elixir de Cinzas de Criatura e Libélula Alaranjada",
+    "nome": "Elixir de Cinzas de Criatura e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -32641,7 +32641,7 @@
   },
   {
     "id": "rec-elixir-de-dentes-de-espectro-gelado-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Dentes de Espectro Gelado e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dentes de Espectro Gelado e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32801,7 +32801,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-libelula-alaranjada",
-    "nome": "Elixir de Dente de Grande Felino e Libélula Alaranjada",
+    "nome": "Elixir de Dente de Grande Felino e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -32821,7 +32821,7 @@
   },
   {
     "id": "rec-elixir-de-dente-de-felino-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Dente de Grande Felino e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dente de Grande Felino e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33181,7 +33181,7 @@
   },
   {
     "id": "rec-elixir-de-chapeu-branco-e-libelula-alaranjada",
-    "nome": "Elixir de Chapéu Branco e Libélula Alaranjada",
+    "nome": "Elixir de Chapéu Branco e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33201,7 +33201,7 @@
   },
   {
     "id": "rec-elixir-de-chapeu-branco-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Chapéu Branco e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chapéu Branco e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33401,7 +33401,7 @@
   },
   {
     "id": "rec-elixir-de-oleo-de-automato-anao-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Óleo de Autômato e Sal do Mar de Sangue",
+    "nome": "Elixir de Óleo de Autômato e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -33561,7 +33561,7 @@
   },
   {
     "id": "rec-elixir-de-cogumelo-de-raiz-e-libelula-alaranjada",
-    "nome": "Elixir de Cogumelo de Raiz e Libélula Alaranjada",
+    "nome": "Elixir de Cogumelo de Raiz e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -33781,7 +33781,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-mestra-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Raiz Mestra e Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz Mestra e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -33941,7 +33941,7 @@
   },
   {
     "id": "rec-elixir-de-gelatina-de-saltador-das-cinzas-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Gelatina de Gafanhoto e Peixe da Costa Escarlate",
+    "nome": "Elixir de Gelatina de Gafanhoto e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34041,7 +34041,7 @@
   },
   {
     "id": "rec-elixir-de-vagem-cinzenta-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Vagem Cinzenta e Peixe da Costa Escarlate",
+    "nome": "Elixir de Vagem Cinzenta e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34201,7 +34201,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-da-costa-e-libelula-alaranjada",
-    "nome": "Elixir de Ovo de Tordo da Costa e Libélula Alaranjada",
+    "nome": "Elixir de Ovo de Tordo da Costa e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -34221,7 +34221,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-tordo-da-costa-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Ovo de Tordo da Costa e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Tordo da Costa e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34361,7 +34361,7 @@
   },
   {
     "id": "rec-elixir-de-uvas-de-jasmim-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Uvas de Jasmim e Sal do Mar de Sangue",
+    "nome": "Elixir de Uvas de Jasmim e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34521,7 +34521,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-salmao-e-libelula-alaranjada",
-    "nome": "Elixir de Ovas de Salmão e Libélula Alaranjada",
+    "nome": "Elixir de Ovas de Salmão e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34541,7 +34541,7 @@
   },
   {
     "id": "rec-elixir-de-ovas-de-salmao-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Ovas de Salmão e Sal do Mar de Sangue",
+    "nome": "Elixir de Ovas de Salmão e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34681,7 +34681,7 @@
   },
   {
     "id": "rec-elixir-de-orelha-de-elfo-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Orelha-de-Elfo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Orelha-de-Elfo e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34781,7 +34781,7 @@
   },
   {
     "id": "rec-elixir-de-perola-pequena-e-libelula-alaranjada",
-    "nome": "Elixir de Pérola Pequena e Libélula Alaranjada",
+    "nome": "Elixir de Pérola Pequena e Libélula Laranja",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -34801,7 +34801,7 @@
   },
   {
     "id": "rec-elixir-de-perola-pequena-e-peixe-da-costa-escarlate",
-    "nome": "Elixir de Pérola Pequena e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pérola Pequena e Peixe-Espada do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -34821,7 +34821,7 @@
   },
   {
     "id": "rec-elixir-de-perola-pequena-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Pérola Pequena e Sal do Mar de Sangue",
+    "nome": "Elixir de Pérola Pequena e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -34921,7 +34921,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-ovas-de-peixe-carniceiro",
-    "nome": "Elixir de Libélula Alaranjada e Ovas de Piranha",
+    "nome": "Elixir de Libélula Laranja e Ovas de Piranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34941,7 +34941,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-flor-violeta",
-    "nome": "Elixir de Libélula Alaranjada e Flor Violeta",
+    "nome": "Elixir de Libélula Laranja e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -34961,7 +34961,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Libélula Alaranjada e Tórax de Vaga-lume",
+    "nome": "Elixir de Libélula Laranja e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -34981,7 +34981,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-espinho-da-morte",
-    "nome": "Elixir de Libélula Alaranjada e Espinho-da-Morte",
+    "nome": "Elixir de Libélula Laranja e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -35001,7 +35001,7 @@
   },
   {
     "id": "rec-elixir-de-libelula-alaranjada-e-abelha",
-    "nome": "Elixir de Libélula Alaranjada e Abelha",
+    "nome": "Elixir de Libélula Laranja e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35081,7 +35081,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-da-costa-escarlate-e-pilha-de-sal-do-mar-de-sangue",
-    "nome": "Elixir de Peixe da Costa Escarlate e Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe-Espada do Sangue e Sal do Sangue",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35101,7 +35101,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-da-costa-escarlate-e-flor-violeta",
-    "nome": "Elixir de Peixe da Costa Escarlate e Flor Violeta",
+    "nome": "Elixir de Peixe-Espada do Sangue e Flor Violeta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35121,7 +35121,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-da-costa-escarlate-e-liquen-gigante",
-    "nome": "Elixir de Peixe da Costa Escarlate e Líquen Gigante",
+    "nome": "Elixir de Peixe-Espada do Sangue e Líquen Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35141,7 +35141,7 @@
   },
   {
     "id": "rec-elixir-de-peixe-da-costa-escarlate-e-sais-igneos",
-    "nome": "Elixir de Peixe da Costa Escarlate e Sais Ígneos",
+    "nome": "Elixir de Peixe-Espada do Sangue e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35161,7 +35161,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-alho-das-hortas",
-    "nome": "Elixir de Sal do Mar de Sangue e Alho",
+    "nome": "Elixir de Sal do Sangue e Alho",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -35181,7 +35181,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-torax-de-inseto-lanterna",
-    "nome": "Elixir de Sal do Mar de Sangue e Tórax de Vaga-lume",
+    "nome": "Elixir de Sal do Sangue e Tórax de Vaga-lume",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -35201,7 +35201,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-sais-igneos",
-    "nome": "Elixir de Sal do Mar de Sangue e Sais Ígneos",
+    "nome": "Elixir de Sal do Sangue e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -35221,7 +35221,7 @@
   },
   {
     "id": "rec-elixir-de-pilha-de-sal-do-mar-de-sangue-e-acucar-lunar",
-    "nome": "Elixir de Sal do Mar de Sangue e Açúcar Lunar",
+    "nome": "Elixir de Sal do Sangue e Açúcar Lunar",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,

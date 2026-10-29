@@ -3693,7 +3693,7 @@
   },
   {
     "id": "ing-orange-dartwing",
-    "nome": "Libélula Alaranjada",
+    "nome": "Libélula Laranja",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -3769,7 +3769,7 @@
   },
   {
     "id": "ing-abecean-longfin",
-    "nome": "Peixe da Costa Escarlate",
+    "nome": "Peixe-Espada do Sangue",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -3807,7 +3807,7 @@
   },
   {
     "id": "ing-salt-pile",
-    "nome": "Sal do Mar de Sangue",
+    "nome": "Sal do Sangue",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -5641,7 +5641,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-orange-dartwing",
-    "nome": "Elixir de Carapaça de Caranguejo e Libélula Alaranjada",
+    "nome": "Elixir de Carapaça de Caranguejo e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6816,7 +6816,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-orange-dartwing",
-    "nome": "Elixir de Couro de Rato e Libélula Alaranjada",
+    "nome": "Elixir de Couro de Rato e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -7174,7 +7174,7 @@
   },
   {
     "id": "pot-hawk-feathers-abecean-longfin",
-    "nome": "Elixir de Penas de Falcão e Peixe da Costa Escarlate",
+    "nome": "Elixir de Penas de Falcão e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -8465,7 +8465,7 @@
   },
   {
     "id": "pot-river-betty-salt-pile",
-    "nome": "Elixir de Betta do Rio e Sal do Mar de Sangue",
+    "nome": "Elixir de Betta do Rio e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10620,7 +10620,7 @@
   },
   {
     "id": "pot-deathbell-abecean-longfin",
-    "nome": "Elixir de Sino da Morte e Peixe da Costa Escarlate",
+    "nome": "Elixir de Sino da Morte e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -10637,7 +10637,7 @@
   },
   {
     "id": "pot-deathbell-salt-pile",
-    "nome": "Elixir de Sino da Morte e Sal do Mar de Sangue",
+    "nome": "Elixir de Sino da Morte e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11149,7 +11149,7 @@
   },
   {
     "id": "pot-poison-bloom-salt-pile",
-    "nome": "Elixir de Flor Venenosa e Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Venenosa e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -12538,7 +12538,7 @@
   },
   {
     "id": "pot-human-flesh-abecean-longfin",
-    "nome": "Elixir de Carne Humana e Peixe da Costa Escarlate",
+    "nome": "Elixir de Carne Humana e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13529,7 +13529,7 @@
   },
   {
     "id": "pot-imp-stool-orange-dartwing",
-    "nome": "Elixir de Fungo de Diabrete e Libélula Alaranjada",
+    "nome": "Elixir de Fungo de Diabrete e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -14337,7 +14337,7 @@
   },
   {
     "id": "pot-red-mountain-flower-orange-dartwing",
-    "nome": "Elixir de Flor Vermelha e Libélula Alaranjada",
+    "nome": "Elixir de Flor Vermelha e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15001,7 +15001,7 @@
   },
   {
     "id": "pot-small-antlers-abecean-longfin",
-    "nome": "Elixir de Chifres de Cervo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chifres de Cervo e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -15019,7 +15019,7 @@
   },
   {
     "id": "pot-small-antlers-salt-pile",
-    "nome": "Elixir de Chifres de Cervo e Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Cervo e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16231,7 +16231,7 @@
   },
   {
     "id": "pot-chaurus-eggs-abecean-longfin",
-    "nome": "Elixir de Ovo de Verme Gigante e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Verme Gigante e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -17256,7 +17256,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-orange-dartwing",
-    "nome": "Elixir de Olho de Felino e Libélula Alaranjada",
+    "nome": "Elixir de Olho de Felino e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19068,7 +19068,7 @@
   },
   {
     "id": "pot-nordic-barnacle-orange-dartwing",
-    "nome": "Elixir de Craca de Rio e Libélula Alaranjada",
+    "nome": "Elixir de Craca de Rio e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19272,7 +19272,7 @@
   },
   {
     "id": "pot-trama-root-salt-pile",
-    "nome": "Elixir de Raiz de Trama e Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz de Trama e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20186,7 +20186,7 @@
   },
   {
     "id": "pot-bear-claws-orange-dartwing",
-    "nome": "Elixir de Garras de Urso e Libélula Alaranjada",
+    "nome": "Elixir de Garras de Urso e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21149,7 +21149,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-salt-pile",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Mar de Sangue",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23665,7 +23665,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-abecean-longfin",
-    "nome": "Elixir de Peixe de Escamas Finas e Peixe da Costa Escarlate",
+    "nome": "Elixir de Peixe de Escamas Finas e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23682,7 +23682,7 @@
   },
   {
     "id": "pot-cyrodilic-spadetail-salt-pile",
-    "nome": "Elixir de Peixe de Escamas Finas e Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe de Escamas Finas e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24144,7 +24144,7 @@
   },
   {
     "id": "pot-rock-warbler-egg-salt-pile",
-    "nome": "Elixir de Ovo de Tordo e Sal do Mar de Sangue",
+    "nome": "Elixir de Ovo de Tordo e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24555,7 +24555,7 @@
   },
   {
     "id": "pot-creep-cluster-salt-pile",
-    "nome": "Elixir de Tufo Rastejante e Sal do Mar de Sangue",
+    "nome": "Elixir de Tufo Rastejante e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24964,7 +24964,7 @@
   },
   {
     "id": "pot-frost-mirriam-orange-dartwing",
-    "nome": "Elixir de Mirra da Geada e Libélula Alaranjada",
+    "nome": "Elixir de Mirra da Geada e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24981,7 +24981,7 @@
   },
   {
     "id": "pot-frost-mirriam-abecean-longfin",
-    "nome": "Elixir de Mirra da Geada e Peixe da Costa Escarlate",
+    "nome": "Elixir de Mirra da Geada e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25360,7 +25360,7 @@
   },
   {
     "id": "pot-histcarp-orange-dartwing",
-    "nome": "Elixir de Carpa de Pedra e Libélula Alaranjada",
+    "nome": "Elixir de Carpa de Pedra e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25888,7 +25888,7 @@
   },
   {
     "id": "pot-large-antlers-orange-dartwing",
-    "nome": "Elixir de Chifres de Alce e Libélula Alaranjada",
+    "nome": "Elixir de Chifres de Alce e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25922,7 +25922,7 @@
   },
   {
     "id": "pot-large-antlers-salt-pile",
-    "nome": "Elixir de Chifres de Alce e Sal do Mar de Sangue",
+    "nome": "Elixir de Chifres de Alce e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26299,7 +26299,7 @@
   },
   {
     "id": "pot-silverside-perch-orange-dartwing",
-    "nome": "Elixir de Perca Prateada e Libélula Alaranjada",
+    "nome": "Elixir de Perca Prateada e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26693,7 +26693,7 @@
   },
   {
     "id": "pot-yellow-mountain-flower-abecean-longfin",
-    "nome": "Elixir de Flor Amarela da Montanha e Peixe da Costa Escarlate",
+    "nome": "Elixir de Flor Amarela da Montanha e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26710,7 +26710,7 @@
   },
   {
     "id": "pot-yellow-mountain-flower-salt-pile",
-    "nome": "Elixir de Flor Amarela da Montanha e Sal do Mar de Sangue",
+    "nome": "Elixir de Flor Amarela da Montanha e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26898,7 +26898,7 @@
   },
   {
     "id": "pot-blue-dartwing-orange-dartwing",
-    "nome": "Elixir de Libélula Azul e Libélula Alaranjada",
+    "nome": "Elixir de Libélula Azul e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27311,7 +27311,7 @@
   },
   {
     "id": "pot-netch-jelly-orange-dartwing",
-    "nome": "Elixir de Gelatina de Medusa e Libélula Alaranjada",
+    "nome": "Elixir de Gelatina de Medusa e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27617,7 +27617,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-orange-dartwing",
-    "nome": "Elixir de Pó de Presa de Mamute e Libélula Alaranjada",
+    "nome": "Elixir de Pó de Presa de Mamute e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27634,7 +27634,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-abecean-longfin",
-    "nome": "Elixir de Pó de Presa de Mamute e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pó de Presa de Mamute e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27925,7 +27925,7 @@
   },
   {
     "id": "pot-grass-pod-orange-dartwing",
-    "nome": "Elixir de Vagem da Charneca e Libélula Alaranjada",
+    "nome": "Elixir de Vagem da Charneca e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -28762,7 +28762,7 @@
   },
   {
     "id": "pot-bleeding-crown-abecean-longfin",
-    "nome": "Elixir de Coroa Sangrenta e Peixe da Costa Escarlate",
+    "nome": "Elixir de Coroa Sangrenta e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29293,7 +29293,7 @@
   },
   {
     "id": "pot-pearl-orange-dartwing",
-    "nome": "Elixir de Pérola e Libélula Alaranjada",
+    "nome": "Elixir de Pérola e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29617,7 +29617,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-orange-dartwing",
-    "nome": "Elixir de Escamas de Piranha e Libélula Alaranjada",
+    "nome": "Elixir de Escamas de Piranha e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -30093,7 +30093,7 @@
   },
   {
     "id": "pot-honeycomb-orange-dartwing",
-    "nome": "Elixir de Favo de Mel e Libélula Alaranjada",
+    "nome": "Elixir de Favo de Mel e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30370,7 +30370,7 @@
   },
   {
     "id": "pot-hawk-beak-orange-dartwing",
-    "nome": "Elixir de Bico de Falcão e Libélula Alaranjada",
+    "nome": "Elixir de Bico de Falcão e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -30561,7 +30561,7 @@
   },
   {
     "id": "pot-scaly-pholiota-salt-pile",
-    "nome": "Elixir de Cogumelo Escamoso e Sal do Mar de Sangue",
+    "nome": "Elixir de Cogumelo Escamoso e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -30748,7 +30748,7 @@
   },
   {
     "id": "pot-wisp-wrappings-orange-dartwing",
-    "nome": "Elixir de Faixas de Espírito e Libélula Alaranjada",
+    "nome": "Elixir de Faixas de Espírito e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31090,7 +31090,7 @@
   },
   {
     "id": "pot-lavender-orange-dartwing",
-    "nome": "Elixir de Lavanda Selvagem e Libélula Alaranjada",
+    "nome": "Elixir de Lavanda Selvagem e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31260,7 +31260,7 @@
   },
   {
     "id": "pot-beehive-husk-abecean-longfin",
-    "nome": "Elixir de Casca de Colmeia e Peixe da Costa Escarlate",
+    "nome": "Elixir de Casca de Colmeia e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31669,7 +31669,7 @@
   },
   {
     "id": "pot-spawn-ash-orange-dartwing",
-    "nome": "Elixir de Cinzas de Criatura e Libélula Alaranjada",
+    "nome": "Elixir de Cinzas de Criatura e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31841,7 +31841,7 @@
   },
   {
     "id": "pot-ice-wraith-teeth-abecean-longfin",
-    "nome": "Elixir de Dentes de Espectro Gelado e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dentes de Espectro Gelado e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -31978,7 +31978,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-orange-dartwing",
-    "nome": "Elixir de Dente de Grande Felino e Libélula Alaranjada",
+    "nome": "Elixir de Dente de Grande Felino e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -31995,7 +31995,7 @@
   },
   {
     "id": "pot-sabre-cat-tooth-abecean-longfin",
-    "nome": "Elixir de Dente de Grande Felino e Peixe da Costa Escarlate",
+    "nome": "Elixir de Dente de Grande Felino e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32302,7 +32302,7 @@
   },
   {
     "id": "pot-white-cap-orange-dartwing",
-    "nome": "Elixir de Chapéu Branco e Libélula Alaranjada",
+    "nome": "Elixir de Chapéu Branco e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32319,7 +32319,7 @@
   },
   {
     "id": "pot-white-cap-abecean-longfin",
-    "nome": "Elixir de Chapéu Branco e Peixe da Costa Escarlate",
+    "nome": "Elixir de Chapéu Branco e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32495,7 +32495,7 @@
   },
   {
     "id": "pot-dwarven-oil-salt-pile",
-    "nome": "Elixir de Óleo de Autômato e Sal do Mar de Sangue",
+    "nome": "Elixir de Óleo de Autômato e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32635,7 +32635,7 @@
   },
   {
     "id": "pot-mora-tapinella-orange-dartwing",
-    "nome": "Elixir de Cogumelo de Raiz e Libélula Alaranjada",
+    "nome": "Elixir de Cogumelo de Raiz e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -32823,7 +32823,7 @@
   },
   {
     "id": "pot-taproot-salt-pile",
-    "nome": "Elixir de Raiz Mestra e Sal do Mar de Sangue",
+    "nome": "Elixir de Raiz Mestra e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -32962,7 +32962,7 @@
   },
   {
     "id": "pot-ash-hopper-jelly-abecean-longfin",
-    "nome": "Elixir de Gelatina de Gafanhoto e Peixe da Costa Escarlate",
+    "nome": "Elixir de Gelatina de Gafanhoto e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33048,7 +33048,7 @@
   },
   {
     "id": "pot-ashen-grass-pod-abecean-longfin",
-    "nome": "Elixir de Vagem Cinzenta e Peixe da Costa Escarlate",
+    "nome": "Elixir de Vagem Cinzenta e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33184,7 +33184,7 @@
   },
   {
     "id": "pot-pine-thrush-egg-orange-dartwing",
-    "nome": "Elixir de Ovo de Tordo da Costa e Libélula Alaranjada",
+    "nome": "Elixir de Ovo de Tordo da Costa e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33201,7 +33201,7 @@
   },
   {
     "id": "pot-pine-thrush-egg-abecean-longfin",
-    "nome": "Elixir de Ovo de Tordo da Costa e Peixe da Costa Escarlate",
+    "nome": "Elixir de Ovo de Tordo da Costa e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33321,7 +33321,7 @@
   },
   {
     "id": "pot-jazbay-grapes-salt-pile",
-    "nome": "Elixir de Uvas de Jasmim e Sal do Mar de Sangue",
+    "nome": "Elixir de Uvas de Jasmim e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33458,7 +33458,7 @@
   },
   {
     "id": "pot-salmon-roe-orange-dartwing",
-    "nome": "Elixir de Ovas de Salmão e Libélula Alaranjada",
+    "nome": "Elixir de Ovas de Salmão e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33475,7 +33475,7 @@
   },
   {
     "id": "pot-salmon-roe-salt-pile",
-    "nome": "Elixir de Ovas de Salmão e Sal do Mar de Sangue",
+    "nome": "Elixir de Ovas de Salmão e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33594,7 +33594,7 @@
   },
   {
     "id": "pot-elves-ear-abecean-longfin",
-    "nome": "Elixir de Orelha-de-Elfo e Peixe da Costa Escarlate",
+    "nome": "Elixir de Orelha-de-Elfo e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33681,7 +33681,7 @@
   },
   {
     "id": "pot-small-pearl-orange-dartwing",
-    "nome": "Elixir de Pérola Pequena e Libélula Alaranjada",
+    "nome": "Elixir de Pérola Pequena e Libélula Laranja",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33698,7 +33698,7 @@
   },
   {
     "id": "pot-small-pearl-abecean-longfin",
-    "nome": "Elixir de Pérola Pequena e Peixe da Costa Escarlate",
+    "nome": "Elixir de Pérola Pequena e Peixe-Espada do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33715,7 +33715,7 @@
   },
   {
     "id": "pot-small-pearl-salt-pile",
-    "nome": "Elixir de Pérola Pequena e Sal do Mar de Sangue",
+    "nome": "Elixir de Pérola Pequena e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33801,7 +33801,7 @@
   },
   {
     "id": "pot-orange-dartwing-slaughterfish-egg",
-    "nome": "Elixir de Libélula Alaranjada e Ovas de Piranha",
+    "nome": "Elixir de Libélula Laranja e Ovas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33819,7 +33819,7 @@
   },
   {
     "id": "pot-orange-dartwing-purple-mountain-flower",
-    "nome": "Elixir de Libélula Alaranjada e Flor Violeta",
+    "nome": "Elixir de Libélula Laranja e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33836,7 +33836,7 @@
   },
   {
     "id": "pot-orange-dartwing-torchbug-thorax",
-    "nome": "Elixir de Libélula Alaranjada e Tórax de Vaga-lume",
+    "nome": "Elixir de Libélula Laranja e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33853,7 +33853,7 @@
   },
   {
     "id": "pot-orange-dartwing-scathecraw",
-    "nome": "Elixir de Libélula Alaranjada e Espinho-da-Morte",
+    "nome": "Elixir de Libélula Laranja e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33871,7 +33871,7 @@
   },
   {
     "id": "pot-orange-dartwing-bee",
-    "nome": "Elixir de Libélula Alaranjada e Abelha",
+    "nome": "Elixir de Libélula Laranja e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33940,7 +33940,7 @@
   },
   {
     "id": "pot-abecean-longfin-salt-pile",
-    "nome": "Elixir de Peixe da Costa Escarlate e Sal do Mar de Sangue",
+    "nome": "Elixir de Peixe-Espada do Sangue e Sal do Sangue",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33957,7 +33957,7 @@
   },
   {
     "id": "pot-abecean-longfin-purple-mountain-flower",
-    "nome": "Elixir de Peixe da Costa Escarlate e Flor Violeta",
+    "nome": "Elixir de Peixe-Espada do Sangue e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -33974,7 +33974,7 @@
   },
   {
     "id": "pot-abecean-longfin-giant-lichen",
-    "nome": "Elixir de Peixe da Costa Escarlate e Líquen Gigante",
+    "nome": "Elixir de Peixe-Espada do Sangue e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -33991,7 +33991,7 @@
   },
   {
     "id": "pot-abecean-longfin-fire-salts",
-    "nome": "Elixir de Peixe da Costa Escarlate e Sais Ígneos",
+    "nome": "Elixir de Peixe-Espada do Sangue e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -34008,7 +34008,7 @@
   },
   {
     "id": "pot-salt-pile-garlic",
-    "nome": "Elixir de Sal do Mar de Sangue e Alho",
+    "nome": "Elixir de Sal do Sangue e Alho",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -34025,7 +34025,7 @@
   },
   {
     "id": "pot-salt-pile-torchbug-thorax",
-    "nome": "Elixir de Sal do Mar de Sangue e Tórax de Vaga-lume",
+    "nome": "Elixir de Sal do Sangue e Tórax de Vaga-lume",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -34042,7 +34042,7 @@
   },
   {
     "id": "pot-salt-pile-fire-salts",
-    "nome": "Elixir de Sal do Mar de Sangue e Sais Ígneos",
+    "nome": "Elixir de Sal do Sangue e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -34059,7 +34059,7 @@
   },
   {
     "id": "pot-salt-pile-moon-sugar",
-    "nome": "Elixir de Sal do Mar de Sangue e Açúcar Lunar",
+    "nome": "Elixir de Sal do Sangue e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
