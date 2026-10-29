@@ -346,3 +346,7 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - **Não foi aprovada** a ampliação hipotética da descrição botânica/mágica. A criatura dragão não é origem literal do ingrediente na ficha atual.
 - **Somente o dossiê foi modificado**; curadoria, itens, receitas, runtimes e saves permanecem intactos.
 - **Próxima ficha participativa:** Coração de Demônio (`ing-daedra-heart`). Apresentar para decisão antes de fazer qualquer alteração.
+
+## Ciclo 22 — Coração de Demônio: manutenção aprovada (29/10/2026)
+
+O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III, Medo III e Aumentar Carisma III. Nome, descrição, raridade épica e ID permanecem. Seus 13 parceiros alquímicos são suficientes; potência III não exige redução. Não houve autorização para atributo novo, alteração de lore ou transformação. Somente esta documentação deve ser atualizada, sem modificar a curadoria, receitas, itens, runtime ou saves. Próxima ficha: Musgo Pendente (`ing-hanging-moss`).
