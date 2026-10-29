@@ -2705,7 +2705,7 @@
   },
   {
     "id": "ing-slaughterfish-scales",
-    "nome": "Escamas de Peixe Carniceiro",
+    "nome": "Escamas de Piranha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
     "origem": "curadoria_original_carcaca",
@@ -12921,7 +12921,7 @@
   },
   {
     "id": "pot-imp-stool-slaughterfish-scales",
-    "nome": "Elixir de Fungo de Diabrete e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Fungo de Diabrete e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -24237,7 +24237,7 @@
   },
   {
     "id": "pot-frost-mirriam-slaughterfish-scales",
-    "nome": "Elixir de Mirra da Geada e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Mirra da Geada e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25553,7 +25553,7 @@
   },
   {
     "id": "pot-silverside-perch-slaughterfish-scales",
-    "nome": "Elixir de Perca Prateada e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Perca Prateada e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27915,7 +27915,7 @@
   },
   {
     "id": "pot-tundra-cotton-slaughterfish-scales",
-    "nome": "Elixir de Algodão da Tundra e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Algodão da Tundra e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28069,7 +28069,7 @@
   },
   {
     "id": "pot-bleeding-crown-slaughterfish-scales",
-    "nome": "Elixir de Coroa Sangrenta e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Coroa Sangrenta e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28290,7 +28290,7 @@
   },
   {
     "id": "pot-boar-tusk-slaughterfish-scales",
-    "nome": "Elixir de Presa de Javali e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Presa de Javali e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28443,7 +28443,7 @@
   },
   {
     "id": "pot-pearl-slaughterfish-scales",
-    "nome": "Elixir de Pérola e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Pérola e Escamas de Piranha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28889,7 +28889,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-briar-heart",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Coração de Espinheiros",
+    "nome": "Elixir de Escamas de Piranha e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28906,7 +28906,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-honeycomb",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Favo de Mel",
+    "nome": "Elixir de Escamas de Piranha e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28923,7 +28923,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-hawk-beak",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Bico de Falcão",
+    "nome": "Elixir de Escamas de Piranha e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28940,7 +28940,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-frost-salts",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Sais da Geada",
+    "nome": "Elixir de Escamas de Piranha e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28957,7 +28957,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-snowberries",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Frutas da Neve",
+    "nome": "Elixir de Escamas de Piranha e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28974,7 +28974,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-ice-wraith-teeth",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Dentes de Espectro Gelado",
+    "nome": "Elixir de Escamas de Piranha e Dentes de Espectro Gelado",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28991,7 +28991,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-sabre-cat-tooth",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Dente de Felino",
+    "nome": "Elixir de Escamas de Piranha e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29008,7 +29008,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-thistle-branch",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Ramo de Cardo",
+    "nome": "Elixir de Escamas de Piranha e Ramo de Cardo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29026,7 +29026,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-white-cap",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Chapéu Branco",
+    "nome": "Elixir de Escamas de Piranha e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29043,7 +29043,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-mora-tapinella",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Cogumelo de Raiz",
+    "nome": "Elixir de Escamas de Piranha e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29060,7 +29060,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-small-pearl",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Pérola Pequena",
+    "nome": "Elixir de Escamas de Piranha e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29077,7 +29077,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-orange-dartwing",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Libélula Alaranjada",
+    "nome": "Elixir de Escamas de Piranha e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29094,7 +29094,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-slaughterfish-egg",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Ovas de Peixe Carniceiro",
+    "nome": "Elixir de Escamas de Piranha e Ovas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29111,7 +29111,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-purple-mountain-flower",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Flor Violeta",
+    "nome": "Elixir de Escamas de Piranha e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -29128,7 +29128,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-scathecraw",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Espinho-da-Morte",
+    "nome": "Elixir de Escamas de Piranha e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -29145,7 +29145,7 @@
   },
   {
     "id": "pot-slaughterfish-scales-moon-sugar",
-    "nome": "Elixir de Escamas de Peixe Carniceiro e Açúcar Lunar",
+    "nome": "Elixir de Escamas de Piranha e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
