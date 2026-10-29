@@ -761,7 +761,7 @@
   },
   {
     "id": "rec-elixir-de-quitina-de-caranguejo-carmesim-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Um Escriba",
+    "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -3741,7 +3741,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Raiz Botulínica e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Botulínica e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -3861,7 +3861,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-do-juramento-quebrado-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Raiz Botulínica e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Botulínica e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -5481,7 +5481,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Raiz Velada e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -5581,7 +5581,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Raiz Velada e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Velada e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -6201,7 +6201,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Raiz Velada Rubra e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada Rubra e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6301,7 +6301,7 @@
   },
   {
     "id": "rec-elixir-de-raiz-velada-rubra-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Raiz Velada Rubra e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Velada Rubra e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -6881,7 +6881,7 @@
   },
   {
     "id": "rec-elixir-de-sino-da-morte-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Sino da Morte e Cinzas de Um Escriba",
+    "nome": "Elixir de Sino da Morte e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -9881,7 +9881,7 @@
   },
   {
     "id": "rec-elixir-de-coracao-proibido-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Coração Humano e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Coração Humano e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -10801,7 +10801,7 @@
   },
   {
     "id": "rec-elixir-de-beladona-negra-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Beladona e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Beladona e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15181,7 +15181,7 @@
   },
   {
     "id": "rec-elixir-de-poeira-luminosa-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Poeira Luminosa e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Poeira Luminosa e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15661,7 +15661,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Penas de Bruxa e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Penas de Bruxa e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -15681,7 +15681,7 @@
   },
   {
     "id": "rec-elixir-de-penas-de-bruxa-das-sombras-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Penas de Bruxa e Cinzas de Um Escriba",
+    "nome": "Elixir de Penas de Bruxa e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -16061,7 +16061,7 @@
   },
   {
     "id": "rec-elixir-de-musgo-suspenso-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Musgo Pendente e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Musgo Pendente e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -17321,7 +17321,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-ancestral-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -17441,7 +17441,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-mariposa-ancestral-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas de Um Escriba",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -17741,7 +17741,7 @@
   },
   {
     "id": "rec-elixir-de-garras-de-urso-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Garras de Urso e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Garras de Urso e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -18361,7 +18361,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-azul-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Asa de Borboleta Azul e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Asa de Borboleta Azul e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -18481,7 +18481,7 @@
   },
   {
     "id": "rec-elixir-de-asa-de-borboleta-azul-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Asa de Borboleta Azul e Cinzas de Um Escriba",
+    "nome": "Elixir de Asa de Borboleta Azul e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -18741,7 +18741,7 @@
   },
   {
     "id": "rec-elixir-de-flor-azul-da-montanha-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Flor Azul da Montanha e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Flor Azul da Montanha e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -18841,7 +18841,7 @@
   },
   {
     "id": "rec-elixir-de-flor-azul-da-montanha-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Flor Azul da Montanha e Cinzas de Um Escriba",
+    "nome": "Elixir de Flor Azul da Montanha e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -19121,7 +19121,7 @@
   },
   {
     "id": "rec-elixir-de-madeira-de-ent-carbonizado-e-antena-do-cacador-quitinoso",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Antena de Caçador Quitinoso",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19401,7 +19401,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-ovo-de-galinha",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Galinha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Galinha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19421,7 +19421,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-ovo-de-falcao",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Falcão",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Falcão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19441,7 +19441,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-ovo-de-aranha",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Aranha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Aranha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19461,7 +19461,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-seiva-de-guardiao-arboreo",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Seiva de Guardião Arbóreo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19481,7 +19481,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-cachos-de-cinza",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cachos de Cinza",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cachos de Cinza",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19501,7 +19501,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cinzas de Um Escriba",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19521,7 +19521,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-fungo-de-bolha",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Fungo de Bolha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19541,7 +19541,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-farinha-de-ossos",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Farinha de Ossos",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Farinha de Ossos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19561,7 +19561,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-raiz-canina",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Raiz Canina",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Raiz Canina",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19581,7 +19581,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Peixe de Escamas Finas",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19601,7 +19601,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-dedo-de-gigante",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Dedo de Gigante",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Dedo de Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19621,7 +19621,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-ovo-de-tordo",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Tordo",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19641,7 +19641,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-garra-de-bruxa",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Garra de Bruxa",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Garra de Bruxa",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19661,7 +19661,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-sais-da-geada",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Sais da Geada",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19681,7 +19681,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-lavanda-selvagem",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Lavanda Selvagem",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19701,7 +19701,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-frutas-da-neve",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Frutas da Neve",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Frutas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -19721,7 +19721,7 @@
   },
   {
     "id": "rec-elixir-de-antena-do-cacador-quitinoso-e-cinzas-de-criatura",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cinzas de Criatura",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Criatura",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -20201,7 +20201,7 @@
   },
   {
     "id": "rec-elixir-de-ovo-de-aranha-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Ovo de Aranha e Cinzas de Um Escriba",
+    "nome": "Elixir de Ovo de Aranha e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -20561,7 +20561,7 @@
   },
   {
     "id": "rec-elixir-de-cachos-de-cinza-e-cinzas-de-um-escriba",
-    "nome": "Elixir de Cachos de Cinza e Cinzas de Um Escriba",
+    "nome": "Elixir de Cachos de Cinza e Cinzas de Escriba",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -20921,7 +20921,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-fungo-de-bolha",
-    "nome": "Elixir de Cinzas de Um Escriba e Fungo de Bolha",
+    "nome": "Elixir de Cinzas de Escriba e Fungo de Bolha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -20941,7 +20941,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-farinha-de-ossos",
-    "nome": "Elixir de Cinzas de Um Escriba e Farinha de Ossos",
+    "nome": "Elixir de Cinzas de Escriba e Farinha de Ossos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -20961,7 +20961,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-raiz-canina",
-    "nome": "Elixir de Cinzas de Um Escriba e Raiz Canina",
+    "nome": "Elixir de Cinzas de Escriba e Raiz Canina",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -20981,7 +20981,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-peixe-de-escamas-finas",
-    "nome": "Elixir de Cinzas de Um Escriba e Peixe de Escamas Finas",
+    "nome": "Elixir de Cinzas de Escriba e Peixe de Escamas Finas",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21001,7 +21001,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-dedo-de-gigante",
-    "nome": "Elixir de Cinzas de Um Escriba e Dedo de Gigante",
+    "nome": "Elixir de Cinzas de Escriba e Dedo de Gigante",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21021,7 +21021,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-ovo-de-tordo",
-    "nome": "Elixir de Cinzas de Um Escriba e Ovo de Tordo",
+    "nome": "Elixir de Cinzas de Escriba e Ovo de Tordo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -21041,7 +21041,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-lingua-de-dragao",
-    "nome": "Elixir de Cinzas de Um Escriba e Língua de Dragão",
+    "nome": "Elixir de Cinzas de Escriba e Língua de Dragão",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21061,7 +21061,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-favo-de-mel",
-    "nome": "Elixir de Cinzas de Um Escriba e Favo de Mel",
+    "nome": "Elixir de Cinzas de Escriba e Favo de Mel",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21081,7 +21081,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-sais-da-geada",
-    "nome": "Elixir de Cinzas de Um Escriba e Sais da Geada",
+    "nome": "Elixir de Cinzas de Escriba e Sais da Geada",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -21101,7 +21101,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-lavanda-selvagem",
-    "nome": "Elixir de Cinzas de Um Escriba e Lavanda Selvagem",
+    "nome": "Elixir de Cinzas de Escriba e Lavanda Selvagem",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21121,7 +21121,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-frutas-da-neve",
-    "nome": "Elixir de Cinzas de Um Escriba e Frutas da Neve",
+    "nome": "Elixir de Cinzas de Escriba e Frutas da Neve",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -21141,7 +21141,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-cinzas-de-criatura",
-    "nome": "Elixir de Cinzas de Um Escriba e Cinzas de Criatura",
+    "nome": "Elixir de Cinzas de Escriba e Cinzas de Criatura",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 24,
@@ -21161,7 +21161,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-ramo-de-cardo",
-    "nome": "Elixir de Cinzas de Um Escriba e Ramo de Cardo",
+    "nome": "Elixir de Cinzas de Escriba e Ramo de Cardo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21181,7 +21181,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-vagem-cinzenta",
-    "nome": "Elixir de Cinzas de Um Escriba e Vagem Cinzenta",
+    "nome": "Elixir de Cinzas de Escriba e Vagem Cinzenta",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 16,
@@ -21201,7 +21201,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-orelha-de-elfo",
-    "nome": "Elixir de Cinzas de Um Escriba e Orelha de Elfo",
+    "nome": "Elixir de Cinzas de Escriba e Orelha de Elfo",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21221,7 +21221,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-amanita-rubra",
-    "nome": "Elixir de Cinzas de Um Escriba e Amanita Rubra",
+    "nome": "Elixir de Cinzas de Escriba e Amanita Rubra",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,
@@ -21241,7 +21241,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-espinho-da-morte",
-    "nome": "Elixir de Cinzas de Um Escriba e Espinho-da-Morte",
+    "nome": "Elixir de Cinzas de Escriba e Espinho-da-Morte",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 8,
@@ -21261,7 +21261,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-abelha",
-    "nome": "Elixir de Cinzas de Um Escriba e Abelha",
+    "nome": "Elixir de Cinzas de Escriba e Abelha",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 32,
@@ -21281,7 +21281,7 @@
   },
   {
     "id": "rec-elixir-de-cinzas-de-um-escriba-e-sais-igneos",
-    "nome": "Elixir de Cinzas de Um Escriba e Sais Ígneos",
+    "nome": "Elixir de Cinzas de Escriba e Sais Ígneos",
     "estacao": "alquimia",
     "pericia": "alquimia",
     "nivel": 40,

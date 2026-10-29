@@ -1416,200 +1416,380 @@
     "nome": "Flor Azul da Montanha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Blue Mountain Flower",
     "efeitos": [
       "Restore Health",
-      "Damage Magicka Regen",
-      "Fortify Health",
+      "Fortify Constitution",
       "Fortify Conjuration"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 3,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Flor medicinal de encostas frias, usada para recuperar a vitalidade e facilitar rituais de conjuração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-burnt-spriggan-wood",
     "nome": "Madeira de Ent Carbonizado",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Burnt Spriggan Wood",
     "efeitos": [
-      "Slow",
       "Fortify Alteration",
-      "Weakness to Fire",
-      "Damage Magicka Regen"
+      "Reduce Dexterity",
+      "Weakness to Fire"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 4,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Madeira de um guardião vegetal destruído pelo fogo; ainda retém magia de transformação.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_alteracao",
+        "nome": "Aumentar Alteração",
+        "intensidade": 3
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-chaurus-hunter-antennae",
-    "nome": "Antena do Caçador Quitinoso",
+    "nome": "Antena de Caçador Quitinoso",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Chaurus Hunter Antennae",
     "efeitos": [
       "Fortify Enchanting",
-      "Damage Stamina",
-      "Damage Magicka Regen",
-      "Fortify Conjuration"
+      "Fortify Conjuration",
+      "Reduce Dexterity"
     ],
-    "raridade": "epico",
+    "raridade": "raro",
     "valor": 29,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 5,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Órgão sensorial de predador quitinoso, valioso para encantamentos e conjuração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-chicken-s-egg",
     "nome": "Ovo de Galinha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Chicken's Egg",
     "efeitos": [
       "Resist Magic",
-      "Damage Magicka Regen",
-      "Waterbreathing",
-      "Lingering Damage Stamina"
+      "Fortify Constitution",
+      "Damage Magicka Regen"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 1,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Ingrediente culinário abundante, usado como base de misturas de resistência.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_regeneracao_magia",
+        "nome": "Diminuir Regeneração de Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-hawk-s-egg",
     "nome": "Ovo de Falcão",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Hawk's Egg",
     "efeitos": [
-      "Resist Magic",
-      "Damage Magicka Regen",
-      "Waterbreathing",
-      "Lingering Damage Stamina"
+      "Fortify Perception",
+      "Fortify Dexterity",
+      "Resist Magic"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 14,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 2,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Ovo de ave de rapina empregado em tônicos de percepção e vigor.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_percepcao",
+        "nome": "Aumentar Percepção",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-spider-egg",
     "nome": "Ovo de Aranha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Spider Egg",
     "efeitos": [
-      "Fortify Lockpicking",
-      "Damage Stamina",
-      "Damage Magicka Regen",
-      "Fortify Marksman"
+      "Fortify Dexterity",
+      "Reduce Constitution",
+      "Damage Magicka Regen"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 3,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Ovo pegajoso usado em preparados de precisão e compostos debilitantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_regeneracao_magia",
+        "nome": "Diminuir Regeneração de Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-spriggan-sap",
     "nome": "Seiva de Guardião Arbóreo",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Spriggan Sap",
     "efeitos": [
       "Fortify Enchanting",
       "Fortify Alteration",
-      "Fortify Smithing",
-      "Damage Magicka Regen"
+      "Fortify Smithing"
     ],
     "raridade": "raro",
     "valor": 24,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 4,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Seiva encantada de espírito vegetal, utilizada por artesãos e transmutadores.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_encantamento",
+        "nome": "Aumentar Encantamento",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_alteracao",
+        "nome": "Aumentar Alteração",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_ferraria",
+        "nome": "Aumentar Ferraria",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-ash-creep-cluster",
     "nome": "Cachos de Cinza",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Ash Creep Cluster",
     "efeitos": [
-      "Fortify Destruction",
       "Resist Fire",
-      "Damage Stamina",
-      "Invisibility"
+      "Fortify Destruction",
+      "Reduce Constitution"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 5,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Frutos de trepadeira que prospera em cinzas quentes, favorecendo magia ígnea.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_destruicao",
+        "nome": "Aumentar Destruição",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-berit-s-ashes",
-    "nome": "Cinzas de Um Escriba",
+    "nome": "Cinzas de Escriba",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Berit's Ashes",
     "efeitos": [
+      "Fortify Conjuration",
       "Resist Fire",
-      "Ravage Stamina",
-      "Damage Stamina",
-      "Fortify Conjuration"
+      "Reduce Constitution"
     ],
-    "raridade": "comum",
+    "raridade": "raro",
     "valor": 9,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 1,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Cinzas preservadas de escriba envolvido em práticas rituais, usadas em conjuração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_conjuracao",
+        "nome": "Aumentar Conjuração",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_fogo",
+        "nome": "Resistência ao Fogo",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 2
+      }
+    ]
   },
   {
     "id": "ing-blisterwort",
     "nome": "Fungo de Bolha",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Blisterwort",
     "efeitos": [
       "Restore Health",
       "Frenzy",
-      "Damage Stamina",
-      "Fortify Smithing"
+      "Reduce Strength"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 2,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Fungo de polpa irritante empregado tanto em remédios quanto em fórmulas de agressividade.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_saude",
+        "nome": "Restaurar Saúde",
+        "intensidade": 2
+      },
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_forca",
+        "nome": "Diminuir Força",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-bone-meal",
@@ -3973,7 +4153,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-berit-s-ashes",
-    "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Um Escriba",
+    "nome": "Elixir de Carapaça de Caranguejo e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -6518,7 +6698,7 @@
   },
   {
     "id": "pot-jarrin-root-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Botulínica e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Botulínica e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -6622,7 +6802,7 @@
   },
   {
     "id": "pot-jarrin-root-berit-s-ashes",
-    "nome": "Elixir de Raiz Botulínica e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Botulínica e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8012,7 +8192,7 @@
   },
   {
     "id": "pot-nirnroot-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Velada e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8098,7 +8278,7 @@
   },
   {
     "id": "pot-nirnroot-berit-s-ashes",
-    "nome": "Elixir de Raiz Velada e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Velada e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8626,7 +8806,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-chaurus-hunter-antennae",
-    "nome": "Elixir de Raiz Velada Rubra e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Raiz Velada Rubra e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -8712,7 +8892,7 @@
   },
   {
     "id": "pot-crimson-nirnroot-berit-s-ashes",
-    "nome": "Elixir de Raiz Velada Rubra e Cinzas de Um Escriba",
+    "nome": "Elixir de Raiz Velada Rubra e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -9207,7 +9387,7 @@
   },
   {
     "id": "pot-deathbell-berit-s-ashes",
-    "nome": "Elixir de Sino da Morte e Cinzas de Um Escriba",
+    "nome": "Elixir de Sino da Morte e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -11776,7 +11956,7 @@
   },
   {
     "id": "pot-human-heart-chaurus-hunter-antennae",
-    "nome": "Elixir de Coração Humano e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Coração Humano e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -12561,7 +12741,7 @@
   },
   {
     "id": "pot-nightshade-chaurus-hunter-antennae",
-    "nome": "Elixir de Beladona e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Beladona e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16303,7 +16483,7 @@
   },
   {
     "id": "pot-glow-dust-chaurus-hunter-antennae",
-    "nome": "Elixir de Poeira Luminosa e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Poeira Luminosa e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -16713,7 +16893,7 @@
   },
   {
     "id": "pot-hagraven-feathers-chaurus-hunter-antennae",
-    "nome": "Elixir de Penas de Bruxa e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Penas de Bruxa e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16730,7 +16910,7 @@
   },
   {
     "id": "pot-hagraven-feathers-berit-s-ashes",
-    "nome": "Elixir de Penas de Bruxa e Cinzas de Um Escriba",
+    "nome": "Elixir de Penas de Bruxa e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -17056,7 +17236,7 @@
   },
   {
     "id": "pot-hanging-moss-chaurus-hunter-antennae",
-    "nome": "Elixir de Musgo Pendente e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Musgo Pendente e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18135,7 +18315,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-chaurus-hunter-antennae",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -18242,7 +18422,7 @@
   },
   {
     "id": "pot-ancestor-moth-wing-berit-s-ashes",
-    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas de Um Escriba",
+    "nome": "Elixir de Asa de Mariposa Ancestral e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -18500,7 +18680,7 @@
   },
   {
     "id": "pot-bear-claws-chaurus-hunter-antennae",
-    "nome": "Elixir de Garras de Urso e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Garras de Urso e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19029,7 +19209,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-chaurus-hunter-antennae",
-    "nome": "Elixir de Asa de Borboleta Azul e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Asa de Borboleta Azul e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19136,7 +19316,7 @@
   },
   {
     "id": "pot-blue-butterfly-wing-berit-s-ashes",
-    "nome": "Elixir de Asa de Borboleta Azul e Cinzas de Um Escriba",
+    "nome": "Elixir de Asa de Borboleta Azul e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19359,7 +19539,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-chaurus-hunter-antennae",
-    "nome": "Elixir de Flor Azul da Montanha e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Flor Azul da Montanha e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19445,7 +19625,7 @@
   },
   {
     "id": "pot-blue-mountain-flower-berit-s-ashes",
-    "nome": "Elixir de Flor Azul da Montanha e Cinzas de Um Escriba",
+    "nome": "Elixir de Flor Azul da Montanha e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19684,7 +19864,7 @@
   },
   {
     "id": "pot-burnt-spriggan-wood-chaurus-hunter-antennae",
-    "nome": "Elixir de Madeira de Ent Carbonizado e Antena do Caçador Quitinoso",
+    "nome": "Elixir de Madeira de Ent Carbonizado e Antena de Caçador Quitinoso",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19923,7 +20103,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-chicken-s-egg",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Galinha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Galinha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19940,7 +20120,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-hawk-s-egg",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Falcão",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Falcão",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19957,7 +20137,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spider-egg",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Aranha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Aranha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -19975,7 +20155,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spriggan-sap",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Seiva de Guardião Arbóreo",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Seiva de Guardião Arbóreo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19993,7 +20173,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-ash-creep-cluster",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cachos de Cinza",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cachos de Cinza",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20010,7 +20190,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-berit-s-ashes",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cinzas de Um Escriba",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20028,7 +20208,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-blisterwort",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Fungo de Bolha",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20045,7 +20225,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-bone-meal",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Farinha de Ossos",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20063,7 +20243,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-canis-root",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Raiz Canina",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Raiz Canina",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20080,7 +20260,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-cyrodilic-spadetail",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Peixe de Escamas Finas",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20097,7 +20277,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-giant-s-toe",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Dedo de Gigante",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20114,7 +20294,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-rock-warbler-egg",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Ovo de Tordo",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20131,7 +20311,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-hagraven-claw",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Garra de Bruxa",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Garra de Bruxa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20148,7 +20328,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-frost-salts",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Sais da Geada",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20165,7 +20345,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-lavender",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Lavanda Selvagem",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20182,7 +20362,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-snowberries",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Frutas da Neve",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20199,7 +20379,7 @@
   },
   {
     "id": "pot-chaurus-hunter-antennae-spawn-ash",
-    "nome": "Elixir de Antena do Caçador Quitinoso e Cinzas de Criatura",
+    "nome": "Elixir de Antena de Caçador Quitinoso e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -20610,7 +20790,7 @@
   },
   {
     "id": "pot-spider-egg-berit-s-ashes",
-    "nome": "Elixir de Ovo de Aranha e Cinzas de Um Escriba",
+    "nome": "Elixir de Ovo de Aranha e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -20917,7 +21097,7 @@
   },
   {
     "id": "pot-ash-creep-cluster-berit-s-ashes",
-    "nome": "Elixir de Cachos de Cinza e Cinzas de Um Escriba",
+    "nome": "Elixir de Cachos de Cinza e Cinzas de Escriba",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21225,7 +21405,7 @@
   },
   {
     "id": "pot-berit-s-ashes-blisterwort",
-    "nome": "Elixir de Cinzas de Um Escriba e Fungo de Bolha",
+    "nome": "Elixir de Cinzas de Escriba e Fungo de Bolha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21242,7 +21422,7 @@
   },
   {
     "id": "pot-berit-s-ashes-bone-meal",
-    "nome": "Elixir de Cinzas de Um Escriba e Farinha de Ossos",
+    "nome": "Elixir de Cinzas de Escriba e Farinha de Ossos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21262,7 +21442,7 @@
   },
   {
     "id": "pot-berit-s-ashes-canis-root",
-    "nome": "Elixir de Cinzas de Um Escriba e Raiz Canina",
+    "nome": "Elixir de Cinzas de Escriba e Raiz Canina",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21279,7 +21459,7 @@
   },
   {
     "id": "pot-berit-s-ashes-cyrodilic-spadetail",
-    "nome": "Elixir de Cinzas de Um Escriba e Peixe de Escamas Finas",
+    "nome": "Elixir de Cinzas de Escriba e Peixe de Escamas Finas",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21296,7 +21476,7 @@
   },
   {
     "id": "pot-berit-s-ashes-giant-s-toe",
-    "nome": "Elixir de Cinzas de Um Escriba e Dedo de Gigante",
+    "nome": "Elixir de Cinzas de Escriba e Dedo de Gigante",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21313,7 +21493,7 @@
   },
   {
     "id": "pot-berit-s-ashes-rock-warbler-egg",
-    "nome": "Elixir de Cinzas de Um Escriba e Ovo de Tordo",
+    "nome": "Elixir de Cinzas de Escriba e Ovo de Tordo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21330,7 +21510,7 @@
   },
   {
     "id": "pot-berit-s-ashes-dragon-s-tongue",
-    "nome": "Elixir de Cinzas de Um Escriba e Língua de Dragão",
+    "nome": "Elixir de Cinzas de Escriba e Língua de Dragão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21347,7 +21527,7 @@
   },
   {
     "id": "pot-berit-s-ashes-honeycomb",
-    "nome": "Elixir de Cinzas de Um Escriba e Favo de Mel",
+    "nome": "Elixir de Cinzas de Escriba e Favo de Mel",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21364,7 +21544,7 @@
   },
   {
     "id": "pot-berit-s-ashes-frost-salts",
-    "nome": "Elixir de Cinzas de Um Escriba e Sais da Geada",
+    "nome": "Elixir de Cinzas de Escriba e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21381,7 +21561,7 @@
   },
   {
     "id": "pot-berit-s-ashes-lavender",
-    "nome": "Elixir de Cinzas de Um Escriba e Lavanda Selvagem",
+    "nome": "Elixir de Cinzas de Escriba e Lavanda Selvagem",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21398,7 +21578,7 @@
   },
   {
     "id": "pot-berit-s-ashes-snowberries",
-    "nome": "Elixir de Cinzas de Um Escriba e Frutas da Neve",
+    "nome": "Elixir de Cinzas de Escriba e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21415,7 +21595,7 @@
   },
   {
     "id": "pot-berit-s-ashes-spawn-ash",
-    "nome": "Elixir de Cinzas de Um Escriba e Cinzas de Criatura",
+    "nome": "Elixir de Cinzas de Escriba e Cinzas de Criatura",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21433,7 +21613,7 @@
   },
   {
     "id": "pot-berit-s-ashes-thistle-branch",
-    "nome": "Elixir de Cinzas de Um Escriba e Ramo de Cardo",
+    "nome": "Elixir de Cinzas de Escriba e Ramo de Cardo",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21450,7 +21630,7 @@
   },
   {
     "id": "pot-berit-s-ashes-ashen-grass-pod",
-    "nome": "Elixir de Cinzas de Um Escriba e Vagem Cinzenta",
+    "nome": "Elixir de Cinzas de Escriba e Vagem Cinzenta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21467,7 +21647,7 @@
   },
   {
     "id": "pot-berit-s-ashes-elves-ear",
-    "nome": "Elixir de Cinzas de Um Escriba e Orelha de Elfo",
+    "nome": "Elixir de Cinzas de Escriba e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21484,7 +21664,7 @@
   },
   {
     "id": "pot-berit-s-ashes-fly-amanita",
-    "nome": "Elixir de Cinzas de Um Escriba e Amanita Rubra",
+    "nome": "Elixir de Cinzas de Escriba e Amanita Rubra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -21501,7 +21681,7 @@
   },
   {
     "id": "pot-berit-s-ashes-scathecraw",
-    "nome": "Elixir de Cinzas de Um Escriba e Espinho-da-Morte",
+    "nome": "Elixir de Cinzas de Escriba e Espinho-da-Morte",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21518,7 +21698,7 @@
   },
   {
     "id": "pot-berit-s-ashes-bee",
-    "nome": "Elixir de Cinzas de Um Escriba e Abelha",
+    "nome": "Elixir de Cinzas de Escriba e Abelha",
     "categoria": "pocao",
     "tipo": "veneno",
     "efeitos": [
@@ -21535,7 +21715,7 @@
   },
   {
     "id": "pot-berit-s-ashes-fire-salts",
-    "nome": "Elixir de Cinzas de Um Escriba e Sais Ígneos",
+    "nome": "Elixir de Cinzas de Escriba e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
