@@ -1,0 +1,24 @@
+name: Peren — Pena de Gaivota animada
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/icons/pena-gaivota.webp'
+      - 'assets/icons/pena-gaivota-animation.json'
+      - 'game.js'
+      - 'laboratorio-itens/app.js'
+      - 'sw.js'
+      - 'tests/qa_peren_feather_animation.mjs'
+      - '.github/workflows/peren-feather-animation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/qa_peren_feather_animation.mjs

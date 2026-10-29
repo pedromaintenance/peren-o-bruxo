@@ -1,0 +1,45 @@
+{
+  "schema": "peren.item-icon.animated-webp.v1",
+  "itemName": "Pena de Gaivota",
+  "sourceUpload": "Sprite de Cinco Penas Flutuantes(1).png",
+  "sourceDimensions": [
+    1916,
+    821
+  ],
+  "sourceSha256": "3b86d6524cd632d64a1cc3be2d551faae2905dc50dc4f39b7cda46be0435a819",
+  "sourceGitBlobIfPublished": "3557949e41e69ee5b5fdb19be630bf3534f0d382",
+  "sourcePreservation": "Original unmodified in supplied attachment; separate exact original copy retained outside GitHub",
+  "animation": "assets/icons/pena-gaivota.webp",
+  "outputDimensions": [
+    160,
+    160
+  ],
+  "timeline": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1
+  ],
+  "durationsMs": [
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165,
+    165
+  ],
+  "loop": 0,
+  "outputSha256": "9f00e5002f5e93eee2d9aa62065ebb4f91d59b3ca1759b83ba71c7fc3a9162f8",
+  "outputGitBlob": "e65ee5e49337711b5d898f348830cd0e4b269737",
+  "integration": [
+    "game.js iconAsset",
+    "laboratorio-itens/app.js sharedIcon",
+    "sw.js root PWA cache"
+  ]
+}
