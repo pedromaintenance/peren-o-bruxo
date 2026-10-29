@@ -3075,12 +3075,18 @@
           "id": "frenesi",
           "nome": "Frenesi",
           "intensidade": 2
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "nome": "Diminuir Sabedoria",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Resist Fire",
         "Fortify Strength",
-        "Frenzy"
+        "Frenzy",
+        "Reduce Wisdom"
       ]
     },
     "ing-scathecraw": {

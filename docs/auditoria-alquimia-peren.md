@@ -235,3 +235,7 @@ const efeitosGerados = [...contagem]
 - Velocidade passa de uma fonte (Penas de Falcão I) a duas (Libélula Azul II + Penas de Falcão I). Essa combinação compartilha apenas Velocidade e poderá gerar uma preparação correspondente quando o sistema dinâmico existir.
 - Não foram alterados `data/itens.json`, `data/receitas.json`, Phaser, runtime clássico ou saves.
 - **Próxima proposta para decisão:** Amanita Rubra (`ing-fly-amanita`) — adicionar `diminuir_sabedoria` II, permanecendo a distinção entre psicotropismo fictício, frenesi e debilitação de discernimento.
+
+## Ciclo 8 — decisão: Amanita Rubra (29/10/2026)
+
+Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à Amanita Rubra (`ing-fly-amanita`). Mantidos os três atributos anteriores. O efeito compartilha agora duas fontes: Betta do Rio I e Amanita Rubra II. Não houve mudança de motor, receitas, itens ou saves. Próxima consulta: Coração de Espinheiros e Vampirismo II, cuja coerência ainda está em avaliação.
