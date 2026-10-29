@@ -337,3 +337,12 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - **Continua válida a decisão canônica anterior:** Vampirismo pode causar transformação gradual em vampiro. Essa regra não exige alterar a ficha do Pó de Vampiro, nem foi implementada no runtime.
 - **Somente o dossiê foi atualizado**; curadoria, itens, receitas, runtimes e saves inalterados neste ciclo.
 - **Próxima ficha participativa:** Língua-de-Dragão (`ing-dragon-s-tongue`). Solicitar decisão antes de qualquer alteração.
+
+## Ciclo 21 — decisão concluída: Língua-de-Dragão (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha da Língua-de-Dragão (`ing-dragon-s-tongue`).
+- Permanecem **Resistência ao Fogo II**, **Aumentar Ilusão II** e **Aumentar Carisma I**, a descrição botânica original, raridade incomum, nome e ID.
+- O ingrediente possui 12 parceiros no catálogo atual: o Coração de Demônio compartilha Aumentar Carisma, Beladona e Cogumelo Escamoso compartilham Aumentar Ilusão, e outros compartilham Resistência ao Fogo.
+- **Não foi aprovada** a ampliação hipotética da descrição botânica/mágica. A criatura dragão não é origem literal do ingrediente na ficha atual.
+- **Somente o dossiê foi modificado**; curadoria, itens, receitas, runtimes e saves permanecem intactos.
+- **Próxima ficha participativa:** Coração de Demônio (`ing-daedra-heart`). Apresentar para decisão antes de fazer qualquer alteração.
