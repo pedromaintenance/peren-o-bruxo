@@ -390,3 +390,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - O ingrediente tem 16 parceiros por interseção de efeitos; Asa de Borboleta compartilha Restaurar Saúde e Diminuir Força. Não houve aprovação para aprofundamento da descrição nem quarto atributo.
 - **Somente o documento de auditoria foi alterado.** Nenhuma mudança na curadoria, receitas, itens, jogo ou saves.
 - **Próximo ingrediente para deliberação:** Mirra da Geada (`ing-frost-mirriam`), com 16 parceiros.
+
+## Ciclo 28 — decisão concluída: Mirra da Geada (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha da Mirra da Geada (`ing-frost-mirriam`).
+- Preservados **Aumentar Furtividade II**, **Resistência ao Gelo II** e **Diminuir Regeneração de Magia I**, além de nome, descrição, raridade incomum e ID.
+- O ingrediente possui 16 parceiros por efeito coincidente, incluindo Flor Violeta com duas interseções. Não houve aprovação para descrição adicional ou quarto atributo.
+- **Atualização exclusiva do dossiê.** Curadoria, itens, receitas, runtimes e saves permanecem intactos.
+- **Próxima ficha participativa:** Dentes de Espectro Gelado (`ing-ice-wraith-teeth`), aguardando deliberação.
