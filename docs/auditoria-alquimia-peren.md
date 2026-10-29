@@ -281,3 +281,10 @@ Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à
 A ordenação por número de parceiros **não é avaliação de potência**, apenas de oportunidade de combinações. Menor conectividade: Penas de Falcão (3); Raiz de Trama (9); Seiva de Ent (9); Cogumelo Escamoso (9); Cogumelo Luminescente (10); Couro de Rato (11); Pó de Vampiro (12); Língua-de-Dragão (12); Coração de Demônio (13); Musgo Pendente (14).
 
 **Próxima ficha participativa:** Penas de Falcão (`ing-hawk-feathers`), primeiro candidato a reavaliar porque era o ingrediente mais isolado, mesmo após a adição de Visão à Distância no Olho de Felino e Velocidade na Libélula Azul. Verificar novamente atributos, parceiros e possibilidades de combinação; não alterar sem decisão do criador.
+
+## Ciclo 14 — decisão concluída: Penas de Falcão (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente a ficha de Penas de Falcão (`ing-hawk-feathers`) **sem alterações**.
+- Permanecem Visão à Distância III, Voo II e Velocidade I, a raridade comum, a descrição e o ID. Seus 3 parceiros identificados são Pena de Gaivota (Voo), Olho de Felino (Visão à Distância) e Libélula Azul (Velocidade).
+- **Conclusão:** baixa conectividade não é erro por si só; três efeitos com um parceiro distinto cada já permitem experimentação. Não acrescentar atributos apenas por meta numérica.
+- `data/curadoria_ingredientes.json` **não modificado** nesta decisão. Próxima ficha para consulta: Raiz de Trama (`ing-trama-root`), com 9 parceiros, três atributos e sem proposta de alteração automática.
