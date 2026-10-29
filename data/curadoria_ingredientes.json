@@ -1086,6 +1086,296 @@
         "Reduce Dexterity",
         "Damage Magicka Regen"
       ]
+    },
+    "ing-blue-mountain-flower": {
+      "nome": "Flor Azul da Montanha",
+      "descricao": "Flor medicinal de encostas frias, usada para recuperar a vitalidade e facilitar rituais de conjuração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Constitution",
+        "Fortify Conjuration"
+      ]
+    },
+    "ing-burnt-spriggan-wood": {
+      "nome": "Madeira de Ent Carbonizado",
+      "descricao": "Madeira de um guardião vegetal destruído pelo fogo; ainda retém magia de transformação.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Alteration",
+        "Reduce Dexterity",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-chaurus-hunter-antennae": {
+      "nome": "Antena de Caçador Quitinoso",
+      "descricao": "Órgão sensorial de predador quitinoso, valioso para encantamentos e conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Conjuration",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-chicken-s-egg": {
+      "nome": "Ovo de Galinha",
+      "descricao": "Ingrediente culinário abundante, usado como base de misturas de resistência.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Constitution",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-hawk-s-egg": {
+      "nome": "Ovo de Falcão",
+      "descricao": "Ovo de ave de rapina empregado em tônicos de percepção e vigor.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Perception",
+        "Fortify Dexterity",
+        "Resist Magic"
+      ]
+    },
+    "ing-spider-egg": {
+      "nome": "Ovo de Aranha",
+      "descricao": "Ovo pegajoso usado em preparados de precisão e compostos debilitantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Reduce Constitution",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-spriggan-sap": {
+      "nome": "Seiva de Guardião Arbóreo",
+      "descricao": "Seiva encantada de espírito vegetal, utilizada por artesãos e transmutadores.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "nome": "Aumentar Ferraria",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Alteration",
+        "Fortify Smithing"
+      ]
+    },
+    "ing-ash-creep-cluster": {
+      "nome": "Cachos de Cinza",
+      "descricao": "Frutos de trepadeira que prospera em cinzas quentes, favorecendo magia ígnea.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Destruction",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-berit-s-ashes": {
+      "nome": "Cinzas de Escriba",
+      "descricao": "Cinzas preservadas de escriba envolvido em práticas rituais, usadas em conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Conjuration",
+        "Resist Fire",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-blisterwort": {
+      "nome": "Fungo de Bolha",
+      "descricao": "Fungo de polpa irritante empregado tanto em remédios quanto em fórmulas de agressividade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Frenzy",
+        "Reduce Strength"
+      ]
     }
   },
   "renomeacoes_textuais": {
@@ -1111,7 +1401,9 @@
     "Ovos de Verme Quitinoso": "Ovo de Verme Gigante",
     "Penas de Bruxa das Sombras": "Penas de Bruxa",
     "Musgo Suspenso": "Musgo Pendente",
-    "Craca do Rio Ancestral": "Craca de Rio"
+    "Craca do Rio Ancestral": "Craca de Rio",
+    "Antena do Caçador Quitinoso": "Antena de Caçador Quitinoso",
+    "Cinzas de Um Escriba": "Cinzas de Escriba"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
@@ -1149,7 +1441,17 @@
     "ing-trama-root",
     "ing-ancestor-moth-wing",
     "ing-bear-claws",
-    "ing-blue-butterfly-wing"
+    "ing-blue-butterfly-wing",
+    "ing-blue-mountain-flower",
+    "ing-burnt-spriggan-wood",
+    "ing-chaurus-hunter-antennae",
+    "ing-chicken-s-egg",
+    "ing-hawk-s-egg",
+    "ing-spider-egg",
+    "ing-spriggan-sap",
+    "ing-ash-creep-cluster",
+    "ing-berit-s-ashes",
+    "ing-blisterwort"
   ],
   "regras_alquimia": {
     "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
