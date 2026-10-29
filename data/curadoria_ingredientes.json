@@ -1523,7 +1523,7 @@
       ]
     },
     "ing-creep-cluster": {
-      "nome": "Cachos Rastejantes",
+      "nome": "Tufo Rastejante",
       "descricao": "Cachos de trepadeira rasteira usados em extratos para carga e recuperação arcana.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -1639,7 +1639,7 @@
       ]
     },
     "ing-large-antlers": {
-      "nome": "Chifres de Cervo Adulto",
+      "nome": "Chifres de Alce",
       "descricao": "Chifres maduros moídos para preparados de força e firmeza corporal.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -1698,7 +1698,9 @@
     "Seiva de Guardião Arbóreo": "Seiva de Ent",
     "Cachos de Cinza": "Tufo Cinzento",
     "Cinzas de Escriba": "Cinzas Mortuárias",
-    "Chifres Grandes": "Chifres de Cervo Adulto"
+    "Chifres Grandes": "Chifres de Cervo Adulto",
+    "Cachos Rastejantes": "Tufo Rastejante",
+    "Chifres de Cervo Adulto": "Chifres de Alce"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
