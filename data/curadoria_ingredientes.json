@@ -1146,7 +1146,7 @@
       ]
     },
     "ing-chaurus-hunter-antennae": {
-      "nome": "Antena de Caçador Quitinoso",
+      "nome": "Antena de Verme Gigante",
       "descricao": "Órgão sensorial de predador quitinoso, valioso para encantamentos e conjuração.",
       "raridade": "raro",
       "origem": "curadoria_original_carcaca",
@@ -1262,7 +1262,7 @@
       ]
     },
     "ing-spriggan-sap": {
-      "nome": "Seiva de Guardião Arbóreo",
+      "nome": "Seiva de Ent",
       "descricao": "Seiva encantada de espírito vegetal, utilizada por artesãos e transmutadores.",
       "raridade": "raro",
       "origem": "curadoria_original_carcaca",
@@ -1291,7 +1291,7 @@
       ]
     },
     "ing-ash-creep-cluster": {
-      "nome": "Cachos de Cinza",
+      "nome": "Tufo Cinzento",
       "descricao": "Frutos de trepadeira que prospera em cinzas quentes, favorecendo magia ígnea.",
       "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
@@ -1320,7 +1320,7 @@
       ]
     },
     "ing-berit-s-ashes": {
-      "nome": "Cinzas de Escriba",
+      "nome": "Cinzas Mortuárias",
       "descricao": "Cinzas preservadas de escriba envolvido em práticas rituais, usadas em conjuração.",
       "raridade": "raro",
       "origem": "curadoria_original_carcaca",
@@ -1403,7 +1403,11 @@
     "Musgo Suspenso": "Musgo Pendente",
     "Craca do Rio Ancestral": "Craca de Rio",
     "Antena do Caçador Quitinoso": "Antena de Caçador Quitinoso",
-    "Cinzas de Um Escriba": "Cinzas de Escriba"
+    "Cinzas de Um Escriba": "Cinzas de Escriba",
+    "Antena de Caçador Quitinoso": "Antena de Verme Gigante",
+    "Seiva de Guardião Arbóreo": "Seiva de Ent",
+    "Cachos de Cinza": "Tufo Cinzento",
+    "Cinzas de Escriba": "Cinzas Mortuárias"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
