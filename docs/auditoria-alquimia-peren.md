@@ -267,3 +267,17 @@ Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à
 - `aumentar_inteligencia` passa a ter duas fontes na curadoria: Musgo Parassol I e Raiz Mestra II. A mistura futura poderá ativar Aumentar Inteligência.
 - **Não alterados:** runtime clássico, Phaser, itens, receitas e saves.
 - **Próxima decisão:** Garra de Bruxa (`ing-hagraven-claw`) para `diminuir_magia` II, distinguindo diminuição temporária da capacidade mágica do dano à reserva atual.
+
+## Ciclo 12 — Garra de Bruxa aprovada; conectividade encerrada (29/10/2026)
+
+- **Decisão aprovada:** Garra de Bruxa (`ing-hagraven-claw`) recebe `diminuir_magia` (**Diminuir Magia II**) como quarto atributo; os três anteriores foram preservados.
+- **Nova descrição:** “Garra de feiticeira monstruosa utilizada em encantamentos, proteções e maldições capazes de reprimir temporariamente a capacidade mágica de outras criaturas.”
+- O campo legado `efeitos` recebe o rótulo `Reduce Magicka`; nenhuma mudança foi feita nos motores, itens, receitas ou saves.
+- A Garra de Bruxa II compartilha `diminuir_magia` com a Libélula Laranja, destravando o último efeito antes isolado no modelo de interseção.
+- **Recontagem após os nove ajustes aprovados:** 111 ingredientes, 53 efeitos distintos, 0 efeitos presentes em uma única fonte. Todos os 53 efeitos possuem pelo menos duas fontes.
+
+## Ciclo 13 — início da auditoria de conectividade geral (29/10/2026)
+
+A ordenação por número de parceiros **não é avaliação de potência**, apenas de oportunidade de combinações. Menor conectividade: Penas de Falcão (3); Raiz de Trama (9); Seiva de Ent (9); Cogumelo Escamoso (9); Cogumelo Luminescente (10); Couro de Rato (11); Pó de Vampiro (12); Língua-de-Dragão (12); Coração de Demônio (13); Musgo Pendente (14).
+
+**Próxima ficha participativa:** Penas de Falcão (`ing-hawk-feathers`), primeiro candidato a reavaliar porque era o ingrediente mais isolado, mesmo após a adição de Visão à Distância no Olho de Felino e Velocidade na Libélula Azul. Verificar novamente atributos, parceiros e possibilidades de combinação; não alterar sem decisão do criador.

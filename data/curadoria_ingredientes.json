@@ -1954,7 +1954,7 @@
     },
     "ing-hagraven-claw": {
       "nome": "Garra de Bruxa",
-      "descricao": "Garra de feiticeira monstruosa empregada em encantamentos e proteções arcanas.",
+      "descricao": "Garra de feiticeira monstruosa utilizada em encantamentos, proteções e maldições capazes de reprimir temporariamente a capacidade mágica de outras criaturas.",
       "raridade": "raro",
       "origem": "curadoria_original_carcaca",
       "atributos_revisados": true,
@@ -1973,12 +1973,18 @@
           "id": "dano_magia",
           "nome": "Dano à Magia",
           "intensidade": 1
+        },
+        {
+          "id": "diminuir_magia",
+          "nome": "Diminuir Magia",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Fortify Enchanting",
         "Resist Magic",
-        "Lingering Damage Magicka"
+        "Lingering Damage Magicka",
+        "Reduce Magicka"
       ]
     },
     "ing-tundra-cotton": {
