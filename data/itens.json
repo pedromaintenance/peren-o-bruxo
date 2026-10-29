@@ -1382,7 +1382,7 @@
     "referencia": "Blue Butterfly Wing",
     "efeitos": [
       "Fortify Enchanting",
-      "Damage Stamina",
+      "Reduce Dexterity",
       "Damage Magicka Regen"
     ],
     "raridade": "comum",
@@ -1400,8 +1400,8 @@
         "intensidade": 2
       },
       {
-        "id": "dano_stamina",
-        "nome": "Dano à Stamina",
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
         "intensidade": 1
       },
       {
