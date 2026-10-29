@@ -288,3 +288,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - Permanecem Visão à Distância III, Voo II e Velocidade I, a raridade comum, a descrição e o ID. Seus 3 parceiros identificados são Pena de Gaivota (Voo), Olho de Felino (Visão à Distância) e Libélula Azul (Velocidade).
 - **Conclusão:** baixa conectividade não é erro por si só; três efeitos com um parceiro distinto cada já permitem experimentação. Não acrescentar atributos apenas por meta numérica.
 - `data/curadoria_ingredientes.json` **não modificado** nesta decisão. Próxima ficha para consulta: Raiz de Trama (`ing-trama-root`), com 9 parceiros, três atributos e sem proposta de alteração automática.
+
+## Ciclo 15 — decisão concluída: Raiz de Trama (29/10/2026)
+
+- **Decisão expressa do criador:** manter integralmente sem alterações a ficha da Raiz de Trama (`ing-trama-root`).
+- Permanecem **Diminuir Velocidade II**, **Aumentar Capacidade de Carga II** e **Fraqueza à Eletricidade I**, assim como nome, descrição, raridade incomum e ID.
+- Foram identificados 9 ingredientes parceiros, distribuídos pelas três propriedades. A explicação hipotética das fibras condutoras **não foi aprovada** e portanto não foi incluída na descrição.
+- **Somente este dossiê foi atualizado**; nenhum arquivo de curadoria, receita, motor ou save foi modificado.
+- **Próxima ficha para decisão:** Seiva de Ent (`ing-spriggan-sap`), com 9 parceiros; não modificar antes de nova aprovação.
