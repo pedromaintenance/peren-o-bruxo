@@ -510,30 +510,30 @@
     "ing-nightshade": {
       "nome": "Beladona",
       "descricao": "Planta tóxica de sombra, conhecida pelo dano lento e por interferir na recuperação mágica.",
-      "raridade": "comum",
+      "raridade": "incomum",
       "origem": "curadoria_original_carcaca",
       "atributos_revisados": true,
       "atributos": [
         {
           "id": "dano_saude",
           "nome": "Dano à Saúde",
-          "intensidade": 2
+          "intensidade": 3
         },
         {
-          "id": "diminuir_regeneracao_magia",
-          "nome": "Diminuir Regeneração de Magia",
-          "intensidade": 2
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
-          "intensidade": 1
+          "id": "aumentar_ilusao",
+          "nome": "Aumentar Ilusão",
+          "intensidade": 2
         }
       ],
       "efeitos": [
         "Damage Health",
-        "Damage Magicka Regen",
-        "Lingering Damage Stamina"
+        "Fortify Magicka",
+        "Fortify Illusion"
       ]
     },
     "ing-red-mountain-flower": {
@@ -578,24 +578,24 @@
           "intensidade": 1
         },
         {
-          "id": "diminuir_regeneracao_stamina",
-          "nome": "Diminuir Regeneração de Stamina",
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
           "intensidade": 2
         },
         {
-          "id": "aumentar_defesa",
-          "nome": "Aumentar Defesa",
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
           "intensidade": 1
         }
       ],
       "efeitos": [
         "Damage Health",
-        "Damage Stamina Regen",
-        "Fortify Light Armor"
+        "Reduce Constitution",
+        "Fortify Dexterity"
       ]
     },
     "ing-small-antlers": {
-      "nome": "Chifres Jovens",
+      "nome": "Chifres de Cervo",
       "descricao": "Chifres imaturos moídos para unguentos de restauração e toxinas de efeito persistente.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -612,15 +612,15 @@
           "intensidade": 1
         },
         {
-          "id": "dano_stamina",
-          "nome": "Dano à Stamina",
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
           "intensidade": 1
         }
       ],
       "efeitos": [
         "Fortify Restoration",
         "Weakness to Poison",
-        "Lingering Damage Stamina"
+        "Fortify Dexterity"
       ]
     },
     "ing-troll-fat": {
@@ -711,9 +711,9 @@
       ]
     },
     "ing-chaurus-eggs": {
-      "nome": "Ovos de Verme Quitinoso",
+      "nome": "Ovo de Verme Gigante",
       "descricao": "Ovos translúcidos de vermes subterrâneos, usados em extratos furtivos e fortificantes.",
-      "raridade": "incomum",
+      "raridade": "raro",
       "origem": "curadoria_original_carcaca",
       "atributos_revisados": true,
       "atributos": [
@@ -723,8 +723,8 @@
           "intensidade": 2
         },
         {
-          "id": "aumentar_stamina",
-          "nome": "Aumentar Stamina",
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
           "intensidade": 2
         },
         {
@@ -735,7 +735,7 @@
       ],
       "efeitos": [
         "Invisibility",
-        "Fortify Stamina",
+        "Fortify Constitution",
         "Weakness to Poison"
       ]
     },
@@ -747,25 +747,25 @@
       "atributos_revisados": true,
       "atributos": [
         {
-          "id": "restaurar_saude",
-          "nome": "Restaurar Saúde",
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
           "intensidade": 3
         },
         {
           "id": "medo",
           "nome": "Medo",
-          "intensidade": 2
+          "intensidade": 3
         },
         {
-          "id": "dano_magia",
-          "nome": "Dano à Magia",
-          "intensidade": 2
+          "id": "aumentar_carisma",
+          "nome": "Aumentar Carisma",
+          "intensidade": 3
         }
       ],
       "efeitos": [
-        "Restore Health",
+        "Fortify Magicka",
         "Fear",
-        "Damage Magicka"
+        "Fortify Charisma"
       ]
     },
     "ing-eye-of-sabre-cat": {
@@ -776,8 +776,8 @@
       "atributos_revisados": true,
       "atributos": [
         {
-          "id": "restaurar_stamina",
-          "nome": "Restaurar Stamina",
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
           "intensidade": 2
         },
         {
@@ -792,7 +792,7 @@
         }
       ],
       "efeitos": [
-        "Restore Stamina",
+        "Fortify Dexterity",
         "Fortify Perception",
         "Restore Health"
       ]
@@ -816,7 +816,9 @@
     "Flor Vermelha de Thargrid": "Flor Vermelha",
     "Cauda de Rato das Docas": "Cauda de Rato",
     "Asa de Borboleta da Foz": "Asa de Borboleta",
-    "Olho de Felino das Ilhas": "Olho de Felino"
+    "Olho de Felino das Ilhas": "Olho de Felino",
+    "Chifres Jovens": "Chifres de Cervo",
+    "Ovos de Verme Quitinoso": "Ovo de Verme Gigante"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
