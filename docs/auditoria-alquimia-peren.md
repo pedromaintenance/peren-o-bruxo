@@ -312,3 +312,11 @@ A ordenação por número de parceiros **não é avaliação de potência**, ape
 - Observação de conectividade: 9 parceiros; Tufo Rastejante compartilha dois efeitos (Capacidade de Carga e Fraqueza à Magia). Não adicionar um quarto atributo apenas para elevar conectividade.
 - **Somente o dossiê foi atualizado**, sem modificar curadoria, itens, receitas, motor ou saves.
 - **Próxima ficha para decisão:** Cogumelo Luminescente (`ing-glowing-mushroom`), mantendo a revisão participativa.
+
+## Ciclo 18 — decisão concluída: Cogumelo Luminescente (29/10/2026)
+
+- **Decisão explícita do criador:** manter integralmente sem alterações a ficha do Cogumelo Luminescente (`ing-glowing-mushroom`).
+- Preservados **Aumentar Destruição II**, **Aumentar Ferraria II** e **Resistência à Eletricidade I**, assim como nome, descrição, raridade comum e ID.
+- O ingrediente apresenta 10 parceiros; Poeira Luminosa compartilha Aumentar Destruição e Resistência à Eletricidade, oferecendo combinação de dois efeitos. Expansão energética ou metalúrgica da descrição foi apenas proposta, **não aprovada**.
+- Atualizado **somente o dossiê**; `data/curadoria_ingredientes.json`, receitas, itens, runtimes e saves permanecem intocados neste ciclo.
+- **Próxima ficha participativa:** Couro de Rato (`ing-charred-skeever-hide`), para avaliação de coerência e conectividade, sem alteração automática.
