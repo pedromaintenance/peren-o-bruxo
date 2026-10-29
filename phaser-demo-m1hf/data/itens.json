@@ -2556,200 +2556,380 @@
     "nome": "Algodão da Tundra",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Tundra Cotton",
     "efeitos": [
-      "Fortify Barter",
-      "Fortify Block",
+      "Resist Magic",
       "Fortify Magicka",
-      "Resist Magic"
+      "Fortify Constitution"
     ],
-    "raridade": "incomum",
+    "raridade": "comum",
     "valor": 19,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 3,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Fibras de campos frios usadas em infusões protetoras e preparados de concentração.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 1
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-bleeding-crown",
     "nome": "Coroa Sangrenta",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Bleeding Crown",
     "efeitos": [
+      "Resist Magic",
       "Fortify Block",
-      "Weakness to Fire",
-      "Weakness to Poison",
-      "Resist Magic"
+      "Weakness to Fire"
     ],
-    "raridade": "raro",
+    "raridade": "incomum",
     "valor": 24,
     "peso": 0.1,
     "zona": "eldroth",
     "nivel": 4,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Fungo de chapéu rubro empregado em preparados defensivos, mas sensível ao fogo.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_fogo",
+        "nome": "Fraqueza ao Fogo",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-boar-tusk",
     "nome": "Presa de Javali",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Boar Tusk",
     "efeitos": [
-      "Fortify Block",
-      "Fortify Stamina",
-      "Frenzy",
-      "Fortify Health"
+      "Fortify Strength",
+      "Fortify Constitution",
+      "Frenzy"
     ],
-    "raridade": "epico",
+    "raridade": "comum",
     "valor": 29,
     "peso": 0.1,
     "zona": "shadar-riverie",
     "nivel": 5,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Presa robusta triturada em tônicos de força e agressividade.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_forca",
+        "nome": "Aumentar Força",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 2
+      },
+      {
+        "id": "frenesi",
+        "nome": "Frenesi",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-pearl",
-    "nome": "Pérola da Costa Sul",
+    "nome": "Pérola",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Pearl",
     "efeitos": [
-      "Restore Stamina",
+      "Restore Magicka",
       "Resist Shock",
-      "Fortify Block",
-      "Restore Magicka"
+      "Fortify Constitution"
     ],
-    "raridade": "comum",
+    "raridade": "incomum",
     "valor": 9,
     "peso": 0.1,
     "zona": "drakport",
     "nivel": 1,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Concreção marinha usada em elixires de recuperação arcana.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-slaughterfish-scales",
     "nome": "Escamas de Peixe Carniceiro",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Slaughterfish Scales",
     "efeitos": [
-      "Fortify Heavy Armor",
       "Fortify Block",
-      "Lingering Damage Health",
-      "Resist Frost"
+      "Resist Frost",
+      "Lingering Damage Health"
     ],
     "raridade": "comum",
     "valor": 14,
     "peso": 0.1,
     "zona": "ironwood",
     "nivel": 2,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Escamas grossas usadas em preparados protetores e antídotos para ambientes gelados.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 2
+      },
+      {
+        "id": "dano_saude",
+        "nome": "Dano à Saúde",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-briar-heart",
     "nome": "Coração de Espinheiros",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Briar Heart",
     "efeitos": [
-      "Restore Magicka",
-      "Fortify Block",
       "Fortify Magicka",
+      "Restore Magicka",
       "Paralysis"
     ],
-    "raridade": "incomum",
+    "raridade": "raro",
     "valor": 19,
     "peso": 0.1,
     "zona": "portomonte",
     "nivel": 3,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Núcleo vegetal espinhoso que concentra energia mágica, com efeitos imobilizantes.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_magia",
+        "nome": "Aumentar Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "restaurar_magia",
+        "nome": "Restaurar Magia",
+        "intensidade": 2
+      },
+      {
+        "id": "paralisia",
+        "nome": "Paralisia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-honeycomb",
     "nome": "Favo de Mel",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Honeycomb",
     "efeitos": [
-      "Restore Stamina",
-      "Ravage Stamina",
+      "Fortify Constitution",
       "Fortify Block",
-      "Fortify Light Armor"
+      "Reduce Dexterity"
     ],
-    "raridade": "raro",
+    "raridade": "comum",
     "valor": 24,
     "peso": 0.1,
     "zona": "alem-sul",
     "nivel": 4,
-    "icone": "🦋"
+    "icone": "🦋",
+    "descricao": "Favo nutritivo empregado em tônicos de vigor físico e proteção.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_constituicao",
+        "nome": "Aumentar Constituição",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_defesa",
+        "nome": "Aumentar Defesa",
+        "intensidade": 1
+      },
+      {
+        "id": "diminuir_destreza",
+        "nome": "Diminuir Destreza",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-hawk-beak",
     "nome": "Bico de Falcão",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Hawk Beak",
     "efeitos": [
-      "Restore Stamina",
-      "Resist Shock",
+      "Fortify Dexterity",
       "Resist Frost",
-      "Fortify Carry Weight"
+      "Resist Shock"
     ],
-    "raridade": "epico",
+    "raridade": "incomum",
     "valor": 29,
     "peso": 0.1,
     "zona": "boca-abismo",
     "nivel": 5,
-    "icone": "🧪"
+    "icone": "🧪",
+    "descricao": "Bico de ave de rapina usado em preparados de resistência e vigor.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_destreza",
+        "nome": "Aumentar Destreza",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_gelo",
+        "nome": "Resistência ao Gelo",
+        "intensidade": 2
+      },
+      {
+        "id": "resistencia_eletricidade",
+        "nome": "Resistência à Eletricidade",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-scaly-pholiota",
     "nome": "Cogumelo Escamoso",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Scaly Pholiota",
     "efeitos": [
+      "Fortify Carry Weight",
       "Fortify Illusion",
-      "Regenerate Stamina",
-      "Weakness to Magic",
-      "Fortify Carry Weight"
+      "Weakness to Magic"
     ],
     "raridade": "comum",
     "valor": 9,
     "peso": 0.1,
     "zona": "garganta",
     "nivel": 1,
-    "icone": "🍄"
+    "icone": "🍄",
+    "descricao": "Fungo lenhoso de escamas sobrepostas empregado em poções de carga e ilusão.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "aumentar_carga",
+        "nome": "Aumentar Capacidade de Carga",
+        "intensidade": 2
+      },
+      {
+        "id": "aumentar_ilusao",
+        "nome": "Aumentar Ilusão",
+        "intensidade": 2
+      },
+      {
+        "id": "fraqueza_magia",
+        "nome": "Fraqueza à Magia",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-wisp-wrappings",
     "nome": "Faixas de Espírito",
     "categoria": "ingrediente",
     "tipo": "alquimia",
-    "origem": "adaptado_skyrim_alquimia",
+    "origem": "curadoria_original_carcaca",
     "referencia": "Wisp Wrappings",
     "efeitos": [
       "Resist Magic",
       "Fortify Destruction",
-      "Restore Stamina",
-      "Fortify Carry Weight"
+      "Reduce Constitution"
     ],
-    "raridade": "comum",
+    "raridade": "raro",
     "valor": 14,
     "peso": 0.1,
     "zona": "thargrid",
     "nivel": 2,
-    "icone": "🌿"
+    "icone": "🌿",
+    "descricao": "Resíduos espectrais recolhidos após a dissipação de uma aparição.",
+    "atributos_revisados": true,
+    "atributos": [
+      {
+        "id": "resistencia_magia",
+        "nome": "Resistência à Magia",
+        "intensidade": 3
+      },
+      {
+        "id": "aumentar_destruicao",
+        "nome": "Aumentar Destruição",
+        "intensidade": 2
+      },
+      {
+        "id": "diminuir_constituicao",
+        "nome": "Diminuir Constituição",
+        "intensidade": 1
+      }
+    ]
   },
   {
     "id": "ing-frost-salts",
@@ -4683,7 +4863,7 @@
   },
   {
     "id": "pot-mudcrab-chitin-pearl",
-    "nome": "Elixir de Carapaça de Caranguejo e Pérola da Costa Sul",
+    "nome": "Elixir de Carapaça de Caranguejo e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5347,7 +5527,7 @@
   },
   {
     "id": "pot-vampire-dust-pearl",
-    "nome": "Elixir de Pó de Vampiro e Pérola da Costa Sul",
+    "nome": "Elixir de Pó de Vampiro e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -5909,7 +6089,7 @@
   },
   {
     "id": "pot-charred-skeever-hide-pearl",
-    "nome": "Elixir de Couro de Rato e Pérola da Costa Sul",
+    "nome": "Elixir de Couro de Rato e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -10723,7 +10903,7 @@
   },
   {
     "id": "pot-ectoplasm-pearl",
-    "nome": "Elixir de Ectoplasma e Pérola da Costa Sul",
+    "nome": "Elixir de Ectoplasma e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -11647,7 +11827,7 @@
   },
   {
     "id": "pot-human-flesh-pearl",
-    "nome": "Elixir de Carne Humana e Pérola da Costa Sul",
+    "nome": "Elixir de Carne Humana e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -13411,7 +13591,7 @@
   },
   {
     "id": "pot-red-mountain-flower-pearl",
-    "nome": "Elixir de Flor Vermelha e Pérola da Costa Sul",
+    "nome": "Elixir de Flor Vermelha e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16366,7 +16546,7 @@
   },
   {
     "id": "pot-eye-of-sabre-cat-pearl",
-    "nome": "Elixir de Olho de Felino e Pérola da Costa Sul",
+    "nome": "Elixir de Olho de Felino e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -16962,7 +17142,7 @@
   },
   {
     "id": "pot-glow-dust-pearl",
-    "nome": "Elixir de Poeira Luminosa e Pérola da Costa Sul",
+    "nome": "Elixir de Poeira Luminosa e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -19312,7 +19492,7 @@
   },
   {
     "id": "pot-bear-claws-pearl",
-    "nome": "Elixir de Garras de Urso e Pérola da Costa Sul",
+    "nome": "Elixir de Garras de Urso e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -23628,7 +23808,7 @@
   },
   {
     "id": "pot-creep-cluster-pearl",
-    "nome": "Elixir de Tufo Rastejante e Pérola da Costa Sul",
+    "nome": "Elixir de Tufo Rastejante e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -24468,7 +24648,7 @@
   },
   {
     "id": "pot-histcarp-pearl",
-    "nome": "Elixir de Carpa de Pedra e Pérola da Costa Sul",
+    "nome": "Elixir de Carpa de Pedra e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25015,7 +25195,7 @@
   },
   {
     "id": "pot-large-antlers-pearl",
-    "nome": "Elixir de Chifres de Alce e Pérola da Costa Sul",
+    "nome": "Elixir de Chifres de Alce e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -25356,7 +25536,7 @@
   },
   {
     "id": "pot-silverside-perch-pearl",
-    "nome": "Elixir de Perca Prateada e Pérola da Costa Sul",
+    "nome": "Elixir de Perca Prateada e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26075,7 +26255,7 @@
   },
   {
     "id": "pot-blue-dartwing-pearl",
-    "nome": "Elixir de Libélula Azul e Pérola da Costa Sul",
+    "nome": "Elixir de Libélula Azul e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26419,7 +26599,7 @@
   },
   {
     "id": "pot-netch-jelly-pearl",
-    "nome": "Elixir de Gelatina de Medusa e Pérola da Costa Sul",
+    "nome": "Elixir de Gelatina de Medusa e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -26693,7 +26873,7 @@
   },
   {
     "id": "pot-powdered-mammoth-tusk-pearl",
-    "nome": "Elixir de Pó de Presa de Mamute e Pérola da Costa Sul",
+    "nome": "Elixir de Pó de Presa de Mamute e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27000,7 +27180,7 @@
   },
   {
     "id": "pot-grass-pod-pearl",
-    "nome": "Elixir de Vagem da Charneca e Pérola da Costa Sul",
+    "nome": "Elixir de Vagem da Charneca e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27718,7 +27898,7 @@
   },
   {
     "id": "pot-tundra-cotton-pearl",
-    "nome": "Elixir de Algodão da Tundra e Pérola da Costa Sul",
+    "nome": "Elixir de Algodão da Tundra e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -27872,7 +28052,7 @@
   },
   {
     "id": "pot-bleeding-crown-pearl",
-    "nome": "Elixir de Coroa Sangrenta e Pérola da Costa Sul",
+    "nome": "Elixir de Coroa Sangrenta e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28093,7 +28273,7 @@
   },
   {
     "id": "pot-boar-tusk-pearl",
-    "nome": "Elixir de Presa de Javali e Pérola da Costa Sul",
+    "nome": "Elixir de Presa de Javali e Pérola",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28263,7 +28443,7 @@
   },
   {
     "id": "pot-pearl-slaughterfish-scales",
-    "nome": "Elixir de Pérola da Costa Sul e Escamas de Peixe Carniceiro",
+    "nome": "Elixir de Pérola e Escamas de Peixe Carniceiro",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28280,7 +28460,7 @@
   },
   {
     "id": "pot-pearl-briar-heart",
-    "nome": "Elixir de Pérola da Costa Sul e Coração de Espinheiros",
+    "nome": "Elixir de Pérola e Coração de Espinheiros",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28298,7 +28478,7 @@
   },
   {
     "id": "pot-pearl-honeycomb",
-    "nome": "Elixir de Pérola da Costa Sul e Favo de Mel",
+    "nome": "Elixir de Pérola e Favo de Mel",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28316,7 +28496,7 @@
   },
   {
     "id": "pot-pearl-hawk-beak",
-    "nome": "Elixir de Pérola da Costa Sul e Bico de Falcão",
+    "nome": "Elixir de Pérola e Bico de Falcão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28334,7 +28514,7 @@
   },
   {
     "id": "pot-pearl-wisp-wrappings",
-    "nome": "Elixir de Pérola da Costa Sul e Faixas de Espírito",
+    "nome": "Elixir de Pérola e Faixas de Espírito",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28351,7 +28531,7 @@
   },
   {
     "id": "pot-pearl-frost-salts",
-    "nome": "Elixir de Pérola da Costa Sul e Sais da Geada",
+    "nome": "Elixir de Pérola e Sais da Geada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28368,7 +28548,7 @@
   },
   {
     "id": "pot-pearl-glowing-mushroom",
-    "nome": "Elixir de Pérola da Costa Sul e Cogumelo Luminescente",
+    "nome": "Elixir de Pérola e Cogumelo Luminescente",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28385,7 +28565,7 @@
   },
   {
     "id": "pot-pearl-snowberries",
-    "nome": "Elixir de Pérola da Costa Sul e Frutas da Neve",
+    "nome": "Elixir de Pérola e Frutas da Neve",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28402,7 +28582,7 @@
   },
   {
     "id": "pot-pearl-sabre-cat-tooth",
-    "nome": "Elixir de Pérola da Costa Sul e Dente de Felino",
+    "nome": "Elixir de Pérola e Dente de Felino",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28419,7 +28599,7 @@
   },
   {
     "id": "pot-pearl-white-cap",
-    "nome": "Elixir de Pérola da Costa Sul e Chapéu Branco",
+    "nome": "Elixir de Pérola e Chapéu Branco",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28436,7 +28616,7 @@
   },
   {
     "id": "pot-pearl-dwarven-oil",
-    "nome": "Elixir de Pérola da Costa Sul e Óleo de Autômato Anão",
+    "nome": "Elixir de Pérola e Óleo de Autômato Anão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28453,7 +28633,7 @@
   },
   {
     "id": "pot-pearl-mora-tapinella",
-    "nome": "Elixir de Pérola da Costa Sul e Cogumelo de Raiz",
+    "nome": "Elixir de Pérola e Cogumelo de Raiz",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28470,7 +28650,7 @@
   },
   {
     "id": "pot-pearl-taproot",
-    "nome": "Elixir de Pérola da Costa Sul e Raiz Mestra",
+    "nome": "Elixir de Pérola e Raiz Mestra",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28487,7 +28667,7 @@
   },
   {
     "id": "pot-pearl-ash-hopper-jelly",
-    "nome": "Elixir de Pérola da Costa Sul e Gelatina de Saltador das Cinzas",
+    "nome": "Elixir de Pérola e Gelatina de Saltador das Cinzas",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28504,7 +28684,7 @@
   },
   {
     "id": "pot-pearl-pine-thrush-egg",
-    "nome": "Elixir de Pérola da Costa Sul e Ovo de Tordo da Costa",
+    "nome": "Elixir de Pérola e Ovo de Tordo da Costa",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28522,7 +28702,7 @@
   },
   {
     "id": "pot-pearl-salmon-roe",
-    "nome": "Elixir de Pérola da Costa Sul e Ovas de Salmão",
+    "nome": "Elixir de Pérola e Ovas de Salmão",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28539,7 +28719,7 @@
   },
   {
     "id": "pot-pearl-elves-ear",
-    "nome": "Elixir de Pérola da Costa Sul e Orelha de Elfo",
+    "nome": "Elixir de Pérola e Orelha de Elfo",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28556,7 +28736,7 @@
   },
   {
     "id": "pot-pearl-small-pearl",
-    "nome": "Elixir de Pérola da Costa Sul e Pérola Pequena",
+    "nome": "Elixir de Pérola e Pérola Pequena",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28573,7 +28753,7 @@
   },
   {
     "id": "pot-pearl-orange-dartwing",
-    "nome": "Elixir de Pérola da Costa Sul e Libélula Alaranjada",
+    "nome": "Elixir de Pérola e Libélula Alaranjada",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28590,7 +28770,7 @@
   },
   {
     "id": "pot-pearl-purple-mountain-flower",
-    "nome": "Elixir de Pérola da Costa Sul e Flor Violeta",
+    "nome": "Elixir de Pérola e Flor Violeta",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28607,7 +28787,7 @@
   },
   {
     "id": "pot-pearl-torchbug-thorax",
-    "nome": "Elixir de Pérola da Costa Sul e Tórax de Inseto-lanterna",
+    "nome": "Elixir de Pérola e Tórax de Inseto-lanterna",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28624,7 +28804,7 @@
   },
   {
     "id": "pot-pearl-swamp-fungal-pod",
-    "nome": "Elixir de Pérola da Costa Sul e Fungo do Pântano",
+    "nome": "Elixir de Pérola e Fungo do Pântano",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28641,7 +28821,7 @@
   },
   {
     "id": "pot-pearl-giant-lichen",
-    "nome": "Elixir de Pérola da Costa Sul e Líquen Gigante",
+    "nome": "Elixir de Pérola e Líquen Gigante",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28658,7 +28838,7 @@
   },
   {
     "id": "pot-pearl-bee",
-    "nome": "Elixir de Pérola da Costa Sul e Abelha",
+    "nome": "Elixir de Pérola e Abelha",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28675,7 +28855,7 @@
   },
   {
     "id": "pot-pearl-fire-salts",
-    "nome": "Elixir de Pérola da Costa Sul e Sais Ígneos",
+    "nome": "Elixir de Pérola e Sais Ígneos",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
@@ -28692,7 +28872,7 @@
   },
   {
     "id": "pot-pearl-moon-sugar",
-    "nome": "Elixir de Pérola da Costa Sul e Açúcar Lunar",
+    "nome": "Elixir de Pérola e Açúcar Lunar",
     "categoria": "pocao",
     "tipo": "pocao",
     "efeitos": [
