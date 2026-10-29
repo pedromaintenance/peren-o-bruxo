@@ -239,3 +239,12 @@ const efeitosGerados = [...contagem]
 ## Ciclo 8 — decisão: Amanita Rubra (29/10/2026)
 
 Aprovado pelo criador: adicionar Diminuir Sabedoria II (`diminuir_sabedoria`) à Amanita Rubra (`ing-fly-amanita`). Mantidos os três atributos anteriores. O efeito compartilha agora duas fontes: Betta do Rio I e Amanita Rubra II. Não houve mudança de motor, receitas, itens ou saves. Próxima consulta: Coração de Espinheiros e Vampirismo II, cuja coerência ainda está em avaliação.
+
+## Ciclo 9 — decisão aprovada: Coração de Espinheiros (29/10/2026)
+
+- **Aprovado pelo criador:** acrescentar `vampirismo` (**Vampirismo II**) a `ing-briar-heart`, preservando os três atributos anteriores e o ID.
+- **Descrição canônica revisada:** “Núcleo vegetal espinhoso e parasitário que concentra energia mágica, imobiliza suas presas e absorve a vitalidade de outros seres para sustentar a própria existência.”
+- Adicionado rótulo legado `Vampirism` como metadado. Efeito agora compartilhado com Pó de Vampiro (Vampirismo III).
+- **Decisão de design expressa:** Vampirismo **deve poder transformar alguém em vampiro com o tempo**. A progressão da transformação, condições, duração, acúmulo de exposição, resistência/reversão e consequências permanecem para definição futura; **não reduzir Vampirismo a simples drenagem de pontos de vida**.
+- Não alterados runtime clássico, Phaser, `data/itens.json`, `data/receitas.json` ou saves. Alteração somente na curadoria e documentação.
+- **Próxima ficha para decisão:** Fungo de Gualápoles (`ing-namira-s-rot`), possível `diminuir_carisma` II; associação ainda depende de justificativa de repulsa sobrenatural versus aspecto físico.
