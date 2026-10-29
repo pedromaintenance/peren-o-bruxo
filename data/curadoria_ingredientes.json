@@ -421,7 +421,7 @@
       ]
     },
     "ing-human-flesh": {
-      "nome": "Carne de Proscrito",
+      "nome": "Carne Humana",
       "descricao": "Ingrediente macabro negociado às escondidas; associa furtividade, transe e efeitos paralisantes.",
       "raridade": "raro",
       "origem": "curadoria_original_carcaca",
@@ -450,7 +450,7 @@
       ]
     },
     "ing-human-heart": {
-      "nome": "Coração Proibido",
+      "nome": "Coração Humano",
       "descricao": "Coração preservado por rituais obscuros, muito potente em misturas que alteram a vontade e drenam energia mágica.",
       "raridade": "epico",
       "origem": "curadoria_original_carcaca",
@@ -479,7 +479,7 @@
       ]
     },
     "ing-imp-stool": {
-      "nome": "Cogumelo do Imp",
+      "nome": "Fungo de Diabrete",
       "descricao": "Fungo de ambiente degradado, usado tanto como base medicinal quanto em toxinas imobilizantes.",
       "raridade": "comum",
       "origem": "curadoria_original_carcaca",
@@ -518,7 +518,10 @@
     "Betty do Rio Ancestral": "Betta do Rio",
     "Musgo Parassol de Eldroth": "Musgo Parassol",
     "Flor Venenosa da Garganta": "Flor Venenosa",
-    "Ectoplasma de Vandar": "Ectoplasma"
+    "Ectoplasma de Vandar": "Ectoplasma",
+    "Carne de Proscrito": "Carne Humana",
+    "Coração Proibido": "Coração Humano",
+    "Cogumelo do Imp": "Fungo de Diabrete"
   },
   "receitas_a_revisar_por_insumo": [
     "ing-felsaad-tern-feathers",
