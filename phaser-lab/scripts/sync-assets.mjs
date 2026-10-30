@@ -34,6 +34,7 @@ console.log('Catálogos oficiais da raiz copiados sem mutação para o build Pha
 
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
 // M1h is opt-in: derive comparison files from M1e source without overwriting it.
+await import('./normalize-peren-atlas.mjs');
 await import('./peren-m1h-generator.mjs');
 // M1h-B derives a third, optional head/silhouette candidate. Never overwrite M1e/M1h-A.
 await import('./peren-m1hb-generator.mjs');
