@@ -1,6 +1,6 @@
 /**
  * M1d -- shared, Phaser-independent, transaction-based RPG state adapter.
- * CLASSIC_KEY IS READ ONLY. Staged saves live in a separate key until release QA.
+ * Nenhum save clássico é lido ou migrado. Saves Phaser usam chave própria.
  * All mutations return new immutable snapshots and commit through a single gate.
  */
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
@@ -206,9 +206,9 @@ export function createProgressBridge(storage,c){
  let env;const staged=storage.getItem(PHASER_KEY);
  if(staged){env=checkEnvelope(JSON.parse(staged),c)}
  else{
-  // Never read a user's classic save from the public experimental Pages preview.
-  const classic=M1HF_PREVIEW?null:storage.getItem(CLASSIC_KEY);
-  env=classic?stageFromClassic(JSON.parse(classic),c):newEnvelope(newClassicState(),c,M1HF_PREVIEW?'m1hf-preview':'new-game');
+  // Pré-alfa: nunca importar automaticamente progresso da edição clássica.
+  // Dados e regras podem ser reaproveitados, mas o save é exclusivamente Phaser.
+  env=newEnvelope(newClassicState(),c,M1HF_PREVIEW?'m1hf-preview':'new-game');
  }
  const read=()=>jsonCopy(env);
  const sync=()=>{const latest=storage.getItem(PHASER_KEY);
