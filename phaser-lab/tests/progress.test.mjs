@@ -19,11 +19,13 @@ test('catalog preserves 2785 items and 2316 recipes; real default classic profil
  assert.equal(skillLevel(20),9); // raw XP is not the displayed skill level!
  assert.ok(toCombatProfile(stageFromClassic(s,c),c).attack>=20);
 });
-test('imports an existing classic save without overwriting it',()=>{
+test('pré-alfa nunca importa save clássico mesmo quando existe; preserva dados anteriores',()=>{
  const storage=new MemoryStorage(),original={...classic,level:7,gold:751,city:'portomonte',actions:1,exp:101,bag:{...classic.bag,'ing-hanging-moss':4},completed:['quest-alpha'],flags:{example:true}};
  storage.setItem(CLASSIC_KEY,JSON.stringify(original));const before=storage.getItem(CLASSIC_KEY);
- const bridge=createProgressBridge(storage,c);assert.equal(bridge.state.level,7);assert.equal(bridge.state.gold,751);
- assert.equal(bridge.state.bag['ing-hanging-moss'],4);assert.equal(bridge.source,'classic-import');
+ const bridge=createProgressBridge(storage,c);
+ assert.equal(bridge.state.level,1);assert.equal(bridge.state.gold,180);
+ assert.equal(bridge.state.bag['ing-hanging-moss'],undefined);
+ assert.notEqual(bridge.source,'classic-import');
  bridge.execute({type:'buy',id:'mat-agua-purificada'});
  assert.equal(storage.getItem(CLASSIC_KEY),before);
  assert.equal(JSON.parse(storage.getItem(PHASER_KEY)).character.gold,bridge.state.gold);
