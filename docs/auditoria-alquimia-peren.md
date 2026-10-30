@@ -398,3 +398,11 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - O ingrediente possui 16 parceiros por efeito coincidente, incluindo Flor Violeta com duas interseções. Não houve aprovação para descrição adicional ou quarto atributo.
 - **Atualização exclusiva do dossiê.** Curadoria, itens, receitas, runtimes e saves permanecem intactos.
 - **Próxima ficha participativa:** Dentes de Espectro Gelado (`ing-ice-wraith-teeth`), aguardando deliberação.
+
+## Ciclo 29 — decisão concluída: Dentes de Espectro Gelado (29/10/2026)
+
+- **Decisão explícita:** manter integralmente sem alterações `ing-ice-wraith-teeth`.
+- Preservados **Invisibilidade II**, **Aumentar Defesa II**, **Fraqueza ao Fogo II**, descrição, raridade rara, nome e ID.
+- O catálogo conta 17 parceiros por coincidência de efeito, incluindo Coroa Sangrenta com duas interseções. Mantém-se a correspondência legada `Fortify Heavy Armor` com atributo revisado `Aumentar Defesa`, sem redefinir mecanicamente agora.
+- **Somente este dossiê foi modificado**, sem edição da curadoria, receitas, itens, código ou saves. Nenhum quarto atributo ou mudança descritiva foi autorizado.
+- **Próxima ficha para deliberação:** Poeira Luminosa (`ing-glow-dust`), com 18 parceiros.
