@@ -1,0 +1,46 @@
+{
+  "peren": {
+    "status": "em_producao",
+    "artist": "Pixel art autoral procedural M1e · Projeto Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "atlas": "phaser/assets/characters/peren/peren-atlas.png",
+    "animation_data": "phaser/assets/characters/peren/atlas.json",
+    "portrait": "phaser/assets/characters/peren/portrait.png",
+    "qa": "M1e: 128 frames, 32 clips e 3 retratos verificados no CI; aprovação visual e Android físico pendentes"
+  },
+  "floresta-murin": {
+    "status": "em_producao",
+    "artist": "arte procedural autoral · Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "tileset": "phaser/assets/regions/floresta-murin/ground-tiles.png",
+    "props": "phaser/assets/regions/floresta-murin/",
+    "qa": "geração determinística/alcance 86 testes; renderização Phaser e Android pendentes"
+  },
+  "mob-galho-infectado": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-galho-infectado/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-galho-infectado/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-galho-infectado/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
+  },
+  "mob-fungo-violeta": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-fungo-violeta/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-fungo-violeta/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-fungo-violeta/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
+  },
+  "mob-ettercap": {
+    "status": "em_producao",
+    "artist": "pixel art procedural original · RPG Carcaça",
+    "license": "arte original para RPG Carcaça",
+    "portrait": "phaser/assets/monsters/mob-ettercap/portrait.png",
+    "atlas": "phaser/assets/monsters/mob-ettercap/atlas.png",
+    "animation_data": "phaser/assets/monsters/mob-ettercap/meta.json",
+    "qa": "7 clips/28 quadros testados; renderização navegador e Android pendentes"
+  }
+}

@@ -1,0 +1,36 @@
+name: Phaser — fonte, dados canônicos e contratos alquímicos
+on:
+  pull_request:
+    paths:
+      - 'phaser-lab/**'
+      - 'phaser/assets/**'
+      - 'data/**'
+      - '.github/workflows/phaser-migration-contract.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'phaser-lab/**'
+      - 'phaser/assets/**'
+      - 'data/**'
+      - '.github/workflows/phaser-migration-contract.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  phaser-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: phaser-lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências do motor Phaser
+        run: npm install --no-audit --no-fund
+      - name: Testar lógica, contratos alquímicos e sincronia dos JSONs
+        run: npm test
+      - name: Compilar Phaser com catálogos da raiz
+        run: npm run build
