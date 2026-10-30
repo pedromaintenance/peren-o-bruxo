@@ -17,6 +17,21 @@ await mkdir(town,{recursive:true});
 for(const file of ['visao-carcaca.webp']){
   await cp(join(classic,file),join(town,file),{force:true});
 }
+
+// M0: data/ is the ONE canonical catalog. Copy into the Phaser build
+// without modifying source data, running recipe generation or changing the
+// classic PWA. Legacy recipes remain legacy until dynamic alchemy is approved.
+const canonicalData=resolve(lab,'..','data');
+const packagedData=join(lab,'public','data');
+await mkdir(packagedData,{recursive:true});
+for(const name of [
+  'itens','receitas','magias','monstros','cidades',
+  'curadoria_ingredientes','expedicoes','missoes','reliquias_dnd','manifesto_dados'
+]){
+  await cp(join(canonicalData,name+'.json'),join(packagedData,name+'.json'),{force:true});
+}
+console.log('Catálogos oficiais da raiz copiados sem mutação para o build Phaser.');
+
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
 // M1h is opt-in: derive comparison files from M1e source without overwriting it.
 await import('./peren-m1h-generator.mjs');
