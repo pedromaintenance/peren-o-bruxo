@@ -410,3 +410,7 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 ## Ciclo 30 — Poeira Luminosa (30/10/2026)
 
 Decisão explícita: manter integralmente `ing-glow-dust`, sem alterações. Atributos preservados: Aumentar Destruição II, Resistência à Eletricidade II e Dano à Magia I. Nome, descrição, raridade e ID preservados. Conectividade: 18 parceiros, incluindo Cogumelo Luminescente com dois efeitos comuns. Sem aprovação para modificações de descrição ou quarto atributo. Este ciclo modifica somente o documento de auditoria; curadoria e arquivos do jogo intactos.
+
+## Ciclo 31 — Asa de Mariposa Lunar (30/10/2026)
+
+Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações. Atributos preservados: Invisibilidade II, Regenerar Saúde II e Dano à Magia I. Nome, descrição, raridade incomum e ID preservados. O ingrediente tem 18 parceiros no catálogo; Pó de Vampiro compartilha Invisibilidade e Regenerar Saúde, e Craca de Rio compartilha Regenerar Saúde e Dano à Magia. Não foi aprovada nenhuma expansão da descrição nem quarto atributo. Somente o dossiê é atualizado; não modificar curadoria, receitas ou motor. Próxima ficha participativa: Madeira de Ent Carbonizado (`ing-burnt-spriggan-wood`).
