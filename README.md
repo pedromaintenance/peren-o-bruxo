@@ -1,5 +1,7 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
+> **Direção de desenvolvimento (30/10/2026):** a edição clássica HTML/JS está congelada; toda nova jogabilidade será feita no **Phaser**. Ainda não há paridade completa nem substituição da página pública. O projeto está em pré-alfa e **não exige migração de saves entre motores**. Consulte o [roadmap da transição](docs/roadmap-transicao-phaser.md) e a [auditoria alquímica](docs/auditoria-alquimia-peren.md). A curadoria é canônica e receitas legadas não serão regeneradas automaticamente.
+
 **Versão 0.1.4 — atlas do protagonista auditado — Modo Livre sandbox jogável / base de dados extensível.**
 
 ## Um jogo, uma experiência livre
