@@ -418,3 +418,7 @@ Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações
 ## Ciclo 32 — Madeira de Ent Carbonizado (30/10/2026)
 
 **Decisão expressa do criador:** manter integralmente sem alterações a ficha `ing-burnt-spriggan-wood`. Permanecem Aumentar Alteração III, Diminuir Destreza II, Fraqueza ao Fogo I; preservados também nome, descrição, raridade rara e identificador. São 18 ingredientes parceiros por coincidência de efeitos, entre eles Seiva de Ent (Aumentar Alteração) e Dentes de Espectro Gelado (Fraqueza ao Fogo). Ideias de aprofundamento narrativo e quarto atributo não foram aprovadas. **Somente este dossiê foi modificado neste ciclo**; `data/curadoria_ingredientes.json`, itens, receitas, código e saves não devem ser alterados. **Próxima ficha para decisão:** Tufo Rastejante (`ing-creep-cluster`).
+
+## Ciclo 33 — Tufo Rastejante (30/10/2026)
+
+**Decisão explícita do criador:** manter integralmente sem alterações a ficha `ing-creep-cluster`. Preservados Aumentar Capacidade de Carga II, Restaurar Magia II e Fraqueza à Magia I, além de nome, descrição, raridade comum e ID. São 18 parceiros por efeitos compartilhados; Cogumelo Escamoso compartilha Aumentar Capacidade de Carga e Fraqueza à Magia, Óleo de Autômato compartilha Restaurar Magia e Fraqueza à Magia. Não foram aprovados novos atributos nem mudanças descritivas. **Somente este dossiê foi alterado**, sem mudanças no JSON da curadoria, receitas, itens, código ou saves. **Próximo ingrediente para decisão:** Gelatina de Gafanhoto (`ing-ash-hopper-jelly`).
