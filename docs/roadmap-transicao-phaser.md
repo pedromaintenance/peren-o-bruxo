@@ -65,3 +65,15 @@
 - [Código clássico congelado](../game.js)
 - [Fonte Phaser incorporada](../phaser-lab/src/)
 - [Prévia atual no Pages](https://pedromaintenance.github.io/peren-o-bruxo/phaser-demo-m1hf/?art=m1hf)
+
+
+## Execução M0 — evidências de 30/10/2026
+- PR de implementação: [#94](https://github.com/pedromaintenance/peren-o-bruxo/pull/94) em **draft**, sem publicação do Phaser como edição principal.
+- Fonte Phaser e assets originais incorporados à branch de transição; `main` e `phaser-demo-m1hf/` não foram modificados.
+- O build agora copia os JSONs da raiz (incluindo `curadoria_ingredientes.json`, missões e expedições) para `phaser-lab/public/data/` antes de empacotar. **Nenhuma receita legada é regenerada**.
+- O atlas canônico 16×8 é rearranjado **somente em cópia de build** para o contrato histórico 32×4; o teste verifica igualdade RGBA de **todos os 128 quadros**, frame a frame.
+- Geradores de variantes antigas M1h-A–D não são reaplicados à arte v5; candidatos já publicados são reutilizados como artefatos históricos, sem intervenção criativa.
+- [CI Phaser M0](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40998037074): **221 testes aprovados, 0 falhas; Vite compilou com sucesso**.
+- [QA Modo Livre](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40998037069): **aprovado**.
+- [QA oficial de arte legado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40998037195): **falhou** em comparação do gerador antigo de caminhada com o atlas v5. O diff desta PR não altera o clássico, mas a falha precisa ser esclarecida antes do merge. Não substituir o teste por aprovação fictícia.
+- **Status real:** motor compilável e contratos centrais validados na PR, ainda **não mesclado** e **não lançado**. Próximo trabalho: paridade M1, iniciando pela transação de equipamentos e consumíveis.
