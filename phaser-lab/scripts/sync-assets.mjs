@@ -33,20 +33,12 @@ for(const name of [
 console.log('Catálogos oficiais da raiz copiados sem mutação para o build Phaser.');
 
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
-// M1h is opt-in: derive comparison files from M1e source without overwriting it.
-await import('./normalize-peren-atlas.mjs');
-await import('./peren-m1h-generator.mjs');
-// M1h-B derives a third, optional head/silhouette candidate. Never overwrite M1e/M1h-A.
-await import('./peren-m1hb-generator.mjs');
-// M1h-C is an optional refinement, generated last; never overwrite earlier art.
-await import('./peren-m1hc-generator.mjs');
-// M1h-D builds the optional severe-expression candidate after M1h-C.
-await import('./peren-m1hd-generator.mjs');
-
-// M1h-E optional monster art, generated after legacy source synchronization.
-await import('./murin-m1he-generator.mjs');
-// M1h-F uses a CC0 Kenney sprite set to generate its opt-in Ettercap atlas.
-await import('./murin-m1hf-generator.mjs');
-
-// M1h-F botanical pass replaces earlier M1h-E fallbacks with separately source-backed monster art.
-await import('./murin-m1hf-botanical-generator.mjs');
+// The M1h variants and M1he/M1hf monster art are HISTORICAL preview artifacts.
+// The generators predate the approved v5 canonical atlas/palette and must NOT
+// automatically re-colour or redraw current Peren. Copy published candidates
+// unchanged, keeping the modern canonical base under public/art/.
+const archivedPreview=resolve(lab,'..','phaser-demo-m1hf');
+for(const variant of ['art-m1h','art-m1hb','art-m1hc','art-m1hd','art-m1he','art-m1hf']){
+  await cp(join(archivedPreview,variant),join(lab,'public',variant),{recursive:true,force:true});
+}
+console.log('Variantes antigas importadas como arquivo visual imutável; geradores obsoletos desativados.');
