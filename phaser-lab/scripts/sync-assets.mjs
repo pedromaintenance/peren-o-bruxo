@@ -33,6 +33,9 @@ for(const name of [
 console.log('Catálogos oficiais da raiz copiados sem mutação para o build Phaser.');
 
 console.log('Sprites M1e e cenários de referência clássicos sincronizados para o Phaser');
+// Preserve exact frame IDs while adapting the canonical 16×8 copy for legacy 32×4 consumers.
+await import('./normalize-peren-atlas.mjs');
+
 // The M1h variants and M1he/M1hf monster art are HISTORICAL preview artifacts.
 // The generators predate the approved v5 canonical atlas/palette and must NOT
 // automatically re-colour or redraw current Peren. Copy published candidates
