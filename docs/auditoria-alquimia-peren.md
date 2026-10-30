@@ -414,3 +414,7 @@ Decisão explícita: manter integralmente `ing-glow-dust`, sem alterações. Atr
 ## Ciclo 31 — Asa de Mariposa Lunar (30/10/2026)
 
 Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações. Atributos preservados: Invisibilidade II, Regenerar Saúde II e Dano à Magia I. Nome, descrição, raridade incomum e ID preservados. O ingrediente tem 18 parceiros no catálogo; Pó de Vampiro compartilha Invisibilidade e Regenerar Saúde, e Craca de Rio compartilha Regenerar Saúde e Dano à Magia. Não foi aprovada nenhuma expansão da descrição nem quarto atributo. Somente o dossiê é atualizado; não modificar curadoria, receitas ou motor. Próxima ficha participativa: Madeira de Ent Carbonizado (`ing-burnt-spriggan-wood`).
+
+## Ciclo 32 — Madeira de Ent Carbonizado (30/10/2026)
+
+**Decisão expressa do criador:** manter integralmente sem alterações a ficha `ing-burnt-spriggan-wood`. Permanecem Aumentar Alteração III, Diminuir Destreza II, Fraqueza ao Fogo I; preservados também nome, descrição, raridade rara e identificador. São 18 ingredientes parceiros por coincidência de efeitos, entre eles Seiva de Ent (Aumentar Alteração) e Dentes de Espectro Gelado (Fraqueza ao Fogo). Ideias de aprofundamento narrativo e quarto atributo não foram aprovadas. **Somente este dossiê foi modificado neste ciclo**; `data/curadoria_ingredientes.json`, itens, receitas, código e saves não devem ser alterados. **Próxima ficha para decisão:** Tufo Rastejante (`ing-creep-cluster`).
