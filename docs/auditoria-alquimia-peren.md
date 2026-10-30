@@ -406,3 +406,7 @@ O criador decidiu preservar integralmente `ing-daedra-heart`: Aumentar Magia III
 - O catálogo conta 17 parceiros por coincidência de efeito, incluindo Coroa Sangrenta com duas interseções. Mantém-se a correspondência legada `Fortify Heavy Armor` com atributo revisado `Aumentar Defesa`, sem redefinir mecanicamente agora.
 - **Somente este dossiê foi modificado**, sem edição da curadoria, receitas, itens, código ou saves. Nenhum quarto atributo ou mudança descritiva foi autorizado.
 - **Próxima ficha para deliberação:** Poeira Luminosa (`ing-glow-dust`), com 18 parceiros.
+
+## Ciclo 30 — Poeira Luminosa (30/10/2026)
+
+Decisão explícita: manter integralmente `ing-glow-dust`, sem alterações. Atributos preservados: Aumentar Destruição II, Resistência à Eletricidade II e Dano à Magia I. Nome, descrição, raridade e ID preservados. Conectividade: 18 parceiros, incluindo Cogumelo Luminescente com dois efeitos comuns. Sem aprovação para modificações de descrição ou quarto atributo. Este ciclo modifica somente o documento de auditoria; curadoria e arquivos do jogo intactos.
