@@ -195,7 +195,9 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
       if(!event.shiftKey&&doc.activeElement===focusable.at(-1)){event.preventDefault();focusable[0].focus();}
       return;
     }
-    if(event.target===search)return;
+    // No modo alquímico, as setas pertencem aos seletores de ingredientes,
+    // não à navegação das receitas legadas.
+    if(event.target===search||alchemy.isVisible())return;
     if(event.key==='ArrowUp'||event.key==='ArrowDown'){
       event.preventDefault();event.stopPropagation();move(event.key==='ArrowDown'?1:-1);
     }
