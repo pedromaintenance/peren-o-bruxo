@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | **M0 — Fonte única** | Trazer `phaser-lab/` e `phaser/assets/` para a linha principal; build Vite/Phaser com dados canônicos copiados, teste de invariantes alquímicos, documento de paridade. | Compilar e testar fonte no CI; `main` publicado permanece intocado; detectar qualquer drift no pacote | **Em execução nesta branch** |
 | **M1 — Peren completo** | Equipar/desequipar, usar consumíveis, aprender grimórios, estudar, meditar, treinar com tutores, progressão/XP e ações diárias. | Testes comparativos por operação, materiais/ouro/ações descontados exatamente uma vez | Pendente |
-| **M2 — Alquimia emergente** | Motor puro determinístico de ingredientes distintos/efeitos coincidentes; interface de seleção e descoberta; efeitos múltiplos, famílias visuais e produção serializável. Manter outras receitas legadas. | Pares AB/BA iguais; sem efeito compartilhado não produz efeito; por efeito exigir 2 fontes; nenhum dado canônico mutado; decisões de potência pendentes não presumidas | Especificar antes de implementar |
+| **M2 — Alquimia emergente** | Navegação por **Poções / Venenos / Tônicos / Elixires / Bálsamos → efeito → ingredientes**; estudo, tentativa cega e interseções; preparar registros com vários efeitos; outras receitas legadas preservadas. | A+B = B+A (inclusive nomes); 2 fontes por efeito; não revelar efeitos ocultos; falha consome apenas custo previsto; elixires/bálsamos não ativam efeito sem regra aprovada; efeitos e ingredientes canônicos intactos | **Motor de descoberta e primeira UI implementados na PR #94; uso/aplicação pendentes** |
 | **M3 — Mundo integral** | Nove cidades, viagens, dez regiões, seed e biomas, recursos, risco, 27 mercadores, estoques regionais e tutores. | Todas cidades/zonas acessíveis; produtos e estoques por IDs; mapas sem bloqueio de acesso/saída | Pendente |
 | **M4 — Combate e grimório** | Motor orientado a catálogo de 222 criaturas e 354 magias, múltiplos inimigos, efeitos, status, consumíveis e relíquias; VFX com fallback honesto. | Nenhum feitiço desconhecido/sem MP; sem recompensas duplicadas; regras especiais testadas por tipo; visual não bloqueia mecânica | Pendente |
 | **M5 — Mundo vivo e contratos** | 32 missões, recompensas, reputação, atividades de trabalho, encontros e narrativas emergentes do Modo Livre. | Aceitar, progredir, concluir, falhar/recuar e retomar sem duplicar XP/saque | Pendente |
@@ -53,7 +53,9 @@
 - [ ] Estudar, meditar, comprar/aprender grimórios
 - [ ] Equipar/desequipar arma, armadura e relíquia; utilizar itens fora do combate
 - [ ] Receitas de forja, cozinha, encantamento, escrita, curtume, joalheria e alquimia especial
-- [ ] Preparos alquímicos comuns com receitas emergentes por efeitos coincidentes
+- [x] Descoberta alquímica: estudar um insumo e experimentar dois ingredientes sem conhecer os efeitos (implementação inicial na branch) 
+- [x] Navegação alquímica por família → efeito conhecido → ingredientes, com estado brilhante/cinza (implementação inicial na branch)
+- [ ] Preparos alquímicos utilizáveis: potência final, duração, aplicação, composição 3+ ingredientes, elixires e bálsamos
 - [ ] 32 missões e encontros/caça por região; recompensas especiais
 - [ ] Conjuração generalizada, consumíveis, status e vários monstros em batalha
 - [ ] HUD, controles, acessibilidade, dispositivos físicos, instalação offline
@@ -61,6 +63,7 @@
 
 ## Evidências e dependências
 - [Auditoria alquímica](auditoria-alquimia-peren.md)
+- [Contrato da bancada alquímica — cinco famílias, descoberta e experimentação](contrato-bancada-alquimica.md)
 - [Roadmap executivo anterior](../ROADMAP.md)
 - [Código clássico congelado](../game.js)
 - [Fonte Phaser incorporada](../phaser-lab/src/)
@@ -77,3 +80,8 @@
 - [QA Modo Livre](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40998037069): **aprovado**.
 - [QA oficial de arte legado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/40998037195): **falhou** em comparação do gerador antigo de caminhada com o atlas v5. O diff desta PR não altera o clássico, mas a falha precisa ser esclarecida antes do merge. Não substituir o teste por aprovação fictícia.
 - **Status real:** motor compilável e contratos centrais validados na PR, ainda **não mesclado** e **não lançado**. Próximo trabalho: paridade M1, iniciando pela transação de equipamentos e consumíveis.
+
+## Atualização da bancada — 30/10/2026
+- O dossiê de curadoria em `main` avançou até o **ciclo 34**, com a decisão de **manter a Gelatina de Gafanhoto** sem alterações; próximo item participativo: **Sais Ígneos**. Não reverter os ciclos 30–34 nem considerar `atributos_revisados` uma autorização para modificar fichas.
+- M2 começou paralelamente ao M1 na branch de transição, mediante requisito expresso do criador: a UI não pode ser um catálogo achatado. A primeira fatia de produção e descoberta está em `phaser-lab/src/alchemy.js` e `phaser-lab/src/ui-alchemy.js`.
+- **Limite atual:** os preparados são registrados no save Phaser com origem e intensidade, mas ainda não podem ser consumidos/aplicados. A definição de efeitos permanentes, bálsamos e potência permanece em aberto. Os custos provisórios estão documentados no contrato.
