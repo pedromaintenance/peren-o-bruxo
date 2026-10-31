@@ -142,6 +142,8 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     return model;
   }
   function make(){
+    // A no controle não pode executar a receita legada escondida sob a bancada.
+    if(alchemy.isVisible())return false;
     // Mobile double taps and repeated controller A must never charge for two batches.
     if(busy||!isOpen()||performance.now()-lastCommittedAt<450)return false;
     const current=workshopViewModel(bridge.state,catalogs,{station,search:search.value,selectedId}).selected;
@@ -177,6 +179,9 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     render();doc.getElementById('craftClose').focus({preventScroll:true});
   };
   function move(delta){
+    // Navegação por gamepad na bancada alquímica terá foco dedicado;
+    // nunca mover seleção ou fabricar receita oculta inadvertidamente.
+    if(alchemy.isVisible())return false;
     if(!isOpen()||!model?.recipes.length)return;
     const index=model.recipes.findIndex(r=>r.id===selectedId);
     const next=Math.max(0,Math.min(model.recipes.length-1,index+delta));
