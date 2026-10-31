@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peren · Laboratório M1h-F · Kenney</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0b1318;color:#e6d7b9;font:15px/1.55 system-ui,sans-serif}
+header,main,footer{max-width:1050px;margin:auto;padding:22px}header{border-bottom:1px solid #726449}
+h1,h2{font-family:Georgia,serif;color:#e6c58f}h1{font-size:clamp(26px,4vw,42px)}
+a{color:#f3c987}p{color:#bdc6c4}.layout{display:grid;grid-template-columns:minmax(270px,1fr) minmax(280px,1fr);gap:20px}
+.panel{background:#17252a;border:1px solid #5b6962;border-radius:12px;padding:18px}
+.specimens{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.specimen{background:#0b161c;border:1px solid #405650;padding:12px;text-align:center;border-radius:8px;min-width:0}
+.specimen img{width:100%;max-width:150px;height:170px;object-fit:contain;image-rendering:pixelated}.specimen span{display:block;font-size:12px;color:#c4c9bc;overflow-wrap:anywhere}
+.viewport{min-height:365px;display:grid;place-items:center;background:radial-gradient(#304d46,#0d171d 67%);border-radius:8px;overflow:hidden}
+#assembled{position:relative;width:200px;height:275px;filter:drop-shadow(0 14px 10px #0009)}
+.part{position:absolute;object-fit:contain;image-rendering:pixelated;max-width:none}
+#body{width:142px;left:29px;top:67px;z-index:2}#armL{width:92px;left:0;top:116px;z-index:1;transform:rotate(-22deg)}#armR{width:92px;right:0;top:116px;z-index:3;transform:scaleX(-1) rotate(-22deg)}
+#legL{width:85px;left:26px;top:181px;z-index:1}#legR{width:85px;right:26px;top:181px;z-index:1;transform:scaleX(-1)}#eye{width:48px;left:76px;top:104px;z-index:4}
+label{display:block;margin:12px 0;color:#d8c8a4}input{width:100%;accent-color:#dabb7b}
+.note{padding-left:18px}li{margin:8px 0}footer{font-size:12px;color:#9faeaa}
+@media(max-width:740px){.layout{grid-template-columns:1fr}}
+</style></head>
+<body><header><small>CARCAÇA · PEREN, O BRUXO · M1h-F</small><h1>Audição de assets CC0</h1><p>Peças reais importadas do pacote Monster Builder Pack da Kenney. Esta é uma bancada de composição visual, <strong>não um novo atlas animado</strong>.</p><a href="./review.html?art=m1he">← Comparar com monstros M1h-E</a></header>
+<main><div class="layout">
+<section class="panel"><h2>Quatro arquivos originais</h2><div class="specimens">
+<div class="specimen"><img src="./art-m1hf/kenney-monster-builder/body_darkC.png" alt="Corpo escuro"><span>body_darkC.png</span></div>
+<div class="specimen"><img src="./art-m1hf/kenney-monster-builder/arm_darkB.png" alt="Braço escuro"><span>arm_darkB.png</span></div>
+<div class="specimen"><img src="./art-m1hf/kenney-monster-builder/leg_darkB.png" alt="Perna escura"><span>leg_darkB.png</span></div>
+<div class="specimen"><img src="./art-m1hf/kenney-monster-builder/detail_dark_eye.png" alt="Olho escuro"><span>detail_dark_eye.png</span></div>
+</div><p>Escala e disposição são apenas testes de composição; as imagens importadas permanecem intactas.</p></section>
+<section class="panel"><h2>Montagem exploratória</h2><div class="viewport"><div id="assembled" role="img" aria-label="Montagem provisória de criatura escura com partes da Kenney">
+<img class="part" id="legL" src="./art-m1hf/kenney-monster-builder/leg_darkB.png" alt=""><img class="part" id="legR" src="./art-m1hf/kenney-monster-builder/leg_darkB.png" alt="">
+<img class="part" id="armL" src="./art-m1hf/kenney-monster-builder/arm_darkB.png" alt=""><img class="part" id="body" src="./art-m1hf/kenney-monster-builder/body_darkC.png" alt="">
+<img class="part" id="armR" src="./art-m1hf/kenney-monster-builder/arm_darkB.png" alt=""><img class="part" id="eye" src="./art-m1hf/kenney-monster-builder/detail_dark_eye.png" alt="">
+</div></div>
+<label>Ampliação da composição <output id="scaleRead">100%</output><input id="scale" type="range" min="60" max="140" value="100"></label>
+<p><strong>Critério de aprovação:</strong> legibilidade em escala real, compatibilidade com a floresta de Mürin e potencial de animação de membros. Não foi aprovada para o Ettercap.</p></section>
+</div>
+<section class="panel" style="margin-top:20px"><h2>Rastreabilidade e próximos testes</h2>
+<ul class="note"><li><strong>Autor:</strong> Kenney · pacote Monster Builder Pack (2022).</li><li><strong>Licença:</strong> CC0 1.0, verificada no <a href="https://github.com/Tiddybub/2d-assets/blob/main/characters/monster-builder-pack/License.txt">aviso original</a>; <a href="https://kenney.nl/assets/monster-builder-pack">página do criador</a>.</li><li><strong>Origem:</strong> <a href="https://github.com/Tiddybub/2d-assets/tree/main/characters/monster-builder-pack/PNG/Default">espelho Tiddybub/2d-assets</a>. Quatro PNGs preservados sem recolorir.</li><li><strong>Etapa pendente:</strong> produzir e testar 7 × 4 poses únicas antes de ativar esse estilo na exploração.</li></ul></section>
+</main><footer>Laboratório não lê nem escreve progresso, armazenamento ou saves. Nenhuma alteração nas regras de combate.</footer>
+<script>const slider=document.getElementById('scale'),output=document.getElementById('scaleRead'),assembled=document.getElementById('assembled');slider.addEventListener('input',()=>{assembled.style.transform='scale('+(Number(slider.value)/100)+')';output.textContent=slider.value+'%'});</script>
+</body></html>
