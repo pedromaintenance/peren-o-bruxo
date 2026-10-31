@@ -22,7 +22,7 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
   if(ids.some(id=>!elements[id]))throw Error('Estrutura alquímica incompleta.');
   // Sem efeitos descobertos, começar no modo livre para evitar uma bancada vazia.
   const initialKnowledge=Object.values(bridge.state.alchemy?.known||{}).some(v=>Array.isArray(v)&&v.length);
-  let family='pocao',effectId=null,mode=initialKnowledge?'known':'free',idA='',idB='',lastResult=null,busy=false,lastCommit=-Infinity;
+  let family='pocao',effectId=null,mode=initialKnowledge?'known':'free',idA='',idB='',lastResult=null,busy=false;
   let visible=false,legacyMode=false;
   const isVisible=()=>visible;
   const isDynamic=()=>visible&&!legacyMode;
@@ -153,10 +153,11 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
     show(true);
   }
   function execute(command){
-    if(busy||!visible||performance.now()-lastCommit<450)return false;
+    // O botão é desabilitado após o commit e as seleções são zeradas.
+    // Não bloquear um novo comando diferente executado rapidamente após estudar.
+    if(busy||!isDynamic())return false;
     busy=true;try{
       const tx=bridge.execute(command);
-      lastCommit=performance.now();
       lastResult=tx.result;
       idA='';idB='';
       feedback(tx.result.valid===false?
