@@ -20,7 +20,9 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
     'alchemyFeedback','alchemyCreated','alchemyLegacy','alchemyReturn'];
   const elements=Object.fromEntries(ids.map(id=>[id,doc.getElementById(id)]));
   if(ids.some(id=>!elements[id]))throw Error('Estrutura alquímica incompleta.');
-  let family='pocao',effectId=null,mode='known',idA='',idB='',lastResult=null,busy=false,lastCommit=-Infinity;
+  // Sem efeitos descobertos, começar no modo livre para evitar uma bancada vazia.
+  const initialKnowledge=Object.values(bridge.state.alchemy?.known||{}).some(v=>Array.isArray(v)&&v.length);
+  let family='pocao',effectId=null,mode=initialKnowledge?'known':'free',idA='',idB='',lastResult=null,busy=false,lastCommit=-Infinity;
   let visible=false,legacyMode=false;
   const isVisible=()=>visible;
   const isDynamic=()=>visible&&!legacyMode;
