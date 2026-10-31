@@ -3,6 +3,7 @@
  * No economic formula or inventory mutation is duplicated in the UI.
  */
 import {craftable,skillLevel} from './progress.js';
+import {createAlchemyScreen} from './ui-alchemy.js';
 
 const tx=v=>String(v??'');
 const normal=v=>tx(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
@@ -51,6 +52,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     button=doc.getElementById('craftMake'),more=doc.getElementById('craftMore');
   if(!root||!list||!search||!stations||!button||!more)throw Error('Interface M1g-C incompleta');
   let station='all',selectedId=null,limit=48,model=null,lastFocus=null,busy=false,lastCommittedAt=-Infinity;
+  const alchemy=createAlchemyScreen({document:doc,bridge,catalogs,onChange});
   const isOpen=()=>!root.hidden;
   function select(id,{focus=false}={}){
     selectedId=id;render();
@@ -61,7 +63,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     station=id;selectedId=null;limit=48;render();
   }
   function cycleStation(dir){
-    const arr=model?.stations||[];
+    const arr=(model?.stations||[]).filter(x=>x.id!=='all');
     if(!arr.length)return;
     setStation(arr[(Math.max(0,arr.findIndex(t=>t.id===station))+dir+arr.length)%arr.length].id);
   }
@@ -74,14 +76,29 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     put(doc,'craftActions',model.actions+' ações');
     put(doc,'craftGold',fmt(model.gold));
     put(doc,'craftRecipeCount',model.filteredTotal+' receitas encontradas');
-    const tabNodes=model.stations.map(t=>{
+    const tabNodes=model.stations.filter(t=>t.id!=='all').map(t=>{
       const b=el(doc,'button','ui-button craft-station',t.icon+' '+t.name);
       b.type='button';b.dataset.station=t.id;b.setAttribute('aria-pressed',String(t.id===station));
       if(t.id===station)b.classList.add('is-active');
       b.addEventListener('click',()=>setStation(t.id));return b;
     });stations.replaceChildren(...tabNodes);
     list.replaceChildren();
-    for(const r of model.recipes){
+    // Large catalogues never appear as an undifferentiated list.
+    // Other trades use type > required level; Alchemy uses family > effect.
+    const groups=new Map();
+    for(const rec of model.recipes){
+      const tier=rec.level<=3?'Nível 1–3':rec.level<=7?'Nível 4–7':rec.level<=12?'Nível 8–12':'Nível 13+';
+      const group=rec.type+' · '+tier;
+      if(!groups.has(group))groups.set(group,[]);
+      groups.get(group).push(rec);
+    }
+    for(const [label,rows] of groups){
+      const folder=el(doc,'details','craft-group');
+      const summary=el(doc,'summary','',label);
+      summary.append(el(doc,'small','',rows.length+' receitas exibidas'));
+      folder.append(summary);
+      folder.open=rows.some(rec=>rec.id===selectedId);
+      for(const r of rows){
       const b=el(doc,'button','craft-recipe');
       b.type='button';b.dataset.recipeId=r.id;b.setAttribute('aria-pressed',String(r.id===selectedId));
       if(r.id===selectedId)b.classList.add('is-selected');
@@ -90,7 +107,9 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
       copy.append(el(doc,'strong','',r.name),el(doc,'small','',r.stationName+' · Ofício '+r.level));
       b.append(copy,el(doc,'span','craft-recipe-ready',r.eligible?'PRONTA':'PENDENTE'));
       b.addEventListener('click',()=>select(r.id,{focus:true}));
-      list.append(b);
+      folder.append(b);
+      }
+      list.append(folder);
     }
     if(!model.filteredTotal)list.append(el(doc,'p','craft-empty','Nenhuma receita encontrada nesta oficina.'));
     more.hidden=limit>=model.filteredTotal;
@@ -119,6 +138,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     put(doc,'craftBlockReason',r?(r.reasons.length?r.reasons.join(' · '):'Materiais, ofício e ações suficientes.'):'Nenhuma receita selecionada.');
     const block=doc.getElementById('craftBlockReason');
     if(block)block.dataset.ready=String(Boolean(r?.eligible));
+    alchemy.show(station==='alquimia');
     return model;
   }
   function make(){
@@ -148,7 +168,10 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
   };
   const open=()=>{
     lastFocus=doc.activeElement;
-    root.hidden=false;station='all';selectedId=null;search.value='';limit=48;
+    root.hidden=false;
+    station=catalogs.cidadesById[bridge.state.city]?.estacoes?.includes('alquimia')?'alquimia':
+      catalogs.cidadesById[bridge.state.city]?.estacoes?.[0]||'all';
+    selectedId=null;search.value='';limit=48;
     put(doc,'craftFeedback','Escolha uma receita para consultar os ingredientes.');
     doc.getElementById('craftFeedback').dataset.state='';
     render();doc.getElementById('craftClose').focus({preventScroll:true});
