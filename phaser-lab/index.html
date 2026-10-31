@@ -6,7 +6,7 @@
 #battleUI{position:fixed;inset:0;z-index:30;pointer-events:none;color:#f4e1b9;font-family:Georgia,serif}#battleUI[hidden]{display:none}#battleHeader{position:absolute;top:calc(10px + env(safe-area-inset-top));left:10px;right:10px;background:#08151bee;border:1px solid #a88d5b;border-radius:12px;padding:10px;max-width:560px;margin:auto;box-shadow:0 5px 24px #0009}#battleHeader strong{color:#f1ce90;letter-spacing:1px;font-size:14px}#battleRound{float:right;color:#d9ab6c;font-size:12px}#battleMonster{margin-top:6px;font-size:14px}#battleStats{font-size:12px;color:#b8d1c6;padding-top:4px}#battleJournal{margin:7px 0 0;min-height:28px;line-height:1.4;color:#d4c5b7;font:11px system-ui}
 #battlePanel{position:absolute;bottom:calc(12px + env(safe-area-inset-bottom));left:10px;right:10px;padding:10px;border:2px solid #bb965f;border-radius:16px;background:#0c1720f5;box-shadow:0 8px 26px #000a;max-width:560px;margin:auto;pointer-events:auto}#battlePanel button{font:700 12px system-ui;background:#30463c;border-color:#aa9267;padding:9px 5px;min-height:43px;border-radius:9px;white-space:normal}#battlePanel button:disabled{opacity:.43}#battlePanel button.pad-selected{outline:2px solid #e7d19e;background:#57644e}#battlePanel .battle-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.battle-spells{border-top:1px solid #98846477;margin-top:8px;padding-top:6px}.battle-spells small{font-size:9px;letter-spacing:.08em;color:#bda77c}.battle-spells .battle-actions{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:6px}#battleFinish{display:block;width:100%;background:#7a6240!important;font:700 14px Georgia,serif!important}#battleFinish[hidden],#battleCommands[hidden]{display:none}.battle-note{display:block;margin-top:6px;color:#bba98b;font:10px system-ui}#battleEndHint{font-size:13px;line-height:1.4;margin:6px 0;color:#e5cdab}
 @media(max-width:360px){#battleHeader{padding:7px}#battlePanel{padding:7px}#battlePanel button{min-height:40px;font-size:11px}#battleJournal{font-size:10px}}
-</style><link rel="stylesheet" href="./ui-theme.css"><link rel="stylesheet" href="./ui-portomonte.css"><link rel="stylesheet" href="./ui-inventory.css"><link rel="stylesheet" href="./ui-workshop.css"><link rel="stylesheet" href="./ui-marketplace.css"><link rel="stylesheet" href="./ui-adventure.css"><link rel="stylesheet" href="./ui-journal.css"><link rel="stylesheet" href="./ui-guide.css"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
+</style><link rel="stylesheet" href="./ui-theme.css"><link rel="stylesheet" href="./ui-portomonte.css"><link rel="stylesheet" href="./ui-inventory.css"><link rel="stylesheet" href="./ui-workshop.css"><link rel="stylesheet" href="./ui-alchemy.css"><link rel="stylesheet" href="./ui-marketplace.css"><link rel="stylesheet" href="./ui-adventure.css"><link rel="stylesheet" href="./ui-journal.css"><link rel="stylesheet" href="./ui-guide.css"></head><body><main id="phaser" aria-label="Exploração da Floresta de Mürin"></main>
 <div id="controls" class="m1g-expedition" hidden>
  <div id="status" class="m1g-expedition-hud ui-panel" aria-label="Estado da expedição">
   <div class="m1g-hud-head"><span class="ui-kicker">Carcaça · Expedição</span><strong>FLORESTA DE MÜRIN</strong><small id="hudDay">Dia 1</small></div>
@@ -210,16 +210,23 @@
    <aside class="craft-recipe-panel ui-panel">
     <div class="ui-kicker">Estações disponíveis</div>
     <nav id="craftStations" class="craft-stations" aria-label="Estações de produção"></nav>
-    <label class="craft-search-label" for="craftSearch">Encontrar receita<input id="craftSearch" class="ui-field" type="search" placeholder="Pesquisar pelo nome..." autocomplete="off"></label>
+    <div id="craftLegacyBrowser"><label class="craft-search-label" for="craftSearch">Encontrar receita<input id="craftSearch" class="ui-field" type="search" placeholder="Pesquisar pelo nome..." autocomplete="off"></label>
     <p id="craftRecipeCount" class="craft-muted">Carregando receitas…</p>
     <div id="craftList" class="craft-list" aria-label="Receitas disponíveis"></div>
-    <button id="craftMore" class="ui-button craft-more" type="button" hidden>Mostrar mais</button>
+    <button id="craftMore" class="ui-button craft-more" type="button" hidden>Mostrar mais</button></div>
+    <section id="alchemySidebar" class="alchemy-sidebar" hidden aria-label="Famílias e efeitos alquímicos">
+      <h4>FAMÍLIAS DE PREPARO</h4>
+      <nav id="alchemyFamilies" class="alchemy-families" aria-label="Poções, venenos, tônicos, elixires e bálsamos"></nav>
+      <h4 id="alchemyFamilyLabel">Poções</h4>
+      <div id="alchemyEffectList" class="alchemy-effects" aria-label="Efeitos descobertos"></div>
+      <p class="alchemy-muted">A lista não revela efeitos de ingredientes que Peren ainda não conhece.</p>
+    </section>
    </aside>
    <section class="craft-workshop-panel ui-panel">
     <div class="craft-art" aria-label="Ilustração de oficina medieval com Peren, caldeirão e reagentes">
      <div class="craft-art-caption"><span class="ui-kicker">Oficina · Portomonte</span><strong>O Ofício do Bruxo</strong><span>Recolher. Conhecer. Transformar.</span></div>
     </div>
-    <div class="craft-workbench">
+    <div id="craftLegacyWorkbench" class="craft-workbench">
      <div class="ui-kicker">Preparação selecionada</div>
      <h3 id="craftSelectedName">Selecione uma receita</h3>
      <p id="craftSelectedStation">Alquimia</p>
@@ -237,8 +244,29 @@
       </section>
      </div>
     </div>
+    <section id="alchemyWorkbench" class="alchemy-workbench" hidden>
+      <div class="ui-kicker">Bancada de experimentação</div>
+      <h3 id="alchemyTarget">Escolha um efeito descoberto</h3>
+      <p id="alchemyModeDescription" class="alchemy-muted">Selecione ingredientes para preparar.</p>
+      <div class="alchemy-modes" role="group" aria-label="Caminho de preparação">
+        <button id="alchemyKnownMode" type="button" class="ui-button is-active" aria-pressed="true">Por efeito conhecido</button>
+        <button id="alchemyFreeMode" type="button" class="ui-button" aria-pressed="false">Experimentação livre</button>
+      </div>
+      <p id="alchemyOwned" class="alchemy-muted"></p>
+      <div class="alchemy-selection">
+        <label>Ingrediente I <select id="alchemyA" class="ui-field"><option value="">Selecione</option></select></label>
+        <label>Ingrediente II <select id="alchemyB" class="ui-field"><option value="">Selecione</option></select></label>
+      </div>
+      <div class="alchemy-actions">
+        <button id="alchemyStudy" type="button" class="ui-button">Estudar ingrediente</button>
+        <button id="alchemyBrew" type="button" class="ui-button ui-button--primary" disabled>Experimentar mistura</button>
+      </div>
+      <p id="alchemyActions" class="alchemy-muted"></p>
+      <p class="alchemy-muted">Regras provisórias: estudar revela uma propriedade e custa uma ação, sem consumir o ingrediente; misturar gasta uma ação e um exemplar de cada ingrediente, inclusive se falhar.</p>
+      <div id="alchemyFeedback" class="craft-feedback" role="status" aria-live="polite">Nenhuma experiência realizada.</div>
+    </section>
    </section>
-   <aside class="craft-result-panel ui-panel">
+   <aside id="craftResultLegacy" class="craft-result-panel ui-panel">
     <div class="ui-kicker">Resultado da receita</div>
     <div class="craft-preview"><span id="craftResultIcon" class="craft-preview-symbol">⚗</span><div class="craft-preview-aura"></div></div>
     <h3 id="craftResultName">Selecione uma receita</h3>
@@ -247,6 +275,15 @@
     <div class="craft-owned"><span id="craftResultOwned"></span></div>
     <div id="craftFeedback" class="craft-feedback" role="status" aria-live="polite">Escolha uma receita para consultar os ingredientes.</div>
     <p class="craft-note">A quantidade produzida é fixa no catálogo. Não são simuladas preparações múltiplas nem criados itens fictícios.</p>
+   </aside>
+   <aside id="alchemyResult" class="craft-result-panel ui-panel alchemy-results" hidden>
+     <div class="ui-kicker">Caderno do Bruxo</div>
+     <h3>Descobertas e Preparações</h3>
+     <p id="alchemyLastResult" class="alchemy-result-description">O resultado de experiências e estudos surgirá aqui.</p>
+     <h4>PREPARAÇÕES PRODUZIDAS</h4>
+     <div id="alchemyCreated" class="alchemy-created"></div>
+     <p class="alchemy-muted">Tentativas fracassadas: <strong id="alchemyFailureCount">0</strong></p>
+     <p class="alchemy-muted">As preparações são registradas com seus efeitos e intensidades originais. Potência, duração, consumo e aplicação em itens serão integrados após definição das regras próprias.</p>
    </aside>
   </div>
   <footer class="craft-footer">Criação salva apenas no Phaser · Teclado: setas / Enter / Esc · Xbox: direcional navega, X troca estação, A cria, B volta</footer>
