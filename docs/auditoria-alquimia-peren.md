@@ -422,3 +422,7 @@ Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações
 ## Ciclo 33 — Tufo Rastejante (30/10/2026)
 
 **Decisão explícita do criador:** manter integralmente sem alterações a ficha `ing-creep-cluster`. Preservados Aumentar Capacidade de Carga II, Restaurar Magia II e Fraqueza à Magia I, além de nome, descrição, raridade comum e ID. São 18 parceiros por efeitos compartilhados; Cogumelo Escamoso compartilha Aumentar Capacidade de Carga e Fraqueza à Magia, Óleo de Autômato compartilha Restaurar Magia e Fraqueza à Magia. Não foram aprovados novos atributos nem mudanças descritivas. **Somente este dossiê foi alterado**, sem mudanças no JSON da curadoria, receitas, itens, código ou saves. **Próximo ingrediente para decisão:** Gelatina de Gafanhoto (`ing-ash-hopper-jelly`).
+
+## Ciclo 34 — Gelatina de Gafanhoto (30/10/2026)
+
+**Decisão explícita do criador:** manter integralmente sem alterações a ficha `ing-ash-hopper-jelly`. Preservados Resistência à Eletricidade II, Restaurar Saúde II e Fraqueza ao Gelo I, juntamente com nome, descrição, raridade incomum e ID. O ingrediente tem 18 parceiros por coincidência de efeitos, incluindo Fungo do Pântano com dois efeitos comuns (Restaurar Saúde e Resistência à Eletricidade). Não foram aprovadas mudanças descritivas ou atributos adicionais. **Somente o dossiê foi atualizado**, sem modificar curadoria, itens, receitas, código do jogo ou saves. **Próxima ficha para deliberação:** Sais Ígneos (`ing-fire-salts`).
