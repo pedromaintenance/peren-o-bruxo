@@ -426,3 +426,7 @@ Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações
 ## Ciclo 34 — Gelatina de Gafanhoto (30/10/2026)
 
 **Decisão explícita do criador:** manter integralmente sem alterações a ficha `ing-ash-hopper-jelly`. Preservados Resistência à Eletricidade II, Restaurar Saúde II e Fraqueza ao Gelo I, juntamente com nome, descrição, raridade incomum e ID. O ingrediente tem 18 parceiros por coincidência de efeitos, incluindo Fungo do Pântano com dois efeitos comuns (Restaurar Saúde e Resistência à Eletricidade). Não foram aprovadas mudanças descritivas ou atributos adicionais. **Somente o dossiê foi atualizado**, sem modificar curadoria, itens, receitas, código do jogo ou saves. **Próxima ficha para deliberação:** Sais Ígneos (`ing-fire-salts`).
+
+## Ciclo 35 — Sais Ígneos (30/10/2026)
+
+**Decisão explícita do criador:** manter integralmente sem alterações a ficha `ing-fire-salts`. Preservados Resistência ao Fogo III, Regenerar Magia II e Fraqueza ao Gelo II, assim como nome, descrição, raridade rara e ID. O catálogo contém 18 parceiros por interseção de efeitos; Orelha-de-Elfo compartilha Resistência ao Fogo e Fraqueza ao Gelo. Não foram autorizados novos atributos, ajustes de intensidade ou ampliações narrativas. **Atualização exclusiva do dossiê:** não houve edição de `data/curadoria_ingredientes.json`, itens, receitas, código ou saves. **Próxima ficha participativa:** Fungo de Gualápoles (`ing-namira-s-rot`), a avaliar sem modificações prévias.
