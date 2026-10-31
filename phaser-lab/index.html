@@ -210,7 +210,7 @@
    <aside class="craft-recipe-panel ui-panel">
     <div class="ui-kicker">Estações disponíveis</div>
     <nav id="craftStations" class="craft-stations" aria-label="Estações de produção"></nav>
-    <div id="craftLegacyBrowser"><label class="craft-search-label" for="craftSearch">Encontrar receita<input id="craftSearch" class="ui-field" type="search" placeholder="Pesquisar pelo nome..." autocomplete="off"></label>
+    <div id="craftLegacyBrowser"><button id="alchemyReturn" type="button" class="ui-button" hidden>← Voltar à bancada de combinação livre</button><label class="craft-search-label" for="craftSearch">Encontrar receita<input id="craftSearch" class="ui-field" type="search" placeholder="Pesquisar pelo nome..." autocomplete="off"></label>
     <p id="craftRecipeCount" class="craft-muted">Carregando receitas…</p>
     <div id="craftList" class="craft-list" aria-label="Receitas disponíveis"></div>
     <button id="craftMore" class="ui-button craft-more" type="button" hidden>Mostrar mais</button></div>
@@ -219,6 +219,7 @@
       <nav id="alchemyFamilies" class="alchemy-families" aria-label="Poções, venenos, tônicos, elixires e bálsamos"></nav>
       <h4 id="alchemyFamilyLabel">Poções</h4>
       <div id="alchemyEffectList" class="alchemy-effects" aria-label="Efeitos descobertos"></div>
+      <button id="alchemyLegacy" type="button" class="ui-button">Receitas tradicionais da oficina</button>
       <p class="alchemy-muted">A lista não revela efeitos de ingredientes que Peren ainda não conhece.</p>
     </section>
    </aside>
