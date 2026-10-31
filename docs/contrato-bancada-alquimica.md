@@ -33,6 +33,7 @@ A classificação **não reduz intensidade** e não implica que um mesmo ID de e
 - Sucesso da mistura revela seus efeitos compartilhados para os dois ingredientes envolvidos; falha não revela propriedades que não combinaram.
 - As ações passam pelo `applyTransaction`/bridge; UI **nunca** modifica inventário/saves diretamente. Não há importação de save clássico.
 - A intensidade de cada origem **não é potência final**; a regra de potência, duração, acesso a terceiro ingrediente, elixires, bálsamos, aplicação e consumo de preparados ainda está em definição. Até lá, o resultado é um **registro fabricado no caderno**, não um consumível ativo nem um buff permanente.
+- **Receitas tradicionais de alquimia continuam acessíveis** por botão próprio dentro da bancada; voltar à combinação livre não altera ingredientes nem progresso.
 - Fora da alquimia, forja, cozinha, curtume, escrita, encantamento e joalheria preservam receitas fixas legadas, agrupadas na UI por **tipo e faixa de nível**, sem recalcular fórmulas.
 
 ## Testes de aceitação
