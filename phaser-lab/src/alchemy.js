@@ -27,7 +27,9 @@ export function resolveAlchemyPair(curadoria,ids){
   const source=curatedItems(curadoria);
   if(!Array.isArray(ids)||ids.length!==2||ids.some(id=>typeof id!=='string')||ids[0]===ids[1])
     throw Error('Escolha dois ingredientes distintos.');
-  const selected=ids.map(id=>{
+  // Ordenar antes de ler os nomes garante A+B = B+A inclusive em rótulos com capitalização divergente.
+  const ingredientIds=[...ids].sort();
+  const selected=ingredientIds.map(id=>{
     const item=source[id];
     if(!item||!Array.isArray(item.atributos))throw Error('Ingrediente não reconhecido pela curadoria.');
     return {id,item};
@@ -39,7 +41,7 @@ export function resolveAlchemyPair(curadoria,ids){
       origens:[{ingrediente:left.id,intensidade:a.intensidade},{ingrediente:right.id,intensidade:b.intensidade}]
         .sort((x,y)=>x.ingrediente.localeCompare(y.ingrediente))};
   }).sort((a,b)=>a.id.localeCompare(b.id));
-  return {valid:effects.length>0,ingredientIds:[...ids].sort(),effects};
+  return {valid:effects.length>0,ingredientIds,effects};
 }
 export function knownEffectsFor(knowledge,ingredientId){
   return Array.isArray(knowledge?.[ingredientId])?knowledge[ingredientId]:[];
