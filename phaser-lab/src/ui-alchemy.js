@@ -17,12 +17,13 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
   if(!data?.itens)throw Error('A bancada alquímica exige a curadoria canônica.');
   const ids=['alchemySidebar','alchemyWorkbench','alchemyResult','alchemyFamilies','alchemyEffectList',
     'alchemyKnownMode','alchemyFreeMode','alchemyA','alchemyB','alchemyStudy','alchemyBrew',
-    'alchemyFeedback','alchemyCreated'];
+    'alchemyFeedback','alchemyCreated','alchemyLegacy','alchemyReturn'];
   const elements=Object.fromEntries(ids.map(id=>[id,doc.getElementById(id)]));
   if(ids.some(id=>!elements[id]))throw Error('Estrutura alquímica incompleta.');
   let family='pocao',effectId=null,mode='known',idA='',idB='',lastResult=null,busy=false,lastCommit=-Infinity;
-  let visible=false;
+  let visible=false,legacyMode=false;
   const isVisible=()=>visible;
+  const isDynamic=()=>visible&&!legacyMode;
   const feedback=(message,state='')=>{
     elements.alchemyFeedback.textContent=message;
     elements.alchemyFeedback.dataset.state=state;
@@ -97,7 +98,7 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
     set(doc,'alchemyFailureCount',s.alchemy?.failed||0);
   }
   function render(){
-    if(!visible)return;
+    if(!isDynamic())return;
     const s=bridge.state;
     const directory=effectDirectory(data,s.alchemy?.known,s.bag,s.actions);
     const current=paintDirectory(directory);
@@ -134,13 +135,20 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
     }else set(doc,'alchemyLastResult','Experimente sem conhecer as propriedades ou estude ingredientes para revelar seus efeitos.');
   }
   function show(next){
+    if(!next)legacyMode=false;
     visible=Boolean(next);
     for(const key of ['alchemySidebar','alchemyWorkbench','alchemyResult'])
-      elements[key].hidden=!visible;
+      elements[key].hidden=!isDynamic();
     for(const key of ['craftLegacyBrowser','craftLegacyWorkbench','craftResultLegacy']){
-      const e=doc.getElementById(key);if(e)e.hidden=visible;
+      const e=doc.getElementById(key);if(e)e.hidden=isDynamic();
     }
-    if(visible)render();
+    elements.alchemyReturn.hidden=!visible||!legacyMode;
+    if(isDynamic())render();
+  }
+  function toggleLegacy(next){
+    if(!visible)return;
+    legacyMode=Boolean(next);
+    show(true);
   }
   function execute(command){
     if(busy||!visible||performance.now()-lastCommit<450)return false;
@@ -160,6 +168,8 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
       render();return false;
     }finally{busy=false;render();}
   }
+  elements.alchemyLegacy.addEventListener('click',()=>toggleLegacy(true));
+  elements.alchemyReturn.addEventListener('click',()=>toggleLegacy(false));
   elements.alchemyA.addEventListener('change',()=>{
     idA=elements.alchemyA.value;if(idA===idB)idB='';render();
   });
@@ -171,5 +181,5 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
   elements.alchemyStudy.addEventListener('click',()=>{if(idA)execute({type:'studyIngredient',id:idA})});
   elements.alchemyBrew.addEventListener('click',()=>{if(idA&&idB&&idA!==idB)
     execute({type:'brewPair',ingredients:[idA,idB],focusEffect:mode==='known'?effectId:null})});
-  return {show,render,isVisible};
+  return {show,render,isVisible,isDynamic};
 }
