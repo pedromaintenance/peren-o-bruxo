@@ -4,6 +4,7 @@
  * All mutations return new immutable snapshots and commit through a single gate.
  */
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
+import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
@@ -23,6 +24,7 @@ export function buildCatalogs(data){
   if(!Array.isArray(data[key])||!data[key].length)throw Error('Catálogo ausente: '+key);
   cat[key+'ById']=Object.fromEntries(data[key].map(x=>[x.id,x]));
  }
+ if(data.curadoria_ingredientes?.itens)cat.curadoria_ingredientes=data.curadoria_ingredientes;
  for(const monster of Object.keys(BATTLE_MONSTERS))if(!cat.monstrosById[monster])throw Error('Monstro inexistente: '+monster);
  for(const [id,enemy] of Object.entries(BATTLE_MONSTERS)){
   const raw=cat.monstrosById[id];
@@ -37,6 +39,7 @@ export function newClassicState(){
   skills:{alquimia:20,forja:10,encantamento:0,curtume:0,escrita:6,joalheria:0,cozinha:12,combate:14,arcanismo:18,comercio:9,coleta:12},lastLevels:{},
   bag:{'ger-pocao-restauradora':3,'ger-pocao-de-foco':2,'ger-racoes-de-viagem':4,'ing-blue-mountain-flower':2,'ing-mudcrab-chitin':2,'ing-red-mountain-flower':2,'mat-agua-purificada':4,'mat-ferro-bruto':3,'mat-carvao-de-forja':2,'mat-couro-curtido':2,'mat-cristal-de-alma-menor':1,'mat-tinta-runica':1},
   equip:{weapon:'eq-adaga-de-ferrugem',armor:'eq-peitoral-de-ferrugem',relic:null},learned:['mag-raio-de-fogo','mag-armadura-arcana','mag-raio-de-gelo','mag-misseis-magicos'],
+  alchemy:{known:{},preparations:[],failed:0},
   completed:[],currentQuest:null,contractCount:0,battle:null,journal:['Dia 1 · Peren chega a Portomonte.'],achievements:[],flags:{},kills:0,sales:0,crafted:0};
 }
 export function normalizeClassic(raw,catalog){
@@ -57,6 +60,20 @@ export function normalizeClassic(raw,catalog){
  for(const key of ['weapon','armor','relic'])if(n.equip[key]&&!catalog.itensById[n.equip[key]])n.equip[key]=null;
  n.journal=Array.isArray(n.journal)?n.journal.slice(0,90).map(x=>String(x).slice(0,250)):[];
  n.flags=safeRecord(n.flags);n.completed=Array.isArray(n.completed)?n.completed:[];
+ // Save Phaser-only: discoverable knowledge remains private to the character.
+ // The curator's ingredient definitions are never modified by player actions.
+ const rawAlchemy=safeRecord(n.alchemy),rawKnown=safeRecord(rawAlchemy.known);
+ const curated=catalog.curadoria_ingredientes?.itens||{};
+ const known={};
+ for(const [id,arr] of Object.entries(rawKnown)){
+  if(!curated[id]||!Array.isArray(arr))continue;
+  const accepted=new Set(curated[id].atributos.map(a=>a.id));
+  const effects=[...new Set(arr.filter(a=>typeof a==='string'&&accepted.has(a)))].sort();
+  if(effects.length)known[id]=effects;
+ }
+ n.alchemy={known,preparations:Array.isArray(rawAlchemy.preparations)?
+  rawAlchemy.preparations.slice(-400).filter(p=>p&&typeof p.id==='string'&&Array.isArray(p.effects)&&Array.isArray(p.ingredients)):[],
+  failed:integer(rawAlchemy.failed,0,MAX_COUNT)};
  n.achievements=Array.isArray(n.achievements)?n.achievements:[];
  return n;
 }
@@ -166,6 +183,45 @@ export function applyTransaction(env,command,c){
   if(remaining>had)throw Error('Poções divergentes.');
   if(remaining===0)delete char.bag['ger-pocao-restauradora'];else char.bag['ger-pocao-restauradora']=remaining;
   result={type,status:b.status};record(char,b.status==='fled'?'Escapou de uma batalha.':'Foi resgatado após uma derrota.');
+ }else if(type==='studyIngredient'){
+  if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
+   throw Error('Estudo alquímico exige uma bancada e a curadoria canônica.');
+  if(char.actions<=0)throw Error('Sem ações disponíveis.');
+  const id=String(command.id||'');
+  if((char.bag[id]||0)<1)throw Error('Ingrediente não está na mochila.');
+  const effect=nextStudyEffect(c.curadoria_ingredientes,char.alchemy.known,id);
+  if(!effect)throw Error('Todos os efeitos desse ingrediente já foram estudados.');
+  char.alchemy.known={...char.alchemy.known,
+    [id]:[...new Set([...(char.alchemy.known[id]||[]),effect.id])].sort()};
+  char.actions--;char.skills.alquimia+=2;
+  result={type,ingredient:id,effect:{id:effect.id,nome:effect.nome},cost:{actions:1,items:0}};
+  record(char,`Estudou ${c.curadoria_ingredientes.itens[id].nome} e descobriu ${effect.nome}.`);
+ }else if(type==='brewPair'){
+  if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
+   throw Error('A mistura exige uma bancada alquímica e a curadoria canônica.');
+  if(char.actions<=0)throw Error('Sem ações disponíveis.');
+  const mix=resolveAlchemyPair(c.curadoria_ingredientes,command.ingredients);
+  for(const id of mix.ingredientIds)if((char.bag[id]||0)<1)throw Error('Ingredientes insuficientes.');
+  // Experimentar é permitido sem estudar. O resultado vem exclusivamente
+  // dos atributos canônicos, nunca de efeitos sugeridos pelo cliente/UI.
+  for(const id of mix.ingredientIds)add(char,id,-1,c);
+  char.actions--;char.fatigue=Math.min(100,char.fatigue+3);
+  char.skills.alquimia+=mix.valid?7:1;
+  if(mix.valid){
+    char.alchemy.known=discoverShared(char.alchemy.known,mix.ingredientIds,mix.effects);
+    const focus=typeof command.focusEffect==='string'?mix.effects.find(e=>e.id===command.focusEffect):null;
+    const family=focus?.familia||mix.effects[0].familia;
+    const prep={id:'preparo-'+String(next.revision+1),family,
+      ingredients:mix.ingredientIds,effects:mix.effects,createdDay:char.day};
+    char.alchemy.preparations=[...char.alchemy.preparations,prep].slice(-400);
+    char.crafted++;
+    result={type,valid:true,preparation:prep,cost:{actions:1,items:2}};
+    record(char,`Preparou uma mistura de ${mix.effects.map(e=>e.nome).join(', ')}.`);
+  }else{
+    char.alchemy.failed++;
+    result={type,valid:false,ingredients:mix.ingredientIds,cost:{actions:1,items:2}};
+    record(char,'Experimentou dois ingredientes incompatíveis; mistura fracassada.');
+  }
  }else if(type==='craft'){
   const rec=c.receitasById[command.id];if(!craftable(char,rec,c))throw Error('Faltam materiais, oficina ou proficiência.');
   if(char.actions<=0)throw Error('Sem ações; termine o dia primeiro.');
