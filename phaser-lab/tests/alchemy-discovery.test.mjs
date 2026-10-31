@@ -97,8 +97,12 @@ test('descobertas e preparações sobrevivem reload do save Phaser',()=>{
  const s=stageFromClassic(rich(),c);
  const result=applyTransaction(s,{type:'brewPair',ingredients:[a,b]},c);
  assert.equal(result.result.valid,true);
- const second=createProgressBridge(new Store(),c);
- assert.equal(second.state.alchemy.preparations.length,0);
+ storage.setItem('peren_phaser_save_m1d_v1',JSON.stringify(result.next));
+ const reopened=createProgressBridge(storage,c);
+ assert.equal(reopened.state.alchemy.preparations.length,1);
+ assert.ok(reopened.state.alchemy.known[a].includes('curar_doenca'));
+ assert.equal(reopened.state.actions,2);
+ assert.equal(first.state.alchemy.preparations.length,0);
 });
 test('a interface oferece as duas rotas e não utiliza dados de save fora do bridge',()=>{
  const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
