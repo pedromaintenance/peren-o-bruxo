@@ -1,0 +1,47 @@
+/** Browser smoke for the *actual* Phaser alchemy interface. Run after npm run build. */
+import {chromium} from 'playwright';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {buildCatalogs,newClassicState,stageFromClassic,PHASER_KEY} from '../src/progress.js';
+import {resolveAlchemyPair} from '../src/alchemy.js';
+const load=name=>JSON.parse(readFileSync(new URL('../../data/'+name+'.json',import.meta.url),'utf8'));
+const c=buildCatalogs(Object.fromEntries(['itens','receitas','magias','monstros','cidades','curadoria_ingredientes'].map(k=>[k,load(k)])));
+const state=newClassicState();
+const pair=['ing-felsaad-tern-feathers','ing-garlic'];
+for(const id of pair)state.bag[id]=2;
+const initial=stageFromClassic(state,c);
+const port=process.env.PEREN_PREVIEW_URL||'http://127.0.0.1:4173/';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+try{
+  const page=await browser.newPage({viewport:{width:390,height:844}});
+  const errors=[];page.on('pageerror',e=>errors.push(String(e)));
+  await page.addInitScript(({key,save})=>localStorage.setItem(key,JSON.stringify(save)),{key:PHASER_KEY,save:initial});
+  await page.goto(port,{waitUntil:'domcontentloaded',timeout:30000});
+  await page.waitForFunction(()=>!!window.__perenProgress?.save,{timeout:30000});
+  await page.locator('#showCraft').click({timeout:30000});
+  await page.waitForSelector('#alchemySidebar:not([hidden])');
+  assert.equal(await page.locator('#alchemyFamilies .alchemy-family').count(),5);
+  assert.equal(await page.locator('#alchemyEffectList .alchemy-effect').count(),0,'Hidden effects leaked');
+  await page.locator('#alchemyFreeMode').click();
+  await page.locator('#alchemyA').selectOption('ing-garlic');
+  await page.locator('#alchemyStudy').click();
+  await page.waitForFunction(()=>document.getElementById('alchemyLastResult').textContent.includes('Estudo:'));
+  assert.equal(await page.locator('#alchemyEffectList .alchemy-effect').count(),1,
+    'One studied effect should be revealed in Poções');
+  await page.locator('#alchemyA').selectOption(pair[0]);
+  await page.locator('#alchemyB').selectOption(pair[1]);
+  await page.locator('#alchemyBrew').click();
+  await page.waitForFunction(()=>document.getElementById('alchemyLastResult').textContent.includes('Resultado:'));
+  assert.ok(await page.locator('#alchemyCreated .alchemy-created-row').count()>=1);
+  const saved=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
+  const known=saved.character.alchemy.known;
+  const expected=resolveAlchemyPair(c.curadoria_ingredientes,pair);
+  for(const id of pair)for(const effect of expected.effects)assert.ok(known[id].includes(effect.id));
+  assert.equal(saved.character.alchemy.preparations.length,1);
+  assert.equal(saved.character.actions,1);
+  assert.equal(saved.character.bag[pair[0]],1);
+  assert.equal(saved.character.bag[pair[1]],1);
+  assert.ok(await page.locator('#alchemyEffectList .alchemy-effect.is-ready').count()>0);
+  assert.deepEqual(errors,[],'Unexpected runtime exceptions');
+  console.log('Alchemy Phaser browser smoke: families, fog of knowledge, study, experiment, persistence PASS');
+}finally{await browser.close()}
