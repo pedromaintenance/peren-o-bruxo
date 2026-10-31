@@ -42,6 +42,11 @@ try{
   assert.equal(saved.character.bag[pair[0]],1);
   assert.equal(saved.character.bag[pair[1]],1);
   assert.ok(await page.locator('#alchemyEffectList .alchemy-effect.is-ready').count()>0);
+  await page.locator('#alchemyLegacy').click();
+  await page.waitForSelector('#craftLegacyBrowser:not([hidden])');
+  assert.ok(await page.locator('#craftList .craft-group').count()>0,'Receitas tradicionais estão inacessíveis');
+  await page.locator('#alchemyReturn').click();
+  await page.waitForSelector('#alchemyWorkbench:not([hidden])');
   assert.deepEqual(errors,[],'Unexpected runtime exceptions');
   console.log('Alchemy Phaser browser smoke: families, fog of knowledge, study, experiment, persistence PASS');
 }finally{await browser.close()}
