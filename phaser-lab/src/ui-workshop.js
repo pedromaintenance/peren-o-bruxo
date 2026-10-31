@@ -143,7 +143,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
   }
   function make(){
     // A no controle não pode executar a receita legada escondida sob a bancada.
-    if(alchemy.isVisible())return false;
+    if(alchemy.isDynamic())return false;
     // Mobile double taps and repeated controller A must never charge for two batches.
     if(busy||!isOpen()||performance.now()-lastCommittedAt<450)return false;
     const current=workshopViewModel(bridge.state,catalogs,{station,search:search.value,selectedId}).selected;
@@ -181,7 +181,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
   function move(delta){
     // Navegação por gamepad na bancada alquímica terá foco dedicado;
     // nunca mover seleção ou fabricar receita oculta inadvertidamente.
-    if(alchemy.isVisible())return false;
+    if(alchemy.isDynamic())return false;
     if(!isOpen()||!model?.recipes.length)return;
     const index=model.recipes.findIndex(r=>r.id===selectedId);
     const next=Math.max(0,Math.min(model.recipes.length-1,index+delta));
@@ -202,7 +202,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     }
     // No modo alquímico, as setas pertencem aos seletores de ingredientes,
     // não à navegação das receitas legadas.
-    if(event.target===search||alchemy.isVisible())return;
+    if(event.target===search||alchemy.isDynamic())return;
     if(event.key==='ArrowUp'||event.key==='ArrowDown'){
       event.preventDefault();event.stopPropagation();move(event.key==='ArrowDown'?1:-1);
     }
