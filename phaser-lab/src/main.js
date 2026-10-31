@@ -24,7 +24,7 @@ import {retreatGraceReadout} from './retreat-grace.js';
 // Canonical catalog from the classic Peren repository, packaged with Vite for offline execution.
 async function bootstrap(){
 const data={};
-for(const name of ['itens','receitas','magias','monstros','cidades']){
+for(const name of ['itens','receitas','magias','monstros','cidades','curadoria_ingredientes']){
   const response=await fetch(`./data/${name}.json`);
   if(!response.ok)throw Error('Não foi possível carregar o catálogo '+name);
   data[name]=await response.json();
