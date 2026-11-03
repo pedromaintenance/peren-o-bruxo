@@ -15,6 +15,17 @@
 9. Não reintroduzir Stamina ou derivados. Quando relevante, representar diferenças de esforço e aptidão por Força, Destreza, Constituição ou outras mecânicas realmente existentes.
 10. Transformações sobrenaturais podem ser progressivas e persistentes: Vampirismo não é mero buff e pode culminar na transformação do personagem. Sua implementação requer estados e consequências verificáveis.
 
+## Emenda A1 à Constituição v1.0 — preparados Impuros (03/11/2026)
+
+**Decisão expressa do criador, complementar às Leis 6 e 7, sem revogar a coexistência dos efeitos:**
+
+- Toda mistura **híbrida** é identificada e classificada pelo **maior efeito** que contém e recebe o rótulo obrigatório **Impuro**. O nome e a família principal seguem esse efeito dominante, mas **todos os efeitos secundários continuam na composição**. O rótulo não elimina efeitos adversos.
+- **Purificar um preparado Impuro requer grande habilidade alquímica**. A purificação é procedimento deliberado, diferente de criar ou renomear a mistura; não é um filtro automático e não acontece apenas por escolher uma família no menu.
+- A Constituição **ainda não estabelece a fórmula da potência final**, o critério quantitativo de comparação entre efeitos heterogêneos, desempate de efeitos equivalentes, limite numérico de proficiência, ferramentas, materiais, sucesso/falha da purificação e quais efeitos ela permite separar, conservar ou descartar. Não introduzir essas hipóteses no cânone silenciosamente.
+- A UX deve preservar a descoberta de propriedades: o rótulo Impuro pode indicar a natureza da preparação sem conceder conhecimento automático dos efeitos ocultos. Essa última decisão de apresentação permanece proposta até validação do design.
+
+**Rastreio e continuidade:** [Roadmap de mecânicas e menus do crafting](roadmap-crafting-mecanicas-menus.md), item **CRAFT-D14** e testes **AQ-16–AQ-18**. Essa emenda registra **regra de design**, não declara implementação nem autorização de publicação.
+
 ## 3. Gameplay e direção de desenvolvimento aprovados
 11. Peren aprende por experimentação, estudo, exploração, textos, mestres e observação. Identificação e descoberta de propriedades devem integrar o jogo.
 12. Ingredientes têm ecossistemas e localizações coerentes. Biomas e trajetos devem afetar coleta; não embaralhar localização apenas para alimentar probabilidades.
