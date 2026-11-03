@@ -1,0 +1,29 @@
+name: Alquimia experimental — testes puros
+on:
+  push:
+    branches:
+      - feature/alquimia-v1-experimental
+    paths:
+      - 'ferramentas/alquimia-experimental.mjs'
+      - 'tests/qa_alquimia_experimental.mjs'
+      - 'data/curadoria_ingredientes.json'
+      - '.github/workflows/alquimia-experimental.yml'
+  pull_request:
+    paths:
+      - 'ferramentas/alquimia-experimental.mjs'
+      - 'tests/qa_alquimia_experimental.mjs'
+      - 'data/curadoria_ingredientes.json'
+      - '.github/workflows/alquimia-experimental.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  teste-combinacoes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Provar invariantes alquímicas e auditar o catálogo
+        run: node --test tests/qa_alquimia_experimental.mjs
