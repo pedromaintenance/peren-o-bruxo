@@ -2,7 +2,7 @@
 
 > **Peren, o Bruxo · 03/11/2026 · DESIGN, não código de gameplay.**
 > **Autoridades:** [Constituição v1.0 — Emenda A2](constituicao-design-v1.md), [roadmap de mecânicas e menus](roadmap-crafting-mecanicas-menus.md), [catálogo de combos por efeitos](../data/catalogo-combos-alquimicos.json).
-> **Protótipo ilustrativo:** `prototipos/ux-combos-caderno-v1.html` na branch de revisão `design/ux-combos-caderno-v1-20261103`; não substituir o Phaser nem publicar a interface como jogabilidade real.
+> **Protótipo ilustrativo:** [PR #95 — UX de combos e Caderno](https://github.com/pedromaintenance/peren-o-bruxo/pull/95) · [arquivo HTML standalone em branch isolada](https://github.com/pedromaintenance/peren-o-bruxo/blob/design/ux-combos-caderno-v1-20261103/prototipos/ux-combos-caderno-v1.html). Para executar fora do jogo, abrir o HTML baixado em um navegador; não exige servidor, rede, save ou dependências. **Não** substituir o Phaser nem publicar a interface como jogabilidade real.
 > **Classificação:** canônico = regra explícita do criador; **PROPOSTA** = UX, estrutura de evento, persistência e apresentação ainda sujeitos a teste.
 
 ## 1. Momento da descoberta — sem criar outro sistema de crafting
