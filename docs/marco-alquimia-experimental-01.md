@@ -18,3 +18,10 @@
 Não há produção efetiva de poção na bancada, sistema de descoberta, consumo de insumos, precificação, estado de Vampirismo, efeitos em batalha ou migração de saves. O clássico `game.js` ainda fabrica por receitas predefinidas; a lógica de uso de consumíveis privilegia um efeito. Essas integrações são posteriores e requerem QA específico.
 
 **Invariante de publicação:** não promover experimentos à `main`, nem modificar `data/itens.json`, `data/receitas.json`, `game.js`, `phaser-demo-m1hf/` ou saves sem a etapa de integração aprovada.
+
+## Evidência de execução — CI em 03/11/2026
+
+- [GitHub Actions 41692552904](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/41692552904): **conclusão success**, job `teste-combinacoes` aprovado, inclusive etapa `node --test tests/qa_alquimia_experimental.mjs`.
+- Commit de código efetivamente testado: [`a11b350`](https://github.com/pedromaintenance/peren-o-bruxo/commit/a11b350548083f85070af031259b0fc299b73610).
+- Comparação `main...feature/alquimia-v1-experimental`: um commit à frente naquele momento, nenhum atrás, alterando somente o workflow, núcleo puro, testes e relatório experimental. A atualização documental desta seção não altera os arquivos testados.
+- **Não equivale a playtest**: nenhum navegador, dispositivo físico, Pages ou save real foi envolvido neste teste.
