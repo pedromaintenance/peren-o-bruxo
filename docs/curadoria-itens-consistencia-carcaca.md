@@ -53,7 +53,7 @@ O repositório Monstros da Carcaça contém duas camadas distintas: referência 
 3. Classificar achados em **compatível**, **indeterminado**, **contradição comprovada** ou **proposta de aprofundamento**. Não confundir indeterminação com erro.
 4. Corrigir somente o que tenha fundamentação suficiente ou autorização editorial vigente; preservar IDs e decisões prévias. Mudanças de cânone profundo ou geografia exigem escalonamento ao criador.
 5. Rodar validação do catálogo: mínimo de 3 atributos, intensidades I–III, IDs únicos, nenhuma Stamina reintroduzida, efeitos com pelo menos dois parceiros quando possível. Duplicidade nominal é alerta editorial separado de erro de schema.
-6. Relatar por commit os arquivos alterados, diferenças de conteúdo e efeitos na curadoria. Não editar `game.js`, ``phaser-demo-m1hf/`, ``data/receitas.json`, menus nem saves neste fluxo.
+6. Relatar por commit os arquivos alterados, diferenças de conteúdo e efeitos na curadoria. Não editar `game.js`, `phaser-demo-m1hf/`, `data/receitas.json`, menus nem saves neste fluxo.
 7. Preparar um **handoff estável de dados** ao outro chat, sinalizando impacto em nomes, referências e compatibilidade, sem implementar mecânicas.
 
 ## 6. Próximo lote
