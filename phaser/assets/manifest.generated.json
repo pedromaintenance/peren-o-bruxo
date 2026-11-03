@@ -1,0 +1,112 @@
+{
+  "purpose": "production_tracking_not_runtime",
+  "source": "data/*.json from original Peren game",
+  "status_rule": "planejado != asset existente; aprovado requer revisão e QA",
+  "required_clips_by_kind": {
+    "character": [
+      "idle",
+      "walk_n",
+      "walk_s",
+      "walk_e",
+      "walk_w",
+      "run",
+      "attack",
+      "cast",
+      "hurt",
+      "down",
+      "gather",
+      "interact",
+      "craft"
+    ],
+    "monster": [
+      "idle",
+      "move",
+      "attack",
+      "hurt",
+      "death",
+      "special",
+      "windup"
+    ],
+    "npc": [
+      "idle",
+      "talk",
+      "greet",
+      "gesture"
+    ],
+    "spell": [
+      "charge",
+      "cast",
+      "travel",
+      "impact",
+      "fade"
+    ],
+    "item": [
+      "drop",
+      "pickup",
+      "use"
+    ],
+    "recipe": [
+      "prepare",
+      "process",
+      "complete"
+    ],
+    "city": [
+      "ambient",
+      "menu_enter",
+      "menu_exit"
+    ],
+    "region": [
+      "ambient",
+      "weather",
+      "interact"
+    ],
+    "quest": [
+      "intro",
+      "objective",
+      "resolution"
+    ],
+    "menu": [
+      "open",
+      "close",
+      "focus",
+      "activate"
+    ]
+  },
+  "asset_directories_by_kind": {
+    "monster": "monsters",
+    "character": "characters",
+    "npc": "npcs",
+    "spell": "spells",
+    "item": "items",
+    "recipe": "recipes",
+    "city": "cities",
+    "region": "regions",
+    "quest": "quests",
+    "menu": "ui"
+  },
+  "totals": {
+    "characters": 1,
+    "monsters": 222,
+    "spells": 354,
+    "items": 2785,
+    "recipes": 2316,
+    "cities": 9,
+    "regions": 10,
+    "npcs": 27,
+    "quests": 32,
+    "menus": 18
+  },
+  "total_records": 5774,
+  "catalog_files": {
+    "characters": "phaser/assets/catalog/characters.json",
+    "monsters": "phaser/assets/catalog/monsters.json",
+    "spells": "phaser/assets/catalog/spells.json",
+    "items": "phaser/assets/catalog/items.json",
+    "recipes": "phaser/assets/catalog/recipes.json",
+    "cities": "phaser/assets/catalog/cities.json",
+    "regions": "phaser/assets/catalog/regions.json",
+    "npcs": "phaser/assets/catalog/npcs.json",
+    "quests": "phaser/assets/catalog/quests.json",
+    "menus": "phaser/assets/catalog/menus.json"
+  }
+}

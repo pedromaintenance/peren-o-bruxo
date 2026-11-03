@@ -1,0 +1,113 @@
+/* M1g-D: city commerce UI. All buttons are live DOM elements. */
+#tradeUI.trade-screen{position:fixed;inset:0;z-index:74;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;
+ color:var(--ui-ivory);background:radial-gradient(ellipse at 56% 2%,#2c3940,#101f2c 62%,#071119);font:13px/1.5 var(--ui-font-sans)}
+#tradeUI[hidden]{display:none!important}
+#tradeUI *{box-sizing:border-box}
+#tradeUI :is(button,input):focus-visible{outline:3px solid var(--ui-focus);outline-offset:2px}
+#tradeUI h2,#tradeUI h3{font-family:var(--ui-font-fantasy);font-weight:500;color:var(--ui-gold-bright);margin:0}
+#tradeUI h2{font-size:clamp(31px,4vw,48px);letter-spacing:.085em}
+#tradeUI h3{font-size:clamp(19px,2.4vw,26px)}
+#tradeUI p{line-height:1.55;margin:7px 0;color:var(--ui-muted)}
+#tradeUI .trade-shell{width:min(100%,1570px);min-height:100dvh;margin:0 auto;padding:clamp(7px,1.2vw,18px);
+ display:flex;flex-direction:column;gap:12px}
+#tradeUI .trade-masthead{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 20px}
+#tradeUI .trade-masthead p{text-transform:uppercase;font-size:11px;letter-spacing:.12em;color:var(--ui-muted)}
+#tradeUI .trade-wallet{display:flex;align-items:center;gap:18px;color:var(--ui-gold-bright);font-variant-numeric:tabular-nums;white-space:nowrap}
+#tradeUI .trade-wallet strong{font-size:22px}
+#tradeUI #tradeClose{min-width:100px;min-height:44px;text-align:center}
+#tradeUI .trade-layout{flex:1;display:grid;grid-template-columns:minmax(195px,.9fr) minmax(340px,1.7fr) minmax(228px,1fr);
+ gap:12px;min-width:0}
+#tradeUI .trade-layout>*{min-width:0;padding:14px}
+#tradeUI .trade-merchant-panel{display:flex;flex-direction:column;gap:9px}
+#tradeUI .trade-portrait-stage{position:relative;border:1px solid #8c7955;height:clamp(210px,26vw,340px);overflow:hidden;
+ background:linear-gradient(0deg,#0816208f,#08162000),url('./scenes/portomonte-market.svg') center/cover no-repeat,#243940}
+#tradeUI .trade-portrait-stage:before{content:"";position:absolute;inset:0;
+ background:radial-gradient(ellipse at 48% 70%,#d6ab6b28,transparent 65%)}
+#tradeUI #tradePortrait{position:relative;z-index:1;display:block;margin:auto;max-width:100%;width:100%;height:100%;object-fit:contain;object-position:center bottom;image-rendering:pixelated;filter:drop-shadow(0 5px 9px #000b)}
+#tradeUI #tradePortrait[hidden]{display:none}
+#tradeUI .trade-profile{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--ui-gold)}
+#tradeUI .trade-merchants{display:flex;flex-direction:column;gap:6px;margin-top:7px}
+#tradeUI .trade-merchant{font-size:12px;text-align:left;min-height:47px}
+#tradeUI .trade-merchant.is-active{border-color:var(--ui-gold-bright);box-shadow:inset 0 0 0 1px #bfa26d;background:linear-gradient(155deg,#38505c,#1e3545)}
+#tradeUI .trade-merchant-note{margin-top:auto!important;border-top:1px solid #75818a66;padding-top:9px;font-size:10px!important}
+#tradeUI .trade-goods-panel{display:flex;flex-direction:column;gap:10px}
+#tradeUI .trade-goods-head{display:flex;justify-content:space-between;align-items:end;gap:12px}
+#tradeUI #tradeCount{color:var(--ui-muted);font-size:11px;white-space:nowrap}
+#tradeUI .trade-mode{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+#tradeUI .trade-mode-button{min-height:50px;font-size:14px;text-align:center}
+#tradeUI .trade-mode-button.is-active{border-color:var(--ui-gold-bright);color:var(--ui-gold-bright);
+ background:linear-gradient(145deg,#5c492e,#1a3240);box-shadow:inset 0 -3px #c1985d}
+#tradeUI .trade-stock-notice{font-size:11px!important;border-left:2px solid #947b55;padding-left:9px}
+#tradeUI .trade-search-label{display:grid;gap:6px;color:var(--ui-muted);font-size:11px}
+#tradeUI #tradeSearch{width:100%;min-height:44px;font-size:13px}
+#tradeUI .trade-items{display:flex;flex-direction:column;gap:7px;overflow-y:auto;overscroll-behavior:contain;touch-action:pan-y;
+ padding:5px;min-height:210px;max-height:clamp(265px,52dvh,620px);background:#091724bd;border:1px solid #506e77}
+#tradeUI .trade-item{min-height:63px;display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:9px;align-items:center;
+ border:1px solid #617887;border-radius:3px;background:linear-gradient(140deg,#1b3546,#101f2a);color:var(--ui-ivory);
+ padding:9px 10px;text-align:left;cursor:pointer}
+#tradeUI .trade-item:is(:hover,:focus-visible,.is-selected){border-color:var(--ui-gold-bright);
+ box-shadow:inset 0 0 0 1px #c6a269,0 0 10px #ad935335;background:linear-gradient(130deg,#33495a,#1c3543)}
+#tradeUI .trade-item-symbol{width:42px;height:40px;display:grid;place-items:center;border:1px solid #977a55;
+ background:#152a39;color:var(--ui-gold-bright);font-size:26px}
+#tradeUI .trade-item-copy{display:flex;flex-direction:column;min-width:0;gap:3px}
+#tradeUI .trade-item-copy strong{font-size:12px;overflow-wrap:anywhere}
+#tradeUI .trade-item-copy small{font-size:10px;color:var(--ui-muted)}
+#tradeUI .trade-item-cost{font-weight:700;color:var(--ui-gold-bright);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#tradeUI .trade-equipped{grid-column:2/-1;color:#f0aa91;font-size:10px}
+#tradeUI .trade-more{min-height:44px;text-align:center}
+#tradeUI .trade-empty{padding:20px;text-align:center}
+#tradeUI .trade-checkout-panel{display:flex;flex-direction:column;gap:10px}
+#tradeUI .trade-item-preview{display:grid;place-items:center;height:clamp(160px,18vw,250px);border:1px solid #8f7954;
+ background:radial-gradient(circle at center,#3c3d4e,#132838 55%,#091723 83%)}
+#tradeUI #tradeDetailIcon{font-size:clamp(64px,6vw,95px);color:var(--ui-gold-bright);text-shadow:0 0 24px #90b9c480}
+#tradeUI .trade-detail-type{font-size:11px;color:var(--ui-gold);letter-spacing:.07em}
+#tradeUI #tradeDetailDescription{font-size:12px;color:var(--ui-ivory)}
+#tradeUI .trade-checkout-values{border-top:1px solid #667982;border-bottom:1px solid #667982;padding:9px 0;
+ display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--ui-muted)}
+#tradeUI .trade-amount-label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:12px}
+#tradeUI #tradeQuantity{width:88px;min-height:45px;text-align:center;font-size:16px;font-variant-numeric:tabular-nums}
+#tradeUI .trade-total{font:22px/1.3 var(--ui-font-fantasy);color:var(--ui-gold-bright)}
+#tradeUI .trade-reason{font-size:11px!important;color:#efb3a8!important;overflow-wrap:anywhere}
+#tradeUI .trade-reason[data-ready=true]{color:#b3ddbf!important}
+#tradeUI #tradeConfirm{min-height:56px;text-align:center;font-size:12px}
+#tradeUI .trade-feedback{min-height:58px;padding:11px;border:1px solid #7d7864;background:#0b2534;font-size:11px;overflow-wrap:anywhere}
+#tradeUI .trade-feedback[data-state=success]{border-color:#528965;background:#102e26;color:#b4e5c0}
+#tradeUI .trade-feedback[data-state=error]{border-color:#b6655f;background:#34202b;color:#f1b4ac}
+#tradeUI .trade-meta{margin-top:auto!important;border-top:1px solid #737c8566;padding-top:10px;font-size:11px!important}
+#tradeUI .trade-footer{font-size:10px;color:var(--ui-muted);padding:4px;text-align:center}
+@media(max-width:1090px){
+ #tradeUI .trade-layout{grid-template-columns:minmax(220px,1fr) minmax(0,1.5fr)}
+ #tradeUI .trade-checkout-panel{grid-column:1/-1;display:grid;grid-template-columns:165px minmax(0,1fr);align-items:start}
+ #tradeUI .trade-checkout-panel>.ui-kicker{grid-column:1/-1}
+ #tradeUI .trade-item-preview{grid-row:2/6;height:180px}
+ #tradeUI #tradeConfirm,#tradeUI .trade-feedback,#tradeUI .trade-meta{grid-column:1/-1}
+}
+@media(max-width:690px){
+ #tradeUI .trade-shell{padding:7px;gap:8px}
+ #tradeUI .trade-masthead{padding:9px}
+ #tradeUI h2{font-size:29px}
+ #tradeUI .trade-wallet{flex-direction:column;gap:4px;align-items:end;font-size:11px}
+ #tradeUI .trade-wallet strong{font-size:15px}
+ #tradeUI #tradeClose{min-height:44px;min-width:80px;padding:6px}
+ #tradeUI .trade-layout{display:flex;flex-direction:column;gap:8px}
+ #tradeUI .trade-layout>*{padding:10px}
+ #tradeUI .trade-merchant-panel{order:0;display:grid;grid-template-columns:106px minmax(0,1fr);gap:5px 10px}
+ #tradeUI .trade-merchant-panel>.ui-kicker{grid-column:1/-1}
+ #tradeUI .trade-portrait-stage{grid-row:2/5;min-height:143px;height:143px}
+ #tradeUI .trade-profile{grid-column:2}
+ #tradeUI .trade-merchant-panel>p{grid-column:2}
+ #tradeUI .trade-merchants{grid-column:1/-1;flex-direction:row;overflow-x:auto;touch-action:pan-x;padding:3px}
+ #tradeUI .trade-merchant{flex:0 0 auto;min-width:145px;font-size:11px;padding:9px}
+ #tradeUI .trade-merchant-note{grid-column:1/-1;padding-top:5px}
+ #tradeUI .trade-goods-panel{order:1}
+ #tradeUI .trade-checkout-panel{order:2;display:flex}
+ #tradeUI .trade-item-preview{height:115px}
+ #tradeUI #tradeDetailIcon{font-size:57px}
+ #tradeUI .trade-items{max-height:285px;min-height:160px}
+ #tradeUI .trade-item{grid-template-columns:35px minmax(0,1fr) auto;padding:6px;gap:7px}
+ #tradeUI .trade-item-symbol{width:35px;height:36px;font-size:21px}
+ #tradeUI .trade-item-cost{font-size:11px}
+ #tradeUI .trade-mode-button{min-height:44px}
+ #tradeUI .trade-total{font-size:20px}
+}
+@media(prefers-reduced-motion:reduce){#tradeUI *{transition:none!important;scroll-behavior:auto!important}}

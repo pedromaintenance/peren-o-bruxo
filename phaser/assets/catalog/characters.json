@@ -1,0 +1,3 @@
+[
+  {"id":"peren","name":"Peren, o Bruxo","status":"em_producao","artist":"Pixel art autoral procedural M1e · Projeto Carcaça","license":"arte original para RPG Carcaça","atlas":"phaser/assets/characters/peren/peren-atlas.png","animation_data":"phaser/assets/characters/peren/atlas.json","portrait":"phaser/assets/characters/peren/portrait.png","qa":"M1e: 128 frames, 32 clips e 3 retratos verificados no CI; aprovação visual e Android físico pendentes"}
+]

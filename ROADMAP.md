@@ -1,5 +1,8 @@
 # Peren, o Bruxo — Roadmap de desenvolvimento
 
+> **Decisão de 30/10/2026 — transição total para Phaser em andamento.** O clássico está congelado como referência; não desenvolver novas funções nele. **Não migrar saves** nesta pré-alfa. A estratégia, as etapas M0–M6 e as salvaguardas da auditoria alquímica estão em [Roadmap da transição Phaser](docs/roadmap-transicao-phaser.md). O Pages clássico permanece publicado provisoriamente; isto não representa paridade funcional ou lançamento do Phaser.
+
+
 > **Atualizado em 21/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
 >
 > O plano detalhado original do Phaser permanece em [`docs/01-roadmap.md` na branch de desenvolvimento](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/01-roadmap.md). Este arquivo é o **índice executivo** mantido na `main`.

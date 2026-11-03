@@ -1,0 +1,22 @@
+/* M1h-F.7: optional, local-only field guide; independent of saves. */
+#guideUI[hidden],#hub #showGuide[hidden]{display:none!important}
+#guideUI{position:fixed;inset:0;z-index:95;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;
+  color:var(--ui-ivory,#f2ead6);background:linear-gradient(135deg,#07131bee,#0c2029fa);padding:clamp(12px,3vw,27px);}
+#guideUI .guide-shell{max-width:900px;min-height:100%;margin:auto;display:flex;flex-direction:column;gap:14px}
+#guideUI .guide-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:clamp(15px,3vw,24px)}
+#guideUI .guide-head h2{font:clamp(27px,5vw,40px)/1.1 Georgia,serif;letter-spacing:.07em;color:#f4d69c;margin:6px 0}
+#guideUI .guide-head p{margin:5px 0;max-width:58ch;color:#c9d5ce}
+#guideUI #guideTabs{display:flex;flex-wrap:wrap;gap:9px}
+#guideUI .guide-tab{min-height:48px;flex:1 1 130px;text-align:center}
+#guideUI .guide-tab.is-active{border-color:#f1d18f;background:linear-gradient(145deg,#5f4c32,#1e343b);box-shadow:inset 0 0 0 1px #bd9d6b}
+#guideUI #guideContent{padding:clamp(17px,4vw,32px);overflow:auto;overscroll-behavior:contain;touch-action:pan-y;flex:1;max-height:60dvh;}
+#guideUI #guideContent h3{font:clamp(22px,4vw,30px) Georgia,serif;color:#edcb90;margin:0 0 8px}
+#guideUI #guideContent .guide-lead{color:#c7d6cf;margin:0 0 17px}
+#guideUI .guide-note{padding:12px 0;border-top:1px solid #62778066}
+#guideUI .guide-note h4{font:600 17px Georgia,serif;color:#f0dbab;margin:0 0 5px}
+#guideUI .guide-note p{margin:0;color:#d4dcd4;line-height:1.65}
+#guideUI .guide-test-link{display:inline-block;color:#ffe1a4;padding:14px 0;font-weight:700}
+#guideUI .guide-foot{color:#bdd0c8;font-size:12px;line-height:1.5}
+#guideUI button:focus-visible,#guideUI a:focus-visible{outline:3px solid #f8d899;outline-offset:3px}
+@media(max-width:600px){#guideUI{padding:12px}#guideUI .guide-head{gap:10px}#guideUI #guideTabs{flex-wrap:nowrap;overflow-x:auto;touch-action:pan-x}#guideUI .guide-tab{flex:none;min-width:132px}#guideUI #guideContent{max-height:55dvh}}
+@media(prefers-reduced-motion:reduce){#guideUI *{transition:none!important;animation:none!important}}

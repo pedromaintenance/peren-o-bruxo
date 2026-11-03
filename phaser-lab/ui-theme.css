@@ -1,0 +1,44 @@
+/* M1g — a small, reusable UI system: never a flattened screenshot. */
+:root {
+  --ui-night:#08131d; --ui-deep:#101d29; --ui-panel:#122433;
+  --ui-panel-bright:#213a48; --ui-line:#627780; --ui-gold:#d5aa65;
+  --ui-gold-bright:#f4d69c; --ui-ivory:#f2ead6; --ui-muted:#b8c4c4;
+  --ui-green:#78c88d; --ui-blue:#6dbbea; --ui-red:#e78a76;
+  --ui-focus:#f2cb7a; --ui-font-sans:system-ui,-apple-system,Segoe UI,sans-serif;
+  --ui-font-fantasy:Georgia,Palatino,serif; --ui-shadow:0 14px 45px #030b13dd;
+}
+.ui-panel {
+  background:linear-gradient(155deg,#1b3443ed 0%,#0c1b29f5 75%);
+  color:var(--ui-ivory); border:1px solid #aa8b59;
+  box-shadow:inset 0 0 0 1px #3d4650,0 10px 34px #0008;
+  position:relative;
+}
+.ui-panel::before,.ui-panel::after {content:"";position:absolute;width:10px;height:10px;pointer-events:none;z-index:1;}
+.ui-panel::before {top:3px;left:3px;border-left:1px solid var(--ui-gold-bright);border-top:1px solid var(--ui-gold-bright);}
+.ui-panel::after {right:3px;bottom:3px;border-right:1px solid var(--ui-gold-bright);border-bottom:1px solid var(--ui-gold-bright);}
+.ui-kicker {font:700 10px/1.5 var(--ui-font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ui-gold);}
+.ui-heading {font:500 clamp(25px,4vw,41px)/1.1 var(--ui-font-fantasy);letter-spacing:.075em;color:var(--ui-gold-bright);}
+.ui-button {
+  appearance:none;min-height:48px;padding:12px 13px;color:var(--ui-ivory);
+  background:linear-gradient(145deg,#1b3548,#0a1c2c);border:1px solid #697682;
+  border-radius:5px;box-shadow:inset 0 1px #ffffff16,0 2px 8px #0005;
+  font:650 13px/1.3 var(--ui-font-sans);text-align:left;cursor:pointer;
+  transition:background .15s,border-color .15s,box-shadow .15s;
+}
+.ui-button:hover:not(:disabled),.ui-button.pad-selected:not(:disabled) {
+  border-color:var(--ui-gold-bright);background:linear-gradient(135deg,#264a61,#163348);
+  box-shadow:inset 0 0 0 1px #d5aa6544,0 0 15px #a7874445;
+}
+.ui-button:active:not(:disabled) {transform:translateY(1px)}
+.ui-button:disabled {opacity:.52;cursor:not-allowed}
+.ui-button:focus-visible, .ui-field:focus-visible {outline:3px solid var(--ui-focus);outline-offset:2px}
+.ui-button--primary {color:#1b1b20;background:linear-gradient(135deg,#f2d396,#bb8e51);border-color:#f2d396}
+.ui-gauge {height:8px;overflow:hidden;background:#06121b;border:1px solid #647580;border-radius:3px}
+.ui-gauge > i {display:block;width:0;height:100%;background:linear-gradient(90deg,#3e985f,var(--ui-green));transition:width .2s}
+.ui-gauge--mana > i {background:linear-gradient(90deg,#3973be,var(--ui-blue))}
+.ui-gauge--xp > i {background:linear-gradient(90deg,#896336,#edbe76)}
+.ui-field {border:1px solid #738080;border-radius:5px;padding:10px;color:var(--ui-ivory);background:var(--ui-deep);font:12px var(--ui-font-sans)}
+.ui-sr-only {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce) {
+  .ui-button,.ui-gauge>i {transition:none!important}
+}

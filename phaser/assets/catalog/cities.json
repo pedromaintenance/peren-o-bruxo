@@ -1,0 +1,11 @@
+[
+  {"id":"portomonte","name":"Portomonte","status":"planejado"},
+  {"id":"thargrid","name":"Thargrid","status":"planejado"},
+  {"id":"ironwood","name":"Ironwood","status":"planejado"},
+  {"id":"garganta","name":"Garganta","status":"planejado"},
+  {"id":"drakport","name":"Drakport","status":"planejado"},
+  {"id":"boca-abismo","name":"Boca do Abismo","status":"planejado"},
+  {"id":"shadar-riverie","name":"Shadar-Riverie","status":"planejado"},
+  {"id":"alem-sul","name":"Além Sul","status":"planejado"},
+  {"id":"eldroth","name":"Eldroth","status":"planejado"}
+]
