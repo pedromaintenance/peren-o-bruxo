@@ -405,3 +405,20 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **AQ-32**: cadastro de animação com `estado=nao_produzido` recai no visual-base por família; não há erro de asset ausente ou alegação de animação publicada.
 
 **Status em 03/11/2026:** 1 sinergia aprovada (**Poção da Fada**), 8 candidatos propostos, 1 incompatibilidade aprovada e 1 caso compatível sem nome especial. **Somente metadados e documentação; nenhuma animação, alteração de motor ou publicação da nova bancada.**
+
+## 16. UX da primeira descoberta e do Caderno — fluxo de revisão (03/11/2026)
+
+**Especificação principal desta etapa:** [`docs/ux-descoberta-combos-caderno-v1.md`](ux-descoberta-combos-caderno-v1.md). **Protótipo navegável, isolado e não jogável:** [PR #95 — Design UX](https://github.com/pedromaintenance/peren-o-bruxo/pull/95), arquivo `prototipos/ux-combos-caderno-v1.html` na branch `design/ux-combos-caderno-v1-20261103`. **NÃO mesclar automaticamente nem publicar como runtime Phaser.**
+
+**Direção proposta da interface:** a fabricação normal gera todos os efeitos; a classificação consulta apenas incompatibilidades/sinergias **aprovadas**; a primeira **sinergia reconhecida por Peren** apresenta um resultado com nome especial e registra a descoberta **uma vez por ID de combo**, sem bônus extra. Repetir com outros materiais gera outro lote, não uma nova identidade. `Caderno do Bruxo → Alquimia → Combos Descobertos` mostra apenas combos conhecidos do personagem, não as propostas editoriais. Poções comuns e Impuras continuam nos fluxos normais e não podem ganhar nome especial por engano.
+
+**Caderno e arte futura:** separar catálogo **global/editorial** (`data/catalogo-combos-alquimicos.json`, com proposta/aprovação) do **conhecimento pessoal** de Peren no save Phaser. Identificar por `comboId`, não por fórmula de ingredientes. Efeitos ocultos não vazam por menu, rótulo, HTML ou leitor de tela. O identificador visual pode receber uma animação especial futura, mas até lá usa frasco da família; não há sprite pronto.
+
+**Backlog adicional:**
+- **CRAFT-D20 [P1 UX]:** evento de primeira descoberta, comunicação discreta, retorno à bancada sem fabricação repetida.
+- **CRAFT-D21 [P1 UX]:** seção de combos descobertos no Caderno, primeiro encontro e histórico de lotes, filtros sem spoiler.
+- **CRAFT-D22 [P1 arte/QA]:** contrato `comboId → asset`, fallback por família, versão com movimento reduzido, revisão mobile/Xbox.
+- **CRAFT-D23 [P0 antes da integração]:** persistência transacional e idempotente de `knownCombos` e registros; preservar saves clássicos e não duplicar eventos.
+- **UX-C01–UX-C10:** especificação de testes de descoberta, repetição, incompatibilidade, conhecimento, candidatos editoriais, famílias, persistência, acessibilidade e ausência de regressões (ver documento específico).
+
+**Status:** design e protótipo para revisão; **não implementado no gameplay**, não integrado ao save Phaser, não publicado no Pages. A PR #94 continua sendo o protótipo de duas fontes, independente do experimento visual da PR #95.
