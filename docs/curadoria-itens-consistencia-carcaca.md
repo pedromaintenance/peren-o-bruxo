@@ -100,3 +100,40 @@ Mais dez fichas auditadas, da **Vagem da Charneca** às **Garras de Urso**, cruz
 ## Continuidade — Ciclos 77–86 (03/11/2026)
 
 Foram auditados mais dez ingredientes, de **Coração de Espinheiros** a **Flor Violeta**, com dados por ficha na [matriz ecológica](../data/auditoria_ecologica_ingredientes.json). No **Coração de Espinheiros**, manter Vampirismo II e a possibilidade de transformação progressiva, aprovados no Ciclo 9: o efeito não classifica automaticamente a planta como vampiro. A **Libélula Azul** conserva Velocidade II, aprovada no Ciclo 7, sem confusão com Destreza. O **Ovo de Tordo** `ing-pine-thrush-egg` refere-se à ficha de **agilidade**, enquanto `ing-rock-warbler-egg`, seguinte no Ciclo 87, refere-se à **restauração**; os rótulos funcionais sugeridos são **não canônicos** e não substituem os nomes em uso. Os habitats da Pérola Pequena, das Ovas de Salmão, de aves, musgos e flores não foram fixados por inferência. Fontes do repositório Monstros da Carcaça consultadas no commit `182622fe6d0edca18b32c3972641ebd9c72d58cb`. **Nenhuma alteração** em curadoria ativa, itens, receitas, motor, menus ou saves nesta rodada.
+
+
+## Protocolo de avaliação da carteira de combos — 03/11/2026
+
+**Esta etapa pertence ao agente de curadoria**, não ao motor do jogo. Consulte [roadmap de mecânicas, seção 15](roadmap-crafting-mecanicas-menus.md) e [catálogo estruturado](../data/catalogo-combos-alquimicos.json) antes de classificar uma nova sinergia. A carteira inicial agora possui **oito nomes propostos e apenas um combo aprovado, Poção da Fada**. Nenhum candidato novo é canônico pela simples existência no JSON.
+
+### Critérios de triagem curatorial
+
+1. **Verificação de viabilidade:** IDs dos efeitos existem no JSON canônico e cada efeito é ativado por ao menos **dois tipos distintos** em algum conjunto de 2 a 4 ingredientes; os exemplos fornecidos no catálogo já foram verificados. Não chamar esse conjunto de receita fixa.
+2. **Complementaridade real:** dois efeitos devem realizar **um mesmo propósito** (ex.: voo+velocidade) ou sustentar **etapas complementares de um processo** (ex.: restaurar+regenerar saúde). Dois benefícios independentes **não** merecem nome de combo apenas pela coexistência.
+3. **Sentido na Carcaça:** dar ao nome/descrição uma função material e fantástica coerente, sem inventar regiões, cultos, espécies ou crenças não confirmadas. Quando houver necessidade de afirmação ecológica, buscar no repositório de Monstros da Carcaça e classificar proveniência.
+4. **Contradições:** avaliar contra incompatibilidades **aprovadas**; **Impuro** prevalece. Não rotular automaticamente todo efeito positivo+negativo como incompatível; propor novos conflitos com justificativa separada para aprovação.
+5. **Valor como poção especial:** a diferença deve poder ser explicada em duas frases legíveis no inventário e receber assinatura visual reconhecível, sem conferir poderes não previstos pelos efeitos.
+6. **Ceticismo editorial:** documentar `nao_avaliado`, `proposto_nao_aprovado`, `aprovado` ou `rejeitado`. Hipótese nunca equivale a aprovação autoral.
+
+### Fila inicial de propostas para avaliação, em ordem recomendada
+
+| Prioridade de revisão | Candidato | Assinatura | Evidência material mínima | Parecer a verificar |
+| --- | --- | --- | --- | --- |
+| Alta | **Asas do Vendaval** | `voar` + `velocidade` | 3 tipos | Sinergia forte de deslocamento |
+| Alta | **Olhos da Vigília** | `aumentar_percepcao` + `visao_a_distancia` | 3 tipos | Sinergia de observação |
+| Alta | **Nascente Arcana** | `aumentar_magia` + `regenerar_magia` | 3 tipos | Ciclo de reserva e reposição |
+| Alta | **Véu do Caçador** | `invisibilidade` + `aumentar_furtividade` | 4 tipos | Ocultação e discrição; sem presumir silêncio automático |
+| Média | **Seiva Vital** | `restaurar_saude` + `regenerar_saude` | 4 tipos | Cura e recuperação continuada |
+| Média | **Silêncio do Feiticeiro** | `dano_magia` + `diminuir_magia` | 3 tipos | Veneno antiarcano, requer regras de duração/alvo |
+| Revisão crítica | **Fôlego das Profundezas** | `respirar_na_agua` + `resistencia_gelo` | 4 tipos | Talvez mera soma de utilidades; avaliar necessidade de nome especial |
+| Revisão crítica | **Veneno da Ruína** | `dano_saude` + `fraqueza_veneno` | 2 tipos | Só sinérgico se mecanismo de dano e vulnerabilidade forem compatíveis; dano_saude não está tipado como dano de veneno |
+
+**Controle contra falsas sinergias:** `aumentar_forca` + `resistencia_eletricidade` continua **preparo compatível sem nome especial**. **Controle aprovado:** `aumentar_carisma` + `aumentar_ilusao` é a **Poção da Fada**. **Incompatibilidade aprovada:** `aumentar_carisma` + `diminuir_forca` gera **Impuro**.
+
+### Saída obrigatória de cada avaliação
+
+Para cada candidato, registrar: `combo_id`, `efeitos_necessarios`, `nome`, `justificativa_de_sinergia`, `carcaca_proveniencia`, `exemplo_material_verificado`, `possiveis_incompatibilidades`, `estado_editorial`, `decisao_autoral`, `descricao_curta` e `visual` (família de recipiente, chave persistente, conceito de animação, status, quadros/duração ainda não definidos). **Não produzir arte nem inventar efeito extra**. O agente deve revisar os nomes, inclusive recusá-los se forem genéricos ou incoerentes.
+
+**Interface com o agente de menus:** o curador só promove um candidato a `sinergias[]` quando houver decisão expressa do criador; o desenvolvedor deve ignorar `candidatos_sinergia[]` em regras e nomes da versão jogável. Uma poção sem combo aprovado continua funcionando com seu nome de efeito dominante, com demais propriedades na descrição. A arte do combo futuro será uma camada visual associada ao **ID da assinatura**, não ao par de ingredientes.
+
+**Handoff deste ciclo:** oito candidatos no JSON, verificados contra o conjunto atual de ingredientes, com procedência e ideias visuais; **todos ainda não aprovados**. Não modificar `data/curadoria_ingredientes.json`, receitas legadas ou o runtime durante esta revisão.
