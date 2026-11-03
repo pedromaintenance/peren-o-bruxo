@@ -1,8 +1,24 @@
 # Peren, o Bruxo — Roadmap de desenvolvimento
 
-> **Atualizado em 21/10/2026 (BRT).** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
+> **Índice atualizado para continuidade em 03/11/2026 (BRT); histórico das releases iniciado em 21/10/2026.** Documento de acompanhamento das próximas entregas do jogo. Uma funcionalidade **implementada** não é necessariamente **publicada**, **validada** ou **aprovada artisticamente**.
 >
 > O plano detalhado original do Phaser permanece em [`docs/01-roadmap.md` na branch de desenvolvimento](https://github.com/pedromaintenance/peren-o-bruxo/blob/feature/phaser-m1h-f-free-assets/docs/01-roadmap.md). Este arquivo é o **índice executivo** mantido na `main`.
+
+## Continuidade de game design — Crafting e menus Phaser [03/11/2026]
+
+**Roadmap específico (documento diretor da UX e das mecânicas de crafting):** [`docs/roadmap-crafting-mecanicas-menus.md`](docs/roadmap-crafting-mecanicas-menus.md).
+
+**Fontes de autoridade:** [Constituição de Design v1.0](docs/constituicao-design-v1.md) (aprovada), [auditoria alquímica atual](docs/auditoria-alquimia-peren.md) (dados/decisões curatoriais) e [plano técnico de alquimia e gameplay](docs/plano-alquimia-gameplay-v1.md) (execução, testes e integração). O roadmap específico diferencia **CANÔNICO / PROPOSTA / ABERTO / PROTÓTIPO / ENTREGUE**, apresenta o backlog `CRAFT-D01`–`CRAFT-D13`, cenários de aceite `AQ-01`–`AQ-15` e instruções de handoff entre conversas.
+
+- **Direção aprovada:** interface `Ofício → família/tipo → efeito/projeto → ingredientes → resultado`, **sem listas planas**. Em alquimia, cinco famílias: **Poções** (atributos positivos), **Venenos** (negativos), **Tônicos** (magia especial temporária), **Elixires** (permanente) e **Bálsamos** (aplicáveis em itens, não consumíveis). Efeitos conhecidos mas indisponíveis ficam atenuados; disponíveis, iluminados; desconhecidos não são revelados.
+- **Direção aprovada:** estudar ingredientes, produzir por efeito conhecido **ou experimentar livremente**, inclusive sem conhecer propriedades; com 3+ tipos, cada efeito requer **duas fontes distintas**. Misturas com benefícios e malefícios preservam **todos** os efeitos compartilhados. As receitas especiais de outros ofícios continuam disponíveis em navegação hierárquica.
+- **Questões de design em aberto:** fórmula de potência, duração, custos de estudo/falha, extensão de 2 para até 4 ingredientes na interface, classificação semântica, efeitos persistentes/transformações, uso de preparados, metodologia dos outros ofícios e comércio. **Proposta não é regra automaticamente aprovada.**
+- **Estado técnico:** primeira bancada e motor de dois ingredientes estão na [PR #94](https://github.com/pedromaintenance/peren-o-bruxo/pull/94) em *draft*; não foram mesclados nem publicados. Um registro de mistura no save **ainda não** é um objeto utilizável em inventário. A `main` contém o bundle Pages anterior. **Clássico congelado; não migrar saves clássicos nesta pré-alfa.**
+- **Próximos gates:** resolver D04/D05/D06 (combinação 2–4 tipos, preparado utilizável e 53 efeitos); fechar semântica de Elixires/Bálsamos; integrar inventário, exploração, combate, controles e QA; publicar prévia Phaser isolada somente após testes e aprovação pertinente. **Este ciclo alterou apenas documentação.**
+
+**Ordem para retomar o trabalho:** Constituição → roadmap específico → contrato de bancada da PR #94 → plano técnico → auditoria curatorial na `main` → código e testes da branch. As seções históricas abaixo continuam válidas como registro de versões **anteriores**, não substituem esta direção vigente.
+
+---
 
 ## Onde jogar e como o projeto está organizado
 
