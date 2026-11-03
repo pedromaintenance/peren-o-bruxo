@@ -137,3 +137,14 @@ Para cada candidato, registrar: `combo_id`, `efeitos_necessarios`, `nome`, `just
 **Interface com o agente de menus:** o curador só promove um candidato a `sinergias[]` quando houver decisão expressa do criador; o desenvolvedor deve ignorar `candidatos_sinergia[]` em regras e nomes da versão jogável. Uma poção sem combo aprovado continua funcionando com seu nome de efeito dominante, com demais propriedades na descrição. A arte do combo futuro será uma camada visual associada ao **ID da assinatura**, não ao par de ingredientes.
 
 **Handoff deste ciclo:** oito candidatos no JSON, verificados contra o conjunto atual de ingredientes, com procedência e ideias visuais; **todos ainda não aprovados**. Não modificar `data/curadoria_ingredientes.json`, receitas legadas ou o runtime durante esta revisão.
+
+## Continuidade — Ciclos 87–96 (03/11/2026)
+
+Foram auditadas mais dez fichas, de **Ovo de Tordo (restauração)** a **Tórax de Vaga-lume**. A [matriz ecológica de 58 ingredientes](../data/auditoria_ecologica_ingredientes.json) e o [dossiê até o Ciclo 96](auditoria-alquimia-peren.md) preservam as justificativas. Referência autoral: [Monstros da Carcaça](https://github.com/pedromaintenance/monstros-carcaca/tree/338dfc5ff4304e6ec2519e06b08cbb1de0947bd6).
+
+- **Ovos de Tordo:** as duas fichas com o mesmo nome foram examinadas (Ciclos 78 e 87). A distinção editorial **agilidade** versus **restauração** é fundada nas propriedades de cada ID, mas **não estabelece espécies distintas**. Os nomes canônicos do JSON continuam iguais; eventual rotulagem na UI é responsabilidade do outro fluxo.
+- **Carne Humana e Orelha de Troglodita:** conservar a existência dos itens na curadoria de Peren sem inferir violência, vítima, espécie, consentimento ou proveniência. O fato de Drakport ser centro de escravização não fundamenta uma cadeia de fornecimento de restos humanos. A taxonomia e a representação desses materiais continuam pendentes de evidência e, se necessário, decisão do criador.
+- **Gelatina de Medusa:** a ficha diz criatura flutuante; não está comprovado se é um organismo marinho, górgona mitológica ou outra criatura fantástica. Não atribuir petrificação nem origem no Mar de Sangue.
+- **Ovo de Verme Gigante, Carpa de Pedra, Presa de Javali, Bagas de Zimbro, Uvas de Jasmim e Tórax de Vaga-lume:** preservar as propriedades sem inventar ecossistemas, povoações produtoras, métodos de coleta ou cadeia comercial.
+
+**Integridade:** fichas e atributos canônicos intactos; não foram alterados `data/curadoria_ingredientes.json`, `data/itens.json`, `data/receitas.json`, scripts, menus, assets ou saves. Próximo lote a partir do **Ciclo 97 — Carapaça de Caranguejo**.
