@@ -1,0 +1,52 @@
+# Plano executável — Alquimia e Gameplay (início v1)
+**Origem:** Constituição de Design v1.0, aprovada em 03/11/2026.
+**Estratégia:** primeiro auditoria e módulo puro testável; depois integração versionada. Branch experimental isolada. O clássico publicado e o bundle Phaser não são alterados nesta largada.
+
+## Inventário comprovado em 03/11/2026
+- `data/curadoria_ingredientes.json`: 111 ingredientes, 53 efeitos, zero efeitos isolados; 101 fichas com três atributos e 10 com quatro.
+- Problema editorial identificado: `ing-rock-warbler-egg` e `ing-pine-thrush-egg` exibem o mesmo nome "Ovo de Tordo"; IDs e efeitos não são equivalentes. Escolher nomes distintos, preservando IDs e referências, em curadoria rastreada.
+- `game.js`: `craft()` fabrica por `data/receitas.json`; `useItem()` prioriza `it.efeito` ou o primeiro de `it.efeitos`. O motor dinâmico ainda não está integrado.
+- O clássico usa `peren_carcaca_save_v1`. A prévia Phaser mantém save/cache próprios. Essas chaves são zonas protegidas.
+
+## Etapa A — Curadoria transversal (P0)
+**Entrega:** auditoria reprodutível do catálogo, matriz de parceiros, duplicidades, atributos inválidos, divergências de semântica, biomas/habitats e histórico de decisões.
+**Ações:** validar os 111 registros e intensidade I–III; mapear nomes duplicados e colisões de tradução; identificar atributos incompatíveis e conflitos de lore; registrar justificativas, grau de confiança e mudanças.
+**Gate:** testes de estrutura e consistência sem perda de IDs/efeitos. Divergências materiais exigem prova; decisões de cânone irreversíveis retornam ao criador.
+**Estado inicial:** investigação; a auditoria por ingrediente está documentada até o Ciclo 38. Fungo do Pântano é o próximo da fila, mas o método agora passa a ser por lotes auditáveis.
+
+## Etapa B — Núcleo combinatório independente (P0)
+**Entrega:** `ferramentas/alquimia-experimental.mjs`, sem imports do runtime, que recebe catálogo + IDs e retorna a interseção com fontes distintas. Não define potência, duração ou save.
+**Ações:** validar entrada, ordem invariável, pares com 2 efeitos, 3+ fontes, duplicação de tipos e ausência de interseção. Criar `tests/qa_alquimia_experimental.mjs`.
+**Gate:** assertivas determinísticas com o catálogo canônico; nenhuma edição em `game.js`, `data/receitas.json` ou `data/itens.json`.
+**Estado inicial:** iniciar na branch experimental, antes de qualquer integração visual.
+
+## Etapa C — Semântica e balanceamento por simulação (P0)
+**Entrega:** catálogo dos 53 efeitos com tipo, alvo, potência sugerida, duração, conflito, empilhamento, cura/veneno e efeitos persistentes.
+**Ações:** testar fórmulas alternativas; não supor média. Diferenciar `dano_magia`, `diminuir_magia` e regeneração; distinguir aumentar saúde, restaurar saúde e regenerar saúde. Definir estados e transições de Vampirismo, doenças e maldições.
+**Gate:** testes por classe de efeito, limites e invariantes; mudanças fundamentais de cosmologia voltam ao criador.
+
+## Etapa D — Interface de laboratório (P1)
+**Entrega:** protótipo isolado de bancada com seleção de insumos, descoberta de propriedades, falha e múltiplos efeitos; UI touch e teclado.
+**Ações:** experimentar 2–4 tipos, recipientes reutilizáveis, feedback e diário/livro alquímico; sem expor efeitos desconhecidos por acidente.
+**Gate:** usabilidade e regressão mobile/desktop; importação/exportação de resultados de teste sem tocar saves reais.
+
+## Etapa E — Mundo, comércio e progressão (P1)
+**Entrega:** matrizes regionais de coleta, preços e demanda, ofícios/proficiência e usos não bélicos (viagens, resistências, cura, mobilidade).
+**Gate:** fontes de materiais rastreáveis, progressão coerente, testes de economia (inclusive loops de lucro artificiais), sem sobrescrever o conteúdo anterior.
+
+## Etapa F — Integração reversível (P0 antes de publicar)
+**Entrega:** adaptador clássico + plano de consumo no Phaser que mapeia efeitos dinâmicos para itens fabricados; mantém receitas especiais e produtos existentes.
+**Ações:** estudar bundling e runtime Phaser reais; versionar o formato de preparo/saves; testar produção, uso, inventário, comércio, luta, viagem, reload, PWA e migração.
+**Gate:** QA automático + regressão em Pages candidato + playtest de dispositivo físico + aprovação do criador para publicação grande. Não atualizar `main` com o novo motor por conta própria.
+
+## Rotina de autonomia
+1. A cada ciclo: ler a Constituição, os últimos registros da auditoria, ``AGENTS.md` e arquivos pertinentes; verificar `main` e branch experimental.
+2. Realizar um lote pequeno de pesquisa/curadoria ou código; anotar hipóteses, transformações, riscos e arquivos alterados.
+3. Executar validações; informar claramente se QA foi local, em CI, ou em Pages. Registrar commit e URL de revisão.
+4. Reavaliar a próxima etapa frente à gameplay e à Carcaça, sem substituir decisões canônicas.
+5. Fazer merge/publicação apenas dentro da autorização e do gate apropriado.
+
+## Primeira entrega concreta
+Criar branch `feature/alquimia-v1-experimental` a partir da `main` documentada; nela adicionar módulo **puro e sem efeitos colaterais** e testes com dados reais. A branch pode ser atualizada autonomamente. O conteúdo só é promovido ao runtime com compatibilidade demonstrada e aprovação de publicação pertinente.
+
+**Critério de sucesso da primeira entrega:** commit de documentação em `main`; commit funcional na branch experimental; nomes de arquivos afetados, checagem do módulo, estado do CI e próximos riscos descritos sem prometer publicação.

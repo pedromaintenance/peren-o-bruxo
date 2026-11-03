@@ -1,5 +1,7 @@
 # Peren, o Bruxo — Mercador da Carcaça
 
+**Direção aprovada (03/11/2026):** [Constituição de Design v1.0](docs/constituicao-design-v1.md) · [Plano executável de alquimia e gameplay](docs/plano-alquimia-gameplay-v1.md). Desenvolvimento experimental deve permanecer em branch isolada; o runtime público e os saves não são alterados por estes documentos.
+
 **Versão 0.1.4 — atlas do protagonista auditado — Modo Livre sandbox jogável / base de dados extensível.**
 
 ## Um jogo, uma experiência livre
