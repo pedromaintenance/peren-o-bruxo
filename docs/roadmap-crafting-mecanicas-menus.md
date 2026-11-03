@@ -78,7 +78,11 @@ As estações a preservar e evoluir são **Alquimia, Forja, Cozinha, Joalheria, 
 2. **Família / veículo de uso:** poção, veneno, tônico, elixir ou bálsamo; influencia recipiente, alvo e forma de aplicação, mas **não apaga** efeitos compartilhados.
 3. **Método / instrumento:** procedimentos e ferramentas que permitem preparar um veículo; **não** “purifica” ou altera efeitos automaticamente, a menos que futuramente exista regra aprovada.
 
-**[ABERTO] Mistura híbrida:** a forma mais fiel às leis atuais é **preservar todos os efeitos** e apresentar uma advertência contextual *somente se Peren conhece aqueles efeitos*. Debater se certas combinações tornam a família selecionada inadequada, sem permitir que a UI suprima efeitos reais. Uma etapa futura pode ensinar técnicas de separação/isolamento; nenhuma foi autorizada ainda.
+**[CANÔNICO — decisão expressa de 03/11/2026] Híbridos, dominância e impureza:** toda mistura híbrida é **classificada e nomeada pelo seu maior efeito**, acrescentando obrigatoriamente o rótulo **«Impuro»**. O efeito dominante governa a família principal de apresentação; **todos os efeitos secundários continuam presentes e ativos**, inclusive os desfavoráveis. Nome e rótulo não purificam nem eliminam propriedades.
+
+**[CANÔNICO — decisão expressa de 03/11/2026] Purificação avançada:** purificar um preparado **Impuro** exige **grande habilidade alquímica**. Purificar é um **processo deliberado e distinto da fabricação**, nunca um botão gratuito, automático ou uma filtragem cosmética da UI. A perícia de alquimia deve representar uma barreira mecânica efetiva.
+
+**[ABERTO — especificar antes de programar]:** o critério **quantitativo de «maior efeito»** depende da fórmula futura de potência (a intensidade I–III dos insumos não foi aprovada como potência final); permanecem pendentes **empates**, o limite exato de perícia, instrumentos, custo, tempo, risco de falha, perda/conservação de efeitos e eventual resíduo de purificação. Não inventar um limiar de nível nem presumir que purificar remove todos os efeitos secundários. Recomenda-se que a marcação **Impuro** apareça sem revelar propriedades ocultas, enquanto a lista dos efeitos segue o conhecimento real de Peren.
 
 **[ABERTO] Classificação semântica dos 53 efeitos:** classificar efeito por natureza, alvo e uso, não apenas por prefixo do ID. `aumentar_*`, `diminuir_*`, `resistencia_*` e efeitos especiais devem ter classificação revisável por dados. Curar, regenerar, aumentar máximo e proteger são comportamentos distintos. Atribuir **permanência** apenas após regra explícita. Vampirismo pode progredir até transformação; não simplificá-lo a roubo de PV.
 
@@ -148,7 +152,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 - Conhecimento visual: mostrar apenas propriedades identificadas pelo personagem; evitar que inventário/comércio revelem efeitos ocultos no tooltip.
 - Contrato de transação: consumir/aplicar uma vez, descontar quantidade, produzir efeitos, persistir alterações, bloquear duplicação após reload.
 
-**[ABERTO] Preparado de efeito misto:** como nomear, classificar, vender e administrar quando carrega benefícios e prejuízos; o conteúdo de efeitos deve sempre permanecer íntegro. Considerar rótulo de família predominante para **navegação** sem confundir com filtragem.
+**[CANÔNICO] Nome e categoria de preparado híbrido:** identificar **o maior efeito** como dominante e usar **«Impuro»** como rótulo obrigatório, por exemplo **«Poção de Aumentar Constituição — Impuro»**, somente quando o efeito dominante determinar a família Poções. Os demais efeitos são preservados na composição e no comportamento. **[ABERTO]** como comparar potência entre efeitos diferentes e como tratar empates. O conhecimento do personagem limita a exibição dos efeitos secundários, sem apagar sua existência. **[CANÔNICO]** o estado Impuro somente é passível de purificação por grande habilidade alquímica; as regras de transformação do preparado ainda serão definidas.
 
 **[ABERTO] Elixires:** persistência, irreversibilidade relativa, custos, restrições, incompatibilidades e sinais de advertência; consequências de transformar alguém não podem nascer de uma simples reclassificação de tônico.
 
@@ -175,6 +179,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 | **CRAFT-D05** | P0 | Modelo do preparado e aplicação | Item real no inventário, com efeitos e quantidade atômicos | **Proposta estrutural** |
 | **CRAFT-D06** | P0 | Semântica de 53 efeitos | Alvos, estados, potência, duração, dissipação, empilhamento definidos/testáveis | **A especificar** |
 | **CRAFT-D07** | P0 | Elixires, bálsamos, doenças e vampirismo | Permanência/aplicação/riscos aprovada antes de ligar motor | **A especificar** |
+| **CRAFT-D14** | P0 | Efeito dominante, rótulo «Impuro» e purificação avançada | Híbridos recebem nome do maior efeito + Impuro; nenhuma propriedade some automaticamente; purificação exige alta perícia e regras explícitas | **Regra aprovada; fórmula de dominância e parâmetros de purificação abertos** |
 | **CRAFT-D08** | P0 | Interface de receitas especiais legadas | Árvore separada por tipo/projeto; nenhuma receita perdida | **Requisito confirmado; protótipo na PR #94** |
 | **CRAFT-D09** | P1 | Progressão dos ofícios e instrumentos | Diferenças perceptíveis, sem nerf dos ingredientes | **Direção constitucional; números abertos** |
 | **CRAFT-D10** | P1 | Economia e receitas negociáveis | Custos, preços, disponibilidade regional e exploit tests | **Direção constitucional; regras abertas** |
@@ -186,7 +191,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 
 **Onda A — design jogável mínimo:** D01–D04. Prototipar menu por família/efeito; generalizar insumos a 2–4 tipos sem mudar regras canônicas; estudar e experimentar; preservar receitas legadas.
 
-**Onda B — significado do resultado:** D05–D07. Definir potência/duração e o contrato de preparado; implementar uso e efeito real, inclusive híbridos, persistência e classes extraordinárias.
+**Onda B — significado do resultado:** D05–D07 e D14. Definir potência/duração e o contrato de preparado; implementar uso e efeito real, inclusive híbridos, persistência e classes extraordinárias.
 
 **Onda C — identidade dos ofícios:** D08–D10 e D13. Manter produção especial, criar gramáticas livres por estação e integrar qualidade, perícia, economia e recursos.
 
@@ -209,10 +214,13 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 - **AQ-13:** catálogo preserva IDs, 111 ingredientes e 53 efeitos da linha de base **sem congelar números futuros**; nenhuma Stamina; nenhuma regressão na arte.
 - **AQ-14:** menu é legível em celular, acionável por teclado e gamepad e mostra as condições de bloqueio além da cor.
 - **AQ-15:** build e serviço offline funcionam na rota Phaser isolada no Pages, sem limpar saves/cache do clássico; teste de CI **não substitui** navegação na URL publicada.
+- **AQ-16:** mistura híbrida recebe o rótulo **Impuro** e o nome do **efeito dominante**; mantém todos os efeitos da composição em cálculos e efeitos reais, sem apagar os desfavoráveis.
+- **AQ-17:** purificação não pode ser executada por personagem sem a habilidade alquímica exigida (limiar futuro); não ocorre silenciosamente na fabricação e não modifica a curadoria canônica.
+- **AQ-18:** teste de efeitos de mesma potência não atribui arbitrariamente um «maior efeito»; desempate depende de regra explícita ainda pendente, sem classificar diferentemente A+B e B+A.
 
 ## 10. Decisões ainda abertas — pauta curta para próximos debates
 
-1. **Método e família:** o jogador escolhe veículo no início ou após descobrir a composição? Como a UI trata uma composição de efeitos positivos e negativos?
+1. **Método e família:** o híbrido já é nomeado pelo maior efeito + **Impuro** (decisão aprovada). Resta decidir **quando** o veículo de uso é escolhido, como identificar o maior efeito e como resolver empates.
 2. **Potência:** como combinar intensidade I–III das fontes, quantidade usada, qualidade do instrumento e perícia, inclusive 3–4 tipos?
 3. **Custo de tentativa e estudo:** consumir ação/ingrediente em sucesso, falha e pesquisa? Como traduzir falha parcial?
 4. **Conhecimento:** ordem de efeitos revelados, progressão de estudo, livros, mestres e lembrança de combinações.
@@ -222,6 +230,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 8. **Produção livre dos demais ofícios:** gramática de materiais e requisitos por estação, sem gerar produtos impossíveis.
 9. **Economia:** preços de preparados multiefeito, receitas vendáveis, regionalidade, raridade e fraudes/arbitragem.
 10. **Interface de 2–4 fontes:** quantidade de espaços inicial, desbloqueio de ferramentas e comportamento de toque/controle.
+11. **Purificação avançada:** mínimo de perícia, equipamentos de laboratório, custo material, risco, qualidade, efeito escolhido e destino dos efeitos secundários retirados/isolados (sem apagar efeitos na fabricação normal).
 
 **Regra de decisão:** aplicar livremente protótipos reversíveis em branch isolada; nenhum número, transformação irreversível, mudança cosmológica, regra de permanência ou promoção para Pages é aprovado apenas porque consta aqui como proposta. Para temas já fixados pela Constituição, o trabalho é de detalhamento/implementação, **não** novo voto.
 
@@ -233,9 +242,11 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 4. **Não migrar saves clássicos** nesta pré-alfa; preservar chaves existentes, sem apagar dados de usuário. Não modificar `game.js`, `data/receitas.json` ou atributos curados sem necessidade e autorização explícita.
 5. Não interpretar grupos de receitas como uma fórmula universal para todos os ofícios. Alquimia usa interseção por efeito; outros ofícios exigem suas regras materiais.
 6. Antes de qualquer entrega de código: registrar qual **CRAFT-Dxx** foi abordado, hipótese numérica, testes e compatibilidade; após, atualizar estado e evidência de commit/QA. Não marcar como publicado sem testar a URL real do Pages.
-7. **Marcos para a próxima conversa:** primeiro fechar D04 (2–4 fontes), D05 (instância do preparado), D06 (catálogo de efeitos) e a semântica híbrida D01/D02; então integração com inventário, combate, exploração e produção nos outros ofícios.
+7. **Marcos para a próxima conversa:** primeiro fechar D04 (2–4 fontes), D05 (instância do preparado), D06 (catálogo de efeitos) e **D14 (dominância, Impuro e purificação)**; então integração com inventário, combate, exploração e produção nos outros ofícios. **Não voltar a discutir se híbridos devem ser rotulados como Impuro; isso foi aprovado.**
 8. **Auditoria independente:** não misturar esse fluxo com o trabalho editorial em `docs/curadoria-itens-consistencia-carcaca.md`; ajustes curatoriais devem aparecer como changelog/commit de dados.
 
 ## 12. Histórico do roadmap
 
 - **03/11/2026 · v1.0:** consolidadas as leis da Constituição, cinco famílias, hierarquia de menus, experimentação livre, estudo, misturas híbridas, proposta de três dimensões, integração dos ofícios, backlog D01–D13, 15 testes de aceitação e handoff. **Somente documentação**, sem alterações em código, catálogo, saves ou Pages.
+
+- **03/11/2026 · decisão complementar v1.1:** híbridos são identificados pelo **maior efeito + Impuro**; purificação é uma técnica **avançada** e requer grande habilidade alquímica. Registradas pendências de potência comparativa, empates, custo, instrumentos, limiar de perícia e destino dos efeitos secundários. Acrescentados CRAFT-D14 e AQ-16–AQ-18. **Apenas documentação; sem alteração de gameplay, atributos ou catálogo.**
