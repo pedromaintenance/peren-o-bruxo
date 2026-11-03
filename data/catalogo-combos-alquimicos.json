@@ -15,7 +15,9 @@
       "Dois ou mais efeitos nao implicam sinergia.",
       "Dois beneficios sem incompatibilidade nao implicam impureza.",
       "Nunca criar potencia, bonus mecanico, receita ou asset automaticamente."
-    ]
+    ],
+    "regra_de_aprovacao": "Somente sinergias[] com estado nome_e_sinergia_aprovados ou posterior estado aprovado podem influenciar nomes canônicos. candidatos_sinergia[] são apenas sugestões de curadoria, não devem ser usados automaticamente para nomear produtos.",
+    "sinergia_nao_e_coocorrencia": "Convergência funcional/narrativa precisa justificar o nome, não basta dois efeitos positivos. Efeitos incompatíveis aprovados sobrepõem-se a combos."
   },
   "sinergias": [
     {
@@ -75,6 +77,309 @@
     "Mapeamento de outras incompatibilidades e sinergias aprovado pelo criador",
     "Regras de bonus mecanico exclusivo de combos, se houver",
     "Arte e animações, custo e integração em runtime",
-    "Interação de combo com incompatibilidade adicional"
+    "Interação de combo com incompatibilidade adicional",
+    "Avaliar candidatos_sinergia antes de promovê-los; nenhum visual sugerido está em produção.",
+    "Determinar precedência entre várias sinergias aprovadas na mesma preparação e empates de efeito dominante.",
+    "Validar semântica de dano_saude versus fraqueza_veneno antes de reconhecer qualquer reforço causal."
+  ],
+  "candidatos_sinergia": [
+    {
+      "id": "combo-asas-do-vendaval",
+      "nome_proposto": "Asas do Vendaval",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "voar",
+        "velocidade"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "tonico",
+      "parecer_de_sinergia": "Voo e velocidade aumentada atuam sobre a mesma necessidade de deslocamento aéreo; não concede movimento extra além dos efeitos de origem.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-blue-dartwing",
+          "ing-felsaad-tern-feathers",
+          "ing-hawk-feathers"
+        ],
+        "efeitos_resultantes": [
+          "velocidade",
+          "voar"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-asas-do-vendaval",
+        "conceito_de_animacao": "Espiral de penas luminosas e vento dentro do frasco, sem animação implementada.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-olhos-da-vigilia",
+      "nome_proposto": "Olhos da Vigília",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "aumentar_percepcao",
+        "visao_a_distancia"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "pocao",
+      "parecer_de_sinergia": "Perceber detalhes e enxergar longe fortalecem um mesmo ato de observação; dependência de mecânica real de alcance visual a definir.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-eye-of-sabre-cat",
+          "ing-falmer-ear",
+          "ing-hawk-feathers"
+        ],
+        "efeitos_resultantes": [
+          "aumentar_percepcao",
+          "visao_a_distancia"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-olhos-da-vigilia",
+        "conceito_de_animacao": "Um anel de íris e duas lentes concêntricas se abrem e focam.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-nascente-arcana",
+      "nome_proposto": "Nascente Arcana",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "aumentar_magia",
+        "regenerar_magia"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "pocao",
+      "parecer_de_sinergia": "A reserva mágica maior e sua regeneração são recursos complementares do mesmo ciclo; sem multiplicador adicional autorizado.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-briar-heart",
+          "ing-fire-salts",
+          "ing-jazbay-grapes"
+        ],
+        "efeitos_resultantes": [
+          "aumentar_magia",
+          "regenerar_magia"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-nascente-arcana",
+        "conceito_de_animacao": "Dois fluxos rúnicos, um acumula no fundo e outro ascende em ondas.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-veu-do-cacador",
+      "nome_proposto": "Véu do Caçador",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "invisibilidade",
+        "aumentar_furtividade"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "tonico",
+      "parecer_de_sinergia": "Ocultação visual e aptidão furtiva reforçam o mesmo propósito de permanecer indetectável, mas não criam invulnerabilidade nem anulam ruído automaticamente.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-abecean-longfin",
+          "ing-ashen-grass-pod",
+          "ing-chaurus-eggs",
+          "ing-crimson-nirnroot"
+        ],
+        "efeitos_resultantes": [
+          "aumentar_furtividade",
+          "invisibilidade"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-veu-do-cacador",
+        "conceito_de_animacao": "O contorno do frasco dissolve-se em neblina e reaparece por pulsos.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-seiva-vital",
+      "nome_proposto": "Seiva Vital",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "restaurar_saude",
+        "regenerar_saude"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "pocao",
+      "parecer_de_sinergia": "Cura imediata e recuperação gradual cobrem estágios diferentes da mesma restauração; duração e empilhamento ainda não aprovados.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-ash-hopper-jelly",
+          "ing-blisterwort",
+          "ing-emperor-parasol-moss",
+          "ing-garlic"
+        ],
+        "efeitos_resultantes": [
+          "regenerar_saude",
+          "restaurar_saude"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-seiva-vital",
+        "conceito_de_animacao": "Gota esmeralda que cura a superfície e se espalha como raízes luminosas.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-folego-das-profundezas",
+      "nome_proposto": "Fôlego das Profundezas",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "respirar_na_agua",
+        "resistencia_gelo"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "tonico",
+      "parecer_de_sinergia": "Propõe sobrevivência em águas profundas/frias, mas pode ser mera soma de proteções; exige avaliação de sinergia real e geografia da Carcaça.",
+      "forca_do_argumento": "condicional",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-frost-mirriam",
+          "ing-frost-salts",
+          "ing-histcarp",
+          "ing-nordic-barnacle"
+        ],
+        "efeitos_resultantes": [
+          "resistencia_gelo",
+          "respirar_na_agua"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-folego-das-profundezas",
+        "conceito_de_animacao": "Bolhas giram sob uma película de cristais frios, sem associar a uma região específica.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-silencio-do-feiticeiro",
+      "nome_proposto": "Silêncio do Feiticeiro",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "dano_magia",
+        "diminuir_magia"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "veneno",
+      "parecer_de_sinergia": "Drenar magia disponível e reduzir capacidade mágica são mecanismos distintos sobre o mesmo recurso; alcance e duração a especificar.",
+      "forca_do_argumento": "alto",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-butterfly-wing",
+          "ing-hagraven-claw",
+          "ing-orange-dartwing"
+        ],
+        "efeitos_resultantes": [
+          "dano_magia",
+          "diminuir_magia"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-silencio-do-feiticeiro",
+        "conceito_de_animacao": "Runas violetas ficam opacas uma a uma enquanto a luz do líquido se retrai.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    },
+    {
+      "id": "combo-veneno-da-ruina",
+      "nome_proposto": "Veneno da Ruína",
+      "estado": "proposto_nao_aprovado",
+      "efeitos_necessarios": [
+        "dano_saude",
+        "fraqueza_veneno"
+      ],
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "familia_visual_sugerida": "veneno",
+      "parecer_de_sinergia": "A vulnerabilidade a veneno parece complementar dano à saúde, mas dano_saude ainda não é tipado como dano venenoso; verificar semântica antes de aprovar.",
+      "forca_do_argumento": "condicional",
+      "exemplo_material_nao_receita": {
+        "ingredientes": [
+          "ing-deathbell",
+          "ing-giant-lichen"
+        ],
+        "efeitos_resultantes": [
+          "dano_saude",
+          "fraqueza_veneno"
+        ],
+        "observacao": "Amostra de factibilidade a partir do JSON canônico; outros conjuntos podem funcionar. Não fixa receita nem material obrigatório."
+      },
+      "visual_proposto": {
+        "chave_sugerida": "combo-veneno-da-ruina",
+        "conceito_de_animacao": "Um halo púrpura emerge de uma gota carmesim que escurece lentamente.",
+        "estado": "nao_produzido",
+        "sprite_exclusivo": false,
+        "quadros": null,
+        "duracao_ms": null
+      },
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "aprovacao_autoral": false,
+      "proveniencia": "Proposta de investigação 03/11/2026; não é uma decisão do criador"
+    }
   ]
 }
