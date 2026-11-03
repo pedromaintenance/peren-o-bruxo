@@ -446,3 +446,41 @@ Decisão explícita: manter integralmente `ing-luna-moth-wing`, sem alterações
 ## Escopo operacional da curadoria — 03/11/2026
 
 O criador dividiu o desenvolvimento: **este fluxo audita e prepara itens/ingredientes**, enquanto **outro chat implementa mecânica, menus, integração e gameplay**. O repositório [`pedromaintenance/monstros-carcaca`](https://github.com/pedromaintenance/monstros-carcaca) torna-se referência cruzada obrigatória de **taxonomia, ecologia, habitats, culturas e geografia**, distinguindo `documentado/confirmado` de `proposto/inferido/rascunho` e registros importados. Ver [`docs/curadoria-itens-consistencia-carcaca.md`](curadoria-itens-consistencia-carcaca.md). A ficha do Fungo do Pântano permanece sem alteração e aguardará o próximo lote de curadoria autônoma. Nenhum item, receita, motor, save ou asset foi alterado por esta definição de escopo.
+
+
+## Lote autônomo de curadoria — Ciclos 39–46 (03/11/2026)
+
+**Mandato:** a Constituição de Design v1.0 autoriza auditoria editorial sem voto individual; este lote **não constitui nova aprovação pessoal do criador para cada ficha**. Foram preservados nome, descrição, raridade, três atributos e intensidades de todas as oito fichas. Fonte ecológica cruzada: [`monstros-carcaca`](https://github.com/pedromaintenance/monstros-carcaca/tree/b08b0f69c8d6d4ed332540565b61fa32ac3ae076) (`b08b0f69c8d6`). A falta de habitat específico **não é contradição**. Metadados do lote: [`data/auditoria_ecologica_ingredientes.json`](../data/auditoria_ecologica_ingredientes.json).
+
+### Ciclo 39 — Fungo do Pântano (`ing-swamp-fungal-pod`)
+
+**Preservar integralmente por auditoria delegada:** Restaurar Saúde II; Paralisia II; Resistência à Eletricidade I. **19 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Fungo de Diabrete (restaurar_saude, paralisia). **Cruzamento ecológico:** Nenhum pântano de origem desta espécie foi confirmado no atlas consultado; ambientes úmidos da foz não comprovam a presença deste fungo. **Decisão editorial:** Conservar a ambivalência entre cura e paralisia, e a resistência elétrica leve. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 40 — Gordura de Troll (`ing-troll-fat`)
+
+**Preservar integralmente por auditoria delegada:** Resistência a Veneno II; Aumentar Força II; Frenesi I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Carapaça de Caranguejo (resistencia_veneno, aumentar_forca). **Cruzamento ecológico:** As fichas autorais consultadas não vinculam este material a um troll específico ou a uma população regional. Isso não prova inexistência de trolls na Carcaça. **Decisão editorial:** Não classificar o troll como monstro obrigatório, nem atribuir habitat ou forma de obtenção sem fonte. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 41 — Sais do Vazio (`ing-void-salts`)
+
+**Preservar integralmente por auditoria delegada:** Aumentar Magia III; Resistência à Magia II; Fraqueza à Eletricidade I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Algodão da Tundra (aumentar_magia, resistencia_magia). **Cruzamento ecológico:** A palavra 'Vazio' na ficha não prova relação física com a Não-Existência definida como exterior a Corau; origem dos cristais não documentada. **Decisão editorial:** Manter os três efeitos existentes sem reinterpretar o Vazio como entidade, plano habitável ou extração fora de Corau. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 42 — Asa de Borboleta (`ing-butterfly-wing`)
+
+**Preservar integralmente por auditoria delegada:** Restaurar Saúde II; Dano à Magia I; Diminuir Força I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Fungo de Bolha (restaurar_saude, diminuir_forca). **Cruzamento ecológico:** Não há identificação autoral de espécie ou distribuição regional para esta borboleta nos registros consultados. **Decisão editorial:** Não presumir que a asa vem da mesma espécie que a Asa de Borboleta Azul. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 43 — Asa de Mariposa Ancestral (`ing-ancestor-moth-wing`)
+
+**Preservar integralmente por auditoria delegada:** Aumentar Encantamento III; Aumentar Conjuração II; Diminuir Constituição I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Antena de Verme Gigante (aumentar_encantamento, aumentar_conjuracao). **Cruzamento ecológico:** O adjetivo 'ancestral' não estabelece associação com os primordiais Kindau, Dialel ou Corau nem com uma tradição específica sem fonte. **Decisão editorial:** Preservar evocação e encantamento; não criar espécie, culto ou ritual adicional. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 44 — Antena de Verme Gigante (`ing-chaurus-hunter-antennae`)
+
+**Preservar integralmente por auditoria delegada:** Aumentar Encantamento II; Aumentar Conjuração II; Diminuir Destreza I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Asa de Mariposa Ancestral (aumentar_encantamento, aumentar_conjuracao). **Cruzamento ecológico:** O catálogo de Peren fala em verme gigante, mas não há associação autoral confirmada a espécie, bioma ou povo da Carcaça. **Decisão editorial:** Não importar automaticamente a biologia do Chaurus de Skyrim nem transformar 'verme' em classificação zoológica oficial. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 45 — Tufo Cinzento (`ing-ash-creep-cluster`)
+
+**Preservar integralmente por auditoria delegada:** Resistência ao Fogo II; Aumentar Destruição II; Diminuir Constituição I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Cinzas Mortuárias (resistencia_fogo, diminuir_constituicao). **Cruzamento ecológico:** A descrição do ingrediente menciona cinzas quentes, mas as paisagens secas da Caatinga e outros biomas não confirmam esse vegetal ou habitat de cinzas. **Decisão editorial:** Diferenciar vegetação adaptada a material queimado de um incêndio regional canônico. Sem edição de `data/curadoria_ingredientes.json`.
+
+### Ciclo 46 — Óleo de Autômato (`ing-dwarven-oil`)
+
+**Preservar integralmente por auditoria delegada:** Regenerar Magia II; Restaurar Magia II; Fraqueza à Magia I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Tufo Rastejante (restaurar_magia, fraqueza_magia). **Cruzamento ecológico:** O manuscrito documenta forjas e galerias anãs em Thargrid, mas não confirma que esses autômatos e o óleo sejam fabricados ou encontrados especificamente ali. **Decisão editorial:** Não atribuir fabrico ou cadeia de comércio a uma cidade sem referência; manter a descrição do item em Peren. Sem edição de `data/curadoria_ingredientes.json`.
+

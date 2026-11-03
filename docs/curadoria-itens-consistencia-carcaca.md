@@ -60,3 +60,8 @@ O repositório Monstros da Carcaça contém duas camadas distintas: referência 
 - **Fungo do Pântano (`ing-swamp-fungal-pod`):** próximo na ordem de conectividade após o Ciclo 38; analisar a ambivalência Restaurar Saúde II / Paralisia II / Resistência à Eletricidade I, sem atribuir habitat específico não comprovado.
 - **Ovos de Tordo:** pesquisar e preparar desambiguação fiel ao catálogo, com migração de rótulos planejada; não mexer no motor.
 - **Lote ecológico:** revisar os ingredientes com nomes de lugares, criaturas ou oceanos antes de criar procedências ou regiões automáticas.
+
+
+## Continuidade da curadoria autônoma — lote 39–46
+
+O lote editorial de 03/11/2026 conserva integralmente **Fungo do Pântano, Gordura de Troll, Sais do Vazio, Asa de Borboleta, Asa de Mariposa Ancestral, Antena de Verme Gigante, Tufo Cinzento e Óleo de Autômato**. Não há contradições comprovadas nas propriedades, mas habitat, espécies e origens cosmológicas específicas não foram inventados para preencher lacunas. A matriz estruturada permanece em [`data/auditoria_ecologica_ingredientes.json`](../data/auditoria_ecologica_ingredientes.json) e as justificativas individuais no [dossiê de auditoria](auditoria-alquimia-peren.md). **Pendente:** resolver nome duplicado de dois Ovos de Tordo sem criar espécies inéditas. Próxima ficha por conectividade: Pena de Gaivota, cuja origem exclusiva em Portomonte já é decisão expressa, a ser confrontada com a geografia estabelecida.

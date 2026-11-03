@@ -1,0 +1,458 @@
+{
+  "schema": "peren-auditoria-ecologica-ingredientes-v1",
+  "status": "metadados_editoriais_nao_jogaveis",
+  "data": "2026-11-03",
+  "escopo": "Ciclos 39-46 e pendencia nominal transversal; não altera fichas nem receitas.",
+  "origem_catalogo": {
+    "repositorio": "pedromaintenance/peren-o-bruxo",
+    "arquivo": "data/curadoria_ingredientes.json",
+    "sha_blob": "57cf86f623ecabb4c30eb3a052384d627b615aa8"
+  },
+  "origem_referencia": {
+    "repositorio": "pedromaintenance/monstros-carcaca",
+    "commit_sha": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+    "arquivos_consultados": [
+      "data/taxonomia_carcaca.json",
+      "data/regioes_carcaca.json",
+      "data/lugares_carcaca.json",
+      "docs/LORE_HACK_CARCACA_DW.md",
+      "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+      "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+      "data/atlas/hidrografia-continental-ciclo39.json",
+      "dist/carcaca/creatures.json"
+    ]
+  },
+  "regra_de_uso": "Separar explicitamente fato documentado, compatibilidade temática e hipótese. A ausência de espécie nos registros autorais consultados não é prova de inexistência. Não inferir ocorrência, abundância, comércio, espécie nem origem cosmológica sem fonte.",
+  "itens": {
+    "ing-swamp-fungal-pod": {
+      "ciclo": 39,
+      "nome": "Fungo do Pântano",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 19,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-imp-stool",
+          "nome": "Fungo de Diabrete",
+          "efeitos": [
+            "restaurar_saude",
+            "paralisia"
+          ]
+        },
+        {
+          "id": "ing-ash-hopper-jelly",
+          "nome": "Gelatina de Gafanhoto",
+          "efeitos": [
+            "restaurar_saude",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo",
+      "estado_vinculo_carcaca": "habitat_especifico_nao_documentado",
+      "achado": "Nenhum pântano de origem desta espécie foi confirmado no atlas consultado; ambientes úmidos da foz não comprovam a presença deste fungo.",
+      "nota_editorial": "Conservar a ambivalência entre cura e paralisia, e a resistência elétrica leve.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/atlas/hidrografia-continental-ciclo39.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-troll-fat": {
+      "ciclo": 40,
+      "nome": "Gordura de Troll",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-mudcrab-chitin",
+          "nome": "Carapaça de Caranguejo",
+          "efeitos": [
+            "resistencia_veneno",
+            "aumentar_forca"
+          ]
+        },
+        {
+          "id": "ing-boar-tusk",
+          "nome": "Presa de Javali",
+          "efeitos": [
+            "aumentar_forca",
+            "frenesi"
+          ]
+        },
+        {
+          "id": "ing-fly-amanita",
+          "nome": "Amanita Rubra",
+          "efeitos": [
+            "aumentar_forca",
+            "frenesi"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "gordura de criatura chamada troll",
+      "estado_vinculo_carcaca": "especie_e_habitat_sem_correspondencia_autoral",
+      "achado": "As fichas autorais consultadas não vinculam este material a um troll específico ou a uma população regional. Isso não prova inexistência de trolls na Carcaça.",
+      "nota_editorial": "Não classificar o troll como monstro obrigatório, nem atribuir habitat ou forma de obtenção sem fonte.",
+      "fontes_monstros": [
+        "dist/carcaca/creatures.json",
+        "data/taxonomia_carcaca.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-void-salts": {
+      "ciclo": 41,
+      "nome": "Sais do Vazio",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-tundra-cotton",
+          "nome": "Algodão da Tundra",
+          "efeitos": [
+            "aumentar_magia",
+            "resistencia_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cristal de natureza arcana",
+      "estado_vinculo_carcaca": "origem_cosmologica_nao_comprovada",
+      "achado": "A palavra 'Vazio' na ficha não prova relação física com a Não-Existência definida como exterior a Corau; origem dos cristais não documentada.",
+      "nota_editorial": "Manter os três efeitos existentes sem reinterpretar o Vazio como entidade, plano habitável ou extração fora de Corau.",
+      "fontes_monstros": [
+        "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-butterfly-wing": {
+      "ciclo": 42,
+      "nome": "Asa de Borboleta",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_forca",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-blisterwort",
+          "nome": "Fungo de Bolha",
+          "efeitos": [
+            "restaurar_saude",
+            "diminuir_forca"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "asa de inseto",
+      "estado_vinculo_carcaca": "especie_e_habitat_nao_documentados",
+      "achado": "Não há identificação autoral de espécie ou distribuição regional para esta borboleta nos registros consultados.",
+      "nota_editorial": "Não presumir que a asa vem da mesma espécie que a Asa de Borboleta Azul.",
+      "fontes_monstros": [
+        "data/atlas/macroambientes-ciclo35.json",
+        "data/taxonomia_carcaca.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-ancestor-moth-wing": {
+      "ciclo": 43,
+      "nome": "Asa de Mariposa Ancestral",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-chaurus-hunter-antennae",
+          "nome": "Antena de Verme Gigante",
+          "efeitos": [
+            "aumentar_encantamento",
+            "aumentar_conjuracao"
+          ]
+        },
+        {
+          "id": "ing-berit-s-ashes",
+          "nome": "Cinzas Mortuárias",
+          "efeitos": [
+            "aumentar_conjuracao",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-bone-meal",
+          "nome": "Farinha de Ossos",
+          "efeitos": [
+            "aumentar_conjuracao",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "asa de mariposa",
+      "estado_vinculo_carcaca": "vinculo_ritual_especifico_nao_comprovado",
+      "achado": "O adjetivo 'ancestral' não estabelece associação com os primordiais Kindau, Dialel ou Corau nem com uma tradição específica sem fonte.",
+      "nota_editorial": "Preservar evocação e encantamento; não criar espécie, culto ou ritual adicional.",
+      "fontes_monstros": [
+        "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-chaurus-hunter-antennae": {
+      "ciclo": 44,
+      "nome": "Antena de Verme Gigante",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ancestor-moth-wing",
+          "nome": "Asa de Mariposa Ancestral",
+          "efeitos": [
+            "aumentar_encantamento",
+            "aumentar_conjuracao"
+          ]
+        },
+        {
+          "id": "ing-blue-butterfly-wing",
+          "nome": "Asa de Borboleta Azul",
+          "efeitos": [
+            "aumentar_encantamento",
+            "diminuir_destreza"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "antena de predador quitinoso",
+      "estado_vinculo_carcaca": "taxon_e_habitat_nao_documentados",
+      "achado": "O catálogo de Peren fala em verme gigante, mas não há associação autoral confirmada a espécie, bioma ou povo da Carcaça.",
+      "nota_editorial": "Não importar automaticamente a biologia do Chaurus de Skyrim nem transformar 'verme' em classificação zoológica oficial.",
+      "fontes_monstros": [
+        "dist/carcaca/creatures.json",
+        "data/taxonomia_carcaca.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-ash-creep-cluster": {
+      "ciclo": 45,
+      "nome": "Tufo Cinzento",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destruicao",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-berit-s-ashes",
+          "nome": "Cinzas Mortuárias",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-bone-meal",
+          "nome": "Farinha de Ossos",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-wisp-wrappings",
+          "nome": "Faixas de Espírito",
+          "efeitos": [
+            "aumentar_destruicao",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fruto de trepadeira",
+      "estado_vinculo_carcaca": "localizacao_da_flora_nao_documentada",
+      "achado": "A descrição do ingrediente menciona cinzas quentes, mas as paisagens secas da Caatinga e outros biomas não confirmam esse vegetal ou habitat de cinzas.",
+      "nota_editorial": "Diferenciar vegetação adaptada a material queimado de um incêndio regional canônico.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/atlas/macroambientes-ciclo35.json"
+      ],
+      "alteracao_curadoria": false
+    },
+    "ing-dwarven-oil": {
+      "ciclo": 46,
+      "nome": "Óleo de Autômato",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 20,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-creep-cluster",
+          "nome": "Tufo Rastejante",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-taproot",
+          "nome": "Raiz Mestra",
+          "efeitos": [
+            "regenerar_magia",
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-moon-sugar",
+          "nome": "Açúcar Lunar",
+          "efeitos": [
+            "regenerar_magia",
+            "restaurar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "lubrificante arcano de mecanismo anão",
+      "estado_vinculo_carcaca": "origem_tecnica_regional_nao_confirmada",
+      "achado": "O manuscrito documenta forjas e galerias anãs em Thargrid, mas não confirma que esses autômatos e o óleo sejam fabricados ou encontrados especificamente ali.",
+      "nota_editorial": "Não atribuir fabrico ou cadeia de comércio a uma cidade sem referência; manter a descrição do item em Peren.",
+      "fontes_monstros": [
+        "docs/LORE_HACK_CARCACA_DW.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "alteracao_curadoria": false
+    }
+  },
+  "pendencias": [
+    {
+      "tipo": "colisao_nome_sem_equivalencia_de_especie",
+      "titulo": "Dois Ovos de Tordo",
+      "ids": [
+        "ing-rock-warbler-egg",
+        "ing-pine-thrush-egg"
+      ],
+      "nome_atual": "Ovo de Tordo",
+      "estado": "aberta_para_desambiguacao_sem_inventar_taxonomia",
+      "evidencia": "IDs, descrições e perfis de atributos distintos no catálogo de Peren; nenhum vínculo destas aves a uma espécie documentada no bestiário autoral consultado.",
+      "orientacao": "Preservar IDs, atributos e nomes canônicos até estabelecer uma designação sem sugerir espécie ou habitat não comprovado. Uma etiqueta descritiva de uso pode ser avaliada no catálogo/menus, mas não deve virar fato biológico.",
+      "risco": "Colisão na apresentação e na seleção manual de receitas."
+    }
+  ],
+  "validacoes": {
+    "ingredientes_revisados": 8,
+    "imutabilidade_ids": true,
+    "modifica_curadoria": false,
+    "modifica_runtime": false
+  }
+}
