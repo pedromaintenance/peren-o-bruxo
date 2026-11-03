@@ -250,3 +250,45 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 - **03/11/2026 · v1.0:** consolidadas as leis da Constituição, cinco famílias, hierarquia de menus, experimentação livre, estudo, misturas híbridas, proposta de três dimensões, integração dos ofícios, backlog D01–D13, 15 testes de aceitação e handoff. **Somente documentação**, sem alterações em código, catálogo, saves ou Pages.
 
 - **03/11/2026 · decisão complementar v1.1:** híbridos são identificados pelo **maior efeito + Impuro**; purificação é uma técnica **avançada** e requer grande habilidade alquímica. Registradas pendências de potência comparativa, empates, custo, instrumentos, limiar de perícia e destino dos efeitos secundários. Acrescentados CRAFT-D14 e AQ-16–AQ-18. **Apenas documentação; sem alteração de gameplay, atributos ou catálogo.**
+
+
+## 13. Proposta de progressão e purificação — v1.2 (03/11/2026)
+
+**Natureza:** [PROPOSTA] — não altera a Constituição, a curadoria ou os motores. [CANÔNICO] continua sendo somente: todo híbrido recebe nome do maior efeito + Impuro; purificação exige grande habilidade alquímica; a fabricação não elimina efeitos secundários.
+
+### A maestria usa a habilidade Alquimia existente
+
+O clássico e o Phaser já possuem nível de perícia de 1–100, calculado sobre pontos acumulados; o clássico também possui tutores pagos. Não criar uma segunda perícia. Faixas para **teste**, não aprovadas:
+
+| Alquimia | Grau proposto | Desbloqueio em estudo |
+| --- | --- | --- |
+| 1–24 | Aprendiz das Essências | Estudar, experimentar dois tipos, caderno |
+| 25–49 | Praticante | Analisar efeitos conhecidos, possível terceiro tipo |
+| 50–74 | Especialista | Diagnosticar impurezas, possível quarto tipo, preparar instrumental |
+| 75–100 | Mestre da Retificação | Elegível a aprender purificação, com condições adicionais |
+
+O nível **75** é hipótese; comparar alternativas **65/75/85** frente ao esforço real para alcançar cada faixa. A maestria não deve exigir apenas repetição mecânica: descoberta inédita, estudo, mestres e novos processos devem produzir progressão perceptível, sem reduzir a potência dos ingredientes.
+
+### Retificação — uma bancada dentro da Alquimia
+
+**Caminho [PROPOSTA]:** `Alquimia → Retificação → escolher preparado Impuro → examinar efeitos conhecidos → selecionar propriedade secundária → confirmar custos e riscos → resultado`.
+
+**Portas de acesso [PROPOSTA]:** alta perícia + técnica aprendida de um mestre/texto + instrumentos especializados + conhecimento suficiente dos efeitos a separar. Se faltar alguma condição, a interface deve explicar e manter a ação bloqueada.
+
+**Operação candidata:** conservar o efeito dominante e separar **um efeito secundário identificado por operação**. Os outros efeitos persistem; se a mistura continuar híbrida, mantém o rótulo Impuro. Se restar um único efeito, perde a marca Impuro. Nenhum efeito é automaticamente suprimido na fabricação, e nenhuma potência aumenta gratuitamente. Custos, subprodutos, instrumentos, risco de falha e consequência do erro **não foram aprovados**.
+
+**Informação oculta:** a UI não revela propriedades desconhecidas ao classificar um preparado como Impuro. Se o efeito dominante ainda não foi identificado, uma identificação provisória do tipo `Preparado Impuro — efeito principal desconhecido` é preferível ao spoiler.
+
+**Empate de potência [PROPOSTA]:** depois de fixar uma regra de potência, quando dois efeitos forem igualmente dominantes, o jogador poderá escolher entre os empatados identificados. Antes da identificação, usar apresentação sigilosa; nunca decidir pelo ingrediente selecionado primeiro.
+
+**Questão aberta:** definir operacionalmente se todo preparo com dois ou mais efeitos é Impuro, ou somente uma mistura que reúna famílias/direções diferentes. A emenda constitucional fixa o tratamento dos híbridos, mas não resolve essa fronteira.
+
+### Backlog e aceites adicionais
+
+- **CRAFT-D15 [P1 design / P0 antes de implementar]:** aprovar faixas de maestria, progressão por estudo e tutores, técnica de retificação, bancada, instrumentos e custos.
+- **AQ-19:** jogador sem requisitos vê Retificar bloqueado e não perde recursos.
+- **AQ-20:** o mestre pode examinar preparado Impuro e escolher um efeito secundário identificado; propriedades ocultas não vazam para a UI.
+- **AQ-21:** retificação é transação atômica sobre uma instância de preparado, sem duplos usos, duplicação ou alteração do catálogo original.
+- **AQ-22:** em empate, a ordem A+B não define indevidamente o efeito dominante.
+
+**Próximo debate:** escolher o limiar real de perícia e a definição de híbrido; depois desenhar custos, riscos e resultados da retificação. **Estado: proposta documentada, não implementada, não publicada.**
