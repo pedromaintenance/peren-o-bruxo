@@ -105,10 +105,10 @@ a{color:#e8c48c}
 <script>
 (function(){
 "use strict";
-const state={page:"bancada",scenario:"fada",known:false,lots:0,last:null,opened:false};
+const state={page:"bancada",scenario:"fada",known:false,lots:0,comboLots:0,last:null,opened:false};
 const scenes={
  fada:{name:"Poção da Fada",family:"Poção",materials:["Língua-de-Dragão","Coração de Demônio","Cogumelo Escamoso"],effects:["Aumentar Carisma","Aumentar Ilusão"],additional:[],kind:"combo",id:"combo-pocao-da-fada"},
- comum:{name:"Poção de Aumentar Força",family:"Poção",materials:["Garras de Urso","Tufo Rastejante","Gelatina de Gafanhoto","Libélula Azul"],effects:["Aumentar Força","Resistência à Eletricidade"],additional:[],kind:"ordinary",note:"Nome do efeito mais intenso: ilustrativo. A fórmula de potência ainda está aberta."},
+ comum:{name:"Poção de Aumentar Força",family:"Poção",materials:["Gelatina de Gafanhoto","Garras de Urso","Libélula Azul","Amanita Rubra"],effects:["Aumentar Força","Resistência à Eletricidade"],additional:[],kind:"ordinary",note:"Nome do efeito mais intenso: ilustrativo. A fórmula de potência ainda está aberta."},
  impuro:{name:"Poção de Aumentar Carisma — Impuro",family:"Poção",materials:[],effects:["Aumentar Carisma","Diminuir Força"],additional:[],kind:"impure",note:"Cenário conceitual de incompatibilidade aprovada; materiais não fornecidos como receita."},
  editorial:{name:"Preparo com Voo e Velocidade",family:"Tônico",materials:["Pena de Gaivota","Penas de Falcão","Libélula Azul"],effects:["Voar","Velocidade"],additional:[],kind:"ordinary",note:"Existe um nome editorial proposto, mas ele NÃO é aprovado e por isso não aparece no título jogável."}
 };
@@ -150,7 +150,7 @@ function buildJournal(){
  if(!state.known){
   el("content").innerHTML='<div class="section-title">Combos descobertos</div><div class="empty" style="margin-top:15px"><b>Nenhuma sinergia registrada.</b><p>Peren pode experimentar ingredientes ou estudar suas propriedades para reconhecer efeitos complementares.</p></div><div class="btnrow">'+btn("Voltar à Bancada","bancada",true)+'</div>';
  }else{
-  el("content").innerHTML='<div class="section-title">Combo reconhecido · Poções</div><div class="paper">'+flask()+'<h3>Poção da Fada</h3><div class="effects">'+tags(scenes.fada.effects)+'</div><p>Carisma e Ilusão favorecem um mesmo propósito fantástico. Nenhum efeito adicional é presumido pelo nome.</p><div class="rule"><b>Primeira descoberta</b><span>Registrada nesta sessão demonstrativa</span></div><div class="rule"><b>Lotes de Poção da Fada</b><span>'+state.lots+'</span></div><div class="rule"><b>Fontes estudadas nesta demonstração</b><span>Língua-de-Dragão, Coração de Demônio, Cogumelo Escamoso (apenas um exemplo material)</span></div><div class="notice" style="margin-top:16px">A futura animação será identificada por <code>combo-pocao-da-fada</code>. Enquanto não existir asset aprovado, usa o frasco da família.</div></div><div class="btnrow">'+btn("Voltar à Bancada","bancada",true)+'</div>';
+  el("content").innerHTML='<div class="section-title">Combo reconhecido · Poções</div><div class="paper">'+flask()+'<h3>Poção da Fada</h3><div class="effects">'+tags(scenes.fada.effects)+'</div><p>Carisma e Ilusão favorecem um mesmo propósito fantástico. Nenhum efeito adicional é presumido pelo nome.</p><div class="rule"><b>Primeira descoberta</b><span>Registrada nesta sessão demonstrativa</span></div><div class="rule"><b>Lotes de Poção da Fada</b><span>'+state.comboLots+'</span></div><div class="rule"><b>Fontes estudadas nesta demonstração</b><span>Língua-de-Dragão, Coração de Demônio, Cogumelo Escamoso (apenas um exemplo material)</span></div><div class="notice" style="margin-top:16px">A futura animação será identificada por <code>combo-pocao-da-fada</code>. Enquanto não existir asset aprovado, usa o frasco da família.</div></div><div class="btnrow">'+btn("Voltar à Bancada","bancada",true)+'</div>';
  }
 }
 function render(){
@@ -173,13 +173,13 @@ document.addEventListener("click",function(e){
  const action=b.dataset.action;
  if(action==="preparar"){
   const c=scenes[state.scenario],isFirst=c.kind==="combo"&&!state.known;
-  state.lots++;state.last=state.scenario;state.opened=isFirst;
+  state.lots++;if(c.kind==="combo")state.comboLots++;state.last=state.scenario;state.opened=isFirst;
   if(isFirst)state.known=true;
   state.page="resultado";render();
   el("announcer").textContent=isFirst?"Nova sinergia descoberta: Poção da Fada. Registrada automaticamente.":c.kind==="impure"?"Preparado Impuro. Efeitos incompatíveis.":"Mistura preparada; efeitos preservados.";
   el("main").focus();return;
  }
- if(action==="reiniciar"){state.known=false;state.lots=0;state.last=null;state.page="bancada";state.scenario="fada";state.opened=false;render();el("announcer").textContent="Simulação reiniciada.";return;}
+ if(action==="reiniciar"){state.known=false;state.lots=0;state.comboLots=0;state.last=null;state.page="bancada";state.scenario="fada";state.opened=false;render();el("announcer").textContent="Simulação reiniciada.";return;}
  if(action==="caderno"||action==="bancada"){setPage(action);return;}
  if(action==="continuar"){state.last=null;setPage("bancada");return;}
 });
