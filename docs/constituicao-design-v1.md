@@ -19,12 +19,27 @@
 
 **Decisão expressa do criador, complementar às Leis 6 e 7, sem revogar a coexistência dos efeitos:**
 
-- Toda mistura **híbrida** é identificada e classificada pelo **maior efeito** que contém e recebe o rótulo obrigatório **Impuro**. O nome e a família principal seguem esse efeito dominante, mas **todos os efeitos secundários continuam na composição**. O rótulo não elimina efeitos adversos.
+- **Redação original superada pela Emenda A2 abaixo:** o rótulo Impuro não é universal para misturas de múltiplos efeitos. A ideia de identificar o efeito dominante permanece para preparados sem nome especial; todos os efeitos secundários continuam na composição.
 - **Purificar um preparado Impuro requer grande habilidade alquímica**. A purificação é procedimento deliberado, diferente de criar ou renomear a mistura; não é um filtro automático e não acontece apenas por escolher uma família no menu.
 - A Constituição **ainda não estabelece a fórmula da potência final**, o critério quantitativo de comparação entre efeitos heterogêneos, desempate de efeitos equivalentes, limite numérico de proficiência, ferramentas, materiais, sucesso/falha da purificação e quais efeitos ela permite separar, conservar ou descartar. Não introduzir essas hipóteses no cânone silenciosamente.
 - A UX deve preservar a descoberta de propriedades: o rótulo Impuro pode indicar a natureza da preparação sem conceder conhecimento automático dos efeitos ocultos. Essa última decisão de apresentação permanece proposta até validação do design.
 
 **Rastreio e continuidade:** [Roadmap de mecânicas e menus do crafting](roadmap-crafting-mecanicas-menus.md), item **CRAFT-D14** e testes **AQ-16–AQ-18**. Essa emenda registra **regra de design**, não declara implementação nem autorização de publicação.
+
+## Emenda A2 à Constituição v1.0 — sinergias, combos e incompatibilidades (03/11/2026)
+
+**Correção expressa do criador com precedência sobre qualquer redação anterior da Emenda A1 ou dos roadmaps:**
+
+1. **Múltiplos efeitos NÃO tornam uma preparação Impura por si só.** Impureza decorre de **incompatibilidade entre efeitos**. Exemplo canônico: **Aumentar Carisma + Diminuir Força → Impuro**, com todos os efeitos preservados.
+2. **Combos especiais surgem de sinergias reconhecidas**, não de haver dois efeitos quaisquer. Exemplo canônico: **Aumentar Carisma + Aumentar Ilusão → Poção da Fada**. O nome especial é identidade da combinação de efeitos, não receita fixa nem novo atributo.
+3. **Misturas compatíveis, mas sem sinergia nomeada**, continuam preparações comuns. Exemplo: **Aumentar Força + Resistência à Eletricidade** não recebe automaticamente um nome especial nem o rótulo Impuro; usa o nome do **efeito mais intenso**, e o outro permanece na descrição e no efeito real.
+4. **Todos os preparados são fabricados pela mesma regra combinatória**: cada efeito ativado exige pelo menos dois tipos distintos de ingrediente. Reconhecer um combo acontece **depois de calcular os efeitos**, com dois, três ou mais tipos, sem atalhos materiais e sem selecionar receita especial.
+5. **Precedência de classificação:** primeiro verificar incompatibilidades aprovadas (Impuro); não havendo incompatibilidade, verificar sinergias aprovadas (nome especial); em seguida usar o efeito de maior potência como nome comum, com demais efeitos na descrição. Se uma mistura contiver uma sinergia e também uma incompatibilidade, a incompatibilidade não pode ser escondida pelo nome bonito.
+6. **Purificação avançada continua válida** somente para preparados Impuros; não exigir purificar uma Poção da Fada nem uma mistura multi-efeito compatível.
+7. **Catalogar combos e incompatibilidades por IDs estáveis de efeitos** e separar nome, razão da sinergia, proveniência, estado editorial e reserva de identidade visual/animação futura. Sprites por família continuam padrão; combos nomeados podem receber tratamento artístico especial depois, sem criar um sprite por receita ou mudar o cálculo das propriedades.
+8. **Não criar bônus mecânicos extras automaticamente** por descobrir um nome de combo; novas propriedades, potência, critérios de desempate, efeitos visuais e sinergias adicionais continuam sujeitos a definição específica.
+
+**Registro estruturado:** [data/catalogo-combos-alquimicos.json](../data/catalogo-combos-alquimicos.json). **Handoff:** [roadmap de crafting](roadmap-crafting-mecanicas-menus.md) e [roadmap da curadoria](curadoria-itens-consistencia-carcaca.md). A2 corrige expressamente a interpretação anterior de que qualquer preparado multiefeito seria Impuro, mas **não revoga** a regra de conservar todos os efeitos, nem o requisito de alta perícia para purificar incompatíveis.
 
 ## 3. Gameplay e direção de desenvolvimento aprovados
 11. Peren aprende por experimentação, estudo, exploração, textos, mestres e observação. Identificação e descoberta de propriedades devem integrar o jogo.
