@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–56; 18 ingredientes em dois lotes; pendência nominal transversal; metadados não jogáveis.",
+  "escopo": "Ciclos 39–66; 28 ingredientes em três lotes; pendências editoriais sem mutação de itens/receitas; metadados não jogáveis.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -856,6 +856,481 @@
       ],
       "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
       "alteracao_curadoria": false
+    },
+    "ing-berit-s-ashes": {
+      "ciclo": 57,
+      "nome": "Cinzas Mortuárias",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 22,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ancestor-moth-wing",
+          "nome": "Asa de Mariposa Ancestral",
+          "efeitos": [
+            "aumentar_conjuracao",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-ash-creep-cluster",
+          "nome": "Tufo Cinzento",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-bone-meal",
+          "nome": "Farinha de Ossos",
+          "efeitos": [
+            "aumentar_conjuracao",
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cinzas de escriba ligadas a práticas rituais",
+      "estado_vinculo_carcaca": "identidade_do_escriba_e_origem_funebre_nao_documentadas",
+      "achado": "A ficha de Peren indica cinzas preservadas de um escriba. O acervo autoral registra os Kappa-Escribas no Arquivo e mortos-vivos em Vandar, mas não oferece vínculo deste resíduo com eles; nenhuma prática de cremação de Vandar foi confirmada.",
+      "nota_editorial": "Preservar conjuração II, resistência ao fogo II e diminuição de Constituição II. Não atribuir às cinzas origem yokai, vandariana ou culto funerário; tratar restos de pessoa como material de proveniência potencialmente sensível, não mercadoria de fonte presumida.",
+      "fontes_monstros": [
+        "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+        "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-bone-meal": {
+      "ciclo": 58,
+      "nome": "Farinha de Ossos",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 22,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ancestor-moth-wing",
+          "nome": "Asa de Mariposa Ancestral",
+          "efeitos": [
+            "aumentar_conjuracao",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-ash-creep-cluster",
+          "nome": "Tufo Cinzento",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-berit-s-ashes",
+          "nome": "Cinzas Mortuárias",
+          "efeitos": [
+            "resistencia_fogo",
+            "aumentar_conjuracao",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ossos moídos sem espécie especificada",
+      "estado_vinculo_carcaca": "identidade_de_ossos_e_origem_indeterminadas",
+      "achado": "O continente é sobre Golzdov, mas o produto descrito em Peren é farinha de ossos sem indicação de quem os produziu. Nem todas as ossadas do cenário são restos primordiais, humanos ou mortos-vivos de Vandar.",
+      "nota_editorial": "Preservar os três efeitos. Não classificar automaticamente como material de Kindau, ossário ritual ou saque de sepulturas; exigir evidência se a procedência vier a ser individualizada.",
+      "fontes_monstros": [
+        "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+        "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-gleamblossom": {
+      "ciclo": 59,
+      "nome": "Flor Luminescente",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 22,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "flor emissora de brilho tênue",
+      "estado_vinculo_carcaca": "habitat_da_flora_nao_documentado",
+      "achado": "O atlas autoral identifica grandes famílias florestais e outros ambientes, mas não comprova a espécie luminescente, sua área de crescimento ou associação com relíquias feéricas.",
+      "nota_editorial": "Conservar a propriedade medicinal, a resistência mágica e a paralisia; não atribuir a planta à floresta de Eldroth ou a uma corte sem fonte específica.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-spawn-ash": {
+      "ciclo": 60,
+      "nome": "Cinzas de Criatura",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 22,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ancestor-moth-wing",
+          "nome": "Asa de Mariposa Ancestral",
+          "efeitos": [
+            "aumentar_encantamento",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-ash-creep-cluster",
+          "nome": "Tufo Cinzento",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-berit-s-ashes",
+          "nome": "Cinzas Mortuárias",
+          "efeitos": [
+            "resistencia_fogo",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "resíduo de criatura sobrenatural não especificada",
+      "estado_vinculo_carcaca": "especie_e_procedencia_do_residuo_nao_documentadas",
+      "achado": "O adjetivo 'sobrenatural' na curadoria de Peren não identifica uma criatura única de `dist/carcaca/creatures.json`, uma entidade demoníaca ou vítima da necromancia de Vandar.",
+      "nota_editorial": "Manter o nome genérico e os atributos. Não atribuir automaticamente drop às criaturas únicas do Arquivo dos Mortos Afogados; distinguir de Cinzas Mortuárias.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-moon-sugar": {
+      "ciclo": 61,
+      "nome": "Açúcar Lunar",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 22,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-frost-salts",
+          "nome": "Sais da Geada",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_fogo"
+          ]
+        },
+        {
+          "id": "ing-dwarven-oil",
+          "nome": "Óleo de Autômato",
+          "efeitos": [
+            "restaurar_magia",
+            "regenerar_magia"
+          ]
+        },
+        {
+          "id": "ing-taproot",
+          "nome": "Raiz Mestra",
+          "efeitos": [
+            "restaurar_magia",
+            "regenerar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cristais adocicados de brilho pálido",
+      "estado_vinculo_carcaca": "ligacao_ao_templo_lunar_nao_documentada",
+      "achado": "A Carcaça possui o Templo da Lua no Rio Ancestral, mas o nome 'Açúcar Lunar' não demonstra vínculo com Severina, fases lunares, sacerdócio, rituais ou produção nesse local.",
+      "nota_editorial": "Preservar a identidade do cristal e seus três atributos, sem inserir proveniência lunar institucional ou transformar o ingrediente em monopólio do templo.",
+      "fontes_monstros": [
+        "docs/TEMPLO_LUA_SEVERINA_CICLO29.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-wisp-wrappings": {
+      "ciclo": 62,
+      "nome": "Faixas de Espírito",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_destruicao",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 23,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ash-creep-cluster",
+          "nome": "Tufo Cinzento",
+          "efeitos": [
+            "aumentar_destruicao",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "resíduo espectral de aparição",
+      "estado_vinculo_carcaca": "tipo_de_aparicao_e_local_de_ocorrencia_nao_documentados",
+      "achado": "A existência de mortos-vivos nas ruínas de Vandar não prova que sejam aparições com faixas coletáveis. O atlas diferencia categorias de criaturas e regiões, e o material não cita espécie ou prática de obtenção.",
+      "nota_editorial": "Manter Resistência à Magia III e os demais efeitos. Não atribuir o material a todo morto-vivo de Vandar nem criar uma caça massiva de aparições como fato canônico.",
+      "fontes_monstros": [
+        "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-white-cap": {
+      "ciclo": 63,
+      "nome": "Chapéu Branco",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 23,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-elves-ear",
+          "nome": "Orelha-de-Elfo",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cogumelo pálido de uso arcano",
+      "estado_vinculo_carcaca": "habitat_especifico_nao_documentado",
+      "achado": "A taxonomia autoral enquadra fungos como flora, mas o acervo geográfico não estabelece local, clima ou cultura de extração deste fungo.",
+      "nota_editorial": "Preservar os três atributos e a raridade comum; não mapear cogumelo a todas as cavernas de Thargrid ou florestas por associação temática.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-nirnroot": {
+      "ciclo": 64,
+      "nome": "Raiz Velada",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "raiz luminescente e ocultadora",
+      "estado_vinculo_carcaca": "distribuicao_e_vinculo_feerico_nao_documentados",
+      "achado": "A raiz é canônica no catálogo de Peren com Invisibilidade III. As florestas de Eldroth e Ironwood existem, mas a origem desta planta ou a participação da Corte não foi documentada pela referência autoral.",
+      "nota_editorial": "Preservar invisibilidade e a descrição, sem reimportar o habitat de Nirnroot de Skyrim ou criar controle feérico sobre a espécie.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-deathbell": {
+      "ciclo": 65,
+      "nome": "Sino da Morte",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-poison-bloom",
+          "nome": "Flor Venenosa",
+          "efeitos": [
+            "dano_saude",
+            "diminuir_velocidade"
+          ]
+        },
+        {
+          "id": "ing-giant-lichen",
+          "nome": "Líquen Gigante",
+          "efeitos": [
+            "dano_saude",
+            "fraqueza_veneno"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "flor escura de propriedades tóxicas",
+      "estado_vinculo_carcaca": "flor_especifica_e_uso_ritual_nao_documentados",
+      "achado": "O nome 'Sino da Morte' e o efeito de dano não comprovam que a flor venha de Vandar, de funerais ou da magia de Damaris; o atlas não documenta a espécie.",
+      "nota_editorial": "Manter dano, lentidão e fraqueza a veneno como propriedades do ingrediente. Não atribuir necromancia ou cerimônia funerária por associação nominal.",
+      "fontes_monstros": [
+        "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-poison-bloom": {
+      "ciclo": 66,
+      "nome": "Flor Venenosa",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-deathbell",
+          "nome": "Sino da Morte",
+          "efeitos": [
+            "dano_saude",
+            "diminuir_velocidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "flor tóxica de terrenos hostis",
+      "estado_vinculo_carcaca": "ambiente_generico_sem_localidade_confirmada",
+      "achado": "A descrição menciona terreno hostil sem designar região, e o atlas não fornece área de ocorrência; nome, seiva e propriedades tóxicas não demonstram exclusividade na Caatinga, Eldroth ou Mar de Sangue.",
+      "nota_editorial": "Preservar Dano à Saúde III, Medo II e Diminuir Velocidade I. Registrar que a origem e os consumidores naturais permanecem desconhecidos.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -876,10 +1351,35 @@
         "ing-pine-thrush-egg": "Ovo de Tordo — tintura de agilidade"
       },
       "nota": "São rótulos funcionais derivados das descrições existentes, não nomes taxonômicos nem renomeações aprovadas. Este chat não altera menus ou receitas."
+    },
+    {
+      "tipo": "proveniencia_mortuaria_sem_fonte",
+      "titulo": "Distinção entre restos de pessoas, ossos e resíduos de criaturas",
+      "ids": [
+        "ing-berit-s-ashes",
+        "ing-bone-meal",
+        "ing-spawn-ash",
+        "ing-wisp-wrappings"
+      ],
+      "estado": "documentacao_insuficiente_para_atribuir_especie_ou_local",
+      "evidencia": "O catálogo de Peren distingue cinzas de escriba, ossos de origem não indicada, cinzas de criatura sobrenatural e restos espectrais. Vandar e Arquivo possuem moradores e contextos mortuários documentados, mas não ocorrência comprovada desses materiais.",
+      "orientacao": "Preservar distinções e evitar mapear automaticamente origens, saques, drops e costumes funerários; se houver fonte nova, registrar proveniência específica.",
+      "risco": "Confundir identidade das vítimas/criaturas e tratar materiais mortuários como categoria uniforme."
+    },
+    {
+      "tipo": "associacao_lunar_indevida",
+      "titulo": "Açúcar Lunar não proveniente do Templo da Lua por mera semelhança",
+      "ids": [
+        "ing-moon-sugar"
+      ],
+      "estado": "vinculo_nao_documentado",
+      "evidencia": "Templo da Lua existe, mas seus materiais e processos de obtenção não são descritos; 'lunar' é apenas parte do nome do ingrediente em Peren.",
+      "orientacao": "Não vincular a Severina, calendário lunar ou monopólio ritual sem decisão autoral.",
+      "risco": "Criar suprimentos, religião ou economia de mercadoria inexistente no cânone."
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 18,
+    "ingredientes_revisados": 28,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
@@ -891,7 +1391,7 @@
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
     "commit_sha": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
-    "uso": "lote 47–56; preservar origem_referencia original dos ciclos 39–46"
+    "uso": "lote 57–66; os SHAs anteriores permanecem por lote"
   },
   "lotes": [
     {
@@ -925,6 +1425,23 @@
       ],
       "fonte_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
       "escopo": "segundo lote com correção documental da Pena de Gaivota no README"
+    },
+    {
+      "ciclos": "57-66",
+      "ids": [
+        "ing-berit-s-ashes",
+        "ing-bone-meal",
+        "ing-gleamblossom",
+        "ing-spawn-ash",
+        "ing-moon-sugar",
+        "ing-wisp-wrappings",
+        "ing-white-cap",
+        "ing-nirnroot",
+        "ing-deathbell",
+        "ing-poison-bloom"
+      ],
+      "fonte_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "escopo": "restos mortuários, materiais sobrenaturais e flora; preservação da curadoria e prevenção de atribuições ecológicas não fundamentadas"
     }
   ]
 }

@@ -530,3 +530,48 @@ O criador dividiu o desenvolvimento: **este fluxo audita e prepara itens/ingredi
 
 **Auditoria autônoma: preservar a ficha vigente.** Atributos: Resistência ao Fogo II; Aumentar Força II; Frenesi II; Diminuir Sabedoria II. **21 parceiros** por efeito; dupla de efeitos compartilhados: Betta do Rio (aumentar_forca, diminuir_sabedoria). **Evidência de Monstros da Carcaça:** Diminuir Sabedoria II é uma adição expressamente aprovada na curadoria. A fonte de Monstros da Carcaça não estabelece população da espécie, medicina ritual nem efeito farmacológico real. **Tratativa:** Manter os quatro atributos e Frenesi II; não transpor alegações médicas sobre fungos reais ou inventar guildas/uso ritual regional. **Fonte:** `data/taxonomia_carcaca.json`, `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
 
+
+## Lote autônomo de curadoria — Ciclos 57–66 (03/11/2026)
+
+**Método:** 10 fichas seguintes por conectividade, ordem de inserção como desempate. Revisão cruzada com [Monstros da Carcaça na revisão `b08b0f69c8d6`](https://github.com/pedromaintenance/monstros-carcaca/tree/b08b0f69c8d6d4ed332540565b61fa32ac3ae076). A presença de mortos-vivos, cultos ou florestas no mundo **não comprova a origem de um item**. Não há novos atributos ou mudanças em raridades, intensidades, descrições e IDs. Dados anexos em [`data/auditoria_ecologica_ingredientes.json`](../data/auditoria_ecologica_ingredientes.json).
+
+### Ciclo 57 — Cinzas Mortuárias (`ing-berit-s-ashes`)
+
+**Ficha preservada:** Aumentar Conjuração II; Resistência ao Fogo II; Diminuir Constituição II; raridade **raro**; **22 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Asa de Mariposa Ancestral (aumentar_conjuracao, diminuir_constituicao). **Achado:** A ficha de Peren indica cinzas preservadas de um escriba. O acervo autoral registra os Kappa-Escribas no Arquivo e mortos-vivos em Vandar, mas não oferece vínculo deste resíduo com eles; nenhuma prática de cremação de Vandar foi confirmada. **Diretriz de curadoria:** Preservar conjuração II, resistência ao fogo II e diminuição de Constituição II. Não atribuir às cinzas origem yokai, vandariana ou culto funerário; tratar restos de pessoa como material de proveniência potencialmente sensível, não mercadoria de fonte presumida. **Fonte:** `docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md`; `docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 58 — Farinha de Ossos (`ing-bone-meal`)
+
+**Ficha preservada:** Resistência ao Fogo I; Aumentar Conjuração II; Diminuir Constituição I; raridade **comum**; **22 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Asa de Mariposa Ancestral (aumentar_conjuracao, diminuir_constituicao). **Achado:** O continente é sobre Golzdov, mas o produto descrito em Peren é farinha de ossos sem indicação de quem os produziu. Nem todas as ossadas do cenário são restos primordiais, humanos ou mortos-vivos de Vandar. **Diretriz de curadoria:** Preservar os três efeitos. Não classificar automaticamente como material de Kindau, ossário ritual ou saque de sepulturas; exigir evidência se a procedência vier a ser individualizada. **Fonte:** `docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md`; `docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 59 — Flor Luminescente (`ing-gleamblossom`)
+
+**Ficha preservada:** Regenerar Saúde II; Resistência à Magia II; Paralisia I; raridade **incomum**; **22 parceiros**. Não foi encontrado parceiro que compartilhe simultaneamente dois efeitos nesta ficha. **Achado:** O atlas autoral identifica grandes famílias florestais e outros ambientes, mas não comprova a espécie luminescente, sua área de crescimento ou associação com relíquias feéricas. **Diretriz de curadoria:** Conservar a propriedade medicinal, a resistência mágica e a paralisia; não atribuir a planta à floresta de Eldroth ou a uma corte sem fonte específica. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`; `data/taxonomia_carcaca.json`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 60 — Cinzas de Criatura (`ing-spawn-ash`)
+
+**Ficha preservada:** Resistência ao Fogo II; Aumentar Encantamento II; Diminuir Constituição II; raridade **incomum**; **22 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Asa de Mariposa Ancestral (aumentar_encantamento, diminuir_constituicao). **Achado:** O adjetivo 'sobrenatural' na curadoria de Peren não identifica uma criatura única de `dist/carcaca/creatures.json`, uma entidade demoníaca ou vítima da necromancia de Vandar. **Diretriz de curadoria:** Manter o nome genérico e os atributos. Não atribuir automaticamente drop às criaturas únicas do Arquivo dos Mortos Afogados; distinguir de Cinzas Mortuárias. **Fonte:** `docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md`; `data/taxonomia_carcaca.json`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 61 — Açúcar Lunar (`ing-moon-sugar`)
+
+**Ficha preservada:** Restaurar Magia II; Regenerar Magia II; Fraqueza ao Fogo I; raridade **incomum**; **22 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Sais da Geada (restaurar_magia, fraqueza_fogo). **Achado:** A Carcaça possui o Templo da Lua no Rio Ancestral, mas o nome 'Açúcar Lunar' não demonstra vínculo com Severina, fases lunares, sacerdócio, rituais ou produção nesse local. **Diretriz de curadoria:** Preservar a identidade do cristal e seus três atributos, sem inserir proveniência lunar institucional ou transformar o ingrediente em monopólio do templo. **Fonte:** `docs/TEMPLO_LUA_SEVERINA_CICLO29.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 62 — Faixas de Espírito (`ing-wisp-wrappings`)
+
+**Ficha preservada:** Resistência à Magia III; Aumentar Destruição II; Diminuir Constituição I; raridade **raro**; **23 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Tufo Cinzento (aumentar_destruicao, diminuir_constituicao). **Achado:** A existência de mortos-vivos nas ruínas de Vandar não prova que sejam aparições com faixas coletáveis. O atlas diferencia categorias de criaturas e regiões, e o material não cita espécie ou prática de obtenção. **Diretriz de curadoria:** Manter Resistência à Magia III e os demais efeitos. Não atribuir o material a todo morto-vivo de Vandar nem criar uma caça massiva de aparições como fato canônico. **Fonte:** `docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md`; `data/taxonomia_carcaca.json`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 63 — Chapéu Branco (`ing-white-cap`)
+
+**Ficha preservada:** Restaurar Magia II; Aumentar Defesa I; Fraqueza ao Gelo I; raridade **comum**; **23 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Orelha-de-Elfo (restaurar_magia, fraqueza_gelo). **Achado:** A taxonomia autoral enquadra fungos como flora, mas o acervo geográfico não estabelece local, clima ou cultura de extração deste fungo. **Diretriz de curadoria:** Preservar os três atributos e a raridade comum; não mapear cogumelo a todas as cavernas de Thargrid ou florestas por associação temática. **Fonte:** `data/taxonomia_carcaca.json`; `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 64 — Raiz Velada (`ing-nirnroot`)
+
+**Ficha preservada:** Invisibilidade III; Resistência à Magia II; Diminuir Destreza I; raridade **raro**; **24 parceiros**. Não foi encontrado parceiro que compartilhe simultaneamente dois efeitos nesta ficha. **Achado:** A raiz é canônica no catálogo de Peren com Invisibilidade III. As florestas de Eldroth e Ironwood existem, mas a origem desta planta ou a participação da Corte não foi documentada pela referência autoral. **Diretriz de curadoria:** Preservar invisibilidade e a descrição, sem reimportar o habitat de Nirnroot de Skyrim ou criar controle feérico sobre a espécie. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`; `docs/LORE_HACK_CARCACA_DW.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 65 — Sino da Morte (`ing-deathbell`)
+
+**Ficha preservada:** Dano à Saúde II; Diminuir Velocidade II; Fraqueza a Veneno I; raridade **comum**; **24 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Flor Venenosa (dano_saude, diminuir_velocidade). **Achado:** O nome 'Sino da Morte' e o efeito de dano não comprovam que a flor venha de Vandar, de funerais ou da magia de Damaris; o atlas não documenta a espécie. **Diretriz de curadoria:** Manter dano, lentidão e fraqueza a veneno como propriedades do ingrediente. Não atribuir necromancia ou cerimônia funerária por associação nominal. **Fonte:** `docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md`; `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Nenhuma mudança no catálogo jogável.
+
+### Ciclo 66 — Flor Venenosa (`ing-poison-bloom`)
+
+**Ficha preservada:** Dano à Saúde III; Medo II; Diminuir Velocidade I; raridade **incomum**; **24 parceiros**. Exemplo de mistura de dois efeitos compartilhados: Sino da Morte (dano_saude, diminuir_velocidade). **Achado:** A descrição menciona terreno hostil sem designar região, e o atlas não fornece área de ocorrência; nome, seiva e propriedades tóxicas não demonstram exclusividade na Caatinga, Eldroth ou Mar de Sangue. **Diretriz de curadoria:** Preservar Dano à Saúde III, Medo II e Diminuir Velocidade I. Registrar que a origem e os consumidores naturais permanecem desconhecidos. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`; `data/taxonomia_carcaca.json`. Nenhuma mudança no catálogo jogável.
+
