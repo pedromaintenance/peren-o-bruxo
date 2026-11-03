@@ -78,7 +78,7 @@ As estações a preservar e evoluir são **Alquimia, Forja, Cozinha, Joalheria, 
 2. **Família / veículo de uso:** poção, veneno, tônico, elixir ou bálsamo; influencia recipiente, alvo e forma de aplicação, mas **não apaga** efeitos compartilhados.
 3. **Método / instrumento:** procedimentos e ferramentas que permitem preparar um veículo; **não** “purifica” ou altera efeitos automaticamente, a menos que futuramente exista regra aprovada.
 
-**[CANÔNICO — decisão expressa de 03/11/2026] Híbridos, dominância e impureza:** toda mistura híbrida é **classificada e nomeada pelo seu maior efeito**, acrescentando obrigatoriamente o rótulo **«Impuro»**. O efeito dominante governa a família principal de apresentação; **todos os efeitos secundários continuam presentes e ativos**, inclusive os desfavoráveis. Nome e rótulo não purificam nem eliminam propriedades.
+**[CANÔNICO — Emenda A2, 03/11/2026] Compatibilidade, dominância e combos:** múltiplos efeitos não implicam Impuro. **Incompatibilidades aprovadas** exigem o rótulo **Impuro**; sinergias aprovadas dão **nome especial** (ex.: Poção da Fada); efeitos compatíveis sem sinergia ficam com o **nome do efeito mais intenso** e os demais na descrição. **Todos os efeitos permanecem ativos**, mesmo em misturas Impuras.
 
 **[CANÔNICO — decisão expressa de 03/11/2026] Purificação avançada:** purificar um preparado **Impuro** exige **grande habilidade alquímica**. Purificar é um **processo deliberado e distinto da fabricação**, nunca um botão gratuito, automático ou uma filtragem cosmética da UI. A perícia de alquimia deve representar uma barreira mecânica efetiva.
 
@@ -152,7 +152,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 - Conhecimento visual: mostrar apenas propriedades identificadas pelo personagem; evitar que inventário/comércio revelem efeitos ocultos no tooltip.
 - Contrato de transação: consumir/aplicar uma vez, descontar quantidade, produzir efeitos, persistir alterações, bloquear duplicação após reload.
 
-**[CANÔNICO] Nome e categoria de preparado híbrido:** identificar **o maior efeito** como dominante e usar **«Impuro»** como rótulo obrigatório, por exemplo **«Poção de Aumentar Constituição — Impuro»**, somente quando o efeito dominante determinar a família Poções. Os demais efeitos são preservados na composição e no comportamento. **[ABERTO]** como comparar potência entre efeitos diferentes e como tratar empates. O conhecimento do personagem limita a exibição dos efeitos secundários, sem apagar sua existência. **[CANÔNICO]** o estado Impuro somente é passível de purificação por grande habilidade alquímica; as regras de transformação do preparado ainda serão definidas.
+**[CANÔNICO — Emenda A2] Identidade de preparo multiefeito:** (1) efeito incompatível aprovado → **Impuro**, identificado pelo efeito dominante; (2) combinação de efeitos sinérgicos aprovados e sem incompatibilidade → **nome de combo**; (3) múltiplos efeitos compatíveis não catalogados como sinergia → **nome do efeito mais intenso**, secundários na descrição, sem Impuro. **[ABERTO]** potência comparável e empates. Propriedades desconhecidas não são reveladas ao personagem, mas todos os efeitos persistem. Purificação avançada é pertinente **somente aos Impuros**.
 
 **[ABERTO] Elixires:** persistência, irreversibilidade relativa, custos, restrições, incompatibilidades e sinais de advertência; consequências de transformar alguém não podem nascer de uma simples reclassificação de tônico.
 
@@ -179,7 +179,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 | **CRAFT-D05** | P0 | Modelo do preparado e aplicação | Item real no inventário, com efeitos e quantidade atômicos | **Proposta estrutural** |
 | **CRAFT-D06** | P0 | Semântica de 53 efeitos | Alvos, estados, potência, duração, dissipação, empilhamento definidos/testáveis | **A especificar** |
 | **CRAFT-D07** | P0 | Elixires, bálsamos, doenças e vampirismo | Permanência/aplicação/riscos aprovada antes de ligar motor | **A especificar** |
-| **CRAFT-D14** | P0 | Efeito dominante, rótulo «Impuro» e purificação avançada | Híbridos recebem nome do maior efeito + Impuro; nenhuma propriedade some automaticamente; purificação exige alta perícia e regras explícitas | **Regra aprovada; fórmula de dominância e parâmetros de purificação abertos** |
+| **CRAFT-D14** | P0 | Incompatibilidade, rótulo «Impuro» e purificação avançada | Só efeitos incompatíveis produzem Impuro; nenhum efeito some automaticamente; purificação exige alta perícia | **Emenda A2 aprovada; potência e parâmetros abertos** |
 | **CRAFT-D08** | P0 | Interface de receitas especiais legadas | Árvore separada por tipo/projeto; nenhuma receita perdida | **Requisito confirmado; protótipo na PR #94** |
 | **CRAFT-D09** | P1 | Progressão dos ofícios e instrumentos | Diferenças perceptíveis, sem nerf dos ingredientes | **Direção constitucional; números abertos** |
 | **CRAFT-D10** | P1 | Economia e receitas negociáveis | Custos, preços, disponibilidade regional e exploit tests | **Direção constitucional; regras abertas** |
@@ -214,13 +214,13 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 - **AQ-13:** catálogo preserva IDs, 111 ingredientes e 53 efeitos da linha de base **sem congelar números futuros**; nenhuma Stamina; nenhuma regressão na arte.
 - **AQ-14:** menu é legível em celular, acionável por teclado e gamepad e mostra as condições de bloqueio além da cor.
 - **AQ-15:** build e serviço offline funcionam na rota Phaser isolada no Pages, sem limpar saves/cache do clássico; teste de CI **não substitui** navegação na URL publicada.
-- **AQ-16:** mistura híbrida recebe o rótulo **Impuro** e o nome do **efeito dominante**; mantém todos os efeitos da composição em cálculos e efeitos reais, sem apagar os desfavoráveis.
+- **AQ-16 [corrigido por A2]:** misturas com **incompatibilidades aprovadas** recebem **Impuro** e nome do efeito dominante; misturas compatíveis não recebem Impuro por quantidade de efeitos; todos os efeitos são preservados.
 - **AQ-17:** purificação não pode ser executada por personagem sem a habilidade alquímica exigida (limiar futuro); não ocorre silenciosamente na fabricação e não modifica a curadoria canônica.
 - **AQ-18:** teste de efeitos de mesma potência não atribui arbitrariamente um «maior efeito»; desempate depende de regra explícita ainda pendente, sem classificar diferentemente A+B e B+A.
 
 ## 10. Decisões ainda abertas — pauta curta para próximos debates
 
-1. **Método e família:** o híbrido já é nomeado pelo maior efeito + **Impuro** (decisão aprovada). Resta decidir **quando** o veículo de uso é escolhido, como identificar o maior efeito e como resolver empates.
+1. **Método e família:** a Emenda A2 fixa que apenas **incompatíveis** são Impuros e só **sinergias catalogadas** são combos. Resta decidir veículo de uso, comparação de potências e empates.
 2. **Potência:** como combinar intensidade I–III das fontes, quantidade usada, qualidade do instrumento e perícia, inclusive 3–4 tipos?
 3. **Custo de tentativa e estudo:** consumir ação/ingrediente em sucesso, falha e pesquisa? Como traduzir falha parcial?
 4. **Conhecimento:** ordem de efeitos revelados, progressão de estudo, livros, mestres e lembrança de combinações.
@@ -254,7 +254,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 
 ## 13. Proposta de progressão e purificação — v1.2 (03/11/2026)
 
-**Natureza:** [PROPOSTA] — não altera a Constituição, a curadoria ou os motores. [CANÔNICO] continua sendo somente: todo híbrido recebe nome do maior efeito + Impuro; purificação exige grande habilidade alquímica; a fabricação não elimina efeitos secundários.
+**Natureza:** [PROPOSTA] — não altera a Constituição, a curadoria ou os motores. **Correção canônica A2:** apenas efeitos incompatíveis geram Impuro; sinergias reconhecidas geram combos, e múltiplos efeitos compatíveis são comuns. Purificação dos Impuros exige grande habilidade; fabricação não elimina efeitos secundários.
 
 ### A maestria usa a habilidade Alquimia existente
 
@@ -275,13 +275,13 @@ O nível **75** é hipótese; comparar alternativas **65/75/85** frente ao esfor
 
 **Portas de acesso [PROPOSTA]:** alta perícia + técnica aprendida de um mestre/texto + instrumentos especializados + conhecimento suficiente dos efeitos a separar. Se faltar alguma condição, a interface deve explicar e manter a ação bloqueada.
 
-**Operação candidata:** conservar o efeito dominante e separar **um efeito secundário identificado por operação**. Os outros efeitos persistem; se a mistura continuar híbrida, mantém o rótulo Impuro. Se restar um único efeito, perde a marca Impuro. Nenhum efeito é automaticamente suprimido na fabricação, e nenhuma potência aumenta gratuitamente. Custos, subprodutos, instrumentos, risco de falha e consequência do erro **não foram aprovados**.
+**Operação candidata:** conservar o efeito dominante e separar **um efeito secundário identificado por operação**. Os outros efeitos persistem; **o rótulo Impuro permanece apenas enquanto houver alguma incompatibilidade ativa**. Se não houver incompatibilidade, o resultado pode ser um combo catalogado ou uma mistura comum, mesmo com dois efeitos. Nenhum efeito é automaticamente suprimido na fabricação, e nenhuma potência aumenta gratuitamente. Custos, subprodutos, instrumentos, risco de falha e consequência do erro **não foram aprovados**.
 
 **Informação oculta:** a UI não revela propriedades desconhecidas ao classificar um preparado como Impuro. Se o efeito dominante ainda não foi identificado, uma identificação provisória do tipo `Preparado Impuro — efeito principal desconhecido` é preferível ao spoiler.
 
 **Empate de potência [PROPOSTA]:** depois de fixar uma regra de potência, quando dois efeitos forem igualmente dominantes, o jogador poderá escolher entre os empatados identificados. Antes da identificação, usar apresentação sigilosa; nunca decidir pelo ingrediente selecionado primeiro.
 
-**Questão aberta:** definir operacionalmente se todo preparo com dois ou mais efeitos é Impuro, ou somente uma mistura que reúna famílias/direções diferentes. A emenda constitucional fixa o tratamento dos híbridos, mas não resolve essa fronteira.
+**Definição fechada pela Emenda A2:** dois ou mais efeitos, por si só, **não** constituem impureza. O catálogo de incompatibilidades é a referência; classificar automaticamente todo par positivo+positivo como Impuro é incorreto. Os casos específicos além dos exemplos aprovados requerem curadoria.
 
 ### Backlog e aceites adicionais
 
@@ -291,4 +291,4 @@ O nível **75** é hipótese; comparar alternativas **65/75/85** frente ao esfor
 - **AQ-21:** retificação é transação atômica sobre uma instância de preparado, sem duplos usos, duplicação ou alteração do catálogo original.
 - **AQ-22:** em empate, a ordem A+B não define indevidamente o efeito dominante.
 
-**Próximo debate:** escolher o limiar real de perícia e a definição de híbrido; depois desenhar custos, riscos e resultados da retificação. **Estado: proposta documentada, não implementada, não publicada.**
+**Próximo debate:** definir limiar real da perícia, regras de dominância e critérios de sinergia/incompatibilidade restantes; depois custos e riscos da retificação. **Estado: proposta documentada, não implementada, não publicada.**
