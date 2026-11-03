@@ -148,3 +148,13 @@ Foram auditadas mais dez fichas, de **Ovo de Tordo (restauração)** a **Tórax 
 - **Ovo de Verme Gigante, Carpa de Pedra, Presa de Javali, Bagas de Zimbro, Uvas de Jasmim e Tórax de Vaga-lume:** preservar as propriedades sem inventar ecossistemas, povoações produtoras, métodos de coleta ou cadeia comercial.
 
 **Integridade:** fichas e atributos canônicos intactos; não foram alterados `data/curadoria_ingredientes.json`, `data/itens.json`, `data/receitas.json`, scripts, menus, assets ou saves. Próximo lote a partir do **Ciclo 97 — Carapaça de Caranguejo**.
+
+## Handoff visual: primeiras descobertas no Caderno do Bruxo (03/11/2026)
+
+**Design de interface:** [`ux-descoberta-combos-caderno-v1.md`](ux-descoberta-combos-caderno-v1.md) · [protótipo de revisão PR #95](https://github.com/pedromaintenance/peren-o-bruxo/pull/95). Esta integração é **editorial**, sem alterar o trabalho corrente de ecologia, propriedades ou o motor.
+
+**Atribuição do agente de itens:** ao aprovar futuramente uma sinergia, manter `comboId`, assinatura de IDs de efeitos, nome especial, família conceitual, descrição breve e justificativa, status editorial, proveniência e chave de futuro asset/animação. As propostas não aprovadas jamais devem ser exportadas como nomes reconhecidos pelo personagem. Evitar nomes que dependam de ingredientes específicos: uma mesma sinergia pode nascer de conjuntos de fontes diferentes.
+
+**Atribuição do agente de interface:** o Caderno registra quando **Peren descobre** um combo já aprovado, em save Phaser próprio. A ficha não revela efeitos/fontes desconhecidos nem assume que o exemplo da curadoria é uma receita fixa. Animação é adereço opcional e deve usar fallback à família visual enquanto não existe arte final.
+
+**Para futura direção de arte:** reservar tratamento por **ID do combo**, além do frasco comum: cor, partículas, ritmo, assinatura/silhueta, variação de estado e diretriz para movimento reduzido. Não criar sprites nem estabelecer duração numérica automaticamente. A única sinergia aprovada segue sendo **Poção da Fada**; demais nomes em `candidatos_sinergia` permanecem propostas.
