@@ -620,3 +620,48 @@ O criador dividiu o desenvolvimento: **este fluxo audita e prepara itens/ingredi
 
 **Ficha vigente preservada:** Aumentar Constituição II; Aumentar Força II; Aumentar Saúde I; raridade **comum**; **26 parceiros**. Parceiro com vários efeitos compartilhados: **Carapaça de Caranguejo** (`aumentar_constituicao`, `aumentar_forca`). **Análise ecológica:** A curadoria nomeia urso, mas a presença do animal em algum setor específico da Carcaça não foi confirmada nas fontes consultadas. Os efeitos de força, constituição e saúde não demonstram linhagem sobrenatural. **Tratativa:** Preservar os três atributos e a raridade comum. Não atribuir fauna local a Eldroth, Thargrid ou Caatinga por analogia com biomas terrestres. Fontes: `data/taxonomia_carcaca.json`; `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. 
 
+
+## Lote autônomo — Ciclos 77–86 (03/11/2026)
+
+**Escopo:** dez fichas na ordem de conectividade, com todas as propriedades, descrições, raridades e IDs preservados. Verificação ecológica contra [Monstros da Carcaça](https://github.com/pedromaintenance/monstros-carcaca/tree/182622fe6d0edca18b32c3972641ebd9c72d58cb), com separação de fatos autorais, hipóteses biológicas e ocorrências regionais não documentadas. A [matriz JSON](../data/auditoria_ecologica_ingredientes.json) guarda as evidências por item. **Nenhum dado jogável ou runtime foi alterado.**
+
+### Ciclo 77 — Coração de Espinheiros (`ing-briar-heart`)
+
+**Preservado:** aumentar_magia III; restaurar_magia II; paralisia I; vampirismo II; raridade **raro**, **26 parceiros**. Exemplo de par com múltiplos efeitos: **Ectoplasma** (`aumentar_magia`, `restaurar_magia`). **Análise:** Vampirismo II e transformação progressiva já aprovados no Ciclo 9; planta não se torna espécie vampírica por isso. **Diretriz editorial:** Preservar efeito transformativo, sem atribuir origem demoníaca ou habitat regional. **Fonte:** `monstros-carcaca/docs/ATLAS_MACROAMBIENTES_CICLO35.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 78 — Ovo de Tordo (`ing-pine-thrush-egg`)
+
+**Preservado:** aumentar_destreza II; resistencia_eletricidade I; fraqueza_veneno I; raridade **comum**, **26 parceiros**. Exemplo de par com múltiplos efeitos: **Chifres de Cervo** (`aumentar_destreza`, `fraqueza_veneno`). **Análise:** Um dos dois itens Ovo de Tordo; esta ficha possui Aumentar Destreza II e Resistência à Eletricidade I, não é a versão curativa. **Diretriz editorial:** Rótulo não canônico: Ovo de Tordo — agilidade. Não renomear espécie nem ID. **Fonte:** `monstros-carcaca/data/taxonomia_carcaca.json`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 79 — Pérola Pequena (`ing-small-pearl`)
+
+**Preservado:** aumentar_destreza I; resistencia_gelo II; aumentar_restauracao I; raridade **comum**, **26 parceiros**. Exemplo de par com múltiplos efeitos: **Chifres de Cervo** (`aumentar_destreza`, `aumentar_restauracao`). **Análise:** Não há molusco produtor ou localidade documentados; nem as águas do Mar de Sangue nem as águas azuis demonstram sua origem. **Diretriz editorial:** Não inventar bancos de pérolas ou exclusividade comercial. **Fonte:** `monstros-carcaca/docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 80 — Musgo Parassol (`ing-emperor-parasol-moss`)
+
+**Preservado:** regenerar_saude II; aumentar_inteligencia I; dano_saude I; raridade **comum**, **27 parceiros**. Sem pares com múltiplos efeitos nesta ficha. **Análise:** Substrato documentado na ficha de Peren; não associar à proposta do Micélio das Vozes Partidas ou supor ocorrência em Eldroth. **Diretriz editorial:** Preservar Regenerar Saúde e Dano à Saúde simultâneos. **Fonte:** `monstros-carcaca/docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 81 — Ovo de Falcão (`ing-hawk-s-egg`)
+
+**Preservado:** aumentar_percepcao II; aumentar_destreza II; resistencia_magia I; raridade **incomum**, **27 parceiros**. Exemplo de par com múltiplos efeitos: **Olho de Felino** (`aumentar_percepcao`, `aumentar_destreza`). **Análise:** Ausência de ninhos e reprodução regional documentados; o 'vigor' do texto não define atributo adicional. **Diretriz editorial:** Conservar percepção, destreza e resistência mágica; não fabricar fauna local. **Fonte:** `monstros-carcaca/docs/ATLAS_MACROAMBIENTES_CICLO35.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 82 — Raiz Canina (`ing-canis-root`)
+
+**Preservado:** paralisia II; aumentar_destreza II; diminuir_forca I; raridade **incomum**, **27 parceiros**. Sem pares com múltiplos efeitos nesta ficha. **Análise:** A palavra Canina não demonstra origem animal nem associação com cães; distribuição vegetal não comprovada. **Diretriz editorial:** Manter a origem vegetal e os três efeitos. **Fonte:** `monstros-carcaca/data/taxonomia_carcaca.json`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 83 — Libélula Azul (`ing-blue-dartwing`)
+
+**Preservado:** aumentar_destreza II; resistencia_eletricidade II; medo I; velocidade II; raridade **comum**, **27 parceiros**. Exemplo de par com múltiplos efeitos: **Bico de Falcão** (`aumentar_destreza`, `resistencia_eletricidade`). **Análise:** Velocidade II já aprovada no Ciclo 7, independente de Aumentar Destreza; o atlas não localiza a espécie. **Diretriz editorial:** Preservar quatro atributos, sem presumir coleta no Rio Ancestral ou Portomonte. **Fonte:** `monstros-carcaca/docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 84 — Bico de Falcão (`ing-hawk-beak`)
+
+**Preservado:** aumentar_destreza II; resistencia_gelo II; resistencia_eletricidade I; raridade **incomum**, **27 parceiros**. Exemplo de par com múltiplos efeitos: **Libélula Azul** (`aumentar_destreza`, `resistencia_eletricidade`). **Análise:** Nome comum com outras partes de falcão não comprova mesma espécie ou população; procedência não documentada. **Diretriz editorial:** Manter três atributos, sem cadeia de coleta inventada. **Fonte:** `monstros-carcaca/data/taxonomia_carcaca.json`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 85 — Ovas de Salmão (`ing-salmon-roe`)
+
+**Preservado:** respirar_na_agua II; regenerar_magia II; aumentar_constituicao I; raridade **incomum**, **27 parceiros**. Exemplo de par com múltiplos efeitos: **Carpa de Pedra** (`respirar_na_agua`, `aumentar_constituicao`). **Análise:** O atlas não documenta desova, migração ou habitat de salmões; não importar ecologia terrestre como fato da Carcaça. **Diretriz editorial:** Preservar efeitos e evitar atribuir origem ao Rio Ancestral ou Mar de Sangue. **Fonte:** `monstros-carcaca/docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
+### Ciclo 86 — Flor Violeta (`ing-purple-mountain-flower`)
+
+**Preservado:** aumentar_destreza II; aumentar_furtividade I; resistencia_gelo I; raridade **comum**, **27 parceiros**. Exemplo de par com múltiplos efeitos: **Mirra da Geada** (`aumentar_furtividade`, `resistencia_gelo`). **Análise:** A descrição de Peren documenta encostas e bruma; Thargrid nevado não confirma ocorrência desta espécie. **Diretriz editorial:** Manter atributos e não declarar exclusividade em Thargrid. **Fonte:** `monstros-carcaca/docs/ATLAS_MACROAMBIENTES_CICLO35.md`. **Nenhuma alteração em `data/curadoria_ingredientes.json`.**
+
