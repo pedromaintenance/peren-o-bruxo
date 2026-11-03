@@ -1,5 +1,6 @@
 # Plano executável — Alquimia e Gameplay (início v1)
 **Origem:** Constituição de Design v1.0, aprovada em 03/11/2026.
+**Roadmap de design dos menus e mecânicas:** [roadmap-crafting-mecanicas-menus.md](roadmap-crafting-mecanicas-menus.md). Este plano operacional organiza pesquisa, integração e QA; **não substitui** a hierarquia de ofícios, o tratamento de conhecimento oculto, as cinco famílias e as decisões abertas descritas no roadmap de crafting. **Não presumir que um protótipo na PR #94 está publicado no Pages.**
 **Estratégia:** primeiro auditoria e módulo puro testável; depois integração versionada. Branch experimental isolada. O clássico publicado e o bundle Phaser não são alterados nesta largada.
 
 ## Inventário comprovado em 03/11/2026
