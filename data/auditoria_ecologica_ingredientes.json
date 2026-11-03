@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39-46 e pendencia nominal transversal; não altera fichas nem receitas.",
+  "escopo": "Ciclos 39–56; 18 ingredientes em dois lotes; pendência nominal transversal; metadados não jogáveis.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -432,6 +432,430 @@
         "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
       ],
       "alteracao_curadoria": false
+    },
+    "ing-felsaad-tern-feathers": {
+      "ciclo": 47,
+      "nome": "Pena de Gaivota",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "curar_doenca",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-garlic",
+          "nome": "Alho",
+          "efeitos": [
+            "curar_doenca",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ave e pena singular de Portomonte",
+      "estado_vinculo_carcaca": "localidade_canonica_peren; corolario_biologico_nao_verificado_no_atlas",
+      "achado": "A exclusividade das gaivotas em Portomonte e o vínculo das penas à cura de doenças constam de decisão expressa da curadoria de Peren. O atlas autoral confirma Portomonte, templo de Deméter e purificação local das águas, mas não comprova ecologia/espécie de gaivota ou alcance da magia curativa das penas.",
+      "nota_editorial": "Manter o registro integral; corrigir apenas o README desatualizado que ainda cita Stamina II, substituindo por Aumentar Constituição II; não inventar potabilidade nem mecanismo da bênção.",
+      "fontes_monstros": [
+        "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md",
+        "data/atlas/portomonte-demeter-decisoes-ciclo51.json"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-cyrodilic-spadetail": {
+      "ciclo": 48,
+      "nome": "Peixe de Escamas Finas",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "peixe dulcícola",
+      "estado_vinculo_carcaca": "corpo_dagua_documentado; especie_nao_localizada",
+      "achado": "O Rio Ancestral existe e atravessa a Carcaça, porém o atlas não atribui a este peixe uma ocorrência, bacia, cardume ou época de reprodução. Ser peixe de água doce não permite presumi-lo nativo do Rio inteiro.",
+      "nota_editorial": "Preservar os três atributos e a descrição; manter a proveniência geográfica desta espécie como não documentada.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-powdered-mammoth-tusk": {
+      "ciclo": 49,
+      "nome": "Pó de Presa de Mamute",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "presa fossilizada",
+      "estado_vinculo_carcaca": "fossil_item_canonico_peren; especie_e_procedencia_nao_comprovadas",
+      "achado": "A descrição de Peren declara um material fossilizado, não uma população viva. O atlas registra ossos ancestrais, cavernas e regiões montanhosas, mas não documenta mamutes locais nem depósitos desse fóssil.",
+      "nota_editorial": "Preservar força III e as propriedades associadas; não introduzir mamutes vivos, jazidas ou caçadas em Thargrid como fatos.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_GEOGRAFIA_FISICA_CICLO34.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-bleeding-crown": {
+      "ciclo": 50,
+      "nome": "Coroa Sangrenta",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ice-wraith-teeth",
+          "nome": "Dentes de Espectro Gelado",
+          "efeitos": [
+            "aumentar_defesa",
+            "fraqueza_fogo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de chapéu rubro",
+      "estado_vinculo_carcaca": "flora_especifica_e_habitat_nao_documentados",
+      "achado": "A taxonomia admite fungos como flora da Carcaça; o nome Coroa Sangrenta não prova origem no Mar de Sangue nem ligação com ritos de sangue. Não há distribuição da espécie no atlas consultado.",
+      "nota_editorial": "Preservar resistência mágica, defesa e vulnerabilidade ao fogo; não associar ao mar vermelho sem evidência.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-beehive-husk": {
+      "ciclo": 51,
+      "nome": "Casca de Colmeia",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-thistle-branch",
+          "nome": "Ramo de Cardo",
+          "efeitos": [
+            "resistencia_veneno",
+            "aumentar_defesa"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fragmento de colmeia",
+      "estado_vinculo_carcaca": "organismo_produtor_e_ocorrencia_nao_documentados",
+      "achado": "O material de colmeia é coerente como produto biológico, mas nenhum vínculo regional específico, espécie de inseto ou organização de apicultura foi confirmado pelos documentos consultados.",
+      "nota_editorial": "Preservar atributos defensivos e de furtividade; não criar apiários de Portomonte ou Aldeias de apicultores por inferência.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-snowberries": {
+      "ciclo": 52,
+      "nome": "Bagas da Neve",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-spawn-ash",
+          "nome": "Cinzas de Criatura",
+          "efeitos": [
+            "resistencia_fogo",
+            "aumentar_encantamento"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fruto de clima extremo",
+      "estado_vinculo_carcaca": "ambiente_frio_documentado; especie_e_zona_de_coleta_nao_documentadas",
+      "achado": "O atlas confirma picos nevados nas montanhas de Thargrid, mas não estabelece a distribuição destas bagas nem a origem de sua resistência a calor e gelo.",
+      "nota_editorial": "Manter os três efeitos; a coincidência 'neve' é indício ecológico, não autorização para declarar Thargrid como fonte exclusiva.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-sabre-cat-tooth": {
+      "ciclo": 53,
+      "nome": "Dente de Grande Felino",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "dente de predador felino",
+      "estado_vinculo_carcaca": "especie_regional_nao_identificada",
+      "achado": "A categoria geral fauna está prevista pela taxonomia autoral, mas não há correspondência confirmada deste material com uma espécie, território ou povo específico. O termo Grande Felino é descritivo na ficha de Peren.",
+      "nota_editorial": "Preservar Força II, Defesa II e Fraqueza a Veneno I; não atribuir automaticamente ao sabre-cat de Skyrim ou a felinos reais.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-taproot": {
+      "ciclo": 54,
+      "nome": "Raiz Mestra",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_inteligencia",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-creep-cluster",
+          "nome": "Tufo Rastejante",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-dwarven-oil",
+          "nome": "Óleo de Autômato",
+          "efeitos": [
+            "regenerar_magia",
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-moon-sugar",
+          "nome": "Açúcar Lunar",
+          "efeitos": [
+            "regenerar_magia",
+            "restaurar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "raiz com memória vegetal encantada",
+      "estado_vinculo_carcaca": "propriedade_canonica_peren; distribuicao_regional_nao_documentada",
+      "achado": "A rede de memória vegetal e Aumentar Inteligência II já foram aprovados na curadoria de Peren; não há fonte ligando esta raiz a Eldroth, a uma consciência primordial ou a uma rede espiritual específica.",
+      "nota_editorial": "Respeitar o quarto atributo aprovado e a explicação vegetal; não reinterpretar conhecimento da planta como memória de Kindau ou tecnologia de um povo.",
+      "fontes_monstros": [
+        "docs/LORE_HACK_CARCACA_DW.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-salt-pile": {
+      "ciclo": 55,
+      "nome": "Sal do Sangue",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "sal das águas rubras",
+      "estado_vinculo_carcaca": "origem_maritima_descrita_em_peren; processo_de_extracao_nao_documentado",
+      "achado": "A presença do Mar de Sangue é canônica; a descrição de Peren atribui o sal às águas rubras. O atlas não fixa salinidade, método de extração, escala produtiva nem distribuição de salinas ou rota mercantil.",
+      "nota_editorial": "Preservar nome e atributos sem inventar salinas, monopolização, transporte ou concentração de sal. A fronteira entre águas rubras e azuis permanece móvel.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "docs/MAR_SANGUE_ECOLOGIA_POLITICA_CICLO5.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
+    },
+    "ing-fly-amanita": {
+      "ciclo": 56,
+      "nome": "Amanita Rubra",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 21,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-river-betty",
+          "nome": "Betta do Rio",
+          "efeitos": [
+            "aumentar_forca",
+            "diminuir_sabedoria"
+          ]
+        },
+        {
+          "id": "ing-troll-fat",
+          "nome": "Gordura de Troll",
+          "efeitos": [
+            "aumentar_forca",
+            "frenesi"
+          ]
+        },
+        {
+          "id": "ing-boar-tusk",
+          "nome": "Presa de Javali",
+          "efeitos": [
+            "aumentar_forca",
+            "frenesi"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de efeitos psicoativos fantásticos",
+      "estado_vinculo_carcaca": "propriedades_canonicas_peren; habitat_nao_documentado",
+      "achado": "Diminuir Sabedoria II é uma adição expressamente aprovada na curadoria. A fonte de Monstros da Carcaça não estabelece população da espécie, medicina ritual nem efeito farmacológico real.",
+      "nota_editorial": "Manter os quatro atributos e Frenesi II; não transpor alegações médicas sobre fungos reais ou inventar guildas/uso ritual regional.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -443,16 +867,64 @@
         "ing-pine-thrush-egg"
       ],
       "nome_atual": "Ovo de Tordo",
-      "estado": "aberta_para_desambiguacao_sem_inventar_taxonomia",
+      "estado": "proposta_de_desambiguacao_por_uso_sem_migracao",
       "evidencia": "IDs, descrições e perfis de atributos distintos no catálogo de Peren; nenhum vínculo destas aves a uma espécie documentada no bestiário autoral consultado.",
       "orientacao": "Preservar IDs, atributos e nomes canônicos até estabelecer uma designação sem sugerir espécie ou habitat não comprovado. Uma etiqueta descritiva de uso pode ser avaliada no catálogo/menus, mas não deve virar fato biológico.",
-      "risco": "Colisão na apresentação e na seleção manual de receitas."
+      "risco": "Colisão na apresentação e na seleção manual de receitas.",
+      "rotulos_editoriais_propostos_nao_canonicos": {
+        "ing-rock-warbler-egg": "Ovo de Tordo — uso curativo",
+        "ing-pine-thrush-egg": "Ovo de Tordo — tintura de agilidade"
+      },
+      "nota": "São rótulos funcionais derivados das descrições existentes, não nomes taxonômicos nem renomeações aprovadas. Este chat não altera menus ou receitas."
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 8,
+    "ingredientes_revisados": 18,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
-    "modifica_runtime": false
-  }
+    "modifica_runtime": false,
+    "integridade_atributos": true,
+    "efeitos_distintos": 53,
+    "efeitos_isolados": 0,
+    "avisos_nomes_duplicados": 1
+  },
+  "origem_referencia_atual": {
+    "repositorio": "pedromaintenance/monstros-carcaca",
+    "commit_sha": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+    "uso": "lote 47–56; preservar origem_referencia original dos ciclos 39–46"
+  },
+  "lotes": [
+    {
+      "ciclos": "39-46",
+      "ids": [
+        "ing-swamp-fungal-pod",
+        "ing-troll-fat",
+        "ing-void-salts",
+        "ing-butterfly-wing",
+        "ing-ancestor-moth-wing",
+        "ing-chaurus-hunter-antennae",
+        "ing-ash-creep-cluster",
+        "ing-dwarven-oil"
+      ],
+      "fonte_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "escopo": "primeiro lote publicado sem alteração da curadoria"
+    },
+    {
+      "ciclos": "47-56",
+      "ids": [
+        "ing-felsaad-tern-feathers",
+        "ing-cyrodilic-spadetail",
+        "ing-powdered-mammoth-tusk",
+        "ing-bleeding-crown",
+        "ing-beehive-husk",
+        "ing-snowberries",
+        "ing-sabre-cat-tooth",
+        "ing-taproot",
+        "ing-salt-pile",
+        "ing-fly-amanita"
+      ],
+      "fonte_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
+      "escopo": "segundo lote com correção documental da Pena de Gaivota no README"
+    }
+  ]
 }

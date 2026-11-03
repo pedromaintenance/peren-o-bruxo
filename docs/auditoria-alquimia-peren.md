@@ -484,3 +484,49 @@ O criador dividiu o desenvolvimento: **este fluxo audita e prepara itens/ingredi
 
 **Preservar integralmente por auditoria delegada:** Regenerar Magia II; Restaurar Magia II; Fraqueza à Magia I. **20 parceiros** no catálogo; exemplo de dupla com múltiplos efeitos: Tufo Rastejante (restaurar_magia, fraqueza_magia). **Cruzamento ecológico:** O manuscrito documenta forjas e galerias anãs em Thargrid, mas não confirma que esses autômatos e o óleo sejam fabricados ou encontrados especificamente ali. **Decisão editorial:** Não atribuir fabrico ou cadeia de comércio a uma cidade sem referência; manter a descrição do item em Peren. Sem edição de `data/curadoria_ingredientes.json`.
 
+
+
+## Lote autônomo de curadoria — Ciclos 47–56 (03/11/2026)
+
+**Escopo:** dez fichas na sequência de conectividade, sem alteração dos IDs, das descrições ou dos atributos. A revisão cruza a curadoria de Peren com a fonte autoral [`Monstros da Carcaça`](https://github.com/pedromaintenance/monstros-carcaca/tree/b08b0f69c8d6d4ed332540565b61fa32ac3ae076) (`b08b0f69c8d6`). **Diferença documental corrigida neste lote:** o README legava *Restaurar Stamina II* à Pena de Gaivota; a ficha canônica vigente desde a curadoria registra *Aumentar Constituição II*. A correção é apenas textual no README. As incertezas ecológicas e sugestões de interface não foram convertidas em lore ou gameplay. Matriz estruturada: [`data/auditoria_ecologica_ingredientes.json`](../data/auditoria_ecologica_ingredientes.json).
+
+### Ciclo 47 — Pena de Gaivota (`ing-felsaad-tern-feathers`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Curar doença III; Voar I; Aumentar Constituição II. **21 parceiros** por efeito; dupla de efeitos compartilhados: Alho (curar_doenca, aumentar_constituicao). **Evidência de Monstros da Carcaça:** A exclusividade das gaivotas em Portomonte e o vínculo das penas à cura de doenças constam de decisão expressa da curadoria de Peren. O atlas autoral confirma Portomonte, templo de Deméter e purificação local das águas, mas não comprova ecologia/espécie de gaivota ou alcance da magia curativa das penas. **Tratativa:** Manter o registro integral; corrigir apenas o README desatualizado que ainda cita Stamina II, substituindo por Aumentar Constituição II; não inventar potabilidade nem mecanismo da bênção. **Fonte:** `docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md`, `data/atlas/portomonte-demeter-decisoes-ciclo51.json`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 48 — Peixe de Escamas Finas (`ing-cyrodilic-spadetail`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Aumentar Restauração II; Medo I; Diminuir Constituição I. **21 parceiros** por efeito; não foi identificada dupla com dois efeitos compartilhados nesta ficha. **Evidência de Monstros da Carcaça:** O Rio Ancestral existe e atravessa a Carcaça, porém o atlas não atribui a este peixe uma ocorrência, bacia, cardume ou época de reprodução. Ser peixe de água doce não permite presumi-lo nativo do Rio inteiro. **Tratativa:** Preservar os três atributos e a descrição; manter a proveniência geográfica desta espécie como não documentada. **Fonte:** `docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 49 — Pó de Presa de Mamute (`ing-powdered-mammoth-tusk`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Aumentar Força III; Aumentar Furtividade I; Fraqueza ao Fogo I. **21 parceiros** por efeito; não foi identificada dupla com dois efeitos compartilhados nesta ficha. **Evidência de Monstros da Carcaça:** A descrição de Peren declara um material fossilizado, não uma população viva. O atlas registra ossos ancestrais, cavernas e regiões montanhosas, mas não documenta mamutes locais nem depósitos desse fóssil. **Tratativa:** Preservar força III e as propriedades associadas; não introduzir mamutes vivos, jazidas ou caçadas em Thargrid como fatos. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`, `docs/ATLAS_GEOGRAFIA_FISICA_CICLO34.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 50 — Coroa Sangrenta (`ing-bleeding-crown`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Resistência à Magia II; Aumentar Defesa II; Fraqueza ao Fogo I. **21 parceiros** por efeito; dupla de efeitos compartilhados: Dentes de Espectro Gelado (aumentar_defesa, fraqueza_fogo). **Evidência de Monstros da Carcaça:** A taxonomia admite fungos como flora da Carcaça; o nome Coroa Sangrenta não prova origem no Mar de Sangue nem ligação com ritos de sangue. Não há distribuição da espécie no atlas consultado. **Tratativa:** Preservar resistência mágica, defesa e vulnerabilidade ao fogo; não associar ao mar vermelho sem evidência. **Fonte:** `data/taxonomia_carcaca.json`, `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 51 — Casca de Colmeia (`ing-beehive-husk`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Resistência a Veneno II; Aumentar Furtividade I; Aumentar Defesa I. **21 parceiros** por efeito; dupla de efeitos compartilhados: Ramo de Cardo (resistencia_veneno, aumentar_defesa). **Evidência de Monstros da Carcaça:** O material de colmeia é coerente como produto biológico, mas nenhum vínculo regional específico, espécie de inseto ou organização de apicultura foi confirmado pelos documentos consultados. **Tratativa:** Preservar atributos defensivos e de furtividade; não criar apiários de Portomonte ou Aldeias de apicultores por inferência. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`, `docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 52 — Bagas da Neve (`ing-snowberries`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Resistência ao Gelo II; Resistência ao Fogo I; Aumentar Encantamento I. **21 parceiros** por efeito; dupla de efeitos compartilhados: Cinzas de Criatura (resistencia_fogo, aumentar_encantamento). **Evidência de Monstros da Carcaça:** O atlas confirma picos nevados nas montanhas de Thargrid, mas não estabelece a distribuição destas bagas nem a origem de sua resistência a calor e gelo. **Tratativa:** Manter os três efeitos; a coincidência 'neve' é indício ecológico, não autorização para declarar Thargrid como fonte exclusiva. **Fonte:** `docs/ATLAS_MACROAMBIENTES_CICLO35.md`, `docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 53 — Dente de Grande Felino (`ing-sabre-cat-tooth`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Aumentar Força II; Aumentar Defesa II; Fraqueza a Veneno I. **21 parceiros** por efeito; não foi identificada dupla com dois efeitos compartilhados nesta ficha. **Evidência de Monstros da Carcaça:** A categoria geral fauna está prevista pela taxonomia autoral, mas não há correspondência confirmada deste material com uma espécie, território ou povo específico. O termo Grande Felino é descritivo na ficha de Peren. **Tratativa:** Preservar Força II, Defesa II e Fraqueza a Veneno I; não atribuir automaticamente ao sabre-cat de Skyrim ou a felinos reais. **Fonte:** `data/taxonomia_carcaca.json`, `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 54 — Raiz Mestra (`ing-taproot`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Regenerar Magia III; Restaurar Magia II; Fraqueza à Magia I; Aumentar Inteligência II. **21 parceiros** por efeito; dupla de efeitos compartilhados: Tufo Rastejante (restaurar_magia, fraqueza_magia). **Evidência de Monstros da Carcaça:** A rede de memória vegetal e Aumentar Inteligência II já foram aprovados na curadoria de Peren; não há fonte ligando esta raiz a Eldroth, a uma consciência primordial ou a uma rede espiritual específica. **Tratativa:** Respeitar o quarto atributo aprovado e a explicação vegetal; não reinterpretar conhecimento da planta como memória de Kindau ou tecnologia de um povo. **Fonte:** `docs/LORE_HACK_CARCACA_DW.md`, `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 55 — Sal do Sangue (`ing-salt-pile`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Regenerar Magia II; Aumentar Restauração I; Diminuir Destreza I. **21 parceiros** por efeito; não foi identificada dupla com dois efeitos compartilhados nesta ficha. **Evidência de Monstros da Carcaça:** A presença do Mar de Sangue é canônica; a descrição de Peren atribui o sal às águas rubras. O atlas não fixa salinidade, método de extração, escala produtiva nem distribuição de salinas ou rota mercantil. **Tratativa:** Preservar nome e atributos sem inventar salinas, monopolização, transporte ou concentração de sal. A fronteira entre águas rubras e azuis permanece móvel. **Fonte:** `docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md`, `docs/MAR_SANGUE_ECOLOGIA_POLITICA_CICLO5.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
+### Ciclo 56 — Amanita Rubra (`ing-fly-amanita`)
+
+**Auditoria autônoma: preservar a ficha vigente.** Atributos: Resistência ao Fogo II; Aumentar Força II; Frenesi II; Diminuir Sabedoria II. **21 parceiros** por efeito; dupla de efeitos compartilhados: Betta do Rio (aumentar_forca, diminuir_sabedoria). **Evidência de Monstros da Carcaça:** Diminuir Sabedoria II é uma adição expressamente aprovada na curadoria. A fonte de Monstros da Carcaça não estabelece população da espécie, medicina ritual nem efeito farmacológico real. **Tratativa:** Manter os quatro atributos e Frenesi II; não transpor alegações médicas sobre fungos reais ou inventar guildas/uso ritual regional. **Fonte:** `data/taxonomia_carcaca.json`, `docs/ATLAS_MACROAMBIENTES_CICLO35.md`. Sem modificação da ficha em `data/curadoria_ingredientes.json`.
+
