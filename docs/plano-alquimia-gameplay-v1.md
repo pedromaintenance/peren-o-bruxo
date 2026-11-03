@@ -50,3 +50,7 @@
 Criar branch `feature/alquimia-v1-experimental` a partir da `main` documentada; nela adicionar módulo **puro e sem efeitos colaterais** e testes com dados reais. A branch pode ser atualizada autonomamente. O conteúdo só é promovido ao runtime com compatibilidade demonstrada e aprovação de publicação pertinente.
 
 **Critério de sucesso da primeira entrega:** commit de documentação em `main`; commit funcional na branch experimental; nomes de arquivos afetados, checagem do módulo, estado do CI e próximos riscos descritos sem prometer publicação.
+
+## Separação editorial entre fluxos (03/11/2026)
+
+A partir desta data, **a curadoria e preparação de ingredientes/itens** deste chat não implementa mecânica, menus ou runtime. Outro fluxo é responsável pelas etapas B–F de código/interface. Este fluxo cobre a Etapa A e os dados editoriais de que os demais dependem. A referência cruzada de ecologia/cosmologia é [`pedromaintenance/monstros-carcaca`](https://github.com/pedromaintenance/monstros-carcaca), segundo as regras de proveniência em [`docs/curadoria-itens-consistencia-carcaca.md`](curadoria-itens-consistencia-carcaca.md). Propostas de Monstros da Carcaça não são promovidas automaticamente a cânone. Este ajuste de responsabilidades não revoga a Constituição nem altera os gates de publicação.
