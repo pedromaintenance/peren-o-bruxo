@@ -292,3 +292,54 @@ O nível **75** é hipótese; comparar alternativas **65/75/85** frente ao esfor
 - **AQ-22:** em empate, a ordem A+B não define indevidamente o efeito dominante.
 
 **Próximo debate:** definir limiar real da perícia, regras de dominância e critérios de sinergia/incompatibilidade restantes; depois custos e riscos da retificação. **Estado: proposta documentada, não implementada, não publicada.**
+
+## 14. Sinergias e combos catalogados — Emenda A2 (03/11/2026)
+
+**[CANÔNICO] Uma combinação não se torna Impura por ter dois ou mais efeitos.** A regra anterior de “qualquer híbrido = Impuro” foi expressamente revogada pela [Emenda A2](constituicao-design-v1.md). Compatibilidade e sinergia são conceitos distintos:
+
+| Situação | Classificação | Nome e apresentação |
+| --- | --- | --- |
+| Efeitos **incompatíveis** expressamente catalogados | **Impuro**, ainda que também exista uma sinergia | Nome do efeito mais intenso **+ Impuro**, efeitos restantes preservados |
+| Efeitos **sinérgicos** reconhecidos, **sem incompatibilidade** | **Combo / preparado especial** | Nome autoral do combo (ex.: **Poção da Fada**) |
+| Efeitos **compatíveis**, mas sem sinergia reconhecida | Mistura comum multiefeito, **não Impura** | Nome do efeito mais intenso; demais efeitos reais na descrição |
+| Único efeito ativado | Preparado comum | Nome do próprio efeito |
+
+**Exemplos aprovados pelo criador:**
+- `aumentar_carisma` + `diminuir_forca`: **Impuro** pela incompatibilidade entre fortalecimento social e debilitação física.
+- `aumentar_carisma` + `aumentar_ilusao`: sinergia chamada **Poção da Fada**. Não é Impura por possuir dois benefícios.
+- `aumentar_forca` + `resistencia_eletricidade`: **compatível, sem sinergia nomeada**. Nome pelo efeito dominante (potência final a definir), outro efeito na descrição. **Não inventar nome especial apenas porque há dois benefícios.**
+
+**[CANÔNICO] A fabricação é exatamente a mesma da alquimia comum:** materiais distintos → calcular todos os efeitos com pelo menos duas fontes distintas por efeito → classificar o **conjunto de efeitos ativados**. Combo **não é receita especial**, não exige componente fixo, não substitui `receitas.json`, não apaga efeitos extras e não concede automaticamente bônus mecânico adicional.
+
+**Teste combinatório real da curadoria (não receita fixa):** `ing-dragon-s-tongue` (Língua-de-Dragão), `ing-daedra-heart` (Coração de Demônio) e `ing-nightshade` (Beladona) são três tipos que, juntos, ativam `aumentar_carisma` (primeiros dois), `aumentar_ilusao` (primeiro e terceiro) e `aumentar_magia` (segundo e terceiro). Portanto, **Poção da Fada deve ser identificada pela presença dos dois efeitos sinérgicos**, mesmo quando há outro efeito compatível adicional. **A PR #94 ainda aceita apenas dois tipos**, logo esse caso é futuro teste do motor de 3+ tipos, não indicação de que já seja fabricável no Pages.
+
+### 14.1 Catálogo de interações e arte futura
+
+**Fonte de registro (sem uso automático em gameplay):** [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alquimicos.json). **Atribuições:**
+- `sinergias[]`: ID estável do combo, `nome`, IDs de efeitos necessários, justificativa material/mágica, estado editorial, descrição, efeitos adicionais possíveis, assinatura de ativação, proposta de apresentação e **reserva de identidade visual**.
+- `incompatibilidades[]`: assinatura de IDs, motivo da contradição, classificação Impuro, decisão e proveniência.
+- `exemplos_sem_sinergia_nomeada[]`: referências negativas para o agente não inventar nomes de todo multiefeito.
+- `visual`: família-base, chave estável para asset/efeito de pós-processamento, status de arte, **animação futura** (briefing, quadros/duração quando aprovados); **nenhuma animação ou sprite foi produzido ainda**.
+- **Curadoria dos combos** trata a relação entre **efeitos**, não entre pares de ingredientes; nunca registrar dezenas de cópias da Poção da Fada por rota de fabricação.
+
+**Relação entre descoberta e menus [PROPOSTA]:** na primeira fabricação ou identificação de uma sinergia, o Caderno do Bruxo registra o **combo conhecido** como descoberta; a tela `Alquimia → Poções → Combos descobertos` destaca sua identidade e, quando houver asset, animação própria ou sobreposta. Não revelar o nome antes da descoberta do personagem. O jogo pode usar o sprite normal de poção enquanto não existe arte exclusiva de combo.
+
+**Ordem de decisão canônica:** `efeitos realmente ativados → incompatibilidades catalogadas? Impuro : sinergias catalogadas? nome especial : nome do maior efeito`. A “Poção da Fada” não neutraliza uma incompatibilidade extra que apareça numa mistura mais complexa. O catálogo cresce por curadoria rastreável; **não concluir sinergia apenas porque ambos são benéficos**.
+
+### 14.2 Handoff obrigatório à auditoria de ingredientes
+
+O [roadmap de curadoria](curadoria-itens-consistencia-carcaca.md) e o [plano do agente de auditoria](plano-alquimia-gameplay-v1.md) recebem a tarefa de examinar pares/conjuntos de **efeitos** quanto a compatibilidade, sinergia e oposição, sem modificar atributos dos ingredientes por conveniência de criar combos.
+
+O agente de itens deverá registrar **ID dos efeitos, nome/descrição, razão da sinergia, caso de uso, evidência/lore, decisão editorial, vínculo aos ingredientes apenas como exemplos, estado de produção visual e chave estável de animação**. Candidatos ainda não aprovados são `proposto`; somente `aprovado` participa do registro canônico. A criação de um nome não autoriza efeitos novos, potência adicional ou alterações no motor.
+
+### 14.3 Backlog e critérios de aceite
+
+- **CRAFT-D16 [P0 design]:** reconciliar classificação de Impuro, combos sinérgicos e misturas comuns com a Emenda A2; integrar consulta futura ao catálogo de IDs de efeitos sem criar receitas especiais.
+- **CRAFT-D17 [P1 design/arte]:** catálogo durável das poções especiais com ID, assinatura, nome, descrição, proveniência, parâmetros visuais e contrato de animação futura.
+- **AQ-23:** dois efeitos benéficos compatíveis sem sinergia nomeada → mistura comum, nome do dominante + secundários na descrição, sem Impuro.
+- **AQ-24:** presença de `aumentar_carisma` + `aumentar_ilusao` sem incompatibilidade → **Poção da Fada**; reconhecer com 3+ ingredientes, sem exigir receita fixa.
+- **AQ-25:** presença de `aumentar_carisma` + `diminuir_forca` → **Impuro**; preservar ambos, independentemente de outras sinergias possíveis.
+- **AQ-26:** combo nomeado mantém efeitos extras compatíveis; sem bônus mecânico, nome, sprite ou animação inventados fora do registro aprovado.
+- **AQ-27:** o catálogo distingue `aprovado` de `proposto`, e um registro visual sem sprite ainda utiliza corretamente o recurso por família.
+
+**Próximo ciclo de design:** decidir procedimento de curadoria de **novos nomes sinérgicos** e como comunicar combos descobertos na UI. O limiar de proficiência para purificação continua assunto apenas de misturas **incompatíveis**.
