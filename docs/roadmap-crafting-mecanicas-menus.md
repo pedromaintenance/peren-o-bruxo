@@ -343,3 +343,65 @@ O agente de itens deverá registrar **ID dos efeitos, nome/descrição, razão d
 - **AQ-27:** o catálogo distingue `aprovado` de `proposto`, e um registro visual sem sprite ainda utiliza corretamente o recurso por família.
 
 **Próximo ciclo de design:** decidir procedimento de curadoria de **novos nomes sinérgicos** e como comunicar combos descobertos na UI. O limiar de proficiência para purificação continua assunto apenas de misturas **incompatíveis**.
+
+## 15. Curadoria de sinergias — protocolo de avaliação e descoberta (03/11/2026)
+
+> **Estado:** proposta de método e análise exploratória. A **Emenda A2** fixa apenas as diferenças entre **Impuro**, **sinergia nomeada** e **multiefeito comum**. Os nomes a seguir **não** são automaticamente aprovados.
+
+### 15.1 Filtro antes de dar nome a um combo
+
+Aplicar as verificações nesta ordem, sem transformar coincidência em suposta causalidade:
+
+1. **Factibilidade material [obrigatória]:** conferir no `data/curadoria_ingredientes.json` que cada efeito da assinatura nasce de **dois tipos distintos**; exemplos podem exigir 2, 3 ou 4 tipos. A assinatura é de **efeitos ativos**, e o exemplo de insumos **não** é receita fixa.
+2. **Complementaridade funcional [obrigatória para propor nome]:** os efeitos fortalecem um mesmo objetivo ou atuam como etapas de um processo identificável (ex.: alcance visual + percepção, voo + velocidade). Uma lista de dois benefícios independentes não passa nesse critério.
+3. **Identidade temática [obrigatória]:** justificar em uma ou duas frases *por que* o conjunto merece identidade autoral. Não basta “soam mágicos juntos”; o nome deve comunicar a função e pertencer à Carcaça sem inventar cosmologia, bioma ou criatura.
+4. **Análise de incompatibilidade [obrigatória]:** conferir o catálogo de incompatibilidades **aprovadas**. Havendo conflito, **Impuro** tem precedência mesmo que um subconjunto de efeitos seja sinérgico. Não inferir que todo positivo+negativo é incompatível, nem que todo positivo+positivo é combo.
+5. **Sem efeitos extras automáticos [obrigatória]:** um nome bonito, uma sinergia e um visual diferenciado **não** criam nova potência, duração, resistência ou efeito. Esses elementos exigiriam decisão própria.
+6. **Qualidade de apresentação [diferencial]:** nome pronunciável, descrição curta, função legível no inventário, identidade visual distinta e potencial para uma animação de poucos quadros; a arte **não é requisito para validar** a sinergia.
+
+**Resultado editorial:** `aprovado` (decisão expressa do criador) / `proposto_nao_aprovado` (pesquisa candidata) / `rejeitado` (decisão documentada) / `nao_avaliado` (não presumir classificação). A fonte de execução só poderá consumir aprovações, não candidatos.
+
+### 15.2 Primeira carteira de candidatos — verificação real de efeitos
+
+O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alquimicos.json) contém oito candidatos **ainda não canônicos**, com IDs, exemplo de materiais, efeitos realmente ativados e briefing de animação. As quantidades abaixo são o **mínimo de tipos no exemplo pesquisado**, não o limite final para todos os preparos.
+
+| Nome candidato | Efeitos sinérgicos propostos | Tipos de ingredientes no exemplo | Parecer inicial |
+| --- | --- | ---: | --- |
+| **Asas do Vendaval** | `voar` + `velocidade` | 3 | Forte: deslocamento aéreo acelerado |
+| **Olhos da Vigília** | `aumentar_percepcao` + `visao_a_distancia` | 3 | Forte: observação e alcance visual |
+| **Nascente Arcana** | `aumentar_magia` + `regenerar_magia` | 3 | Forte: reserva e regeneração arcana |
+| **Véu do Caçador** | `invisibilidade` + `aumentar_furtividade` | 4 | Forte: ocultação e discrição |
+| **Seiva Vital** | `restaurar_saude` + `regenerar_saude` | 4 | Forte: recuperação imediata e contínua |
+| **Fôlego das Profundezas** | `respirar_na_agua` + `resistencia_gelo` | 4 | **Condicional:** pode ser apenas soma de dois benefícios de viagem; não presumir relação geográfica |
+| **Silêncio do Feiticeiro** | `dano_magia` + `diminuir_magia` | 3 | Forte: ameaça à reserva mágica em duas dimensões |
+| **Veneno da Ruína** | `dano_saude` + `fraqueza_veneno` | 2 | **Condicional:** `dano_saude` ainda não está tipado como dano venenoso; não pressupor amplificação |
+
+**Controle negativo obrigatório:** `aumentar_forca` + `resistencia_eletricidade` continua preparado multiefeito compatível **sem sinergia nomeada**, conforme a decisão do criador. **Controle positivo aprovado:** `aumentar_carisma` + `aumentar_ilusao` → **Poção da Fada**. **Controle de incompatibilidade aprovado:** `aumentar_carisma` + `diminuir_forca` → **Impuro**.
+
+### 15.3 Descoberta e menus de combos [PROPOSTA]
+
+**Não criar uma nova estação ou um botão de “fabricar combo”.** A descoberta deve surgir **após** a mesma transação de preparo normal:
+
+`Escolher ingredientes → preparar → calcular todos os efeitos → verificar incompatibilidades aprovadas → verificar combos aprovados → descobrir/identificar nome → registrar no Caderno`.
+
+- **Primeira descoberta:** mostrar uma pequena faixa *“Nova combinação reconhecida: [nome do combo]”*, com nome e efeito visual só se o personagem descobriu os efeitos necessários. Nunca anunciar um candidato `proposto_nao_aprovado` nem revelar propriedades ocultas antes da experiência.
+- **Caderno do Bruxo:** submenu `Alquimia → Combos descobertos` como **índice de conhecimento**, organizado por família e nome; cada entrada mostra assinatura de efeitos conhecidos, descrição, possíveis fontes conhecidas e preparações já produzidas. **Não se converte em receita fixa por par.**
+- **Produção orientada:** ao selecionar combo descoberto, filtrar fontes **já conhecidas** de cada efeito, mostrando que o ingrediente precisa participar de um conjunto em que **cada efeito obtenha duas fontes**. Não mostrar a terceiros ou ao jogador informações ocultas.
+- **Misturas com efeitos extras:** conservar propriedades fora do combo; se houver incompatibilidade aprovada em qualquer par ativo, a preparação recebe **Impuro**, e a identidade do combo pode permanecer registrada como detalhe, sem mascarar riscos.
+- **Múltiplos combos aprovados simultaneamente [ABERTO]:** não escolher arbitrariamente o primeiro elemento do JSON. Estudar regra de prioridade explícita ou apresentação de múltiplos títulos; preservar todas as assinaturas detectadas sem sobrescrever dados.
+- **Identificação visual:** nome especial é metadado do produto e do caderno; **arte base continua por família**. Reservar `visual.chave_reservada` / `visual_proposto.chave_sugerida`, sobreposição e `animacao.estado`, mas apenas o combo aprovado recebe identidade visual prioritária. No mobile, partículas e efeitos não podem impedir leitura ou interações.
+- **Não assumir “Poção” para todos os combos:** a forma de apresentação segue a família de uso aprovada (venenos e tônicos também podem ter sinergias); elixires/bálsamos ainda dependem de regras próprias.
+
+### 15.4 Handoff e critérios de aceite
+
+**Para curadoria:** consultar as propostas, marcar parecer fundamentado e elevar à aprovação as melhores, **sem alterar os 111 ingredientes** para forçar um combo. Para gameplay: projetar a camada classificadora consultando apenas sinergias aprovadas; não implementar novas propriedades ou custos para combos por sugestão de catálogo.
+
+- **CRAFT-D18 [P0 design]**: validar protocolo de sinergia com exemplos positivos, negativos, triviais e ambíguos; documentar aprovação e proveniência.
+- **CRAFT-D19 [P1 UX]**: caderno de combos descobertos, feedback de descoberta e reserva de identidade visual/efeito de animação, sem vazamento de propriedades ocultas.
+- **AQ-28**: `proposto_nao_aprovado` não aparece com nome de combo no inventário nem recebe asset exclusivo; o material continua sendo fabricável pela regra comum.
+- **AQ-29**: combo aprovado é identificado com 3–4 tipos, mesmo com efeitos adicionais, e o nome não depende da ordem de seleção dos materiais.
+- **AQ-30**: incompatibilidade aprovada tem precedência sobre qualquer nome especial; não elimina os efeitos sinérgicos da composição.
+- **AQ-31**: misturas sem sinergia classificada são comuns (não automaticamente Impuras); nome do dominante quando potência comparável estiver definida; efeito secundário disponível na descrição conforme o conhecimento.
+- **AQ-32**: cadastro de animação com `estado=nao_produzido` recai no visual-base por família; não há erro de asset ausente ou alegação de animação publicada.
+
+**Status em 03/11/2026:** 1 sinergia aprovada (**Poção da Fada**), 8 candidatos propostos, 1 incompatibilidade aprovada e 1 caso compatível sem nome especial. **Somente metadados e documentação; nenhuma animação, alteração de motor ou publicação da nova bancada.**
