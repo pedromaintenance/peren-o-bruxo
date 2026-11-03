@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–66; 28 ingredientes em três lotes; pendências editoriais sem mutação de itens/receitas; metadados não jogáveis.",
+  "escopo": "Ciclos 39–76; 38 ingredientes em quatro lotes; metadados editoriais não jogáveis. Pendências estruturais e semânticas registradas sem editar a curadoria ativa.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -1331,6 +1331,483 @@
       ],
       "referencia_monstros_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
       "alteracao_curadoria": false
+    },
+    "ing-grass-pod": {
+      "ciclo": 67,
+      "nome": "Vagem da Charneca",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_alteracao",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "vagem de solo úmido",
+      "estado_vinculo_carcaca": "bioma_especifico_e_localidade_nao_documentados",
+      "achado": "A descrição de Peren menciona solo úmido, mas o atlas macrorregional não estabelece um lugar denominado Charneca nem prova ocorrência desse vegetal em região específica.",
+      "nota_editorial": "Preservar Resistência a Veneno II, Aumentar Alteração II e Restaurar Magia I. Não presumir que a palavra charneca seja uma unidade geográfica já cartografada.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/atlas/macroambientes-ciclo35.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-thistle-branch": {
+      "ciclo": 68,
+      "nome": "Ramo de Cardo",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-honeycomb",
+          "nome": "Favo de Mel",
+          "efeitos": [
+            "aumentar_defesa",
+            "diminuir_destreza"
+          ]
+        },
+        {
+          "id": "ing-beehive-husk",
+          "nome": "Casca de Colmeia",
+          "efeitos": [
+            "resistencia_veneno",
+            "aumentar_defesa"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ramo espinhoso de planta",
+      "estado_vinculo_carcaca": "especie_e_local_de_coleta_nao_documentados",
+      "achado": "Existe no dossiê de Eldroth uma criatura vegetal proposta chamada 'Cardos que Bebem Cinza', mas o documento registra explicitamente esse fenômeno como não canonizado. Isso não a torna fonte do Ramo de Cardo.",
+      "nota_editorial": "Manter três atributos e o nome genérico. Não associar à proposta de Eldroth nem interpretar a resistência a veneno como prova de uso terapêutico regional.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-elves-ear": {
+      "ciclo": 69,
+      "nome": "Orelha-de-Elfo",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 24,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-white-cap",
+          "nome": "Chapéu Branco",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_gelo"
+          ]
+        },
+        {
+          "id": "ing-fire-salts",
+          "nome": "Sais Ígneos",
+          "efeitos": [
+            "resistencia_fogo",
+            "fraqueza_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de formato auricular",
+      "estado_vinculo_carcaca": "especie_fungica_e_habitat_nao_documentados",
+      "achado": "A ficha do item o define como fungo de tronco; o termo 'elfo' descreve seu formato e não autoriza inferir que se trate de parte do corpo de um elfo ou que exista um rito dos povos élficos para obtê-lo.",
+      "nota_editorial": "Preservar os efeitos. Classificar a origem material em termos fúngicos, não como drop de pessoa ou criatura inteligente; região específica não demonstrada.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-small-antlers": {
+      "ciclo": 70,
+      "nome": "Chifres de Cervo",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 25,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-pine-thrush-egg",
+          "nome": "Ovo de Tordo",
+          "efeitos": [
+            "fraqueza_veneno",
+            "aumentar_destreza"
+          ]
+        },
+        {
+          "id": "ing-small-pearl",
+          "nome": "Pérola Pequena",
+          "efeitos": [
+            "aumentar_restauracao",
+            "aumentar_destreza"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "chifres imaturos de cervídeo",
+      "estado_vinculo_carcaca": "especie_e_localidade_nao_documentados",
+      "achado": "O 'Cervo dos Galhos Invertidos' aparece apenas como fera sobrenatural proposta na ecologia de Eldroth; não há prova de que ele produza estes chifres ou que o item provenha daquela floresta.",
+      "nota_editorial": "Preservar o nome, origem genérica e os três efeitos. Evitar identificar o animal com a proposta não homologada ou atribuir coleta a uma região.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-hagraven-claw": {
+      "ciclo": 71,
+      "nome": "Garra de Bruxa",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_magia",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 25,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "garra de feiticeira monstruosa",
+      "estado_vinculo_carcaca": "especie_e_vinculo_cultural_nao_confirmados",
+      "achado": "A curadoria de Peren afirma uma feiticeira monstruosa, mas o atlas de Monstros da Carcaça não determina espécie, linhagem, facção ou habitat para esse ser. Mulheres que praticam magia, povos e tradição de bruxaria não são automaticamente essa categoria monstruosa.",
+      "nota_editorial": "Preservar o quarto atributo Diminuir Magia II, expressamente aprovado no Ciclo 12, além dos outros três. Não confundir a garra com um material humano genérico nem importar a biologia de Skyrim.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-frost-salts": {
+      "ciclo": 72,
+      "nome": "Sais da Geada",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 25,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-moon-sugar",
+          "nome": "Açúcar Lunar",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_fogo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cristais de frio sobrenatural",
+      "estado_vinculo_carcaca": "localidade_de_extracao_nao_documentada",
+      "achado": "Há picos com neve persistente em Thargrid, mas a existência de gelo não comprova jazidas de Sais da Geada, seus produtores, comércio ou localização. A descrição 'usados em ... conjuração' é uma finalidade narrativa, não o atributo Aumentar Conjuração.",
+      "nota_editorial": "Manter Resistência ao Gelo III, Restaurar Magia II e Fraqueza ao Fogo II. Não fixar origem em Thargrid só pela associação térmica.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-river-betty": {
+      "ciclo": 73,
+      "nome": "Betta do Rio",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-fly-amanita",
+          "nome": "Amanita Rubra",
+          "efeitos": [
+            "aumentar_forca",
+            "diminuir_sabedoria"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "peixe de rio",
+      "estado_vinculo_carcaca": "lacuna_de_descricao_e_origem_no_catalogo; localidade_nao_documentada",
+      "achado": "A ficha `ing-river-betty` é a única entre 111 sem as chaves `descricao` e `origem`. O nome 'Betta do Rio' não demonstra ocorrência específica no Rio Ancestral, e não existe habitat de espécie documentado no atlas consultado.",
+      "nota_editorial": "Abrir pendência para completar a descrição com texto estritamente baseado no nome e nos efeitos, e investigar a origem editorial; NÃO editar a curadoria ativa nesta etapa porque o workflow sincroniza `data/itens.json` e builds Phaser automaticamente.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "docs/CONSULTA_CURADORIA.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false,
+      "descricao_sugerida_nao_canonica": "Peixe de rio empregado em preparados que aumentam Força e Destreza, mas também podem diminuir a Sabedoria.",
+      "origem_sugerida_nao_canonica": null
+    },
+    "ing-nightshade": {
+      "ciclo": 74,
+      "nome": "Beladona",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_ilusao",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ectoplasm",
+          "nome": "Ectoplasma",
+          "efeitos": [
+            "dano_saude",
+            "aumentar_magia"
+          ]
+        },
+        {
+          "id": "ing-red-mountain-flower",
+          "nome": "Flor Vermelha",
+          "efeitos": [
+            "dano_saude",
+            "aumentar_magia"
+          ]
+        },
+        {
+          "id": "ing-jazbay-grapes",
+          "nome": "Uvas de Jasmim",
+          "efeitos": [
+            "dano_saude",
+            "aumentar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "planta tóxica da sombra",
+      "estado_vinculo_carcaca": "descr_lore_com_efeito_mecanico_nao_representado",
+      "achado": "A descrição diz que a Beladona interfere na 'recuperação mágica', mas seus atributos são Dano à Saúde III, Aumentar Magia III e Aumentar Ilusão II: não há atributo de redução/alteração de regeneração mágica. O efeito tóxico e as escolas mágicas são canônicos; habitat ainda não foi localizado.",
+      "nota_editorial": "Propor revisão DESCRITIVA que corresponda aos três atributos, sem adicionar um quarto efeito por causa da redação; não editar o JSON ativo enquanto a sincronização automática estiver vinculada a essa alteração.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false,
+      "descricao_sugerida_nao_canonica": "Planta tóxica de sombra, usada em preparados que causam dano à saúde, mas também ampliam reservas mágicas e fortalecem feitiços de Ilusão."
+    },
+    "ing-eye-of-sabre-cat": {
+      "ciclo": 75,
+      "nome": "Olho de Felino",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "intensidade": 1
+        },
+        {
+          "id": "visao_a_distancia",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-hawk-s-egg",
+          "nome": "Ovo de Falcão",
+          "efeitos": [
+            "aumentar_destreza",
+            "aumentar_percepcao"
+          ]
+        },
+        {
+          "id": "ing-rock-warbler-egg",
+          "nome": "Ovo de Tordo",
+          "efeitos": [
+            "aumentar_destreza",
+            "restaurar_saude"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "olho preservado de grande felino",
+      "estado_vinculo_carcaca": "especie_regional_nao_confirmada; quarto_atributo_aprovado",
+      "achado": "O atributo Visão à Distância II foi aprovado anteriormente pelo criador; o documento da Carcaça não oferece espécie, população regional ou modo de obtenção dessa parte. A semântica de visão distante é distinta de Percepção.",
+      "nota_editorial": "Conservar explicitamente os quatro atributos, inclusive Visão à Distância II, sem reduzi-lo a Aumentar Percepção. Não criar espécies de grandes felinos para acomodar o item.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-bear-claws": {
+      "ciclo": 76,
+      "nome": "Garras de Urso",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma_com_pendencias_quando_indicado",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-mudcrab-chitin",
+          "nome": "Carapaça de Caranguejo",
+          "efeitos": [
+            "aumentar_constituicao",
+            "aumentar_forca"
+          ]
+        },
+        {
+          "id": "ing-giant-s-toe",
+          "nome": "Dedo de Gigante",
+          "efeitos": [
+            "aumentar_constituicao",
+            "aumentar_forca"
+          ]
+        },
+        {
+          "id": "ing-large-antlers",
+          "nome": "Chifres de Alce",
+          "efeitos": [
+            "aumentar_constituicao",
+            "aumentar_forca"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "garras de urso maceradas",
+      "estado_vinculo_carcaca": "especie_e_regiao_de_coleta_nao_documentadas",
+      "achado": "A curadoria nomeia urso, mas a presença do animal em algum setor específico da Carcaça não foi confirmada nas fontes consultadas. Os efeitos de força, constituição e saúde não demonstram linhagem sobrenatural.",
+      "nota_editorial": "Preservar os três atributos e a raridade comum. Não atribuir fauna local a Eldroth, Thargrid ou Caatinga por analogia com biomas terrestres.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -1376,22 +1853,52 @@
       "evidencia": "Templo da Lua existe, mas seus materiais e processos de obtenção não são descritos; 'lunar' é apenas parte do nome do ingrediente em Peren.",
       "orientacao": "Não vincular a Severina, calendário lunar ou monopólio ritual sem decisão autoral.",
       "risco": "Criar suprimentos, religião ou economia de mercadoria inexistente no cânone."
+    },
+    {
+      "tipo": "lacuna_estrutura_ingrediente",
+      "titulo": "Betta do Rio sem descrição e origem",
+      "ids": [
+        "ing-river-betty"
+      ],
+      "estado": "correcao_editorial_proposta_sem_mutacao",
+      "evidencia": "Único item de 111 cujo registro na curadoria carece de `descricao` e `origem`, ambos ausentes como chaves. A identificação de habitat no Rio Ancestral não está documentada.",
+      "descricao_sugerida": "Peixe de rio empregado em preparados que aumentam Força e Destreza, mas também podem diminuir a Sabedoria.",
+      "orientacao": "Aplicar descrição em mudança de dados coordenada com o outro fluxo. Investigar valor de `origem` de forma independente, sem retroatribuir automaticamente a origem comum dos demais.",
+      "risco": "Campos ausentes afetam interfaces, busca e provenance; sincronização automática dos catálogos ao editar o JSON ativo."
+    },
+    {
+      "tipo": "inconsistencia_descr_efeito",
+      "titulo": "Beladona: texto da recuperação mágica sem atributo",
+      "ids": [
+        "ing-nightshade"
+      ],
+      "estado": "correcao_editorial_proposta_sem_mutacao",
+      "evidencia": "A descrição vigente fala em interferência na recuperação mágica; atributos são dano_saude III, aumentar_magia III e aumentar_ilusao II, sem reger regeneração ou recuperação.",
+      "descricao_sugerida": "Planta tóxica de sombra, usada em preparados que causam dano à saúde, mas também ampliam reservas mágicas e fortalecem feitiços de Ilusão.",
+      "orientacao": "Preferir correção de descrição ao invés de inventar um quarto efeito. Coordenar atualização da curadoria ativa com o fluxo de mecânicas, devido ao workflow de sincronização.",
+      "risco": "Descrição engana jogador sobre efeitos; edição da curadoria pode propagar mudanças para outros runtimes."
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 28,
+    "ingredientes_revisados": 38,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
     "integridade_atributos": true,
     "efeitos_distintos": 53,
     "efeitos_isolados": 0,
-    "avisos_nomes_duplicados": 1
+    "avisos_nomes_duplicados": 1,
+    "campos_descricao_ausentes_na_curadoria": [
+      "ing-river-betty"
+    ],
+    "campos_origem_ausentes_na_curadoria": [
+      "ing-river-betty"
+    ]
   },
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
-    "commit_sha": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
-    "uso": "lote 57–66; os SHAs anteriores permanecem por lote"
+    "commit_sha": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+    "uso": "lote 67–76; consultar proveniência por lote anterior"
   },
   "lotes": [
     {
@@ -1442,6 +1949,23 @@
       ],
       "fonte_commit": "b08b0f69c8d6d4ed332540565b61fa32ac3ae076",
       "escopo": "restos mortuários, materiais sobrenaturais e flora; preservação da curadoria e prevenção de atribuições ecológicas não fundamentadas"
+    },
+    {
+      "ciclos": "67-76",
+      "ids": [
+        "ing-grass-pod",
+        "ing-thistle-branch",
+        "ing-elves-ear",
+        "ing-small-antlers",
+        "ing-hagraven-claw",
+        "ing-frost-salts",
+        "ing-river-betty",
+        "ing-nightshade",
+        "ing-eye-of-sabre-cat",
+        "ing-bear-claws"
+      ],
+      "fonte_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "escopo": "flora, partes animais e minerais; preservação de fichas; detecção de campos faltantes e divergência descritiva em Beladona"
     }
   ]
 }
