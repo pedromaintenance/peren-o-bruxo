@@ -1,0 +1,80 @@
+{
+  "schema": "peren.alquimia.interacoes.v1",
+  "tipo": "metadados_de_design_nao_executaveis",
+  "atualizado_em": "2026-11-03",
+  "politica": {
+    "fonte": "Constituição de Design v1.0, emenda A2; roadmaps de crafting e curadoria",
+    "ativacao": "Todo efeito deve ser compartilhado por pelo menos dois tipos distintos de ingredientes. A detecção de sinergia ocorre APOS resolver os efeitos ativos, sem receitas fixas.",
+    "precedencia": [
+      "incompatibilidade_aprovada_impuro",
+      "sinergia_aprovada_nome_especial",
+      "mistura_compativel_nome_efeito_dominante"
+    ],
+    "restricoes": [
+      "Nenhum efeito ativo pode ser apagado por troca de nome ou familia.",
+      "Dois ou mais efeitos nao implicam sinergia.",
+      "Dois beneficios sem incompatibilidade nao implicam impureza.",
+      "Nunca criar potencia, bonus mecanico, receita ou asset automaticamente."
+    ]
+  },
+  "sinergias": [
+    {
+      "id": "combo-pocao-da-fada",
+      "nome": "Poção da Fada",
+      "estado": "nome_e_sinergia_aprovados",
+      "efeitos_necessarios": [
+        "aumentar_carisma",
+        "aumentar_ilusao"
+      ],
+      "regra": "Os dois IDs devem estar presentes no resultado alquimico; efeitos extras permanecem. Uma mistura impura por outra incompatibilidade mantém a classificação Impuro.",
+      "assinatura": "efeitos_ativos_incluem_todos_os_necessarios",
+      "descricao_conceitual": "Carisma aumentado e Ilusão fortalecida atuam em conjunto; a descrição final é trabalho de curadoria.",
+      "bonus_mecanico": null,
+      "receita_fixa": null,
+      "visual": {
+        "familia_base": "pocao",
+        "chave_reservada": "combo-pocao-da-fada",
+        "sprite_exclusivo": false,
+        "animacao": {
+          "estado": "pendente",
+          "briefing": "A definir com direção de arte; preparar identificação estável para animação própria ou sobreposição futura",
+          "quadros": null,
+          "duracao_ms": null
+        },
+        "notas": "O combo pode receber animação distinta sem multiplicar sprites por receita."
+      },
+      "proveniencia": "Decisão expressa do criador em 03/11/2026"
+    }
+  ],
+  "incompatibilidades": [
+    {
+      "id": "incompat-aumentar-carisma-diminuir-forca",
+      "efeitos": [
+        "aumentar_carisma",
+        "diminuir_forca"
+      ],
+      "estado": "exemplo_canonico_aprovado",
+      "resultado": "Impuro",
+      "observacao": "Aumentar Carisma junto a Diminuir Força caracteriza incompatibilidade. Preservar ambos os efeitos."
+    }
+  ],
+  "exemplos_sem_sinergia_nomeada": [
+    {
+      "efeitos": [
+        "aumentar_forca",
+        "resistencia_eletricidade"
+      ],
+      "estado": "exemplo_sem_nome_especial_aprovado",
+      "resultado": "Preparado compativel sem rotulo Impuro; nomear pelo efeito mais intenso e descrever o secundario.",
+      "ressalva": "Nao criar nome ou sinergia por contagem de efeitos; a dominancia aguarda regra de potencia."
+    }
+  ],
+  "pendencias": [
+    "Formula de potencia e comparacao de efeitos heterogeneos",
+    "Empates de dominancia",
+    "Mapeamento de outras incompatibilidades e sinergias aprovado pelo criador",
+    "Regras de bonus mecanico exclusivo de combos, se houver",
+    "Arte e animações, custo e integração em runtime",
+    "Interação de combo com incompatibilidade adicional"
+  ]
+}
