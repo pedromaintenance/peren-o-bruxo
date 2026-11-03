@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–86; 48 ingredientes em cinco lotes; somente metadados editoriais.",
+  "escopo": "Ciclos 39–96; 58 ingredientes em seis lotes; metadados editoriais não jogáveis, sem mutação de curadoria.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -2291,6 +2291,448 @@
       ],
       "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
       "alteracao_curadoria": false
+    },
+    "ing-rock-warbler-egg": {
+      "ciclo": 87,
+      "nome": "Ovo de Tordo",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 28,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-eye-of-sabre-cat",
+          "nome": "Olho de Felino",
+          "efeitos": [
+            "restaurar_saude",
+            "aumentar_destreza"
+          ]
+        },
+        {
+          "id": "ing-torchbug-thorax",
+          "nome": "Tórax de Vaga-lume",
+          "efeitos": [
+            "aumentar_destreza",
+            "fraqueza_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ovo de pequena ave usado em remédios",
+      "estado_vinculo_carcaca": "segunda_ficha_de_nome_duplicado; especie_e_habitat_indeterminados",
+      "achado": "É o segundo Ovo de Tordo, com Restaurar Saúde II, Aumentar Destreza I e Fraqueza à Magia I; o primeiro (`ing-pine-thrush-egg`) aumenta Destreza II e resiste à eletricidade. Nenhuma fonte autoral consultada identifica ambas as aves como espécies diferentes.",
+      "nota_editorial": "Concluir análise do par. Propor rótulo funcional 'Ovo de Tordo — restauração', sem renomear espécies, mudar IDs ou sincronizar receitas.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false,
+      "rotulo_proposto_nao_canonico": "Ovo de Tordo — restauração"
+    },
+    "ing-histcarp": {
+      "ciclo": 88,
+      "nome": "Carpa de Pedra",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 28,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-tundra-cotton",
+          "nome": "Algodão da Tundra",
+          "efeitos": [
+            "aumentar_magia",
+            "aumentar_constituicao"
+          ]
+        },
+        {
+          "id": "ing-salmon-roe",
+          "nome": "Ovas de Salmão",
+          "efeitos": [
+            "respirar_na_agua",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "carpa de resistência incomum",
+      "estado_vinculo_carcaca": "especie_e_agua_de_ocorrencia_nao_documentadas",
+      "achado": "O nome Carpa de Pedra descreve o material em Peren, mas não comprova corpo pétreo, procedência das ossadas de Golzdov, distribuição pelo Rio Ancestral ou ocorrência no Mar de Sangue.",
+      "nota_editorial": "Preservar Respiração na Água II, Aumentar Magia II e Constituição I; não criar origem mineral nem migração para compatibilizar propriedades.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-boar-tusk": {
+      "ciclo": 89,
+      "nome": "Presa de Javali",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 28,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-mudcrab-chitin",
+          "nome": "Carapaça de Caranguejo",
+          "efeitos": [
+            "aumentar_forca",
+            "aumentar_constituicao"
+          ]
+        },
+        {
+          "id": "ing-troll-fat",
+          "nome": "Gordura de Troll",
+          "efeitos": [
+            "aumentar_forca",
+            "frenesi"
+          ]
+        },
+        {
+          "id": "ing-bear-claws",
+          "nome": "Garras de Urso",
+          "efeitos": [
+            "aumentar_forca",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "presa de javali em tônicos",
+      "estado_vinculo_carcaca": "especie_e_ecossistema_nao_documentados",
+      "achado": "O item é parte de fauna descrita em Peren. O atlas não autoriza atribuir javalis à Caatinga, Ironwood ou Eldroth, nem identificar o javali com criaturas sobrenaturais propostas.",
+      "nota_editorial": "Conservar Força II, Constituição II e Frenesi I; evitar inventar caça regional ou fazenda de javalis.",
+      "fontes_monstros": [
+        "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-falmer-ear": {
+      "ciclo": 90,
+      "nome": "Orelha de Troglodita",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 29,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-slaughterfish-egg",
+          "nome": "Ovas de Piranha",
+          "efeitos": [
+            "resistencia_veneno",
+            "dano_saude"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "tecido auricular de criatura subterrânea",
+      "estado_vinculo_carcaca": "sapiencia_identidade_e_proveniencia_nao_determinadas",
+      "achado": "A curadoria de Peren informa tecido de criatura subterrânea, mas o nome Troglodita não prova tipo Carcaça, filiação cultural, inteligência, espécie ou ocorrência nas cavernas de Thargrid. Não está estabelecido se o material é parte de um povo sapiente.",
+      "nota_editorial": "Manter os efeitos e a nomenclatura vigente; abrir revisão de taxonomia e proveniência antes de vincular a coleta a qualquer comunidade, violência ou fonte de loot.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-netch-jelly": {
+      "ciclo": 91,
+      "nome": "Gelatina de Medusa",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 1
+        },
+        {
+          "id": "paralisia",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 29,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "secreção gelatinosa de criatura flutuante",
+      "estado_vinculo_carcaca": "criatura_produtora_nao_classificada; medusa_ambigua",
+      "achado": "A descrição fala de criatura flutuante. O nome Medusa não demonstra que seja a górgona mitológica, uma água-viva, um povo ou espécie específica; o atlas não oferece correspondência com criatura identificada.",
+      "nota_editorial": "Conservar Carga II, Constituição I e Paralisia II. Não atribuir origem exclusivamente marítima, habitat no Mar de Sangue ou petrificação por analogia.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-human-flesh": {
+      "ciclo": 92,
+      "nome": "Carne Humana",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "paralisia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 30,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-imp-stool",
+          "nome": "Fungo de Diabrete",
+          "efeitos": [
+            "paralisia",
+            "dano_saude"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "tecido humano em preparação alquímica macabra",
+      "estado_vinculo_carcaca": "proveniencia_humana_nao_documentada; necessidade_de_tratamento_etico",
+      "achado": "O catálogo contém o ingrediente Carne Humana e menciona negociação clandestina; isso não documenta origem em Drakport, assassinato, canibalismo, ritual ou disponibilidade legítima de corpos. O dossiê de Drakport confirma tráfico humano, mas veta tratar pessoas como mercadorias neutras.",
+      "nota_editorial": "Preservar a ficha histórica e atributos sem fabricar fonte. Marcar para revisão de procedência e representação: não associar automaticamente vítimas da escravidão a estoque, drop, mercado ou produção; mudanças de natureza do conteúdo exigem decisão do criador.",
+      "fontes_monstros": [
+        "docs/RIO_DRAKPORT_CICLO28.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-chaurus-eggs": {
+      "ciclo": 93,
+      "nome": "Ovo de Verme Gigante",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 30,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "ovos translúcidos de verme subterrâneo",
+      "estado_vinculo_carcaca": "organismo_e_regiao_de_postura_nao_documentados",
+      "achado": "A curadoria descreve vermes subterrâneos. A Antena de Verme Gigante é outro ingrediente, mas a coincidência nominal não comprova a mesma espécie, fase biológica, ninho ou região subterrânea; cavernas documentadas tampouco provam a ocorrência.",
+      "nota_editorial": "Preservar Invisibilidade II, Constituição II e Fraqueza a Veneno I; não inferir cadeia de coleta automática ou pertencimento a criatura importada de outro RPG.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-juniper-berries": {
+      "ciclo": 94,
+      "nome": "Bagas de Zimbro",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 30,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "bagas aromáticas de planta",
+      "estado_vinculo_carcaca": "distribuicao_e_agricultura_nao_documentadas",
+      "achado": "O nome de espécie e aroma constam de Peren, mas os setores agrícolas da Carcaça não comprovam produção, comércio ou coleta de zimbro em nenhum povoado ou região.",
+      "nota_editorial": "Manter Regenerar Saúde II, Destreza I e Fraqueza ao Fogo I. Não adicionar cultivo comercial, sazonalidade ou ecossistema exclusivo sem fonte.",
+      "fontes_monstros": [
+        "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+        "docs/POVOAMENTO_ECOLOGIA_ALEM_SUL_CICLO54.md"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-jazbay-grapes": {
+      "ciclo": 95,
+      "nome": "Uvas de Jasmim",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 30,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ectoplasm",
+          "nome": "Ectoplasma",
+          "efeitos": [
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-nightshade",
+          "nome": "Beladona",
+          "efeitos": [
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-red-mountain-flower",
+          "nome": "Flor Vermelha",
+          "efeitos": [
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "uvas aromáticas de uso alquímico",
+      "estado_vinculo_carcaca": "viticultura_e_origem_regional_nao_documentadas",
+      "achado": "A Carcaça possui agricultores e sociedades comerciais, mas não há comprovação de vinhedos, produção de Uvas de Jasmim, rota de abastecimento ou método ritual de processamento.",
+      "nota_editorial": "Preservar Regenerar Magia II, Aumentar Magia II e Dano à Saúde I; não presumir monocultura nem inventar origem colonial ou nobre.",
+      "fontes_monstros": [
+        "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+        "docs/POVOAMENTO_ECOLOGIA_ALEM_SUL_CICLO54.md"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
+    },
+    "ing-torchbug-thorax": {
+      "ciclo": 96,
+      "nome": "Tórax de Vaga-lume",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 30,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-rock-warbler-egg",
+          "nome": "Ovo de Tordo",
+          "efeitos": [
+            "aumentar_destreza",
+            "fraqueza_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "órgão luminescente de inseto",
+      "estado_vinculo_carcaca": "especie_e_ocorrencia_nao_documentadas",
+      "achado": "O catálogo registra um inseto luminoso, mas não comprova a espécie ou presença nos biomas da Carcaça. Os Besouros da Casca Riscada de Eldroth são apenas proposta e não devem ser equiparados ao vaga-lume.",
+      "nota_editorial": "Preservar Destreza II, Dano à Magia I e Fraqueza à Magia I. Não criar vínculo com inseto inteligente, rito, povo ou localidade.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -2302,16 +2744,17 @@
         "ing-pine-thrush-egg"
       ],
       "nome_atual": "Ovo de Tordo",
-      "estado": "primeira_ficha_auditada; segunda_no_ciclo_87",
+      "estado": "ambas_fichas_auditadas; desambiguacao_editorial_concluida_sem_migracao",
       "evidencia": "IDs, descrições e perfis de atributos distintos no catálogo de Peren; nenhum vínculo destas aves a uma espécie documentada no bestiário autoral consultado.",
-      "orientacao": "Rótulos de uso para documentação e futura UI, não nomes de novas espécies. Preservar IDs, nome em catálogo ativo e receitas até coordenação com o fluxo de menus.",
-      "risco": "Colisão na apresentação e na seleção manual de receitas.",
+      "orientacao": "Pareamento editorial dos dois IDs concluído. Rótulos de uso são propostas de apresentação, não nomes taxonômicos, e não devem atualizar menus ou JSON jogável sem coordenação com o outro fluxo.",
+      "risco": "Colisão de rótulos canônicos na busca; migração automática de nomes poderia confundir receitas antigas ou exibir dados da ficha errada.",
       "rotulos_editoriais_propostos_nao_canonicos": {
         "ing-rock-warbler-egg": "Ovo de Tordo — restauração",
         "ing-pine-thrush-egg": "Ovo de Tordo — agilidade"
       },
       "nota": "São rótulos funcionais derivados das descrições existentes, não nomes taxonômicos nem renomeações aprovadas. Este chat não altera menus ou receitas.",
-      "ciclo_primeiro_ovo": 78
+      "ciclo_primeiro_ovo": 78,
+      "ciclo_segundo_ovo": 87
     },
     {
       "tipo": "proveniencia_mortuaria_sem_fonte",
@@ -2361,10 +2804,33 @@
       "descricao_sugerida": "Planta tóxica de sombra, usada em preparados que causam dano à saúde, mas também ampliam reservas mágicas e fortalecem feitiços de Ilusão.",
       "orientacao": "Preferir correção de descrição ao invés de inventar um quarto efeito. Coordenar atualização da curadoria ativa com o fluxo de mecânicas, devido ao workflow de sincronização.",
       "risco": "Descrição engana jogador sobre efeitos; edição da curadoria pode propagar mudanças para outros runtimes."
+    },
+    {
+      "tipo": "proveniencia_corpos_sapiencia_indeterminada",
+      "titulo": "Carne Humana e Orelha de Troglodita: proveniência e agência",
+      "ids": [
+        "ing-human-flesh",
+        "ing-falmer-ear"
+      ],
+      "estado": "analise_de_taxonomia_e_proveniencia_pendente",
+      "evidencia": "Peren prevê ambos como ingredientes, mas a fonte autoral não documenta obtenção, consentimento, origem individual nem classificação sapiente do troglodita; Drakport trafica pessoas, sem comprovar cadeia de fornecimento destes materiais.",
+      "orientacao": "Preservar o cânone já publicado sem representar pessoas como recursos comerciais neutros; não projetar drop de povos, vítimas ou prisioneiros por analogia; solicitar decisão do criador caso haja nova especificação de origem.",
+      "risco": "Naturalizar violência contra povos ou produzir loot indevido por semelhança temática."
+    },
+    {
+      "tipo": "ambiguidade_criatura_medusa",
+      "titulo": "Gelatina de Medusa: classe da criatura indeterminada",
+      "ids": [
+        "ing-netch-jelly"
+      ],
+      "estado": "correspondencia_taxonomica_nao_aprovada",
+      "evidencia": "Peren descreve gelatina de criatura flutuante, sem declarar górgona, água-viva marinha ou outra espécie.",
+      "orientacao": "Não atribuir petrificação, litoral, povo ou associação com Mar de Sangue por tradução do nome.",
+      "risco": "Confundir criaturas mitológicas, fauna marinha e organismo fantástico."
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 48,
+    "ingredientes_revisados": 58,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
@@ -2381,8 +2847,8 @@
   },
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
-    "commit_sha": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
-    "uso": "lote 77–86"
+    "commit_sha": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+    "uso": "ciclos 87–96; referências anteriores por lote"
   },
   "lotes": [
     {
@@ -2467,6 +2933,23 @@
       ],
       "fonte_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
       "escopo": "botânica parasitária, ovos, materiais zoológicos, ambientes aquáticos"
+    },
+    {
+      "ciclos": "87-96",
+      "ids": [
+        "ing-rock-warbler-egg",
+        "ing-histcarp",
+        "ing-boar-tusk",
+        "ing-falmer-ear",
+        "ing-netch-jelly",
+        "ing-human-flesh",
+        "ing-chaurus-eggs",
+        "ing-juniper-berries",
+        "ing-jazbay-grapes",
+        "ing-torchbug-thorax"
+      ],
+      "fonte_commit": "338dfc5ff4304e6ec2519e06b08cbb1de0947bd6",
+      "escopo": "segundo Ovo de Tordo, materiais humanos e de criatura subterrânea, fauna, cultivos e taxonomia ambígua de Medusa"
     }
   ]
 }
