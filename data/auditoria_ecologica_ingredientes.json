@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–76; 38 ingredientes em quatro lotes; metadados editoriais não jogáveis. Pendências estruturais e semânticas registradas sem editar a curadoria ativa.",
+  "escopo": "Ciclos 39–86; 48 ingredientes em cinco lotes; somente metadados editoriais.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -1808,6 +1808,489 @@
       ],
       "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
       "alteracao_curadoria": false
+    },
+    "ing-briar-heart": {
+      "ciclo": 77,
+      "nome": "Coração de Espinheiros",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "intensidade": 1
+        },
+        {
+          "id": "vampirismo",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ectoplasm",
+          "nome": "Ectoplasma",
+          "efeitos": [
+            "aumentar_magia",
+            "restaurar_magia"
+          ]
+        },
+        {
+          "id": "ing-red-mountain-flower",
+          "nome": "Flor Vermelha",
+          "efeitos": [
+            "aumentar_magia",
+            "restaurar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "planta parasitária e núcleo vegetal",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Vampirismo II e transformação progressiva já aprovados no Ciclo 9; planta não se torna espécie vampírica por isso.",
+      "nota_editorial": "Preservar efeito transformativo, sem atribuir origem demoníaca ou habitat regional.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false,
+      "precedente_aprovado": "Ciclo 9 — Vampirismo II; transformação progressiva"
+    },
+    "ing-pine-thrush-egg": {
+      "ciclo": 78,
+      "nome": "Ovo de Tordo",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_veneno",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-small-antlers",
+          "nome": "Chifres de Cervo",
+          "efeitos": [
+            "aumentar_destreza",
+            "fraqueza_veneno"
+          ]
+        },
+        {
+          "id": "ing-blue-dartwing",
+          "nome": "Libélula Azul",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        },
+        {
+          "id": "ing-hawk-beak",
+          "nome": "Bico de Falcão",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ovo de ave silvestre",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Um dos dois itens Ovo de Tordo; esta ficha possui Aumentar Destreza II e Resistência à Eletricidade I, não é a versão curativa.",
+      "nota_editorial": "Rótulo não canônico: Ovo de Tordo — agilidade. Não renomear espécie nem ID.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false,
+      "rotulo_proposto_nao_canonico": "Ovo de Tordo — agilidade"
+    },
+    "ing-small-pearl": {
+      "ciclo": 79,
+      "nome": "Pérola Pequena",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 26,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-small-antlers",
+          "nome": "Chifres de Cervo",
+          "efeitos": [
+            "aumentar_destreza",
+            "aumentar_restauracao"
+          ]
+        },
+        {
+          "id": "ing-hawk-beak",
+          "nome": "Bico de Falcão",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_gelo"
+          ]
+        },
+        {
+          "id": "ing-purple-mountain-flower",
+          "nome": "Flor Violeta",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "pérola pequena",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Não há molusco produtor ou localidade documentados; nem as águas do Mar de Sangue nem as águas azuis demonstram sua origem.",
+      "nota_editorial": "Não inventar bancos de pérolas ou exclusividade comercial.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-emperor-parasol-moss": {
+      "ciclo": 80,
+      "nome": "Musgo Parassol",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_inteligencia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "musgo sobre madeira decomposta",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Substrato documentado na ficha de Peren; não associar à proposta do Micélio das Vozes Partidas ou supor ocorrência em Eldroth.",
+      "nota_editorial": "Preservar Regenerar Saúde e Dano à Saúde simultâneos.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-hawk-s-egg": {
+      "ciclo": 81,
+      "nome": "Ovo de Falcão",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_percepcao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-eye-of-sabre-cat",
+          "nome": "Olho de Felino",
+          "efeitos": [
+            "aumentar_percepcao",
+            "aumentar_destreza"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ovo de falcão",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Ausência de ninhos e reprodução regional documentados; o 'vigor' do texto não define atributo adicional.",
+      "nota_editorial": "Conservar percepção, destreza e resistência mágica; não fabricar fauna local.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-canis-root": {
+      "ciclo": 82,
+      "nome": "Raiz Canina",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "raiz de função paralisante",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "A palavra Canina não demonstra origem animal nem associação com cães; distribuição vegetal não comprovada.",
+      "nota_editorial": "Manter a origem vegetal e os três efeitos.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-blue-dartwing": {
+      "ciclo": 83,
+      "nome": "Libélula Azul",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "intensidade": 1
+        },
+        {
+          "id": "velocidade",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-hawk-beak",
+          "nome": "Bico de Falcão",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        },
+        {
+          "id": "ing-pine-thrush-egg",
+          "nome": "Ovo de Tordo",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "libélula de águas rasas",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Velocidade II já aprovada no Ciclo 7, independente de Aumentar Destreza; o atlas não localiza a espécie.",
+      "nota_editorial": "Preservar quatro atributos, sem presumir coleta no Rio Ancestral ou Portomonte.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false,
+      "precedente_aprovado": "Ciclo 7 — Velocidade II"
+    },
+    "ing-hawk-beak": {
+      "ciclo": 84,
+      "nome": "Bico de Falcão",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-blue-dartwing",
+          "nome": "Libélula Azul",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        },
+        {
+          "id": "ing-pine-thrush-egg",
+          "nome": "Ovo de Tordo",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_eletricidade"
+          ]
+        },
+        {
+          "id": "ing-small-pearl",
+          "nome": "Pérola Pequena",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "bico de falcão",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "Nome comum com outras partes de falcão não comprova mesma espécie ou população; procedência não documentada.",
+      "nota_editorial": "Manter três atributos, sem cadeia de coleta inventada.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-salmon-roe": {
+      "ciclo": 85,
+      "nome": "Ovas de Salmão",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-histcarp",
+          "nome": "Carpa de Pedra",
+          "efeitos": [
+            "respirar_na_agua",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "ovas de salmão",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "O atlas não documenta desova, migração ou habitat de salmões; não importar ecologia terrestre como fato da Carcaça.",
+      "nota_editorial": "Preservar efeitos e evitar atribuir origem ao Rio Ancestral ou Mar de Sangue.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
+    },
+    "ing-purple-mountain-flower": {
+      "ciclo": 86,
+      "nome": "Flor Violeta",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 27,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-frost-mirriam",
+          "nome": "Mirra da Geada",
+          "efeitos": [
+            "aumentar_furtividade",
+            "resistencia_gelo"
+          ]
+        },
+        {
+          "id": "ing-hawk-beak",
+          "nome": "Bico de Falcão",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_gelo"
+          ]
+        },
+        {
+          "id": "ing-small-pearl",
+          "nome": "Pérola Pequena",
+          "efeitos": [
+            "aumentar_destreza",
+            "resistencia_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "flor de encosta fria",
+      "estado_vinculo_carcaca": "ocorrencia_regional_nao_documentada",
+      "achado": "A descrição de Peren documenta encostas e bruma; Thargrid nevado não confirma ocorrência desta espécie.",
+      "nota_editorial": "Manter atributos e não declarar exclusividade em Thargrid.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -1819,15 +2302,16 @@
         "ing-pine-thrush-egg"
       ],
       "nome_atual": "Ovo de Tordo",
-      "estado": "proposta_de_desambiguacao_por_uso_sem_migracao",
+      "estado": "primeira_ficha_auditada; segunda_no_ciclo_87",
       "evidencia": "IDs, descrições e perfis de atributos distintos no catálogo de Peren; nenhum vínculo destas aves a uma espécie documentada no bestiário autoral consultado.",
-      "orientacao": "Preservar IDs, atributos e nomes canônicos até estabelecer uma designação sem sugerir espécie ou habitat não comprovado. Uma etiqueta descritiva de uso pode ser avaliada no catálogo/menus, mas não deve virar fato biológico.",
+      "orientacao": "Rótulos de uso para documentação e futura UI, não nomes de novas espécies. Preservar IDs, nome em catálogo ativo e receitas até coordenação com o fluxo de menus.",
       "risco": "Colisão na apresentação e na seleção manual de receitas.",
       "rotulos_editoriais_propostos_nao_canonicos": {
-        "ing-rock-warbler-egg": "Ovo de Tordo — uso curativo",
-        "ing-pine-thrush-egg": "Ovo de Tordo — tintura de agilidade"
+        "ing-rock-warbler-egg": "Ovo de Tordo — restauração",
+        "ing-pine-thrush-egg": "Ovo de Tordo — agilidade"
       },
-      "nota": "São rótulos funcionais derivados das descrições existentes, não nomes taxonômicos nem renomeações aprovadas. Este chat não altera menus ou receitas."
+      "nota": "São rótulos funcionais derivados das descrições existentes, não nomes taxonômicos nem renomeações aprovadas. Este chat não altera menus ou receitas.",
+      "ciclo_primeiro_ovo": 78
     },
     {
       "tipo": "proveniencia_mortuaria_sem_fonte",
@@ -1880,7 +2364,7 @@
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 38,
+    "ingredientes_revisados": 48,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
@@ -1898,7 +2382,7 @@
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
     "commit_sha": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
-    "uso": "lote 67–76; consultar proveniência por lote anterior"
+    "uso": "lote 77–86"
   },
   "lotes": [
     {
@@ -1966,6 +2450,23 @@
       ],
       "fonte_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
       "escopo": "flora, partes animais e minerais; preservação de fichas; detecção de campos faltantes e divergência descritiva em Beladona"
+    },
+    {
+      "ciclos": "77-86",
+      "ids": [
+        "ing-briar-heart",
+        "ing-pine-thrush-egg",
+        "ing-small-pearl",
+        "ing-emperor-parasol-moss",
+        "ing-hawk-s-egg",
+        "ing-canis-root",
+        "ing-blue-dartwing",
+        "ing-hawk-beak",
+        "ing-salmon-roe",
+        "ing-purple-mountain-flower"
+      ],
+      "fonte_commit": "182622fe6d0edca18b32c3972641ebd9c72d58cb",
+      "escopo": "botânica parasitária, ovos, materiais zoológicos, ambientes aquáticos"
     }
   ]
 }
