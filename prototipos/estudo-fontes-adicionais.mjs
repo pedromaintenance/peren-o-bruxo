@@ -13,8 +13,11 @@ export function examineMixture(curadoria,catalogo,ingredientIds){
  const items=curadoria?.itens||{},sources=new Map();
  for(const id of ingredientIds){
   const material=items[id];if(!material||!Array.isArray(material.atributos))throw Error('Ingrediente não existe: '+id);
+  const observed=new Set();
   for(const attr of material.atributos){
    if(typeof attr.id!=='string'||!Number.isInteger(attr.intensidade)||attr.intensidade<1||attr.intensidade>3)throw Error('Curadoria inválida em '+id);
+   if(observed.has(attr.id))throw Error('Efeito duplicado no mesmo ingrediente: '+id+'/'+attr.id);
+   observed.add(attr.id);
    if(!sources.has(attr.id))sources.set(attr.id,[]);
    sources.get(attr.id).push({ingredientId:id,intensity:attr.intensidade});
   }
