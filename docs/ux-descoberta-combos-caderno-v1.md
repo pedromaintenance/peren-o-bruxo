@@ -212,3 +212,68 @@ Um save **somente Phaser**, **futuro**, pode carregar uma estrutura versionada:
 - **UX-C17:** Caderno preserva várias associações por lote e oferece navegação legível, com sigilo e fallback visual.
 
 **Backlog:** **CRAFT-D24** (classificador multissinergia e hierarquia Impuro), **CRAFT-D25** (resultado agrupado e Caderno com várias assinaturas por lote), **CRAFT-D26** (política de título único, arte/FX e decisão autoral). **Sem mudanças em runtime até decisão e testes da mecânica.**
+
+## 9. Conhecimento reconhecido versus preparo compatível — experimento v1.2 (03/11/2026)
+
+**Estado:** PROPOSTA DE DESIGN e classificador experimental, **não canonizada**. A Constituição A2 exige somente que incompatibilidade torne a preparação Impura, que sinergias sejam reconhecidas por assinaturas aprovadas e que não se apaguem efeitos. A regra exata de aprendizado de sinergia dentro de um Impuro continua reservada a decisão do criador.
+
+### 9.1 Duas conquistas distintas no Caderno
+
+**Recomendação:** separar **descoberta da relação entre efeitos** de **produção de uma preparação compatível** que os contenha.
+
+| Evento | O que muda | O que NÃO muda |
+| --- | --- | --- |
+| Reconhecer em preparo **Impuro** uma assinatura de sinergia com efeitos já identificados | O Caderno aprende aquela **relação sinérgica**; registra que o primeiro encontro ocorreu num lote Impuro | O produto permanece Impuro, sem nome principal de poção especial e sem remover efeitos incompatíveis |
+| Produzir depois um lote **sem incompatibilidades** contendo assinatura já conhecida | O Caderno marca **primeiro preparo compatível**; pode ter apresentação comemorativa mais simples | Não finge que a sinergia foi descoberta novamente, não reativa ganhos, não elimina efeitos extras |
+| Reconhecer sinergia e produzi-la compatível **na mesma operação** | Os dois marcos são registrados em uma transação | Não criar duas poções, duas despesas ou dois eventos de produção |
+| Identificar apenas parte de uma assinatura | Ainda não foi reconhecido o combo pelo personagem | Nome, efeitos ocultos e futuras animações exclusivas não vazam |
+
+**Termos preferidos:** `primeira observação`, `primeiro preparo compatível`, `preparações compatíveis`. Evitar o nome `puro` para qualquer lote que apenas não seja Impuro: um preparado pode carregar **vários efeitos compatíveis** e ser plenamente utilizável sem ter passado pela técnica de Purificação. O estado **Impuro** é classificação de incompatibilidade, não medidor geral de qualidade.
+
+### 9.2 Exemplo material real e casos exclusivamente sintéticos
+
+**Mistura Impura efetivamente viável com 4 tipos:** `ing-daedra-heart` (Coração de Demônio) + `ing-dragon-s-tongue` (Língua-de-Dragão) + `ing-jarrin-root` (Raiz Botulínica) + `ing-butterfly-wing` (Asa de Borboleta). Os efeitos ativos calculados pelas duas fontes distintas são `aumentar_carisma` e `diminuir_forca`; a incompatibilidade está aprovada. **Não há combo de Fada nesse exemplo** e o nome dominante depende da potência futura.
+
+**Teste sintético de conhecimento dentro de Impuro:** `aumentar_carisma`, `aumentar_ilusao`, `diminuir_forca`. Assinatura **Poção da Fada** existe como subconjunto, mas o conflito Carisma×Diminuir Força torna o **preparo Impuro**. **Este é um vetor de efeitos para teste de regras**, NÃO alegação de uma mistura real de até 4 ingredientes que ative os três efeitos. Caso o criador aceite o aprendizado no Impuro, registrar o combo como **conhecido, mas ainda não produzido de modo compatível**.
+
+**Mistura compatível realmente viável (3 tipos):** `ing-daedra-heart` + `ing-dragon-s-tongue` + `ing-scaly-pholiota` (Cogumelo Escamoso), produzindo Carisma e Ilusão. É um preparo da **Poção da Fada** que pode representar o primeiro lote compatível após a observação sintética acima.
+
+### 9.3 Contrato de dados experimental, sem integração de save
+
+**Proposta de estado por assinatura aprovada:**
+
+```json
+{
+  "combo-pocao-da-fada": {
+    "firstRecognitionTransaction": "tx-sintetica-01",
+    "firstRecognizedInImpure": true,
+    "firstCompatibleTransaction": "tx-compat-02",
+    "observations": 2,
+    "compatiblePreparations": 1
+  }
+}
+```
+
+Os IDs de transação são demonstrativos. Para cada `transactionId`, no máximo **um** lançamento efetivo e uma atualização de conhecimento por combo; diferentes assinaturas na mesma fabricação devem remeter ao **mesmo** identificador de lote. Uma preparação Impura pode ser **observação alquímica válida** sem contar como preparo compatível. Não migrar saves clássicos, não instituir quantidades ou custos extras e não expor esse estado no runtime antes da aprovação.
+
+**Classificador puro experimental:** [`prototipos/experimento-classificador-sinergias.mjs`](https://github.com/pedromaintenance/peren-o-bruxo/blob/design/ux-combos-caderno-v1-20261103/prototipos/experimento-classificador-sinergias.mjs), testes [`experimento-classificador-sinergias.test.mjs`](https://github.com/pedromaintenance/peren-o-bruxo/blob/design/ux-combos-caderno-v1-20261103/prototipos/experimento-classificador-sinergias.test.mjs), **somente na branch isolada da PR #95**. Regras avaliadas: lista íntegra de assinaturas aprovadas, incompatibilidade prioritária, sigilo de efeitos, ignorar candidatos editoriais, determinismo da ordem, primeiro reconhecimento versus primeiro preparo compatível e idempotência de transações. **15/15 casos passaram em execução JavaScript em memória**, sem executar runtime Phaser ou QA de Pages.
+
+### 9.4 Riscos que devem ser resolvidos antes de implementar
+
+- **Risco de surpresa no inventário:** o Caderno poderá conter “Poção da Fada” aprendida sem Peren possuir ou ter produzido uma Poção da Fada compatível. **UX proposta:** separar visualmente `Conhecimento reconhecido` de `Preparado com sucesso`.
+- **Incompatibilidade oculta:** o motor sabe que a mistura é Impura, mas Peren talvez ainda não identifique qual efeito causa a oposição; o aviso **Impuro** não deve vazar o ID ou nome da propriedade escondida.
+- **Potência:** não escolher o título de uma mistura comum pelo primeiro efeito do array. A escolha do dominante continua aberta.
+- **Escala do histórico:** o modelo experimental usa `processedTransactions` em memória; o limite, compactação e atomicidade com o save real exigem contrato futuro de persistência.
+- **Aprendizado/acesso:** não conceder sinergia ao personagem quando ele não identificou **todos** os efeitos de sua assinatura, ainda que o motor tenha detectado a relação.
+- **Economia/experiência:** aprender sinergia não adiciona bônus de combate, dinheiro ou XP sem regra aprovada; evita duplicação de recompensa por repetir preparo.
+
+### 9.5 Critérios novos
+
+- **UX-C18:** reconhecer sinergia no Impuro (caso sintético) cria **conhecimento**, não registro de preparo compatível; classificação principal continua Impuro.
+- **UX-C19:** produzir depois o mesmo combo sem incompatibilidade marca primeiro lote compatível, sem reapresentar a primeira descoberta.
+- **UX-C20:** a primeira fabricação compatível que também descobre a sinergia marca ambos os fatos na **mesma transação**.
+- **UX-C21:** efeito da assinatura oculto ao personagem não pode gerar nome ou conhecimento revelado.
+- **UX-C22:** transação repetida não aumenta contadores; nome e resultado não dependem da ordem de efeitos/assinaturas.
+- **UX-C23:** a UI não chama “Purificado” ou “Puro” a qualquer mistura simplesmente compatível.
+
+**Backlog:** **CRAFT-D27** — estados separados de descoberta e preparo; **CRAFT-D28** — política de aprendizado dentro de Impuros e feedback; **CRAFT-D29** — persistência/idempotência e integração futura na bancada, apenas após aprovação da política. Sem novo cânone ou gameplay.
