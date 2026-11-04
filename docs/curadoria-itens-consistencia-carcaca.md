@@ -199,3 +199,16 @@ Treze fichas remanescentes foram auditadas, de **Algodão da Tundra** a **Cogume
 **Limites de proveniência:** rios não comprovam piranhas; campos agrícolas não comprovam apicultura ou lavoura específica; Thargrid não comprova Algodão da Tundra; o vocabulário “Espinho-da-Morte” não o associa a ritos de Vandar. A classificação das criaturas e a origem territorial permanecem fundamentadas no conteúdo autoral, não em importação automática de Skyrim ou D&D. O fechamento consultou o repositório Monstros da Carcaça no commit `388e678a981c1ca487c05a48f5934907857be418`.
 
 **Separação de escopo:** os trabalhos deste chat são curatoriais e não alteram itens ativos, sinergias, efeitos publicados, receitas, menus, inventário, mecânicas, assets ou saves. O próximo trabalho será complementar a ecologia dos 25 históricos com rastreabilidade e sem rever as aprovações do criador.
+
+## Handoff de estados do Caderno: reconhecimento vs preparo compatível (03/11/2026)
+
+A [seção 9 da especificação UX](ux-descoberta-combos-caderno-v1.md) e a [seção 18 do roadmap das mecânicas](roadmap-crafting-mecanicas-menus.md) documentam um **estudo experimental**: Peren pode conhecer a assinatura de uma sinergia sem ter produzido um lote livre de incompatibilidades. **A hipótese de descobrir sinergia dentro de um Impuro continua aguardando decisão autoral; não é cânone novo.**
+
+**O agente de curadoria deve preservar esta separação de responsabilidades:**
+- **Conhecimento do personagem não pertence ao catálogo editorial.** O catálogo registra sinergias/incompatibilidades aprovadas, IDs, nomes, justificação, arte futura e estados de revisão; o save do Phaser poderá registrar primeira observação e primeiro preparo compatível quando a política for aprovada.
+- **Compatível não é “purificado”.** Uma poção sem incompatibilidades pode carregar vários efeitos positivos independentes e não ter passado por Retificação. Retificação permanece técnica avançada exclusivamente sobre Impuros.
+- **Pares reais versus testes sintéticos:** o quarteto Coração de Demônio, Língua-de-Dragão, Raiz Botulínica e Asa de Borboleta ativa Carisma positivo + Força negativa, proporcionando um exemplo concreto de Impuro. A combinação de Carisma positivo + Ilusão positiva + Força negativa é **vetor sintético de classificador**, não uma receita viável demonstrada para 2–4 fontes.
+- **Não alterar ingredientes para favorecer testes:** auditoria de ecologia/efeitos não deve inserir Ilusão na Raiz Botulínica, nem deslocar propriedades, apenas para fabricar um caso de QA.
+- **Arte por assinatura, não por lote:** o mesmo ID da Poção da Fada referencia uma futura animação especial mesmo que Peren a reconheça pela primeira vez num experimento Impuro. O frasco Impuro **não** recebe automaticamente a apresentação da poção especial compatível; o agente de interface decidirá o tratamento de descoberta depois da aprovação.
+
+**Próxima decisão editorial:** nenhuma nova poção foi aprovada; o catálogo `data/catalogo-combos-alquimicos.json` permanece com **1 sinergia canônica**, oito candidatos e um exemplo de incompatibilidade. A revisão de nomes/efeitos segue as tarefas anteriores.
