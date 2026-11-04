@@ -189,3 +189,13 @@ Uma mistura pode conter **mais de uma assinatura** sinérgica quando existirem m
 6. Manter qualquer segundo combo usado no protótipo como **`qa-*` fictício**, proibido de ser promovido ao catálogo editorial ou ao gameplay. **Poção da Fada permanece a única sinergia aprovada.**
 
 **A verificar em próximas auditorias:** colisões entre candidatos `candidatos_sinergia[]`, capacidade de serem ativados no mesmo lote de 2–4 tipos e distinção entre coocorrência, sinergia genuína e incompatibilidade. Não mudar a curadoria só para forçar uma colisão. **Nenhuma animação foi produzida e nenhuma decisão autoral de “supercombo” foi tomada.**
+
+## Ciclos 112–124 — cobertura individual 111/111 (03/11/2026)
+
+Treze fichas remanescentes foram auditadas, de **Algodão da Tundra** a **Cogumelo de Raiz**. A [matriz ecológica](../data/auditoria_ecologica_ingredientes.json) contém agora **86 fichas** dos Ciclos 39–124. Somadas às **25 decisões por ingrediente dos Ciclos históricos 14–38**, são **111/111 IDs com revisão individual identificável**. Isso não é sinônimo de 111/111 com proveniência ecológica documentada: **faltam 25 retroauditorias ecológicas** para os itens históricos, listadas em [`docs/estado-curadoria-ingredientes.md`](estado-curadoria-ingredientes.md).
+
+**Decisões históricas preservadas:** Alho mantém Curar Doença II como quarto atributo (Ciclo 4); Cauda de Rato mantém Infligir Doença II como quarto atributo (Ciclo 5); Raiz Botulínica mantém quatro efeitos III, sem nerf. **Nova pendência editorial:** Escamas de Piranha cita “antídotos” na descrição, porém seus atributos vigentes tratam de defesa, resistência ao frio e dano à saúde. Foi documentada uma descrição alternativa candidata; não foi aplicada no catálogo ativo.
+
+**Limites de proveniência:** rios não comprovam piranhas; campos agrícolas não comprovam apicultura ou lavoura específica; Thargrid não comprova Algodão da Tundra; o vocabulário “Espinho-da-Morte” não o associa a ritos de Vandar. A classificação das criaturas e a origem territorial permanecem fundamentadas no conteúdo autoral, não em importação automática de Skyrim ou D&D. O fechamento consultou o repositório Monstros da Carcaça no commit `388e678a981c1ca487c05a48f5934907857be418`.
+
+**Separação de escopo:** os trabalhos deste chat são curatoriais e não alteram itens ativos, sinergias, efeitos publicados, receitas, menus, inventário, mecânicas, assets ou saves. O próximo trabalho será complementar a ecologia dos 25 históricos com rastreabilidade e sem rever as aprovações do criador.
