@@ -136,3 +136,79 @@ Um save **somente Phaser**, **futuro**, pode carregar uma estrutura versionada:
 **Backlog:** **CRAFT-D20** (resultado de descoberta), **CRAFT-D21** (Caderno), **CRAFT-D22** (identidade visual opcional e fallback), **CRAFT-D23** (persistência de conhecimento no save Phaser). **Gate:** UX-C01–C10 + QA em branch isolada; nenhuma promoção automática ao Pages.
 
 **Estado em 03/11/2026:** especificação v1.0; não implementada no runtime, não publicada como jogo.
+
+## 8. Extensão de design v1.1 — várias sinergias na mesma mistura (03/11/2026)
+
+> **Status: PROPOSTA para UX e QA, NÃO nova decisão canônica.** Só existe uma sinergia efetivamente aprovada: **Poção da Fada**. Todas as combinações adicionais desta seção são **assinaturas artificiais de teste**, jamais candidatos editoriais ou nomes futuros de produto.
+
+### 8.1 Reconhecer todas as assinaturas, escolher uma apresentação
+
+**[CANÔNICO]** A produção primeiro calcula os efeitos por duas fontes distintas para **cada efeito**, independentemente de número e ordem de ingredientes. Em seguida, verifica incompatibilidades aprovadas (rótulo principal **Impuro**) e sinergias aprovadas (nomes especiais), preservando integralmente os efeitos. Nenhum novo bônus surge do número de sinergias.
+
+**[PROPOSTA]** O classificador deve devolver **uma coleção ordenada e estável de `matchedComboIds`**, não apenas `comboId`. O resultado de várias sinergias é **um único lote/preparado**, com uma única despesa de materiais e ações, e tantas associações de conhecimento quanto assinaturas aprovadas e reconhecidas forem encontradas.
+
+**Uma decisão ainda não tomada:** quando existirem dois combos aprovados, qual nome aparece como título **único** do preparado?
+
+- **A — Prioridade por potência da assinatura**, depois de definir como comparar efeitos heterogêneos. Prós: mantém um título familiar; contras: depende de fórmula de potência ainda aberta e pode criar resultados arbitrários se houver empate.
+- **B — Apresentação neutra + todos os nomes em subcartões** (opção de UX recomendada para o protótipo). Prós: nenhuma assinatura se perde nem ganha preferência arbitrária; contras: título menos autoral e pode reduzir impacto da descoberta.
+- **C — Nome autoral de uma supersinergia**, **apenas** se curadoria aprovar explicitamente a assinatura composta. Prós: identidade visual excepcional; contras: cresce explosivamente e não deve ser inferida a cada sobreposição.
+
+**Proposta de trabalho:** enquanto não houver regra para A ou aprovação autoral de C, usar B em testes como **“Múltiplas sinergias reconhecidas”**, apenas cabeçalho descritivo do resultado, **não nome canônico da poção**. Listar os combos aprovados conhecidos por Peren por ID estável, sem concatenar nomes num novo item/receita. Uma incompatibilidade aprovada **sobrepõe-se** a essa apresentação e exige título Impuro, mantendo assinaturas em metadados.
+
+### 8.2 Cenários sintéticos de QA — NÃO aprovar uma segunda poção
+
+**Mistura viável para isolar a colisão:** Língua-de-Dragão (`ing-dragon-s-tongue`), Coração de Demônio (`ing-daedra-heart`) e Beladona (`ing-nightshade`) produzem, pelo critério de duas fontes distintas:
+
+- `aumentar_carisma` — Língua-de-Dragão + Coração de Demônio;
+- `aumentar_ilusao` — Língua-de-Dragão + Beladona;
+- `aumentar_magia` — Coração de Demônio + Beladona.
+
+**Assinatura aprovada A:** `aumentar_carisma` + `aumentar_ilusao` → **Poção da Fada**. **Assinatura artificial B de QA:** `aumentar_ilusao` + `aumentar_magia` → **“Combo B — APENAS TESTE”**. Essa segunda assinatura **não é sinergia proposta, nome aprovado nem registro do catálogo**, serve exclusivamente para ensaiar a coincidência de dois reconhecimentos no mesmo lote. Em runtime real, com o catálogo atual, essa mistura gera **apenas** Poção da Fada (com Aumentar Magia como efeito adicional), nunca dois combos.
+
+**Incompatibilidade com múltiplas assinaturas:** outro cenário testa os *effectIds* artificiais `aumentar_carisma`, `aumentar_ilusao`, `aumentar_magia`, `diminuir_forca`. Como contém a incompatibilidade aprovada Carisma × Diminuir Força, sua apresentação principal é **Impuro**, mesmo se duas assinaturas de teste coincidirem. Esse vetor é **somente do classificador**; não afirmar que haja receita de até quatro ingredientes que o produza.
+
+**Cenários adicionais para implementação futura:** assinaturas disjuntas, assinaturas sobrepostas, três assinaturas simultâneas, duas incompatibilidades, efeito extra fora das assinaturas, lista de entrada em ordens diferentes e mistura de aprovado/proposto. Nunca incluir combos editoriais não aprovados no conjunto real `matchedComboIds`.
+
+### 8.3 Contrato de resultado e idempotência [PROPOSTA]
+
+```json
+{
+  "transactionId": "tx-QA-42",
+  "preparationId": "preparo-QA-42",
+  "effectIds": ["aumentar_carisma", "aumentar_ilusao", "aumentar_magia"],
+  "classification": "multiple_synergies_test_only",
+  "matchedComboIds": ["combo-pocao-da-fada", "qa-combo-b-ficticio"],
+  "newlyDiscoveredComboIds": ["combo-pocao-da-fada", "qa-combo-b-ficticio"],
+  "impurityIds": [],
+  "display": {
+    "titleStatus": "unresolved_multiple_names",
+    "label": "Múltiplas sinergias reconhecidas",
+    "isCanonicalItemName": false
+  }
+}
+```
+
+**Exemplo fictício, NÃO schema de runtime aprovado.** Em produção, IDs `qa-*` são proibidos. A lista dos combos em uma transação é estável e sem duplicatas; o Caderno registra cada descoberta no máximo uma vez por `comboId`, e associa a mesma `preparationId` a todas as descobertas encontradas. Repetir `transactionId` jamais duplica lote, custo, contagem, descoberta ou animação. Repetir a **fabricação legítima em outra transação** gera outro lote, mas não reabre “primeira descoberta” de IDs conhecidos.
+
+**Impuro com sinergia:** decidir futuramente se Peren pode **registrar o conhecimento** da sinergia ao identificar uma mistura Impura, mesmo quando o nome e a arte do preparo permanecem Impuros. Proposta recomendada: registrar conhecimento comprovadamente identificado, mas nunca anunciar uma **poção combo pura**. Esta é uma regra de descoberta **aberta**, não nova autorização canônica.
+
+### 8.4 Caderno, animações e acessibilidade
+
+- **Caderno:** cada combo reconhecido conserva página **individual**; uma relação `preparationId → comboIds[]` permite ver todos os combos de **um mesmo lote** e voltar a ele. Nenhum “supercombo” é criado automaticamente nem é tratado como novo registro canônico.
+- **Mensagem de descoberta:** agrupar novos nomes em **um único resultado** “2 sinergias reconhecidas”, com cartões independentes; se um já era conhecido, mostrar somente o outro como **nova** descoberta. Não tocar duas animações e dois sons simultâneos.
+- **Identidade visual:** sempre um frasco da família; ao existir arte para múltiplos combos, considerar **sequência de breves destaques** ou um foco escolhido, nunca sobrepor FX que prejudiquem legibilidade. Sem recursos aprovados, fallback ao frasco normal.
+- **Segredo:** em nenhum caso listar nomes, IDs, assinaturas ou benefícios **não conhecidos pelo personagem**, mesmo que o motor interno tenha calculado mais efeitos. Candidatos editoriais continuam ignorados.
+- **Mobile/teclado/Xbox:** lista de sinergias com scroll/teclas acessíveis, foco previsível, um botão Continuar e um Ver no Caderno; a solução deve respeitar movimento reduzido e ausência de áudio.
+- **QA visual:** o protótipo PR #95 recebe os cenários **Dupla sinergia — QA** e **Dupla + Impuro — QA**, explicitamente não canônicos.
+
+### 8.5 Novos gates de aceitação
+
+- **UX-C11:** duas assinaturas aprovadas ficticiamente em teste, simultâneas, são detectadas uma vez cada; efeitos extras não somem.
+- **UX-C12:** com uma das assinaturas já conhecida, apenas a outra recebe primeira descoberta; o lote é único.
+- **UX-C13:** um vetor contendo incompatibilidade aprovada é apresentado como **Impuro**, mesmo quando há sinergias; efeitos permanecem íntegros.
+- **UX-C14:** candidatos editoriais reais e assinaturas `qa-*` não entram no catálogo efetivo de gameplay nem recebem asset publicado.
+- **UX-C15:** a mesma transação repetida não duplica descobertas, lotes, ações, itens ou aviso de primeira descoberta.
+- **UX-C16:** ordenação de ingredientes, efeitos e registros do JSON não decide arbitrariamente nome principal ou evento.
+- **UX-C17:** Caderno preserva várias associações por lote e oferece navegação legível, com sigilo e fallback visual.
+
+**Backlog:** **CRAFT-D24** (classificador multissinergia e hierarquia Impuro), **CRAFT-D25** (resultado agrupado e Caderno com várias assinaturas por lote), **CRAFT-D26** (política de título único, arte/FX e decisão autoral). **Sem mudanças em runtime até decisão e testes da mecânica.**
