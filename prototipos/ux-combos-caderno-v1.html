@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Peren — Descoberta de Combos | Protótipo de UX</title>
+<style>
+:root{--void:#0e1017;--deep:#151922;--panel:#1a202a;--panel2:#252b35;--line:#4d4650;--ink:#f3ead5;--muted:#b3ac9d;--gold:#e1bb73;--copper:#b58a59;--green:#9cd6bb;--red:#eab6ad;--blue:#a6c3f1;--shadow:0 18px 50px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{background:var(--void)}body{margin:0;color:var(--ink);font:16px/1.45 Georgia,"Times New Roman",serif;background:radial-gradient(ellipse 60% 40% at 45% -5%,#353041 0%,transparent 100%),linear-gradient(130deg,#11131a,#171820 75%);min-height:100vh}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+button:disabled{opacity:.5;cursor:not-allowed}
+.shell{max-width:1280px;padding:24px;margin:auto}
+.kicker{font:700 .72rem/1.4 system-ui,sans-serif;letter-spacing:.19em;text-transform:uppercase;color:var(--gold)}
+header{display:flex;gap:20px;justify-content:space-between;align-items:center;padding:10px 0 25px;border-bottom:1px solid var(--line)}
+header h1{font-size:clamp(1.5rem,2.5vw,2.5rem);font-weight:500;margin:4px 0}
+header p{color:var(--muted);max-width:650px;margin:0}
+.pill{font:.72rem system-ui,sans-serif;letter-spacing:.02em;color:var(--muted);border:1px solid var(--line);border-radius:30px;padding:8px 12px;white-space:nowrap}
+.review{padding:15px 0 18px;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.review strong{font:700 .75rem system-ui,sans-serif;color:var(--muted);margin-right:6px}
+.review button{padding:8px 12px;border:1px solid #6d6060;background:#27242d;border-radius:7px;color:var(--ink);font:600 .75rem system-ui,sans-serif}
+.review button[aria-pressed=true]{background:#54413d;color:#ffeac6;border-color:var(--gold)}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr) 270px;gap:16px;align-items:stretch;min-height:545px}
+.panel{background:linear-gradient(145deg,#20242e,#161a22);border:1px solid #625548;border-radius:12px;box-shadow:var(--shadow);padding:18px}
+.side{display:flex;flex-direction:column;gap:10px}.side h2,.ledger h2{font-size:1.25rem;margin:6px 0 8px;font-weight:500}
+.side small,.ledger small{color:var(--muted);display:block;font:12px/1.5 system-ui,sans-serif}
+.side button{background:transparent;border:1px solid transparent;color:var(--muted);text-align:left;padding:12px;border-radius:8px;width:100%;font-size:1rem}
+.side button.active{background:rgba(225,187,115,.1);border-color:#766449;color:var(--ink)}
+.side button:hover{border-color:#776d62}
+.footnote{margin-top:auto;padding:12px;color:var(--muted);font:12px/1.6 system-ui,sans-serif;border-top:1px solid var(--line)}
+.canvas{display:flex;flex-direction:column;gap:16px;min-width:0}
+.hero{border:1px solid #785c4b;border-radius:12px;padding:24px;background:radial-gradient(circle at 75% 20%,rgba(135,90,99,.15),transparent 45%),linear-gradient(130deg,#211d28,#171c26);position:relative;overflow:hidden;min-height:240px;box-shadow:var(--shadow)}
+.hero h2{font-size:clamp(1.8rem,4vw,3.1rem);font-weight:500;line-height:1.14;margin:12px 0}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 17px}
+.glyph{position:absolute;right:22px;top:17px;width:148px;height:166px;opacity:.5;pointer-events:none}
+.glyph svg{width:100%;height:100%}
+.flask{width:86px;height:110px;margin:8px auto 14px;position:relative;filter:drop-shadow(0 0 14px rgba(173,144,211,.27))}
+.flask svg{width:100%;height:100%}
+.flask-glow{animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.64}50%{opacity:1}}
+.result{border:1px solid #73614b;border-radius:12px;background:linear-gradient(130deg,#292431,#1b2029);padding:20px;box-shadow:var(--shadow)}
+.result h3{font-size:1.65rem;margin:10px 0;font-weight:500}
+.result p{color:var(--muted);margin:8px 0 14px}
+.effects{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}
+.effect{padding:7px 10px;border:1px solid #685e5b;border-radius:7px;font:.78rem system-ui,sans-serif;color:#e9d9c7}
+.effect.secondary{border-color:#446875;color:#bdd4e3}
+.effect.warn{border-color:#995d5a;color:#f1b3a9}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{padding:11px 16px;border-radius:7px;border:1px solid #806b52;background:#40352f;color:#fff0cd;font:600 .88rem system-ui,sans-serif}
+.btn.primary{background:linear-gradient(135deg,#ad8550,#765537);border-color:#c9a46c;color:#0e1118}
+.btn:hover{filter:brightness(1.12)}
+.section-title{font:700 .72rem system-ui,sans-serif;color:var(--gold);letter-spacing:.13em;text-transform:uppercase}
+.ledger{display:flex;flex-direction:column;gap:8px}
+.rule{border-bottom:1px solid #49414b;padding:12px 0}
+.rule b{display:block;font-size:1.04rem;font-weight:500}
+.rule span{font:.75rem system-ui,sans-serif;color:var(--muted)}
+.counter{font-size:2rem;color:var(--gold)}
+.empty{border:1px dashed #5c5350;border-radius:10px;padding:16px;color:var(--muted);font-size:.92rem}
+.notice{background:#332a31;border-left:3px solid #b78f67;padding:12px;border-radius:4px;color:#e6d7ca;font-size:.89rem}
+.notice.red{border-color:var(--red);background:#33242a}
+.paper{border:1px solid #5e504c;background:linear-gradient(160deg,#25222b,#171e27);border-radius:10px;padding:17px;margin-top:15px}
+.paper h3{font-weight:500;font-size:1.4rem;margin:0 0 8px}
+.paper p{color:var(--muted);margin:0}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.legend{margin:16px 0 0;color:var(--muted);font:12px/1.6 system-ui,sans-serif}
+.mini{font:12px/1.6 system-ui,sans-serif;color:var(--muted)}
+a{color:#e8c48c}
+@media(max-width:1080px){.layout{grid-template-columns:185px minmax(0,1fr)}.ledger{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);align-items:start}}
+@media(max-width:690px){.shell{padding:13px}header{display:block}header .pill{display:inline-block;margin-top:14px}.layout{display:flex;flex-direction:column;min-height:0}.side{flex-direction:row;flex-wrap:wrap;padding:12px;gap:7px}.side h2,.side small,.side .footnote{display:none}.side button{width:auto;padding:9px 11px;flex:1;white-space:nowrap;font-size:.84rem}.hero{min-height:190px;padding:19px}.glyph{width:76px;opacity:.2}.ledger{display:flex;flex-direction:column}.panel,.result{padding:15px}.review{gap:6px}.review button{padding:7px 9px}.btn{width:100%}.btnrow{display:flex;flex-direction:column}.hero h2{font-size:2rem}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header>
+<div><div class="kicker">Peren, o Bruxo • Mercador da Carcaça</div><h1>Bancada alquímica &amp; Caderno do Bruxo</h1><p>Experiência de descoberta de combos. Modelo de navegação e feedback; não é o jogo real e não grava progresso.</p></div>
+<div class="pill">DESIGN V1 · SIMULAÇÃO ISOLADA</div>
+</header>
+<div class="review" aria-label="Cenários de avaliação de UX">
+<strong>TESTES DE DESIGN</strong>
+<button data-case="fada" aria-pressed="true">Poção da Fada</button>
+<button data-case="duplo" aria-pressed="false">2 sinergias (QA)</button>
+<button data-case="duploimpuro" aria-pressed="false">2 + Impuro (QA)</button>
+<button data-case="observacao" aria-pressed="false">Aprender no Impuro (QA)</button>
+<button data-case="comum" aria-pressed="false">Multiefeito comum</button>
+<button data-case="impuro" aria-pressed="false">Impuro</button>
+<button data-case="editorial" aria-pressed="false">Candidato editorial</button>
+<button data-action="reiniciar" title="Reinicia apenas esta simulação">Reiniciar demonstração</button>
+</div>
+<div class="layout">
+<nav class="panel side" aria-label="Menus do jogo simulados">
+<h2>Ofícios e registros</h2><small>Menu contextual de Alquimia</small>
+<button id="nav-bancada" data-action="bancada" class="active">⚗ Bancada</button>
+<button id="nav-caderno" data-action="caderno">☷ Caderno do Bruxo</button>
+<div class="footnote">Todos os rótulos são conceitos de interface. A fabricação real segue a curadoria e o motor Phaser, sem receitas fixas para combos.</div>
+</nav>
+<main class="canvas" id="main" tabindex="-1">
+<section class="hero" id="hero"><div class="section-title">Ofício · Alquimia</div><h2>Experimente a mistura</h2><p>Combine três tipos de ingredientes. Cada efeito precisa aparecer em pelo menos dois tipos diferentes para se manifestar.</p>
+<div class="glyph" aria-hidden="true"><svg viewBox="0 0 160 180" fill="none" stroke="#cbad7b" stroke-width="2"><circle cx="80" cy="78" r="63"/><circle cx="80" cy="78" r="43"/><path d="M80 15L126 125H34L80 15M17 78h126M80 15v126"/><circle cx="80" cy="78" r="8"/></svg></div>
+</section>
+<section class="result" id="content"><p>Selecione <b>Preparar</b> para visualizar uma descoberta simulada.</p></section>
+</main>
+<aside class="panel ledger" id="ledger" aria-label="Estado da simulação"><h2>Registro da jornada</h2><small>Estado efêmero; não grava em navegador, rede ou save.</small><div class="rule"><b>Combos conhecidos</b><span id="count" class="counter">0</span></div><div class="rule"><b>Assinaturas fictícias de QA</b><span id="qacount" class="counter">0</span></div><div class="rule"><b>Lotes preparados</b><span id="batches" class="counter">0</span></div><div class="rule"><b>Arte</b><span>Frasco-base da família. Animação de combo ainda não produzida.</span></div></aside>
+</div>
+<p class="legend">Legenda: <b>aprovado</b> — Poção da Fada; <b>comum</b> — combinação sem sinergia aprovada; <b>Impuro</b> — incompatibilidade aprovada; <b>candidato</b> — nome editorial invisível ao jogador. Navegação: Tab, Enter/Espaço e Esc. Sem JavaScript externo, dados pessoais, localStorage ou efeitos no runtime.</p>
+<div id="announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+</div>
+<script>
+(function(){
+"use strict";
+const state={page:"bancada",scenario:"fada",known:false,qaKnown:false,observedInImpure:false,compatibleProduced:false,lastCompatibleMilestone:false,lots:0,comboLots:0,qaComboLots:0,last:null,lastNew:[],opened:false};
+const scenes={
+ observacao:{name:"Preparado Impuro · sinergia observada (QA)",family:"Poção",materials:[],effects:["Aumentar Carisma","Aumentar Ilusão","Diminuir Força"],additional:[],kind:"observacao",note:"Vetor sintético: NÃO é receita real de até quatro ingredientes. A aprendizagem em Impuro ainda depende de aprovação."},
+ duplo:{name:"Múltiplas sinergias reconhecidas",family:"Poção",materials:["Língua-de-Dragão","Coração de Demônio","Beladona"],effects:["Aumentar Carisma","Aumentar Ilusão","Aumentar Magia"],additional:[],kind:"multicombo",note:"O trio de efeitos existe no catálogo. Apenas a Poção da Fada é sinergia aprovada; a segunda assinatura é inventada exclusivamente para testar a interface."},
+ duploimpuro:{name:"Preparo Impuro · teste com duas sinergias",family:"Poção",materials:[],effects:["Aumentar Carisma","Aumentar Ilusão","Aumentar Magia","Diminuir Força"],additional:[],kind:"multicomboimpure",note:"Vetor SINTÉTICO de classificação, não uma receita ou fabricação viável de até quatro ingredientes. A incompatibilidade aprovada prevalece."},
+ fada:{name:"Poção da Fada",family:"Poção",materials:["Língua-de-Dragão","Coração de Demônio","Cogumelo Escamoso"],effects:["Aumentar Carisma","Aumentar Ilusão"],additional:[],kind:"combo",id:"combo-pocao-da-fada"},
+ comum:{name:"Poção de Aumentar Força",family:"Poção",materials:["Gelatina de Gafanhoto","Garras de Urso","Libélula Azul","Amanita Rubra"],effects:["Aumentar Força","Resistência à Eletricidade"],additional:[],kind:"ordinary",note:"Nome do efeito mais intenso: ilustrativo. A fórmula de potência ainda está aberta."},
+ impuro:{name:"Preparado Impuro",family:"Poção",materials:["Coração de Demônio","Língua-de-Dragão","Raiz Botulínica","Asa de Borboleta"],effects:["Aumentar Carisma","Diminuir Força"],additional:[],kind:"impure",note:"Exemplo real de quatro fontes distintas, verificado contra a curadoria. Efeito dominante e nome final exigem regra futura de potência."},
+ editorial:{name:"Preparo com Voo e Velocidade",family:"Tônico",materials:["Pena de Gaivota","Penas de Falcão","Libélula Azul"],effects:["Voar","Velocidade"],additional:[],kind:"ordinary",note:"Existe um nome editorial proposto, mas ele NÃO é aprovado e por isso não aparece no título jogável."}
+};
+const el=id=>document.getElementById(id);
+function btn(label,action,primary){return '<button class="btn '+(primary?"primary":"")+'" data-action="'+action+'">'+label+'</button>'}
+function tags(effects){return effects.map((t,i)=>'<span class="effect '+(i===0?"":"secondary")+'">'+t+'</span>').join("")}
+function flask(){
+ return '<div class="flask" aria-hidden="true"><svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="liq" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7d83b0"/><stop offset="1" stop-color="#cc9ec3"/></linearGradient></defs><path d="M38 5h24v11h-7v36c4 10 26 34 26 48 0 14-15 16-31 16S19 114 19 100c0-14 22-38 26-48V16h-7z" fill="#343341" stroke="#d7c5a4" stroke-width="3"/><path d="M34 83h32c7 9 11 15 11 20 0 10-13 10-27 10s-27 0-27-10c0-5 5-13 11-20z" fill="url(#liq)" class="flask-glow"/><path d="M39 5h22" stroke="#d7c5a4" stroke-width="6" stroke-linecap="round"/><circle cx="46" cy="95" r="3" fill="#eadac5"/><circle cx="59" cy="102" r="2" fill="#eadac5"/><path d="M39 72q9-11 21-3" stroke="#b2a8b1" fill="none" stroke-width="2"/></svg></div>'
+}
+function setPage(page){state.page=page;state.opened=false;render();el("main").focus()}
+function buildWorkbench(){
+ const c=scenes[state.scenario],prepared=state.last===state.scenario;
+ const source=c.materials.length?c.materials.map(x=>'<span class="effect">'+x+'</span>').join(""):'<span class="mini">Este estado usa uma mistura conceitual; sem receita material definida.</span>';
+ el("hero").innerHTML='<div class="section-title">Ofício · Alquimia · Experimentação</div><h2>Preparar mistura</h2><p>A combinação dos efeitos acontece antes da identificação de combos. O cenário de revisão não consome ingredientes.</p><div class="glyph" aria-hidden="true"><svg viewBox="0 0 160 180" fill="none" stroke="#cbad7b" stroke-width="2"><circle cx="80" cy="78" r="63"/><circle cx="80" cy="78" r="43"/><path d="M80 15L126 125H34L80 15M17 78h126M80 15v126"/></svg></div>';
+ el("content").innerHTML='<div class="section-title">Ingredientes selecionados · Exemplo '+((state.scenario==="fada"||state.scenario==="duplo")?"verificado no catálogo":"de avaliação")+'</div><div class="effects">'+source+'</div><p>Não há botão de “fabricar combo”: a descoberta nasce da mistura comum.</p><div class="btnrow">'+btn("⚗ Preparar (simulação)","preparar",true)+btn("Abrir Caderno","caderno",false)+'</div>'+(prepared?'<div class="notice" style="margin-top:15px">Já produziu este cenário nesta sessão de revisão. Use Preparar novamente para verificar o comportamento de repetição.</div>':"");
+}
+function buildResult(){
+ const c=scenes[state.last];let eyebrow="",title=c.name,notice="";
+ const isMulti=c.kind==="multicombo",isMultiImpure=c.kind==="multicomboimpure";
+ if(isMulti){
+  eyebrow=state.lastNew.length?"✦ SINERGIAS RECONHECIDAS ✦":"SINERGIAS JÁ RECONHECIDAS";
+  title="Múltiplas sinergias reconhecidas";
+  const news=state.lastNew.length?'<p class="mini">Novas identificações nesta simulação: '+state.lastNew.join(" e ")+'. Uma única fabricação, duas assinaturas.</p>':'<p class="mini">Nenhuma primeira descoberta repetida. As assinaturas continuam associadas ao mesmo lote.</p>';
+  notice='<div class="notice"><b>Poção da Fada</b> — combinação APROVADA: Aumentar Carisma + Aumentar Ilusão.</div><div class="notice" style="margin-top:10px"><b>Combo B (FICTÍCIO · QA)</b> — assinatura artificial: Aumentar Ilusão + Aumentar Magia. NÃO existe no catálogo canônico e NÃO é um nome proposto.</div>'+news;
+ }else if(isMultiImpure){
+  eyebrow="IMPUREZA TEM PRECEDÊNCIA";title=c.name;
+  notice='<div class="notice red"><b>Impuro</b>: Aumentar Carisma + Diminuir Força é incompatibilidade aprovada. Mesmo com Poção da Fada e uma segunda assinatura FICTÍCIA de QA, o rótulo Impuro prevalece.</div><p class="mini">Demonstração de classificação por efeitos, sem transação de receita real; nenhuma sinergia fictícia é registrada no Caderno.</p>';
+ }else if(c.kind==="combo"){
+  eyebrow=state.lastNew.length?"✦ NOVA SINERGIA DESCOBERTA ✦":state.lastCompatibleMilestone?"✦ PRIMEIRO PREPARO COMPATÍVEL ✦":"COMBO CONHECIDO";
+  notice='<div class="notice">Os efeitos de Carisma e Ilusão coexistem numa identidade aprovada. Nenhum bônus adicional é concedido pelo nome especial.</div>';
+ }else if(c.kind==="observacao"){
+  eyebrow="SINERGIA EM IMPURO · HIPÓTESE DE UX";
+  notice='<div class="notice red">O frasco continua Impuro e conserva os três efeitos. A assinatura da Poção da Fada pode ser reconhecida como conhecimento, mas a operação NÃO produz um lote compatível. Este teste não representa receita real.</div>';
+ }else if(c.kind==="impure"){
+  eyebrow="INCOMPATIBILIDADE IDENTIFICADA";
+  notice='<div class="notice red">IMPURA: os efeitos são incompatíveis. O rótulo não apaga Diminuir Força. A purificação é uma técnica avançada independente.</div>';
+ }else{
+  eyebrow="PREPARADO COMPATÍVEL";
+  notice='<div class="notice">Não possui sinergia aprovada. O segundo efeito permanece ativo e descrito. Não recebe rótulo Impuro.</div>';
+ }
+ el("hero").innerHTML='<div class="section-title">Alquimia · Resultado simulado</div><h2>'+eyebrow+'</h2><p>Cada efeito exige duas fontes distintas; a classificação ocorre depois do cálculo.</p>';
+ const extra=c.note?'<p class="mini">'+c.note+'</p>':"";
+ const actions=btn("Continuar na bancada","continuar",true)+((state.known||state.qaKnown)&&(c.kind==="combo"||isMulti||c.kind==="observacao")?btn("Ver no Caderno","caderno",false):"");
+ el("content").innerHTML='<div class="section-title">'+(isMulti||isMultiImpure?"Cenário de QA — nenhuma nova regra aprovada":c.kind==="combo"?"Identidade aprovada":"Classificação da mistura")+'</div>'+flask()+'<h3 style="text-align:center">'+title+'</h3><div class="effects">'+tags(c.effects)+'</div>'+notice+extra+(c.kind==="combo"&&state.lastNew.length?'<p class="mini">O Caderno registrou automaticamente a primeira descoberta. Fabricações seguintes não repetem a celebração.</p>':"")+'<div class="btnrow">'+actions+'</div>';
+ state.opened=false;
+}
+function buildJournal(){
+ el("hero").innerHTML='<div class="section-title">Diário · Alquimia</div><h2>Caderno do Bruxo</h2><p>Sinergias que Peren reconheceu nesta simulação. Um lote pode apontar para mais de uma assinatura, mas não se converte em receita obrigatória.</p>';
+ if(!state.known&&!state.qaKnown){
+  el("content").innerHTML='<div class="section-title">Combos descobertos</div><div class="empty" style="margin-top:15px"><b>Nenhuma sinergia registrada.</b><p>Experimente ingredientes ou estude suas propriedades para reconhecer efeitos complementares.</p></div><div class="btnrow">'+btn("Voltar à Bancada","bancada",true)+'</div>';
+ }else{
+  let body='<div class="section-title">Fichas de identidade e relações entre lotes</div>';
+  if(state.known){
+   body+='<div class="paper">'+flask()+'<h3>Poção da Fada</h3><div class="effects">'+tags(scenes.fada.effects)+'</div><p>Sinergia APROVADA. Um mesmo lote pode apresentar efeitos adicionais sem alterar essa assinatura.</p><div class="rule"><b>Observada em Impuro</b><span>'+(state.observedInImpure?'Sim · teste de UX':'Não nesta simulação')+'</span></div><div class="rule"><b>Primeiro lote compatível</b><span>'+(state.compatibleProduced?'Obtido':'Não obtido')+'</span></div><div class="rule"><b>Lotes compatíveis</b><span>'+state.comboLots+'</span></div><div class="rule"><b>Fontes conhecidas no exemplo</b><span>Língua-de-Dragão, Coração de Demônio e Cogumelo Escamoso/Beladona — combinações ilustrativas, não receitas fixas</span></div><div class="notice" style="margin-top:16px">Asset futuro: <code>combo-pocao-da-fada</code>. Enquanto não existir, usar o frasco padrão.</div></div>';
+  }
+  if(state.qaKnown){
+   body+='<div class="paper"><div class="section-title">SOMENTE TESTE DE INTERFACE · NÃO CANÔNICO</div><h3>Combo B (FICTÍCIO · QA)</h3><div class="effects">'+tags(["Aumentar Ilusão","Aumentar Magia"])+'</div><p>Assinatura inventada só para testar duas descobertas associadas ao mesmo lote. Não aprovada, não proposta à curadoria e inexistente na versão jogável.</p><div class="rule"><b>Lotes hipotéticos associados</b><span>'+state.qaComboLots+'</span></div></div>';
+  }
+  el("content").innerHTML=body+'<div class="btnrow">'+btn("Voltar à Bancada","bancada",true)+'</div>';
+ }
+}
+function render(){
+ document.querySelectorAll("[data-case]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.case===state.scenario)));
+ el("nav-bancada").classList.toggle("active",state.page!=="caderno");
+ el("nav-caderno").classList.toggle("active",state.page==="caderno");
+ el("count").textContent=String(state.known?1:0);
+ el("qacount").textContent=String(state.qaKnown?1:0);
+ el("batches").textContent=String(state.lots);
+ if(state.page==="caderno")buildJournal();
+ else if(state.page==="resultado")buildResult();
+ else buildWorkbench();
+}
+document.addEventListener("click",function(e){
+ const b=e.target.closest("button");
+ if(!b)return;
+ const scenario=b.dataset.case;
+ if(scenario){
+  state.scenario=scenario;state.last=null;state.page="bancada";render();el("announcer").textContent="Cenário de revisão atualizado.";return;
+ }
+ const action=b.dataset.action;
+ if(action==="preparar"){
+  const c=scenes[state.scenario],isMulti=c.kind==="multicombo",isObservedImpure=c.kind==="observacao";
+  const compatibleCombo=c.kind==="combo"||isMulti;
+  const firstFada=(compatibleCombo||isObservedImpure)&&!state.known;
+  const firstQa=isMulti&&!state.qaKnown;
+  state.lastCompatibleMilestone=compatibleCombo&&state.known&&!state.compatibleProduced;
+  state.lastNew=[];
+  if(firstFada)state.lastNew.push("Poção da Fada"+(isObservedImpure?" (conhecimento em Impuro)":""));
+  if(firstQa)state.lastNew.push("Combo B [FICTÍCIO · QA]");
+  state.lots++;state.last=state.scenario;state.opened=state.lastNew.length>0;
+  if(compatibleCombo){state.comboLots++;state.compatibleProduced=true;}
+  if(isObservedImpure)state.observedInImpure=true;
+  if(isMulti)state.qaComboLots++;
+  if(firstFada)state.known=true;
+  if(firstQa)state.qaKnown=true;
+  state.page="resultado";render();
+  el("announcer").textContent=isObservedImpure?"Preparo Impuro. Sinergia reconhecida como conhecimento hipotético; nenhum preparo compatível.":state.lastCompatibleMilestone?"Primeiro preparo compatível da sinergia conhecida.":state.lastNew.length?"Novas sinergias reconhecidas: "+state.lastNew.join(", "):c.kind==="impure"||c.kind==="multicomboimpure"?"Preparado Impuro. Efeitos incompatíveis.":"Mistura preparada; efeitos preservados.";
+  el("main").focus();return;
+ }
+ if(action==="reiniciar"){state.known=false;state.qaKnown=false;state.observedInImpure=false;state.compatibleProduced=false;state.lastCompatibleMilestone=false;state.lots=0;state.comboLots=0;state.qaComboLots=0;state.last=null;state.lastNew=[];state.page="bancada";state.scenario="fada";state.opened=false;render();el("announcer").textContent="Simulação reiniciada.";return;}
+ if(action==="caderno"||action==="bancada"){setPage(action);return;}
+ if(action==="continuar"){state.last=null;setPage("bancada");return;}
+});
+document.addEventListener("keydown",function(e){
+ if(e.key==="Escape"&&state.page!=="bancada"){e.preventDefault();state.last=null;setPage("bancada");}
+});
+render();
+})();
+</script>
+</body>
+</html>
