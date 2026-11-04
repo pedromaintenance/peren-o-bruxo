@@ -1,6 +1,6 @@
-# Estado da curadoria de ingredientes — após o Ciclo 124
+# Estado da curadoria de ingredientes — cobertura ecológica integral
 
-**Consolidado em 03/11/2026.** Esta é a referência de status vigente; a versão anterior (após o Ciclo 111) permanece no histórico Git. Escopo: **curadoria editorial e confrontação com Monstros da Carcaça**, sem promover modificações ao catálogo jogável, receitas ou interface.
+**Atualizado em 03/11/2026.** Esta é a referência de status vigente. A revisão individual terminou no Ciclo 124 e os 25 ciclos históricos (14–38) foram retroauditados ecologicamente sem reenumeração; os estados anteriores permanecem no histórico Git. Escopo: **curadoria editorial e confrontação com Monstros da Carcaça**, sem promover modificações ao catálogo jogável, receitas ou interface.
 
 ## Indicadores comprovados
 
@@ -8,8 +8,8 @@
 |---|---:|---|
 | Ingredientes no catálogo | **111** | IDs distintos na curadoria ativa |
 | Revisões individuais por ID | **111/111** | 25 históricos + 86 dos Ciclos 39–124, sem repetição |
-| Matriz ecológica detalhada | **86/111** | Fichas de Ciclos 39–124 |
-| Retroauditorias ecológicas pendentes | **25** | Os 25 IDs históricos dos Ciclos 14–38 |
+| Matriz ecológica detalhada | **111/111** | 25 retroauditorias 14–38 + 86 fichas 39–124 |
+| Retroauditorias ecológicas pendentes | **0** | Os 25 IDs históricos dos Ciclos 14–38 foram registrados |
 | Efeitos distintos | **53** | Todos têm pelo menos dois ingredientes como fonte |
 | Efeitos isolados | **0** | Não há efeitos sem parceiro |
 | Fichas com menos de três atributos | **0** | Conformidade com mínimo canônico |
@@ -40,9 +40,9 @@
 
 As decisões anteriores dos Ciclos 4 e 5 — **Curar Doença II no Alho** e **Infligir Doença II na Cauda de Rato** — foram preservadas. A Raiz Botulínica mantém seus quatro efeitos de intensidade III, sem balanceamento redutor. O cruzamento com a Carcaça não comprova ocorrência regional de piranhas, apiários, plantas de tundra ou fungos específicos.
 
-## A próxima fila: retroauditoria ecológica dos 25 históricos
+## Retroauditoria ecológica dos 25 históricos — concluída
 
-Estes ingredientes **já foram revisados individualmente** e não estão em atraso de atributos. O que falta é colocar sua **proveniência ecológica, evidência e lacunas** na matriz estruturada, sem revogar decisões históricas.
+Estes ingredientes **já haviam sido revisados individualmente** e agora receberam registros de proveniência ecológica, limites das fontes, pares alquímicos e pendências na matriz estruturada. As decisões históricas não foram revogadas e as fichas ativas continuam idênticas.
 
 | Histórico | Ingrediente | ID | Parceiros atuais |
 |---:|---|---|---:|
@@ -72,7 +72,7 @@ Estes ingredientes **já foram revisados individualmente** e não estão em atra
 | 37 | Asa de Borboleta Azul | `ing-blue-butterfly-wing` | 19 |
 | 38 | Vagem Cinzenta | `ing-ashen-grass-pod` | 19 |
 
-**Critério do próximo marco:** adicionar 25 registros ecológicos a `data/auditoria_ecologica_ingredientes.json`, com `ciclo_historico` e `status_revisao` próprios, SEM reenumerar os Ciclos 14–38 e SEM criar registros duplicados. Finalizar com matriz 111/111 e testar todos os atributos e IDs.
+**Marco alcançado:** 25 registros adicionados a `data/auditoria_ecologica_ingredientes.json`, com `ciclo_historico` e `status_revisao` próprios. Todos os ciclos históricos foram mantidos, sem duplicação. QA: 111/111 IDs, 111 comparações exatas de atributos/intensidades, 53 efeitos distintos, 0 isolados, 0 atributos inválidos e 0 ingredientes faltantes. **Fonte Monstros da Carcaça no lote retroativo:** commit `9514fef2a7f22be2bccfad58bd50b983878ad000`.
 
 ## Pendências editoriais não concluídas
 
@@ -91,4 +91,4 @@ Estes ingredientes **já foram revisados individualmente** e não estão em atra
 - **Evidência ecológica e textos candidatos:** `data/auditoria_ecologica_ingredientes.json` — somente informativo, não integrar como regras de obtenção sem avaliação.
 - **Precedentes de decisão:** `docs/auditoria-alquimia-peren.md`; política de proveniência em `docs/curadoria-itens-consistencia-carcaca.md`.
 - **Risco de sincronização:** edições da curadoria ativa podem disparar workflow que replica dados para runtimes. Este chat **não implementa mecânica, menus, saves, loot, economia ou receitas**; coordenar alterações de dados ativos antes de qualquer integração.
-- **Próximo objetivo editorial:** terminar as 25 retroauditorias ecológicas; depois preparar um pacote de correções textuais com diff, impacto e decisão de integração explícita.
+- **Próximo objetivo editorial:** preparar um pacote de correções textuais com diff e impacto, para deliberação expressa antes de qualquer sincronização ou integração. Não modificar automaticamente dados ativos.
