@@ -212,3 +212,18 @@ A [seção 9 da especificação UX](ux-descoberta-combos-caderno-v1.md) e a [se�
 - **Arte por assinatura, não por lote:** o mesmo ID da Poção da Fada referencia uma futura animação especial mesmo que Peren a reconheça pela primeira vez num experimento Impuro. O frasco Impuro **não** recebe automaticamente a apresentação da poção especial compatível; o agente de interface decidirá o tratamento de descoberta depois da aprovação.
 
 **Próxima decisão editorial:** nenhuma nova poção foi aprovada; o catálogo `data/catalogo-combos-alquimicos.json` permanece com **1 sinergia canônica**, oito candidatos e um exemplo de incompatibilidade. A revisão de nomes/efeitos segue as tarefas anteriores.
+
+## Handoff sobre efeito dominante e intensidade dos ingredientes (03/11/2026)
+
+**Estudo de dominância:** [`docs/estudo-dominancia-alquimica-v1.md`](estudo-dominancia-alquimica-v1.md) · [experimentos da PR #96](https://github.com/pedromaintenance/peren-o-bruxo/pull/96).
+
+**Atribuição editorial do agente de itens:** conservar as intensidades **I–III de cada propriedade de cada ingrediente**, sem convertê-las em pontuação de potência final por mera conveniência. A matemática de combinação e a escolha do efeito dominante pertencem ao **agente de mecânicas**, com aprovação de game design. Não “corrigir” intensidades para que uma poção pareça ter o nome desejado.
+
+**Fatos verificados na curadoria atual:**
+- Carapaça de Caranguejo + Betta do Rio + Garras de Urso: `aumentar_forca` II+II+II e `aumentar_constituicao` III+II. Soma total elegeria Força; soma das duas maiores elegeria Constituição. **Ambas são propostas; nenhuma é regra aprovada.**
+- Carapaça de Caranguejo + Gordura de Troll: Força II+II, Resistência a Veneno I+II; fonte máxima empata em II×II, soma resolve em 4×3. **Empate não se decide por ordem de ficha.**
+- Coração de Demônio + Língua-de-Dragão + Raiz Botulínica + Asa de Borboleta: `aumentar_carisma` e `diminuir_forca`, Impuro pela incompatibilidade aprovada, **independentemente da fórmula comparativa**.
+
+**Encaminhamento:** se o agente propuser ajustes de descrição, revisão de efeito ou inclusão de intensidade extra, comparar impactos nas três hipóteses sem alterar o catálogo por preferência de título ou arte. Rótulos especiais aprovados (**Poção da Fada**) dependem da **assinatura dos efeitos ativados**, não do ranking de potência. Futuras animações e nomes associados a IDs de combo permanecem desacoplados do critério de dominância.
+
+**Status:** protocolo de revisão, sem novos combos aprovados, nenhum atributo de ingrediente reescrito, sem receita, save ou gameplay modificados. **A decisão do modelo de dominância continua com o criador.**
