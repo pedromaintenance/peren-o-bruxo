@@ -422,3 +422,23 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **UX-C01–UX-C10:** especificação de testes de descoberta, repetição, incompatibilidade, conhecimento, candidatos editoriais, famílias, persistência, acessibilidade e ausência de regressões (ver documento específico).
 
 **Status:** design e protótipo para revisão; **não implementado no gameplay**, não integrado ao save Phaser, não publicado no Pages. A PR #94 continua sendo o protótipo de duas fontes, independente do experimento visual da PR #95.
+
+## 17. Múltiplas sinergias em um único preparado — proposta de UX v1.1 (03/11/2026)
+
+**Documento detalhado:** [UX de descoberta e Caderno, seção 8](ux-descoberta-combos-caderno-v1.md). **Protótipo:** [PR #95 em revisão](https://github.com/pedromaintenance/peren-o-bruxo/pull/95) com cenas `2 sinergias (QA)` e `2 + Impuro (QA)`.
+
+**[CANÔNICO]** A mistura continua sendo **um** produto com **todos** os efeitos ativados; uma incompatibilidade aprovada exige o rótulo **Impuro**, mesmo se um subconjunto corresponder a sinergia. O nome da Poção da Fada é a única assinatura sinérgica atualmente aprovada. Nenhum candidato adicional pode ser promovido automaticamente.
+
+**[PROPOSTA]** O resultado do classificador deve conter **todas** as assinaturas de combos aprovadas e identificadas: `matchedComboIds[]` em vez de um único nome, além de `impurityIds[]` e `effectIds[]`. A apresentação sugerida para duas sinergias simultâneas, enquanto não existe regra de potência e prioridade, é um **cabeçalho neutro descritivo** com os nomes em **cartões separados**. Não se trata de criar uma “superpoção” canônica, outra receita ou bônus acumulado.
+
+**Três possibilidades de nomenclatura (nenhuma aprovada):** (A) nome do combo dominante determinado pela futura potência; (B) cabeçalho neutro e subcartões sem hierarquia — **preferência para protótipo**; (C) um nome composto autoral somente quando uma supersinergia receber aprovação específica. Nunca escolher arbitrariamente pelo primeiro registro JSON.
+
+**QA isolado:** para simular duas sinergias sem inventar aprovação, a PR #95 usa a **Poção da Fada** mais a assinatura FICTÍCIA `aumentar_ilusao + aumentar_magia`, rotulada `Combo B (FICTÍCIO · QA)`, exclusivamente no browser de revisão. O conjunto de **Língua-de-Dragão + Coração de Demônio + Beladona** efetivamente ativa Carisma, Ilusão e Magia; **apenas** a sinergia da Fada existe no catálogo aprovado. A cena `2 + Impuro` injeta um **vetor sintético de efeitos** e **não** afirma que exista receita de até 4 ingredientes para esse teste. O produto real, com o catálogo atual, nunca será renomeado “Combo B”.
+
+**Caderno e persistência [PROPOSTA]:** o registro de um lote aponta para zero, uma ou várias sinergias aprovadas: `preparationId → matchedComboIds[]`. Conhecimento pessoal guarda os IDs descobertos individualmente, mas uma única transação consome recursos **uma vez**. A primeira descoberta é anunciada **somente** para as assinaturas ainda desconhecidas. Se houver mais de uma descoberta nova, criar **um** resultado agrupado, não um modal por efeito. Registro de uma assinatura dentro de preparado Impuro continua **decisão aberta**: proposta de registrar conhecimento identificado sem apresentar uma poção combo pura.
+
+**Arte futura:** um frasco por família e FX opcionais por `comboId`, sem necessidade de sprite por conjunto de ingredientes. Combos simultâneos podem alternar destaque, jamais executar dois efeitos conflitantes/estroboscópicos ao mesmo tempo; modo de movimento reduzido mantém texto e ações. `qa-*` nunca deve carregar arte do jogo real.
+
+**Backlog:** `CRAFT-D24` — reconhecimento multissinergia, lista íntegra e prioridade Impuro; `CRAFT-D25` — Caderno e primeira descoberta agrupada por lote; `CRAFT-D26` — escolha autoral da nomenclatura e orquestração de animações. **Critérios:** `UX-C11`–`UX-C17` no documento UX.
+
+**Verificação do protótipo:** sintaxe JS, IDs de elementos e **oito checagens funcionais com DOM simulado** passaram; isso **não** equivale a um teste gráfico, dispositivo físico, integração real com Phaser ou deploy Pages. Próximo gate: decidir como nomear preparações multissinérgicas e se sinergias identificadas dentro de Impuros entram imediatamente no Caderno.
