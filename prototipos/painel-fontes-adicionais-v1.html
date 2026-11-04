@@ -1,0 +1,139 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Peren · Contribuição da Terceira e Quarta Fontes</title>
+<style>
+:root{--bg:#11141c;--panel:#20252e;--line:#635950;--text:#f1e9d9;--muted:#bab1a5;--gold:#e4bf80;--green:#a9ddc0;--red:#f1a59b;--blue:#b7bedf}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 60% 40% at 50% 0,#38313d,transparent),linear-gradient(150deg,#11131a,#171b24);color:var(--text);font:16px/1.5 Georgia,serif;min-height:100vh}
+main{max-width:1150px;margin:auto;padding:24px 16px 60px}
+h1{font-size:clamp(1.8rem,4.5vw,3rem);font-weight:normal;line-height:1.14;margin:10px 0}
+h2{font-size:1.4rem;font-weight:normal;margin:2px 0 13px}
+h3{font-size:1.1rem;font-weight:normal;margin:0 0 8px}
+p{margin:7px 0 13px}.small,.muted{color:var(--muted)}
+.kicker{font:700 .74rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold)}
+.flag{display:inline-block;font:.74rem system-ui,sans-serif;border:1px solid var(--line);border-radius:25px;padding:6px 11px;color:var(--muted)}
+header{padding-bottom:20px;border-bottom:1px solid var(--line)}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0}
+.panel{background:linear-gradient(130deg,#24262f,#1c2029);border:1px solid var(--line);border-radius:12px;padding:18px;box-shadow:0 14px 32px #0003}
+label{display:block;font:600 .79rem system-ui,sans-serif;color:var(--gold);margin-bottom:7px}
+select{width:100%;background:#32313b;border:1px solid #987d5c;color:var(--text);border-radius:7px;font:16px Georgia,serif;padding:11px}
+select:focus-visible{outline:3px solid #a4c8ee;outline-offset:2px}
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.stage{min-height:290px}
+.step{font:700 .73rem system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.chip{border:1px solid #766357;border-radius:6px;padding:4px 8px;font:12px/1.35 system-ui,sans-serif;color:#eadaca}
+.effect{margin:9px 0;padding:10px 11px;border:1px solid #5e5451;border-radius:8px;background:#262830}
+.effecttitle{font:600 .83rem system-ui,sans-serif;display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.effecttitle .n{color:var(--gold);font-variant-numeric:tabular-nums}
+.metrics{margin-top:7px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;font:11px/1.4 system-ui,sans-serif;color:var(--muted)}
+.metrics b{color:var(--text);display:block;font-size:14px}
+.delta{border-left:3px solid #ac986d;background:#342f35;padding:10px 12px;font-size:.86rem;border-radius:4px;margin:11px 0}
+.delta.good{border-color:var(--green)}.delta.warn{border-color:var(--red)}
+.badge{color:#f5baac;border:1px solid #a8756d;border-radius:5px;padding:3px 7px;font:700 .73rem system-ui,sans-serif;display:inline-block}
+.good{color:var(--green)}
+.note{background:#332b2d;border-left:3px solid var(--gold);padding:14px 17px;margin:16px 0;border-radius:4px}
+small{font:12px/1.5 system-ui,sans-serif;color:var(--muted)}
+legend{font-weight:bold}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.footer{font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin-top:20px}
+@media(max-width:820px){.columns,.bottom,.controls{grid-template-columns:1fr}.stage{min-height:unset}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style></head><body><main>
+<header><div class="kicker">Peren, o Bruxo · Laboratório alquímico</div>
+<h1>O que a próxima fonte acrescenta?</h1>
+<p class="muted">Explore a contribuição do terceiro e do quarto tipo de ingrediente. Um efeito precisa de duas fontes diferentes para existir. A intensidade I–III pertence aos ingredientes; os índices abaixo não são potência, duração ou qualidade aprovadas.</p>
+<span class="flag">PROPOSTA DE DESIGN · NÃO JOGÁVEL · SEM SAVE</span></header>
+<section class="controls">
+<div class="panel"><label for="scenario">Experimento de alquimia</label><select id="scenario">
+<option value="forca">Reforço de Força e Constituição</option>
+<option value="impuro">A incompatibilidade aparece no 4º tipo</option>
+<option value="fada">Descobrir a Poção da Fada no 3º tipo</option>
+</select></div>
+<div class="panel"><label for="fourth">Quarta fonte do primeiro experimento</label><select id="fourth">
+<option value="alce">Chifres de Alce — reforço redundante</option>
+<option value="amanita">Amanita Rubra — acrescenta efeito negativo</option>
+<option value="mamute">Pó de Presa de Mamute — reforço mais forte</option>
+</select><small>Este seletor só altera o experimento de Força. Não fabrica itens nem consome materiais.</small></div>
+</section>
+<section class="columns" id="stages" aria-live="polite" aria-label="Etapas do preparo"></section>
+<section class="bottom">
+<div class="panel"><div class="kicker">Índices de origem · não potência final</div>
+<h2>Como ler os números</h2>
+<p><b>Núcleo M2:</b> soma das duas fontes mais intensas do mesmo efeito. <b>Excedente:</b> soma das demais origens, após as duas maiores. <b>Total M1:</b> todas as fontes somadas.</p>
+<p class="muted">O excedente não é “bônus de duração”, “estabilidade” ou “purificação”. Está sendo registrado para estudarmos essas possibilidades no futuro.</p></div>
+<div class="panel"><div class="kicker">Classificação e consequências</div><h2>Mais ingredientes não são sempre melhores</h2>
+<div id="conclusion" class="note"></div>
+<p class="muted">Um efeito negativo adicional não produz o rótulo Impuro por conta própria. A incompatibilidade precisa constar da curadoria aprovada. Um combo especial exige assinatura de sinergia aprovada, e não uma receita fixa.</p>
+</div></section>
+<p class="footer">Amostras embutidas a partir de \`data/curadoria_ingredientes.json\` e \`data/catalogo-combos-alquimicos.json\`, revisadas em 03/11/2026. HTML offline; sem rede, localStorage, cookies, integração Phaser, mudança no catálogo ou fórmula de gameplay.</p>
+</main><script>
+(function(){
+"use strict";
+const materials={
+ carapaca:{name:"Carapaça de Caranguejo",fx:{aumentar_forca:2,aumentar_constituicao:3,resistencia_veneno:1}},
+ betta:{name:"Betta do Rio",fx:{aumentar_forca:2,aumentar_destreza:3,diminuir_sabedoria:1}},
+ garras:{name:"Garras de Urso",fx:{aumentar_constituicao:2,aumentar_forca:2,aumentar_saude:1}},
+ alce:{name:"Chifres de Alce",fx:{aumentar_forca:2,aumentar_constituicao:2,diminuir_destreza:1}},
+ amanita:{name:"Amanita Rubra",fx:{resistencia_fogo:2,aumentar_forca:2,frenesi:2,diminuir_sabedoria:2}},
+ mamute:{name:"Pó de Presa de Mamute",fx:{aumentar_forca:3,aumentar_furtividade:1,fraqueza_fogo:1}},
+ demonio:{name:"Coração de Demônio",fx:{aumentar_magia:3,medo:2,aumentar_carisma:3}},
+ lingua:{name:"Língua-de-Dragão",fx:{resistencia_fogo:3,aumentar_ilusao:2,aumentar_carisma:1}},
+ jarrin:{name:"Raiz Botulínica",fx:{dano_saude:3,diminuir_constituicao:3,diminuir_forca:3}},
+ borboleta:{name:"Asa de Borboleta",fx:{restaurar_saude:1,diminuir_forca:1,aumentar_encantamento:1}},
+ cogumelo:{name:"Cogumelo Escamoso",fx:{aumentar_ilusao:2,aumentar_carga:2,regenerar_magia:2}}
+};
+const names={aumentar_forca:"Aumentar Força",aumentar_constituicao:"Aumentar Constituição",diminuir_sabedoria:"Diminuir Sabedoria",aumentar_carisma:"Aumentar Carisma",aumentar_ilusao:"Aumentar Ilusão",diminuir_forca:"Diminuir Força"};
+const el=id=>document.getElementById(id);
+function analyze(ids){
+ const totals={};
+ for(const id of ids)for(const [fx,val] of Object.entries(materials[id].fx))(totals[fx]||(totals[fx]=[])).push(val);
+ const effects=Object.entries(totals).filter(([id,vals])=>vals.length>=2).map(([id,vals])=>{
+  const a=vals.sort((x,y)=>y-x),core=a.slice(0,2).reduce((x,y)=>x+y,0),other=a.slice(2).reduce((x,y)=>x+y,0);
+  return{id,label:names[id]||id,ints:a,core,other,total:core+other};
+ }).sort((a,b)=>a.id.localeCompare(b.id));
+ const active=new Set(effects.map(e=>e.id));
+ const impure=active.has("aumentar_carisma")&&active.has("diminuir_forca");
+ const fada=active.has("aumentar_carisma")&&active.has("aumentar_ilusao");
+ return{effects,impure,fada};
+}
+function evolution(){
+ const scene=el("scenario").value;
+ if(scene==="impuro")return["demonio","lingua","jarrin","borboleta"];
+ if(scene==="fada")return["demonio","lingua","cogumelo"];
+ return["carapaca","betta","garras",el("fourth").value];
+}
+function render(){
+ const ids=evolution();el("fourth").disabled=el("scenario").value!=="forca";
+ const snapshots=[];
+ for(let n=2;n<=ids.length;n++)snapshots.push(analyze(ids.slice(0,n)));
+ el("stages").innerHTML=snapshots.map((snap,i)=>{
+  const step=i+2,old=i?snapshots[i-1]:null;
+  const newly=old?snap.effects.filter(e=>!old.effects.some(o=>o.id===e.id)).map(e=>e.label):[];
+  const reinforced=old?snap.effects.filter(e=>{const a=old.effects.find(o=>o.id===e.id);return a&&a.ints.length<e.ints.length}).map(e=>e.label):[];
+  let delta="";
+  if(old){
+   delta=(newly.length?'<div class="delta good">Novo(s) efeito(s): '+newly.join(", ")+'</div>':"")+
+    (reinforced.length?'<div class="delta">Fontes adicionais em: '+reinforced.join(", ")+'</div>':"")+
+    (!newly.length&&!reinforced.length?'<div class="delta">Esta fonte não acrescentou efeito ativado nem reforço aos efeitos conhecidos.</div>':"");
+  }
+  return '<article class="panel stage"><div class="step">'+step+' tipos de ingrediente</div><h2>'+ (step===2?"Preparação inicial":"Adicionar "+materials[ids[step-1]].name)+'</h2>'+
+   '<div class="chips">'+ids.slice(0,step).map(id=>'<span class="chip">'+materials[id].name+'</span>').join("")+'</div>'+
+   '<div class="small">Efeitos ativados: '+snap.effects.length+'</div>'+
+   snap.effects.map(e=>'<div class="effect"><div class="effecttitle"><span>'+e.label+'</span><span class="n">'+e.ints.map(n=>["","I","II","III"][n]).join(" + ")+'</span></div><div class="metrics"><span>Núcleo M2<b>'+e.core+'</b></span><span>Excedente<b>'+e.other+'</b></span><span>Total M1<b>'+e.total+'</b></span></div></div>').join("")+
+   delta+(snap.impure?'<span class="badge">IMPURA — conflito aprovado</span>':snap.fada?'<span class="good">Poção da Fada — combo aprovado</span>':'')+
+   '</article>';
+ }).join("");
+ const last=snapshots.at(-1);
+ let text="";
+ if(last.impure)text="No quarto tipo, Diminuir Força ganha a segunda fonte e ativa a incompatibilidade aprovada com Aumentar Carisma. O frasco é Impuro; não desaparece nenhum efeito.";
+ else if(last.fada)text="O terceiro tipo fornece outra origem de Ilusão. Com Carisma e Ilusão ativos, reconhecemos a Poção da Fada sem uma receita fixa.";
+ else if(el("fourth").value==="alce")text="Chifres de Alce reforçam duas propriedades, mas não alteram o índice M2 de nenhuma. O excedente fica registrado sem se converter automaticamente em duração ou potência.";
+ else if(el("fourth").value==="amanita")text="Amanita ativa Diminuir Sabedoria, além de reforçar Força. O resultado tem consequência adversa, mas NÃO recebe automaticamente Impuro: não há essa incompatibilidade aprovada.";
+ else text="Pó de Presa de Mamute traz uma fonte III de Força e altera o núcleo M2 de 4 para 5, empatando com Constituição. O desempate ainda não foi aprovado.";
+ el("conclusion").textContent=text;
+}
+el("scenario").addEventListener("change",render);
+el("fourth").addEventListener("change",render);
+render();
+})();
+</script></body></html>
