@@ -81,6 +81,7 @@ a{color:#e8c48c}
 <button data-case="fada" aria-pressed="true">Poção da Fada</button>
 <button data-case="duplo" aria-pressed="false">2 sinergias (QA)</button>
 <button data-case="duploimpuro" aria-pressed="false">2 + Impuro (QA)</button>
+<button data-case="observacao" aria-pressed="false">Aprender no Impuro (QA)</button>
 <button data-case="comum" aria-pressed="false">Multiefeito comum</button>
 <button data-case="impuro" aria-pressed="false">Impuro</button>
 <button data-case="editorial" aria-pressed="false">Candidato editorial</button>
@@ -107,8 +108,9 @@ a{color:#e8c48c}
 <script>
 (function(){
 "use strict";
-const state={page:"bancada",scenario:"fada",known:false,qaKnown:false,lots:0,comboLots:0,qaComboLots:0,last:null,lastNew:[],opened:false};
+const state={page:"bancada",scenario:"fada",known:false,qaKnown:false,observedInImpure:false,compatibleProduced:false,lastCompatibleMilestone:false,lots:0,comboLots:0,qaComboLots:0,last:null,lastNew:[],opened:false};
 const scenes={
+ observacao:{name:"Preparado Impuro · sinergia observada (QA)",family:"Poção",materials:[],effects:["Aumentar Carisma","Aumentar Ilusão","Diminuir Força"],additional:[],kind:"observacao",note:"Vetor sintético: NÃO é receita real de até quatro ingredientes. A aprendizagem em Impuro ainda depende de aprovação."},
  duplo:{name:"Múltiplas sinergias reconhecidas",family:"Poção",materials:["Língua-de-Dragão","Coração de Demônio","Beladona"],effects:["Aumentar Carisma","Aumentar Ilusão","Aumentar Magia"],additional:[],kind:"multicombo",note:"O trio de efeitos existe no catálogo. Apenas a Poção da Fada é sinergia aprovada; a segunda assinatura é inventada exclusivamente para testar a interface."},
  duploimpuro:{name:"Preparo Impuro · teste com duas sinergias",family:"Poção",materials:[],effects:["Aumentar Carisma","Aumentar Ilusão","Aumentar Magia","Diminuir Força"],additional:[],kind:"multicomboimpure",note:"Vetor SINTÉTICO de classificação, não uma receita ou fabricação viável de até quatro ingredientes. A incompatibilidade aprovada prevalece."},
  fada:{name:"Poção da Fada",family:"Poção",materials:["Língua-de-Dragão","Coração de Demônio","Cogumelo Escamoso"],effects:["Aumentar Carisma","Aumentar Ilusão"],additional:[],kind:"combo",id:"combo-pocao-da-fada"},
@@ -141,8 +143,11 @@ function buildResult(){
   eyebrow="IMPUREZA TEM PRECEDÊNCIA";title=c.name;
   notice='<div class="notice red"><b>Impuro</b>: Aumentar Carisma + Diminuir Força é incompatibilidade aprovada. Mesmo com Poção da Fada e uma segunda assinatura FICTÍCIA de QA, o rótulo Impuro prevalece.</div><p class="mini">Demonstração de classificação por efeitos, sem transação de receita real; nenhuma sinergia fictícia é registrada no Caderno.</p>';
  }else if(c.kind==="combo"){
-  eyebrow=state.lastNew.length?"✦ NOVA SINERGIA DESCOBERTA ✦":"COMBO CONHECIDO";
+  eyebrow=state.lastNew.length?"✦ NOVA SINERGIA DESCOBERTA ✦":state.lastCompatibleMilestone?"✦ PRIMEIRO PREPARO COMPATÍVEL ✦":"COMBO CONHECIDO";
   notice='<div class="notice">Os efeitos de Carisma e Ilusão coexistem numa identidade aprovada. Nenhum bônus adicional é concedido pelo nome especial.</div>';
+ }else if(c.kind==="observacao"){
+  eyebrow="SINERGIA EM IMPURO · HIPÓTESE DE UX";
+  notice='<div class="notice red">O frasco continua Impuro e conserva os três efeitos. A assinatura da Poção da Fada pode ser reconhecida como conhecimento, mas a operação NÃO produz um lote compatível. Este teste não representa receita real.</div>';
  }else if(c.kind==="impure"){
   eyebrow="INCOMPATIBILIDADE IDENTIFICADA";
   notice='<div class="notice red">IMPURA: os efeitos são incompatíveis. O rótulo não apaga Diminuir Força. A purificação é uma técnica avançada independente.</div>';
@@ -152,7 +157,7 @@ function buildResult(){
  }
  el("hero").innerHTML='<div class="section-title">Alquimia · Resultado simulado</div><h2>'+eyebrow+'</h2><p>Cada efeito exige duas fontes distintas; a classificação ocorre depois do cálculo.</p>';
  const extra=c.note?'<p class="mini">'+c.note+'</p>':"";
- const actions=btn("Continuar na bancada","continuar",true)+((state.known||state.qaKnown)&&(c.kind==="combo"||isMulti)?btn("Ver no Caderno","caderno",false):"");
+ const actions=btn("Continuar na bancada","continuar",true)+((state.known||state.qaKnown)&&(c.kind==="combo"||isMulti||c.kind==="observacao")?btn("Ver no Caderno","caderno",false):"");
  el("content").innerHTML='<div class="section-title">'+(isMulti||isMultiImpure?"Cenário de QA — nenhuma nova regra aprovada":c.kind==="combo"?"Identidade aprovada":"Classificação da mistura")+'</div>'+flask()+'<h3 style="text-align:center">'+title+'</h3><div class="effects">'+tags(c.effects)+'</div>'+notice+extra+(c.kind==="combo"&&state.lastNew.length?'<p class="mini">O Caderno registrou automaticamente a primeira descoberta. Fabricações seguintes não repetem a celebração.</p>':"")+'<div class="btnrow">'+actions+'</div>';
  state.opened=false;
 }
@@ -163,7 +168,7 @@ function buildJournal(){
  }else{
   let body='<div class="section-title">Fichas de identidade e relações entre lotes</div>';
   if(state.known){
-   body+='<div class="paper">'+flask()+'<h3>Poção da Fada</h3><div class="effects">'+tags(scenes.fada.effects)+'</div><p>Sinergia APROVADA. Um mesmo lote pode apresentar efeitos adicionais sem alterar essa assinatura.</p><div class="rule"><b>Lotes que contêm esta assinatura</b><span>'+state.comboLots+'</span></div><div class="rule"><b>Fontes conhecidas no exemplo</b><span>Língua-de-Dragão, Coração de Demônio e Cogumelo Escamoso/Beladona — combinações ilustrativas, não receitas fixas</span></div><div class="notice" style="margin-top:16px">Asset futuro: <code>combo-pocao-da-fada</code>. Enquanto não existir, usar o frasco padrão.</div></div>';
+   body+='<div class="paper">'+flask()+'<h3>Poção da Fada</h3><div class="effects">'+tags(scenes.fada.effects)+'</div><p>Sinergia APROVADA. Um mesmo lote pode apresentar efeitos adicionais sem alterar essa assinatura.</p><div class="rule"><b>Observada em Impuro</b><span>'+(state.observedInImpure?'Sim · teste de UX':'Não nesta simulação')+'</span></div><div class="rule"><b>Primeiro lote compatível</b><span>'+(state.compatibleProduced?'Obtido':'Não obtido')+'</span></div><div class="rule"><b>Lotes compatíveis</b><span>'+state.comboLots+'</span></div><div class="rule"><b>Fontes conhecidas no exemplo</b><span>Língua-de-Dragão, Coração de Demônio e Cogumelo Escamoso/Beladona — combinações ilustrativas, não receitas fixas</span></div><div class="notice" style="margin-top:16px">Asset futuro: <code>combo-pocao-da-fada</code>. Enquanto não existir, usar o frasco padrão.</div></div>';
   }
   if(state.qaKnown){
    body+='<div class="paper"><div class="section-title">SOMENTE TESTE DE INTERFACE · NÃO CANÔNICO</div><h3>Combo B (FICTÍCIO · QA)</h3><div class="effects">'+tags(["Aumentar Ilusão","Aumentar Magia"])+'</div><p>Assinatura inventada só para testar duas descobertas associadas ao mesmo lote. Não aprovada, não proposta à curadoria e inexistente na versão jogável.</p><div class="rule"><b>Lotes hipotéticos associados</b><span>'+state.qaComboLots+'</span></div></div>';
@@ -191,22 +196,25 @@ document.addEventListener("click",function(e){
  }
  const action=b.dataset.action;
  if(action==="preparar"){
-  const c=scenes[state.scenario],isMulti=c.kind==="multicombo";
-  const firstFada=(c.kind==="combo"||isMulti)&&!state.known;
+  const c=scenes[state.scenario],isMulti=c.kind==="multicombo",isObservedImpure=c.kind==="observacao";
+  const compatibleCombo=c.kind==="combo"||isMulti;
+  const firstFada=(compatibleCombo||isObservedImpure)&&!state.known;
   const firstQa=isMulti&&!state.qaKnown;
+  state.lastCompatibleMilestone=compatibleCombo&&state.known&&!state.compatibleProduced;
   state.lastNew=[];
-  if(firstFada)state.lastNew.push("Poção da Fada");
+  if(firstFada)state.lastNew.push("Poção da Fada"+(isObservedImpure?" (conhecimento em Impuro)":""));
   if(firstQa)state.lastNew.push("Combo B [FICTÍCIO · QA]");
   state.lots++;state.last=state.scenario;state.opened=state.lastNew.length>0;
-  if(c.kind==="combo"||isMulti)state.comboLots++;
+  if(compatibleCombo){state.comboLots++;state.compatibleProduced=true;}
+  if(isObservedImpure)state.observedInImpure=true;
   if(isMulti)state.qaComboLots++;
   if(firstFada)state.known=true;
   if(firstQa)state.qaKnown=true;
   state.page="resultado";render();
-  el("announcer").textContent=state.lastNew.length?"Novas sinergias reconhecidas: "+state.lastNew.join(", "):c.kind==="impure"||c.kind==="multicomboimpure"?"Preparado Impuro. Efeitos incompatíveis.":"Mistura preparada; efeitos preservados.";
+  el("announcer").textContent=isObservedImpure?"Preparo Impuro. Sinergia reconhecida como conhecimento hipotético; nenhum preparo compatível.":state.lastCompatibleMilestone?"Primeiro preparo compatível da sinergia conhecida.":state.lastNew.length?"Novas sinergias reconhecidas: "+state.lastNew.join(", "):c.kind==="impure"||c.kind==="multicomboimpure"?"Preparado Impuro. Efeitos incompatíveis.":"Mistura preparada; efeitos preservados.";
   el("main").focus();return;
  }
- if(action==="reiniciar"){state.known=false;state.qaKnown=false;state.lots=0;state.comboLots=0;state.qaComboLots=0;state.last=null;state.lastNew=[];state.page="bancada";state.scenario="fada";state.opened=false;render();el("announcer").textContent="Simulação reiniciada.";return;}
+ if(action==="reiniciar"){state.known=false;state.qaKnown=false;state.observedInImpure=false;state.compatibleProduced=false;state.lastCompatibleMilestone=false;state.lots=0;state.comboLots=0;state.qaComboLots=0;state.last=null;state.lastNew=[];state.page="bancada";state.scenario="fada";state.opened=false;render();el("announcer").textContent="Simulação reiniciada.";return;}
  if(action==="caderno"||action==="bancada"){setPage(action);return;}
  if(action==="continuar"){state.last=null;setPage("bancada");return;}
 });
