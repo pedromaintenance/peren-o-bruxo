@@ -101,6 +101,9 @@ test('Ingrediente duplicado e quinto tipo não são tratados como suporte extra'
  assert.throws(()=>examineMixture(cur,cats,[...p,p[0]]),/distintos/);
  assert.throws(()=>examineMixture(cur,cats,[...p,g,a,ch]),/2 a 4/);
  assert.throws(()=>examineSequence(cur,cats,[...p,g,p[0]]),/duplicada/);
+ const clone=JSON.parse(JSON.stringify(cur));
+ clone.itens[p[0]].atributos.push({...clone.itens[p[0]].atributos[0]});
+ assert.throws(()=>examineMixture(clone,cats,p),/Efeito duplicado no mesmo ingrediente/);
 });
 test('IDs de ingredientes inexistentes falham explicitamente',()=>{
  assert.throws(()=>examineMixture(cur,cats,[...p,'ing-nao-existe']),/não existe/);
