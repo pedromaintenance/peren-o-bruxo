@@ -63,3 +63,15 @@ A [Emenda A2 da Constituição v1.0](constituicao-design-v1.md) e o [roadmap de 
 O registro versionado de partida está em [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alquimicos.json): **Poção da Fada** (`aumentar_carisma` + `aumentar_ilusao`), a incompatibilidade `aumentar_carisma` + `diminuir_forca` e o exemplo compatível sem nome especial `aumentar_forca` + `resistencia_eletricidade`. O agente de auditoria deve propor novos combos com fundamento e status **proposto** até aprovação, preservar IDs e catalogar chave de arte/possível animação futura, sem produzir assets ou alterar ingredientes/receitas para forçar resultados. Consultar o [roadmap de menus e mecânicas, seção 14](roadmap-crafting-mecanicas-menus.md), para contrato de integração e QA.
 
 **O combo é uma classificação posterior à interseção normal dos ingredientes, nunca uma receita alternativa.** A etapa de implementação testa classificação e UI; a etapa curatorial mantém o catálogo confiável e animação planejável. **Somente documentação e metadados, sem gameplay publicado.**
+
+## Handoff experimental — terceira e quarta fontes (03/11/2026)
+
+**Referências:** [estudo de fontes adicionais](estudo-fontes-adicionais-alquimia-v1.md), [roadmap de mecânicas — seção 20](roadmap-crafting-mecanicas-menus.md), [roadmap de curadoria](curadoria-itens-consistencia-carcaca.md) e [PR #97, protótipos isolados](https://github.com/pedromaintenance/peren-o-bruxo/pull/97).
+
+A auditoria de ingredientes e o motor devem tratar separadamente: **(1)** efeito ativado por pelo menos duas espécies/tipos distintos; **(2)** outras fontes do mesmo efeito, preservando seus IDs e intensidades de origem I–III; **(3)** novos efeitos ativados pela entrada de mais um material; **(4)** incompatibilidades e sinergias **aprovadas**; **(5)** eventual potência/duração/qualidade, **ainda não definida**.
+
+**Não canonizar** soma integral (M1), duas fontes mais intensas (M2), maior origem (M3), reserva de intensidade ou efeito automático de duração. Uma 4ª fonte pode reforçar o índice sem alterar o conjunto de efeitos, pode ativar propriedade negativa sem torná-la Impura, ou pode ativar uma incompatibilidade verdadeira e tornar o preparado **Impuro**. A curadoria não muda atributos para forçar nenhum desses casos.
+
+**Separação de equipes:** quem audita itens entrega origens, IDs e dados editoriais íntegros; quem implementa mecânicas poderá experimentar consumo, resultado e UI em branch isolada depois da definição das regras. O painel offline e o módulo de pesquisa da PR #97 não são integrados ao Phaser; suas **16 verificações V8** e **10 verificações de interface simulada** não equivalem a testes de runtime, CI Node ou Pages.
+
+**Próxima definição:** semântica dos 53 efeitos e papel da terceira/quarta fonte em potência/duração/qualidade **por tipo de efeito**, sem aplicar bônus universais ou anunciar propriedades ocultas ao jogador.
