@@ -1,37 +1,28 @@
-# Estado da curadoria de ingredientes — reconciliação após Ciclo 111
+# Estado da curadoria de ingredientes — após o Ciclo 124
 
-**Data-base:** 03/11/2026. **Escopo:** curadoria editorial, consistência de dados e Carcaça — não é homologação de mecânicas ou menus.
+**Consolidado em 03/11/2026.** Esta é a referência de status vigente; a versão anterior (após o Ciclo 111) permanece no histórico Git. Escopo: **curadoria editorial e confrontação com Monstros da Carcaça**, sem promover modificações ao catálogo jogável, receitas ou interface.
 
-**Repositórios:** [Peren, o Bruxo](https://github.com/pedromaintenance/peren-o-bruxo) e [Monstros da Carcaça](https://github.com/pedromaintenance/monstros-carcaca).
-**Blob do catálogo auditado:** `57cf86f623ecabb4c30eb3a052384d627b615aa8`. **Revisão de Monstros consultada no fechamento:** [388e678a981c](https://github.com/pedromaintenance/monstros-carcaca/tree/388e678a981c1ca487c05a48f5934907857be418).
+## Indicadores comprovados
 
-## Indicadores recontados
-| Indicador | Valor | Significado |
+| Indicador | Estado | Interpretação |
 |---|---:|---|
-| Ingredientes no catálogo | 111 | Total de IDs, não número de ciclos |
-| Efeitos distintos por ID | 53 | Todos possuem dois ou mais ingredientes com o efeito |
-| Efeitos isolados | 0 | Integridade combinatória da curadoria |
-| Auditorias individuais históricas (Ciclos 14–38) | 25 | Decisões por item; não garante proveniência ecológica completa |
-| Matriz ecológica (Ciclos 39–111) | 73 | IDs distintos com notas de ecologia |
-| Cobertura individual demonstrada | **98/111** | 25 históricos + 73 da matriz; sem sobreposição |
-| Fichas pendentes de revisão individual | **13** | Algumas já tiveram decisão sobre atributos nos Ciclos 4–12 |
-| Fichas com menos de 3 atributos | 0 | Escala de ficha preservada |
-| Intensidades fora de I–III / duplicação de efeito numa ficha | 0 | QA estrutural |
-| Campos `descricao` e `origem` ausentes | 2 | Ambos pertencem ao Betta do Rio |
-| Colisões nominais | 1 | Dois Ovos de Tordo |
-| IDs de efeitos com duas grafias | 2 | `curar_doenca` e `voar` |
+| Ingredientes no catálogo | **111** | IDs distintos na curadoria ativa |
+| Revisões individuais por ID | **111/111** | 25 históricos + 86 dos Ciclos 39–124, sem repetição |
+| Matriz ecológica detalhada | **86/111** | Fichas de Ciclos 39–124 |
+| Retroauditorias ecológicas pendentes | **25** | Os 25 IDs históricos dos Ciclos 14–38 |
+| Efeitos distintos | **53** | Todos têm pelo menos dois ingredientes como fonte |
+| Efeitos isolados | **0** | Não há efeitos sem parceiro |
+| Fichas com menos de três atributos | **0** | Conformidade com mínimo canônico |
+| Intensidades inválidas ou IDs de efeitos repetidos na mesma ficha | **0** | QA estrutural |
+| Nomes de ingredientes duplicados | **1 par** | Dois IDs de Ovo de Tordo, não equivalente |
+| IDs de efeito com nomes alternativos | **2** | `curar_doenca` e `voar` |
+| Campos de descrição/origem ausentes | **2** | Ambos em `ing-river-betty` |
 
-## Distribuição de raridades
+**Raridades do catálogo ativo:** comum 54, incomum 31, raro 22, épico 4. **Blob do catálogo analisado:** `57cf86f623ecabb4c30eb3a052384d627b615aa8`. **Publicação:** nenhuma alteração no catálogo foi necessária para documentar a auditoria.
 
-| Comum | Incomum | Raro | Épico |
-|---:|---:|---:|---:|
-| 54 | 31 | 22 | 4 |
+## Ciclos 112–124 — lacunas individuais encerradas
 
-## Lista fechada de pendências individuais (Ciclos 112–124 sugeridos)
-
-A ausência de ficha ecológica não é ausência do item no catálogo. Atributos anteriormente aprovados pelo criador devem permanecer válidos.
-
-| Ciclo proposto | Ingrediente | ID | Parceiros |
+| Ciclo | Ingrediente | ID | Parceiros |
 |---:|---|---|---:|
 | 112 | Algodão da Tundra | `ing-tundra-cotton` | 33 |
 | 113 | Escamas de Piranha | `ing-slaughterfish-scales` | 33 |
@@ -47,21 +38,57 @@ A ausência de ficha ecológica não é ausência do item no catálogo. Atributo
 | 123 | Ovas de Piranha | `ing-slaughterfish-egg` | 42 |
 | 124 | Cogumelo de Raiz | `ing-mora-tapinella` | 48 |
 
-## Pendências transversais para revisão posterior
+As decisões anteriores dos Ciclos 4 e 5 — **Curar Doença II no Alho** e **Infligir Doença II na Cauda de Rato** — foram preservadas. A Raiz Botulínica mantém seus quatro efeitos de intensidade III, sem balanceamento redutor. O cruzamento com a Carcaça não comprova ocorrência regional de piranhas, apiários, plantas de tundra ou fungos específicos.
 
-1. **Betta do Rio:** único sem `descricao` e `origem`. A descrição candidata existe na matriz. Origem não deve ser deduzida do Rio Ancestral.
-2. **Beladona:** texto menciona interferência na recuperação mágica sem atributo de regeneração/diminuição correspondente; corrigir descrição, não inventar efeito.
-3. **Ovos de Tordo:** usar rótulos editoriais provisórios de *agilidade* e *restauração*, mantendo IDs, raridade e nome ativo até decisão de integração.
-4. **Efeitos:** mesmo ID aparece com grafias diferentes: `curar_doenca` = Curar doença / Curar Doença; `voar` = Voar / Voo. Não criar efeitos novos por causa da grafia.
-5. **Proveniência:** Carne Humana, Coração Humano, Dedo de Gigante e possivelmente Orelha de Troglodita precisam de investigação de origem; não configurar pessoas ou povos sapientes como drops automaticamente.
-6. **Identidade de Medusa:** a ficha diz criatura flutuante; não prova górgona nem organismo marinho.
-7. **Ecologia e cosmologia:** templos, Mar de Sangue, Vandar, Eldroth, Thargrid e Vazio não são procedências automáticas de ingredientes parecidos no nome.
-8. **Fonte histórica:** as decisões dos Ciclos 4–12 continuam vinculantes, mesmo quando a espécie não possui revisão ecológica individual.
+## A próxima fila: retroauditoria ecológica dos 25 históricos
 
-## Handoff editorial para o chat de mecânicas e menus
+Estes ingredientes **já foram revisados individualmente** e não estão em atraso de atributos. O que falta é colocar sua **proveniência ecológica, evidência e lacunas** na matriz estruturada, sem revogar decisões históricas.
 
-**Fonte dos atributos vigentes:** `data/curadoria_ingredientes.json`. **Matriz de evidências e pendências:** `data/auditoria_ecologica_ingredientes.json`. **Decisões e precedentes:** `docs/auditoria-alquimia-peren.md`. **Protocolo de fontes:** `docs/curadoria-itens-consistencia-carcaca.md`.
+| Histórico | Ingrediente | ID | Parceiros atuais |
+|---:|---|---|---:|
+| 14 | Penas de Falcão | `ing-hawk-feathers` | 3 |
+| 15 | Raiz de Trama | `ing-trama-root` | 9 |
+| 16 | Seiva de Ent | `ing-spriggan-sap` | 9 |
+| 17 | Cogumelo Escamoso | `ing-scaly-pholiota` | 9 |
+| 18 | Cogumelo Luminescente | `ing-glowing-mushroom` | 10 |
+| 19 | Couro de Rato | `ing-charred-skeever-hide` | 11 |
+| 20 | Pó de Vampiro | `ing-vampire-dust` | 12 |
+| 21 | Língua-de-Dragão | `ing-dragon-s-tongue` | 12 |
+| 22 | Coração de Demônio | `ing-daedra-heart` | 13 |
+| 23 | Musgo Pendente | `ing-hanging-moss` | 14 |
+| 24 | Penas de Bruxa | `ing-hagraven-feathers` | 15 |
+| 25 | Peixe-Espada do Sangue | `ing-abecean-longfin` | 15 |
+| 26 | Craca de Rio | `ing-nordic-barnacle` | 16 |
+| 27 | Fungo de Bolha | `ing-blisterwort` | 16 |
+| 28 | Mirra da Geada | `ing-frost-mirriam` | 16 |
+| 29 | Dentes de Espectro Gelado | `ing-ice-wraith-teeth` | 17 |
+| 30 | Poeira Luminosa | `ing-glow-dust` | 18 |
+| 31 | Asa de Mariposa Lunar | `ing-luna-moth-wing` | 18 |
+| 32 | Madeira de Ent Carbonizado | `ing-burnt-spriggan-wood` | 18 |
+| 33 | Tufo Rastejante | `ing-creep-cluster` | 18 |
+| 34 | Gelatina de Gafanhoto | `ing-ash-hopper-jelly` | 18 |
+| 35 | Sais Ígneos | `ing-fire-salts` | 18 |
+| 36 | Fungo de Gualápoles | `ing-namira-s-rot` | 19 |
+| 37 | Asa de Borboleta Azul | `ing-blue-butterfly-wing` | 19 |
+| 38 | Vagem Cinzenta | `ing-ashen-grass-pod` | 19 |
 
-Os campos `rotulo_proposto_nao_canonico`, descrições sugeridas e hipóteses de região são metadados editoriais. Não equivalem a autorização para alterar a interface, o loot, o mercado ou o catálogo publicado. O workflow de sincronização pode atualizar automaticamente os catálogos do clássico e de Phaser quando a curadoria ativa muda; coordenar qualquer edição que tenha propagação de dados.
+**Critério do próximo marco:** adicionar 25 registros ecológicos a `data/auditoria_ecologica_ingredientes.json`, com `ciclo_historico` e `status_revisao` próprios, SEM reenumerar os Ciclos 14–38 e SEM criar registros duplicados. Finalizar com matriz 111/111 e testar todos os atributos e IDs.
 
-**Próximos marcos:** completar as 13 fichas pendentes, revisar retrospectivamente a proveniência ecológica dos 25 itens dos Ciclos 14–38 e só então propor um pacote versionado de correções textuais. O avanço por ciclos não substitui a contagem por IDs. Não houve neste fechamento mudança no JSON jogável.
+## Pendências editoriais não concluídas
+
+1. **Betta do Rio (`ing-river-betty`):** faltam `descricao` e `origem`; descrição candidata registrada, origem não presumida.
+2. **Beladona (`ing-nightshade`):** descrição sugere recuperação mágica, mas os três efeitos vigentes não a representam.
+3. **Escamas de Piranha (`ing-slaughterfish-scales`):** a descrição cita antídotos, enquanto os efeitos são Defesa II, Resistência ao Gelo II e Dano à Saúde I. Há redação candidata registrada na matriz; não adicionar efeitos por causa do texto.
+4. **Ovos de Tordo:** nome idêntico para `ing-rock-warbler-egg` (restauração) e `ing-pine-thrush-egg` (agilidade). Rótulos funcionais são propostas não canônicas, não nomes taxonômicos.
+5. **Dois rótulos por efeito:** `curar_doenca` = Curar doença/Curar Doença; `voar` = Voar/Voo. Padronizar somente texto, mantendo IDs.
+6. **Proveniência de materiais sapientes:** Carne Humana, Coração Humano, Dedo de Gigante e a potencial Orelha de Troglodita. A existência de pessoas, povos e territórios não justifica fontes genéricas de loot ou práticas de obtenção não documentadas.
+7. **Classificação da Gelatina de Medusa:** criatura flutuante de origem indeterminada; não deduzir górgona ou água-viva.
+8. **Cosmologia e região:** Vazio, templos, Vandar, Thargrid e Mar de Sangue não são origens automáticas de itens com nomes parecidos.
+
+## Entrega para o outro chat
+
+- **Fonte canônica atual:** `data/curadoria_ingredientes.json` — usar IDs e atributos nela registrados.
+- **Evidência ecológica e textos candidatos:** `data/auditoria_ecologica_ingredientes.json` — somente informativo, não integrar como regras de obtenção sem avaliação.
+- **Precedentes de decisão:** `docs/auditoria-alquimia-peren.md`; política de proveniência em `docs/curadoria-itens-consistencia-carcaca.md`.
+- **Risco de sincronização:** edições da curadoria ativa podem disparar workflow que replica dados para runtimes. Este chat **não implementa mecânica, menus, saves, loot, economia ou receitas**; coordenar alterações de dados ativos antes de qualquer integração.
+- **Próximo objetivo editorial:** terminar as 25 retroauditorias ecológicas; depois preparar um pacote de correções textuais com diff, impacto e decisão de integração explícita.
