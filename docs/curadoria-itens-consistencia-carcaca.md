@@ -174,3 +174,18 @@ A sequência de auditoria por conectividade chegou ao **Ciclo 111**, com **Flor 
 **Reconciliação por ID (não apenas numeração de ciclo):** 25 fichas individuais históricas nos Ciclos 14–38, 73 fichas individuais na [matriz ecológica](../data/auditoria_ecologica_ingredientes.json), totalizando **98 de 111 fichas**. Faltam **13 fichas individuais**, já relacionadas no [estado da curadoria](estado-curadoria-ingredientes.md), com Ciclos 112–124 sugeridos. O catálogo conserva 111 ingredientes, 53 efeitos e nenhuma propriedade isolada. Os 25 ingredientes históricos também devem receber revisão ecológica retroativa para que a matriz reflita os 111 IDs.
 
 **Divergências textuais identificadas:** Betta do Rio sem descrição/origem; Beladona com referência desatualizada à recuperação mágica; dois ingredientes distintos chamados Ovo de Tordo; duas formas de grafar os efeitos `curar_doenca` e `voar`. Tudo permanece como proposta editorial, sem alterar o catálogo ativo nem executar workflow de sincronização. O fluxo de mecânicas e menus continua independente.
+
+## Handoff de colisões entre sinergias — UX de Caderno v1.1 (03/11/2026)
+
+**Referência obrigatória:** [especificação do Caderno, seção 8](ux-descoberta-combos-caderno-v1.md), [roadmap de mecânicas, seção 17](roadmap-crafting-mecanicas-menus.md), [protótipo em PR #95](https://github.com/pedromaintenance/peren-o-bruxo/pull/95).
+
+Uma mistura pode conter **mais de uma assinatura** sinérgica quando existirem mais combos aprovados. Isso **não** equivale a uma receita nova, não concede automaticamente um nome composto, não muda os atributos dos ingredientes e não revoga incompatibilidades. O agente de curadoria deve:
+
+1. **Catalogar cada combo aprovado por seu próprio ID estável**, sem fabricar supercombo ao encontrar duas assinaturas no mesmo lote.
+2. Registrar quando duas assinaturas propostas ou aprovadas compartilham efeitos (`overlap`) ou são independentes (`disjoint`), sempre com evidência do catálogo, e evitar nomes muito próximos que confundam Caderno e inventário.
+3. Manter **nome composto** como **proposta autoral separada**, jamais gerada por concatenação dos nomes existentes. Se a futura direção artística desejar supersinergia, exigir decisão expressa e ID independente.
+4. Registrar **incompatibilidades** que possam aparecer entre efeitos de duas assinaturas, garantindo que `Impuro` continue prevalecendo no nome principal e que a classificação não oculte consequências.
+5. Conservar **asset e animação por comboId**, com fallback à família visual. Para multi-sinergia, não encomendar uma nova sprite automaticamente para cada par de combos; o agente de mecânicas decidirá a orquestração de efeitos visuais.
+6. Manter qualquer segundo combo usado no protótipo como **`qa-*` fictício**, proibido de ser promovido ao catálogo editorial ou ao gameplay. **Poção da Fada permanece a única sinergia aprovada.**
+
+**A verificar em próximas auditorias:** colisões entre candidatos `candidatos_sinergia[]`, capacidade de serem ativados no mesmo lote de 2–4 tipos e distinção entre coocorrência, sinergia genuína e incompatibilidade. Não mudar a curadoria só para forçar uma colisão. **Nenhuma animação foi produzida e nenhuma decisão autoral de “supercombo” foi tomada.**
