@@ -242,7 +242,7 @@ O domínio do ofício, equipamento, procedimentos e qualidade deverão ter impac
 4. **Não migrar saves clássicos** nesta pré-alfa; preservar chaves existentes, sem apagar dados de usuário. Não modificar `game.js`, `data/receitas.json` ou atributos curados sem necessidade e autorização explícita.
 5. Não interpretar grupos de receitas como uma fórmula universal para todos os ofícios. Alquimia usa interseção por efeito; outros ofícios exigem suas regras materiais.
 6. Antes de qualquer entrega de código: registrar qual **CRAFT-Dxx** foi abordado, hipótese numérica, testes e compatibilidade; após, atualizar estado e evidência de commit/QA. Não marcar como publicado sem testar a URL real do Pages.
-7. **Marcos para a próxima conversa:** primeiro fechar D04 (2–4 fontes), D05 (instância do preparado), D06 (catálogo de efeitos) e **D14 (dominância, Impuro e purificação)**; então integração com inventário, combate, exploração e produção nos outros ofícios. **Não voltar a discutir se híbridos devem ser rotulados como Impuro; isso foi aprovado.**
+7. **Marcos para a próxima conversa:** primeiro fechar D04 (2–4 fontes), D05 (instância do preparado), D06 (catálogo de efeitos) e **D14 (dominância, Impuro e purificação)**; então integração com inventário, combate, exploração e produção nos outros ofícios. **Observação histórica superada pela Emenda A2:** nem todo multiefeito é Impuro; somente incompatibilidades aprovadas justificam a classificação.
 8. **Auditoria independente:** não misturar esse fluxo com o trabalho editorial em `docs/curadoria-itens-consistencia-carcaca.md`; ajustes curatoriais devem aparecer como changelog/commit de dados.
 
 ## 12. Histórico do roadmap
@@ -464,3 +464,34 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **UX-C18–UX-C23:** critérios completos na [especificação de UX, seção 9](ux-descoberta-combos-caderno-v1.md).
 
 **Decisão reservada ao criador:** registrar o conhecimento de uma assinatura descoberta num Impuro **imediatamente** ou apenas após conseguir uma produção sem incompatibilidades? Recomendação documentada: aprendizado imediato, mas separar claramente os dois marcos no Caderno.
+
+## 19. Dominância, potência de origem e empates — estudo de modelos v1 (03/11/2026)
+
+**Documento diretor deste ciclo:** [Estudo de Dominância, Intensidade e Empates](estudo-dominancia-alquimica-v1.md). **Experimentos em branch isolada:** [PR #96](https://github.com/pedromaintenance/peren-o-bruxo/pull/96), arquivos `prototipos/dominancia-alquimica-experimental.mjs`, `prototipos/dominancia-alquimica-experimental.test.mjs`, `prototipos/painel-dominancia-alquimica-v1.html`.
+
+**[CANÔNICO]** A fonte tem intensidades I–III, mas **potência final não está definida por essa escala**. Dois **tipos distintos** de ingrediente ativam cada efeito, a fórmula não pode apagar secundários, e nome especial de **sinergia aprovada** prevalece para preparos compatíveis. Em **incompatibilidade** o frasco continua **Impuro**, independentemente do efeito eleito dominante. Misturas compatíveis sem sinergia devem receber nome do efeito mais intenso **após** resolver qual é e como desempatar.
+
+**[PROPOSTA, NÃO CANÔNICO]** Três formas de comparar as intensidades de origem:
+- **M1 — Soma de todas as fontes:** favorece 3ª e 4ª contribuições, com potencial de inflar o índice simplesmente por quantidade.
+- **M2 — Soma das duas maiores fontes:** respeita o mínimo de duas fontes e evita favorecer automaticamente a adição de ingredientes; o papel das fontes extras precisará ser estudado à parte. **Hipótese prioritária para avaliação, não escolha aprovada.**
+- **M3 — Maior fonte individual:** preserva destaque de ingrediente forte, mas ignora a segunda contribuição e gera empates.
+
+**Divergência material confirmada:** **Carapaça de Caranguejo + Betta do Rio + Garras de Urso** ativam `aumentar_forca` com intensidades `II+II+II` e `aumentar_constituicao` com `III+II`. M1: Força **6** vs Constituição **5**, nomearia Força. M2: Força **4** vs Constituição **5**, nomearia Constituição. M3: Força **2** vs Constituição **3**, também favorece Constituição. Portanto os índices afetam diretamente o **rótulo** que o usuário pediu, e não podem virar verdade canônica por preferência do implementador.
+
+**Empate demonstrado:** Carapaça + Gordura de Troll: Força `II+II`, Resistência a Veneno `I+II`; o modelo M3 empata em **2 vs 2**, enquanto a soma M1 dá **4 vs 3**. Nunca desempatar por ordem dos ingredientes, primeiro registro JSON, ordem alfabética de ID ou família arbitrária.
+
+**Ressalva central:** índices comparativos **não equivalem à potência final** de efeitos heterogêneos; não é possível concluir automaticamente que Constituição III seja “mais forte” que Resistência II no mundo do jogo. Separar interpretação semântica, intensidade de origem, potência final, família/nome e regra de conhecimento do personagem.
+
+**Compatibilidade e nomes continuam invariantes:** o quarteto real Coração de Demônio + Língua-de-Dragão + Raiz Botulínica + Asa de Borboleta produz `aumentar_carisma` e `diminuir_forca`, **Impuro** em todos os modelos. `aumentar_carisma` + `aumentar_ilusao` permanece **Poção da Fada** quando não houver incompatibilidade, independentemente do índice. **Não trocar o nome do combo especial por uma composição genérica.**
+
+**[PROPOSTA] Empate/efeito desconhecido:** apresentar designação neutra (ex.: “Preparado de efeitos equilibrados” ou “Preparado de efeitos mistos”) enquanto não houver métrica e decisão; eventualmente deixar Peren selecionar um efeito **empatado e já identificado** somente para rotulagem. Isso não purifica, reforça ou suprime qualquer efeito. O nome final e a regra de desempate seguem **ABERTOS**.
+
+**Backlog e aceites:**
+- **CRAFT-D30 [P0 design]:** decidir comparabilidade entre efeito heterogêneo e escala de intensidade de origem vs potência final.
+- **CRAFT-D31 [P0 design]:** revisar M1/M2/M3 em 2–4 fontes e aprovar ou rejeitar modelo para nomeação; investigar papel de fontes adicionais.
+- **CRAFT-D32 [P0 UX]:** empates, estado de conhecimento insuficiente e título neutro sem spoiler.
+- **CRAFT-D33 [P1 mecânica futura]:** papel de perícia, instrumentos e qualidade na potência/duração real, sem alteração da curadoria.
+- **CRAFT-D34 [P1 QA]:** persistência da identidade, reclassificação visual após estudo/purificação, segurança de inventário e save.
+- **DOM-Q01–DOM-Q10:** critérios detalhados no estudo de dominância.
+
+**Verificação:** módulo isolado com **15/15** testes de regra executados em V8 e painel HTML standalone com **7/7** checagens em DOM simulado. Isso **não** constitui jogo implementado nem QA visual no navegador físico. [PR #96 é draft, não mesclada](https://github.com/pedromaintenance/peren-o-bruxo/pull/96). A curadoria mantém íntegros os ingredientes, os IDs e seus valores I–III.
