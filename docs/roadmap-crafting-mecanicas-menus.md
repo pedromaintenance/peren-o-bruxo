@@ -495,3 +495,36 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **DOM-Q01–DOM-Q10:** critérios detalhados no estudo de dominância.
 
 **Verificação:** módulo isolado com **15/15** testes de regra executados em V8 e painel HTML standalone com **7/7** checagens em DOM simulado. Isso **não** constitui jogo implementado nem QA visual no navegador físico. [PR #96 é draft, não mesclada](https://github.com/pedromaintenance/peren-o-bruxo/pull/96). A curadoria mantém íntegros os ingredientes, os IDs e seus valores I–III.
+
+## 20. Terceira e quarta fontes: contribuição material, efeito adicional e potência [PROPOSTA — 03/11/2026]
+
+**Documento específico deste ciclo:** [`estudo-fontes-adicionais-alquimia-v1.md`](estudo-fontes-adicionais-alquimia-v1.md). **Protótipos não jogáveis:** [PR #97 — fontes adicionais (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/97), contendo módulo de análise, **16 testes de lógica**, painel HTML offline e roteiro de QA. Este estudo **não altera a Emenda A2**, não define potência final e não implementa fontes extras no Phaser.
+
+**Separação obrigatória para implementação futura:**
+
+1. **Ativação [CANÔNICO]:** cada efeito exige pelo menos duas **espécies/tipos diferentes** que o possuam. Mais fontes não removem efeitos já ativados; podem **adicionar** efeitos e mudar a classificação por incompatibilidade.
+2. **Identidade [CANÔNICO]:** incompatibilidade aprovada → **Impuro**; sinergia aprovada → nome especial quando não houver incompatibilidade; multiefeito compatível sem sinergia → nome pelo efeito dominante quando for definida a potência. Preservar todos os efeitos.
+3. **Diagnóstico de fonte [PROPOSTA]:** para cada efeito, separar as **duas maiores intensidades** (índice-núcleo hipotético M2) das **demais intensidades** (índice excedente), sem declarar que esses números são dano, duração, qualidade ou potência final. A versão de investigação abrange 2–4 tipos; isso **não** fixa o limite global de ingredientes.
+4. **Contribuição adicional [ABERTO]:** terceira/quarta fontes podem apenas ativar outros efeitos (F0); influir em potência (F1), duração/alcance quando aplicáveis (F2), estabilidade/risco operacional (F3), ou ser somente metadado até definição por categoria semântica (F4). **F4 — guardar evidência e não dar bônus automático — é a hipótese prioritária de desenvolvimento, não regra aprovada.**
+5. **Consequências e visibilidade:** efeito prejudicial não é automaticamente **Impuro**. A UI só pode divulgar ao personagem os efeitos identificados, mesmo que o motor calcule todos os efeitos e conflitos reais. Chamar fonte excedente de “mais pura” ou declarar redução de incompatibilidade é incorreto.
+
+**Exemplos verificados na curadoria vigente:** 
+- **Carapaça de Caranguejo + Betta do Rio:** Aumentar Força II+II.
+- **+ Garras de Urso:** Força II+II+II e Constituição III+II; surge um segundo efeito ativado.
+- **+ Chifres de Alce:** Força II+II+II+II e Constituição III+II+II. **Nenhum efeito novo**; índice M2 continua Força 4 e Constituição 5, mas excedente de ambas as propriedades cresce.
+- **Quarta fonte alternativa, Pó de Presa de Mamute:** núcleo M2 de Força muda de 4 para 5 (Fonte III), e **empata** com Constituição em índice M2. Não é empate de potência final aprovado.
+- **Quarta fonte alternativa, Amanita Rubra:** ativa **Diminuir Sabedoria** I+II (Betta + Amanita). Há efeito negativo, mas **não** incompatibilidade especificamente aprovada nesse conjunto. Não converter em Impuro por reflexo.
+- **Conflito aprovado surgindo na 4ª fonte:** Coração de Demônio + Língua-de-Dragão + Raiz Botulínica + Asa de Borboleta ativam Diminuir Força apenas quando chega a segunda fonte da propriedade; classificação passa a **Impuro** com todos os efeitos preservados.
+- **Combo na 3ª fonte:** Coração de Demônio + Língua-de-Dragão + Cogumelo Escamoso ativa Aumentar Ilusão, permitindo reconhecer a **Poção da Fada** junto a Aumentar Carisma. Não gera receita fixa.
+
+**Handoff de equipe:** o agente de **curadoria** não deve alterar intensidades ou propriedades para fazer aparecer um benefício de fonte extra; deve manter IDs, origens, efeitos, descrição e possíveis contradições. O agente de **mecânicas** deverá preservar origem de cada efeito e testar contribuições potenciais **somente depois** de especificar as 53 semânticas, potenciais e durações, custos e interação com perícia. **Nenhum extra é grátis** só por existir, nem obrigatório por decreto antes do design.
+
+**Backlog e critérios:**
+- **CRAFT-D35 [P0 design]:** mapear comportamento marginal de fontes extras e distinguir novo efeito de reforço de efeito ativo.
+- **CRAFT-D36 [P0 efeitos]:** decidir contribuição F0–F4 **por categoria semântica de efeito**; nunca aplicar duração universal a instantâneos/permanentes.
+- **CRAFT-D37 [P1 UX]:** exibir fontes identificadas e novos efeitos sem prometer aumento não aprovado; explicitar consequência e sigilo.
+- **CRAFT-D38 [P0 contrato de preparado]:** preservar `effectId → origens distintas` e eventual métrica validada, sem duplicar ingrediente ou migrar saves clássicos.
+- **CRAFT-D39 [P1 QA]:** testes 2→3→4 com alteração de classificação, combo, empates, fontes sem reforço, integridade de inventário e ausência de bônus inventados.
+- **SRC-Q01–SRC-Q08:** gate detalhado no [estudo de fontes adicionais](estudo-fontes-adicionais-alquimia-v1.md).
+
+**Verificação real:** **16/16** casos de lógica executados em V8 isolado com os JSONs reais, **10/10** verificações do painel em DOM simulado, incluindo comparação de **35 atributos de 11 ingredientes** com `curadoria_ingredientes.json`. **Não** houve CI Node, navegador real, integração Phaser ou publicação do protótipo no Pages. **[PR #97 permanece em rascunho, sem merge](https://github.com/pedromaintenance/peren-o-bruxo/pull/97)**.
