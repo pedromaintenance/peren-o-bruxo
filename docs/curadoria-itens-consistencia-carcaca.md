@@ -235,3 +235,25 @@ A [seção 9 da especificação UX](ux-descoberta-combos-caderno-v1.md) e a [se�
 - O [pacote de correções editoriais](pacote-pendencias-editoriais-ingredientes.md) agora diferencia `origem` (**proveniência de dados**) de `zona` (**local indicado de coleta**). O gerador atribui zonas de base proceduralmente; a curadoria atual só contém override explícito de zona em Pena de Gaivota/Portomonte. Distribuição regional do catálogo **não é prova ecológica** e deve ser revisada antes de integrar loot/coleta.
 - Corrigido `laboratorio-itens/README.md`: remove a referência obsoleta a Stamina II e passa a apresentar Aumentar Constituição II; os rótulos gráficos permanecem exatamente como no JSON até aprovação de padronização.
 - Não houve mudança nos 111 registros ativos, efeitos, intensidades, zonas, receitas, motores, assets ou saves. Pareceres e documentos não são fontes executáveis do jogo.
+
+## Handoff de curadoria — terceira e quarta fontes por efeito (03/11/2026)
+
+**Referências:** [estudo de fontes adicionais](estudo-fontes-adicionais-alquimia-v1.md) · [roadmap de mecânicas, seção 20](roadmap-crafting-mecanicas-menus.md) · [PR #97, experimentos isolados](https://github.com/pedromaintenance/peren-o-bruxo/pull/97).
+
+**[CANÔNICO]** Dois **tipos distintos** com o mesmo efeito são necessários para ativá-lo. Um terceiro/quarto tipo pode ativar uma nova propriedade, reforçar a composição de fontes ou ambos. **Somente incompatibilidades aprovadas** levam à classificação **Impuro**; um novo efeito negativo não basta por si mesmo. **Somente sinergias aprovadas** geram nomes especiais; mais ingredientes não são receita própria de combo.
+
+**Responsabilidade do agente curador:** manter cada propriedade em sua fonte concreta com `id`, `intensidade` I–III e proveniência; não trocar valores para induzir nomes ou vantagem de potência. Quando auditar uma propriedade, examinar também o impacto das fontes 3 e 4 na ativação de outros efeitos e na ocorrência de incompatibilidades, **sem** decidir fórmula de potência, duração ou qualidade por conta própria.
+
+**Amostras reais para regressão da curadoria:**
+- **Carapaça + Betta + Garras** → Força II+II+II e Constituição III+II.
+- **+ Chifres de Alce** → Força II+II+II+II; Constituição III+II+II; mais fontes sem nova propriedade ativada.
+- **+ Amanita Rubra em vez dos Chifres** → também ativa **Diminuir Sabedoria** I+II; não catalogar automaticamente como incompatibilidade.
+- **+ Pó de Presa de Mamute em vez dos Chifres** → Força II+II+II+III; fonte mais intensa altera índice **experimental** M2, não potência canônica.
+- **Língua-de-Dragão + Coração de Demônio + Cogumelo Escamoso** → Carisma e Ilusão formam **Poção da Fada** pelos efeitos, não por receita fixa.
+- **Coração de Demônio + Língua-de-Dragão + Raiz Botulínica + Asa de Borboleta** → somente com a quarta fonte surge a incompatibilidade aprovada e o estado **Impuro**.
+
+**[PROPOSTA] Métricas de auditoria sem efeito de gameplay:** número de fontes distintas por efeito, duas maiores intensidades de origem, intensidade excedente e novos efeitos ativados por inclusão de material. **Não** transformar excedente em “+duração”, “pureza”, “estabilidade” ou um preço presumido antes de aprovação. Distinguir claramente as dimensões na documentação.
+
+**Gatilho de revisão:** se a curadoria alterar um atributo existente, atualizar/rodar os fixtures de efeitos, incluindo cenários 2→3→4 e impacto nos catálogos de sinergias/incompatibilidades; informar IDs alterados e justificativa antes de a equipe de mecânicas consumir a revisão. **Não inserir novos atributos para satisfazer testes.**
+
+**Contrato de entrega curatorial:** dados íntegros + descrição + justificativa + riscos de interação entre fontes. O agente de mecânicas permanece responsável por eventual tradução de intensidade para potência/duração/qualidade, sempre mediante decisão expressa do criador. **Esta seção não aprova novas propriedades e não modifica os 111 ingredientes.**
