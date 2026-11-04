@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–124: 86 ingredientes auditados ecologicamente em nove lotes; outros 25 possuem auditoria histórica individual (Ciclos 14–38), total 111/111 individualmente auditados. Metadados não jogáveis.",
+  "escopo": "Retroauditoria ecológica dos 25 registros históricos dos Ciclos 14–38 e 86 fichas dos Ciclos 39–124; cobertura integral 111/111. Sem reenumeração dos ciclos históricos. Metadados editoriais não jogáveis.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -4239,6 +4239,1069 @@
       ],
       "referencia_monstros_commit": "388e678a981c1ca487c05a48f5934907857be418",
       "alteracao_curadoria": false
+    },
+    "ing-hawk-feathers": {
+      "ciclo_historico": 14,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Penas de Falcão",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "visao_a_distancia",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "intensidade": 2
+        },
+        {
+          "id": "velocidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 3,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "penas de ave de rapina",
+      "estado_vinculo_carcaca": "ave_e_distribuicao_regional_nao_documentadas",
+      "achado": "A ficha de Peren identifica falcão e poderes de voo e visão, mas os picos de Thargrid e a presença de patrulheiros em Ironwood não documentam esta espécie ou local de coleta.",
+      "nota_editorial": "Preservar a raridade comum e Visão à Distância III, Voo II, Velocidade I; não criar ninho, comércio de penas nem rota de caça.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-trama-root": {
+      "ciclo_historico": 15,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Raiz de Trama",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "diminuir_velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carga",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 9,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "raiz vegetal fibrosa",
+      "estado_vinculo_carcaca": "especie_vegetal_e_habitat_nao_documentados",
+      "achado": "A fibra entrelaçada consta da descrição de Peren; o inventário macrorregional não identifica espécie, distribuição ou condutividade elétrica dessa raiz.",
+      "nota_editorial": "A hipótese histórica de fibras condutoras não foi aprovada; não transformá-la em propriedade ecológica ou ampliar efeitos.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-spriggan-sap": {
+      "ciclo_historico": 16,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Seiva de Ent",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_alteracao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 9,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "seiva mágica de espírito vegetal chamado Ent",
+      "estado_vinculo_carcaca": "origem_de_ent_e_habitat_nao_comprovados",
+      "achado": "A taxonomia separa flora e outras criaturas sobrenaturais; o atlas de florestas não comprova população de ents nem origem regional desta seiva.",
+      "nota_editorial": "Não equiparar Ent a toda árvore de Eldroth nem vincular a coleta a Ironwood. A proposta antiga de transmutação ampliada não foi aprovada.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-scaly-pholiota": {
+      "ciclo_historico": 17,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Cogumelo Escamoso",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ilusao",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 9,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-creep-cluster",
+          "nome": "Tufo Rastejante",
+          "efeitos": [
+            "aumentar_carga",
+            "fraqueza_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo lenhoso escamoso",
+      "estado_vinculo_carcaca": "especie_e_ocorrencia_de_fungo_nao_documentadas",
+      "achado": "A morfologia lenhosa consta do catálogo, mas as florestas e habitats fúngicos apresentados no atlas não demonstram a ocorrência deste fungo.",
+      "nota_editorial": "Não identificar o Cogumelo Escamoso com fungos do inventário propositivo de Eldroth; manter os três atributos.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_POVOAMENTO_RIO_ELDROTH_CICLO45.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-glowing-mushroom": {
+      "ciclo_historico": 18,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Cogumelo Luminescente",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 10,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-glow-dust",
+          "nome": "Poeira Luminosa",
+          "efeitos": [
+            "aumentar_destruicao",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de brilho próprio",
+      "estado_vinculo_carcaca": "especie_de_fungo_e_fonte_do_brilho_nao_documentadas",
+      "achado": "Luminescência é descrição de Peren. Nem florestas, nem cavernas de Thargrid, nem propostas ecológicas de Eldroth comprovam espécie ou lugar de coleta.",
+      "nota_editorial": "A ligação entre brilho, eletricidade e forja é apenas interpretação temática; preservar efeitos sem criar cadeia de obtenção.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-charred-skeever-hide": {
+      "ciclo_historico": 19,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Couro de Rato",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "diminuir_carisma",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "infligir_doenca",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 11,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "couro de roedor",
+      "estado_vinculo_carcaca": "proveniencia_zoologica_e_habitat_nao_documentados",
+      "achado": "O catálogo documenta couro de rato; a existência de cidades, docas e margens tributadas na Carcaça não comprova uma população ou espécie de roedor usada nessa preparação.",
+      "nota_editorial": "Não presumir origem em Drakport ou associação comprovada com a Cauda de Rato. Preservar a decisão de Infligir Doença I.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-vampire-dust": {
+      "ciclo_historico": 20,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Pó de Vampiro",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "vampirismo",
+          "intensidade": 3
+        },
+        {
+          "id": "invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 12,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-luna-moth-wing",
+          "nome": "Asa de Mariposa Lunar",
+          "efeitos": [
+            "invisibilidade",
+            "regenerar_saude"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "pó de matéria vampírica",
+      "estado_vinculo_carcaca": "identidade_vampirica_e_procedencia_nao_documentadas",
+      "achado": "Peren afirma matéria vampírica, mas mortos-vivos em Vandar e regiões de necromancia não equivalem a vampiros de uma espécie ou localidade determinada.",
+      "nota_editorial": "Vampirismo III mantém possível transformação gradual aprovada; origem do pó, vítima e forma de obtenção continuam não documentadas.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-dragon-s-tongue": {
+      "ciclo_historico": 21,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Língua-de-Dragão",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ilusao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carisma",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 12,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "planta de flores vivas",
+      "estado_vinculo_carcaca": "planta_sem_relacao_anatomica_com_dragoes",
+      "achado": "A descrição de Peren define uma flor cujo nome evoca dragões; a cosmologia de Golzdov e os dragões históricos não convertem esta planta em material dracônico.",
+      "nota_editorial": "Distinguir nome popular de taxonomia; não atribuir a planta ao corpo de Golzdov ou à linhagem de dragões.",
+      "fontes_monstros": [
+        "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-daedra-heart": {
+      "ciclo_historico": 22,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Coração de Demônio",
+      "raridade": "epico",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_carisma",
+          "intensidade": 3
+        }
+      ],
+      "numero_parceiros": 13,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "órgão de ser demoníaco",
+      "estado_vinculo_carcaca": "natureza_demoniaca_compativel; individuo_e_origem_indeterminados",
+      "achado": "A categoria demonio é autoral e distinta de abissal_marinho; isso permite a classe geral do material, não identifica espécie, indivíduo ou território de extração.",
+      "nota_editorial": "Não associar a Kuo-Toa, Daegon ou Abissais marinhos; raridade épica e três efeitos III permanecem. Não automatizar drop de criatura sapiente.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-hanging-moss": {
+      "ciclo_historico": 23,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Musgo Pendente",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 14,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "musgo que cresce sobre pedras e galhos úmidos",
+      "estado_vinculo_carcaca": "microhabitat_peren; especie_e_regiao_indeterminadas",
+      "achado": "O microhabitat úmido é dado do ingrediente, não prova de presença em Eldroth, margem do Rio Ancestral ou no hipotético Musgo das Vozes Perdidas.",
+      "nota_editorial": "Manter o musgo sem genealogia inventada com o micélio proposto em Eldroth, nem território fixo de coleta.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_POVOAMENTO_RIO_ELDROTH_CICLO45.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-hagraven-feathers": {
+      "ciclo_historico": 24,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Penas de Bruxa",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 3
+        },
+        {
+          "id": "frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 15,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "penas de criatura associada a feitiçaria",
+      "estado_vinculo_carcaca": "criatura_fonte_e_procedencia_nao_classificadas",
+      "achado": "A ficha nomeia penas de bruxa mas a taxonomia autoral não define, por esse termo, espécie aviária, pessoa humana bruxa ou criatura de D&D com origem comprovada na Carcaça.",
+      "nota_editorial": "Evitar tratar feiticeiras sapientes como animais de coleta e evitar transplantar automaticamente a Hagraven de Skyrim.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-abecean-longfin": {
+      "ciclo_historico": 25,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Peixe-Espada do Sangue",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 15,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "peixe costeiro avermelhado",
+      "estado_vinculo_carcaca": "nome_maritimo_peren; distribuicao_no_mar_nao_comprovada",
+      "achado": "Mar de Sangue, águas azuis e transição variável estão documentados; isso não demonstra a ocorrência, migração ou reprodução do peixe da ficha.",
+      "nota_editorial": "Não fixar pesca no Mar de Sangue inteiro, nem atribuir a espécie ao sangue de Kindau; manter Peixe-Espada do Sangue como nome aprovado.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-nordic-barnacle": {
+      "ciclo_historico": 26,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Craca de Rio",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 16,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-luna-moth-wing",
+          "nome": "Asa de Mariposa Lunar",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        },
+        {
+          "id": "ing-namira-s-rot",
+          "nome": "Fungo de Gualápoles",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "craca de água doce sobre rochas e embarcações",
+      "estado_vinculo_carcaca": "microhabitat_peren; trecho_de_rio_nao_comprovado",
+      "achado": "A descrição registra craca de água doce; o Rio Ancestral existe, mas os documentos não localizam afluentes, pontos de coleta, rochas colonizadas ou barcos portadores dessa espécie.",
+      "nota_editorial": "Não usar o nome Craca de Rio para afirmar distribuição continental ou origem no Abismo; manter três efeitos.",
+      "fontes_monstros": [
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-blisterwort": {
+      "ciclo_historico": 27,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Fungo de Bolha",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 16,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-butterfly-wing",
+          "nome": "Asa de Borboleta",
+          "efeitos": [
+            "restaurar_saude",
+            "diminuir_forca"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de polpa irritante",
+      "estado_vinculo_carcaca": "especie_fungica_e_habitat_nao_documentados",
+      "achado": "A natureza fúngica e a polpa irritante são dados de Peren. Os ambientes de floresta, cavernas e fungos propostos não comprovam identidade com esta espécie.",
+      "nota_editorial": "Coexistência de cura e frenesi é aprovada e não constitui erro de ecologia; não associar ao micélio de Eldroth.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-frost-mirriam": {
+      "ciclo_historico": 28,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Mirra da Geada",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 16,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-purple-mountain-flower",
+          "nome": "Flor Violeta",
+          "efeitos": [
+            "aumentar_furtividade",
+            "resistencia_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "erva aromática de áreas frias",
+      "estado_vinculo_carcaca": "clima_frio_peren; proveniencia_regional_nao_confirmada",
+      "achado": "Peren descreve áreas frias e Thargrid possui picos nevados, porém o atlas não documenta esta erva, seu cultivo nem zona de coleta em Thargrid.",
+      "nota_editorial": "Não converter proximidade temática entre geada e montanha em distribuição botânica canônica.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-ice-wraith-teeth": {
+      "ciclo_historico": 29,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Dentes de Espectro Gelado",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 17,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-bleeding-crown",
+          "nome": "Coroa Sangrenta",
+          "efeitos": [
+            "aumentar_defesa",
+            "fraqueza_fogo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "dentes espectrais gelados",
+      "estado_vinculo_carcaca": "criatura_espectral_sem_taxonomia_ou_habitat_confirmado",
+      "achado": "A ficha fornece o nome de uma criatura gelada, mas não comprova que seja morto-vivo, elemental, espírito yokai ou espécie dos picos de Thargrid.",
+      "nota_editorial": "Aumentar Defesa II conserva legado nominal Fortify Heavy Armor sem redefinição mecânica; não inventar migração ou forma de obtenção.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-glow-dust": {
+      "ciclo_historico": 30,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Poeira Luminosa",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-glowing-mushroom",
+          "nome": "Cogumelo Luminescente",
+          "efeitos": [
+            "aumentar_destruicao",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "pó cintilante de origem não especificada",
+      "estado_vinculo_carcaca": "substrato_fisico_e_procedencia_desconhecidos",
+      "achado": "A descrição registra brilho e uso arcano, não identifica se a poeira procede de cristal, inseto, fantasma, minério ou resíduo mágico.",
+      "nota_editorial": "Não fundir com Cogumelo Luminescente, Sais Ígneos ou Poeira de Vampiro por semelhança de efeito.",
+      "fontes_monstros": [
+        "data/taxonomia_carcaca.json",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-luna-moth-wing": {
+      "ciclo_historico": 31,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Asa de Mariposa Lunar",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-vampire-dust",
+          "nome": "Pó de Vampiro",
+          "efeitos": [
+            "invisibilidade",
+            "regenerar_saude"
+          ]
+        },
+        {
+          "id": "ing-namira-s-rot",
+          "nome": "Fungo de Gualápoles",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        },
+        {
+          "id": "ing-nordic-barnacle",
+          "nome": "Craca de Rio",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "asa de inseto noturno",
+      "estado_vinculo_carcaca": "inseto_noturno_sem_especie_ou_regiao_confirmada",
+      "achado": "O adjetivo lunar não demonstra devoção ao Templo da Lua, vínculo com Severina ou distribuição em Eldroth e Ironwood.",
+      "nota_editorial": "Manter distinta da Asa de Mariposa Ancestral; evitar rito lunar, comércio ou calendário inventados.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-burnt-spriggan-wood": {
+      "ciclo_historico": 32,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Madeira de Ent Carbonizado",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_alteracao",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "madeira queimada de guardião vegetal",
+      "estado_vinculo_carcaca": "fonte_sobrenatural_peren; local_do_incendio_nao_documentado",
+      "achado": "Peren descreve madeira carbonizada de guardião vegetal; a ocupação de Eldroth e os cenários condicionais de incêndio não comprovam acontecimento, árvore específica ou lugar de coleta.",
+      "nota_editorial": "Não associar ao evento proposto de incêndio em Eldroth, nem identificar a mesma criatura que fornece Seiva de Ent.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-creep-cluster": {
+      "ciclo_historico": 33,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Tufo Rastejante",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-scaly-pholiota",
+          "nome": "Cogumelo Escamoso",
+          "efeitos": [
+            "aumentar_carga",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-dwarven-oil",
+          "nome": "Óleo de Autômato",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        },
+        {
+          "id": "ing-taproot",
+          "nome": "Raiz Mestra",
+          "efeitos": [
+            "restaurar_magia",
+            "fraqueza_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cachos de trepadeira rasteira",
+      "estado_vinculo_carcaca": "especie_e_habitat_da_trepadeira_nao_documentados",
+      "achado": "Peren descreve planta rasteira; o inventário macrorregional não fornece espécie, presença local nem vínculo com os tufos de cinza.",
+      "nota_editorial": "Distinguir Tufo Rastejante de Tufo Cinzento e da Vagem Cinzenta, mesmo se houver efeitos coincidentes.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-ash-hopper-jelly": {
+      "ciclo_historico": 34,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Gelatina de Gafanhoto",
+      "raridade": "incomum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-swamp-fungal-pod",
+          "nome": "Fungo do Pântano",
+          "efeitos": [
+            "restaurar_saude",
+            "resistencia_eletricidade"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "secreção de criatura das terras queimadas",
+      "estado_vinculo_carcaca": "microcontexto_peren; criatura_e_regiao_indeterminadas",
+      "achado": "O catálogo localiza narrativamente a secreção em terras queimadas; a Caatinga e as paisagens propostas de cinzas não demonstram gafanhoto específico, incêndio ocorrido ou habitat regional.",
+      "nota_editorial": "Não atribuir automaticamente o material à Caatinga, Eldroth incendiada ou a um monstro de Skyrim.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-fire-salts": {
+      "ciclo_historico": 35,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Sais Ígneos",
+      "raridade": "raro",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 3
+        },
+        {
+          "id": "regenerar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 18,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-elves-ear",
+          "nome": "Orelha-de-Elfo",
+          "efeitos": [
+            "resistencia_fogo",
+            "fraqueza_gelo"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "cristais quentes de natureza sobrenatural",
+      "estado_vinculo_carcaca": "fenomeno_sobrenatural_sem_fonte_geologica_ou_cosmologica",
+      "achado": "Peren descreve cristais quentes; as forjas de Thargrid e a categoria elemental não provam extração de sais ali, nem sua associação a demônios.",
+      "nota_editorial": "Preservar Resistência ao Fogo III; não associar a mineração, metalurgia, culto ou criatura sem fonte.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-namira-s-rot": {
+      "ciclo_historico": 36,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Fungo de Gualápoles",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "medo",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_carisma",
+          "intensidade": 2
+        }
+      ],
+      "numero_parceiros": 19,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-luna-moth-wing",
+          "nome": "Asa de Mariposa Lunar",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        },
+        {
+          "id": "ing-nordic-barnacle",
+          "nome": "Craca de Rio",
+          "efeitos": [
+            "regenerar_saude",
+            "dano_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "fungo de decomposição associado a rituais",
+      "estado_vinculo_carcaca": "toponimo_documentado; especie_em_gualapolis_nao_comprovada",
+      "achado": "Gualápoles/Gualápolis é lugar documentado na Foz; o nome do fungo em Peren não demonstra presença da espécie na cidade, nem origem obrigatória nos rituais históricos.",
+      "nota_editorial": "Preservar o quarto efeito aprovado, Diminuir Carisma II, e a repulsão social sobrenatural sem deformação corporal obrigatória.",
+      "fontes_monstros": [
+        "data/lugares_carcaca.json",
+        "docs/LORE_HACK_CARCACA_DW.md",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-blue-butterfly-wing": {
+      "ciclo_historico": 37,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Asa de Borboleta Azul",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 19,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-chaurus-hunter-antennae",
+          "nome": "Antena de Verme Gigante",
+          "efeitos": [
+            "aumentar_encantamento",
+            "diminuir_destreza"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "asa de borboleta azul",
+      "estado_vinculo_carcaca": "especie_azul_sem_origem_ou_distribuicao_documentadas",
+      "achado": "A cor é traço da ficha; nem o atlas nem as propostas de floresta confirmam espécie, bioma ou associação taxonômica com Asa de Borboleta.",
+      "nota_editorial": "Não tratar Asa de Borboleta Azul e Asa de Borboleta como partes intercambiáveis da mesma espécie.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
+    },
+    "ing-ashen-grass-pod": {
+      "ciclo_historico": 38,
+      "status_revisao": "retroauditoria_ecologica_concluida",
+      "nome": "Vagem Cinzenta",
+      "raridade": "comum",
+      "decisao": "manutencao_expressamente_aprovada_no_ciclo_historico",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 19,
+      "duplas_multiefeito": [],
+      "origem_material_conforme_descricao_peren": "vagem de planta de áreas queimadas",
+      "estado_vinculo_carcaca": "habitat_queimado_peren; area_e_evento_nao_identificados",
+      "achado": "Peren descreve áreas queimadas, mas nenhuma queimada específica é comprovada para esta planta. Cardos que Bebem Cinza são proposta ecológica não aprovada.",
+      "nota_editorial": "Não transformar cinza em prova de desmatamento histórico, nem assimilar a Vagem Cinzenta a Cardos que Bebem Cinza.",
+      "fontes_monstros": [
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+      ],
+      "referencia_monstros_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "fonte_decisao_peren": "docs/auditoria-alquimia-peren.md",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -4369,7 +5432,7 @@
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 86,
+    "ingredientes_revisados": 111,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
@@ -4385,12 +5448,17 @@
     ],
     "ids_historicos_individuais": 25,
     "total_individual": 111,
-    "ecologia_historica_pendente": 25
+    "ecologia_historica_pendente": 0,
+    "ecologia_historica_concluida": 25,
+    "matriz_ecologica_total": 111,
+    "ids_historicos_unicos": true,
+    "ciclos_historicos_preservados": true,
+    "sem_alteracao_curadoria_ativa": true
   },
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
-    "commit_sha": "388e678a981c1ca487c05a48f5934907857be418",
-    "uso": "lote 112–124; consultar SHA por lote"
+    "commit_sha": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+    "uso": "retroauditoria ecológica dos ciclos históricos 14–38; commits anteriores mantidos nos respectivos lotes"
   },
   "lotes": [
     {
@@ -4541,6 +5609,38 @@
       ],
       "fonte_commit": "388e678a981c1ca487c05a48f5934907857be418",
       "escopo": "13 fichas de cobertura individual remanescente, decisões anteriores de Alho e Cauda, flora e fauna; desvios editoriais de texto"
+    },
+    {
+      "ciclos_historicos": "14-38",
+      "ids": [
+        "ing-hawk-feathers",
+        "ing-trama-root",
+        "ing-spriggan-sap",
+        "ing-scaly-pholiota",
+        "ing-glowing-mushroom",
+        "ing-charred-skeever-hide",
+        "ing-vampire-dust",
+        "ing-dragon-s-tongue",
+        "ing-daedra-heart",
+        "ing-hanging-moss",
+        "ing-hagraven-feathers",
+        "ing-abecean-longfin",
+        "ing-nordic-barnacle",
+        "ing-blisterwort",
+        "ing-frost-mirriam",
+        "ing-ice-wraith-teeth",
+        "ing-glow-dust",
+        "ing-luna-moth-wing",
+        "ing-burnt-spriggan-wood",
+        "ing-creep-cluster",
+        "ing-ash-hopper-jelly",
+        "ing-fire-salts",
+        "ing-namira-s-rot",
+        "ing-blue-butterfly-wing",
+        "ing-ashen-grass-pod"
+      ],
+      "fonte_commit": "9514fef2a7f22be2bccfad58bd50b983878ad000",
+      "escopo": "retrospectiva ecológica dos 25 itens históricos, preservação integral das decisões originais; nenhum novo ciclo de ingredientes"
     }
   ]
 }
