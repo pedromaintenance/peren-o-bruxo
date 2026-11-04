@@ -82,9 +82,9 @@ test('A ordem integral é irrelevante no resultado final',()=>{
  assert.deepEqual(a,b);
 });
 test('A sequência de adição depende da ordem, mas estado final não',()=>{
- const a=examineSequence(cur,cats,[...p,g,a]),b=examineSequence(cur,cats,[...p,a,g]);
- assert.notDeepEqual(a.map(x=>x.marginal),b.map(x=>x.marginal));
- assert.deepEqual(a.at(-1).mixture,b.at(-1).mixture);
+ const firstOrder=examineSequence(cur,cats,[...p,g,a]),reverseOrder=examineSequence(cur,cats,[...p,a,g]);
+ assert.notDeepEqual(firstOrder.map(x=>x.marginal),reverseOrder.map(x=>x.marginal));
+ assert.deepEqual(firstOrder.at(-1).mixture,reverseOrder.at(-1).mixture);
 });
 test('O estudo não cria potência, duração, qualidade ou efeitos novos',()=>{
  const before=JSON.stringify(cur),cc=JSON.stringify(cats);
