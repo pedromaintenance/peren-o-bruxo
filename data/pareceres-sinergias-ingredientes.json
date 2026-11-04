@@ -1,0 +1,430 @@
+{
+  "schema": "peren.pareceres_sinergias_editoriais.v1",
+  "tipo": "metadados_de_revisao_nao_executaveis",
+  "data": "2026-11-03",
+  "fontes": [
+    {
+      "repositorio": "pedromaintenance/peren-o-bruxo",
+      "caminho": "data/curadoria_ingredientes.json",
+      "blob": "57cf86f623ecabb4c30eb3a052384d627b615aa8"
+    },
+    {
+      "repositorio": "pedromaintenance/peren-o-bruxo",
+      "caminho": "data/catalogo-combos-alquimicos.json",
+      "blob": "86c7627c3db22da4cf8a6b65a48928d5e0552a7b"
+    },
+    {
+      "documento": "docs/constituicao-design-v1.md",
+      "emenda": "A2"
+    }
+  ],
+  "escopo": "Avaliação autônoma de oito candidatos já documentados, sem aprovação, efeito novo, receita ou implementação. As contagens consideram apenas combinações de 2 a 4 IDs presentes na união das fontes dos dois efeitos da assinatura; não incluem materiais estranhos à assinatura e não são número de receitas possíveis no gameplay.",
+  "marcadores": {
+    "sinergias_aprovadas_no_catalogo": 1,
+    "candidatos_revisados": 8,
+    "incompatibilidades_aprovadas": 1
+  },
+  "regra_de_prioridade": "O catálogo executável permanece exclusivamente o das sinergias aprovadas. Este arquivo não deve ser lido pelo runtime, influenciar nomes, ícones, receitas ou salvar novo estado de personagem.",
+  "pareceres": [
+    {
+      "id": "combo-asas-do-vendaval",
+      "nome_candidato": "Asas do Vendaval",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "voar",
+        "velocidade"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-blue-dartwing",
+          "ing-felsaad-tern-feathers",
+          "ing-hawk-feathers"
+        ],
+        "efeitos_ativados": [
+          "velocidade",
+          "voar"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 3,
+        "minimo_de_tipos": 3,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 1,
+            "apenas_assinatura": 1
+          },
+          "4": {
+            "total": 0,
+            "apenas_assinatura": 0
+          }
+        }
+      },
+      "categoria_parecer": "forte_para_deliberacao",
+      "nota": "Assinatura funcional clara: voo e velocidade. Os três materiais do exemplo são atualmente as únicas fontes disponíveis desses dois IDs; isso não torna o combo uma receita fixa.",
+      "risco": "A assinatura é pouco redundante: Voo e Velocidade possuem exatamente duas fontes cada; coleta de materiais de áreas distintas pode ser difícil. Não dar impulso ou segurança aérea extra.",
+      "decisao_sugerida": "submeter_nome_e_descricao_ao_criador",
+      "texto_curto_sugerido": "Uma preparação que reúne voo e velocidade numa mesma travessia, preservando limites e riscos de cada efeito.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-olhos-da-vigilia",
+      "nome_candidato": "Olhos da Vigília",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "aumentar_percepcao",
+        "visao_a_distancia"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-eye-of-sabre-cat",
+          "ing-falmer-ear",
+          "ing-hawk-feathers"
+        ],
+        "efeitos_ativados": [
+          "aumentar_percepcao",
+          "visao_a_distancia"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 4,
+        "minimo_de_tipos": 3,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 2,
+            "apenas_assinatura": 1
+          },
+          "4": {
+            "total": 1,
+            "apenas_assinatura": 0
+          }
+        }
+      },
+      "categoria_parecer": "forte_para_deliberacao",
+      "nota": "Visão distante e percepção convergem para observação. Há alternativa de três materiais que evita no exemplo a Orelha de Troglodita, cujo suprimento de origem sapiente é indeterminado.",
+      "risco": "A alternativa com Ovo de Falcão também ativa Aumentar Destreza; este terceiro efeito nunca pode ser omitido. Não inventar alcance visual em metros ou clarividência.",
+      "decisao_sugerida": "submeter_nome_e_descricao_ao_criador",
+      "texto_curto_sugerido": "A nitidez dos sentidos acompanha o alcance dos olhos; efeitos adicionais da mistura continuam válidos.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false,
+      "exemplo_alternativo_nao_receita": {
+        "ingredientes": [
+          "ing-eye-of-sabre-cat",
+          "ing-hawk-s-egg",
+          "ing-hawk-feathers"
+        ],
+        "efeitos_ativados": [
+          "aumentar_destreza",
+          "aumentar_percepcao",
+          "visao_a_distancia"
+        ],
+        "observacao": "Alternativa sem fonte de origem sapiente indeterminada neste exemplo; não define procedência regional ou espécie."
+      }
+    },
+    {
+      "id": "combo-nascente-arcana",
+      "nome_candidato": "Nascente Arcana",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "aumentar_magia",
+        "regenerar_magia"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-briar-heart",
+          "ing-fire-salts",
+          "ing-jazbay-grapes"
+        ],
+        "efeitos_ativados": [
+          "aumentar_magia",
+          "regenerar_magia"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 15,
+        "minimo_de_tipos": 3,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 48,
+            "apenas_assinatura": 25
+          },
+          "4": {
+            "total": 708,
+            "apenas_assinatura": 170
+          }
+        }
+      },
+      "categoria_parecer": "forte_para_deliberacao",
+      "nota": "Maior reserva mágica e reposição progressiva formam um ciclo de uso coerente, sem significar fonte infinita.",
+      "risco": "Intensidade I–III não fixa taxa de regeneração nem valor máximo; não introduzir multiplicador de mana.",
+      "decisao_sugerida": "submeter_nome_e_descricao_ao_criador",
+      "texto_curto_sugerido": "Expande a reserva arcana e favorece sua reposição enquanto os efeitos permanecerem ativos.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-veu-do-cacador",
+      "nome_candidato": "Véu do Caçador",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "invisibilidade",
+        "aumentar_furtividade"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-abecean-longfin",
+          "ing-ashen-grass-pod",
+          "ing-chaurus-eggs",
+          "ing-crimson-nirnroot"
+        ],
+        "efeitos_ativados": [
+          "aumentar_furtividade",
+          "invisibilidade"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 13,
+        "minimo_de_tipos": 4,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "4": {
+            "total": 315,
+            "apenas_assinatura": 197
+          }
+        }
+      },
+      "categoria_parecer": "forte_para_deliberacao",
+      "nota": "Invisibilidade e aumento de furtividade cooperam no ato de ocultar-se; no catálogo atual, a assinatura requer pelo menos quatro tipos distintos.",
+      "risco": "Não equivale a silêncio, imunidade à percepção ou invisibilidade permanente. Disponibilidade de quatro materiais é critério de interface ainda não aprovado.",
+      "decisao_sugerida": "submeter_nome_e_descricao_ao_criador",
+      "texto_curto_sugerido": "A presença se desvanece e os movimentos se tornam mais discretos, sem apagar rastros, sons ou outros sinais.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-seiva-vital",
+      "nome_candidato": "Seiva Vital",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "restaurar_saude",
+        "regenerar_saude"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-ash-hopper-jelly",
+          "ing-blisterwort",
+          "ing-emperor-parasol-moss",
+          "ing-garlic"
+        ],
+        "efeitos_ativados": [
+          "restaurar_saude",
+          "regenerar_saude"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 17,
+        "minimo_de_tipos": 4,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "4": {
+            "total": 1008,
+            "apenas_assinatura": 354
+          }
+        }
+      },
+      "categoria_parecer": "forte_para_deliberacao",
+      "nota": "Restaurar saúde e regenerar saúde cobrem recuperação imediata e subsequente; a assinatura exige atualmente quatro tipos distintos.",
+      "risco": "Sem ressuscitar, reconstituir membros, curar doença ou eliminar efeitos negativos por inferência. 'Seiva' é metáfora do nome, não origem botânica necessária.",
+      "decisao_sugerida": "submeter_nome_e_descricao_ao_criador",
+      "texto_curto_sugerido": "Uma parcela da vitalidade retorna de imediato; a recuperação continua enquanto o segundo efeito perdurar.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-folego-das-profundezas",
+      "nome_candidato": "Fôlego das Profundezas",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "respirar_na_agua",
+        "resistencia_gelo"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-frost-mirriam",
+          "ing-frost-salts",
+          "ing-histcarp",
+          "ing-nordic-barnacle"
+        ],
+        "efeitos_ativados": [
+          "resistencia_gelo",
+          "respirar_na_agua"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 11,
+        "minimo_de_tipos": 4,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "4": {
+            "total": 84,
+            "apenas_assinatura": 34
+          }
+        }
+      },
+      "categoria_parecer": "baixa_sinergia_independente",
+      "nota": "Respirar na Água e Resistência ao Gelo podem servir juntos em determinadas viagens, mas continuam duas proteções independentes. A Carcaça não documenta um ambiente único que torne a combinação necessária.",
+      "risco": "O nome associa frio às profundezas e pode sugerir resistência à pressão, visão subaquática ou proteção geral inexistentes.",
+      "decisao_sugerida": "manter_como_multiefeito_compativel_ate_evidencia",
+      "texto_curto_sugerido": "Permite respirar na água e oferece resistência ao frio; não protege de outras ameaças das profundezas.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-silencio-do-feiticeiro",
+      "nome_candidato": "Silêncio do Feiticeiro",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "dano_magia",
+        "diminuir_magia"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-butterfly-wing",
+          "ing-hagraven-claw",
+          "ing-orange-dartwing"
+        ],
+        "efeitos_ativados": [
+          "dano_magia",
+          "diminuir_magia"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 11,
+        "minimo_de_tipos": 3,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 0,
+            "apenas_assinatura": 0
+          },
+          "3": {
+            "total": 9,
+            "apenas_assinatura": 6
+          },
+          "4": {
+            "total": 36,
+            "apenas_assinatura": 12
+          }
+        }
+      },
+      "categoria_parecer": "condicional_semantica_e_nome",
+      "nota": "Dano à Magia e Diminuir Magia atuam sobre o recurso arcano por vias distintas; há complementaridade, mas 'Silêncio' sugere bloqueio total de conjuração não documentado.",
+      "risco": "Sem especificação de alvo, duração ou diferenças mecânicas, o nome promete mais que os atributos. Alternativa apenas editorial: 'Esgotamento Arcano'.",
+      "decisao_sugerida": "reformular_nome_antes_de_submeter",
+      "texto_curto_sugerido": "Drena parte da energia arcana e reduz a capacidade mágica, sem impedir automaticamente a conjuração.",
+      "nome_alternativo_proposto": "Esgotamento Arcano",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    },
+    {
+      "id": "combo-veneno-da-ruina",
+      "nome_candidato": "Veneno da Ruína",
+      "estado_catalogo_inalterado": "proposto_nao_aprovado",
+      "assinatura_efeitos": [
+        "dano_saude",
+        "fraqueza_veneno"
+      ],
+      "origem_proposta_catalogo": "Proposta de investigação 03/11/2026; não é uma decisão do criador",
+      "exemplo_existente": {
+        "ingredientes": [
+          "ing-deathbell",
+          "ing-giant-lichen"
+        ],
+        "efeitos_ativados": [
+          "dano_saude",
+          "fraqueza_veneno"
+        ],
+        "nao_receita_fixa": true,
+        "incompatibilidades_aprovadas_ativadas": []
+      },
+      "cobertura_combinatoria": {
+        "universo_de_fontes": 24,
+        "minimo_de_tipos": 2,
+        "contagens_restritas_a_fontes_relevantes": {
+          "2": {
+            "total": 1,
+            "apenas_assinatura": 1
+          },
+          "3": {
+            "total": 166,
+            "apenas_assinatura": 129
+          },
+          "4": {
+            "total": 2589,
+            "apenas_assinatura": 1261
+          }
+        }
+      },
+      "categoria_parecer": "sinergia_nao_demonstrada",
+      "nota": "A coativação é real, inclusive com dois insumos, mas Dano à Saúde ainda não é tipado como dano venenoso. Fraqueza a Veneno não demonstrou amplificar o outro efeito.",
+      "risco": "Não afirmar bônus causal, toxina de dupla ação ou escalada de dano sem definição semântica. Nome genérico pode ser confuso com venenos já existentes.",
+      "decisao_sugerida": "suspender_promocao_ate_tipagem_de_dano",
+      "texto_curto_sugerido": "Pode causar dano à saúde e deixar o alvo vulnerável a venenos posteriores, sem presumir que um efeito intensifique o outro.",
+      "estado_parecer": "parecer_curatorial_nao_aprovado",
+      "aprovacao_autoral": false
+    }
+  ]
+}
