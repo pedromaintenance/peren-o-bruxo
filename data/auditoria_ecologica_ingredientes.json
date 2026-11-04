@@ -2,7 +2,7 @@
   "schema": "peren-auditoria-ecologica-ingredientes-v1",
   "status": "metadados_editoriais_nao_jogaveis",
   "data": "2026-11-03",
-  "escopo": "Ciclos 39–106; 68 ingredientes em sete lotes; metadados editoriais não jogáveis.",
+  "escopo": "Ciclos 39–111: 73 ingredientes auditados ecologicamente em oito lotes; outros 25 ingredientes possuem ciclos individuais 14–38, e 13 aguardam revisão ecológica individual. Metadados não jogáveis.",
   "origem_catalogo": {
     "repositorio": "pedromaintenance/peren-o-bruxo",
     "arquivo": "data/curadoria_ingredientes.json",
@@ -3234,6 +3234,290 @@
       ],
       "referencia_monstros_commit": "43d90cb9b728e42ba0c0b9328adf5fafe0521358",
       "alteracao_curadoria": false
+    },
+    "ing-yellow-mountain-flower": {
+      "ciclo": 107,
+      "nome": "Flor Amarela da Montanha",
+      "raridade": "incomum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 32,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-mudcrab-chitin",
+          "nome": "Carapaça de Caranguejo",
+          "efeitos": [
+            "resistencia_veneno",
+            "aumentar_constituicao"
+          ]
+        },
+        {
+          "id": "ing-garlic",
+          "nome": "Alho",
+          "efeitos": [
+            "resistencia_veneno",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "flor de altitude",
+      "estado_vinculo_carcaca": "microhabitat_documentado_em_peren; localidade_nao_confirmada",
+      "achado": "Peren registra flor de altitude e uso protetor/restaurador. O atlas descreve montanhas e picos nevados de Thargrid, mas não localiza esta espécie nem comprova que todas as flores de montanha sejam procedentes dali.",
+      "nota_editorial": "Preservar Resistência a Veneno II, Aumentar Restauração II e Constituição I. Não confundir com Flor Azul ou Flor Vermelha, nem fixar origem em Thargrid.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "alteracao_curadoria": false
+    },
+    "ing-lavender": {
+      "ciclo": 108,
+      "nome": "Lavanda Selvagem",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 32,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-blue-mountain-flower",
+          "nome": "Flor Azul da Montanha",
+          "efeitos": [
+            "aumentar_constituicao",
+            "aumentar_conjuracao"
+          ]
+        },
+        {
+          "id": "ing-chicken-s-egg",
+          "nome": "Ovo de Galinha",
+          "efeitos": [
+            "resistencia_magia",
+            "aumentar_constituicao"
+          ]
+        },
+        {
+          "id": "ing-tundra-cotton",
+          "nome": "Algodão da Tundra",
+          "efeitos": [
+            "resistencia_magia",
+            "aumentar_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "erva aromática de uso ritual",
+      "estado_vinculo_carcaca": "flora_e_uso_peren_documentados; cultivo_regional_nao_documentado",
+      "achado": "Peren descreve efeito calmante e concentração ritual; os três efeitos da ficha são resistência mágica, Constituição e Conjuração. O atlas tem horticultura e diferentes tradições religiosas, mas não demonstra plantio da espécie nem monopólio por culto ou guilda.",
+      "nota_editorial": "Conservar os três atributos. 'Acalma' é linguagem ficcional e não um quarto efeito de sono, sedação ou controle mental. Não atribuir produção a Grama-Cortada ou Portomonte sem evidência.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "referencia_monstros_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "alteracao_curadoria": false
+    },
+    "ing-crimson-nirnroot": {
+      "ciclo": 109,
+      "nome": "Raiz Velada Rubra",
+      "raridade": "epico",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "intensidade": 3
+        }
+      ],
+      "numero_parceiros": 33,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-jarrin-root",
+          "nome": "Raiz Botulínica",
+          "efeitos": [
+            "dano_saude",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-skeever-tail",
+          "nome": "Cauda de Rato",
+          "efeitos": [
+            "dano_saude",
+            "diminuir_constituicao"
+          ]
+        },
+        {
+          "id": "ing-scathecraw",
+          "nome": "Espinho-da-Morte",
+          "efeitos": [
+            "dano_saude",
+            "diminuir_constituicao"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "variante carmesim da Raiz Velada",
+      "estado_vinculo_carcaca": "variante_de_peren_documentada; habitat_e_parentesco_taxonomico_natural_nao_confirmados",
+      "achado": "A ficha descreve expressamente uma variante carmesim da Raiz Velada e uma troca entre Invisibilidade III, Dano à Saúde II e Diminuir Constituição III. A descrição sugere parentesco funcional de Peren, mas o atlas não confirma distribuição nem mecanismo botânico das duas variantes.",
+      "nota_editorial": "Preservar a identidade diferenciada, raridade épica e penalidades severas; não transformar o tom rubro em vínculo com o Mar de Sangue, Vandar ou uma maldição feérica sem fonte.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+      ],
+      "referencia_monstros_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "alteracao_curadoria": false
+    },
+    "ing-ectoplasm": {
+      "ciclo": 110,
+      "nome": "Ectoplasma",
+      "raridade": "raro",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 33,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-nightshade",
+          "nome": "Beladona",
+          "efeitos": [
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-red-mountain-flower",
+          "nome": "Flor Vermelha",
+          "efeitos": [
+            "restaurar_magia",
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-briar-heart",
+          "nome": "Coração de Espinheiros",
+          "efeitos": [
+            "restaurar_magia",
+            "aumentar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "resíduo espectral instável",
+      "estado_vinculo_carcaca": "origem_espiritual_e_regiao_indeterminadas",
+      "achado": "A existência de necromancia e mortos-vivos de Vandar é documentada, mas o atlas não comprova que o ectoplasma provenha deles, de um ritual de Damaris ou de todos os espíritos da Carcaça. O item tem funções arcanas e dano à saúde simultâneos.",
+      "nota_editorial": "Preservar Restaurar Magia III, Aumentar Magia II e Dano à Saúde I; não instituir obtenção automática de ectoplasma de mortos-vivos, almas de pessoas ou espíritos inteligentes.",
+      "fontes_monstros": [
+        "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "alteracao_curadoria": false
+    },
+    "ing-red-mountain-flower": {
+      "ciclo": 111,
+      "nome": "Flor Vermelha",
+      "raridade": "comum",
+      "decisao": "preservado_por_auditoria_autonoma",
+      "integridade_atributos": "inalterados",
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "intensidade": 1
+        }
+      ],
+      "numero_parceiros": 33,
+      "duplas_multiefeito": [
+        {
+          "id": "ing-ectoplasm",
+          "nome": "Ectoplasma",
+          "efeitos": [
+            "restaurar_magia",
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-nightshade",
+          "nome": "Beladona",
+          "efeitos": [
+            "aumentar_magia",
+            "dano_saude"
+          ]
+        },
+        {
+          "id": "ing-briar-heart",
+          "nome": "Coração de Espinheiros",
+          "efeitos": [
+            "restaurar_magia",
+            "aumentar_magia"
+          ]
+        }
+      ],
+      "origem_material_conforme_descricao_peren": "flor rubra de seiva concentrada",
+      "estado_vinculo_carcaca": "flora_documentada_peren; bioma_e_procedencia_nao_confirmados",
+      "achado": "A descrição associa a flor a tônicos arcanos e seiva capaz de ferir. A cor vermelha, apesar da existência do Mar de Sangue, não comprova origem costeira, corrupção do sangue ou vinculação à magia demoníaca.",
+      "nota_editorial": "Preservar Restaurar Magia II, Aumentar Magia I e Dano à Saúde I; diferenciar a Flor Vermelha da Flor Azul da Montanha e da Flor Violeta, sem atribuir biomas artificiais.",
+      "fontes_monstros": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "data/taxonomia_carcaca.json"
+      ],
+      "referencia_monstros_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "alteracao_curadoria": false
     }
   },
   "pendencias": [
@@ -3340,10 +3624,19 @@
       "evidencia": "Humanos e gigantes são povos sapientes na Carcaça. A existência dos itens em Peren não estabelece quem foram os indivíduos, como material foi obtido, ou que Drakport e Thargrid forneçam corpos para comércio e alquimia.",
       "orientacao": "Não alterar atributos ou raridade já aprovados; não configurar drops de povos, prisioneiros ou vítimas a partir desses registros editoriais. Exigir fonte ou decisão explícita para origem e representação do material.",
       "risco": "Confundir um componente ritual raro com extração rotineira de pessoas; naturalizar caça a povos inteligentes."
+    },
+    {
+      "tipo": "variantes_rotulos_de_um_mesmo_efeito",
+      "titulo": "Rótulos distintos para o mesmo ID de efeito: Curar Doença e Voar",
+      "ids": [],
+      "estado": "padronizacao_editorial_pendente",
+      "evidencia": "O ID curar_doenca usa os nomes Curar doença e Curar Doença; o ID voar usa Voar e Voo entre diferentes ingredientes. Não são efeitos isolados nem distintos.",
+      "orientacao": "Escolher um rótulo por ID e registrar mapeamento para o fluxo de menus; manter IDs e intensidades. Coordenar alterações de textos no catálogo ativo para não disparar sincronização inesperada.",
+      "risco": "Apresentação e filtros podem tratar o mesmo efeito como rótulos diferentes."
     }
   ],
   "validacoes": {
-    "ingredientes_revisados": 68,
+    "ingredientes_revisados": 73,
     "imutabilidade_ids": true,
     "modifica_curadoria": false,
     "modifica_runtime": false,
@@ -3360,8 +3653,8 @@
   },
   "origem_referencia_atual": {
     "repositorio": "pedromaintenance/monstros-carcaca",
-    "commit_sha": "43d90cb9b728e42ba0c0b9328adf5fafe0521358",
-    "uso": "lote 97–106; consultar referências por lote"
+    "commit_sha": "86f505b00ad4e5955eff5370c15826272636f768",
+    "uso": "lote 107–111; preserve fontes SHA para lotes anteriores"
   },
   "lotes": [
     {
@@ -3480,6 +3773,18 @@
       ],
       "fonte_commit": "43d90cb9b728e42ba0c0b9328adf5fafe0521358",
       "escopo": "materiais de caranguejo e fauna, vegetais, ovos, órgãos humanos e de gigantes; distinção entre ficção e origem territorial"
+    },
+    {
+      "ciclos": "107-111",
+      "ids": [
+        "ing-yellow-mountain-flower",
+        "ing-lavender",
+        "ing-crimson-nirnroot",
+        "ing-ectoplasm",
+        "ing-red-mountain-flower"
+      ],
+      "fonte_commit": "86f505b00ad4e5955eff5370c15826272636f768",
+      "escopo": "flora medicinal e ritual, variante rubra, substância espectral e limites de distribuição"
     }
   ]
 }
