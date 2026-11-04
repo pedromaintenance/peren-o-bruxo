@@ -227,3 +227,11 @@ A [seção 9 da especificação UX](ux-descoberta-combos-caderno-v1.md) e a [se�
 **Encaminhamento:** se o agente propuser ajustes de descrição, revisão de efeito ou inclusão de intensidade extra, comparar impactos nas três hipóteses sem alterar o catálogo por preferência de título ou arte. Rótulos especiais aprovados (**Poção da Fada**) dependem da **assinatura dos efeitos ativados**, não do ranking de potência. Futuras animações e nomes associados a IDs de combo permanecem desacoplados do critério de dominância.
 
 **Status:** protocolo de revisão, sem novos combos aprovados, nenhum atributo de ingrediente reescrito, sem receita, save ou gameplay modificados. **A decisão do modelo de dominância continua com o criador.**
+
+## Registro de continuidade — revisão semântica e de sinergias (03/11/2026)
+
+- [Parecer estruturado de oito candidatos](../data/pareceres-sinergias-ingredientes.json) e [dossiê editorial de sinergias](parecer-editorial-sinergias-8-candidatos.md) publicados. **Cinco** assinaturas são fortes para deliberação, **uma** exige revisão de nome/semântica e **duas** não devem ser promovidas sem evidência adicional. A única sinergia aprovada continua sendo **Poção da Fada**.
+- Os oito exemplos de combinação existentes ativam os dois efeitos requeridos com fontes distintas; nenhum ativa a incompatibilidade aprovada nos exemplos testados. Isso verifica interseções do catálogo, **não** valida um jogo em execução.
+- O [pacote de correções editoriais](pacote-pendencias-editoriais-ingredientes.md) agora diferencia `origem` (**proveniência de dados**) de `zona` (**local indicado de coleta**). O gerador atribui zonas de base proceduralmente; a curadoria atual só contém override explícito de zona em Pena de Gaivota/Portomonte. Distribuição regional do catálogo **não é prova ecológica** e deve ser revisada antes de integrar loot/coleta.
+- Corrigido `laboratorio-itens/README.md`: remove a referência obsoleta a Stamina II e passa a apresentar Aumentar Constituição II; os rótulos gráficos permanecem exatamente como no JSON até aprovação de padronização.
+- Não houve mudança nos 111 registros ativos, efeitos, intensidades, zonas, receitas, motores, assets ou saves. Pareceres e documentos não são fontes executáveis do jogo.
