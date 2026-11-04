@@ -33,3 +33,25 @@
 5. **Impuro com sinergia identificada:** o Caderno aprende a assinatura da sinergia identificada dentro do Impuro, ou só depois de purificar?
 
 **Gate:** até resolver nomenclatura, reconhecimento de propriedades ocultas e integração transacional, não converter este HTML em gameplay, não mesclar automaticamente a PR #95, não prometer publicação no Pages.
+
+## Ampliação QA v1.2 — aprendizado em Impuro, dois marcos e classificador puro
+
+**Diretriz ainda não aprovada:** identificar assinatura sinérgica num lote Impuro pode adicionar **conhecimento**, sem produzir o combo sem incompatibilidades. A primeira produção posterior compatível é um evento diferente. Fonte: [especificação UX v1.2 na main](https://github.com/pedromaintenance/peren-o-bruxo/blob/main/docs/ux-descoberta-combos-caderno-v1.md#9-conhecimento-reconhecido-versus-preparo-compatível--experimento-v12-03112026).
+
+### Novos caminhos para revisão manual
+
+1. **Aprender no Impuro (QA):** clicar no cenário, Preparar, depois Caderno. Deve mostrar Poção da Fada como **conhecimento reconhecido em Impuro**, mas **primeiro lote compatível = não obtido** e **lotes compatíveis = 0**. Esse vetor é sintético; não é receita do catálogo.
+2. Voltar à bancada, escolher **Poção da Fada**, Preparar. O resultado deve avisar **Primeiro preparo compatível**, e **não Nova sinergia descoberta**. Caderno passa a exibir primeiro lote compatível obtido; contagem compatível = 1.
+3. Reiniciar e preparar **Poção da Fada** diretamente: deve ser **Nova sinergia descoberta**, porque conhecimento e primeiro preparo compatível ocorreram na mesma operação.
+4. Escolher **Impuro**: a amostra de quatro ingredientes é factual na curadoria (Coração de Demônio, Língua-de-Dragão, Raiz Botulínica, Asa de Borboleta). Os dois efeitos são Aumentar Carisma e Diminuir Força. O nome principal do efeito mais intenso não foi fixado, logo o cabeçalho da amostra permanece neutro.
+5. **Reiniciar:** nenhuma observação, lote ou primeira produção de qualquer caso permanece armazenada; toda a simulação é efêmera.
+
+**Comprovação realizada:** 10/10 checagens funcionais de interface com DOM simulado, cobrindo reconhecimento em Impuro, Caderno, primeiro preparo compatível, não repetição da primeira descoberta, sintéticos anteriores, amostra Impura real e reset. Sintaxe JS válida; sem IDs duplicados ou referências ausentes.
+
+### Experimento de classificador independente
+
+- [`experimento-classificador-sinergias.mjs`](experimento-classificador-sinergias.mjs): funções puras, catálogo aprovado, separação de saída interna/visível e observação de combos com idempotência experimental.
+- [`experimento-classificador-sinergias.test.mjs`](experimento-classificador-sinergias.test.mjs): **15 casos declarados** para `node --test`. **15/15 executados com sucesso em V8 isolado usando o catálogo real**, não em CI Node do repositório nem em Phaser.
+- A operação `recordComboObservation` demonstra estados `firstRecognitionTransaction` e `firstCompatibleTransaction`, sem escrever save ou gastar ingredientes. O mapa `processedTransactions` é **somente para pesquisa**; não aprovar schema ou custo de memória em produção por implicação.
+
+**Pendente:** executar o teste Node em ambiente local/CI próprio; QA visual em navegador real e dispositivo físico; decisão autoral sobre o aprendizado de combos dentro de Impuros; política de dominância numérica e nomes com várias sinergias. **Não integrar ao Phaser nem realizar merge automático.**
