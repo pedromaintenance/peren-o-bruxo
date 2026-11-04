@@ -32,7 +32,7 @@ Opcional: **Catálogo JSON** no topo exporta todos os itens, e **Exportar fila C
 - A intensidade é **inteira entre 1 e 3**: 1 baixa, 2 média, 3 alta.
 - Ingredientes podem ter mais de 3 atributos se definidos na curadoria.
 - **Não atribuir intensidades arbitrárias** nem tratar a lista legada de `efeitos` como substituta dos atributos curados. **Estado atual: os 111 ingredientes foram revisados e auditados individualmente; a matriz ecológica está 111/111**. Efeitos legados permanecem no arquivo para compatibilidade histórica.
-- A primeira revisão foi **Pena de Gaivota**, exclusiva de Portomonte, com **Curar Doença III**, **Voo I**, **Aumentar Constituição II**. A referência antiga a Stamina foi substituída por decisão autoral.
+- A primeira revisão foi **Pena de Gaivota**, exclusiva de Portomonte, com **Curar doença III**, **Voar I**, **Aumentar Constituição II** (rótulos registrados na ficha atual; a padronização gráfica de Curar Doença e Voo permanece proposta). A referência antiga a Stamina foi substituída por decisão autoral.
 - A segunda revisão é **Carapaça de Caranguejo**, com **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Mantida a região já cadastrada: Além Sul. Nenhum asset novo foi criado nesta etapa.
 - Terceira revisão: **Pó de Vampiro** (`ing-vampire-dust`): **Vampirismo 3**, **Invisibilidade 2**, **Regenerar Saúde 1**. Localização anteriormente cadastrada: Boca do Abismo. Sem mudança automática nas mecânicas de combate.
 - Quarta revisão: **Couro de Rato** (`ing-charred-skeever-hide`): **Diminuir Carisma 3**, **Resistência a Veneno 2**, **Infligir Doença 1**. Mantida a localização prévia em Garganta; nenhum asset exclusivo foi criado.
