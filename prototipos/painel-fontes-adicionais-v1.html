@@ -70,18 +70,98 @@ legend{font-weight:bold}
 (function(){
 "use strict";
 const materials={
- carapaca:{name:"Carapaça de Caranguejo",fx:{aumentar_forca:2,aumentar_constituicao:3,resistencia_veneno:1}},
- betta:{name:"Betta do Rio",fx:{aumentar_forca:2,aumentar_destreza:3,diminuir_sabedoria:1}},
- garras:{name:"Garras de Urso",fx:{aumentar_constituicao:2,aumentar_forca:2,aumentar_saude:1}},
- alce:{name:"Chifres de Alce",fx:{aumentar_forca:2,aumentar_constituicao:2,diminuir_destreza:1}},
- amanita:{name:"Amanita Rubra",fx:{resistencia_fogo:2,aumentar_forca:2,frenesi:2,diminuir_sabedoria:2}},
- mamute:{name:"Pó de Presa de Mamute",fx:{aumentar_forca:3,aumentar_furtividade:1,fraqueza_fogo:1}},
- demonio:{name:"Coração de Demônio",fx:{aumentar_magia:3,medo:2,aumentar_carisma:3}},
- lingua:{name:"Língua-de-Dragão",fx:{resistencia_fogo:3,aumentar_ilusao:2,aumentar_carisma:1}},
- jarrin:{name:"Raiz Botulínica",fx:{dano_saude:3,diminuir_constituicao:3,diminuir_forca:3}},
- borboleta:{name:"Asa de Borboleta",fx:{restaurar_saude:1,diminuir_forca:1,aumentar_encantamento:1}},
- cogumelo:{name:"Cogumelo Escamoso",fx:{aumentar_ilusao:2,aumentar_carga:2,regenerar_magia:2}}
+ "carapaca": {
+  "name": "Carapaça de Caranguejo",
+  "fx": {
+   "aumentar_forca": 2,
+   "aumentar_constituicao": 3,
+   "resistencia_veneno": 1
+  }
+ },
+ "betta": {
+  "name": "Betta do Rio",
+  "fx": {
+   "aumentar_forca": 2,
+   "aumentar_destreza": 3,
+   "diminuir_sabedoria": 1
+  }
+ },
+ "garras": {
+  "name": "Garras de Urso",
+  "fx": {
+   "aumentar_constituicao": 2,
+   "aumentar_forca": 2,
+   "aumentar_saude": 1
+  }
+ },
+ "alce": {
+  "name": "Chifres de Alce",
+  "fx": {
+   "aumentar_forca": 2,
+   "aumentar_constituicao": 2,
+   "diminuir_destreza": 1
+  }
+ },
+ "amanita": {
+  "name": "Amanita Rubra",
+  "fx": {
+   "resistencia_fogo": 2,
+   "aumentar_forca": 2,
+   "frenesi": 2,
+   "diminuir_sabedoria": 2
+  }
+ },
+ "mamute": {
+  "name": "Pó de Presa de Mamute",
+  "fx": {
+   "aumentar_forca": 3,
+   "aumentar_furtividade": 1,
+   "fraqueza_fogo": 1
+  }
+ },
+ "demonio": {
+  "name": "Coração de Demônio",
+  "fx": {
+   "aumentar_magia": 3,
+   "medo": 3,
+   "aumentar_carisma": 3
+  }
+ },
+ "lingua": {
+  "name": "Língua-de-Dragão",
+  "fx": {
+   "resistencia_fogo": 2,
+   "aumentar_ilusao": 2,
+   "aumentar_carisma": 1
+  }
+ },
+ "jarrin": {
+  "name": "Raiz Botulínica",
+  "fx": {
+   "dano_saude": 3,
+   "diminuir_constituicao": 3,
+   "diminuir_destreza": 3,
+   "diminuir_forca": 3
+  }
+ },
+ "borboleta": {
+  "name": "Asa de Borboleta",
+  "fx": {
+   "restaurar_saude": 2,
+   "dano_magia": 1,
+   "diminuir_forca": 1
+  }
+ },
+ "cogumelo": {
+  "name": "Cogumelo Escamoso",
+  "fx": {
+   "aumentar_carga": 2,
+   "aumentar_ilusao": 2,
+   "fraqueza_magia": 1
+  }
+ }
 };
+
 const names={aumentar_forca:"Aumentar Força",aumentar_constituicao:"Aumentar Constituição",diminuir_sabedoria:"Diminuir Sabedoria",aumentar_carisma:"Aumentar Carisma",aumentar_ilusao:"Aumentar Ilusão",diminuir_forca:"Diminuir Força"};
 const el=id=>document.getElementById(id);
 function analyze(ids){
