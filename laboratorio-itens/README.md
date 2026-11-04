@@ -12,7 +12,7 @@ Página: https://pedromaintenance.github.io/peren-o-bruxo/laboratorio-itens/
 - `../data/receitas.json` — 2.316 receitas (contagem inicial).
 - `../data/manifesto_dados.json` — metadados da base.
 - `./estado-assets.json` — status visual versionado (preserva o planejamento no Git, não no navegador).
-- `../data/curadoria_ingredientes.json` — decisões aprovadas de atributos e intensidades, incorporadas ao catálogo canônico.
+- `../data/curadoria_ingredientes.json` — **fonte indireta**, aplicada ao `data/itens.json` pelo gerador e pelo workflow de sincronização; o painel não busca esse JSON separadamente no carregamento.
 
 O HTML exibe os 13 ícones genéricos compartilhados já usados pela edição clássica, mas **não os classifica como sprites únicos aprovados**.
 
@@ -31,14 +31,16 @@ Opcional: **Catálogo JSON** no topo exporta todos os itens, e **Exportar fila C
 - Cada ingrediente revisado precisa ter **pelo menos 3 atributos**.
 - A intensidade é **inteira entre 1 e 3**: 1 baixa, 2 média, 3 alta.
 - Ingredientes podem ter mais de 3 atributos se definidos na curadoria.
-- **Não atribuir intensidades arbitrárias a ingredientes ainda não revisados**. A lista legada de `efeitos` permanece como provisória e é identificada como tal na ficha.
-- A primeira revisão é **Pena de Gaivota**, exclusiva de Portomonte, com **Curar doença 3**, **Voar 1**, **Restaurar stamina 2**.
+- **Não atribuir intensidades arbitrárias** nem tratar a lista legada de `efeitos` como substituta dos atributos curados. **Estado atual: os 111 ingredientes foram revisados e auditados individualmente; a matriz ecológica está 111/111**. Efeitos legados permanecem no arquivo para compatibilidade histórica.
+- A primeira revisão foi **Pena de Gaivota**, exclusiva de Portomonte, com **Curar Doença III**, **Voo I**, **Aumentar Constituição II**. A referência antiga a Stamina foi substituída por decisão autoral.
 - A segunda revisão é **Carapaça de Caranguejo**, com **Aumentar Força 2**, **Aumentar Constituição 3**, **Resistência a Veneno 1**. Mantida a região já cadastrada: Além Sul. Nenhum asset novo foi criado nesta etapa.
 - Terceira revisão: **Pó de Vampiro** (`ing-vampire-dust`): **Vampirismo 3**, **Invisibilidade 2**, **Regenerar Saúde 1**. Localização anteriormente cadastrada: Boca do Abismo. Sem mudança automática nas mecânicas de combate.
 - Quarta revisão: **Couro de Rato** (`ing-charred-skeever-hide`): **Diminuir Carisma 3**, **Resistência a Veneno 2**, **Infligir Doença 1**. Mantida a localização prévia em Garganta; nenhum asset exclusivo foi criado.
 - Quinta revisão: **Penas de Falcão** (`ing-hawk-feathers`): **Visão à Distância 3**, **Voo 2**, **Velocidade 1**. Mantida Thargrid como origem já cadastrada. Compartilha o efeito técnico `Fly` com Pena de Gaivota.
 
 O arquivo `data/curadoria_ingredientes.json` centraliza essas decisões para evitar que uma reconstrução do catálogo as reverta. O script `ferramentas/build_data.py` aplica a curadoria depois de gerar os objetos e receitas; IDs permanecem estáveis.
+
+**Atenção à proveniência:** a propriedade `origem` indica linhagem dos dados, não local de coleta. O campo `zona` é inicialmente preenchido pelo gerador de forma procedural; isso não é evidência ecológica por si só. Na curadoria atual, apenas a Pena de Gaivota tem override explícito de `zona`/`zona_exclusiva`. Não interpretar toda “Origem de coleta” exibida no painel como habitat canônico sem consultar a [auditoria ecológica](../data/auditoria_ecologica_ingredientes.json) e o [pacote editorial](../docs/pacote-pendencias-editoriais-ingredientes.md).
 
 ### Revisões de receitas ligadas
 
