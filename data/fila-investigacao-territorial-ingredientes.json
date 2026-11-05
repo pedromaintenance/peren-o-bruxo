@@ -1,0 +1,3057 @@
+{
+  "schema": "peren.fila_investigacao_territorial.v1",
+  "atualizado_em": "2026-11-05",
+  "estado": "fila_editorial_nao_executavel",
+  "titulo": "Fila de averiguação territorial e de proveniência de ingredientes de Peren",
+  "fontes": {
+    "peren": {
+      "repositorio": "pedromaintenance/peren-o-bruxo",
+      "matriz_territorial": {
+        "arquivo": "data/auditoria_territorial_ingredientes.json",
+        "blob": "89983157d8ea96ec2c1c511f53df472e812305f9"
+      },
+      "matriz_ecologica": {
+        "arquivo": "data/auditoria_ecologica_ingredientes.json",
+        "blob": "8ab2c2882c567a40bc0a3e9e4fea810187c69429"
+      },
+      "curadoria_ativa": {
+        "arquivo": "data/curadoria_ingredientes.json",
+        "blob": "57cf86f623ecabb4c30eb3a052384d627b615aa8"
+      }
+    },
+    "monstros": {
+      "repositorio": "pedromaintenance/monstros-carcaca",
+      "referencias_por_item": "dado_ecologico_existente.fontes_monstros_ja_consultadas"
+    }
+  },
+  "politica": {
+    "criterio": "A prioridade editorial mede o risco de converter metadados procedurais em afirmações de habitat, origem de pessoas ou texto enganoso. Não representa gravidade ficcional, raridade, preço, taxa de coleta nem urgência de implementação.",
+    "classes": {
+      "P0": "Procedência potencialmente envolvendo pessoas/restos mortuários ou inconsistência textual objetiva; precisa revisão antes de parametrizar drops ou publicar textos.",
+      "P1": "Ambiguidade taxonômica/cosmológica/toponímica ou colisão de nomes que pode fabricar cânone incorreto.",
+      "P2": "Dúvidas de bacia, circulação, produção, cultivo ou transformação; checar origem material e comércio antes de desenhar distribuição.",
+      "P3": "Triagem geral de espécie e habitat sem sinais especiais identificados nesta fonte; indeterminado não significa confirmado."
+    },
+    "score_prioridade": {
+      "P0": "≥6",
+      "P1": "3–5",
+      "P2": "2",
+      "P3": "0–1"
+    },
+    "pesos_por_marcador": {
+      "proveniencia_de_pessoa_ou_povo_sapiente": 6,
+      "restos_mortuarios_ou_identidade_da_fonte": 6,
+      "lacuna_ou_divergencia_descritiva": 6,
+      "identidade_de_criatura_ou_material_sobrenatural_nao_definida": 3,
+      "nome_ou_indicio_climatico_nao_comprova_ocorrencia": 3,
+      "habitat_aquatico_e_bacia_nao_demonstrados": 2,
+      "dois_registros_com_mesmo_nome": 3,
+      "artesanato_ou_producao_nao_comprovada_por_cidade": 2
+    },
+    "orientacao": "O score é somente regra de organização por marcadores explicitamente curados; categorias ausentes não provam risco zero. Material do atlas com estado de proposta não se torna habitat aprovado.",
+    "previa_declarada": "Em data/auditoria_territorial_ingredientes.json existem 106 registros de zona procedural, cinco registros historicamente preservados fora do escopo.",
+    "restricoes": [
+      "Nenhuma zona é alterada ou homologada por esta fila.",
+      "Não converter P0 em proposta automática de mudança de espécie, atributos ou descrição.",
+      "Não criar loot de povos sapientes ou pessoas, nem inferir autorização de obtenção a partir de mercados de escravização.",
+      "Não transformar rótulo de ritual, região, deidade ou clima em prova de ocorrência.",
+      "Não promover propostas do atlas a cânone por correspondência nominal.",
+      "Não afetar receitas, runtime, Phaser, clássico, menus ou saves."
+    ]
+  },
+  "resumo": {
+    "total_ingredientes": 111,
+    "excluidos_com_localizacao_preservada": 5,
+    "fila_procedural": 106,
+    "por_prioridade": {
+      "P0": 11,
+      "P1": 25,
+      "P2": 16,
+      "P3": 54
+    },
+    "por_marcador": {
+      "proveniencia_de_pessoa_ou_povo_sapiente": 4,
+      "restos_mortuarios_ou_identidade_da_fonte": 4,
+      "lacuna_ou_divergencia_descritiva": 3,
+      "identidade_de_criatura_ou_material_sobrenatural_nao_definida": 15,
+      "nome_ou_indicio_climatico_nao_comprova_ocorrencia": 12,
+      "habitat_aquatico_e_bacia_nao_demonstrados": 12,
+      "dois_registros_com_mesmo_nome": 2,
+      "artesanato_ou_producao_nao_comprovada_por_cidade": 9
+    },
+    "ids_triados": 106,
+    "habitats_aprovados_nesta_rodada": 0
+  },
+  "revisoes": [
+    {
+      "id": "ing-nightshade",
+      "nome": "Beladona",
+      "prioridade": "P0",
+      "eixo_principal": "lacuna_ou_divergencia_descritiva",
+      "marcadores_de_investigacao": [
+        "lacuna_ou_divergencia_descritiva"
+      ],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-nightshade",
+      "dado_ecologico_existente": {
+        "status_literal": "descr_lore_com_efeito_mecanico_nao_representado",
+        "achado": "A descrição diz que a Beladona interfere na 'recuperação mágica', mas seus atributos são Dano à Saúde III, Aumentar Magia III e Aumentar Ilusão II: não há atributo de redução/alteração de regeneração mágica. O efeito tóxico e as escolas mágicas são canônicos; habitat ainda não foi localizado.",
+        "micro_origem_conforme_peren": "planta tóxica da sombra",
+        "nota_editorial_preexistente": "Propor revisão DESCRITIVA que corresponda aos três atributos, sem adicionar um quarto efeito por causa da redação; não editar o JSON ativo enquanto a sincronização automática estiver vinculada a essa alteração.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "A descrição deve retirar recuperação mágica inexistente nos efeitos?",
+      "guarda_de_canon": "Corrigir apenas texto mediante decisão coordenada; não inventar quarto efeito nem fixar habitat em Ironwood.",
+      "proxima_acao": "decidir_correcao_textual_e_conferir_efeitos_sem_mudar_mecanica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-river-betty",
+      "nome": "Betta do Rio",
+      "prioridade": "P0",
+      "eixo_principal": "lacuna_ou_divergencia_descritiva",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados",
+        "lacuna_ou_divergencia_descritiva",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-river-betty",
+      "dado_ecologico_existente": {
+        "status_literal": "lacuna_de_descricao_e_origem_no_catalogo; localidade_nao_documentada",
+        "achado": "A ficha `ing-river-betty` é a única entre 111 sem as chaves `descricao` e `origem`. O nome 'Betta do Rio' não demonstra ocorrência específica no Rio Ancestral, e não existe habitat de espécie documentado no atlas consultado.",
+        "micro_origem_conforme_peren": "peixe de rio",
+        "nota_editorial_preexistente": "Abrir pendência para completar a descrição com texto estritamente baseado no nome e nos efeitos, e investigar a origem editorial; NÃO editar a curadoria ativa nesta etapa porque o workflow sincroniza `data/itens.json` e builds Phaser automaticamente.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/CONSULTA_CURADORIA.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual descrição aprovada e qual é a proveniência editorial do registro? Onde existe prova da espécie, se houver?",
+      "guarda_de_canon": "Origem de dados não é zona. Não tratar Shadar-Riverie como habitat do peixe.",
+      "proxima_acao": "decidir_correcao_textual_e_conferir_efeitos_sem_mudar_mecanica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-human-flesh",
+      "nome": "Carne Humana",
+      "prioridade": "P0",
+      "eixo_principal": "proveniencia_de_pessoa_ou_povo_sapiente",
+      "marcadores_de_investigacao": [
+        "proveniencia_de_pessoa_ou_povo_sapiente"
+      ],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-human-flesh",
+      "dado_ecologico_existente": {
+        "status_literal": "proveniencia_humana_nao_documentada; necessidade_de_tratamento_etico",
+        "achado": "O catálogo contém o ingrediente Carne Humana e menciona negociação clandestina; isso não documenta origem em Drakport, assassinato, canibalismo, ritual ou disponibilidade legítima de corpos. O dossiê de Drakport confirma tráfico humano, mas veta tratar pessoas como mercadorias neutras.",
+        "micro_origem_conforme_peren": "tecido humano em preparação alquímica macabra",
+        "nota_editorial_preexistente": "Preservar a ficha histórica e atributos sem fabricar fonte. Marcar para revisão de procedência e representação: não associar automaticamente vítimas da escravidão a estoque, drop, mercado ou produção; mudanças de natureza do conteúdo exigem decisão do criador.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/RIO_DRAKPORT_CICLO28.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Quem ou o que produziu este tecido? Existe decisão autoral sobre procedência e contexto, distinta da existência do item?",
+      "guarda_de_canon": "Não gerar drop de pessoas nem suprimento em Eldroth por zona procedural.",
+      "proxima_acao": "estabelecer_origem_individual_agencia_e_contexto_antes_de_loot",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-spawn-ash",
+      "nome": "Cinzas de Criatura",
+      "prioridade": "P0",
+      "eixo_principal": "restos_mortuarios_ou_identidade_da_fonte",
+      "marcadores_de_investigacao": [
+        "restos_mortuarios_ou_identidade_da_fonte"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-spawn-ash",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_procedencia_do_residuo_nao_documentadas",
+        "achado": "O adjetivo 'sobrenatural' na curadoria de Peren não identifica uma criatura única de `dist/carcaca/creatures.json`, uma entidade demoníaca ou vítima da necromancia de Vandar.",
+        "micro_origem_conforme_peren": "resíduo de criatura sobrenatural não especificada",
+        "nota_editorial_preexistente": "Manter o nome genérico e os atributos. Não atribuir automaticamente drop às criaturas únicas do Arquivo dos Mortos Afogados; distinguir de Cinzas Mortuárias.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Existe espécie fonte definida ou é categoria genérica de resíduos sobrenaturais?",
+      "guarda_de_canon": "Não criar drop indiscriminado de monstros nem afirmar que vem do Além Sul.",
+      "proxima_acao": "documentar_identidade_da_fonte_e_contexto_de_obtencao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-berit-s-ashes",
+      "nome": "Cinzas Mortuárias",
+      "prioridade": "P0",
+      "eixo_principal": "restos_mortuarios_ou_identidade_da_fonte",
+      "marcadores_de_investigacao": [
+        "restos_mortuarios_ou_identidade_da_fonte"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-berit-s-ashes",
+      "dado_ecologico_existente": {
+        "status_literal": "identidade_do_escriba_e_origem_funebre_nao_documentadas",
+        "achado": "A ficha de Peren indica cinzas preservadas de um escriba. O acervo autoral registra os Kappa-Escribas no Arquivo e mortos-vivos em Vandar, mas não oferece vínculo deste resíduo com eles; nenhuma prática de cremação de Vandar foi confirmada.",
+        "micro_origem_conforme_peren": "cinzas de escriba ligadas a práticas rituais",
+        "nota_editorial_preexistente": "Preservar conjuração II, resistência ao fogo II e diminuição de Constituição II. Não atribuir às cinzas origem yokai, vandariana ou culto funerário; tratar restos de pessoa como material de proveniência potencialmente sensível, não mercadoria de fonte presumida.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md"
+        ]
+      },
+      "pergunta_a_resolver": "Que pessoa ou criatura originou as cinzas e onde houve o rito?",
+      "guarda_de_canon": "Não associar aos Kappa-Escribas, a Vandar ou a Portomonte por analogia.",
+      "proxima_acao": "documentar_identidade_da_fonte_e_contexto_de_obtencao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-human-heart",
+      "nome": "Coração Humano",
+      "prioridade": "P0",
+      "eixo_principal": "proveniencia_de_pessoa_ou_povo_sapiente",
+      "marcadores_de_investigacao": [
+        "proveniencia_de_pessoa_ou_povo_sapiente"
+      ],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-human-heart",
+      "dado_ecologico_existente": {
+        "status_literal": "proveniencia_humana_indeterminada; sapiencia_confirmada",
+        "achado": "Peren registra o Coração Humano como ingrediente épico de rituais obscuros. Monstros documenta Drakport como centro de escravidão, mas não a procedência de órgãos, nem uma cadeia de obtenção, consentimento ou participação de vítimas. Pessoas não são recursos mercantis neutros.",
+        "micro_origem_conforme_peren": "coração humano preservado ritualmente",
+        "nota_editorial_preexistente": "Manter ID, raridade e efeitos previamente catalogados, sem introduzir loot de personagens humanos ou origem em Drakport. Exigir revisão ética e aprovação autoral antes de especificar obtenção, comércio ou contexto narrativo do órgão.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/RIO_DRAKPORT_CICLO28.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual a procedência individual/ritual desse órgão, e sua representação narrativa?",
+      "guarda_de_canon": "Não associar automaticamente à Corte de Shadar-Riverie ou a vítimas de exploração.",
+      "proxima_acao": "estabelecer_origem_individual_agencia_e_contexto_antes_de_loot",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-giant-s-toe",
+      "nome": "Dedo de Gigante",
+      "prioridade": "P0",
+      "eixo_principal": "proveniencia_de_pessoa_ou_povo_sapiente",
+      "marcadores_de_investigacao": [
+        "proveniencia_de_pessoa_ou_povo_sapiente"
+      ],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-giant-s-toe",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_individual_e_metodo_de_obtencao_nao_documentados; povo_sapiente_documentado",
+        "achado": "O Hack da Carcaça documenta gigantes como povos com Ordenamento, trabalho em forjas, construção e vigilância nas montanhas de Thargrid. Isso não autoriza que corpos de gigantes sejam tratados como fontes genéricas de loot nem que este dedo venha de Thargrid.",
+        "micro_origem_conforme_peren": "parte corpórea de gigante",
+        "nota_editorial_preexistente": "Preservar atributos, nome e raridade já canônicos; não instituir caça a gigantes, mutilação, comércio de corpos ou recompensa por espécie. Especificar origem apenas com nova decisão fundamentada.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual indivíduo, circunstância e consentimento/procedência são documentados?",
+      "guarda_de_canon": "Não pressupor caça a gigantes nem localização em Eldroth; gigantes são povos com organização social.",
+      "proxima_acao": "estabelecer_origem_individual_agencia_e_contexto_antes_de_loot",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-slaughterfish-scales",
+      "nome": "Escamas de Piranha",
+      "prioridade": "P0",
+      "eixo_principal": "lacuna_ou_divergencia_descritiva",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados",
+        "lacuna_ou_divergencia_descritiva"
+      ],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-slaughterfish-scales",
+      "dado_ecologico_existente": {
+        "status_literal": "organismo_e_habitat_especificos_nao_documentados; possivel_desalinhamento_de_descricao",
+        "achado": "Peren caracteriza escamas de piranha, mas o atlas não comprova espécie, bacia ou ocorrência no Rio Ancestral. A descrição menciona 'antídotos para ambientes gelados', enquanto os efeitos são Aumentar Defesa II, Resistência ao Gelo II e Dano à Saúde I: antídoto a veneno não está representado.",
+        "micro_origem_conforme_peren": "escamas de peixe predador",
+        "nota_editorial_preexistente": "Preservar os três atributos e abrir revisão de redação. Não presumir geografia nem acrescentar Resistência a Veneno por causa do termo 'antídotos'.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "A palavra 'antídotos' precisa ser retirada da descrição por não haver efeito antídoto?",
+      "guarda_de_canon": "Não adicionar resistência a veneno nem inferir piranhas em Ironwood.",
+      "proxima_acao": "decidir_correcao_textual_e_conferir_efeitos_sem_mudar_mecanica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-wisp-wrappings",
+      "nome": "Faixas de Espírito",
+      "prioridade": "P0",
+      "eixo_principal": "restos_mortuarios_ou_identidade_da_fonte",
+      "marcadores_de_investigacao": [
+        "restos_mortuarios_ou_identidade_da_fonte"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-wisp-wrappings",
+      "dado_ecologico_existente": {
+        "status_literal": "tipo_de_aparicao_e_local_de_ocorrencia_nao_documentados",
+        "achado": "A existência de mortos-vivos nas ruínas de Vandar não prova que sejam aparições com faixas coletáveis. O atlas diferencia categorias de criaturas e regiões, e o material não cita espécie ou prática de obtenção.",
+        "micro_origem_conforme_peren": "resíduo espectral de aparição",
+        "nota_editorial_preexistente": "Manter Resistência à Magia III e os demais efeitos. Não atribuir o material a todo morto-vivo de Vandar nem criar uma caça massiva de aparições como fato canônico.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Há uma aparição identificada que produza as faixas e um contexto de obtenção?",
+      "guarda_de_canon": "Não associar a todo morto-vivo, aos ritos de Vandar ou a Thargrid.",
+      "proxima_acao": "documentar_identidade_da_fonte_e_contexto_de_obtencao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-bone-meal",
+      "nome": "Farinha de Ossos",
+      "prioridade": "P0",
+      "eixo_principal": "restos_mortuarios_ou_identidade_da_fonte",
+      "marcadores_de_investigacao": [
+        "restos_mortuarios_ou_identidade_da_fonte"
+      ],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-bone-meal",
+      "dado_ecologico_existente": {
+        "status_literal": "identidade_de_ossos_e_origem_indeterminadas",
+        "achado": "O continente é sobre Golzdov, mas o produto descrito em Peren é farinha de ossos sem indicação de quem os produziu. Nem todas as ossadas do cenário são restos primordiais, humanos ou mortos-vivos de Vandar.",
+        "micro_origem_conforme_peren": "ossos moídos sem espécie especificada",
+        "nota_editorial_preexistente": "Preservar os três efeitos. Não classificar automaticamente como material de Kindau, ossário ritual ou saque de sepulturas; exigir evidência se a procedência vier a ser individualizada.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md"
+        ]
+      },
+      "pergunta_a_resolver": "De quais seres vêm os ossos e qual tipo de procedência pode ser afirmado?",
+      "guarda_de_canon": "Não tratar como ossatura de Golzdov, restos humanos ou produto funerário genérico.",
+      "proxima_acao": "documentar_identidade_da_fonte_e_contexto_de_obtencao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-falmer-ear",
+      "nome": "Orelha de Troglodita",
+      "prioridade": "P0",
+      "eixo_principal": "proveniencia_de_pessoa_ou_povo_sapiente",
+      "marcadores_de_investigacao": [
+        "proveniencia_de_pessoa_ou_povo_sapiente"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-falmer-ear",
+      "dado_ecologico_existente": {
+        "status_literal": "sapiencia_identidade_e_proveniencia_nao_determinadas",
+        "achado": "A curadoria de Peren informa tecido de criatura subterrânea, mas o nome Troglodita não prova tipo Carcaça, filiação cultural, inteligência, espécie ou ocorrência nas cavernas de Thargrid. Não está estabelecido se o material é parte de um povo sapiente.",
+        "micro_origem_conforme_peren": "tecido auricular de criatura subterrânea",
+        "nota_editorial_preexistente": "Manter os efeitos e a nomenclatura vigente; abrir revisão de taxonomia e proveniência antes de vincular a coleta a qualquer comunidade, violência ou fonte de loot.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md"
+        ]
+      },
+      "pergunta_a_resolver": "O que significa Troglodita nesta espécie e qual seu estatuto de agência/sapiência?",
+      "guarda_de_canon": "Não derivar loot de povo subterrâneo nem vincular automaticamente às cavernas de Thargrid.",
+      "proxima_acao": "estabelecer_origem_individual_agencia_e_contexto_antes_de_loot",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-moon-sugar",
+      "nome": "Açúcar Lunar",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-moon-sugar",
+      "dado_ecologico_existente": {
+        "status_literal": "ligacao_ao_templo_lunar_nao_documentada",
+        "achado": "A Carcaça possui o Templo da Lua no Rio Ancestral, mas o nome 'Açúcar Lunar' não demonstra vínculo com Severina, fases lunares, sacerdócio, rituais ou produção nesse local.",
+        "micro_origem_conforme_peren": "cristais adocicados de brilho pálido",
+        "nota_editorial_preexistente": "Preservar a identidade do cristal e seus três atributos, sem inserir proveniência lunar institucional ou transformar o ingrediente em monopólio do templo.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/TEMPLO_LUA_SEVERINA_CICLO29.md"
+        ]
+      },
+      "pergunta_a_resolver": "O nome Lunar indica processo de fabricação ou só nome comercial/poético?",
+      "guarda_de_canon": "Não vincular ao Templo da Lua, Severina ou Boca do Abismo sem fonte.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-tundra-cotton",
+      "nome": "Algodão da Tundra",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-tundra-cotton",
+      "dado_ecologico_existente": {
+        "status_literal": "microambiente_peren; area_de_cultivo_indeterminada",
+        "achado": "O catálogo descreve fibras de campos frios. O atlas documenta montanhas com picos nevados, mas não confirma tundras de produção, espécie vegetal, técnicas têxteis ou ocorrência em Thargrid.",
+        "micro_origem_conforme_peren": "fibras vegetais de campos frios",
+        "nota_editorial_preexistente": "Manter resistência mágica II, magia I e constituição I; não situar cultivo nas montanhas por analogia climática.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/POVOAMENTO_ECOLOGIA_THARGRID_IRONWOOD_ELDROTH_CICLO53.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual microambiente frio específico seria necessário e ele foi identificado numa zona da Carcaça?",
+      "guarda_de_canon": "Não transformar o nome Tundra em uma área cartográfica nova nem presumir cultivos em Thargrid.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-snowberries",
+      "nome": "Bagas da Neve",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-snowberries",
+      "dado_ecologico_existente": {
+        "status_literal": "ambiente_frio_documentado; especie_e_zona_de_coleta_nao_documentadas",
+        "achado": "O atlas confirma picos nevados nas montanhas de Thargrid, mas não estabelece a distribuição destas bagas nem a origem de sua resistência a calor e gelo.",
+        "micro_origem_conforme_peren": "fruto de clima extremo",
+        "nota_editorial_preexistente": "Manter os três efeitos; a coincidência 'neve' é indício ecológico, não autorização para declarar Thargrid como fonte exclusiva.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Existe evidência direta da espécie em Portomonte ou de rota de comércio que a levaria lá?",
+      "guarda_de_canon": "Neve no nome não justifica mudar para Thargrid nem prova impossibilidade em Portomonte.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-daedra-heart",
+      "nome": "Coração de Demônio",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-daedra-heart",
+      "dado_ecologico_existente": {
+        "status_literal": "natureza_demoniaca_compativel; individuo_e_origem_indeterminados",
+        "achado": "A categoria demonio é autoral e distinta de abissal_marinho; isso permite a classe geral do material, não identifica espécie, indivíduo ou território de extração.",
+        "micro_origem_conforme_peren": "órgão de ser demoníaco",
+        "nota_editorial_preexistente": "Não associar a Kuo-Toa, Daegon ou Abissais marinhos; raridade épica e três efeitos III permanecem. Não automatizar drop de criatura sapiente.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Existe espécie ou indivíduo demoníaco documentado como fonte deste órgão?",
+      "guarda_de_canon": "Abissais marinhos não equivalem a demônios; não inventar drops sapientes em Drakport.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ice-wraith-teeth",
+      "nome": "Dentes de Espectro Gelado",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-ice-wraith-teeth",
+      "dado_ecologico_existente": {
+        "status_literal": "criatura_espectral_sem_taxonomia_ou_habitat_confirmado",
+        "achado": "A ficha fornece o nome de uma criatura gelada, mas não comprova que seja morto-vivo, elemental, espírito yokai ou espécie dos picos de Thargrid.",
+        "micro_origem_conforme_peren": "dentes espectrais gelados",
+        "nota_editorial_preexistente": "Aumentar Defesa II conserva legado nominal Fortify Heavy Armor sem redefinição mecânica; não inventar migração ou forma de obtenção.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Há criatura atestada e taxonomicamente classificada que produza dentes espectrais?",
+      "guarda_de_canon": "Não confundir espectro com morto-vivo, elemental ou yokai; não associar à Foz.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ectoplasm",
+      "nome": "Ectoplasma",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-ectoplasm",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_espiritual_e_regiao_indeterminadas",
+        "achado": "A existência de necromancia e mortos-vivos de Vandar é documentada, mas o atlas não comprova que o ectoplasma provenha deles, de um ritual de Damaris ou de todos os espíritos da Carcaça. O item tem funções arcanas e dano à saúde simultâneos.",
+        "micro_origem_conforme_peren": "resíduo espectral instável",
+        "nota_editorial_preexistente": "Preservar Restaurar Magia III, Aumentar Magia II e Dano à Saúde I; não instituir obtenção automática de ectoplasma de mortos-vivos, almas de pessoas ou espíritos inteligentes.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-yellow-mountain-flower",
+      "nome": "Flor Amarela da Montanha",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-yellow-mountain-flower",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_documentado_em_peren; localidade_nao_confirmada",
+        "achado": "Peren registra flor de altitude e uso protetor/restaurador. O atlas descreve montanhas e picos nevados de Thargrid, mas não localiza esta espécie nem comprova que todas as flores de montanha sejam procedentes dali.",
+        "micro_origem_conforme_peren": "flor de altitude",
+        "nota_editorial_preexistente": "Preservar Resistência a Veneno II, Aumentar Restauração II e Constituição I. Não confundir com Flor Azul ou Flor Vermelha, nem fixar origem em Thargrid.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-blue-mountain-flower",
+      "nome": "Flor Azul da Montanha",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-blue-mountain-flower",
+      "dado_ecologico_existente": {
+        "status_literal": "habitat_microambiental_peren; localidade_regional_nao_documentada",
+        "achado": "A ficha vincula Flor Azul da Montanha a encostas frias; Thargrid tem picos nevados, mas o atlas não comprova ocorrência da espécie nesses picos nem mecanismo de conjuração da seiva.",
+        "micro_origem_conforme_peren": "flor medicinal de encosta fria",
+        "nota_editorial_preexistente": "Conservar os atributos e a descrição; não declarar Thargrid como origem exclusiva ou dominação de qualquer povo sobre a planta.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "A referência a encostas frias na ficha indica qual microhabitat e há região homologada?",
+      "guarda_de_canon": "Não fixar Thargrid ou rejeitar Além Sul somente por clima presumido.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-red-mountain-flower",
+      "nome": "Flor Vermelha",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-red-mountain-flower",
+      "dado_ecologico_existente": {
+        "status_literal": "flora_documentada_peren; bioma_e_procedencia_nao_confirmados",
+        "achado": "A descrição associa a flor a tônicos arcanos e seiva capaz de ferir. A cor vermelha, apesar da existência do Mar de Sangue, não comprova origem costeira, corrupção do sangue ou vinculação à magia demoníaca.",
+        "micro_origem_conforme_peren": "flor rubra de seiva concentrada",
+        "nota_editorial_preexistente": "Preservar Restaurar Magia II, Aumentar Magia I e Dano à Saúde I; diferenciar a Flor Vermelha da Flor Azul da Montanha e da Flor Violeta, sem atribuir biomas artificiais.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-namira-s-rot",
+      "nome": "Fungo de Gualápoles",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-namira-s-rot",
+      "dado_ecologico_existente": {
+        "status_literal": "toponimo_documentado; especie_em_gualapolis_nao_comprovada",
+        "achado": "Gualápoles/Gualápolis é lugar documentado na Foz; o nome do fungo em Peren não demonstra presença da espécie na cidade, nem origem obrigatória nos rituais históricos.",
+        "micro_origem_conforme_peren": "fungo de decomposição associado a rituais",
+        "nota_editorial_preexistente": "Preservar o quarto efeito aprovado, Diminuir Carisma II, e a repulsão social sobrenatural sem deformação corporal obrigatória.",
+        "fontes_monstros_ja_consultadas": [
+          "data/lugares_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "O topônimo Gualápoles é origem biológica, denominação histórica ou associação cultural?",
+      "guarda_de_canon": "Thargrid é zona procedural; Gualápoles é topônimo documentado, mas nenhum dos dois confirma habitat.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-hagraven-claw",
+      "nome": "Garra de Bruxa",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-hagraven-claw",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_vinculo_cultural_nao_confirmados",
+        "achado": "A curadoria de Peren afirma uma feiticeira monstruosa, mas o atlas de Monstros da Carcaça não determina espécie, linhagem, facção ou habitat para esse ser. Mulheres que praticam magia, povos e tradição de bruxaria não são automaticamente essa categoria monstruosa.",
+        "micro_origem_conforme_peren": "garra de feiticeira monstruosa",
+        "nota_editorial_preexistente": "Preservar o quarto atributo Diminuir Magia II, expressamente aprovado no Ciclo 12, além dos outros três. Não confundir a garra com um material humano genérico nem importar a biologia de Skyrim.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ash-hopper-jelly",
+      "nome": "Gelatina de Gafanhoto",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-ash-hopper-jelly",
+      "dado_ecologico_existente": {
+        "status_literal": "microcontexto_peren; criatura_e_regiao_indeterminadas",
+        "achado": "O catálogo localiza narrativamente a secreção em terras queimadas; a Caatinga e as paisagens propostas de cinzas não demonstram gafanhoto específico, incêndio ocorrido ou habitat regional.",
+        "micro_origem_conforme_peren": "secreção de criatura das terras queimadas",
+        "nota_editorial_preexistente": "Não atribuir automaticamente o material à Caatinga, Eldroth incendiada ou a um monstro de Skyrim.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-netch-jelly",
+      "nome": "Gelatina de Medusa",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-netch-jelly",
+      "dado_ecologico_existente": {
+        "status_literal": "criatura_produtora_nao_classificada; medusa_ambigua",
+        "achado": "A descrição fala de criatura flutuante. O nome Medusa não demonstra que seja a górgona mitológica, uma água-viva, um povo ou espécie específica; o atlas não oferece correspondência com criatura identificada.",
+        "micro_origem_conforme_peren": "secreção gelatinosa de criatura flutuante",
+        "nota_editorial_preexistente": "Conservar Carga II, Constituição I e Paralisia II. Não atribuir origem exclusivamente marítima, habitat no Mar de Sangue ou petrificação por analogia.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "A palavra Medusa designa qual tipo de ser na Carcaça?",
+      "guarda_de_canon": "Não importar górgona, água-viva, petrificação ou bioma oceânico por analogia.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-troll-fat",
+      "nome": "Gordura de Troll",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-troll-fat",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_habitat_sem_correspondencia_autoral",
+        "achado": "As fichas autorais consultadas não vinculam este material a um troll específico ou a uma população regional. Isso não prova inexistência de trolls na Carcaça.",
+        "micro_origem_conforme_peren": "gordura de criatura chamada troll",
+        "nota_editorial_preexistente": "Não classificar o troll como monstro obrigatório, nem atribuir habitat ou forma de obtenção sem fonte.",
+        "fontes_monstros_ja_consultadas": [
+          "dist/carcaca/creatures.json",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-burnt-spriggan-wood",
+      "nome": "Madeira de Ent Carbonizado",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-burnt-spriggan-wood",
+      "dado_ecologico_existente": {
+        "status_literal": "fonte_sobrenatural_peren; local_do_incendio_nao_documentado",
+        "achado": "Peren descreve madeira carbonizada de guardião vegetal; a ocupação de Eldroth e os cenários condicionais de incêndio não comprovam acontecimento, árvore específica ou lugar de coleta.",
+        "micro_origem_conforme_peren": "madeira queimada de guardião vegetal",
+        "nota_editorial_preexistente": "Não associar ao evento proposto de incêndio em Eldroth, nem identificar a mesma criatura que fornece Seiva de Ent.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-pine-thrush-egg",
+      "nome": "Ovo de Tordo",
+      "prioridade": "P1",
+      "eixo_principal": "dois_registros_com_mesmo_nome",
+      "marcadores_de_investigacao": [
+        "dois_registros_com_mesmo_nome"
+      ],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-pine-thrush-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Um dos dois itens Ovo de Tordo; esta ficha possui Aumentar Destreza II e Resistência à Eletricidade I, não é a versão curativa.",
+        "micro_origem_conforme_peren": "ovo de ave silvestre",
+        "nota_editorial_preexistente": "Rótulo não canônico: Ovo de Tordo — agilidade. Não renomear espécie nem ID.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "preservar_ids_e_distinguir_fichas_na_apresentacao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-rock-warbler-egg",
+      "nome": "Ovo de Tordo",
+      "prioridade": "P1",
+      "eixo_principal": "dois_registros_com_mesmo_nome",
+      "marcadores_de_investigacao": [
+        "dois_registros_com_mesmo_nome"
+      ],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-rock-warbler-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "segunda_ficha_de_nome_duplicado; especie_e_habitat_indeterminados",
+        "achado": "É o segundo Ovo de Tordo, com Restaurar Saúde II, Aumentar Destreza I e Fraqueza à Magia I; o primeiro (`ing-pine-thrush-egg`) aumenta Destreza II e resiste à eletricidade. Nenhuma fonte autoral consultada identifica ambas as aves como espécies diferentes.",
+        "micro_origem_conforme_peren": "ovo de pequena ave usado em remédios",
+        "nota_editorial_preexistente": "Concluir análise do par. Propor rótulo funcional 'Ovo de Tordo — restauração', sem renomear espécies, mudar IDs ou sincronizar receitas.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "preservar_ids_e_distinguir_fichas_na_apresentacao",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-abecean-longfin",
+      "nome": "Peixe-Espada do Sangue",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-abecean-longfin",
+      "dado_ecologico_existente": {
+        "status_literal": "nome_maritimo_peren; distribuicao_no_mar_nao_comprovada",
+        "achado": "Mar de Sangue, águas azuis e transição variável estão documentados; isso não demonstra a ocorrência, migração ou reprodução do peixe da ficha.",
+        "micro_origem_conforme_peren": "peixe costeiro avermelhado",
+        "nota_editorial_preexistente": "Não fixar pesca no Mar de Sangue inteiro, nem atribuir a espécie ao sangue de Kindau; manter Peixe-Espada do Sangue como nome aprovado.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md"
+        ]
+      },
+      "pergunta_a_resolver": "Há identificação da espécie ou pesca comprovada na costa de Portomonte?",
+      "guarda_de_canon": "Não pressupor que todo peixe vermelho habite o Mar de Sangue ou descenda de Kindau.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-hagraven-feathers",
+      "nome": "Penas de Bruxa",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-hagraven-feathers",
+      "dado_ecologico_existente": {
+        "status_literal": "criatura_fonte_e_procedencia_nao_classificadas",
+        "achado": "A ficha nomeia penas de bruxa mas a taxonomia autoral não define, por esse termo, espécie aviária, pessoa humana bruxa ou criatura de D&D com origem comprovada na Carcaça.",
+        "micro_origem_conforme_peren": "penas de criatura associada a feitiçaria",
+        "nota_editorial_preexistente": "Evitar tratar feiticeiras sapientes como animais de coleta e evitar transplantar automaticamente a Hagraven de Skyrim.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-powdered-mammoth-tusk",
+      "nome": "Pó de Presa de Mamute",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-powdered-mammoth-tusk",
+      "dado_ecologico_existente": {
+        "status_literal": "fossil_item_canonico_peren; especie_e_procedencia_nao_comprovadas",
+        "achado": "A descrição de Peren declara um material fossilizado, não uma população viva. O atlas registra ossos ancestrais, cavernas e regiões montanhosas, mas não documenta mamutes locais nem depósitos desse fóssil.",
+        "micro_origem_conforme_peren": "presa fossilizada",
+        "nota_editorial_preexistente": "Preservar força III e as propriedades associadas; não introduzir mamutes vivos, jazidas ou caçadas em Thargrid como fatos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_GEOGRAFIA_FISICA_CICLO34.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-glow-dust",
+      "nome": "Poeira Luminosa",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-glow-dust",
+      "dado_ecologico_existente": {
+        "status_literal": "substrato_fisico_e_procedencia_desconhecidos",
+        "achado": "A descrição registra brilho e uso arcano, não identifica se a poeira procede de cristal, inseto, fantasma, minério ou resíduo mágico.",
+        "micro_origem_conforme_peren": "pó cintilante de origem não especificada",
+        "nota_editorial_preexistente": "Não fundir com Cogumelo Luminescente, Sais Ígneos ou Poeira de Vampiro por semelhança de efeito.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-void-salts",
+      "nome": "Sais do Vazio",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-void-salts",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_cosmologica_nao_comprovada",
+        "achado": "A palavra 'Vazio' na ficha não prova relação física com a Não-Existência definida como exterior a Corau; origem dos cristais não documentada.",
+        "micro_origem_conforme_peren": "cristal de natureza arcana",
+        "nota_editorial_preexistente": "Manter os três efeitos existentes sem reinterpretar o Vazio como entidade, plano habitável ou extração fora de Corau.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Existe fonte cosmológica ou técnica estabelecida para os sais?",
+      "guarda_de_canon": "Não atribuir às minas de Thargrid nem a entidades do Vazio por nome.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-fire-salts",
+      "nome": "Sais Ígneos",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-fire-salts",
+      "dado_ecologico_existente": {
+        "status_literal": "fenomeno_sobrenatural_sem_fonte_geologica_ou_cosmologica",
+        "achado": "Peren descreve cristais quentes; as forjas de Thargrid e a categoria elemental não provam extração de sais ali, nem sua associação a demônios.",
+        "micro_origem_conforme_peren": "cristais quentes de natureza sobrenatural",
+        "nota_editorial_preexistente": "Preservar Resistência ao Fogo III; não associar a mineração, metalurgia, culto ou criatura sem fonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-salt-pile",
+      "nome": "Sal do Sangue",
+      "prioridade": "P1",
+      "eixo_principal": "nome_ou_indicio_climatico_nao_comprova_ocorrencia",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade",
+        "habitat_aquatico_e_bacia_nao_demonstrados",
+        "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-salt-pile",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_maritima_descrita_em_peren; processo_de_extracao_nao_documentado",
+        "achado": "A presença do Mar de Sangue é canônica; a descrição de Peren atribui o sal às águas rubras. O atlas não fixa salinidade, método de extração, escala produtiva nem distribuição de salinas ou rota mercantil.",
+        "micro_origem_conforme_peren": "sal das águas rubras",
+        "nota_editorial_preexistente": "Preservar nome e atributos sem inventar salinas, monopolização, transporte ou concentração de sal. A fronteira entre águas rubras e azuis permanece móvel.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/MAR_SANGUE_ECOLOGIA_POLITICA_CICLO5.md"
+        ]
+      },
+      "pergunta_a_resolver": "Há processo de evaporação, extração ou comércio documentado para o Sal do Sangue?",
+      "guarda_de_canon": "O Mar de Sangue é canônico, mas não existem salinas, volumes ou rotas aprovadas.",
+      "proxima_acao": "separar_nome_comercial_ou_metaforico_de_local_de_ocorrencia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-spriggan-sap",
+      "nome": "Seiva de Ent",
+      "prioridade": "P1",
+      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "marcadores_de_investigacao": [
+        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+      ],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-spriggan-sap",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_de_ent_e_habitat_nao_comprovados",
+        "achado": "A taxonomia separa flora e outras criaturas sobrenaturais; o atlas de florestas não comprova população de ents nem origem regional desta seiva.",
+        "micro_origem_conforme_peren": "seiva mágica de espírito vegetal chamado Ent",
+        "nota_editorial_preexistente": "Não equiparar Ent a toda árvore de Eldroth nem vincular a coleta a Ironwood. A proposta antiga de transmutação ampliada não foi aprovada.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_tipo_de_fonte_e_taxonomia_sem_importacao_automatica",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-bee",
+      "nome": "Abelha",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-bee",
+      "dado_ecologico_existente": {
+        "status_literal": "polinizacao_no_peren; especie_e_criacao_nao_documentadas",
+        "achado": "O próprio catálogo chama a abelha de polinizadora, mas os registros regionais não estabelecem apicultura, criadores, regiões de ocorrência nem relação específica com Favo de Mel e Casca de Colmeia como produtos da mesma população.",
+        "micro_origem_conforme_peren": "abelha polinizadora",
+        "nota_editorial_preexistente": "Preservar os efeitos e evitar transformá-la em uma espécie sobrenatural ou inferir uma cadeia econômica de mel sem evidência.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-garlic",
+      "nome": "Alho",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-garlic",
+      "dado_ecologico_existente": {
+        "status_literal": "efeito_adicional_aprovado; local_de_cultivo_nao_documentado",
+        "achado": "O Ciclo 4 de Peren aprovou explicitamente Curar Doença II como quarto atributo do Alho, preservando os três anteriores. A existência de hortas e regiões agrícolas na Carcaça não especifica cultivo de alho nem praticantes da medicina.",
+        "micro_origem_conforme_peren": "bulbo de horta com propriedades curativas",
+        "nota_editorial_preexistente": "Preservar todos os quatro efeitos e o precedente do Ciclo 4. Não inventar origem regional nem rebaixar cura por considerá-la poderosa.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-histcarp",
+      "nome": "Carpa de Pedra",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-histcarp",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_agua_de_ocorrencia_nao_documentadas",
+        "achado": "O nome Carpa de Pedra descreve o material em Peren, mas não comprova corpo pétreo, procedência das ossadas de Golzdov, distribuição pelo Rio Ancestral ou ocorrência no Mar de Sangue.",
+        "micro_origem_conforme_peren": "carpa de resistência incomum",
+        "nota_editorial_preexistente": "Preservar Respiração na Água II, Aumentar Magia II e Constituição I; não criar origem mineral nem migração para compatibilizar propriedades.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-beehive-husk",
+      "nome": "Casca de Colmeia",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-beehive-husk",
+      "dado_ecologico_existente": {
+        "status_literal": "organismo_produtor_e_ocorrencia_nao_documentados",
+        "achado": "O material de colmeia é coerente como produto biológico, mas nenhum vínculo regional específico, espécie de inseto ou organização de apicultura foi confirmado pelos documentos consultados.",
+        "micro_origem_conforme_peren": "fragmento de colmeia",
+        "nota_editorial_preexistente": "Preservar atributos defensivos e de furtividade; não criar apiários de Portomonte ou Aldeias de apicultores por inferência.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-nordic-barnacle",
+      "nome": "Craca de Rio",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-nordic-barnacle",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_peren; trecho_de_rio_nao_comprovado",
+        "achado": "A descrição registra craca de água doce; o Rio Ancestral existe, mas os documentos não localizam afluentes, pontos de coleta, rochas colonizadas ou barcos portadores dessa espécie.",
+        "micro_origem_conforme_peren": "craca de água doce sobre rochas e embarcações",
+        "nota_editorial_preexistente": "Não usar o nome Craca de Rio para afirmar distribuição continental ou origem no Abismo; manter três efeitos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-honeycomb",
+      "nome": "Favo de Mel",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-honeycomb",
+      "dado_ecologico_existente": {
+        "status_literal": "producao_e_especie_de_abelha_nao_documentadas",
+        "achado": "O catálogo distingue Favo de Mel, Abelha e Casca de Colmeia. O nome comum não comprova que se originem de uma única espécie ou de um apiário regional; a agricultura de Grama-Cortada não comprova criação de abelhas.",
+        "micro_origem_conforme_peren": "favo nutritivo",
+        "nota_editorial_preexistente": "Manter constituição II, defesa I e diminuição de destreza I. Não criar apicultura regional ou atribuir cadeia de produção automaticamente.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-dwarven-oil",
+      "nome": "Óleo de Autômato",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-dwarven-oil",
+      "dado_ecologico_existente": {
+        "status_literal": "origem_tecnica_regional_nao_confirmada",
+        "achado": "O manuscrito documenta forjas e galerias anãs em Thargrid, mas não confirma que esses autômatos e o óleo sejam fabricados ou encontrados especificamente ali.",
+        "micro_origem_conforme_peren": "lubrificante arcano de mecanismo anão",
+        "nota_editorial_preexistente": "Não atribuir fabrico ou cadeia de comércio a uma cidade sem referência; manter a descrição do item em Peren.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-slaughterfish-egg",
+      "nome": "Ovas de Piranha",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-slaughterfish-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_postura_e_bacia_nao_documentados",
+        "achado": "Escamas de Piranha e Ovas de Piranha são materiais distintos, mas o nome compartilhado não comprova um mesmo cardume ou habitat. O atlas não fixa ocorrência de piranhas no Rio Ancestral nem nas águas vermelhas.",
+        "micro_origem_conforme_peren": "ovas de peixe predador",
+        "nota_editorial_preexistente": "Preservar Resistência a Veneno II, Destreza I e Dano à Saúde I. Não criar calendário de desova, coleta ou aquicultura sem fonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-salmon-roe",
+      "nome": "Ovas de Salmão",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-salmon-roe",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "O atlas não documenta desova, migração ou habitat de salmões; não importar ecologia terrestre como fato da Carcaça.",
+        "micro_origem_conforme_peren": "ovas de salmão",
+        "nota_editorial_preexistente": "Preservar efeitos e evitar atribuir origem ao Rio Ancestral ou Mar de Sangue.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-chicken-s-egg",
+      "nome": "Ovo de Galinha",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-chicken-s-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "material_alimentar_documentado_peren; producao_regional_nao_documentada",
+        "achado": "A ficha de Peren descreve um ovo culinário abundante. Os campos agrícolas e famílias produtoras da Carcaça existem, mas os documentos não registram criação de galinhas, sistema de distribuição regional ou certificação da procedência.",
+        "micro_origem_conforme_peren": "ovo de galinha e ingrediente culinário",
+        "nota_editorial_preexistente": "Preservar a raridade comum e os efeitos; não atribuir exclusivamente ao Condado de Grama-Cortada ou Portomonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-cyrodilic-spadetail",
+      "nome": "Peixe de Escamas Finas",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-cyrodilic-spadetail",
+      "dado_ecologico_existente": {
+        "status_literal": "corpo_dagua_documentado; especie_nao_localizada",
+        "achado": "O Rio Ancestral existe e atravessa a Carcaça, porém o atlas não atribui a este peixe uma ocorrência, bacia, cardume ou época de reprodução. Ser peixe de água doce não permite presumi-lo nativo do Rio inteiro.",
+        "micro_origem_conforme_peren": "peixe dulcícola",
+        "nota_editorial_preexistente": "Preservar os três atributos e a descrição; manter a proveniência geográfica desta espécie como não documentada.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Que bacia recebe o peixe dulcícola, se alguma?",
+      "guarda_de_canon": "Não atribuir automaticamente Thargrid ao peixe nem o Rio Ancestral inteiro.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-silverside-perch",
+      "nome": "Perca Prateada",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-silverside-perch",
+      "dado_ecologico_existente": {
+        "status_literal": "regiao_aquatica_nao_documentada",
+        "achado": "O atlas registra corpos de água continentais e mares, mas não confirma onde a Perca Prateada vive. Resistência ao Gelo II é propriedade alquímica, não prova de habitar a neve de Thargrid ou um ambiente marinho específico.",
+        "micro_origem_conforme_peren": "peixe de escamas claras",
+        "nota_editorial_preexistente": "Preservar Constituição II, Resistência ao Gelo II e Diminuir Força I; não inventar ciclos de pesca ou distribuição territorial.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-pearl",
+      "nome": "Pérola",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-pearl",
+      "dado_ecologico_existente": {
+        "status_literal": "procedencia_oceanica_peren; especie_produtora_e_costa_nao_documentadas",
+        "achado": "Ao contrário da Pérola Pequena, esta ficha descreve explicitamente uma concreção marinha. O atlas documenta Mar de Sangue, águas azuis e o limite móvel entre ambos, mas não identifica o molusco produtor, localização de bancos ou associação comercial.",
+        "micro_origem_conforme_peren": "concreção de origem marinha",
+        "nota_editorial_preexistente": "Preservar Restaurar Magia II, Resistência à Eletricidade II e Constituição I; não declarar que vem do Mar de Sangue ou da mesma espécie da Pérola Pequena.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-small-pearl",
+      "nome": "Pérola Pequena",
+      "prioridade": "P2",
+      "eixo_principal": "habitat_aquatico_e_bacia_nao_demonstrados",
+      "marcadores_de_investigacao": [
+        "habitat_aquatico_e_bacia_nao_demonstrados"
+      ],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-small-pearl",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Não há molusco produtor ou localidade documentados; nem as águas do Mar de Sangue nem as águas azuis demonstram sua origem.",
+        "micro_origem_conforme_peren": "pérola pequena",
+        "nota_editorial_preexistente": "Não inventar bancos de pérolas ou exclusividade comercial.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "identificar_ambiente_agua_doce_costeira_ou_oceanica_sem_inventar_bacia",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-wheat",
+      "nome": "Trigo",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-wheat",
+      "dado_ecologico_existente": {
+        "status_literal": "cultivo_regional_indeterminado",
+        "achado": "Grama-Cortada tem agricultura hobbit documentada e há cultivo costeiro, porém nenhuma fonte estabelece que o trigo desta ficha seja produzido ou comercializado por esses grupos em particular.",
+        "micro_origem_conforme_peren": "cereal e alimento de preparo medicinal",
+        "nota_editorial_preexistente": "Manter restauração de saúde II, constituição II e diminuição de destreza I; não transformar um cereal abundante em monocultura ou monopólio territorial.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-jazbay-grapes",
+      "nome": "Uvas de Jasmim",
+      "prioridade": "P2",
+      "eixo_principal": "artesanato_ou_producao_nao_comprovada_por_cidade",
+      "marcadores_de_investigacao": [
+        "artesanato_ou_producao_nao_comprovada_por_cidade"
+      ],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-jazbay-grapes",
+      "dado_ecologico_existente": {
+        "status_literal": "viticultura_e_origem_regional_nao_documentadas",
+        "achado": "A Carcaça possui agricultores e sociedades comerciais, mas não há comprovação de vinhedos, produção de Uvas de Jasmim, rota de abastecimento ou método ritual de processamento.",
+        "micro_origem_conforme_peren": "uvas aromáticas de uso alquímico",
+        "nota_editorial_preexistente": "Preservar Regenerar Magia II, Aumentar Magia II e Dano à Saúde I; não presumir monocultura nem inventar origem colonial ou nobre.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/POVOAMENTO_ECOLOGIA_ALEM_SUL_CICLO54.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "separar_fabricacao_coleta_comercio_e_titularidade_de_oficio",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-fly-amanita",
+      "nome": "Amanita Rubra",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-fly-amanita",
+      "dado_ecologico_existente": {
+        "status_literal": "propriedades_canonicas_peren; habitat_nao_documentado",
+        "achado": "Diminuir Sabedoria II é uma adição expressamente aprovada na curadoria. A fonte de Monstros da Carcaça não estabelece população da espécie, medicina ritual nem efeito farmacológico real.",
+        "micro_origem_conforme_peren": "fungo de efeitos psicoativos fantásticos",
+        "nota_editorial_preexistente": "Manter os quatro atributos e Frenesi II; não transpor alegações médicas sobre fungos reais ou inventar guildas/uso ritual regional.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-chaurus-hunter-antennae",
+      "nome": "Antena de Verme Gigante",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-chaurus-hunter-antennae",
+      "dado_ecologico_existente": {
+        "status_literal": "taxon_e_habitat_nao_documentados",
+        "achado": "O catálogo de Peren fala em verme gigante, mas não há associação autoral confirmada a espécie, bioma ou povo da Carcaça.",
+        "micro_origem_conforme_peren": "antena de predador quitinoso",
+        "nota_editorial_preexistente": "Não importar automaticamente a biologia do Chaurus de Skyrim nem transformar 'verme' em classificação zoológica oficial.",
+        "fontes_monstros_ja_consultadas": [
+          "dist/carcaca/creatures.json",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-butterfly-wing",
+      "nome": "Asa de Borboleta",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-butterfly-wing",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_habitat_nao_documentados",
+        "achado": "Não há identificação autoral de espécie ou distribuição regional para esta borboleta nos registros consultados.",
+        "micro_origem_conforme_peren": "asa de inseto",
+        "nota_editorial_preexistente": "Não presumir que a asa vem da mesma espécie que a Asa de Borboleta Azul.",
+        "fontes_monstros_ja_consultadas": [
+          "data/atlas/macroambientes-ciclo35.json",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-blue-butterfly-wing",
+      "nome": "Asa de Borboleta Azul",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-blue-butterfly-wing",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_azul_sem_origem_ou_distribuicao_documentadas",
+        "achado": "A cor é traço da ficha; nem o atlas nem as propostas de floresta confirmam espécie, bioma ou associação taxonômica com Asa de Borboleta.",
+        "micro_origem_conforme_peren": "asa de borboleta azul",
+        "nota_editorial_preexistente": "Não tratar Asa de Borboleta Azul e Asa de Borboleta como partes intercambiáveis da mesma espécie.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ancestor-moth-wing",
+      "nome": "Asa de Mariposa Ancestral",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-ancestor-moth-wing",
+      "dado_ecologico_existente": {
+        "status_literal": "vinculo_ritual_especifico_nao_comprovado",
+        "achado": "O adjetivo 'ancestral' não estabelece associação com os primordiais Kindau, Dialel ou Corau nem com uma tradição específica sem fonte.",
+        "micro_origem_conforme_peren": "asa de mariposa",
+        "nota_editorial_preexistente": "Preservar evocação e encantamento; não criar espécie, culto ou ritual adicional.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-luna-moth-wing",
+      "nome": "Asa de Mariposa Lunar",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-luna-moth-wing",
+      "dado_ecologico_existente": {
+        "status_literal": "inseto_noturno_sem_especie_ou_regiao_confirmada",
+        "achado": "O adjetivo lunar não demonstra devoção ao Templo da Lua, vínculo com Severina ou distribuição em Eldroth e Ironwood.",
+        "micro_origem_conforme_peren": "asa de inseto noturno",
+        "nota_editorial_preexistente": "Manter distinta da Asa de Mariposa Ancestral; evitar rito lunar, comércio ou calendário inventados.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-juniper-berries",
+      "nome": "Bagas de Zimbro",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-juniper-berries",
+      "dado_ecologico_existente": {
+        "status_literal": "distribuicao_e_agricultura_nao_documentadas",
+        "achado": "O nome de espécie e aroma constam de Peren, mas os setores agrícolas da Carcaça não comprovam produção, comércio ou coleta de zimbro em nenhum povoado ou região.",
+        "micro_origem_conforme_peren": "bagas aromáticas de planta",
+        "nota_editorial_preexistente": "Manter Regenerar Saúde II, Destreza I e Fraqueza ao Fogo I. Não adicionar cultivo comercial, sazonalidade ou ecossistema exclusivo sem fonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/POVOAMENTO_ECOLOGIA_ALEM_SUL_CICLO54.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-hawk-beak",
+      "nome": "Bico de Falcão",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-hawk-beak",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Nome comum com outras partes de falcão não comprova mesma espécie ou população; procedência não documentada.",
+        "micro_origem_conforme_peren": "bico de falcão",
+        "nota_editorial_preexistente": "Manter três atributos, sem cadeia de coleta inventada.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-skeever-tail",
+      "nome": "Cauda de Rato",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-skeever-tail",
+      "dado_ecologico_existente": {
+        "status_literal": "quarto_atributo_aprovado; local_de_origem_nao_documentado",
+        "achado": "Peren descreve roedor de docas e o Ciclo 5 aprovou Infligir Doença II como quarto atributo, com coexistência do efeito no Couro de Rato. O atlas registra infraestrutura de comércio fluvial, mas não confirma qual porto ou espécie fornece a cauda.",
+        "micro_origem_conforme_peren": "cauda de roedor de docas",
+        "nota_editorial_preexistente": "Manter Infligir Doença II, os três atributos precedentes e o ID. Não atribuir Garganta, Drakport ou Portomonte só pela palavra 'docas'.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-white-cap",
+      "nome": "Chapéu Branco",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-white-cap",
+      "dado_ecologico_existente": {
+        "status_literal": "habitat_especifico_nao_documentado",
+        "achado": "A taxonomia autoral enquadra fungos como flora, mas o acervo geográfico não estabelece local, clima ou cultura de extração deste fungo.",
+        "micro_origem_conforme_peren": "cogumelo pálido de uso arcano",
+        "nota_editorial_preexistente": "Preservar os três atributos e a raridade comum; não mapear cogumelo a todas as cavernas de Thargrid ou florestas por associação temática.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-large-antlers",
+      "nome": "Chifres de Alce",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-large-antlers",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_habitat_nao_documentados",
+        "achado": "O catálogo diferencia os Chifres de Alce dos Chifres de Cervo já auditados, mas o atlas não documenta população de alces, ecossistema ou procedência regional. A semelhança dos efeitos não prova que ambos sejam a mesma espécie.",
+        "micro_origem_conforme_peren": "chifres maduros de alce",
+        "nota_editorial_preexistente": "Manter Força II, Constituição II e Diminuir Destreza I; preservar distinção de nome sem impor bioma ou coleta de fauna local.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-small-antlers",
+      "nome": "Chifres de Cervo",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-small-antlers",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_localidade_nao_documentados",
+        "achado": "O 'Cervo dos Galhos Invertidos' aparece apenas como fera sobrenatural proposta na ecologia de Eldroth; não há prova de que ele produza estes chifres ou que o item provenha daquela floresta.",
+        "micro_origem_conforme_peren": "chifres imaturos de cervídeo",
+        "nota_editorial_preexistente": "Preservar o nome, origem genérica e os três efeitos. Evitar identificar o animal com a proposta não homologada ou atribuir coleta a uma região.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-mora-tapinella",
+      "nome": "Cogumelo de Raiz",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-mora-tapinella",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_peren; especie_e_floresta_indeterminadas",
+        "achado": "A presença de madeira úmida na ficha não comprova ocorrência em Eldroth, Ironwood ou nos bosques gnômicos. Fenômenos fúngicos propostos em Eldroth não foram canonizados como origem deste ingrediente.",
+        "micro_origem_conforme_peren": "fungo sobre madeira úmida",
+        "nota_editorial_preexistente": "Preservar Restaurar Magia II, Constituição I e Dano à Saúde I e a classificação como fungo, sem associar ao Micélio das Vozes Partidas.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-scaly-pholiota",
+      "nome": "Cogumelo Escamoso",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-scaly-pholiota",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_ocorrencia_de_fungo_nao_documentadas",
+        "achado": "A morfologia lenhosa consta do catálogo, mas as florestas e habitats fúngicos apresentados no atlas não demonstram a ocorrência deste fungo.",
+        "micro_origem_conforme_peren": "fungo lenhoso escamoso",
+        "nota_editorial_preexistente": "Não identificar o Cogumelo Escamoso com fungos do inventário propositivo de Eldroth; manter os três atributos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_POVOAMENTO_RIO_ELDROTH_CICLO45.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-glowing-mushroom",
+      "nome": "Cogumelo Luminescente",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-glowing-mushroom",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_de_fungo_e_fonte_do_brilho_nao_documentadas",
+        "achado": "Luminescência é descrição de Peren. Nem florestas, nem cavernas de Thargrid, nem propostas ecológicas de Eldroth comprovam espécie ou lugar de coleta.",
+        "micro_origem_conforme_peren": "fungo de brilho próprio",
+        "nota_editorial_preexistente": "A ligação entre brilho, eletricidade e forja é apenas interpretação temática; preservar efeitos sem criar cadeia de obtenção.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-briar-heart",
+      "nome": "Coração de Espinheiros",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-briar-heart",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Vampirismo II e transformação progressiva já aprovados no Ciclo 9; planta não se torna espécie vampírica por isso.",
+        "micro_origem_conforme_peren": "planta parasitária e núcleo vegetal",
+        "nota_editorial_preexistente": "Preservar efeito transformativo, sem atribuir origem demoníaca ou habitat regional.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-bleeding-crown",
+      "nome": "Coroa Sangrenta",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-bleeding-crown",
+      "dado_ecologico_existente": {
+        "status_literal": "flora_especifica_e_habitat_nao_documentados",
+        "achado": "A taxonomia admite fungos como flora da Carcaça; o nome Coroa Sangrenta não prova origem no Mar de Sangue nem ligação com ritos de sangue. Não há distribuição da espécie no atlas consultado.",
+        "micro_origem_conforme_peren": "fungo de chapéu rubro",
+        "nota_editorial_preexistente": "Preservar resistência mágica, defesa e vulnerabilidade ao fogo; não associar ao mar vermelho sem evidência.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-sabre-cat-tooth",
+      "nome": "Dente de Grande Felino",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-sabre-cat-tooth",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_regional_nao_identificada",
+        "achado": "A categoria geral fauna está prevista pela taxonomia autoral, mas não há correspondência confirmada deste material com uma espécie, território ou povo específico. O termo Grande Felino é descritivo na ficha de Peren.",
+        "micro_origem_conforme_peren": "dente de predador felino",
+        "nota_editorial_preexistente": "Preservar Força II, Defesa II e Fraqueza a Veneno I; não atribuir automaticamente ao sabre-cat de Skyrim ou a felinos reais.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-scathecraw",
+      "nome": "Espinho-da-Morte",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-scathecraw",
+      "dado_ecologico_existente": {
+        "status_literal": "planta_e_localidade_nao_documentadas; sem_nexo_funerario_comprovado",
+        "achado": "O nome Espinho-da-Morte não comprova associação com necromancia, Vandar ou mortos-vivos. O atlas não documenta espécie, área de coleta ou uso ritual; o catálogo estabelece efeitos nocivos à saúde e à magia.",
+        "micro_origem_conforme_peren": "espinho de planta tóxica",
+        "nota_editorial_preexistente": "Preservar Dano à Saúde III, Dano à Magia II e Diminuir Constituição II; não associar a culto ou cidade por nome.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-gleamblossom",
+      "nome": "Flor Luminescente",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-gleamblossom",
+      "dado_ecologico_existente": {
+        "status_literal": "habitat_da_flora_nao_documentado",
+        "achado": "O atlas autoral identifica grandes famílias florestais e outros ambientes, mas não comprova a espécie luminescente, sua área de crescimento ou associação com relíquias feéricas.",
+        "micro_origem_conforme_peren": "flor emissora de brilho tênue",
+        "nota_editorial_preexistente": "Conservar a propriedade medicinal, a resistência mágica e a paralisia; não atribuir a planta à floresta de Eldroth ou a uma corte sem fonte específica.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-poison-bloom",
+      "nome": "Flor Venenosa",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-poison-bloom",
+      "dado_ecologico_existente": {
+        "status_literal": "ambiente_generico_sem_localidade_confirmada",
+        "achado": "A descrição menciona terreno hostil sem designar região, e o atlas não fornece área de ocorrência; nome, seiva e propriedades tóxicas não demonstram exclusividade na Caatinga, Eldroth ou Mar de Sangue.",
+        "micro_origem_conforme_peren": "flor tóxica de terrenos hostis",
+        "nota_editorial_preexistente": "Preservar Dano à Saúde III, Medo II e Diminuir Velocidade I. Registrar que a origem e os consumidores naturais permanecem desconhecidos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-purple-mountain-flower",
+      "nome": "Flor Violeta",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-purple-mountain-flower",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "A descrição de Peren documenta encostas e bruma; Thargrid nevado não confirma ocorrência desta espécie.",
+        "micro_origem_conforme_peren": "flor de encosta fria",
+        "nota_editorial_preexistente": "Manter atributos e não declarar exclusividade em Thargrid.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-blisterwort",
+      "nome": "Fungo de Bolha",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-blisterwort",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_fungica_e_habitat_nao_documentados",
+        "achado": "A natureza fúngica e a polpa irritante são dados de Peren. Os ambientes de floresta, cavernas e fungos propostos não comprovam identidade com esta espécie.",
+        "micro_origem_conforme_peren": "fungo de polpa irritante",
+        "nota_editorial_preexistente": "Coexistência de cura e frenesi é aprovada e não constitui erro de ecologia; não associar ao micélio de Eldroth.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-imp-stool",
+      "nome": "Fungo de Diabrete",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-imp-stool",
+      "dado_ecologico_existente": {
+        "status_literal": "identidade_e_habitat_especificos_nao_documentados",
+        "achado": "A ficha descreve um fungo, sem afirmar que seja parte física de diabrete. O nome 'Diabrete' não comprova linhagem demoníaca, convivência com demônios ou origem no Abismo. A ambivalência Restaurar Saúde II / Paralisia II / Dano à Saúde I está documentada em Peren.",
+        "micro_origem_conforme_peren": "fungo de ambiente degradado",
+        "nota_editorial_preexistente": "Manter a classificação editorial como fungo e os três efeitos. Não transformar nome metafórico em taxonomia demoníaca nem atribuir ocorrência à foz.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-swamp-fungal-pod",
+      "nome": "Fungo do Pântano",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-swamp-fungal-pod",
+      "dado_ecologico_existente": {
+        "status_literal": "habitat_especifico_nao_documentado",
+        "achado": "Nenhum pântano de origem desta espécie foi confirmado no atlas consultado; ambientes úmidos da foz não comprovam a presença deste fungo.",
+        "micro_origem_conforme_peren": "fungo",
+        "nota_editorial_preexistente": "Conservar a ambivalência entre cura e paralisia, e a resistência elétrica leve.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/atlas/hidrografia-continental-ciclo39.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-bear-claws",
+      "nome": "Garras de Urso",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-bear-claws",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_regiao_de_coleta_nao_documentadas",
+        "achado": "A curadoria nomeia urso, mas a presença do animal em algum setor específico da Carcaça não foi confirmada nas fontes consultadas. Os efeitos de força, constituição e saúde não demonstram linhagem sobrenatural.",
+        "micro_origem_conforme_peren": "garras de urso maceradas",
+        "nota_editorial_preexistente": "Preservar os três atributos e a raridade comum. Não atribuir fauna local a Eldroth, Thargrid ou Caatinga por analogia com biomas terrestres.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-lavender",
+      "nome": "Lavanda Selvagem",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-lavender",
+      "dado_ecologico_existente": {
+        "status_literal": "flora_e_uso_peren_documentados; cultivo_regional_nao_documentado",
+        "achado": "Peren descreve efeito calmante e concentração ritual; os três efeitos da ficha são resistência mágica, Constituição e Conjuração. O atlas tem horticultura e diferentes tradições religiosas, mas não demonstra plantio da espécie nem monopólio por culto ou guilda.",
+        "micro_origem_conforme_peren": "erva aromática de uso ritual",
+        "nota_editorial_preexistente": "Conservar os três atributos. 'Acalma' é linguagem ficcional e não um quarto efeito de sono, sedação ou controle mental. Não atribuir produção a Grama-Cortada ou Portomonte sem evidência.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-blue-dartwing",
+      "nome": "Libélula Azul",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-blue-dartwing",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Velocidade II já aprovada no Ciclo 7, independente de Aumentar Destreza; o atlas não localiza a espécie.",
+        "micro_origem_conforme_peren": "libélula de águas rasas",
+        "nota_editorial_preexistente": "Preservar quatro atributos, sem presumir coleta no Rio Ancestral ou Portomonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-orange-dartwing",
+      "nome": "Libélula Laranja",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-orange-dartwing",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_peren; especie_e_bacia_indeterminadas",
+        "achado": "Peren menciona margens quentes; o atlas não confirma quais águas acolhem esta espécie, nem estabelece que seja a mesma libélula da ficha Libélula Azul (Ciclo 83).",
+        "micro_origem_conforme_peren": "libélula de margens quentes",
+        "nota_editorial_preexistente": "Preservar Destreza II, Diminuir Magia I e Dano à Saúde I. Não fundir as duas fichas por semelhança zoológica nem atribuir habitat no Rio Ancestral automaticamente.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-dragon-s-tongue",
+      "nome": "Língua-de-Dragão",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-dragon-s-tongue",
+      "dado_ecologico_existente": {
+        "status_literal": "planta_sem_relacao_anatomica_com_dragoes",
+        "achado": "A descrição de Peren define uma flor cujo nome evoca dragões; a cosmologia de Golzdov e os dragões históricos não convertem esta planta em material dracônico.",
+        "micro_origem_conforme_peren": "planta de flores vivas",
+        "nota_editorial_preexistente": "Distinguir nome popular de taxonomia; não atribuir a planta ao corpo de Golzdov ou à linhagem de dragões.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-giant-lichen",
+      "nome": "Líquen Gigante",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-giant-lichen",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_peren; ocorrencia_regional_nao_documentada",
+        "achado": "O atlas relaciona famílias ambientais, mas não localiza este líquen. 'Gigante' qualifica a dimensão do líquen na curadoria e não o torna uma planta criada por gigantes, especialmente os povos de Thargrid.",
+        "micro_origem_conforme_peren": "líquen espesso de ambiente úmido",
+        "nota_editorial_preexistente": "Preservar a ambivalência entre Restaurar Magia II e Dano à Saúde II e a Fraqueza a Veneno I, sem atribuir origem em Thargrid.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-frost-mirriam",
+      "nome": "Mirra da Geada",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-frost-mirriam",
+      "dado_ecologico_existente": {
+        "status_literal": "clima_frio_peren; proveniencia_regional_nao_confirmada",
+        "achado": "Peren descreve áreas frias e Thargrid possui picos nevados, porém o atlas não documenta esta erva, seu cultivo nem zona de coleta em Thargrid.",
+        "micro_origem_conforme_peren": "erva aromática de áreas frias",
+        "nota_editorial_preexistente": "Não converter proximidade temática entre geada e montanha em distribuição botânica canônica.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-emperor-parasol-moss",
+      "nome": "Musgo Parassol",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-emperor-parasol-moss",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Substrato documentado na ficha de Peren; não associar à proposta do Micélio das Vozes Partidas ou supor ocorrência em Eldroth.",
+        "micro_origem_conforme_peren": "musgo sobre madeira decomposta",
+        "nota_editorial_preexistente": "Preservar Regenerar Saúde e Dano à Saúde simultâneos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-hanging-moss",
+      "nome": "Musgo Pendente",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "boca-abismo",
+      "id_da_matriz_territorial": "ing-hanging-moss",
+      "dado_ecologico_existente": {
+        "status_literal": "microhabitat_peren; especie_e_regiao_indeterminadas",
+        "achado": "O microhabitat úmido é dado do ingrediente, não prova de presença em Eldroth, margem do Rio Ancestral ou no hipotético Musgo das Vozes Perdidas.",
+        "micro_origem_conforme_peren": "musgo que cresce sobre pedras e galhos úmidos",
+        "nota_editorial_preexistente": "Manter o musgo sem genealogia inventada com o micélio proposto em Eldroth, nem território fixo de coleta.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_POVOAMENTO_RIO_ELDROTH_CICLO45.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-eye-of-sabre-cat",
+      "nome": "Olho de Felino",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-eye-of-sabre-cat",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_regional_nao_confirmada; quarto_atributo_aprovado",
+        "achado": "O atributo Visão à Distância II foi aprovado anteriormente pelo criador; o documento da Carcaça não oferece espécie, população regional ou modo de obtenção dessa parte. A semântica de visão distante é distinta de Percepção.",
+        "micro_origem_conforme_peren": "olho preservado de grande felino",
+        "nota_editorial_preexistente": "Conservar explicitamente os quatro atributos, inclusive Visão à Distância II, sem reduzi-lo a Aumentar Percepção. Não criar espécies de grandes felinos para acomodar o item.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-elves-ear",
+      "nome": "Orelha-de-Elfo",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-elves-ear",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_fungica_e_habitat_nao_documentados",
+        "achado": "A ficha do item o define como fungo de tronco; o termo 'elfo' descreve seu formato e não autoriza inferir que se trate de parte do corpo de um elfo ou que exista um rito dos povos élficos para obtê-lo.",
+        "micro_origem_conforme_peren": "fungo de formato auricular",
+        "nota_editorial_preexistente": "Preservar os efeitos. Classificar a origem material em termos fúngicos, não como drop de pessoa ou criatura inteligente; região específica não demonstrada.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-spider-egg",
+      "nome": "Ovo de Aranha",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-spider-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_postura_e_territorio_nao_documentados",
+        "achado": "Peren registra um ovo pegajoso usado em preparados. Os documentos de povoamento propõem aranhas inteligentes em Eldroth, mas não comprovam a adoção do rascunho nem vinculam esta matéria-prima à postura de uma espécie sapiente.",
+        "micro_origem_conforme_peren": "ovo de aranha",
+        "nota_editorial_preexistente": "Manter os três efeitos. Não converter aranhas de propostas autorais em fonte obrigatória de coleta de ovos, nem inferir ninhos de uma comunidade sapiente.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/POVOAMENTO_ECOLOGIA_THARGRID_IRONWOOD_ELDROTH_CICLO53.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-hawk-s-egg",
+      "nome": "Ovo de Falcão",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-hawk-s-egg",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "Ausência de ninhos e reprodução regional documentados; o 'vigor' do texto não define atributo adicional.",
+        "micro_origem_conforme_peren": "ovo de falcão",
+        "nota_editorial_preexistente": "Conservar percepção, destreza e resistência mágica; não fabricar fauna local.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-chaurus-eggs",
+      "nome": "Ovo de Verme Gigante",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-chaurus-eggs",
+      "dado_ecologico_existente": {
+        "status_literal": "organismo_e_regiao_de_postura_nao_documentados",
+        "achado": "A curadoria descreve vermes subterrâneos. A Antena de Verme Gigante é outro ingrediente, mas a coincidência nominal não comprova a mesma espécie, fase biológica, ninho ou região subterrânea; cavernas documentadas tampouco provam a ocorrência.",
+        "micro_origem_conforme_peren": "ovos translúcidos de verme subterrâneo",
+        "nota_editorial_preexistente": "Preservar Invisibilidade II, Constituição II e Fraqueza a Veneno I; não inferir cadeia de coleta automática ou pertencimento a criatura importada de outro RPG.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-boar-tusk",
+      "nome": "Presa de Javali",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-boar-tusk",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_ecossistema_nao_documentados",
+        "achado": "O item é parte de fauna descrita em Peren. O atlas não autoriza atribuir javalis à Caatinga, Ironwood ou Eldroth, nem identificar o javali com criaturas sobrenaturais propostas.",
+        "micro_origem_conforme_peren": "presa de javali em tônicos",
+        "nota_editorial_preexistente": "Conservar Força II, Constituição II e Frenesi I; evitar inventar caça regional ou fazenda de javalis.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-jarrin-root",
+      "nome": "Raiz Botulínica",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-jarrin-root",
+      "dado_ecologico_existente": {
+        "status_literal": "efeitos_potentes_ja_aceitos; habitat_e_taxon_nao_documentados",
+        "achado": "O inventário histórico de Peren já identificou quatro efeitos de intensidade III nesta raiz, sem necessidade de redução artificial. O nome Botulínica não vincula automaticamente a planta a organismo microbiano real ou a um bioma específico.",
+        "micro_origem_conforme_peren": "raiz de toxicidade extraordinária",
+        "nota_editorial_preexistente": "Preservar os quatro efeitos III e a raridade épica. Não inventar origem, processo real de obtenção ou aplicações farmacológicas terrestres.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-canis-root",
+      "nome": "Raiz Canina",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "garganta",
+      "id_da_matriz_territorial": "ing-canis-root",
+      "dado_ecologico_existente": {
+        "status_literal": "ocorrencia_regional_nao_documentada",
+        "achado": "A palavra Canina não demonstra origem animal nem associação com cães; distribuição vegetal não comprovada.",
+        "micro_origem_conforme_peren": "raiz de função paralisante",
+        "nota_editorial_preexistente": "Manter a origem vegetal e os três efeitos.",
+        "fontes_monstros_ja_consultadas": [
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-trama-root",
+      "nome": "Raiz de Trama",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "shadar-riverie",
+      "id_da_matriz_territorial": "ing-trama-root",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_vegetal_e_habitat_nao_documentados",
+        "achado": "A fibra entrelaçada consta da descrição de Peren; o inventário macrorregional não identifica espécie, distribuição ou condutividade elétrica dessa raiz.",
+        "micro_origem_conforme_peren": "raiz vegetal fibrosa",
+        "nota_editorial_preexistente": "A hipótese histórica de fibras condutoras não foi aprovada; não transformá-la em propriedade ecológica ou ampliar efeitos.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-taproot",
+      "nome": "Raiz Mestra",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-taproot",
+      "dado_ecologico_existente": {
+        "status_literal": "propriedade_canonica_peren; distribuicao_regional_nao_documentada",
+        "achado": "A rede de memória vegetal e Aumentar Inteligência II já foram aprovados na curadoria de Peren; não há fonte ligando esta raiz a Eldroth, a uma consciência primordial ou a uma rede espiritual específica.",
+        "micro_origem_conforme_peren": "raiz com memória vegetal encantada",
+        "nota_editorial_preexistente": "Respeitar o quarto atributo aprovado e a explicação vegetal; não reinterpretar conhecimento da planta como memória de Kindau ou tecnologia de um povo.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-nirnroot",
+      "nome": "Raiz Velada",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-nirnroot",
+      "dado_ecologico_existente": {
+        "status_literal": "distribuicao_e_vinculo_feerico_nao_documentados",
+        "achado": "A raiz é canônica no catálogo de Peren com Invisibilidade III. As florestas de Eldroth e Ironwood existem, mas a origem desta planta ou a participação da Corte não foi documentada pela referência autoral.",
+        "micro_origem_conforme_peren": "raiz luminescente e ocultadora",
+        "nota_editorial_preexistente": "Preservar invisibilidade e a descrição, sem reimportar o habitat de Nirnroot de Skyrim ou criar controle feérico sobre a espécie.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-crimson-nirnroot",
+      "nome": "Raiz Velada Rubra",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "portomonte",
+      "id_da_matriz_territorial": "ing-crimson-nirnroot",
+      "dado_ecologico_existente": {
+        "status_literal": "variante_de_peren_documentada; habitat_e_parentesco_taxonomico_natural_nao_confirmados",
+        "achado": "A ficha descreve expressamente uma variante carmesim da Raiz Velada e uma troca entre Invisibilidade III, Dano à Saúde II e Diminuir Constituição III. A descrição sugere parentesco funcional de Peren, mas o atlas não confirma distribuição nem mecanismo botânico das duas variantes.",
+        "micro_origem_conforme_peren": "variante carmesim da Raiz Velada",
+        "nota_editorial_preexistente": "Preservar a identidade diferenciada, raridade épica e penalidades severas; não transformar o tom rubro em vínculo com o Mar de Sangue, Vandar ou uma maldição feérica sem fonte.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-thistle-branch",
+      "nome": "Ramo de Cardo",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-thistle-branch",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_local_de_coleta_nao_documentados",
+        "achado": "Existe no dossiê de Eldroth uma criatura vegetal proposta chamada 'Cardos que Bebem Cinza', mas o documento registra explicitamente esse fenômeno como não canonizado. Isso não a torna fonte do Ramo de Cardo.",
+        "micro_origem_conforme_peren": "ramo espinhoso de planta",
+        "nota_editorial_preexistente": "Manter três atributos e o nome genérico. Não associar à proposta de Eldroth nem interpretar a resistência a veneno como prova de uso terapêutico regional.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-frost-salts",
+      "nome": "Sais da Geada",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "eldroth",
+      "id_da_matriz_territorial": "ing-frost-salts",
+      "dado_ecologico_existente": {
+        "status_literal": "localidade_de_extracao_nao_documentada",
+        "achado": "Há picos com neve persistente em Thargrid, mas a existência de gelo não comprova jazidas de Sais da Geada, seus produtores, comércio ou localização. A descrição 'usados em ... conjuração' é uma finalidade narrativa, não o atributo Aumentar Conjuração.",
+        "micro_origem_conforme_peren": "cristais de frio sobrenatural",
+        "nota_editorial_preexistente": "Manter Resistência ao Gelo III, Restaurar Magia II e Fraqueza ao Fogo II. Não fixar origem em Thargrid só pela associação térmica.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-deathbell",
+      "nome": "Sino da Morte",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-deathbell",
+      "dado_ecologico_existente": {
+        "status_literal": "flor_especifica_e_uso_ritual_nao_documentados",
+        "achado": "O nome 'Sino da Morte' e o efeito de dano não comprovam que a flor venha de Vandar, de funerais ou da magia de Damaris; o atlas não documenta a espécie.",
+        "micro_origem_conforme_peren": "flor escura de propriedades tóxicas",
+        "nota_editorial_preexistente": "Manter dano, lentidão e fraqueza a veneno como propriedades do ingrediente. Não atribuir necromancia ou cerimônia funerária por associação nominal.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-torchbug-thorax",
+      "nome": "Tórax de Vaga-lume",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "thargrid",
+      "id_da_matriz_territorial": "ing-torchbug-thorax",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_ocorrencia_nao_documentadas",
+        "achado": "O catálogo registra um inseto luminoso, mas não comprova a espécie ou presença nos biomas da Carcaça. Os Besouros da Casca Riscada de Eldroth são apenas proposta e não devem ser equiparados ao vaga-lume.",
+        "micro_origem_conforme_peren": "órgão luminescente de inseto",
+        "nota_editorial_preexistente": "Preservar Destreza II, Dano à Magia I e Fraqueza à Magia I. Não criar vínculo com inseto inteligente, rito, povo ou localidade.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "data/taxonomia_carcaca.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ash-creep-cluster",
+      "nome": "Tufo Cinzento",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "ironwood",
+      "id_da_matriz_territorial": "ing-ash-creep-cluster",
+      "dado_ecologico_existente": {
+        "status_literal": "localizacao_da_flora_nao_documentada",
+        "achado": "A descrição do ingrediente menciona cinzas quentes, mas as paisagens secas da Caatinga e outros biomas não confirmam esse vegetal ou habitat de cinzas.",
+        "micro_origem_conforme_peren": "fruto de trepadeira",
+        "nota_editorial_preexistente": "Diferenciar vegetação adaptada a material queimado de um incêndio regional canônico.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/atlas/macroambientes-ciclo35.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-creep-cluster",
+      "nome": "Tufo Rastejante",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "drakport",
+      "id_da_matriz_territorial": "ing-creep-cluster",
+      "dado_ecologico_existente": {
+        "status_literal": "especie_e_habitat_da_trepadeira_nao_documentados",
+        "achado": "Peren descreve planta rasteira; o inventário macrorregional não fornece espécie, presença local nem vínculo com os tufos de cinza.",
+        "micro_origem_conforme_peren": "cachos de trepadeira rasteira",
+        "nota_editorial_preexistente": "Distinguir Tufo Rastejante de Tufo Cinzento e da Vagem Cinzenta, mesmo se houver efeitos coincidentes.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-ashen-grass-pod",
+      "nome": "Vagem Cinzenta",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-ashen-grass-pod",
+      "dado_ecologico_existente": {
+        "status_literal": "habitat_queimado_peren; area_e_evento_nao_identificados",
+        "achado": "Peren descreve áreas queimadas, mas nenhuma queimada específica é comprovada para esta planta. Cardos que Bebem Cinza são proposta ecológica não aprovada.",
+        "micro_origem_conforme_peren": "vagem de planta de áreas queimadas",
+        "nota_editorial_preexistente": "Não transformar cinza em prova de desmatamento histórico, nem assimilar a Vagem Cinzenta a Cardos que Bebem Cinza.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    },
+    {
+      "id": "ing-grass-pod",
+      "nome": "Vagem da Charneca",
+      "prioridade": "P3",
+      "eixo_principal": "identificacao_ecologica_de_rotina",
+      "marcadores_de_investigacao": [],
+      "zona_procedural_ainda_nao_homologada": "alem-sul",
+      "id_da_matriz_territorial": "ing-grass-pod",
+      "dado_ecologico_existente": {
+        "status_literal": "bioma_especifico_e_localidade_nao_documentados",
+        "achado": "A descrição de Peren menciona solo úmido, mas o atlas macrorregional não estabelece um lugar denominado Charneca nem prova ocorrência desse vegetal em região específica.",
+        "micro_origem_conforme_peren": "vagem de solo úmido",
+        "nota_editorial_preexistente": "Preservar Resistência a Veneno II, Aumentar Alteração II e Restaurar Magia I. Não presumir que a palavra charneca seja uma unidade geográfica já cartografada.",
+        "fontes_monstros_ja_consultadas": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/atlas/macroambientes-ciclo35.json"
+        ]
+      },
+      "pergunta_a_resolver": "Qual evidência identifica a espécie/material e sua ocorrência no local antes de transformar a zona procedurally atribuída em habitat?",
+      "guarda_de_canon": "Preservar nome, ID e atributos; não confundir região de comércio com habitat ou método de obtenção.",
+      "proxima_acao": "consultar_fontes_da_especie_antes_de_deliberar_habitat",
+      "decisao_sobre_habitat": "indeterminada",
+      "aprovada_para_geracao_de_loot": false,
+      "avaliado_com_fonte_primaria_territorial_especifica": false,
+      "estado_editorial": "triado_aguarda_averiguacao",
+      "alteracao_no_catalogo_ativo": false
+    }
+  ]
+}
