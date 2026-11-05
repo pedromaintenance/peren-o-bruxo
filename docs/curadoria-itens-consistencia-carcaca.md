@@ -279,3 +279,17 @@ A matriz diferencia `origem` (proveniência de registro), zona calculada, zona p
 **Contrato com o agente de mecânicas:** cada efeito leva dados de origem e questões a resolver; os campos de potência, duração, resistência, empilhamento, fonte extra e veículo permanecem `null` até aprovação. O painel permite exportar **pareceres**, não atualizar automaticamente a curadoria nem o jogo. **Sem mudanças em ingredientes, receitas, combos, saves ou Phaser** neste estudo.
 
 **QA editorial:** 53/53 fichas rastreadas, 11 grupos, duas variantes textuais, 17 verificações estruturais aprovadas no V8 e 13 checagens funcionais do painel em DOM simulado. **PR #98 draft**, não promovida para o motor nem para os assets.
+
+## Handoff curatorial — dez efeitos de Saúde, Magia e Regeneração (05/11/2026)
+
+**Referências:** [estudo de recursos](estudo-recursos-alquimicos-v1.md), [roadmap mecânico, seção 22](roadmap-crafting-mecanicas-menus.md) e [PR #99 (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/99).
+
+**Responsabilidades não intercambiáveis:** o agente de **curadoria** mantém nomes, efeitos, intensidades I–III, origem e justificativas dos ingredientes; o agente de **mecânicas** propõe operações sobre PV/MP atuais, capacidade máxima e taxas, mas **não** pode converter intensidade original em cura, dano ou duração sem decisão expressa. Não transferir efeitos de um ingrediente só para passar nos testes de recuperação.
+
+**Dez IDs examinados sem modificá-los:** `dano_saude`, `dano_magia`, `restaurar_saude`, `restaurar_magia`, `aumentar_saude`, `aumentar_magia`, `diminuir_magia`, `regenerar_saude`, `regenerar_magia`, `diminuir_regeneracao_magia`. Os dados atuais indicam significados distintos, mas **alvos, fórmulas, potências, duração e método de aplicação ainda estão abertos**. A auditoria propõe diferença entre `dano_magia` e `diminuir_magia` (reserva corrente versus máximo/eficácia); a hipótese não deve ser promovida a cânone mecanicamente.
+
+**Conflito com o clássico:** a rotina `useItem` no `game.js` ainda equipara `Regenerate Health/Magicka` a `Restore Health/Magicka` na recuperação instantânea. **Não corrigir fichas de ingredientes para justificar o comportamento legado**, nem modificar consumíveis antigos sem plano de migração e preservação de inventário/saves.
+
+**Foco da auditoria futura:** evitar que “restauração” e “regeneração” virem sinônimos nos textos editoriais sem decisão; distinguir aumento de capacidade de recuperação corrente; evitar tratar fraqueza a veneno como tipo implícito de `dano_saude`; observar contradições de grupos e famílias sem inventar incompatibilidade. As fontes extras podem ser anotadas por origem e intensidade, mas **não** atribuem automaticamente maior taxa, duração, qualidade ou chance de sucesso.
+
+**QA do handoff:** nenhum dos 111 ingredientes ou 53 IDs foi alterado; o simulador isolado registrou 27/27 casos e o painel de recursos 14/14 verificações simuladas. Não é prova de integração, browser real ou um novo balanceamento. **Apenas design e documentação.**
