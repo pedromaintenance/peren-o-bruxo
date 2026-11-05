@@ -127,7 +127,7 @@ test('Não inventa Stamina ou outros recursos fora de Saúde e Magia',()=>{
 });
 test('Não aceita efeitos estranhos ou nomes de itens como operadores',()=>{
  assert.throws(()=>simulateImmediate(state,[instant('voar',2)]),/não imediato/);
- assert.throws(()=>simulateRegeneration(state,[instant('restaurar_magia',10)],1),/não é efeito de taxa/);
+ assert.throws(()=>simulateRegeneration(state,[instant('restaurar_magia',10)],1),/[Nn]ão é efeito de taxa/);
 });
 test('Compatibilidade legada exige migração explícita: Regenerate era imediato no clássico',()=>{
  const code=readFileSync(fileURLToPath(new URL('../game.js',import.meta.url)),'utf8');
