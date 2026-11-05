@@ -101,3 +101,12 @@ Estes ingredientes **já haviam sido revisados individualmente** e agora receber
 - **106** ingredientes sem aprovação territorial individual identificada nas fontes desta passagem; seus locais reconstruídos decorrem da distribuição procedural. As nove zonas ficam com **12 ou 13** ingredientes por efeito da fórmula, não por inventário de fauna/flora.
 - [Matriz por ID](../data/auditoria_territorial_ingredientes.json) e [relatório de proveniência territorial](auditoria-proveniencia-territorial-ingredientes.md) publicados, preservando os 111 IDs e toda a curadoria ativa.
 - **Limite de verificação:** a matriz representa a **projeção estática do gerador + overrides**; `data/itens.json` não foi comparado integralmente nesta passagem. O chat de mecânicas deve conferir a base publicada antes de mudar zonas, loot, comércio e interface.
+
+## Continuidade territorial — fila de investigação dos 106 (05/11/2026)
+
+- [Fila estruturada](../data/fila-investigacao-territorial-ingredientes.json) com **106/106** registros procedurais e referências por ingrediente; os cinco registros de localizações historicamente preservadas em Peren permanecem fora da fila e não foram revogados.
+- Triagem por risco de extrapolação: **P0: 11; P1: 25; P2: 16; P3: 54**. Os marcadores de risco podem coexistir no mesmo ingrediente e não representam balanceamento de jogo.
+- **11/11 P0** receberam um **parecer documental preliminar**, sem comprovação nova de habitat e sem autorização de procedência/loot: quatro materiais de pessoa/povo potencialmente sapiente, quatro resíduos/identidades de fonte e três textos com ausência ou discrepância de efeito.
+- Os textos candidatos de Betta do Rio, Beladona e Escamas de Piranha continuam **não aprovados** e não foram aplicados.
+- [Relatório da fila e pareceres P0](fila-investigacao-ecologica-ingredientes-v1.md): fontes efetivamente verificadas, guardas de cânone, tabela dos 25 P1 e critérios de aceite.
+- **Nenhuma alteração** em curadoria ativa, zonas, atributos, receitas, combos, loot, economia, código, saves ou PWA. A comparação integral com o JSON compilado `data/itens.json` continua pendente.
