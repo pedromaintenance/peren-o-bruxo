@@ -583,4 +583,4 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **CRAFT-D51 [P1]:** relacionar as intensidades I–III e fontes extras com magnitudes por efeito após aprovar unidades e limites.
 - **CRAFT-D52 [P0 QA]:** teste de execução real em combate, mundo, descanso, consumíveis, inventário, transações e saves sem reclassificar Impuro por reflexo.
 
-**Aceites:** `REC-Q01–REC-Q10` no [relatório](estudo-recursos-alquimicos-v1.md). **Verificação executada:** 27/27 testes de lógica em JavaScript V8 isolado e 14/14 verificações do painel em DOM simulado. **Sem** testes reais de Node CI, navegador visual, Phaser ou saves. **A PR #99 permanece isolada e não mesclada**; nenhuma magnitude ou duração foi canonizada.
+**Aceites:** `REC-Q01–REC-Q10` no [relatório](estudo-recursos-alquimicos-v1.md). **Verificação executada:** 31/31 testes de lógica em JavaScript V8 isolado e 14/14 verificações do painel em DOM simulado. **Sem** testes reais de Node CI, navegador visual, Phaser ou saves. **A PR #99 permanece isolada e não mesclada**; nenhuma magnitude ou duração foi canonizada.
