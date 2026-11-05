@@ -35,10 +35,16 @@ function resolveImmediate(event){
  nonNegative(event.magnitude,"magnitude de teste");
  return {...info,effectId:event.effectId,magnitude:event.magnitude};
 }
+function guardRevival(resource,before,after){
+ // PV zero pode acionar derrota/resgate: não assumir que poção ou regeneração ressuscite.
+ if(resource==="saude"&&before===0&&after>0)throw Error("Recuperação desde PV zero exige regra de derrota/revivificação aprovada");
+}
 function changeCurrent(state,effect){
  const r=state[effect.resource],old=r.current;
  const signed=effect.process==="damage_current"?-effect.magnitude:effect.magnitude;
- r.current=Math.max(0,Math.min(r.max,r.current+signed));
+ const next=Math.max(0,Math.min(r.max,r.current+signed));
+ guardRevival(effect.resource,old,next);
+ r.current=next;
  return {effectId:effect.effectId,resource:effect.resource,before:old,after:r.current,
   requested:effect.magnitude,applied:Math.abs(r.current-old),wasted:effect.magnitude-Math.abs(r.current-old)};
 }
@@ -55,7 +61,9 @@ export function simulateImmediate(input,effects,policy="ordered_as_provided"){
    if(!involved.length)continue;
    const delta=involved.reduce((n,e)=>n+(e.process==="damage_current"?-e.magnitude:e.magnitude),0);
    const r=out[key],before=r.current;
-   r.current=Math.max(0,Math.min(r.max,r.current+delta));
+   const next=Math.max(0,Math.min(r.max,r.current+delta));
+   guardRevival(key,before,next);
+   r.current=next;
    changes.push({resource:key,requestedDelta:delta,appliedDelta:r.current-before,
     effectIds:involved.map(e=>e.effectId).sort()});
   }
@@ -76,6 +84,7 @@ export function simulateCapacity(input,event,policy="preserve_current"){
  if(policy==="preserve_current")r.current=Math.min(r.max,before.current);
  else if(policy==="preserve_deficit")r.current=Math.max(0,Math.min(r.max,r.max-(before.max-before.current)));
  else if(policy==="preserve_ratio")r.current=before.max===0?0:Math.floor(r.max*before.current/before.max);
+ guardRevival(info.resource,before.current,r.current);
  return {state:out,policy,applied:true,before,after:{...r},
   note:"Mudança de capacidade transitória: regra de expiração e escala não aprovadas."};
 }
@@ -94,7 +103,11 @@ export function simulateRegeneration(input,effects,ticks){
  const snapshots=[];
  for(let tick=1;tick<=ticks;tick++){
   const before=structuredClone(out);
-  for(const id of RESOURCE_NAMES){const r=out[id];r.current=Math.min(r.max,r.current+effective[id]);}
+  for(const id of RESOURCE_NAMES){
+   const r=out[id],next=Math.min(r.max,r.current+effective[id]);
+   guardRevival(id,r.current,next);
+   r.current=next;
+  }
   snapshots.push({tick,before,after:structuredClone(out)});
  }
  return {state:out,deltaRate:deltas,effectiveRate:effective,snapshots,
