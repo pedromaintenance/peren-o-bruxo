@@ -1,0 +1,2139 @@
+{
+  "schema": "peren.alquimia.taxonomia_semantica.proposta.v1",
+  "data_revisao": "2026-11-05",
+  "estado_editorial": "PROPOSTA_NAO_CANONICA",
+  "fonte": {
+    "arquivo": "data/curadoria_ingredientes.json",
+    "blob_sha": "57cf86f623ecabb4c30eb3a052384d627b615aa8",
+    "ingredientes": 111,
+    "efeitos": 53
+  },
+  "diretrizes": [
+    "IDs, rótulos, fontes e intensidades são dados vigentes da curadoria; taxonomia, alvos e temporalidade são hipóteses.",
+    "Dois tipos distintos ativam cada efeito. Fontes extras não recebem bônus sem regra aprovada.",
+    "Família de recipiente não se deduz automaticamente do grupo semântico.",
+    "Cura de recurso, alteração do máximo, regeneração, doença e transformação são categorias distintas.",
+    "Somente o potencial de Vampirismo transformar alguém com o tempo tem decisão expressa específica; detalhes de progressão pendentes.",
+    "Impuro e sinergias obedecem à Emenda A2, não ao grupo da taxonomia."
+  ],
+  "grupos": {
+    "modificador_atributo": {
+      "total": 10,
+      "descricao_de_pesquisa": "modificar_atributo"
+    },
+    "aperfeicoamento_habilidade": {
+      "total": 9,
+      "descricao_de_pesquisa": "ampliar_aptidao"
+    },
+    "capacidade_e_defesa": {
+      "total": 5,
+      "descricao_de_pesquisa": "modificar_limite_ou_defesa"
+    },
+    "recurso_atual": {
+      "total": 4,
+      "descricao_de_pesquisa": "afetar_recurso_atual"
+    },
+    "fluxo_de_recurso": {
+      "total": 3,
+      "descricao_de_pesquisa": "modificar_regeneracao"
+    },
+    "resistencia": {
+      "total": 5,
+      "descricao_de_pesquisa": "modificar_protecao_especifica"
+    },
+    "fraqueza": {
+      "total": 5,
+      "descricao_de_pesquisa": "modificar_vulnerabilidade_especifica"
+    },
+    "movimento_e_exploracao": {
+      "total": 6,
+      "descricao_de_pesquisa": "alterar_movimento_ou_percepcao"
+    },
+    "estado_comportamental": {
+      "total": 3,
+      "descricao_de_pesquisa": "impor_estado"
+    },
+    "doenca": {
+      "total": 2,
+      "descricao_de_pesquisa": "tratar_ou_infligir_doenca"
+    },
+    "transformacao": {
+      "total": 1,
+      "descricao_de_pesquisa": "transformacao_progressiva"
+    }
+  },
+  "efeitos": [
+    {
+      "id": "aumentar_alteracao",
+      "nome_curadoria": "Aumentar Alteração",
+      "nomes_alternativos": [],
+      "fontes_distintas": 3,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_carga",
+      "nome_curadoria": "Aumentar Capacidade de Carga",
+      "nomes_alternativos": [],
+      "fontes_distintas": 4,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "capacidade_e_defesa",
+        "processo": "modificar_limite_ou_defesa",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "capacidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Definir unidades de capacidade de carga e efeito temporário no inventário.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_carisma",
+      "nome_curadoria": "Aumentar Carisma",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Com Ilusão gera Poção da Fada; com Diminuir Força produz Impuro.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "decisao_canonica",
+          "arquivo": "docs/constituicao-design-v1.md",
+          "alcance": "Emenda A2: Poção da Fada e incompatibilidade Carisma/Diminuir Força"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_conjuracao",
+      "nome_curadoria": "Aumentar Conjuração",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_constituicao",
+      "nome_curadoria": "Aumentar Constituição",
+      "nomes_alternativos": [],
+      "fontes_distintas": 21,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_defesa",
+      "nome_curadoria": "Aumentar Defesa",
+      "nomes_alternativos": [],
+      "fontes_distintas": 8,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "capacidade_e_defesa",
+        "processo": "modificar_limite_ou_defesa",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "capacidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Não confundir defesa com resistência elemental ou evasão.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_destreza",
+      "nome_curadoria": "Aumentar Destreza",
+      "nomes_alternativos": [],
+      "fontes_distintas": 18,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Aptidão/coordenação não é deslocamento; distinto de Velocidade.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_destruicao",
+      "nome_curadoria": "Aumentar Destruição",
+      "nomes_alternativos": [],
+      "fontes_distintas": 4,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_encantamento",
+      "nome_curadoria": "Aumentar Encantamento",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Distinguir habilidade do encantador de efeitos diretos em objeto.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_ferraria",
+      "nome_curadoria": "Aumentar Ferraria",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Não supor que precisa ser Bálsamo, ou que atua diretamente em equipamentos.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_forca",
+      "nome_curadoria": "Aumentar Força",
+      "nomes_alternativos": [],
+      "fontes_distintas": 10,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_furtividade",
+      "nome_curadoria": "Aumentar Furtividade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_ilusao",
+      "nome_curadoria": "Aumentar Ilusão",
+      "nomes_alternativos": [],
+      "fontes_distintas": 3,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Poção da Fada requer também Aumentar Carisma, sem bônus adicional por nome.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "decisao_canonica",
+          "arquivo": "docs/constituicao-design-v1.md",
+          "alcance": "Emenda A2: Poção da Fada e incompatibilidade Carisma/Diminuir Força"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_inteligencia",
+      "nome_curadoria": "Aumentar Inteligência",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_magia",
+      "nome_curadoria": "Aumentar Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 9,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "capacidade_e_defesa",
+        "processo": "modificar_limite_ou_defesa",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "capacidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_percepcao",
+      "nome_curadoria": "Aumentar Percepção",
+      "nomes_alternativos": [],
+      "fontes_distintas": 3,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Atenção/sentidos gerais não equivalem à visão a distância.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_restauracao",
+      "nome_curadoria": "Aumentar Restauração",
+      "nomes_alternativos": [],
+      "fontes_distintas": 6,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "aperfeicoamento_habilidade",
+        "processo": "ampliar_aptidao",
+        "alvo_hipotetico": "praticante",
+        "temporalidade_hipotetica": "uso_condicional_ou_estado_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "eficacia_habilidade",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "aumentar_saude",
+      "nome_curadoria": "Aumentar Saúde",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "capacidade_e_defesa",
+        "processo": "modificar_limite_ou_defesa",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "capacidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "curar_doenca",
+      "nome_curadoria": "Curar doença",
+      "nomes_alternativos": [
+        "Curar Doença"
+      ],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "doenca",
+        "processo": "tratar_ou_infligir_doenca",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "cura_ou_estado_persistente_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "tipo_doenca",
+          "resistencia",
+          "reversao"
+        ],
+        "alerta": "Definir se cura uma doença, várias, condições crônicas ou transformação.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "dano_magia",
+      "nome_curadoria": "Dano à Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 10,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "recurso_atual",
+        "processo": "afetar_recurso_atual",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "instantaneo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "quantidade_recurso",
+          "resistencia"
+        ],
+        "alerta": "A auditoria sugere degradar a reserva atual; não é Diminuir Magia nem capacidade máxima.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "dano_saude",
+      "nome_curadoria": "Dano à Saúde",
+      "nomes_alternativos": [],
+      "fontes_distintas": 20,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "recurso_atual",
+        "processo": "afetar_recurso_atual",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "instantaneo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "quantidade_recurso",
+          "resistencia"
+        ],
+        "alerta": "A auditoria propõe reduzir pontos de vida; não implica automaticamente dano do tipo veneno.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_carisma",
+      "nome_curadoria": "Diminuir Carisma",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_constituicao",
+      "nome_curadoria": "Diminuir Constituição",
+      "nomes_alternativos": [],
+      "fontes_distintas": 13,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_destreza",
+      "nome_curadoria": "Diminuir Destreza",
+      "nomes_alternativos": [],
+      "fontes_distintas": 11,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_forca",
+      "nome_curadoria": "Diminuir Força",
+      "nomes_alternativos": [],
+      "fontes_distintas": 5,
+      "intensidades_de_origem": [
+        1,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Incompatibilidade aprovada com Aumentar Carisma.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "decisao_canonica",
+          "arquivo": "docs/constituicao-design-v1.md",
+          "alcance": "Emenda A2: Poção da Fada e incompatibilidade Carisma/Diminuir Força"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_magia",
+      "nome_curadoria": "Diminuir Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "capacidade_e_defesa",
+        "processo": "modificar_limite_ou_defesa",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "capacidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Dúvida expressa na auditoria: reduzir o máximo de Magia ou eficiência arcana; não é Dano à Magia.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_regeneracao_magia",
+      "nome_curadoria": "Diminuir Regeneração de Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 5,
+      "intensidades_de_origem": [
+        1
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fluxo_de_recurso",
+        "processo": "modificar_regeneracao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "continuo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "taxa_recuperacao",
+          "intervalo",
+          "duracao"
+        ],
+        "alerta": "Reduzir recuperação não equivale a Dano à Magia nem Diminuir Magia.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_sabedoria",
+      "nome_curadoria": "Diminuir Sabedoria",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "modificador_atributo",
+        "processo": "modificar_atributo",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "alteracao_atributo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "diminuir_velocidade",
+      "nome_curadoria": "Diminuir Velocidade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 3,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "fraqueza_eletricidade",
+      "nome_curadoria": "Fraqueza à Eletricidade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 5,
+      "intensidades_de_origem": [
+        1
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fraqueza",
+        "processo": "modificar_vulnerabilidade_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_vulnerabilidade",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "fraqueza_fogo",
+      "nome_curadoria": "Fraqueza ao Fogo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fraqueza",
+        "processo": "modificar_vulnerabilidade_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_vulnerabilidade",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "fraqueza_gelo",
+      "nome_curadoria": "Fraqueza ao Gelo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 5,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fraqueza",
+        "processo": "modificar_vulnerabilidade_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_vulnerabilidade",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "fraqueza_magia",
+      "nome_curadoria": "Fraqueza à Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 6,
+      "intensidades_de_origem": [
+        1
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fraqueza",
+        "processo": "modificar_vulnerabilidade_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_vulnerabilidade",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "fraqueza_veneno",
+      "nome_curadoria": "Fraqueza a Veneno",
+      "nomes_alternativos": [],
+      "fontes_distintas": 6,
+      "intensidades_de_origem": [
+        1
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fraqueza",
+        "processo": "modificar_vulnerabilidade_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_vulnerabilidade",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Fraqueza a Veneno não transforma todo Dano à Saúde em dano venenoso.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "frenesi",
+      "nome_curadoria": "Frenesi",
+      "nomes_alternativos": [],
+      "fontes_distintas": 6,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "estado_comportamental",
+        "processo": "impor_estado",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "severidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Não equiparar Frenesi a Diminuir Sabedoria; sem IA/controle aprovados.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "infligir_doenca",
+      "nome_curadoria": "Infligir Doença",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "doenca",
+        "processo": "tratar_ou_infligir_doenca",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "cura_ou_estado_persistente_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "tipo_doenca",
+          "resistencia",
+          "reversao"
+        ],
+        "alerta": "Aplicar doença não é causar automaticamente Dano à Saúde.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "invisibilidade",
+      "nome_curadoria": "Invisibilidade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 6,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "Não pressupor silêncio, furtividade ou detecção infalível.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "medo",
+      "nome_curadoria": "Medo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 5,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "estado_comportamental",
+        "processo": "impor_estado",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "severidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Regras de controle e resistência ainda não decididas.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "paralisia",
+      "nome_curadoria": "Paralisia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "estado_comportamental",
+        "processo": "impor_estado",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "severidade",
+          "resistencia",
+          "duracao"
+        ],
+        "alerta": "Efeito de controle severo; definir agência do alvo, resistência e reversão.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "regenerar_magia",
+      "nome_curadoria": "Regenerar Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 7,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fluxo_de_recurso",
+        "processo": "modificar_regeneracao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "continuo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "taxa_recuperacao",
+          "intervalo",
+          "duracao"
+        ],
+        "alerta": "Taxa de recuperação diferente de Restaurar Magia.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "regenerar_saude",
+      "nome_curadoria": "Regenerar Saúde",
+      "nomes_alternativos": [],
+      "fontes_distintas": 8,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "fluxo_de_recurso",
+        "processo": "modificar_regeneracao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "continuo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "taxa_recuperacao",
+          "intervalo",
+          "duracao"
+        ],
+        "alerta": "Taxa de recuperação diferente de Restaurar Saúde.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "resistencia_eletricidade",
+      "nome_curadoria": "Resistência à Eletricidade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 8,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "resistencia",
+        "processo": "modificar_protecao_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_resistencia",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "resistencia_fogo",
+      "nome_curadoria": "Resistência ao Fogo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 10,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "resistencia",
+        "processo": "modificar_protecao_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_resistencia",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "resistencia_gelo",
+      "nome_curadoria": "Resistência ao Gelo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 8,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "resistencia",
+        "processo": "modificar_protecao_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_resistencia",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "resistencia_magia",
+      "nome_curadoria": "Resistência à Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 10,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "resistencia",
+        "processo": "modificar_protecao_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_resistencia",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Alvo, operação, potência e duração ainda exigem definição.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "resistencia_veneno",
+      "nome_curadoria": "Resistência a Veneno",
+      "nomes_alternativos": [],
+      "fontes_distintas": 10,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "resistencia",
+        "processo": "modificar_protecao_especifica",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "grau_resistencia",
+          "categoria_ameaca",
+          "duracao"
+        ],
+        "alerta": "Resistência a Veneno não cura doenças automaticamente.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "respirar_na_agua",
+      "nome_curadoria": "Respirar na Água",
+      "nomes_alternativos": [],
+      "fontes_distintas": 3,
+      "intensidades_de_origem": [
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "Não pressupor automaticamente resistência à pressão, frio ou afogamento fora de água.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "restaurar_magia",
+      "nome_curadoria": "Restaurar Magia",
+      "nomes_alternativos": [],
+      "fontes_distintas": 14,
+      "intensidades_de_origem": [
+        1,
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "recurso_atual",
+        "processo": "afetar_recurso_atual",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "instantaneo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "quantidade_recurso",
+          "resistencia"
+        ],
+        "alerta": "Reposição pontual não é aumento da capacidade ou da taxa de regeneração.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "restaurar_saude",
+      "nome_curadoria": "Restaurar Saúde",
+      "nomes_alternativos": [],
+      "fontes_distintas": 9,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "recurso_atual",
+        "processo": "afetar_recurso_atual",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "instantaneo_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "quantidade_recurso",
+          "resistencia"
+        ],
+        "alerta": "Reposição pontual não é regeneração gradual.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    },
+    {
+      "id": "vampirismo",
+      "nome_curadoria": "Vampirismo",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "transformacao",
+        "processo": "transformacao_progressiva",
+        "alvo_hipotetico": "alvo_a_definir",
+        "temporalidade_hipotetica": "potencial_de_transformacao_gradual_aprovado",
+        "dimensoes_de_escala_a_estudar": [
+          "exposicao",
+          "progressao",
+          "resistencia",
+          "reversao"
+        ],
+        "alerta": "DECISÃO EXPRESSA: deve poder transformar alguém em vampiro com o tempo; progressão, acúmulo e reversão abertos.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        },
+        {
+          "categoria": "decisao_canonica",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Ciclo 9: transformação vampírica com o tempo é possibilidade requerida; sem fórmula"
+        }
+      ]
+    },
+    {
+      "id": "velocidade",
+      "nome_curadoria": "Velocidade",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "Deslocamento não altera automaticamente Destreza.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "visao_a_distancia",
+      "nome_curadoria": "Visão à Distância",
+      "nomes_alternativos": [],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        2,
+        3
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "A auditoria propõe alcance visual; não autoriza visão remota através de paredes.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        },
+        {
+          "categoria": "proposta_editorial",
+          "arquivo": "docs/auditoria-alquimia-peren.md",
+          "alcance": "Semântica proposta, não aprovada como runtime"
+        }
+      ]
+    },
+    {
+      "id": "voar",
+      "nome_curadoria": "Voar",
+      "nomes_alternativos": [
+        "Voo"
+      ],
+      "fontes_distintas": 2,
+      "intensidades_de_origem": [
+        1,
+        2
+      ],
+      "classificacao_proposta": {
+        "grupo_semantico": "movimento_e_exploracao",
+        "processo": "alterar_movimento_ou_percepcao",
+        "alvo_hipotetico": "criatura",
+        "temporalidade_hipotetica": "estado_temporario_hipotetico",
+        "dimensoes_de_escala_a_estudar": [
+          "deslocamento",
+          "acesso_mundo",
+          "duracao"
+        ],
+        "alerta": "Não pressupor altitude, velocidade adicional ou imunidade a queda.",
+        "estado": "proposta_nao_aprovada"
+      },
+      "mecanica_pendente": {
+        "unidade_potencia": null,
+        "duracao": null,
+        "resistencia": null,
+        "empilhamento": null,
+        "contribuicao_fontes_extra": null,
+        "veiculo": null
+      },
+      "evidencias": [
+        {
+          "categoria": "dado",
+          "arquivo": "data/curadoria_ingredientes.json",
+          "alcance": "ID, rótulo, intensidade e fontes"
+        }
+      ]
+    }
+  ]
+}
