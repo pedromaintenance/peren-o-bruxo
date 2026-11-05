@@ -57,7 +57,8 @@
       "Não transformar rótulo de ritual, região, deidade ou clima em prova de ocorrência.",
       "Não promover propostas do atlas a cânone por correspondência nominal.",
       "Não afetar receitas, runtime, Phaser, clássico, menus ou saves."
-    ]
+    ],
+    "nota_de_parecer": "O primeiro parecer documenta limites das fontes e propostas de correção, sem decidir proveniência, estatuto da criatura, compatibilidade de loot ou habitat."
   },
   "resumo": {
     "total_ingredientes": 111,
@@ -80,7 +81,10 @@
       "artesanato_ou_producao_nao_comprovada_por_cidade": 9
     },
     "ids_triados": 106,
-    "habitats_aprovados_nesta_rodada": 0
+    "habitats_aprovados_nesta_rodada": 0,
+    "primeiros_pareceres_documentados": 11,
+    "revisoes_aguardando_parecer_inicial": 95,
+    "propostas_de_redacao_referenciadas": 3
   },
   "revisoes": [
     {
@@ -109,8 +113,23 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "proposta_textual_pronta_aguarda_decisao",
+        "fundamento_documental": "A descrição atribui interferência na recuperação mágica. Os atributos são dano_saude III, aumentar_magia III e aumentar_ilusao II; não existe efeito de redução da regeneração mágica.",
+        "documentos_confrontados": [
+          "data/curadoria_ingredientes.json",
+          "docs/pacote-pendencias-editoriais-ingredientes.md"
+        ],
+        "encaminhamento": "preferir_correcao_de_texto_sem_criar_quarto_efeito",
+        "texto_vigente": "Planta tóxica de sombra, conhecida pelo dano lento e por interferir na recuperação mágica.",
+        "texto_candidato_nao_aprovado": "Planta tóxica de sombra, usada em preparados que causam dano à saúde, mas também ampliam reservas mágicas e fortalecem feitiços de Ilusão.",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-river-betty",
@@ -140,8 +159,23 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "proposta_textual_pronta_aguarda_decisao",
+        "fundamento_documental": "A ficha da curadoria não possui as chaves descricao ou origem, mas o gerador original atribui origem de dados separadamente; Shadar-Riverie é apenas a zona procedural. Os efeitos permitem redigir descrição curta sem inferir habitat.",
+        "documentos_confrontados": [
+          "ferramentas/build_data.py",
+          "docs/pacote-pendencias-editoriais-ingredientes.md"
+        ],
+        "encaminhamento": "submeter_descricao_nova_e_avaliar_proveniencia_dados_em_separado",
+        "texto_vigente": null,
+        "texto_candidato_nao_aprovado": "Peixe de rio empregado em preparados que aumentam Força e Destreza, mas também podem diminuir a Sabedoria.",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-human-flesh",
@@ -169,8 +203,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_origem_indeterminada",
+        "fundamento_documental": "A ficha só menciona ingrediente macabro negociado às escondidas. O dossiê de Drakport confirma escravização e tráfico, mas não atesta fornecimento deste tecido, vítimas, regras comerciais ou origem em Eldroth.",
+        "documentos_confrontados": [
+          "docs/RIO_DRAKPORT_CICLO28.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "encaminhamento": "conservar_ficha_vedar_drop_de_pessoa_ate_decisao_de_procedencia",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-spawn-ash",
@@ -198,8 +245,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_taxonomia_em_aberto",
+        "fundamento_documental": "O material é cinza de criatura sobrenatural não especificada. Não há espécie identificada, território de origem ou regra de obtenção, portanto a zona procedural Além Sul não permite gerar drop.",
+        "documentos_confrontados": [
+          "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "encaminhamento": "solicitar_classe_ou_fonte_especifica_antes_de_tabela_de_drop",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-berit-s-ashes",
@@ -227,8 +287,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_origem_indeterminada",
+        "fundamento_documental": "As cinzas são de um escriba não identificado. O dossiê de Vandar não documenta rito funerário da cidade nem ligação com o escriba do ingrediente; Portomonte também não é origem demonstrada.",
+        "documentos_confrontados": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "docs/ECOLOGIA_ARQUIVO_DOS_MORTOS_AFOGADOS.md"
+        ],
+        "encaminhamento": "manter_identidade_do_morto_indeterminada_ate_fonte",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-human-heart",
@@ -256,8 +329,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_origem_indeterminada",
+        "fundamento_documental": "O coração preservado por rituais existe no catálogo; o cenário de escravização não confirma extração de órgãos, cadeia de comércio nem proveniência no território de Shadar-Riverie.",
+        "documentos_confrontados": [
+          "docs/RIO_DRAKPORT_CICLO28.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "encaminhamento": "conservar_ficha_exigir_criterio_de_obtencao_e_representacao",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-giant-s-toe",
@@ -285,8 +371,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_origem_indeterminada",
+        "fundamento_documental": "Gigantes possuem agência e organização social no manuscrito da Carcaça. O ingrediente não identifica indivíduo nem forma de obtenção, e sua zona procedural Eldroth não comprova disponibilidade regional.",
+        "documentos_confrontados": [
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "encaminhamento": "conservar_ficha_nao_gerar_caca_a_gigantes_como_mercadoria",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-slaughterfish-scales",
@@ -315,8 +414,23 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "proposta_textual_pronta_aguarda_decisao",
+        "fundamento_documental": "A descrição informa antídotos, mas seus atributos são aumentar_defesa II, resistencia_gelo II e dano_saude I. Não há propriedade de cura de envenenamento ou resistência a veneno nesta ficha.",
+        "documentos_confrontados": [
+          "data/curadoria_ingredientes.json",
+          "docs/pacote-pendencias-editoriais-ingredientes.md"
+        ],
+        "encaminhamento": "corrigir_alegacao_de_antidoto_ao_inves_de_adicionar_efeito",
+        "texto_vigente": "Escamas grossas usadas em preparados protetores e antídotos para ambientes gelados.",
+        "texto_candidato_nao_aprovado": "Escamas espessas de peixe predador, utilizadas em preparados de proteção e resistência ao frio; o extrato concentrado também pode ferir a saúde.",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-wisp-wrappings",
@@ -344,8 +458,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_taxonomia_em_aberto",
+        "fundamento_documental": "Faixas de Espírito são resíduos espectrais após dissipação de uma aparição. O fato de Vandar ter mortos-vivos não demonstra que eles forneçam o material nem que Thargrid seja origem.",
+        "documentos_confrontados": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "encaminhamento": "nao_equiparar_aparicao_e_morto_vivo_e_especificar_fonte",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-bone-meal",
@@ -373,8 +500,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_origem_indeterminada",
+        "fundamento_documental": "A descrição contém somente ossos moídos, sem espécie ou indivíduo. O cadáver de Golzdov e os mortos de Vandar não equivalem automaticamente a essa farinha.",
+        "documentos_confrontados": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md"
+        ],
+        "encaminhamento": "nao_atribuir_ossatura_de_golzdov_ou_de_pessoas_sem_evidencia",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-falmer-ear",
@@ -402,8 +542,21 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_emitido_taxonomia_em_aberto",
+        "fundamento_documental": "Tecido de criatura subterrânea está na descrição, mas nem taxonomia nem sapiência da origem foram confirmadas; as cavernas de Thargrid não identificam a criatura.",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "encaminhamento": "conservar_ficha_pedir_classificacao_da_fonte_antes_de_loot",
+        "preserva_atributos_e_zona": true,
+        "prova_habitat_resolvida": false,
+        "decisao_autoral_aplicada": false,
+        "orientacao": "Não modificar o catálogo ativo, atualizar labels do jogo ou introduzir drop nesta etapa."
+      }
     },
     {
       "id": "ing-moon-sugar",
