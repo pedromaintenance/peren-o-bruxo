@@ -292,4 +292,4 @@ A matriz diferencia `origem` (proveniência de registro), zona calculada, zona p
 
 **Foco da auditoria futura:** evitar que “restauração” e “regeneração” virem sinônimos nos textos editoriais sem decisão; distinguir aumento de capacidade de recuperação corrente; evitar tratar fraqueza a veneno como tipo implícito de `dano_saude`; observar contradições de grupos e famílias sem inventar incompatibilidade. As fontes extras podem ser anotadas por origem e intensidade, mas **não** atribuem automaticamente maior taxa, duração, qualidade ou chance de sucesso.
 
-**QA do handoff:** nenhum dos 111 ingredientes ou 53 IDs foi alterado; o simulador isolado registrou 27/27 casos e o painel de recursos 14/14 verificações simuladas. Não é prova de integração, browser real ou um novo balanceamento. **Apenas design e documentação.**
+**QA do handoff:** nenhum dos 111 ingredientes ou 53 IDs foi alterado; o simulador isolado registrou 31/31 casos e o painel de recursos 14/14 verificações simuladas. Não é prova de integração, browser real ou um novo balanceamento. **Apenas design e documentação.**
