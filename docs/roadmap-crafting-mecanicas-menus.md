@@ -528,3 +528,33 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **SRC-Q01–SRC-Q08:** gate detalhado no [estudo de fontes adicionais](estudo-fontes-adicionais-alquimia-v1.md).
 
 **Verificação real:** **16/16** casos de lógica executados em V8 isolado com os JSONs reais, **10/10** verificações do painel em DOM simulado, incluindo comparação de **35 atributos de 11 ingredientes** com `curadoria_ingredientes.json`. **Não** houve CI Node, navegador real, integração Phaser ou publicação do protótipo no Pages. **[PR #97 permanece em rascunho, sem merge](https://github.com/pedromaintenance/peren-o-bruxo/pull/97)**.
+
+## 21. Taxonomia dos 53 efeitos — semântica, alvos e temporalidade (05/11/2026)
+
+**Documento diretor:** [`taxonomia-53-efeitos-alquimicos-v1.md`](taxonomia-53-efeitos-alquimicos-v1.md). **Catálogo estruturado em branch isolada e painel de revisão:** [PR #98 — rascunho](https://github.com/pedromaintenance/peren-o-bruxo/pull/98), `data/taxonomia-efeitos-alquimicos-proposta.json`, `prototipos/revisao-taxonomia-53-efeitos.html` e `prototipos/validar-taxonomia-efeitos.test.mjs`.
+
+**[DADO VIGENTE]** 111 ingredientes e 53 IDs reais; nenhuma propriedade isolada. Nomes, fontes e intensidades I–III são reproduzidos da curadoria sem reescrever a origem. Variantes textuais somente em `curar_doenca` e `voar`, sem duplicar IDs.
+
+**[CANÔNICO]** Dois tipos distintos são necessários por efeito; todos os efeitos ativados permanecem. Somente incompatibilidades aprovadas geram **Impuro**; apenas sinergias aprovadas geram nome especial (Poção da Fada). **Vampirismo deve poder transformar alguém em vampiro com o tempo**, conforme decisão documentada na auditoria; progressão, reversão, resistência e duração exatas não estão aprovadas.
+
+**[PROPOSTA, NÃO CÂNONE]** Para organizar decisões, o estudo distribuiu os 53 efeitos em **11 grupos semânticos** (não confundíveis com as 5 famílias de preparo): modificadores de atributos (10), habilidades/escolas/ofícios (9), capacidade e defesa (5), recurso atual (4), fluxo de recurso (3), resistências (5), fraquezas (5), movimento/exploração (6), estados comportamentais (3), doenças (2) e transformação (1). Todos os registros contêm alvo e temporalidade **hipotéticos**, variáveis de escala a estudar, ressalvas e valores nulos para mecânicas não aprovadas.
+
+**Distinções críticas antes de definir potência/duração:**
+- `dano_magia` pode degradar reserva atual, enquanto `diminuir_magia` pode afetar máximo/eficácia; **essa semântica é proposta na auditoria, não definitiva**.
+- `restaurar_magia`/`restaurar_saude` não devem ser equiparados a `regenerar_magia`/`regenerar_saude`; a primeira família sugere mudança pontual, a segunda taxa contínua, **a confirmar**.
+- `aumentar_destreza` não implica `velocidade`; `aumentar_percepcao` não implica `visao_a_distancia` remota; `dano_saude` não implica `infligir_doenca`.
+- Vampirismo não pode ser reduzido a simples drenagem; estados como Frenesi, Medo e Paralisia requerem resistência, término e proteção contra aprisionamento infinito.
+- Nenhuma família Poção/Veneno/Tônico/Elixir/Bálsamo deve ser inferida exclusivamente do grupo do efeito; elixir permanente e bálsamo de equipamento exigem contratos próprios.
+- Não atribuir duração universal à terceira/quarta fonte; primeiro definir se o efeito possui tempo aplicável, intensidade escalar, persistência ou reversão.
+
+**Contrato de curadoria e gameplay:** o agente de **curadoria** continua responsável por preservar IDs, nomes, fontes e intensidades, registrando dúvidas e proveniência. O agente de **mecânicas** elabora estado/alvo/tempo/resistência/empilhamento por ID após avaliação das propostas. A UI de revisão da PR #98 aceita anotações exportáveis por efeito, mas **não** cria decisões canônicas automaticamente nem altera saves.
+
+**Backlog:**
+- **CRAFT-D40 [P0 design]:** decidir os 11 grupos de pesquisa e o modelo de ficha por efeito, sem substituir IDs nem criar novas propriedades.
+- **CRAFT-D41 [P0 recursos]:** diferenciar atual, máximo, recuperação pontual e taxa, com regras de dano/cura verificáveis.
+- **CRAFT-D42 [P0 estados]:** duração, reversão, resistência e progressão por categoria, incluindo Vampirismo, Doença, Medo e Paralisia.
+- **CRAFT-D43 [P0 aplicação]:** definir alvos e veículos: criaturas, objetos, uso em ofício, famílias de preparo e efeitos extraordinários.
+- **CRAFT-D44 [P1 fontes]:** avaliar potência/duração/qualidade por semântica de efeito, nunca como multiplicador universal de 3ª/4ª fonte.
+- **CRAFT-D45 [P0 QA]:** contrato transacional de aplicação, conhecimento oculto, empilhamento, persistência e integridade de saves/arte.
+
+**Aceites de design:** `SEM-Q01–SEM-Q10` no relatório integral. **Verificação:** 17/17 testes do catálogo e 13/13 checagens de UI em execução V8/DOM simulado; ainda não executados em navegador, CI Node, Phaser ou dispositivo físico. [PR #98 permanece como proposta isolada, sem merge](https://github.com/pedromaintenance/peren-o-bruxo/pull/98).
