@@ -263,3 +263,19 @@ A [seção 9 da especificação UX](ux-descoberta-combos-caderno-v1.md) e a [se�
 Publicados os metadados editoriais em [`data/auditoria_territorial_ingredientes.json`](../data/auditoria_territorial_ingredientes.json) e o [relatório de auditoria territorial](auditoria-proveniencia-territorial-ingredientes.md). A distribuição inicial deriva de uma fórmula `CITIES[(i*7)%9]`, produzindo **12 ou 13 ingredientes por zona**, e não de uma matriz de ocorrência de espécies. Na curadoria ativa, só a Pena de Gaivota tem `zona` e `zona_exclusiva` explícitas (Portomonte); quatro outras regiões foram preservadas historicamente no README de Peren (Carapaça de Caranguejo, Pó de Vampiro, Couro de Rato e Penas de Falcão). As outras 106 zonas requerem avaliação individual, sem presumir erro nem implementar novos habitats automaticamente.
 
 A matriz diferencia `origem` (proveniência de registro), zona calculada, zona preservada por decisão de Peren, ocorrência ecológica e disponibilidade jogável futura. A validação é **estática**: ainda não foi feita comparação integral com `data/itens.json`. O escopo continua exclusivamente editorial; **nada** de `data/curadoria_ingredientes.json`, loot, preços, receitas, Phaser, save ou PWA foi alterado.
+
+## Handoff curatorial — taxonomia semântica dos 53 efeitos (05/11/2026)
+
+**Fontes de consulta:** [relatório dos 53 efeitos](taxonomia-53-efeitos-alquimicos-v1.md) · [roadmap de mecânicas, seção 21](roadmap-crafting-mecanicas-menus.md) · [PR #98, catálogo e painel de revisão](https://github.com/pedromaintenance/peren-o-bruxo/pull/98).
+
+**Dado e autoridade:** os 111 ingredientes têm 53 IDs com duas ou mais fontes distintas; não se alteraram as intensidades de origem I–III. A pesquisa propõe **11 grupos** de semântica para organizar dúvidas de alvo, tempo, unidade, resistência e aplicação. Esses grupos **não são decisões mecânicas**, não substituem rótulos/IDs e não determinam a família Poção, Veneno, Tônico, Elixir ou Bálsamo.
+
+**Responsabilidade do agente editorial:** preservar os IDs, os nomes vigentes (inclusive variantes `curar_doenca` e `voar`), os ingredientes e as evidências de significado na Carcaça. Registrar ambiguidades **sem corrigir por conveniência de engine**, sem alterar uma intensidade para caber na duração hipotética de uma poção e sem adotar semânticas propostas como aprovadas.
+
+**Atenção à distinção histórica:** `dano_magia` vs `diminuir_magia`, `restaurar_*` vs `regenerar_*`, `dano_saude` vs `infligir_doenca`, `aumentar_percepcao` vs `visao_a_distancia`, `aumentar_destreza` vs `velocidade`. A auditoria oferece hipóteses claras, **ainda não leis de gameplay**.
+
+**Exceção canônica:** Vampirismo deve poder **transformar alguém em vampiro com o tempo**, por decisão explícita registrada na [auditoria alquímica, Ciclo 9](auditoria-alquimia-peren.md). Esse potencial não autoriza inventar exposição mínima, progresso percentual, reversão, duração ou outro atributo do ingrediente. O agente de curadoria mantém essa informação de lore/mecânica pretendida visível no relatório e preserva `vampirismo` em Pó de Vampiro e Coração de Espinheiros.
+
+**Contrato com o agente de mecânicas:** cada efeito leva dados de origem e questões a resolver; os campos de potência, duração, resistência, empilhamento, fonte extra e veículo permanecem `null` até aprovação. O painel permite exportar **pareceres**, não atualizar automaticamente a curadoria nem o jogo. **Sem mudanças em ingredientes, receitas, combos, saves ou Phaser** neste estudo.
+
+**QA editorial:** 53/53 fichas rastreadas, 11 grupos, duas variantes textuais, 17 verificações estruturais aprovadas no V8 e 13 checagens funcionais do painel em DOM simulado. **PR #98 draft**, não promovida para o motor nem para os assets.
