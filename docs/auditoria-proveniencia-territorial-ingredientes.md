@@ -97,3 +97,12 @@ Em particular, se o jogo vier a permitir comprar material em Shadar-Riverie, iss
 - **Pendente:** leitura completa e comparação do `data/itens.json` compilado e decisão autoral para novos habitats.
 
 **Referências congeladas da análise:** Peren `138dcc07cc59aabe71f4e5152d7aca078be1e78d` (curadoria blob `57cf86f623ecabb4c30eb3a052384d627b615aa8`) e Monstros da Carcaça `f07ecba35a0b1c8c1aa4262dfd5f3c4968616f24`. A fonte Monstros foi utilizada para identificar limites de evidência; vários registros do atlas são propostas sem aprovação, não distribuições canônicas de espécies.
+
+## Continuidade territorial — fila de investigação dos 106 (05/11/2026)
+
+- [Fila estruturada](../data/fila-investigacao-territorial-ingredientes.json) com **106/106** registros procedurais e referências por ingrediente; os cinco registros de localizações historicamente preservadas em Peren permanecem fora da fila e não foram revogados.
+- Triagem por risco de extrapolação: **P0: 11; P1: 25; P2: 16; P3: 54**. Os marcadores de risco podem coexistir no mesmo ingrediente e não representam balanceamento de jogo.
+- **11/11 P0** receberam um **parecer documental preliminar**, sem comprovação nova de habitat e sem autorização de procedência/loot: quatro materiais de pessoa/povo potencialmente sapiente, quatro resíduos/identidades de fonte e três textos com ausência ou discrepância de efeito.
+- Os textos candidatos de Betta do Rio, Beladona e Escamas de Piranha continuam **não aprovados** e não foram aplicados.
+- [Relatório da fila e pareceres P0](fila-investigacao-ecologica-ingredientes-v1.md): fontes efetivamente verificadas, guardas de cânone, tabela dos 25 P1 e critérios de aceite.
+- **Nenhuma alteração** em curadoria ativa, zonas, atributos, receitas, combos, loot, economia, código, saves ou PWA. A comparação integral com o JSON compilado `data/itens.json` continua pendente.
