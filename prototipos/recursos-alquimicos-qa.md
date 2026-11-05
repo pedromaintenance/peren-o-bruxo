@@ -6,7 +6,7 @@ Estudo interpretativo: [`docs/estudo-recursos-alquimicos-v1.md` na main](https:/
 
 ## Testes executados no ciclo
 
-- **27/27** verificações de operações matemáticas, invariantes, exceções de capacidade, regeneração e compatibilidade legada passaram em JavaScript V8 isolado. O arquivo `.test.mjs` utiliza `node:test` para reproduzir os testes em checkout, **mas ainda não foi executado em CI Node real**.
+- **31/31** verificações de operações matemáticas, invariantes, exceções de capacidade, regeneração e compatibilidade legada passaram em JavaScript V8 isolado. O arquivo `.test.mjs` utiliza `node:test` para reproduzir os testes em checkout, **mas ainda não foi executado em CI Node real**.
 - **14/14** checagens da interface passaram em DOM simulado, incluindo cinco cenários, diferenças de ordem, preservação de PV máximo, hipóteses para Diminuir Magia, taxas positivas/negativas e correspondência entre alternativas.
 - Arquivos de runtime `game.js`, Phaser, `data/curadoria_ingredientes.json`, `data/itens.json`, receitas e saves **não foram alterados**.
 - **Ainda pendentes:** browser renderizado, responsividade mobile/Xbox, acessibilidade leitor de tela, integração com o estado real do jogo, prova de persistência e teste visual do usuário.
@@ -26,6 +26,6 @@ Estudo interpretativo: [`docs/estudo-recursos-alquimicos-v1.md` na main](https:/
 
 **Ainda não existem** magnitude de efeito derivada de I–III, duração, alvo, custo, disparo de ações, resistência, empilhamento, efeitos no PV zero, expiração de buffs, reversão de capacidade nem política de simultaneidade aprovada. O simulador clampa recursos a 0…máximo e registra `baseRate` só como hipóteses. Não interpretar resultado de QA como regra de combate ou ressurreição.
 
-**Reprodução em checkout:** `node --test prototipos/recursos-alquimicos-experimental.test.mjs`.
+**Proteção acrescentada ao experimento:** quatro testes adicionais exigem que a passagem de **0 PV para valores positivos** por cura, saldo simultâneo, aumento de máximo ou regeneração seja **rejeitada** enquanto não existir decisão de derrota/revivificação. Isso não estabelece regra de ressurreição nem altera o comportamento do clássico.\n\n**Reprodução em checkout:** `node --test prototipos/recursos-alquimicos-experimental.test.mjs`.
 
 **Gate:** decidir REC-D01 a REC-D07 antes de carregar qualquer arquivo experimental no Phaser, alterar `useItem`, modificar inventário ou anunciar bônus de duração/potência aos jogadores.
