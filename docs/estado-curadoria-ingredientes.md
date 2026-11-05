@@ -92,3 +92,12 @@ Estes ingredientes **já haviam sido revisados individualmente** e agora receber
 - **Precedentes de decisão:** `docs/auditoria-alquimia-peren.md`; política de proveniência em `docs/curadoria-itens-consistencia-carcaca.md`.
 - **Risco de sincronização:** edições da curadoria ativa podem disparar workflow que replica dados para runtimes. Este chat **não implementa mecânica, menus, saves, loot, economia ou receitas**; coordenar alterações de dados ativos antes de qualquer integração.
 - **Próximo objetivo editorial:** deliberar sobre três descrições, o campo de **proveniência** do Betta (distinto de habitat), os dois Ovos de Tordo, dois rótulos de efeitos e cinco sinergias prioritárias. [Pacote editorial](pacote-pendencias-editoriais-ingredientes.md) e [parecer de oito combos](parecer-editorial-sinergias-8-candidatos.md) publicados, **sem alteração de dados ativos**.
+
+## Auditoria territorial dos ingredientes — 05/11/2026
+
+- **111/111 ingredientes** reconciliados com a fórmula de distribuição `CITIES[(i * 7) % 9]` do gerador original e com a matriz ecológica.
+- **1** registro com override explícito de zona e exclusividade: **Pena de Gaivota — Portomonte**.
+- **4** registros de localizações mantidas no README de Peren: **Carapaça de Caranguejo — Além Sul**, **Pó de Vampiro — Boca do Abismo**, **Couro de Rato — Garganta** e **Penas de Falcão — Thargrid**. Esses locais são decisões de continuidade de Peren, não comprovação de ecologia regional da espécie.
+- **106** ingredientes sem aprovação territorial individual identificada nas fontes desta passagem; seus locais reconstruídos decorrem da distribuição procedural. As nove zonas ficam com **12 ou 13** ingredientes por efeito da fórmula, não por inventário de fauna/flora.
+- [Matriz por ID](../data/auditoria_territorial_ingredientes.json) e [relatório de proveniência territorial](auditoria-proveniencia-territorial-ingredientes.md) publicados, preservando os 111 IDs e toda a curadoria ativa.
+- **Limite de verificação:** a matriz representa a **projeção estática do gerador + overrides**; `data/itens.json` não foi comparado integralmente nesta passagem. O chat de mecânicas deve conferir a base publicada antes de mudar zonas, loot, comércio e interface.
