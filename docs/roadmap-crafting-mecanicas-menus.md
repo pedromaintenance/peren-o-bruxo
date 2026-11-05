@@ -558,3 +558,29 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **CRAFT-D45 [P0 QA]:** contrato transacional de aplicação, conhecimento oculto, empilhamento, persistência e integridade de saves/arte.
 
 **Aceites de design:** `SEM-Q01–SEM-Q10` no relatório integral. **Verificação:** 17/17 testes do catálogo e 13/13 checagens de UI em execução V8/DOM simulado; ainda não executados em navegador, CI Node, Phaser ou dispositivo físico. [PR #98 permanece como proposta isolada, sem merge](https://github.com/pedromaintenance/peren-o-bruxo/pull/98).
+
+## 22. Núcleo de recursos: Dano, Restauração, Capacidade e Regeneração (05/11/2026)
+
+**Estudo diretor:** [`estudo-recursos-alquimicos-v1.md`](estudo-recursos-alquimicos-v1.md). **Experimentos na [PR #99 (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/99):** `data/contrato-recursos-alquimicos-proposta.json`, `prototipos/recursos-alquimicos-experimental.mjs`, `prototipos/recursos-alquimicos-experimental.test.mjs`, `prototipos/painel-recursos-alquimicos-v1.html`, e `prototipos/recursos-alquimicos-qa.md`.
+
+**Dados confirmados no jogo clássico:** `game.js` tem `S.hp` e `S.mp` atuais, `maxhp()` e `maxmp()`, recuperação no fim do dia e consumo de MP para magia. A função `useItem` faz **`Regenerate Health` e `Restore Health` aumentarem PV imediatamente**, e faz **`Regenerate Magicka` e `Restore Magicka` aumentarem MP imediatamente**. Portanto a interpretação nova de **Regeneração ao longo do tempo** não está no runtime clássico, e qualquer migração exigirá decisão específica para preservar itens existentes. **Não alterar o clássico por dedução de nomes.**
+
+**[PROPOSTA — NÃO CÂNONE]** Os dez efeitos em análise são `dano_saude`, `dano_magia`, `restaurar_saude`, `restaurar_magia`, `aumentar_saude`, `aumentar_magia`, `diminuir_magia`, `regenerar_saude`, `regenerar_magia` e `diminuir_regeneracao_magia`. Para orientar contratos, distinguir **valor atual**, **máximo**, **taxa de recuperação** e **eficácia arcana (ainda sem definição de estado)**. Essa taxonomia é hipótese editorial fundamentada na curadoria, mas não é execução de alquimia já aprovada.
+
+**Achados quantitativos da simulação (magnitudes apenas de QA):**
+- **Dano + cura:** 95/100 PV com dano 40 e restauração 40 → **95/100** ao causar dano antes da cura, mas **60/100** ao curar antes do dano, por perda do excedente; saldo líquido simultâneo também resulta em 95/100. **Ordem de efeitos múltiplos ainda aberta** e não deve depender do JSON ou ordem de escolha dos ingredientes.
+- **Aumentar Saúde:** 60/100 PV + 30 de máximo → **60/130** preservando atual; **90/130** preservando déficit; **78/130** preservando proporção. **O aumento de PV atual não está autorizado só porque o máximo aumentou.**
+- **Diminuir Magia:** a hipótese pode afetar máximo ou eficácia, e o jogo não tem contrato de eficácia para esse efeito. Não preencher automaticamente nem assumir custo de conjuração novo.
+- **Regeneração:** taxa e ticks simulados são apenas instrumento de estudo, não turno, dia, tempo de mundo ou duração do preparado. Diminuir Regeneração de Magia não deve ser convertido automaticamente em Dano à Magia.
+- **Pontos críticos:** efeito em PV zero, derrota/revivificação, expiração da capacidade temporária, persistência fora de combate, resistência/empilhamento, ordem da mistura, conhecimento oculto e fontes extras exigem decisões próprias.
+
+**Backlog de integração e gates:**
+- **CRAFT-D46 [P0]:** aprovar operações por ID para o núcleo de dez recursos (atual/máximo/taxa/eficácia).
+- **CRAFT-D47 [P0]:** resolver ordem da mistura, simultaneidade de dano/restauração e arredondamentos.
+- **CRAFT-D48 [P0]:** definir o comportamento do valor atual ao aumentar/diminuir o máximo, a expiração e o PV zero.
+- **CRAFT-D49 [P0]:** unidade temporal real e política de empilhamento/interrupção da regeneração.
+- **CRAFT-D50 [P0 retrocompatibilidade]:** proteger consumíveis `Regenerate` legados do clássico e definir eventual versionamento semântico.
+- **CRAFT-D51 [P1]:** relacionar as intensidades I–III e fontes extras com magnitudes por efeito após aprovar unidades e limites.
+- **CRAFT-D52 [P0 QA]:** teste de execução real em combate, mundo, descanso, consumíveis, inventário, transações e saves sem reclassificar Impuro por reflexo.
+
+**Aceites:** `REC-Q01–REC-Q10` no [relatório](estudo-recursos-alquimicos-v1.md). **Verificação executada:** 27/27 testes de lógica em JavaScript V8 isolado e 14/14 verificações do painel em DOM simulado. **Sem** testes reais de Node CI, navegador visual, Phaser ou saves. **A PR #99 permanece isolada e não mesclada**; nenhuma magnitude ou duração foi canonizada.
