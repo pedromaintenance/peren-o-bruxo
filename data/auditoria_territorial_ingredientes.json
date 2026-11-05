@@ -1,0 +1,2348 @@
+{
+  "schema": "peren.auditoria_territorial_ingredientes.v1",
+  "data": "2026-11-05",
+  "estado": "metadados_editoriais_nao_jogaveis",
+  "titulo": "Matriz de proveniência territorial dos 111 ingredientes de Peren",
+  "fontes": {
+    "peren": {
+      "repositorio": "pedromaintenance/peren-o-bruxo",
+      "commit": "138dcc07cc59aabe71f4e5152d7aca078be1e78d",
+      "gerador": {
+        "arquivo": "ferramentas/build_data.py",
+        "sha_blob": "438a269a3381bd41f57ea0005c12041ab3de870d"
+      },
+      "curadoria": {
+        "arquivo": "data/curadoria_ingredientes.json",
+        "sha_blob": "57cf86f623ecabb4c30eb3a052384d627b615aa8"
+      },
+      "ecologia": {
+        "arquivo": "data/auditoria_ecologica_ingredientes.json",
+        "sha_blob": "8ab2c2882c567a40bc0a3e9e4fea810187c69429"
+      },
+      "documentacao": "README.md"
+    },
+    "monstros": {
+      "repositorio": "pedromaintenance/monstros-carcaca",
+      "commit_consultado": "f07ecba35a0b1c8c1aa4262dfd5f3c4968616f24",
+      "arquivos_contexto": [
+        "data/lugares_carcaca.json",
+        "data/regioes_carcaca.json",
+        "data/atlas/macroambientes-ciclo35.json",
+        "data/atlas/hidrografia-continental-ciclo39.json",
+        "data/atlas/portomonte-demeter-decisoes-ciclo51.json",
+        "docs/ATLAS_POVOAMENTO_RIO_ELDROTH_CICLO45.md"
+      ]
+    }
+  },
+  "metodo": "Reconstrução ESTÁTICA do campo zona pelo gerador: CITIES[(indice_original*7)%9], seguida por zona/zona_exclusiva do override de curadoria; conciliação de IDs com slug NFKD do nome original e com o JSON ecológico. Não é leitura nem conferência integral dos objetos publicados em data/itens.json; alterações diretas fora do gerador podem divergir.",
+  "significado_das_colunas": {
+    "zona_da_formula_base": "Local atribuído proceduralmente pelo script gerador original. Não é atestado de habitat.",
+    "zona_override_em_curadoria": "Apenas quando a ficha revisada possui chave zona.",
+    "zona_projetada_apos_override": "Saída prevista da aplicação do gerador+curadoria; não confirmação da zona do catálogo publicado",
+    "origem_metadados_em_curadoria": "Proveniência do registro de dados, não região ecológica nem prova de obtenção.",
+    "status_vinculo_ecologico_preexistente": "Referência literal ao parecer da matriz ecológica (não homologação automática)",
+    "classificacao_territorial": "Triagem editorial de evidência documental em Peren; não equivale a mapa de ocorrência de espécies."
+  },
+  "restricoes": [
+    "Não modificar data/curadoria_ingredientes.json, data/itens.json, data/receitas.json, motores, zonas, mercados, loot, saves ou PWA por causa desta matriz.",
+    "Não inventar habitat por coincidência entre um nome e uma região; existência de lugar não comprova espécie.",
+    "Atribuições no README são registros de decisão/continuidade em Peren, distintos de homologação ecológica independente em Monstros da Carcaça.",
+    "Registros de origem sapiente não são licença para caça, saque ou comércio de pessoas.",
+    "A ausência de prova no conjunto de fontes consultado significa indeterminação, não inexistência."
+  ],
+  "resumo": {
+    "total": 111,
+    "zona_exclusiva_em_override": 1,
+    "regioes_mantidas_no_README_sem_override_de_zona": 4,
+    "zona_procedural_sem_validacao_individual": 106,
+    "zona_do_gerador_distinta_do_override": 0,
+    "catalogo_de_itens_publicado_conferido_integralmente": false,
+    "contagens_por_classe": {
+      "exclusividade_aprovada_na_curadoria_Peren": 1,
+      "regiao_mantida_documentada_no_README_Peren": 4,
+      "zona_procedural_sem_homologacao_individual": 106
+    },
+    "distribuicao_projetada": {
+      "portomonte": 13,
+      "alem-sul": 13,
+      "boca-abismo": 13,
+      "garganta": 12,
+      "thargrid": 12,
+      "eldroth": 12,
+      "shadar-riverie": 12,
+      "drakport": 12,
+      "ironwood": 12
+    }
+  },
+  "cidades_base": [
+    {
+      "id": "portomonte",
+      "nome": "Portomonte",
+      "macrorregiao_do_gerador": "Costa Sul"
+    },
+    {
+      "id": "thargrid",
+      "nome": "Thargrid",
+      "macrorregiao_do_gerador": "Montanhas do Norte"
+    },
+    {
+      "id": "ironwood",
+      "nome": "Ironwood",
+      "macrorregiao_do_gerador": "Floresta do Norte"
+    },
+    {
+      "id": "garganta",
+      "nome": "Garganta",
+      "macrorregiao_do_gerador": "Extremo Leste"
+    },
+    {
+      "id": "drakport",
+      "nome": "Drakport",
+      "macrorregiao_do_gerador": "Rio Ancestral"
+    },
+    {
+      "id": "boca-abismo",
+      "nome": "Boca do Abismo",
+      "macrorregiao_do_gerador": "Extremo Oeste"
+    },
+    {
+      "id": "shadar-riverie",
+      "nome": "Shadar-Riverie",
+      "macrorregiao_do_gerador": "Rio Ancestral"
+    },
+    {
+      "id": "alem-sul",
+      "nome": "Além Sul",
+      "macrorregiao_do_gerador": "Caatinga"
+    },
+    {
+      "id": "eldroth",
+      "nome": "Eldroth",
+      "macrorregiao_do_gerador": "Asa de Golzdov"
+    }
+  ],
+  "itens": [
+    {
+      "id": "ing-felsaad-tern-feathers",
+      "nome": "Pena de Gaivota",
+      "referencia_de_importacao": "Felsaad Tern Feathers",
+      "indice_de_geracao": 0,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": "portomonte",
+      "zona_exclusiva_em_curadoria": "portomonte",
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "exclusividade_aprovada_na_curadoria_Peren",
+      "criterio_classificacao": "Decisão explícita de exclusividade Portomonte no override; sua presença regional é cânone de Peren, não validação zoológica independente do atlas.",
+      "evidencias": [
+        "data/curadoria_ingredientes.json — zona/zone_exclusiva",
+        "docs/auditoria-alquimia-peren.md — decisão autoral",
+        "data/auditoria_ecologica_ingredientes.json — Ciclo 47"
+      ],
+      "status_vinculo_ecologico_preexistente": "localidade_canonica_peren; corolario_biologico_nao_verificado_no_atlas",
+      "referencia_auditoria_ecologica_id": "ing-felsaad-tern-feathers",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Preservar exclusividade Portomonte; não ampliar para outras zonas ou deduzir taxonomia da ave."
+    },
+    {
+      "id": "ing-mudcrab-chitin",
+      "nome": "Carapaça de Caranguejo",
+      "referencia_de_importacao": "Mudcrab Chitin",
+      "indice_de_geracao": 1,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "regiao_mantida_documentada_no_README_Peren",
+      "criterio_classificacao": "Região citada como preservada no README de Peren, sem prova independente de espécie, abundância ou cadeia de coleta no atlas.",
+      "evidencias": [
+        "README.md — Curadoria de ingredientes — regra canônica"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_alem_sul_previamente_registrada_em_peren; especie_nao_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-mudcrab-chitin",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Preservar o registro histórico da localização de Peren; revisar ecologia da espécie antes de usar como spawn/drop regional."
+    },
+    {
+      "id": "ing-vampire-dust",
+      "nome": "Pó de Vampiro",
+      "referencia_de_importacao": "Vampire Dust",
+      "indice_de_geracao": 2,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "regiao_mantida_documentada_no_README_Peren",
+      "criterio_classificacao": "Região citada como preservada no README de Peren, sem prova independente de espécie, abundância ou cadeia de coleta no atlas.",
+      "evidencias": [
+        "README.md — Curadoria de ingredientes — regra canônica"
+      ],
+      "status_vinculo_ecologico_preexistente": "identidade_vampirica_e_procedencia_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-vampire-dust",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Preservar o registro histórico da localização de Peren; revisar ecologia da espécie antes de usar como spawn/drop regional."
+    },
+    {
+      "id": "ing-charred-skeever-hide",
+      "nome": "Couro de Rato",
+      "referencia_de_importacao": "Charred Skeever Hide",
+      "indice_de_geracao": 3,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "regiao_mantida_documentada_no_README_Peren",
+      "criterio_classificacao": "Região citada como preservada no README de Peren, sem prova independente de espécie, abundância ou cadeia de coleta no atlas.",
+      "evidencias": [
+        "README.md — Curadoria de ingredientes — regra canônica"
+      ],
+      "status_vinculo_ecologico_preexistente": "proveniencia_zoologica_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-charred-skeever-hide",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Preservar o registro histórico da localização de Peren; revisar ecologia da espécie antes de usar como spawn/drop regional."
+    },
+    {
+      "id": "ing-hawk-feathers",
+      "nome": "Penas de Falcão",
+      "referencia_de_importacao": "Hawk Feathers",
+      "indice_de_geracao": 4,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "regiao_mantida_documentada_no_README_Peren",
+      "criterio_classificacao": "Região citada como preservada no README de Peren, sem prova independente de espécie, abundância ou cadeia de coleta no atlas.",
+      "evidencias": [
+        "README.md — Curadoria de ingredientes — regra canônica"
+      ],
+      "status_vinculo_ecologico_preexistente": "ave_e_distribuicao_regional_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-hawk-feathers",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Preservar o registro histórico da localização de Peren; revisar ecologia da espécie antes de usar como spawn/drop regional."
+    },
+    {
+      "id": "ing-jarrin-root",
+      "nome": "Raiz Botulínica",
+      "referencia_de_importacao": "Jarrin Root",
+      "indice_de_geracao": 5,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "efeitos_potentes_ja_aceitos; habitat_e_taxon_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-jarrin-root",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-river-betty",
+      "nome": "Betta do Rio",
+      "referencia_de_importacao": "River Betty",
+      "indice_de_geracao": 6,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "lacuna_de_descricao_e_origem_no_catalogo; localidade_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-river-betty",
+      "origem_metadados_em_curadoria": null,
+      "origem_efetiva_prevista_gerador": "adaptado_skyrim_alquimia",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-emperor-parasol-moss",
+      "nome": "Musgo Parassol",
+      "referencia_de_importacao": "Emperor Parasol Moss",
+      "indice_de_geracao": 7,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-emperor-parasol-moss",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-nirnroot",
+      "nome": "Raiz Velada",
+      "referencia_de_importacao": "Nirnroot",
+      "indice_de_geracao": 8,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "distribuicao_e_vinculo_feerico_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-nirnroot",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-crimson-nirnroot",
+      "nome": "Raiz Velada Rubra",
+      "referencia_de_importacao": "Crimson Nirnroot",
+      "indice_de_geracao": 9,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "variante_de_peren_documentada; habitat_e_parentesco_taxonomico_natural_nao_confirmados",
+      "referencia_auditoria_ecologica_id": "ing-crimson-nirnroot",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-deathbell",
+      "nome": "Sino da Morte",
+      "referencia_de_importacao": "Deathbell",
+      "indice_de_geracao": 10,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "flor_especifica_e_uso_ritual_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-deathbell",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-poison-bloom",
+      "nome": "Flor Venenosa",
+      "referencia_de_importacao": "Poison Bloom",
+      "indice_de_geracao": 11,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ambiente_generico_sem_localidade_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-poison-bloom",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ectoplasm",
+      "nome": "Ectoplasma",
+      "referencia_de_importacao": "Ectoplasm",
+      "indice_de_geracao": 12,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_espiritual_e_regiao_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-ectoplasm",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-falmer-ear",
+      "nome": "Orelha de Troglodita",
+      "referencia_de_importacao": "Falmer Ear",
+      "indice_de_geracao": 13,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "sapiencia_identidade_e_proveniencia_nao_determinadas",
+      "referencia_auditoria_ecologica_id": "ing-falmer-ear",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-human-flesh",
+      "nome": "Carne Humana",
+      "referencia_de_importacao": "Human Flesh",
+      "indice_de_geracao": 14,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "proveniencia_humana_nao_documentada; necessidade_de_tratamento_etico",
+      "referencia_auditoria_ecologica_id": "ing-human-flesh",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-human-heart",
+      "nome": "Coração Humano",
+      "referencia_de_importacao": "Human Heart",
+      "indice_de_geracao": 15,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "proveniencia_humana_indeterminada; sapiencia_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-human-heart",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-imp-stool",
+      "nome": "Fungo de Diabrete",
+      "referencia_de_importacao": "Imp Stool",
+      "indice_de_geracao": 16,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "identidade_e_habitat_especificos_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-imp-stool",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-nightshade",
+      "nome": "Beladona",
+      "referencia_de_importacao": "Nightshade",
+      "indice_de_geracao": 17,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "descr_lore_com_efeito_mecanico_nao_representado",
+      "referencia_auditoria_ecologica_id": "ing-nightshade",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-red-mountain-flower",
+      "nome": "Flor Vermelha",
+      "referencia_de_importacao": "Red Mountain Flower",
+      "indice_de_geracao": 18,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "flora_documentada_peren; bioma_e_procedencia_nao_confirmados",
+      "referencia_auditoria_ecologica_id": "ing-red-mountain-flower",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-skeever-tail",
+      "nome": "Cauda de Rato",
+      "referencia_de_importacao": "Skeever Tail",
+      "indice_de_geracao": 19,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "quarto_atributo_aprovado; local_de_origem_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-skeever-tail",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-small-antlers",
+      "nome": "Chifres de Cervo",
+      "referencia_de_importacao": "Small Antlers",
+      "indice_de_geracao": 20,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_localidade_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-small-antlers",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-troll-fat",
+      "nome": "Gordura de Troll",
+      "referencia_de_importacao": "Troll Fat",
+      "indice_de_geracao": 21,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_habitat_sem_correspondencia_autoral",
+      "referencia_auditoria_ecologica_id": "ing-troll-fat",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-void-salts",
+      "nome": "Sais do Vazio",
+      "referencia_de_importacao": "Void Salts",
+      "indice_de_geracao": 22,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_cosmologica_nao_comprovada",
+      "referencia_auditoria_ecologica_id": "ing-void-salts",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-butterfly-wing",
+      "nome": "Asa de Borboleta",
+      "referencia_de_importacao": "Butterfly Wing",
+      "indice_de_geracao": 23,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-butterfly-wing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-chaurus-eggs",
+      "nome": "Ovo de Verme Gigante",
+      "referencia_de_importacao": "Chaurus Eggs",
+      "indice_de_geracao": 24,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "organismo_e_regiao_de_postura_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-chaurus-eggs",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-daedra-heart",
+      "nome": "Coração de Demônio",
+      "referencia_de_importacao": "Daedra Heart",
+      "indice_de_geracao": 25,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "natureza_demoniaca_compativel; individuo_e_origem_indeterminados",
+      "referencia_auditoria_ecologica_id": "ing-daedra-heart",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-eye-of-sabre-cat",
+      "nome": "Olho de Felino",
+      "referencia_de_importacao": "Eye of Sabre Cat",
+      "indice_de_geracao": 26,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_regional_nao_confirmada; quarto_atributo_aprovado",
+      "referencia_auditoria_ecologica_id": "ing-eye-of-sabre-cat",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-glow-dust",
+      "nome": "Poeira Luminosa",
+      "referencia_de_importacao": "Glow Dust",
+      "indice_de_geracao": 27,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "substrato_fisico_e_procedencia_desconhecidos",
+      "referencia_auditoria_ecologica_id": "ing-glow-dust",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-hagraven-feathers",
+      "nome": "Penas de Bruxa",
+      "referencia_de_importacao": "Hagraven Feathers",
+      "indice_de_geracao": 28,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "criatura_fonte_e_procedencia_nao_classificadas",
+      "referencia_auditoria_ecologica_id": "ing-hagraven-feathers",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-hanging-moss",
+      "nome": "Musgo Pendente",
+      "referencia_de_importacao": "Hanging Moss",
+      "indice_de_geracao": 29,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_peren; especie_e_regiao_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-hanging-moss",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-luna-moth-wing",
+      "nome": "Asa de Mariposa Lunar",
+      "referencia_de_importacao": "Luna Moth Wing",
+      "indice_de_geracao": 30,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "inseto_noturno_sem_especie_ou_regiao_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-luna-moth-wing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-namira-s-rot",
+      "nome": "Fungo de Gualápoles",
+      "referencia_de_importacao": "Namira's Rot",
+      "indice_de_geracao": 31,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "toponimo_documentado; especie_em_gualapolis_nao_comprovada",
+      "referencia_auditoria_ecologica_id": "ing-namira-s-rot",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-nordic-barnacle",
+      "nome": "Craca de Rio",
+      "referencia_de_importacao": "Nordic Barnacle",
+      "indice_de_geracao": 32,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_peren; trecho_de_rio_nao_comprovado",
+      "referencia_auditoria_ecologica_id": "ing-nordic-barnacle",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-trama-root",
+      "nome": "Raiz de Trama",
+      "referencia_de_importacao": "Trama Root",
+      "indice_de_geracao": 33,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_vegetal_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-trama-root",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ancestor-moth-wing",
+      "nome": "Asa de Mariposa Ancestral",
+      "referencia_de_importacao": "Ancestor Moth Wing",
+      "indice_de_geracao": 34,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "vinculo_ritual_especifico_nao_comprovado",
+      "referencia_auditoria_ecologica_id": "ing-ancestor-moth-wing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-bear-claws",
+      "nome": "Garras de Urso",
+      "referencia_de_importacao": "Bear Claws",
+      "indice_de_geracao": 35,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_regiao_de_coleta_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-bear-claws",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-blue-butterfly-wing",
+      "nome": "Asa de Borboleta Azul",
+      "referencia_de_importacao": "Blue Butterfly Wing",
+      "indice_de_geracao": 36,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_azul_sem_origem_ou_distribuicao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-blue-butterfly-wing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-blue-mountain-flower",
+      "nome": "Flor Azul da Montanha",
+      "referencia_de_importacao": "Blue Mountain Flower",
+      "indice_de_geracao": 37,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "habitat_microambiental_peren; localidade_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-blue-mountain-flower",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-burnt-spriggan-wood",
+      "nome": "Madeira de Ent Carbonizado",
+      "referencia_de_importacao": "Burnt Spriggan Wood",
+      "indice_de_geracao": 38,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "fonte_sobrenatural_peren; local_do_incendio_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-burnt-spriggan-wood",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-chaurus-hunter-antennae",
+      "nome": "Antena de Verme Gigante",
+      "referencia_de_importacao": "Chaurus Hunter Antennae",
+      "indice_de_geracao": 39,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "taxon_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-chaurus-hunter-antennae",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-chicken-s-egg",
+      "nome": "Ovo de Galinha",
+      "referencia_de_importacao": "Chicken's Egg",
+      "indice_de_geracao": 40,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "material_alimentar_documentado_peren; producao_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-chicken-s-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-hawk-s-egg",
+      "nome": "Ovo de Falcão",
+      "referencia_de_importacao": "Hawk's Egg",
+      "indice_de_geracao": 41,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-hawk-s-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-spider-egg",
+      "nome": "Ovo de Aranha",
+      "referencia_de_importacao": "Spider Egg",
+      "indice_de_geracao": 42,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_postura_e_territorio_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-spider-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-spriggan-sap",
+      "nome": "Seiva de Ent",
+      "referencia_de_importacao": "Spriggan Sap",
+      "indice_de_geracao": 43,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_de_ent_e_habitat_nao_comprovados",
+      "referencia_auditoria_ecologica_id": "ing-spriggan-sap",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ash-creep-cluster",
+      "nome": "Tufo Cinzento",
+      "referencia_de_importacao": "Ash Creep Cluster",
+      "indice_de_geracao": 44,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "localizacao_da_flora_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-ash-creep-cluster",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-berit-s-ashes",
+      "nome": "Cinzas Mortuárias",
+      "referencia_de_importacao": "Berit's Ashes",
+      "indice_de_geracao": 45,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "identidade_do_escriba_e_origem_funebre_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-berit-s-ashes",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-blisterwort",
+      "nome": "Fungo de Bolha",
+      "referencia_de_importacao": "Blisterwort",
+      "indice_de_geracao": 46,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_fungica_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-blisterwort",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-bone-meal",
+      "nome": "Farinha de Ossos",
+      "referencia_de_importacao": "Bone Meal",
+      "indice_de_geracao": 47,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "identidade_de_ossos_e_origem_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-bone-meal",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-canis-root",
+      "nome": "Raiz Canina",
+      "referencia_de_importacao": "Canis Root",
+      "indice_de_geracao": 48,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-canis-root",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-cyrodilic-spadetail",
+      "nome": "Peixe de Escamas Finas",
+      "referencia_de_importacao": "Cyrodilic Spadetail",
+      "indice_de_geracao": 49,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "corpo_dagua_documentado; especie_nao_localizada",
+      "referencia_auditoria_ecologica_id": "ing-cyrodilic-spadetail",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-giant-s-toe",
+      "nome": "Dedo de Gigante",
+      "referencia_de_importacao": "Giant's Toe",
+      "indice_de_geracao": 50,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_individual_e_metodo_de_obtencao_nao_documentados; povo_sapiente_documentado",
+      "referencia_auditoria_ecologica_id": "ing-giant-s-toe",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-rock-warbler-egg",
+      "nome": "Ovo de Tordo",
+      "referencia_de_importacao": "Rock Warbler Egg",
+      "indice_de_geracao": 51,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "segunda_ficha_de_nome_duplicado; especie_e_habitat_indeterminados",
+      "referencia_auditoria_ecologica_id": "ing-rock-warbler-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-creep-cluster",
+      "nome": "Tufo Rastejante",
+      "referencia_de_importacao": "Creep Cluster",
+      "indice_de_geracao": 52,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_habitat_da_trepadeira_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-creep-cluster",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-frost-mirriam",
+      "nome": "Mirra da Geada",
+      "referencia_de_importacao": "Frost Mirriam",
+      "indice_de_geracao": 53,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "clima_frio_peren; proveniencia_regional_nao_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-frost-mirriam",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-histcarp",
+      "nome": "Carpa de Pedra",
+      "referencia_de_importacao": "Histcarp",
+      "indice_de_geracao": 54,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_agua_de_ocorrencia_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-histcarp",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-juniper-berries",
+      "nome": "Bagas de Zimbro",
+      "referencia_de_importacao": "Juniper Berries",
+      "indice_de_geracao": 55,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "distribuicao_e_agricultura_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-juniper-berries",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-large-antlers",
+      "nome": "Chifres de Alce",
+      "referencia_de_importacao": "Large Antlers",
+      "indice_de_geracao": 56,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-large-antlers",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-silverside-perch",
+      "nome": "Perca Prateada",
+      "referencia_de_importacao": "Silverside Perch",
+      "indice_de_geracao": 57,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "regiao_aquatica_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-silverside-perch",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-wheat",
+      "nome": "Trigo",
+      "referencia_de_importacao": "Wheat",
+      "indice_de_geracao": 58,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "cultivo_regional_indeterminado",
+      "referencia_auditoria_ecologica_id": "ing-wheat",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-yellow-mountain-flower",
+      "nome": "Flor Amarela da Montanha",
+      "referencia_de_importacao": "Yellow Mountain Flower",
+      "indice_de_geracao": 59,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_documentado_em_peren; localidade_nao_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-yellow-mountain-flower",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-blue-dartwing",
+      "nome": "Libélula Azul",
+      "referencia_de_importacao": "Blue Dartwing",
+      "indice_de_geracao": 60,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-blue-dartwing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-gleamblossom",
+      "nome": "Flor Luminescente",
+      "referencia_de_importacao": "Gleamblossom",
+      "indice_de_geracao": 61,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "habitat_da_flora_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-gleamblossom",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-netch-jelly",
+      "nome": "Gelatina de Medusa",
+      "referencia_de_importacao": "Netch Jelly",
+      "indice_de_geracao": 62,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "criatura_produtora_nao_classificada; medusa_ambigua",
+      "referencia_auditoria_ecologica_id": "ing-netch-jelly",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-powdered-mammoth-tusk",
+      "nome": "Pó de Presa de Mamute",
+      "referencia_de_importacao": "Powdered Mammoth Tusk",
+      "indice_de_geracao": 63,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "fossil_item_canonico_peren; especie_e_procedencia_nao_comprovadas",
+      "referencia_auditoria_ecologica_id": "ing-powdered-mammoth-tusk",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-grass-pod",
+      "nome": "Vagem da Charneca",
+      "referencia_de_importacao": "Grass Pod",
+      "indice_de_geracao": 64,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "bioma_especifico_e_localidade_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-grass-pod",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-dragon-s-tongue",
+      "nome": "Língua-de-Dragão",
+      "referencia_de_importacao": "Dragon's Tongue",
+      "indice_de_geracao": 65,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "planta_sem_relacao_anatomica_com_dragoes",
+      "referencia_auditoria_ecologica_id": "ing-dragon-s-tongue",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-hagraven-claw",
+      "nome": "Garra de Bruxa",
+      "referencia_de_importacao": "Hagraven Claw",
+      "indice_de_geracao": 66,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_vinculo_cultural_nao_confirmados",
+      "referencia_auditoria_ecologica_id": "ing-hagraven-claw",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-tundra-cotton",
+      "nome": "Algodão da Tundra",
+      "referencia_de_importacao": "Tundra Cotton",
+      "indice_de_geracao": 67,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microambiente_peren; area_de_cultivo_indeterminada",
+      "referencia_auditoria_ecologica_id": "ing-tundra-cotton",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-bleeding-crown",
+      "nome": "Coroa Sangrenta",
+      "referencia_de_importacao": "Bleeding Crown",
+      "indice_de_geracao": 68,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "flora_especifica_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-bleeding-crown",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-boar-tusk",
+      "nome": "Presa de Javali",
+      "referencia_de_importacao": "Boar Tusk",
+      "indice_de_geracao": 69,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_ecossistema_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-boar-tusk",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-pearl",
+      "nome": "Pérola",
+      "referencia_de_importacao": "Pearl",
+      "indice_de_geracao": 70,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "procedencia_oceanica_peren; especie_produtora_e_costa_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-pearl",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-slaughterfish-scales",
+      "nome": "Escamas de Piranha",
+      "referencia_de_importacao": "Slaughterfish Scales",
+      "indice_de_geracao": 71,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "organismo_e_habitat_especificos_nao_documentados; possivel_desalinhamento_de_descricao",
+      "referencia_auditoria_ecologica_id": "ing-slaughterfish-scales",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-briar-heart",
+      "nome": "Coração de Espinheiros",
+      "referencia_de_importacao": "Briar Heart",
+      "indice_de_geracao": 72,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-briar-heart",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-honeycomb",
+      "nome": "Favo de Mel",
+      "referencia_de_importacao": "Honeycomb",
+      "indice_de_geracao": 73,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "producao_e_especie_de_abelha_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-honeycomb",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-hawk-beak",
+      "nome": "Bico de Falcão",
+      "referencia_de_importacao": "Hawk Beak",
+      "indice_de_geracao": 74,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-hawk-beak",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-scaly-pholiota",
+      "nome": "Cogumelo Escamoso",
+      "referencia_de_importacao": "Scaly Pholiota",
+      "indice_de_geracao": 75,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_ocorrencia_de_fungo_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-scaly-pholiota",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-wisp-wrappings",
+      "nome": "Faixas de Espírito",
+      "referencia_de_importacao": "Wisp Wrappings",
+      "indice_de_geracao": 76,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "tipo_de_aparicao_e_local_de_ocorrencia_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-wisp-wrappings",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-frost-salts",
+      "nome": "Sais da Geada",
+      "referencia_de_importacao": "Frost Salts",
+      "indice_de_geracao": 77,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "localidade_de_extracao_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-frost-salts",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-lavender",
+      "nome": "Lavanda Selvagem",
+      "referencia_de_importacao": "Lavender",
+      "indice_de_geracao": 78,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "flora_e_uso_peren_documentados; cultivo_regional_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-lavender",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-beehive-husk",
+      "nome": "Casca de Colmeia",
+      "referencia_de_importacao": "Beehive Husk",
+      "indice_de_geracao": 79,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "organismo_produtor_e_ocorrencia_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-beehive-husk",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-glowing-mushroom",
+      "nome": "Cogumelo Luminescente",
+      "referencia_de_importacao": "Glowing Mushroom",
+      "indice_de_geracao": 80,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_de_fungo_e_fonte_do_brilho_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-glowing-mushroom",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-snowberries",
+      "nome": "Bagas da Neve",
+      "referencia_de_importacao": "Snowberries",
+      "indice_de_geracao": 81,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ambiente_frio_documentado; especie_e_zona_de_coleta_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-snowberries",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-spawn-ash",
+      "nome": "Cinzas de Criatura",
+      "referencia_de_importacao": "Spawn Ash",
+      "indice_de_geracao": 82,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_procedencia_do_residuo_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-spawn-ash",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ice-wraith-teeth",
+      "nome": "Dentes de Espectro Gelado",
+      "referencia_de_importacao": "Ice Wraith Teeth",
+      "indice_de_geracao": 83,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "criatura_espectral_sem_taxonomia_ou_habitat_confirmado",
+      "referencia_auditoria_ecologica_id": "ing-ice-wraith-teeth",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-sabre-cat-tooth",
+      "nome": "Dente de Grande Felino",
+      "referencia_de_importacao": "Sabre Cat Tooth",
+      "indice_de_geracao": 84,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_regional_nao_identificada",
+      "referencia_auditoria_ecologica_id": "ing-sabre-cat-tooth",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-thistle-branch",
+      "nome": "Ramo de Cardo",
+      "referencia_de_importacao": "Thistle Branch",
+      "indice_de_geracao": 85,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_local_de_coleta_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-thistle-branch",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-white-cap",
+      "nome": "Chapéu Branco",
+      "referencia_de_importacao": "White Cap",
+      "indice_de_geracao": 86,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "habitat_especifico_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-white-cap",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-dwarven-oil",
+      "nome": "Óleo de Autômato",
+      "referencia_de_importacao": "Dwarven Oil",
+      "indice_de_geracao": 87,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_tecnica_regional_nao_confirmada",
+      "referencia_auditoria_ecologica_id": "ing-dwarven-oil",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-mora-tapinella",
+      "nome": "Cogumelo de Raiz",
+      "referencia_de_importacao": "Mora Tapinella",
+      "indice_de_geracao": 88,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_peren; especie_e_floresta_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-mora-tapinella",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-taproot",
+      "nome": "Raiz Mestra",
+      "referencia_de_importacao": "Taproot",
+      "indice_de_geracao": 89,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "propriedade_canonica_peren; distribuicao_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-taproot",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ash-hopper-jelly",
+      "nome": "Gelatina de Gafanhoto",
+      "referencia_de_importacao": "Ash Hopper Jelly",
+      "indice_de_geracao": 90,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microcontexto_peren; criatura_e_regiao_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-ash-hopper-jelly",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-ashen-grass-pod",
+      "nome": "Vagem Cinzenta",
+      "referencia_de_importacao": "Ashen Grass Pod",
+      "indice_de_geracao": 91,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "habitat_queimado_peren; area_e_evento_nao_identificados",
+      "referencia_auditoria_ecologica_id": "ing-ashen-grass-pod",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-pine-thrush-egg",
+      "nome": "Ovo de Tordo",
+      "referencia_de_importacao": "Pine Thrush Egg",
+      "indice_de_geracao": 92,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-pine-thrush-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-jazbay-grapes",
+      "nome": "Uvas de Jasmim",
+      "referencia_de_importacao": "Jazbay Grapes",
+      "indice_de_geracao": 93,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "viticultura_e_origem_regional_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-jazbay-grapes",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-salmon-roe",
+      "nome": "Ovas de Salmão",
+      "referencia_de_importacao": "Salmon Roe",
+      "indice_de_geracao": 94,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-salmon-roe",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-elves-ear",
+      "nome": "Orelha-de-Elfo",
+      "referencia_de_importacao": "Elves Ear",
+      "indice_de_geracao": 95,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_fungica_e_habitat_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-elves-ear",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-small-pearl",
+      "nome": "Pérola Pequena",
+      "referencia_de_importacao": "Small Pearl",
+      "indice_de_geracao": 96,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-small-pearl",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-orange-dartwing",
+      "nome": "Libélula Laranja",
+      "referencia_de_importacao": "Orange Dartwing",
+      "indice_de_geracao": 97,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_peren; especie_e_bacia_indeterminadas",
+      "referencia_auditoria_ecologica_id": "ing-orange-dartwing",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-slaughterfish-egg",
+      "nome": "Ovas de Piranha",
+      "referencia_de_importacao": "Slaughterfish Egg",
+      "indice_de_geracao": 98,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_postura_e_bacia_nao_documentados",
+      "referencia_auditoria_ecologica_id": "ing-slaughterfish-egg",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-abecean-longfin",
+      "nome": "Peixe-Espada do Sangue",
+      "referencia_de_importacao": "Abecean Longfin",
+      "indice_de_geracao": 99,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "nome_maritimo_peren; distribuicao_no_mar_nao_comprovada",
+      "referencia_auditoria_ecologica_id": "ing-abecean-longfin",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-salt-pile",
+      "nome": "Sal do Sangue",
+      "referencia_de_importacao": "Salt Pile",
+      "indice_de_geracao": 100,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "origem_maritima_descrita_em_peren; processo_de_extracao_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-salt-pile",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-purple-mountain-flower",
+      "nome": "Flor Violeta",
+      "referencia_de_importacao": "Purple Mountain Flower",
+      "indice_de_geracao": 101,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-purple-mountain-flower",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-garlic",
+      "nome": "Alho",
+      "referencia_de_importacao": "Garlic",
+      "indice_de_geracao": 102,
+      "zona_da_formula_base": "garganta",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "garganta",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "efeito_adicional_aprovado; local_de_cultivo_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-garlic",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-torchbug-thorax",
+      "nome": "Tórax de Vaga-lume",
+      "referencia_de_importacao": "Torchbug Thorax",
+      "indice_de_geracao": 103,
+      "zona_da_formula_base": "thargrid",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "thargrid",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "especie_e_ocorrencia_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-torchbug-thorax",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-fly-amanita",
+      "nome": "Amanita Rubra",
+      "referencia_de_importacao": "Fly Amanita",
+      "indice_de_geracao": 104,
+      "zona_da_formula_base": "eldroth",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "eldroth",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "propriedades_canonicas_peren; habitat_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-fly-amanita",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-scathecraw",
+      "nome": "Espinho-da-Morte",
+      "referencia_de_importacao": "Scathecraw",
+      "indice_de_geracao": 105,
+      "zona_da_formula_base": "shadar-riverie",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "shadar-riverie",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "planta_e_localidade_nao_documentadas; sem_nexo_funerario_comprovado",
+      "referencia_auditoria_ecologica_id": "ing-scathecraw",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-swamp-fungal-pod",
+      "nome": "Fungo do Pântano",
+      "referencia_de_importacao": "Swamp Fungal Pod",
+      "indice_de_geracao": 106,
+      "zona_da_formula_base": "drakport",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "drakport",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "habitat_especifico_nao_documentado",
+      "referencia_auditoria_ecologica_id": "ing-swamp-fungal-pod",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-giant-lichen",
+      "nome": "Líquen Gigante",
+      "referencia_de_importacao": "Giant Lichen",
+      "indice_de_geracao": 107,
+      "zona_da_formula_base": "ironwood",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "ironwood",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "microhabitat_peren; ocorrencia_regional_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-giant-lichen",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-bee",
+      "nome": "Abelha",
+      "referencia_de_importacao": "Bee",
+      "indice_de_geracao": 108,
+      "zona_da_formula_base": "portomonte",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "portomonte",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "polinizacao_no_peren; especie_e_criacao_nao_documentadas",
+      "referencia_auditoria_ecologica_id": "ing-bee",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-fire-salts",
+      "nome": "Sais Ígneos",
+      "referencia_de_importacao": "Fire Salts",
+      "indice_de_geracao": 109,
+      "zona_da_formula_base": "alem-sul",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "alem-sul",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "fenomeno_sobrenatural_sem_fonte_geologica_ou_cosmologica",
+      "referencia_auditoria_ecologica_id": "ing-fire-salts",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    },
+    {
+      "id": "ing-moon-sugar",
+      "nome": "Açúcar Lunar",
+      "referencia_de_importacao": "Moon Sugar",
+      "indice_de_geracao": 110,
+      "zona_da_formula_base": "boca-abismo",
+      "zona_override_em_curadoria": null,
+      "zona_exclusiva_em_curadoria": null,
+      "zona_projetada_apos_override": "boca-abismo",
+      "classificacao_territorial": "zona_procedural_sem_homologacao_individual",
+      "criterio_classificacao": "Local atribuído pela fórmula de geração; a auditoria ecológica não confirma que a espécie exista nesta zona.",
+      "evidencias": [
+        "ferramentas/build_data.py — atribuição procedural de zona"
+      ],
+      "status_vinculo_ecologico_preexistente": "ligacao_ao_templo_lunar_nao_documentada",
+      "referencia_auditoria_ecologica_id": "ing-moon-sugar",
+      "origem_metadados_em_curadoria": "curadoria_original_carcaca",
+      "origem_efetiva_prevista_gerador": "curadoria_original_carcaca",
+      "notas_de_integracao": "Não converter automaticamente esta zona em habitat, drop, sazonalidade, coleta nem comércio."
+    }
+  ]
+}
