@@ -61,7 +61,7 @@ Amostra de QA: **60/100 PV**, `aumentar_saude` com magnitude hipotética **30 de
 
 **Implicações:** preservar o déficit concede PV atual ao aumentar máximo; preservar valor não concede cura mas aumenta a fração faltante. Preservar a proporção exige arredondamento. Todas têm efeitos estratégicos. Ao reduzir capacidade (cenário `diminuir_magia`), também há divergência entre **cortar o excesso** e **preservar o déficit**.
 
-**Risco ainda não abordado:** quando esse aumento termina, o que acontece ao PV/MP que estiver acima do máximo original? Quem está com PV zero pode ser revivido? Um estado de regeneração continua funcionando com personagem derrotado? **Nenhuma regra de ressuscitação ou expiração foi autorizada.** O simulador não deve ser integrado a gameplay enquanto essas perguntas não forem resolvidas.
+**Risco ainda não abordado:** quando esse aumento termina, o que acontece ao PV/MP que estiver acima do máximo original? Quem está com PV zero pode ser revivido? Um estado de regeneração continua funcionando com personagem derrotado? **Nenhuma regra de ressuscitação ou expiração foi autorizada.** Por proteção, o simulador **rejeita qualquer transição de 0 PV para PV positivo** sem um contrato específico, quer venha de restauração, saldo simultâneo, capacidade ou regeneração. A restrição é um **gate de QA**, não afirmação canônica de que Peren jamais possa ser revivido; o simulador não deve ser integrado a gameplay enquanto essas perguntas não forem resolvidas.
 
 **`diminuir_magia` exige decisão própria:** a auditoria propôs **reduzir máximo ou eficácia**, e nenhum dos dois comportamentos foi aprovado. Uma opção da UI **não mexe em MP** quando se escolhe eficácia, precisamente porque não há campo de eficácia validado pelo motor. Não inventar esse campo no save.
 
@@ -90,7 +90,7 @@ O catálogo `data/contrato-recursos-alquimicos-proposta.json` registra os **10 I
 
 **Ramo experimental:** `design/recursos-alquimia-20261105` · [PR #99 (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/99).
 
-**Evidências executadas:** **27/27 casos de lógica** passaram em JavaScript V8 isolado com o arquivo-fonte vigente do clássico; **14/14 verificações de interface** passaram em DOM simulado. Esse resultado não substitui `node --test` real, navegador visual, CI, integração Phaser ou jogo publicado.
+**Evidências executadas:** **31/31 casos de lógica** passaram em JavaScript V8 isolado com o arquivo-fonte vigente do clássico; **14/14 verificações de interface** passaram em DOM simulado. Esse resultado não substitui `node --test` real, navegador visual, CI, integração Phaser ou jogo publicado.
 
 **Gates propostos:**
 - **REC-D01 [P0]:** aprovar significado dos 10 efeitos e a variável atingida (corrente/máximo/taxa/eficácia).
