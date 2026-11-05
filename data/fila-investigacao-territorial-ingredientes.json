@@ -42,11 +42,11 @@
       "proveniencia_de_pessoa_ou_povo_sapiente": 6,
       "restos_mortuarios_ou_identidade_da_fonte": 6,
       "lacuna_ou_divergencia_descritiva": 6,
-      "identidade_de_criatura_ou_material_sobrenatural_nao_definida": 3,
       "nome_ou_indicio_climatico_nao_comprova_ocorrencia": 3,
       "habitat_aquatico_e_bacia_nao_demonstrados": 2,
       "dois_registros_com_mesmo_nome": 3,
-      "artesanato_ou_producao_nao_comprovada_por_cidade": 2
+      "artesanato_ou_producao_nao_comprovada_por_cidade": 2,
+      "identidade_da_fonte_ou_material_especial_nao_comprovada": 3
     },
     "orientacao": "O score é somente regra de organização por marcadores explicitamente curados; categorias ausentes não provam risco zero. Material do atlas com estado de proposta não se torna habitat aprovado.",
     "previa_declarada": "Em data/auditoria_territorial_ingredientes.json existem 106 registros de zona procedural, cinco registros historicamente preservados fora do escopo.",
@@ -58,7 +58,8 @@
       "Não promover propostas do atlas a cânone por correspondência nominal.",
       "Não afetar receitas, runtime, Phaser, clássico, menus ou saves."
     ],
-    "nota_de_parecer": "O primeiro parecer documenta limites das fontes e propostas de correção, sem decidir proveniência, estatuto da criatura, compatibilidade de loot ou habitat."
+    "nota_de_parecer": "O primeiro parecer documenta limites das fontes e propostas de correção, sem decidir proveniência, estatuto da criatura, compatibilidade de loot ou habitat.",
+    "nota_taxonomica": "O marcador de fonte/material especial não classifica a substância como sobrenatural: contempla também material processado ou de criatura cuja espécie é incerta (por exemplo, Pó de Presa de Mamute e Poeira Luminosa)."
   },
   "resumo": {
     "total_ingredientes": 111,
@@ -74,11 +75,11 @@
       "proveniencia_de_pessoa_ou_povo_sapiente": 4,
       "restos_mortuarios_ou_identidade_da_fonte": 4,
       "lacuna_ou_divergencia_descritiva": 3,
-      "identidade_de_criatura_ou_material_sobrenatural_nao_definida": 15,
       "nome_ou_indicio_climatico_nao_comprova_ocorrencia": 12,
       "habitat_aquatico_e_bacia_nao_demonstrados": 12,
       "dois_registros_com_mesmo_nome": 2,
-      "artesanato_ou_producao_nao_comprovada_por_cidade": 9
+      "artesanato_ou_producao_nao_comprovada_por_cidade": 9,
+      "identidade_da_fonte_ou_material_especial_nao_comprovada": 15
     },
     "ids_triados": 106,
     "habitats_aprovados_nesta_rodada": 0,
@@ -562,9 +563,9 @@
       "id": "ing-moon-sugar",
       "nome": "Açúcar Lunar",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "identidade_da_fonte_ou_material_especial_nao_comprovada",
         "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
       ],
       "zona_procedural_ainda_nao_homologada": "boca-abismo",
@@ -649,9 +650,9 @@
       "id": "ing-daedra-heart",
       "nome": "Coração de Demônio",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "drakport",
       "id_da_matriz_territorial": "ing-daedra-heart",
@@ -678,9 +679,9 @@
       "id": "ing-ice-wraith-teeth",
       "nome": "Dentes de Espectro Gelado",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "identidade_da_fonte_ou_material_especial_nao_comprovada",
         "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
       ],
       "zona_procedural_ainda_nao_homologada": "boca-abismo",
@@ -708,9 +709,9 @@
       "id": "ing-ectoplasm",
       "nome": "Ectoplasma",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "garganta",
       "id_da_matriz_territorial": "ing-ectoplasm",
@@ -853,9 +854,9 @@
       "id": "ing-hagraven-claw",
       "nome": "Garra de Bruxa",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "garganta",
       "id_da_matriz_territorial": "ing-hagraven-claw",
@@ -882,9 +883,9 @@
       "id": "ing-ash-hopper-jelly",
       "nome": "Gelatina de Gafanhoto",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "portomonte",
       "id_da_matriz_territorial": "ing-ash-hopper-jelly",
@@ -912,9 +913,9 @@
       "id": "ing-netch-jelly",
       "nome": "Gelatina de Medusa",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "ironwood",
       "id_da_matriz_territorial": "ing-netch-jelly",
@@ -941,9 +942,9 @@
       "id": "ing-troll-fat",
       "nome": "Gordura de Troll",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "garganta",
       "id_da_matriz_territorial": "ing-troll-fat",
@@ -970,9 +971,9 @@
       "id": "ing-burnt-spriggan-wood",
       "nome": "Madeira de Ent Carbonizado",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "boca-abismo",
       "id_da_matriz_territorial": "ing-burnt-spriggan-wood",
@@ -1088,9 +1089,9 @@
       "id": "ing-hagraven-feathers",
       "nome": "Penas de Bruxa",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "alem-sul",
       "id_da_matriz_territorial": "ing-hagraven-feathers",
@@ -1117,9 +1118,9 @@
       "id": "ing-powdered-mammoth-tusk",
       "nome": "Pó de Presa de Mamute",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "portomonte",
       "id_da_matriz_territorial": "ing-powdered-mammoth-tusk",
@@ -1146,9 +1147,9 @@
       "id": "ing-glow-dust",
       "nome": "Poeira Luminosa",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "portomonte",
       "id_da_matriz_territorial": "ing-glow-dust",
@@ -1175,9 +1176,9 @@
       "id": "ing-void-salts",
       "nome": "Sais do Vazio",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+        "identidade_da_fonte_ou_material_especial_nao_comprovada",
         "nome_ou_indicio_climatico_nao_comprova_ocorrencia"
       ],
       "zona_procedural_ainda_nao_homologada": "thargrid",
@@ -1205,9 +1206,9 @@
       "id": "ing-fire-salts",
       "nome": "Sais Ígneos",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "alem-sul",
       "id_da_matriz_territorial": "ing-fire-salts",
@@ -1266,9 +1267,9 @@
       "id": "ing-spriggan-sap",
       "nome": "Seiva de Ent",
       "prioridade": "P1",
-      "eixo_principal": "identidade_de_criatura_ou_material_sobrenatural_nao_definida",
+      "eixo_principal": "identidade_da_fonte_ou_material_especial_nao_comprovada",
       "marcadores_de_investigacao": [
-        "identidade_de_criatura_ou_material_sobrenatural_nao_definida"
+        "identidade_da_fonte_ou_material_especial_nao_comprovada"
       ],
       "zona_procedural_ainda_nao_homologada": "drakport",
       "id_da_matriz_territorial": "ing-spriggan-sap",
