@@ -75,3 +75,13 @@ A auditoria de ingredientes e o motor devem tratar separadamente: **(1)** efeito
 **Separação de equipes:** quem audita itens entrega origens, IDs e dados editoriais íntegros; quem implementa mecânicas poderá experimentar consumo, resultado e UI em branch isolada depois da definição das regras. O painel offline e o módulo de pesquisa da PR #97 não são integrados ao Phaser; suas **16 verificações V8** e **10 verificações de interface simulada** não equivalem a testes de runtime, CI Node ou Pages.
 
 **Próxima definição:** semântica dos 53 efeitos e papel da terceira/quarta fonte em potência/duração/qualidade **por tipo de efeito**, sem aplicar bônus universais ou anunciar propriedades ocultas ao jogador.
+
+## Handoff de Etapa C — taxonomia semântica dos 53 efeitos (05/11/2026)
+
+O [relatório dos 53 efeitos](taxonomia-53-efeitos-alquimicos-v1.md) desenvolveu a etapa de classificação **sem implementar potência, duração ou efeito aplicado**. Uma taxonomia editorial com IDs, contagem de fontes e intensidades vigentes, grupo semântico **proposto** e campos `null` para mecânicas não decididas foi catalogada em [PR #98](https://github.com/pedromaintenance/peren-o-bruxo/pull/98), juntamente com revisão HTML exportável e 17 testes de integridade. O estudo abrange **todos os 53 IDs** do catálogo de **111 ingredientes**; a interface passou **13 checagens com DOM simulado**.
+
+**Entregas futuras para o agente de mecânicas:** definir em cada ficha o estado modificado (**valor atual, máximo, taxa, condição, capacidade ou transformação**), o alvo permitido, a operação de aplicação, o início/duração, a resistência, empilhamento, dissipação, reversão, condições de descoberta, fonte extra e veículo Poção/Veneno/Tônico/Elixir/Bálsamo. Essas decisões precisam de aprovação e testes antes de qualquer integração transacional. Não calcular duração e potência globalmente apenas pelo nível I–III da origem.
+
+**Ponto autoral a preservar:** `vampirismo` tem potencial de transformação gradual em vampiro **aprovado pelo criador**, mas sem estágios/duração/limites decididos. A auditoria também propôs distinções de dano/limite/taxa mágicos, cura/regeneração, doença/dano, percepção/visão e destreza/velocidade — **propostas não canônicas**.
+
+**Status:** somente documentação na `main` e protótipos na PR #98 (draft); sem alterações de ingredientes, recipes, Phasers, clássico, saves ou arte. O próximo experimento mecânico deve focar na semântica de recursos atuais/máximos/regeneração, **não** em duração universal para os 53 efeitos.
