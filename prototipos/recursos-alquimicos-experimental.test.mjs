@@ -136,3 +136,22 @@ test('Compatibilidade legada exige migração explícita: Regenerate era imediat
  assert.match(code,/S\.hp=Math\.min\(maxhp\(\),S\.hp\+/);
  assert.match(code,/S\.mp=Math\.min\(maxmp\(\),S\.mp\+/);
 });
+
+test('Restaurar PV a partir de zero aguarda regra de revivificação',()=>{
+ const defeated={...state,saude:{current:0,max:100,baseRate:2}};
+ assert.throws(()=>simulateImmediate(defeated,[instant('restaurar_saude',10)]),/recurso|revivificação/);
+ assert.equal(simulateImmediate(defeated,[instant('dano_saude',10)]).state.saude.current,0);
+});
+test('Saldo simultâneo não pode ressuscitar por acidente',()=>{
+ const defeated={...state,saude:{current:0,max:100,baseRate:0}};
+ assert.throws(()=>simulateImmediate(defeated,[instant('restaurar_saude',10)],'net_by_resource'),/revivificação/);
+});
+test('Política de capacidade que concede PV desde zero exige autorização',()=>{
+ const defeated={...state,saude:{current:0,max:100,baseRate:0}};
+ assert.equal(simulateCapacity(defeated,instant('aumentar_saude',30),'preserve_current').state.saude.current,0);
+ assert.throws(()=>simulateCapacity(defeated,instant('aumentar_saude',30),'preserve_deficit'),/revivificação/);
+});
+test('Regenerar Saúde desde PV zero não é ressurreição implícita',()=>{
+ const defeated={...state,saude:{current:0,max:100,baseRate:2}};
+ assert.throws(()=>simulateRegeneration(defeated,[instant('regenerar_saude',3)],1),/revivificação/);
+});
