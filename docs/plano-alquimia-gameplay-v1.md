@@ -85,3 +85,13 @@ O [relatório dos 53 efeitos](taxonomia-53-efeitos-alquimicos-v1.md) desenvolveu
 **Ponto autoral a preservar:** `vampirismo` tem potencial de transformação gradual em vampiro **aprovado pelo criador**, mas sem estágios/duração/limites decididos. A auditoria também propôs distinções de dano/limite/taxa mágicos, cura/regeneração, doença/dano, percepção/visão e destreza/velocidade — **propostas não canônicas**.
 
 **Status:** somente documentação na `main` e protótipos na PR #98 (draft); sem alterações de ingredientes, recipes, Phasers, clássico, saves ou arte. O próximo experimento mecânico deve focar na semântica de recursos atuais/máximos/regeneração, **não** em duração universal para os 53 efeitos.
+
+## Etapa C — desdobramento operacional do núcleo Saúde/Magia (05/11/2026)
+
+**Prova de conceito editorial:** [estudo dos dez efeitos de recursos](estudo-recursos-alquimicos-v1.md) e [PR #99](https://github.com/pedromaintenance/peren-o-bruxo/pull/99) (draft), que contêm simulador puro, catálogo JSON de decisões abertas, painel HTML offline e testes. **Não são imports de Phaser nem regras aprovadas.**
+
+O próximo contrato do motor deverá distinguir **PV/MP atual**, **PV/MP máximo**, **taxa de regeneração** e **eficácia arcana não especificada**. O classificador de misturas precisa devolver todos os IDs de efeitos ativados; a **aplicação ao personagem/alvo** acontece em fase posterior e deverá respeitar a escolha explícita de simultaneidade, valores limites, tempo, resistência, custo e inventário.
+
+**Achado de retrocompatibilidade obrigatório:** `game.js` trata atualmente `Regenerate Health` e `Regenerate Magicka` como reposição imediata, assim como `Restore Health` e `Restore Magicka`. A proposta de diferenciar regeneração ao longo do tempo não autoriza mudar o funcionamento dos produtos existentes. Antes de aplicar `regenerar_saude` ou `regenerar_magia` no runtime, definir comportamento do legado e versionamento semântico do item/salvamento.
+
+**Testes e gates:** 27/27 verificações da lógica executadas em V8 e 14/14 do painel em DOM simulado; sem CI Node, teste de navegador/Phaser ou migração real. Resolver `REC-D01–D07` e `CRAFT-D46–D52` antes de integrar. Próxima investigação sugerida: aplicação de efeitos em diferentes contextos de uso (combate, exploração, descanso), inclusive PV zero, expiração de máximo e consumo em uma transação segura.
