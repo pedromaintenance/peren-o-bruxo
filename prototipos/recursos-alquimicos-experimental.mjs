@@ -57,7 +57,7 @@ export function simulateImmediate(input,effects,policy="ordered_as_provided"){
    const r=out[key],before=r.current;
    r.current=Math.max(0,Math.min(r.max,r.current+delta));
    changes.push({resource:key,requestedDelta:delta,appliedDelta:r.current-before,
-    effectIds:involved.map(e=>e.effectId)});
+    effectIds:involved.map(e=>e.effectId).sort()});
   }
  }else for(const effect of ordered)changes.push(changeCurrent(out,effect));
  return {state:out,policy,changes,note:"Ordenação e magnitudes são alternativas de QA. Não definem uso real de preparado."};
