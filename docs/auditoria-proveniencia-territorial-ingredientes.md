@@ -114,3 +114,7 @@ A segunda fase de averiguação publicou [25 pareceres P1 por ID](pareceres-p1-t
 ## Terceira fase — P2 concluídos (07/11/2026)
 
 A matriz territorial tem seu [primeiro parecer para os 16 ingredientes P2](pareceres-p2-producao-hidrografia-ingredientes.md) consolidado no [JSON da fila](../data/fila-investigacao-territorial-ingredientes.json): **52/106** pareceres no total; **54/106** ainda não examinados individualmente na primeira passagem. A reconciliação anterior dos 111 ingredientes permanece válida; suas zonas não foram realocadas. O território base continua sendo **1 exclusividade em curadoria + 4 locais historicamente preservados + 106 zonas procedurais não homologadas**.
+
+## Primeira passagem encerrada — 07/11/2026
+
+A matriz territorial dos 111 foi conectada aos pareceres dos **106 ingredientes com zona procedural** e agora todos receberam parecer inicial. Os outros **cinco ingredientes** são referências historicamente preservadas e permanecem fora da fila, com status próprio. Veja o [dossiê P3](pareceres-p3-primeira-passagem-ecologica.md) e o [encerramento e gates de aprovação](fechamento-primeira-passagem-territorial-ingredientes.md). Não há novos habitats nem revisões de zona aprovadas; a primeira passagem é uma auditoria **documental**, não certificado de ocorrência de espécies. Os três espelhos de `itens.json` têm SHA idêntico; a comparação integral dos conteúdos contra o override ainda não foi possível.
