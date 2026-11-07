@@ -110,3 +110,7 @@ Em particular, se o jogo vier a permitir comprar material em Shadar-Riverie, iss
 ## Cruzamento com pareceres P1 — 07/11/2026
 
 A segunda fase de averiguação publicou [25 pareceres P1 por ID](pareceres-p1-taxonomia-habitats-ingredientes.md) e elevou a fila para **36/106 registros com primeira opinião documental**. A classificação de zonas continua **1 exclusividade explícita + 4 locais preservados em Peren + 106 zonas procedurais**, sem realocação nem aprovação ecológica. O próximo bloco são **16 P2** focados em habitat aquático, circulação, ofícios e produção, e em seguida **54 P3** de investigação rotineira. A matriz territorial original permanece inalterada.
+
+## Terceira fase — P2 concluídos (07/11/2026)
+
+A matriz territorial tem seu [primeiro parecer para os 16 ingredientes P2](pareceres-p2-producao-hidrografia-ingredientes.md) consolidado no [JSON da fila](../data/fila-investigacao-territorial-ingredientes.json): **52/106** pareceres no total; **54/106** ainda não examinados individualmente na primeira passagem. A reconciliação anterior dos 111 ingredientes permanece válida; suas zonas não foram realocadas. O território base continua sendo **1 exclusividade em curadoria + 4 locais historicamente preservados + 106 zonas procedurais não homologadas**.
