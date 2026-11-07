@@ -307,3 +307,13 @@ A matriz diferencia `origem` (proveniência de registro), zona calculada, zona p
 **Conflito real de integração, fora da responsabilidade curatorial:** o Phaser da branch de transição usa `battle.potions` e depois reconcilia com a mochila ao encerrar combate. Alterar a quantidade diretamente no inventário e manter esse débito do combate pode cobrar duas vezes. A equipe de mecânicas deverá escolher fronteira transacional e testar resultados antes de incorporar os preparados curados. O clássico permanece com seu save próprio e `Regenerate` imediato.
 
 **Estado:** matriz proposta de 15 cenários (3 contextos × 5 famílias), **37/37 verificações de lógica** e **15/15 verificações de interface** executadas em ambientes simulados. **Nenhuma propriedade, fórmula, receita, save, família canônica, combate ou material foi alterado.**
+
+## Handoff de curadoria — poções fora do combate e Veneno como via própria (07/11/2026)
+
+A [PR #102](https://github.com/pedromaintenance/peren-o-bruxo/pull/102) implementa **uso de instâncias de preparados** na exploração e testa três **vias propostas de Veneno**. Referência analítica: [estudo de Venenos/Exploração](estudo-venenos-uso-exploracao-prealfa-v1.md).
+
+**Dados canônicos preservados:** a mistura `ing-nightshade` (Beladona) + `ing-deathbell` (Sino da Morte) compartilha `dano_saude` como único efeito; `ing-red-mountain-flower` (Flor Vermelha) + `ing-nightshade` compartilha **dois efeitos** (`dano_saude` e `aumentar_magia`). Esses resultados evidenciam que **rotular uma preparação de Veneno não autoriza omitir efeitos positivos**. O motor do preparado aplica todos os efeitos executáveis ou bloqueia o consumo inteiro. O Caderno não deve revelar efeitos não estudados por Peren ao descrever o frasco.
+
+**Vias em investigação, sem aprovação:** lançar frasco (precisão/resistência), impregnar arma (cargas/duração/precedência com Bálsamos), administrar dose (contato/consentimento/furtividade). `poison-route-proposal.js` é **pesquisa pura**, não arma nem executa dano no gameplay. Não modificar ingredientes, suas intensidades I–III ou famílias para adequá-los a um resultado numérico imaginado.
+
+**Operacional pré-alfa:** o uso fora de combate só tem `restaurar_saude` e `restaurar_magia`, com valores temporários **24 PV/12 PM**, e nenhuma ação diária cobrada na hipótese de playtest. A retrocompatibilidade de saves de pré-alfa foi dispensada por decisão do criador (Emenda S1), mas a integridade do estoque na partida atual continua obrigatória. [CI aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42425972550) incluindo 19 testes novos de exploração, 12 de Venenos e smoke Chromium.
