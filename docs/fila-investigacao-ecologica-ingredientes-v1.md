@@ -134,3 +134,9 @@ O item só pode sair de `aguarda_averiguacao` quando houver registro de **fonte 
 Os **25 casos P1** foram examinados com base em Peren e Monstros da Carcaça. A fila evoluiu para **36/106 com parecer emitido** (P0 11; P1 25), ainda **sem homologação de habitats**. O dossiê detalhado desta rodada é [`pareceres-p1-taxonomia-habitats-ingredientes.md`](pareceres-p1-taxonomia-habitats-ingredientes.md); os objetos JSON individuais estão em [`data/fila-investigacao-territorial-ingredientes.json`](../data/fila-investigacao-territorial-ingredientes.json).
 
 Os 25 P1 dividem-se em **5** materiais/cosmologia, **11** seres fantásticos e origens materiais, **6** plantas/clima/topônimos, **2** Ovos de Tordo duplicados nominalmente e **1** peixe costeiro. Não foram registrados novos produtores, espécies, zonas, drops, cultos, salinas ou processos técnicos por inferência. O próximo trabalho editorial é o primeiro parecer dos **16 P2**, seguido dos **54 P3**, sem mexer na distribuição jogável.
+
+## Terceira passagem — P2, produção e águas (07/11/2026)
+
+Os **16 P2** receberam primeiro parecer documental e foram vinculados à [fila JSON de 106 IDs](../data/fila-investigacao-territorial-ingredientes.json), que agora contabiliza **52 pareceres emitidos**. Publicado o [dossiê individual dos P2](pareceres-p2-producao-hidrografia-ingredientes.md): oito ligados a agricultura, criação e manufatura; oito ligados a águas, desova e concreções.
+
+**Limite central:** o catálogo estabelece material/efeitos, mas não automaticamente ecologia, espécie produtora, cadeia de trabalho, ponto de comércio ou zona de obtenção. Cultivo e produção em regiões do atlas não comprovam itens específicos. O próximo lote são os **54 P3**. Os pareceres P0/P1/P2 **não promovem zonas a habitat, nem alteram gameplay**.
