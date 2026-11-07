@@ -584,3 +584,37 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **CRAFT-D52 [P0 QA]:** teste de execução real em combate, mundo, descanso, consumíveis, inventário, transações e saves sem reclassificar Impuro por reflexo.
 
 **Aceites:** `REC-Q01–REC-Q10` no [relatório](estudo-recursos-alquimicos-v1.md). **Verificação executada:** 31/31 testes de lógica em JavaScript V8 isolado e 14/14 verificações do painel em DOM simulado. **Sem** testes reais de Node CI, navegador visual, Phaser ou saves. **A PR #99 permanece isolada e não mesclada**; nenhuma magnitude ou duração foi canonizada.
+
+## 23. Aplicação contextual: combate, exploração, descanso e consumo idempotente (07/11/2026)
+
+**Estudo principal:** [`estudo-aplicacao-contextual-alquimia-v1.md`](estudo-aplicacao-contextual-alquimia-v1.md). **Prova de conceito de uso em branch isolada:** [PR #100 (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/100), com `data/contrato-aplicacao-contextual-alquimia-proposta.json`, `prototipos/aplicacao-contextual-alquimia.mjs`, testes, painel HTML e roteiro de QA.
+
+**Constatação de arquitetura do mesmo jogo:** o clássico `game.js` aplica consumíveis diretamente e tem save `peren_carcaca_save_v1`; o Phaser da branch `transition/phaser-only-m0-20261030` possui **save separado**, inventário **somente leitura** (`ui-inventory.js`), produção experimental de misturas `brewPair` com dois tipos (`progress.js`), e comando de batalha `stepBattle('potion')` que **já debita `battle.potions`** (`combat.js`). Ao vencer/fugir/perder, `progress.js` reconcilia a quantidade restante com a mochila no comando `victory`/`escape`. **Não criar comando de uso que consuma de novo em `character.bag` enquanto o combate também estiver debitando.** A fronteira deve ser única ou formalmente reconciliada, com testes de vitória, derrota, recuo e reload.
+
+**Três contextos e cinco famílias [PROPOSTA]:**
+- **Combate:** Poções de uso próprio são exemplo de QA; administrar Venenos ou Poções em outro alvo exige rota, consentimento/resistência, custo por turno e confirmação. Tônicos temporários, Elixires permanentes e Bálsamos não herdam essas regras automaticamente.
+- **Exploração:** um preparado pode ser usado deliberadamente, mas não é ativado só por caminhar/trocar cena. Mobilidade, visão, voo, recuperação e aplicação em equipamento pedem contrato de alvo/duração próprio.
+- **Descanso:** o evento `endDay` já recupera PV/MP; **mudar de contexto ou descansar não bebe automaticamente preparado nem executa taxa de regeneração do frasco**. Uso deliberado durante repouso e permanência durante sono continuam decisões a resolver.
+- **Matriz:** são **15 cruzamentos de contexto × família** documentados em JSON, **nenhuma autorização canônica nova**. Poções, Venenos, Tônicos, Elixires e Bálsamos têm destinos, resistências e relógios potencialmente diferentes.
+
+**Contrato transacional de pesquisa:** localizar a instância do preparado → identificar contexto, via e alvo → validar via de família/consentimento/resistência → estoque e custo **específicos do contexto** → verificar **todos** os IDs reais do lote → bloquear o lote inteiro se qualquer semântica faltar, sem consumo parcial → calcular resultado em cópia → debitar uma unidade/custo **uma vez** → registrar recibo/idempotência → mostrar à UI **apenas efeitos identificados**. Um identificador de operação repetido devolve recibo anterior; o mesmo ID com outro alvo/ação é colisão. O protótipo implementa isso **somente em memória** e não tem saves, clock, expiração, resistência real ou concorrência multiaba.
+
+**Confirmações importantes:**
+1. Um efeito `regenerar_saude` sem duração aprovada **não** pode ser convertido em `restaurar_saude` por conveniência.
+2. O código clássico para `Regenerate Health/Magicka` continua **legado de cura imediata**; não remapear seus itens para a semântica proposta em silêncio.
+3. Um efeito ainda não implementado no mesmo frasco **não** pode ser ignorado para aplicar só os outros.
+4. Efeitos ocultos para Peren podem existir internamente, mas **não** são revelados no recibo público ou prévia.
+5. PV zero, transformações, Bálsamos, Tônicos de duração, Elixires permanentes, consentimento e resistência externa permanecem **gates** explícitos.
+6. **Custo 1 ação e valores de cura/MP no laboratório são fixtures de QA, não regras**, e não significam que combate deva cobrar ação diária e turno simultaneamente.
+
+**Backlog desta fase:**
+- **CRAFT-D53 [P0]:** decidir ação/via legítima e contexto para as cinco famílias; não herdar autorização entre Poção, Veneno e Bálsamo.
+- **CRAFT-D54 [P0 transação]:** resolver **uma** autoridade de consumo de frascos no combate/ledger, com conciliação em vitória/fuga/derrota.
+- **CRAFT-D55 [P0 custo]:** não confundir gasto de turno em `stepBattle` com `character.actions` diário.
+- **CRAFT-D56 [P0 alvo]:** alvo existente, próprio/terceiro/objeto, resistência/consentimento, custo em falha e regra de PV zero.
+- **CRAFT-D57 [P0 semântica]:** efeitos ativados completos, sigilo do Caderno, resolução múltipla e bloqueio de uso quando faltar semântica.
+- **CRAFT-D58 [P0 persistência]:** relógios por efeito, retomada entre combate/mundo/descanso, expiração, salva/restore e migração segura.
+- **CRAFT-D59 [P1 UX]:** pré-visualização do consumo e das propriedades **conhecidas**, razão de bloqueio sem spoiler, confirmação mobile/controle.
+- **CRAFT-D60 [P0 QA]:** integrar somente após testes reais de botão, estoque, combate, derrota, reload, múltiplas abas, PWA e nenhum item duplicado/sumido.
+
+**Critérios de aceite de design:** `CTX-Q01–CTX-Q12` detalhados no estudo. **Verificação isolada:** **37/37 testes de lógica em V8** e **15/15 checagens de UI em DOM simulado**. Não foi executado Node CI, Chromium real, build Phaser, mobile físico ou teste de persistência. A PR #100 é **rascunho, não integrada**. A Emenda A2 não foi alterada, nem foram aprovadas novas interações, custos, receitas ou efeitos.
