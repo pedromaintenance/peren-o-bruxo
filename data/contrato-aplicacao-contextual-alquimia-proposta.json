@@ -1,0 +1,387 @@
+{
+  "schema": "peren.alquimia.contextual-application.proposta.v1",
+  "revision_date": "2026-11-07",
+  "status": "DESIGN_EXPERIMENTAL_NAO_CANONICO",
+  "references": {
+    "canonical": "docs/constituicao-design-v1.md",
+    "resources": "docs/estudo-recursos-alquimicos-v1.md",
+    "gameplayClassic": "game.js (main)",
+    "phaserExperimental": [
+      "phaser-lab/src/progress.js",
+      "phaser-lab/src/combat.js",
+      "phaser-lab/src/ui-inventory.js",
+      "phaser-lab/src/alchemy.js"
+    ],
+    "phaserBranch": "transition/phaser-only-m0-20261030",
+    "report": "docs/estudo-aplicacao-contextual-alquimia-v1.md"
+  },
+  "groundedFindings": [
+    "Classic game.js applies consumables directly, including Regenerate as immediate recovery.",
+    "Phaser inventory UI in transition branch is read-only.",
+    "Phaser progress has isolated save key and transactional command adapter, with ledger for some operations.",
+    "Phaser battle potion use decrements battle.potions; end of combat reconciles remaining count to character.bag.",
+    "Experimental Phaser brewPair creates preparation records with two different ingredients and does not apply all effects to actors.",
+    "Phaser endDay restores HP/MP in progress; it does not automatically trigger dynamic preparations."
+  ],
+  "families": [
+    {
+      "id": "pocao",
+      "supportedContextsQA": [
+        "combat",
+        "exploration"
+      ],
+      "example": "uso no próprio personagem de restauração imediata",
+      "gates": [
+        "target",
+        "cost",
+        "effect_resolution",
+        "stock",
+        "idempotency",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "veneno",
+      "supportedContextsQA": [],
+      "example": "administrar em alvo externo",
+      "gates": [
+        "delivery_route",
+        "resistance_or_consent",
+        "cost",
+        "target",
+        "effect_resolution",
+        "stock",
+        "idempotency"
+      ]
+    },
+    {
+      "id": "tonico",
+      "supportedContextsQA": [],
+      "example": "efeito temporário extraordinário",
+      "gates": [
+        "duration_clock",
+        "stacking",
+        "expiration",
+        "save",
+        "target",
+        "delivery_route"
+      ]
+    },
+    {
+      "id": "elixir",
+      "supportedContextsQA": [],
+      "example": "efeito extraordinário permanente",
+      "gates": [
+        "persistence",
+        "irreversibility",
+        "consent",
+        "transformation",
+        "save_migration",
+        "target"
+      ]
+    },
+    {
+      "id": "balsamo",
+      "supportedContextsQA": [],
+      "example": "uso em equipamento ou objeto",
+      "gates": [
+        "object_target",
+        "delivery_route",
+        "wear",
+        "duration",
+        "enchantment_precedence",
+        "save"
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "context": "combat",
+      "family": "pocao",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "self_only_with_explicit_qa_policy",
+      "constraints": [
+        "target",
+        "cost",
+        "effect_resolution",
+        "stock",
+        "idempotency",
+        "knowledge"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "combat",
+      "family": "veneno",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "delivery_route",
+        "resistance_or_consent",
+        "cost",
+        "target",
+        "effect_resolution",
+        "stock",
+        "idempotency"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "combat",
+      "family": "tonico",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "duration_clock",
+        "stacking",
+        "expiration",
+        "save",
+        "target",
+        "delivery_route"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "combat",
+      "family": "elixir",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "persistence",
+        "irreversibility",
+        "consent",
+        "transformation",
+        "save_migration",
+        "target"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "combat",
+      "family": "balsamo",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "object_target",
+        "delivery_route",
+        "wear",
+        "duration",
+        "enchantment_precedence",
+        "save"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "exploration",
+      "family": "pocao",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "self_only_with_explicit_qa_policy",
+      "constraints": [
+        "target",
+        "cost",
+        "effect_resolution",
+        "stock",
+        "idempotency",
+        "knowledge"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "exploration",
+      "family": "veneno",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "delivery_route",
+        "resistance_or_consent",
+        "cost",
+        "target",
+        "effect_resolution",
+        "stock",
+        "idempotency"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "exploration",
+      "family": "tonico",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "duration_clock",
+        "stacking",
+        "expiration",
+        "save",
+        "target",
+        "delivery_route"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "exploration",
+      "family": "elixir",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "persistence",
+        "irreversibility",
+        "consent",
+        "transformation",
+        "save_migration",
+        "target"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "exploration",
+      "family": "balsamo",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "object_target",
+        "delivery_route",
+        "wear",
+        "duration",
+        "enchantment_precedence",
+        "save"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "rest",
+      "family": "pocao",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "context_transition_does_not_auto_consume",
+        "no_automatic_ticks_or_regeneration",
+        "deliberate_use_needs_separate_approval",
+        "target",
+        "cost",
+        "effect_resolution",
+        "stock",
+        "idempotency",
+        "knowledge"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "rest",
+      "family": "veneno",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "context_transition_does_not_auto_consume",
+        "no_automatic_ticks_or_regeneration",
+        "deliberate_use_needs_separate_approval",
+        "delivery_route",
+        "resistance_or_consent",
+        "cost",
+        "target",
+        "effect_resolution",
+        "stock",
+        "idempotency"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "rest",
+      "family": "tonico",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "context_transition_does_not_auto_consume",
+        "no_automatic_ticks_or_regeneration",
+        "deliberate_use_needs_separate_approval",
+        "duration_clock",
+        "stacking",
+        "expiration",
+        "save",
+        "target",
+        "delivery_route"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "rest",
+      "family": "elixir",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "context_transition_does_not_auto_consume",
+        "no_automatic_ticks_or_regeneration",
+        "deliberate_use_needs_separate_approval",
+        "persistence",
+        "irreversibility",
+        "consent",
+        "transformation",
+        "save_migration",
+        "target"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    },
+    {
+      "context": "rest",
+      "family": "balsamo",
+      "approval": "PROPOSTA_NAO_CANONICA",
+      "qaStatus": "blocked_pending_mechanics",
+      "constraints": [
+        "context_transition_does_not_auto_consume",
+        "no_automatic_ticks_or_regeneration",
+        "deliberate_use_needs_separate_approval",
+        "object_target",
+        "delivery_route",
+        "wear",
+        "duration",
+        "enchantment_precedence",
+        "save"
+      ],
+      "implication": "Nada neste registro autoriza usar o preparado no runtime; apenas identifica gates para teste."
+    }
+  ],
+  "contractProposals": {
+    "preflight": [
+      "context",
+      "action_route",
+      "family_route",
+      "target",
+      "consent_or_resistance",
+      "quantity_available",
+      "cost_policy",
+      "full_effect_semantics",
+      "knowledge_boundary",
+      "idempotency_key"
+    ],
+    "commit": [
+      "revalidate_against_latest_revision",
+      "simulate_complete_effect_set_without_partial_consumption",
+      "debit_one_unit_only_after_validation",
+      "debit_cost_if_approved",
+      "atomically_commit_state_and_receipt",
+      "ledger_rejects_replays"
+    ],
+    "publicReceipt": [
+      "context",
+      "action",
+      "target",
+      "quantity_consumed",
+      "known_effect_ids_only"
+    ],
+    "internalPrivateState": [
+      "all_active_effect_ids",
+      "actual_target_changes",
+      "ledger",
+      "inventory"
+    ],
+    "explicitNonCapabilities": [
+      "no_resurrection_assumption",
+      "no_expiration_or_duration_rule",
+      "no_enchantment_effects",
+      "no_auto_rest_use",
+      "no_classic_save_migration",
+      "no_dynamic_potion_power_formula"
+    ],
+    "battleSettlementGate": "Do not debit the same potion both in live battle state and again in progress settlement; select a single authoritative transaction boundary.",
+    "unresolved": "Every provisional permission in the QA harness exists only in the sample researchPolicy(). It is NOT approved game logic."
+  }
+}
