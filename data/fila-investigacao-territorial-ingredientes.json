@@ -1,6 +1,6 @@
 {
   "schema": "peren.fila_investigacao_territorial.v1",
-  "atualizado_em": "2026-11-05",
+  "atualizado_em": "2026-11-07",
   "estado": "fila_editorial_nao_executavel",
   "titulo": "Fila de averiguação territorial e de proveniência de ingredientes de Peren",
   "fontes": {
@@ -59,7 +59,8 @@
       "Não afetar receitas, runtime, Phaser, clássico, menus ou saves."
     ],
     "nota_de_parecer": "O primeiro parecer documenta limites das fontes e propostas de correção, sem decidir proveniência, estatuto da criatura, compatibilidade de loot ou habitat.",
-    "nota_taxonomica": "O marcador de fonte/material especial não classifica a substância como sobrenatural: contempla também material processado ou de criatura cuja espécie é incerta (por exemplo, Pó de Presa de Mamute e Poeira Luminosa)."
+    "nota_taxonomica": "O marcador de fonte/material especial não classifica a substância como sobrenatural: contempla também material processado ou de criatura cuja espécie é incerta (por exemplo, Pó de Presa de Mamute e Poeira Luminosa).",
+    "atualizacao_p1": "Todos os 25 pareceres P1 foram emitidos com confronto documental de fontes; não representam aprovação de habitat, espécie, origem de extração, loot ou alteração canônica."
   },
   "resumo": {
     "total_ingredientes": 111,
@@ -83,9 +84,10 @@
     },
     "ids_triados": 106,
     "habitats_aprovados_nesta_rodada": 0,
-    "primeiros_pareceres_documentados": 11,
-    "revisoes_aguardando_parecer_inicial": 95,
-    "propostas_de_redacao_referenciadas": 3
+    "primeiros_pareceres_documentados": 36,
+    "revisoes_aguardando_parecer_inicial": 70,
+    "propostas_de_redacao_referenciadas": 3,
+    "primeiros_pareceres_p1": 25
   },
   "revisoes": [
     {
@@ -585,8 +587,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve cristais adocicados de brilho pálido; o Templo da Lua é uma ilha no Rio Ancestral e Severina realiza rituais sobre as águas.",
+        "lacuna_nao_resolvida": "Não há vínculo documentado entre o ingrediente e o templo, fases lunares, rito de Severina, fabricação ou rota comercial.",
+        "vedacao_de_inferencia": "Não instituir monopólio sacerdotal, coleta lunar ou mercado da Boca do Abismo.",
+        "encaminhamento": "preservar_nome_sem_vinculo_ao_templo",
+        "documentos_confrontados": [
+          "docs/TEMPLO_LUA_SEVERINA_CICLO29.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-tundra-cotton",
@@ -614,8 +635,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren situa as fibras em campos frios; o atlas confirma alguns picos nevados nas montanhas de Thargrid.",
+        "lacuna_nao_resolvida": "Campo frio não equivale a zona de tundra mapeada, e nenhuma ocorrência da fibra ou cultivo local foi homologada.",
+        "vedacao_de_inferencia": "Não transformar a zona técnica Thargrid em plantação ou indústria têxtil específica.",
+        "encaminhamento": "investigar_microhabitat_e_identidade_botanica",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/POVOAMENTO_ECOLOGIA_THARGRID_IRONWOOD_ELDROTH_CICLO53.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-snowberries",
@@ -643,8 +683,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve bagas resistentes a extremos térmicos; há neve persistente em alguns picos de Thargrid.",
+        "lacuna_nao_resolvida": "Não há registro de populações dessas bagas nem de produção ou comércio em Portomonte.",
+        "vedacao_de_inferencia": "Não realocar automaticamente para Thargrid nem declarar impossibilidade em Portomonte por causa do nome.",
+        "encaminhamento": "separar_aptidao_termica_de_distribuicao",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-daedra-heart",
@@ -672,8 +731,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren registra órgão de natureza demoníaca; a taxonomia da Carcaça reconhece demônio como tipo distinto de Abissal marinho.",
+        "lacuna_nao_resolvida": "Não existe identificação de criatura específica, indivíduo, território, condições de obtenção ou estatuto de agência da fonte.",
+        "vedacao_de_inferencia": "Não converter Drakport em mercado de órgãos demoníacos nem usar Kuo-Toa/Abissais como fontes.",
+        "encaminhamento": "exigir_identidade_da_fonte_e_contexto_de_obtencao",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-ice-wraith-teeth",
@@ -702,8 +780,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve dentes espectrais gelados; o atlas documenta ambientes de neve em Thargrid, mas não a criatura.",
+        "lacuna_nao_resolvida": "A taxonomia não define se o produtor é espírito, morto-vivo, elemental, yokai ou espécie distinta, tampouco o local de obtenção.",
+        "vedacao_de_inferencia": "Não derivar a espécie dos picos nevados nem da Boca do Abismo; o nome do item não classifica a criatura.",
+        "encaminhamento": "definir_organismo_ou_manifestacao_produtora",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-ectoplasm",
@@ -731,8 +828,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve resíduo espectral com efeitos arcanos e nocivos; Vandar tem mortos-vivos, mas sua proveniência individual não foi estabelecida.",
+        "lacuna_nao_resolvida": "Não existe confirmação de produção do ectoplasma por mortos-vivos, almas de pessoas, ritos de Damaris ou criaturas da Garganta.",
+        "vedacao_de_inferencia": "Não instituir coleta automática de ectoplasma de pessoas ou de qualquer morto-vivo.",
+        "encaminhamento": "delimitar_fonte_espectral_e_condicoes_de_obtencao",
+        "documentos_confrontados": [
+          "docs/VANDAR_POLITICA_DOS_MORTOS_CICLO17.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-yellow-mountain-flower",
@@ -760,8 +876,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren caracteriza a flor como planta de altitude; o atlas descreve montanhas e vales altos no continente.",
+        "lacuna_nao_resolvida": "Nenhum registro confirma essa espécie em Eldroth ou Thargrid, nem sua biologia ou comércio.",
+        "vedacao_de_inferencia": "Não migrar o item por suposta incompatibilidade de bioma nem aproximá-lo taxonomicamente de outras flores coloridas.",
+        "encaminhamento": "estudar_nicho_de_altitude_sem_relocalizacao",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-blue-mountain-flower",
@@ -788,8 +923,26 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve flor medicinal de encostas frias; há picos de neve em Thargrid e outras famílias de terreno no atlas.",
+        "lacuna_nao_resolvida": "O atlas não localiza essa espécie em Thargrid nem demonstra que o Além Sul não tenha circulação comercial do item.",
+        "vedacao_de_inferencia": "Não tratar 'montanha' como jurisdição de Thargrid, nem a zona Além Sul como habitat comprovado.",
+        "encaminhamento": "distinguir_microhabitat_fonte_e_circulacao",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-red-mountain-flower",
@@ -817,8 +970,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "A ficha atual de Flor Vermelha registra seiva rubra usada em tônicos; a Carcaça possui Mar de Sangue e uma costa corrupta.",
+        "lacuna_nao_resolvida": "Não há relação confirmada entre a cor da flor e sangue marítimo, corrupção, região costeira ou região de coleta.",
+        "vedacao_de_inferencia": "Não criar espécie do Mar de Sangue por cor nem transferir para outra zona sem fundamento.",
+        "encaminhamento": "manter_nome_atual_e_investigar_especie",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-namira-s-rot",
@@ -847,8 +1019,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Gualápoles/Gualápolis consta como lugar histórico da região da Foz; Peren usa o topônimo para um fungo associado a decomposição e rituais.",
+        "lacuna_nao_resolvida": "Topônimo não prova que a espécie cresça em Gualápoles, Thargrid ou outro lugar, nem que o fungo tenha sido cultivado em rito local.",
+        "vedacao_de_inferencia": "Não corrigir a zona procedural Thargrid para Gualápoles apenas pelo nome, e não atribuir monopólio ritual.",
+        "encaminhamento": "investigar_se_nome_e_territorial_ou_historico",
+        "documentos_confrontados": [
+          "data/lugares_carcaca.json",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-hagraven-claw",
@@ -876,8 +1067,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren nomeia a fonte como feiticeira monstruosa com garras; a taxonomia da Carcaça separa tipos, ancestralidades e papéis.",
+        "lacuna_nao_resolvida": "Nenhuma espécie, linhagem, cultura, sexo ou habitat foi identificado para a fonte.",
+        "vedacao_de_inferencia": "Não equiparar toda bruxa humana a criatura de caça nem importar a taxonomia Hagraven de Skyrim.",
+        "encaminhamento": "exigir_identidade_taxonomica_da_fonte",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-ash-hopper-jelly",
@@ -906,8 +1116,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve secreção de criatura de terras queimadas; a Caatinga e propostas ecológicas com cinzas existem nos materiais de ambientação.",
+        "lacuna_nao_resolvida": "Não há espécie de gafanhoto homologada, zona de reprodução ou evento de incêndio específico que produza esse material.",
+        "vedacao_de_inferencia": "Não usar Portomonte, Caatinga ou incêndio hipotético em Eldroth como área de drop.",
+        "encaminhamento": "estabelecer_criatura_produtora_sem_equivoco_com_propostas",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-netch-jelly",
@@ -935,8 +1164,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "A descrição de Peren afirma secreção de criatura flutuante, com uso em imobilização.",
+        "lacuna_nao_resolvida": "A palavra Medusa não distingue górgona, organismo aquático, criatura aérea ou outra forma fantástica; nenhuma ocorrência em Ironwood é comprovada.",
+        "vedacao_de_inferencia": "Não atribuir petrificação, habitats marítimos ou espécie importada por analogia.",
+        "encaminhamento": "separar_nome_popular_de_taxonomia_da_criatura",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-troll-fat",
@@ -964,8 +1212,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve gordura de criatura chamada troll; a auditoria ecológica não encontrou correspondência regional demonstrada.",
+        "lacuna_nao_resolvida": "A ausência de correspondência específica nesta referência não demonstra inexistência de trolls na Carcaça nem especifica anatomia, agência ou fonte.",
+        "vedacao_de_inferencia": "Não declarar Garganta habitat de trolls ou estabelecer drop universal por espécie.",
+        "encaminhamento": "localizar_ficha_canonica_do_produtor_ou_registrar_indefinicao",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "dist/carcaca/creatures.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-burnt-spriggan-wood",
@@ -994,8 +1261,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren afirma madeira carbonizada de guardião vegetal; o ciclo de ecologia monstruosa de Eldroth documenta propostas, não incêndio ocorrido.",
+        "lacuna_nao_resolvida": "Não há identificação do guardião, evento de queima, região ou relação com a criatura da Seiva de Ent.",
+        "vedacao_de_inferencia": "Não afirmar incêndio canônico de Eldroth nem recolha automática na Boca do Abismo.",
+        "encaminhamento": "distinguir_proveniencia_do_guardiao_e_evento_do_fogo",
+        "documentos_confrontados": [
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-pine-thrush-egg",
@@ -1022,8 +1308,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren preserva um Ovo de Tordo voltado à agilidade, com ID próprio e atributos distintos do outro Ovo de Tordo.",
+        "lacuna_nao_resolvida": "A duplicação nominal não comprova duas espécies nem habitat na Boca do Abismo.",
+        "vedacao_de_inferencia": "Manter ID, intensidades e nome canônico; rótulo 'agilidade' é proposta de interface, não renomeação automática.",
+        "encaminhamento": "propor_desambiguacao_funcional_na_interface",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-rock-warbler-egg",
@@ -1051,8 +1356,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren preserva um Ovo de Tordo com foco em restauração e ID diferente da ficha de agilidade.",
+        "lacuna_nao_resolvida": "Não está demonstrada a espécie da ave nem ocorrência em Shadar-Riverie.",
+        "vedacao_de_inferencia": "Manter ID e nome vigentes; rótulo 'restauração' não autoriza mudar receitas ou atribuir espécie nova.",
+        "encaminhamento": "propor_desambiguacao_funcional_na_interface",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-abecean-longfin",
@@ -1082,8 +1406,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve peixe costeiro de escamas avermelhadas; o atlas documenta águas vermelhas, azuis e transição móvel.",
+        "lacuna_nao_resolvida": "Não existe registro de captura, migração, reprodução ou população desse peixe em Portomonte ou em todo o Mar de Sangue.",
+        "vedacao_de_inferencia": "Não inferir sangue de Kindau, pesca geral do Mar de Sangue ou origem automática em Portomonte.",
+        "encaminhamento": "identificar_ambiente_costeiro_e_prova_de_pesca",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/MAR_SANGUE_ECOLOGIA_POLITICA_CICLO5.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-hagraven-feathers",
@@ -1111,8 +1454,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve penas de criatura associada a feitiçaria; a taxonomia não identifica a espécie pelo ofício cultural bruxa.",
+        "lacuna_nao_resolvida": "Não se sabe qual organismo produz as penas, se é sapiente ou onde ocorre.",
+        "vedacao_de_inferencia": "Não tratar mulheres feiticeiras como fontes zoológicas de penas nem transplantar Hagraven de Skyrim.",
+        "encaminhamento": "distinguir_criatura_fonte_de_papel_social",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-powdered-mammoth-tusk",
@@ -1140,8 +1502,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve presa fossilizada moída, sem afirmar população viva de mamutes.",
+        "lacuna_nao_resolvida": "O atlas físico não confirma espécie de mamute, jazida desse fóssil ou comércio em Portomonte.",
+        "vedacao_de_inferencia": "Não gerar mamutes vivos, caçada contemporânea ou depósito fossilífero em Thargrid apenas pelo nome.",
+        "encaminhamento": "separar_fossil_e_fauna_atual",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_GEOGRAFIA_FISICA_CICLO34.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-glow-dust",
@@ -1169,8 +1550,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve pó cintilante de uso arcano, sem definir material constituinte.",
+        "lacuna_nao_resolvida": "Nenhuma fonte confirma se é mineral, fungo, secreção, resíduo espiritual ou outra substância; Portomonte é apenas zona técnica.",
+        "vedacao_de_inferencia": "Não associar automaticamente a Cogumelo Luminescente, Sais Ígneos ou Poeira de Vampiro.",
+        "encaminhamento": "definir_substrato_material_sem_criar_receita",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-void-salts",
@@ -1199,8 +1599,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren usa o nome Sais do Vazio e descreve cristais arcanos; a cosmologia distingue o Vazio da Não-Existência exterior a Corau.",
+        "lacuna_nao_resolvida": "O nome não comprova extração fora de Corau, origem cosmológica, minério de Thargrid ou ligação a entidade específica.",
+        "vedacao_de_inferencia": "Não construir geologia, plano habitável, culto ou economia de mineração a partir do rótulo.",
+        "encaminhamento": "tratar_vazio_como_associação_nominal_ate_autorização",
+        "documentos_confrontados": [
+          "docs/COSMOLOGIA_PRIMORDIAL_KINDAU_UBIACA_V0_3_1.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-fire-salts",
@@ -1229,8 +1648,28 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren descreve cristais sobrenaturais quentes; a Carcaça registra forjas, fogo e ambientes de mineração em lugares distintos.",
+        "lacuna_nao_resolvida": "Isso não atesta origem geológica, elemental, demoníaca nem zona de coleta no Além Sul.",
+        "vedacao_de_inferencia": "Não confundir forjas de Thargrid com jazidas e não usar demônios como origem obrigatória.",
+        "encaminhamento": "investigar_processo_de_formacao_dos_cristais",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "data/taxonomia_carcaca.json",
+          "docs/LORE_HACK_CARCACA_DW.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-salt-pile",
@@ -1260,8 +1699,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren declara extração de sal de águas rubras; o atlas atesta Mar de Sangue e limite móvel entre águas vermelhas e azuis.",
+        "lacuna_nao_resolvida": "Método de extração, salinidade, salinas, produtores, transporte e ponto do litoral não foram definidos.",
+        "vedacao_de_inferencia": "Não converter Além Sul em local de salina, nem alegar monopólio ou escala de produção por aproximação costeira.",
+        "encaminhamento": "registrar_origem_mar_sangue_sem_fixar_local_de_producao",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/MAR_SANGUE_ECOLOGIA_POLITICA_CICLO5.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-spriggan-sap",
@@ -1290,8 +1748,27 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "fato_documentado_peren_e_carcaca": "Peren nomeia seiva de espírito vegetal chamado Ent; o atlas reconhece florestas, mas as criaturas propostas de Eldroth não são homologadas.",
+        "lacuna_nao_resolvida": "Não há população, espécie ou indivíduo Ent identificado como fonte, nem habitat ou método de obtenção em Drakport.",
+        "vedacao_de_inferencia": "Não equiparar toda árvore a Ent nem fundir automaticamente esta fonte com Madeira de Ent Carbonizado.",
+        "encaminhamento": "identificar_guardiao_vegetal_e_condicoes_da_seiva",
+        "documentos_confrontados": [
+          "data/taxonomia_carcaca.json",
+          "docs/ECOLOGIA_MONSTRUOSA_ELDROTH_CICLO12.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "natureza_da_evidencia": "documental; não prova coleta ou existência regional da espécie",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-bee",
