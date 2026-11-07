@@ -5,7 +5,7 @@
  */
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
 import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
-import {reconcileBattlePreparations} from './prepared-use.js';
+import {reconcileBattlePreparations,applyExplorationPreparation} from './prepared-use.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
@@ -153,6 +153,11 @@ export function applyTransaction(env,command,c){
  const type=command?.type;
  let key=null;
  if(type==='collect')key=ledgerKey('collect',command.seed,command.nodeId);
+ if(type==='usePreparation'){
+  if(typeof command.id!=='string'||!/^preparo-[a-zA-Z0-9_-]{1,70}$/.test(command.id))
+   throw Error('Identidade de preparado inválida.');
+  key='prepared-use:'+command.id;
+ }
  if(type==='victory'||type==='escape')key=command.battle?.key?'battle:'+String(command.battle.key):null;
  if(key&&old.ledger[key])return {next:env,result:old.ledger[key],applied:false};
  const next=jsonCopy(old),char=next.character;let result={type};
@@ -187,6 +192,15 @@ export function applyTransaction(env,command,c){
   if(remaining>had)throw Error('Poções divergentes.');
   if(remaining===0)delete char.bag['ger-pocao-restauradora'];else char.bag['ger-pocao-restauradora']=remaining;
   result={type,status:b.status,key:b.key||null};record(char,b.status==='fled'?'Escapou de uma batalha.':'Foi resgatado após uma derrota.');
+ }else if(type==='usePreparation'){
+  if(command.context!=='exploration')throw Error('Uso fora de combate exige contexto de exploração.');
+  const evaluated=applyExplorationPreparation(char,command.id,maxClassicHp(char,c),maxClassicMp(char));
+  if(evaluated.error)throw Error(evaluated.error);
+  // A transação inteira (frascos, PV, PM, recibo) é gravada em uma revisão.
+  char.hp=evaluated.character.hp;char.mp=evaluated.character.mp;
+  char.alchemy=evaluated.character.alchemy;
+  result={type,id:command.id,quantityConsumed:1,cost:{dailyActions:0},message:evaluated.publicMessage};
+  record(char,evaluated.publicMessage);
  }else if(type==='studyIngredient'){
   if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
    throw Error('Estudo alquímico exige uma bancada e a curadoria canônica.');

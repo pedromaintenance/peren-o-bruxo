@@ -46,7 +46,33 @@ if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
   for(const img of document.querySelectorAll('img[src*="art/characters/peren/portrait"]'))
     img.src=img.getAttribute('src').replace('./art/characters/peren/','./'+dir+'/characters/peren/');
 }
-const inventory=createInventoryScreen({document,bridge,catalogs});
+let inventoryPausedExploration=false;
+const inventory=createInventoryScreen({
+ document,bridge,catalogs,
+ onOpen:()=>{
+  if(app.scene.isActive('ExplorationScene')){
+   app.scene.pause('ExplorationScene');
+   inventoryPausedExploration=true;
+  }
+ },
+ onClose:()=>{
+  if(!inventoryPausedExploration)return;
+  inventoryPausedExploration=false;
+  if($('hub').hidden&&$('encounterModal').hidden&&$('battleUI').hidden)
+   app.scene.resume('ExplorationScene');
+ },
+ canUsePreparation:()=>!app.registry.get('battleState')&&$('battleUI').hidden&&$('encounterModal').hidden,
+ onUsePreparation:(id)=>{
+  // A UI não executa comandos: o controlador continua responsável pelo bridge.
+  const tx=bridge.execute({type:'usePreparation',id,context:'exploration'});
+  if(tx.applied){
+   app.registry.set('combatProfile',bridge.combatProfile());
+   app.registry.set('status','Peren usou um preparado alquímico.');
+   renderHub();updateHud();
+  }
+  return tx;
+ }
+});
 
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
@@ -315,6 +341,9 @@ function toggleBag(show){
   if(show){$('bagContents').textContent=inventoryText();}
 }
 $('openBagHub').addEventListener('click',()=>inventory.open());
+$('fieldInventoryBtn').addEventListener('click',()=>{
+ if($('battleUI').hidden&&$('encounterModal').hidden&&$('hub').hidden)inventory.open();
+});
 const originalHub=hub;
 // Wrap the existing hub transition so pause, controller selection and bag agree.
 hub=function(show){originalHub(show);if(show){toggleBag(false);selectHubChoice(0);}else forestVisited=true;};
@@ -371,7 +400,8 @@ function pollXbox(){
     return;
   }
   if(inventory.isOpen()){
-    if(key.b||key.y||key.menu){inventory.close();return;}
+    if(key.b||key.menu){inventory.close();return;}
+    if(key.y){inventory.useSelectedPreparation();return;}
     if(key.x){inventory.cycleTab(1);return;}
     if(key.up)inventory.move(0,-1);
     else if(key.down)inventory.move(0,1);
@@ -393,11 +423,15 @@ function pollXbox(){
     return;
   }
   if(key.a||key.x)scene?.command('gather');
-  if(key.y||key.view)toggleBag(true);
+  if(key.y){inventory.open();return;}
+  if(key.view)toggleBag(true);
   else if(key.b||key.menu)hub(true);
 }
 app.events.on('step',pollXbox);
 window.addEventListener('keydown',event=>{
+  if(event.code==='KeyI'&&$('hub').hidden&&$('battleUI').hidden&&$('encounterModal').hidden&&!inventory.isOpen()){
+   event.preventDefault();inventory.open();return;
+  }
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}

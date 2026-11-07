@@ -1,4 +1,5 @@
-// M1g-B — read-only inventory view. Never mutates progress or synthesizes equipment.
+// M1g-B — consulta de itens e uso contextual explícito de preparados na pré-alfa.
+// Toda alteração passa pelo progress bridge; nunca sintetiza equipamento.
 import {maxClassicHp,maxClassicMp,weaponStats,inventoryTotal} from './progress.js';
 
 export const INVENTORY_TABS=Object.freeze([
@@ -42,6 +43,16 @@ export function inventoryViewModel(state,catalogs,{category='all',query='',selec
       attack:Number.isFinite(item.ataque)?item.ataque:null,defense:Number.isFinite(item.defesa)?item.defesa:null,
       symbol:itemSymbol(group),equipped:equipped.has(id),zone:item.zona||null};
   }).filter(Boolean).sort((a,b)=>Number(b.equipped)-Number(a.equipped)||a.name.localeCompare(b.name,'pt-BR'));
+  // As instâncias de bancada não ficam em bag[]; são itens reais de alchemy.preparations.
+  // Rótulos públicos deliberadamente não revelam propriedades desconhecidas.
+  const preparations=(state.alchemy?.preparations||[]).map((prep,i)=>({
+    id:prep.id,amount:1,category:'consumable',name:'Preparo alquímico '+(i+1),
+    description:'Frasco produzido por Peren. A aplicação depende de regras já disponíveis na pré-alfa.',
+    type:'Preparado da bancada',value:null,level:null,attack:null,defense:null,
+    symbol:'⚗',equipped:false,zone:null,isPreparation:true
+  }));
+  items.push(...preparations);
+  items.sort((a,b)=>Number(b.equipped)-Number(a.equipped)||a.name.localeCompare(b.name,'pt-BR'));
   const needle=fold(query.trim());
   const filtered=items.filter(item=>(category==='all'||item.category===category)&&(!needle||fold(item.name+' '+item.type+' '+item.id).includes(needle)));
   const current=filtered.find(item=>item.id===selectedId)||filtered[0]||null;
@@ -51,7 +62,7 @@ export function inventoryViewModel(state,catalogs,{category='all',query='',selec
     character:{
       level:state.level,gold:state.gold,xp:state.exp,xpGoal:state.level*62,
       hp:state.hp,maxHp,mp:state.mp,maxMp,attack:stats.attack,defense:stats.defense,
-      types:items.length,quantity:inventoryTotal(state)
+      types:items.length,quantity:inventoryTotal(state)+preparations.length
     }
   };
 }
@@ -61,11 +72,13 @@ function element(doc,tag,className,content){
   const el=doc.createElement(tag);if(className)el.className=className;if(content!==undefined)el.textContent=text(content);return el;
 }
 
-export function createInventoryScreen({document:doc,bridge,catalogs}){
+export function createInventoryScreen({document:doc,bridge,catalogs,onUsePreparation=null,canUsePreparation=()=>true,onOpen=()=>{},onClose=()=>{}}){
   const root=doc.getElementById('inventoryUI'),grid=doc.getElementById('invGrid'),tablist=doc.getElementById('invTabs');
   const queryInput=doc.getElementById('invSearch');
   if(!root||!grid||!tablist||!queryInput)throw Error('Estrutura do inventário M1g-B ausente.');
   let category='all',selectedId=null,lastFocus=null,model=null;
+  const useButton=doc.getElementById('invUsePreparation'),useStatus=doc.getElementById('invPrepFeedback');
+  if(!useButton||!useStatus)throw Error('Controles de preparados da pré-alfa ausentes.');
   const isOpen=()=>!root.hidden;
   const tabs=INVENTORY_TABS.map(tab=>{
     const button=element(doc,'button','inv-tab ui-button',tab.symbol+' '+tab.label);
@@ -132,11 +145,32 @@ export function createInventoryScreen({document:doc,bridge,catalogs}){
       selected.equipped?'Atualmente equipado':null
     ].filter(Boolean).join(' · ')||'Sem modificadores registrados':'');
     setText(doc,'invSelectedSymbol',selected?.symbol||'◇');
+    useButton.hidden=!selected?.isPreparation;
+    useButton.disabled=!selected?.isPreparation||!onUsePreparation||!canUsePreparation();
     const active=grid.querySelector('.is-selected');
     active?.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});
     if(focusItem)active?.focus({preventScroll:true});
   }
-  function selectItem(id,focus=false){selectedId=id;render({focusItem:focus});}
+  function selectItem(id,focus=false){
+    selectedId=id;useStatus.textContent='';render({focusItem:focus});
+  }
+  function useSelectedPreparation(){
+    const item=model?.selected;
+    if(!item?.isPreparation){useStatus.textContent='Selecione um preparo alquímico na mochila.';return false;}
+    if(!canUsePreparation()){useStatus.textContent='Não é possível usar preparados durante uma batalha ou encontro.';return false;}
+    try{
+      const receipt=onUsePreparation(item.id);
+      render();
+      useStatus.textContent=receipt.applied?'Preparo utilizado. O frasco saiu da mochila.':'Este preparo já foi utilizado.';
+      return Boolean(receipt.applied);
+    }catch(error){
+      // A mensagem pública do executor não revela IDs dos efeitos do frasco.
+      useStatus.textContent=String(error?.message||'Não foi possível utilizar este preparo.');
+      render();
+      return false;
+    }
+  }
+  useButton.addEventListener('click',useSelectedPreparation);
   function setCategory(next){
     if(!INVENTORY_TABS.some(t=>t.id===next))return;
     category=next;selectedId=null;render();
@@ -158,11 +192,15 @@ export function createInventoryScreen({document:doc,bridge,catalogs}){
   const close=()=>{
     if(!isOpen())return;
     root.hidden=true;
+    onClose();
     lastFocus?.focus?.({preventScroll:true});
   };
   const open=()=>{
+    if(isOpen())return;
+    onOpen();
     lastFocus=doc.activeElement;
     root.hidden=false;queryInput.value='';category='all';selectedId=null;
+    useStatus.textContent='';
     render();root.querySelector('#invClose')?.focus({preventScroll:true});
   };
   root.querySelector('#invClose').addEventListener('click',close);
@@ -195,5 +233,5 @@ export function createInventoryScreen({document:doc,bridge,catalogs}){
     atlas.onload=()=>{ctx.imageSmoothingEnabled=false;ctx.clearRect(0,0,48,64);ctx.drawImage(atlas,0,0,48,64,0,0,48,64)};
     atlas.src=({'m1h':'./art-m1h/characters/peren/peren-atlas.png','m1hb':'./art-m1hb/characters/peren/peren-atlas.png','m1hc':'./art-m1hc/characters/peren/peren-atlas.png','m1hd':'./art-m1hd/characters/peren/peren-atlas.png'})[new URLSearchParams(location.search).get('art')]||'./art/characters/peren/peren-atlas.png';
   }
-  return {open,close,isOpen,move,cycleTab,render,get view(){return model},get category(){return category}};
+  return {open,close,isOpen,move,cycleTab,render,useSelectedPreparation,get view(){return model},get category(){return category}};
 }

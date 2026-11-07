@@ -91,4 +91,9 @@
  #inventoryUI .inv-tabs{gap:4px}
  #inventoryUI .inv-tab{min-width:94px;font-size:11px}
 }
+
+#inventoryUI #invUsePreparation{margin-top:10px;display:block;width:100%;min-height:46px;text-align:center;font-weight:700;white-space:normal}
+#inventoryUI #invUsePreparation[hidden]{display:none!important}
+#inventoryUI #invUsePreparation:disabled{opacity:.48;cursor:not-allowed}
+#inventoryUI .inv-prep-feedback{display:block;min-height:18px;margin-top:8px;color:var(--ui-gold-bright);font:12px/1.4 var(--ui-font-sans);overflow-wrap:anywhere}
 @media(prefers-reduced-motion:reduce){#inventoryUI *{scroll-behavior:auto!important;transition:none!important}}
