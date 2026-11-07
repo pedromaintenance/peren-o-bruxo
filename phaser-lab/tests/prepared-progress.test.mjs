@@ -9,6 +9,9 @@ for(const k of names){
  const p=new URL('../data/'+k+'.json',import.meta.url),up=new URL('../../data/'+k+'.json',import.meta.url);
  catalogs[k]=JSON.parse(readFileSync(existsSync(p)?p:up,'utf8'));
 }
+const curatedLocal=new URL('../data/curadoria_ingredientes.json',import.meta.url);
+const curatedRoot=new URL('../../data/curadoria_ingredientes.json',import.meta.url);
+catalogs.curadoria_ingredientes=JSON.parse(readFileSync(existsSync(curatedLocal)?curatedLocal:curatedRoot,'utf8'));
 const c=buildCatalogs(catalogs);
 const p=id=>({id,family:'pocao',ingredients:['ing-blue-mountain-flower','ing-red-mountain-flower'],effects:[{id:'restaurar_saude',nome:'Restaurar Saúde'}],createdDay:1});
 const fresh=()=>stageFromClassic({...newClassicState(),hp:50,mp:30,alchemy:{known:{},preparations:[p('preparo-1'),p('preparo-2')],failed:0}},c);
@@ -102,4 +105,46 @@ test('Recorded battle settlement stays idempotent across bridge reload',()=>{
  assert.deepEqual(reloaded.state.alchemy.preparations.map(x=>x.id),['preparo-2']);
  assert.equal(reloaded.finishBattle(end).applied,false);
  assert.equal(reloaded.state.bag['ing-spider-egg'],1);
+});
+
+test('Novo jogo da pré-alfa tem fontes reais para duas restaurações',()=>{
+ const starter=newClassicState();
+ for(const id of ['ing-blue-mountain-flower','ing-red-mountain-flower','ing-butterfly-wing','ing-white-cap'])
+  assert.ok(starter.bag[id]>=2,id);
+ const x=stageFromClassic(starter,c);
+ assert.ok(x.character.bag['ing-butterfly-wing']>=2);
+});
+test('Percurso integral: ingredientes canônicos, bancada, frasco, batalha e inventário',()=>{
+ const env=stageFromClassic(newClassicState(),c);
+ const ingredients=['ing-blue-mountain-flower','ing-butterfly-wing'];
+ const brew=applyTransaction(env,{type:'brewPair',ingredients},c);
+ assert.equal(brew.applied,true);assert.equal(brew.result.valid,true);
+ assert.deepEqual(brew.result.preparation.effects.map(e=>e.id),['restaurar_saude']);
+ const prepId=brew.result.preparation.id;
+ assert.equal(brew.next.character.alchemy.preparations.length,1);
+ assert.equal(brew.next.character.actions,2);
+ for(const id of ingredients)assert.equal(brew.next.character.bag[id],1);
+ const b=newBattle({type:'mob-ettercap',name:'Ettercap'},toCombatProfile(brew.next,c),'murin::real-brew');
+ const consumed=stepBattle(b,'prepared:'+prepId,()=>.1);
+ assert.equal(consumed.error,undefined);
+ assert.equal(consumed.state.preparations.length,0);
+ assert.ok(consumed.state.playerHp>b.playerHp);
+ const final=applyTransaction(brew.next,{type:'victory',battle:{...consumed.state,status:'won',hp:0}},c);
+ assert.equal(final.applied,true);
+ assert.equal(final.next.character.alchemy.preparations.length,0);
+ assert.equal(final.next.character.bag['ger-pocao-restauradora'],3);
+ assert.equal(final.next.character.bag['ing-spider-egg'],1);
+ assert.equal(applyTransaction(final.next,{type:'victory',battle:{...consumed.state,status:'won',hp:0}},c).applied,false);
+});
+test('Percurso integral de PM: Flor Vermelha e Chapéu Branco',()=>{
+ const env=stageFromClassic(newClassicState(),c);
+ const result=applyTransaction(env,{type:'brewPair',ingredients:['ing-red-mountain-flower','ing-white-cap']},c);
+ assert.equal(result.result.valid,true);
+ assert.deepEqual(result.result.preparation.effects.map(e=>e.id),['restaurar_magia']);
+ const b=newBattle({type:'mob-ettercap',name:'Ettercap'},toCombatProfile(result.next,c),'murin::real-mp');
+ b.playerMp=4;
+ const out=stepBattle(b,'prepared:'+result.result.preparation.id,()=>.1);
+ assert.equal(out.error,undefined);
+ assert.equal(out.state.playerMp,16);
+ assert.equal(out.state.preparations.length,0);
 });
