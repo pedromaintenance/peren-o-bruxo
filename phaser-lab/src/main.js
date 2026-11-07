@@ -416,10 +416,16 @@ $('bagClose').addEventListener('click',()=>toggleBag(false));
 // but a completely isolated in-memory testing profile. Never reads Peren's save.
 let selectedBattleIndex=0;
 const battleOptions=[...document.querySelectorAll('[data-battle]')];
+const prepSelect=$('battlePrepSelect');
 let battleHintAction='attack';
 function updateBattleHint(action,state=app.registry.get('battleState')){
  const target=$('battleCommandHint');
  battleHintAction=action;
+ if(action==='prepared'){
+  target.textContent=prepSelect.value?'Use o preparado selecionado. Esta versão aplica somente restauração imediata de PV/PM.':'Crie um preparado na bancada alquímica e selecione-o para testar em combate.';
+  target.dataset.status=prepSelect.value?'ready':'unavailable';
+  return;
+ }
  if(M1HF_PREVIEW){
   const data=commandConsequences(action,state,bridge.state.learned);
   target.textContent=data.text;
@@ -444,6 +450,10 @@ async function battleAction(action){
       }
       return;
     }
+    if(action==='prepared'){
+      if(!prepSelect.value){$('battleJournal').textContent='Nenhum preparado selecionado.';return;}
+      action='prepared:'+prepSelect.value;
+    }
     await scene.takeTurn(action);
   }catch(err){
     console.error('Erro no controle do combate:',err);
@@ -456,6 +466,7 @@ async function battleAction(action){
     }
   }
 }
+prepSelect.addEventListener('change',()=>updateBattleHint('prepared'));
 for(const button of battleOptions){
  button.addEventListener('click',()=>battleAction(button.dataset.battle));
  button.addEventListener('focus',()=>updateBattleHint(button.dataset.battle));
@@ -521,7 +532,18 @@ function renderBattleState(state){
   const ui=battleViewModel(state);
   $('battleMonster').textContent=ui.monster+' · '+ui.enemyHp+'/'+ui.enemyMaxHp+' PV';
   $('battleStats').textContent=ui.hp+'/'+ui.maxHp+' PV · '+ui.mp+'/'+ui.maxMp+' PM';
-  $('battlePotionCount').textContent='Poções: '+ui.potions;
+  $('battlePotionCount').textContent='Poções: '+ui.potions+' · Preparos: '+(state.preparations?.length||0);
+  // A batalha é a fonte de verdade para consumo até a liquidação única.
+  const eligible=state.preparations||[];
+  const selected=prepSelect.value;
+  prepSelect.replaceChildren();
+  const first=document.createElement('option');first.value='';first.textContent=eligible.length?'Escolha um preparado':'Nenhum preparado disponível';
+  prepSelect.appendChild(first);
+  for(const prep of eligible){
+    const opt=document.createElement('option');opt.value=prep.id;opt.textContent=prep.label;
+    prepSelect.appendChild(opt);
+  }
+  prepSelect.value=eligible.some(p=>p.id===selected)?selected:eligible[0]?.id||'';
   $('battleJournal').textContent=ui.log;
   $('battleStatusLabel').textContent=ui.busy?'Ação em andamento…':ui.finished?'Combate encerrado':'Sua vez';
   fillGauge(document,'battleEnemyFill',ui.enemyHp,ui.enemyMaxHp);
@@ -537,7 +559,7 @@ function renderBattleState(state){
   $('battleRewardDetails').textContent=outcome?.details||'';
   $('battleEndHint').textContent=state.status==='won'?'Confirme para salvar e recolher os materiais uma única vez.':state.status==='lost'?'A derrota não apaga o progresso salvo.':state.status==='fled'?'Nenhuma recompensa será concedida.':'';
   battleOptions.forEach(b=>{
-    b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&(!bridge.state.learned.includes(b.dataset.battle.slice(6))||state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0))) || (b.dataset.battle==='potion'&&state.potions<=0);
+    b.disabled=!!state.busy || (b.dataset.battle.startsWith('spell:')&&(!bridge.state.learned.includes(b.dataset.battle.slice(6))||state.mp<(SPELLS.find(s=>s.id===b.dataset.battle.slice(6))?.mana||0))) || (b.dataset.battle==='potion'&&state.potions<=0) || (b.dataset.battle==='prepared'&&!prepSelect.value);
   });
   if(M1HF_PREVIEW)updateBattleHint(battleHintAction,state);
 }
