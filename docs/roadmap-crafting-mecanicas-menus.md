@@ -618,3 +618,27 @@ O catálogo [`data/catalogo-combos-alquimicos.json`](../data/catalogo-combos-alq
 - **CRAFT-D60 [P0 QA]:** integrar somente após testes reais de botão, estoque, combate, derrota, reload, múltiplas abas, PWA e nenhum item duplicado/sumido.
 
 **Critérios de aceite de design:** `CTX-Q01–CTX-Q12` detalhados no estudo. **Verificação isolada:** **37/37 testes de lógica em V8** e **15/15 checagens de UI em DOM simulado**. Não foi executado Node CI, Chromium real, build Phaser, mobile físico ou teste de persistência. A PR #100 é **rascunho, não integrada**. A Emenda A2 não foi alterada, nem foram aprovadas novas interações, custos, receitas ou efeitos.
+
+## 24. Direção de pré-alfa e vertical slice real do uso de preparados (07/11/2026)
+
+**Decisão do criador [CANÔNICA]:** [Emenda S1 à Constituição de Design](constituicao-design-v1.md). A partir de 07/11/2026, **compatibilidade de saves de pré-alfa não é requisito**, e reiniciar uma partida para mudanças estruturais é aceitável. Migração/retrocompatibilidade ficam para uma fase futura. Os itens antigos do clássico não precisam ditar a semântica do Phaser, embora seus dados nunca devam ser apagados automaticamente do dispositivo. **Transações corretas dentro de uma partida continuam obrigatórias.** Essa decisão supera as restrições históricas de migração indicadas nas seções 1–23.
+
+**Implementação real sob revisão:** [PR #101 — consumo de preparados da bancada em combate, sem dupla cobrança (draft)](https://github.com/pedromaintenance/peren-o-bruxo/pull/101), branched de `transition/phaser-only-m0-20261030` (é **o mesmo jogo**, não projeto separado). O código está na branch `feature/prealfa-consumo-preparados-combate-20261107`, **ainda não mesclada nem publicada**.
+
+**O que a vertical slice já contém, aguardando QA de build:** 
+- Novo `phaser-lab/src/prepared-use.js` isola a validação de todos os efeitos do frasco e sua identidade única. **Somente `restaurar_saude` e `restaurar_magia`** podem ser usados nesta experiência de combate; qualquer outra propriedade bloqueia o uso inteiro. Valores **24 PV/12 PM são ajustes provisórios de playtest, NÃO potência canonizada**.
+- `combat.js` executa a ação `prepared:<id>` no turno real (com reação inimiga); o estado temporário da batalha controla o saldo de frascos.
+- `progress.js` entrega instâncias da bancada ao perfil de batalha e **reconcilia IDs restantes** em vitória, fuga ou derrota. O lançamento de loot e a conciliação ocorrem em uma única transação. Repetições de desfecho com a mesma chave são idempotentes; não permitir frascos sintéticos, perdidos por duplo débito ou duplicados.
+- `battle-scene.js`, `main.js` e `index.html` expõem o seletor **USAR PREPARO ESCOLHIDO** em combate, sem exibir propriedades ocultas na lista pública.
+- O botão da poção clássica de combate continua funcional enquanto o novo experimento é avaliado; não foi acrescido um segundo débito sobre `character.bag`. Não há ainda uso fora de combate, relógios/duração, Veneno, Bálsamo, Tônico ou Elixir implementados nessa slice.
+
+**QA executado isoladamente:** 21/21 casos do motor de preparados, 11/11 checagens de conciliação de progresso com catálogo reduzido e 13/13 verificações de sintaxe e integração estática (V8). A PR inclui **21 testes Node** do motor e **12 testes Node** adicionais de fluxo real de progresso; o workflow `phaser-migration-contract.yml` foi atualizado para executá-los com o build do Phaser e smoke de Chromium. **O resultado do CI real precisa ser verificado; os números V8 não substituem Node/Vite/Playwright.** 
+
+**Próximas decisões de gameplay:** começar playtest desse fluxo; então decidir magnitude dos efeitos, usar preparados na exploração, alvo e aplicação de Venenos, duração/expiração de Tônicos e Elixires, objetos de Bálsamos e classificação de Impuros. A migração de saves só retorna ao backlog quando o jogo sair da fase de mudanças estruturais de pré-alfa.
+
+**Backlog de implementação:**
+- **CRAFT-D61 [P0 implementação]:** vertical slice de consumo de preparados em batalha, sujeita a CI real, teste de UI e merge autorizado.
+- **CRAFT-D62 [P0 QA]:** testar vitória/fuga/derrota/reload/loot e ausência de duplo consumo de poções comuns e instâncias dinâmicas.
+- **CRAFT-D63 [P1 gameplay]:** calibrar valores 24 PV/12 PM (atuais apenas como **QA**) e definir progressão por intensidade.
+- **CRAFT-D64 [P1 gameplay]:** executar a mesma instância de preparo fora de combate sem consumir a ação de batalha indevidamente.
+- **CRAFT-D65 [P1 política]:** explicitar o reset/versionamento do save pré-alfa quando o schema mudar; **não** exigir compatibilidade com versões anteriores.
