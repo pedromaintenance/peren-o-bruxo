@@ -110,3 +110,11 @@ Estes ingredientes **já haviam sido revisados individualmente** e agora receber
 - Os textos candidatos de Betta do Rio, Beladona e Escamas de Piranha continuam **não aprovados** e não foram aplicados.
 - [Relatório da fila e pareceres P0](fila-investigacao-ecologica-ingredientes-v1.md): fontes efetivamente verificadas, guardas de cânone, tabela dos 25 P1 e critérios de aceite.
 - **Nenhuma alteração** em curadoria ativa, zonas, atributos, receitas, combos, loot, economia, código, saves ou PWA. A comparação integral com o JSON compilado `data/itens.json` continua pendente.
+
+## Continuidade — 25 pareceres P1 (07/11/2026)
+
+- **25/25 P1** revisados documentalmente e registrados em [`data/fila-investigacao-territorial-ingredientes.json`](../data/fila-investigacao-territorial-ingredientes.json), sem homologação de habitat. Os P1 foram organizados em cinco eixos: substâncias/cosmologia (**5**); fontes fantásticas, restos e fósseis (**11**); plantas, clima e topônimos (**6**); nomes duplicados (**2**); fauna costeira (**1**).
+- A fila agora contém **36 pareceres iniciais/106** (**11 P0 + 25 P1**). Restam **70** (**16 P2 + 54 P3**) para primeira análise.
+- [Relatório individualizado dos P1](pareceres-p1-taxonomia-habitats-ingredientes.md): fatos documentados, lacunas, inferências proibidas e recomendações por ID, com fontes e compromisso de manter a zona procedural como não homologada.
+- Regras de proteção reforçadas: `abissal_marinho` não é `demonio`; o Vazio não é um campo de mineração; nomes Luna/Gualápoles não provam fabricação/habitat; Pó de Presa de Mamute permanece fóssil descrito em Peren; os dois Ovos de Tordo são IDs distintos, sem novas espécies estabelecidas.
+- **0** habitats, drops ou nomes de ingredientes aprovados nesta rodada. **Nenhuma mudança** nos 111 ingredientes ativos, atributos, intensidades, custos, receitas, zonas, motor, PWA ou saves. Não foi feita auditoria integral de `data/itens.json` servido no jogo.
