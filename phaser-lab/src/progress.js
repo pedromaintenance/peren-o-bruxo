@@ -11,7 +11,8 @@ import {reconcileBattlePreparations} from './prepared-use.js';
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
 export const M1HF_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
 export const CLASSIC_KEY='peren_carcaca_save_v1';
-export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_preview_v1':'peren_phaser_save_m1d_v1';
+// Pré-alfa: esta feature usa chave nova, sem migrar, sobrescrever ou apagar saves anteriores.
+export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_preparados_prealpha_v1':'peren_phaser_save_preparados_prealpha_v1';
 export const PHASER_SCHEMA=2;
 const MAX_GOLD=1e10, MAX_COUNT=1000000;
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
