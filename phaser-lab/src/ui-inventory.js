@@ -72,7 +72,7 @@ function element(doc,tag,className,content){
   const el=doc.createElement(tag);if(className)el.className=className;if(content!==undefined)el.textContent=text(content);return el;
 }
 
-export function createInventoryScreen({document:doc,bridge,catalogs,onUsePreparation=null,canUsePreparation=()=>true}){
+export function createInventoryScreen({document:doc,bridge,catalogs,onUsePreparation=null,canUsePreparation=()=>true,onOpen=()=>{},onClose=()=>{}}){
   const root=doc.getElementById('inventoryUI'),grid=doc.getElementById('invGrid'),tablist=doc.getElementById('invTabs');
   const queryInput=doc.getElementById('invSearch');
   if(!root||!grid||!tablist||!queryInput)throw Error('Estrutura do inventário M1g-B ausente.');
@@ -192,9 +192,12 @@ export function createInventoryScreen({document:doc,bridge,catalogs,onUsePrepara
   const close=()=>{
     if(!isOpen())return;
     root.hidden=true;
+    onClose();
     lastFocus?.focus?.({preventScroll:true});
   };
   const open=()=>{
+    if(isOpen())return;
+    onOpen();
     lastFocus=doc.activeElement;
     root.hidden=false;queryInput.value='';category='all';selectedId=null;
     useStatus.textContent='';
