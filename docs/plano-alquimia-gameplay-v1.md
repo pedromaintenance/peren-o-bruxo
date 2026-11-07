@@ -95,3 +95,15 @@ O próximo contrato do motor deverá distinguir **PV/MP atual**, **PV/MP máximo
 **Achado de retrocompatibilidade obrigatório:** `game.js` trata atualmente `Regenerate Health` e `Regenerate Magicka` como reposição imediata, assim como `Restore Health` e `Restore Magicka`. A proposta de diferenciar regeneração ao longo do tempo não autoriza mudar o funcionamento dos produtos existentes. Antes de aplicar `regenerar_saude` ou `regenerar_magia` no runtime, definir comportamento do legado e versionamento semântico do item/salvamento.
 
 **Testes e gates:** 31/31 verificações da lógica executadas em V8 e 14/14 do painel em DOM simulado; sem CI Node, teste de navegador/Phaser ou migração real. Resolver `REC-D01–D07` e `CRAFT-D46–D52` antes de integrar. Próxima investigação sugerida: aplicação de efeitos em diferentes contextos de uso (combate, exploração, descanso), inclusive PV zero, expiração de máximo e consumo em uma transação segura.
+
+## Etapa C → uso contextual e fronteira de consumo (07/11/2026)
+
+**Especificação de trabalho:** [estudo de aplicação contextual](estudo-aplicacao-contextual-alquimia-v1.md), [PR #100](https://github.com/pedromaintenance/peren-o-bruxo/pull/100) (draft) e [roadmap de mecânicas, seção 23](roadmap-crafting-mecanicas-menus.md). Protótipos não integrados e nenhuma decisão numérica aprovada.
+
+A aplicação foi dividida em **pré-validação sem custo** → **resolução completa de efeitos** → **commit idempotente** de consumo, ação e estado do alvo → **recibo público restrito às propriedades conhecidas**. O protótipo em memória demonstra operações imediatas de Saúde/Magia **apenas com magnitudes fictícias de QA**. Não decide persistência, Pv zero, resistência, falhas, custo em turno, dose, alvo, Elixires, Bálsamos ou clock de Tônicos.
+
+**Gate prioritário antes de implementação:** a branch Phaser já diminui `battle.potions` em `stepBattle('potion')` e reconcilia o restante com `character.bag['ger-pocao-restauradora']` em `victory` ou `escape`. **É proibido duplicar esse débito** sem revisar a fronteira transacional e os testes existentes. O `ledger` do envelope de `progress.js` não é uma licença para criar transação que cobre de novo o item do combate. A interface `ui-inventory.js` é de leitura, então não há botão geral homologado.
+
+**Três contextos, cinco famílias:** matriz de 15 casos distingue combate, exploração, descanso e Poção/Veneno/Tônico/Elixir/Bálsamo. `endDay` recupera PV/MP no mundo, mas **não** ativa automaticamente poções ou ticks futuros. Permanência de efeitos atravessando combate, mundo e descanso depende de aprovação por categoria semântica.
+
+**QA:** **37/37 testes V8 isolados** e **15/15 checagens UI com DOM simulado**. Ainda faltam Node CI, browser real, save/reload, teste de dupla cobrança e integração Phaser. Próximos requisitos `CTX-D01–CTX-D08` / `CRAFT-D53–D60` antes de qualquer comando real de uso. **Não alterar `game.js` nem saves clássicos.**
