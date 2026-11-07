@@ -46,7 +46,15 @@ if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
   for(const img of document.querySelectorAll('img[src*="art/characters/peren/portrait"]'))
     img.src=img.getAttribute('src').replace('./art/characters/peren/','./'+dir+'/characters/peren/');
 }
-const inventory=createInventoryScreen({document,bridge,catalogs});
+const inventory=createInventoryScreen({
+ document,bridge,catalogs,
+ canUsePreparation:()=>!app.registry.get('battleState')&&$('battleUI').hidden&&$('encounterModal').hidden,
+ onChange:()=>{
+  app.registry.set('combatProfile',bridge.combatProfile());
+  app.registry.set('status','Peren usou um preparado alquímico.');
+  renderHub();updateHud();
+ }
+});
 
 
 // M1a isolated sandbox. Does not read or overwrite Peren's classic save.
@@ -371,7 +379,8 @@ function pollXbox(){
     return;
   }
   if(inventory.isOpen()){
-    if(key.b||key.y||key.menu){inventory.close();return;}
+    if(key.b||key.menu){inventory.close();return;}
+    if(key.y){inventory.useSelectedPreparation();return;}
     if(key.x){inventory.cycleTab(1);return;}
     if(key.up)inventory.move(0,-1);
     else if(key.down)inventory.move(0,1);
@@ -393,7 +402,8 @@ function pollXbox(){
     return;
   }
   if(key.a||key.x)scene?.command('gather');
-  if(key.y||key.view)toggleBag(true);
+  if(key.y){inventory.open();return;}
+  if(key.view)toggleBag(true);
   else if(key.b||key.menu)hub(true);
 }
 app.events.on('step',pollXbox);
