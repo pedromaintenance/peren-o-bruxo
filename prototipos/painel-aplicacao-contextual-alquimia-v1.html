@@ -57,6 +57,7 @@ dt{font:700 12px system-ui,sans-serif;color:var(--gold)}dd{margin:0 0 12px;font-
 <button type="button" id="preview">1. Pré-validar</button>
 <button type="button" id="commit">2. Tentar usar</button>
 <button type="button" class="secondary" id="repeat">Repetir mesma transação</button>
+<button type="button" class="secondary" id="newAttempt">Nova tentativa (novo ID)</button>
 <button type="button" class="secondary" id="reset">Reiniciar laboratório</button></div>
 <p class="muted">O custo de 1 ação e as magnitudes de PV/MP neste laboratório são números fictícios de QA, não regras da Carcaça.</p>
 <h3>Prévia e resultado</h3><div id="status" class="status" role="status" aria-live="polite">Escolha um cenário e pré-valide.</div>
@@ -247,7 +248,7 @@ function researchPolicy(extra={}){
 
 (function(){
 "use strict";
-let env=exampleFixture(),txId="demo-1",lastCommand=null,lastPolicy=null;
+let env=exampleFixture(),attempt=1,txId="demo-1",lastCommand=null,lastPolicy=null;
 const el=id=>document.getElementById(id);
 const scenes={
  combat:{prepId:"qa-pocao-dupla",context:"combat",targetId:"peren",action:"drink",
@@ -300,7 +301,7 @@ function apply(command,policy){
  show();
 }
 el("scenario").addEventListener("change",()=>{
- txId="demo-"+(Object.keys(env.ledger).length+1)+"-"+el("scenario").value;
+ txId="demo-"+(++attempt)+"-"+el("scenario").value;
  lastCommand=null;lastPolicy=null;
  el("receipt").textContent="Nenhum recibo para este cenário.";
  el("status").className="status";el("status").textContent="Escolha Pré-validar ou Tentar usar.";
@@ -316,8 +317,13 @@ el("repeat").addEventListener("click",()=>{
  if(!lastCommand){el("status").textContent="Nenhuma transação anterior para repetir.";return;}
  apply(lastCommand,lastPolicy);
 });
+el("newAttempt").addEventListener("click",()=>{
+ txId="demo-"+(++attempt)+"-"+el("scenario").value;
+ el("status").className="status";el("status").textContent="Nova tentativa de QA, com ID distinto. Nenhum item consumido ainda.";
+ show();
+});
 el("reset").addEventListener("click",()=>{
- env=exampleFixture();txId="demo-1";lastCommand=null;lastPolicy=null;
+ env=exampleFixture();attempt=1;txId="demo-1";lastCommand=null;lastPolicy=null;
  el("scenario").value="combat";
  el("status").className="status";el("status").textContent="Laboratório reiniciado. Nenhum item real foi consumido.";
  el("receipt").textContent="Sem transações registradas.";show();
