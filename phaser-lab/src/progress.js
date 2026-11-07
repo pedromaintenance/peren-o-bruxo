@@ -5,6 +5,7 @@
  */
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
 import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
+import {reconcileBattlePreparations} from './prepared-use.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
@@ -99,7 +100,7 @@ export function toCombatProfile(env,c){const s=env.character,stats=weaponStats(s
  for(const [key,row] of Object.entries(env.ledger))if(key.startsWith('battle:'))claims[key.slice(7)]=row;
  return {version:1,level:s.level,xp:s.exp,gold:s.gold,hp:Math.min(maxClassicHp(s,c),s.hp),mp:Math.min(maxClassicMp(s),s.mp),
   playerMaxHp:maxClassicHp(s,c),playerMaxMp:maxClassicMp(s),attack:stats.attack,defense:stats.defense,
-  potions:s.bag['ger-pocao-restauradora']||0,kills:s.kills,bag:{...s.bag},claims,learned:[...s.learned],encounters:0};
+  potions:s.bag['ger-pocao-restauradora']||0,preparations:jsonCopy(s.alchemy.preparations),kills:s.kills,bag:{...s.bag},claims,learned:[...s.learned],encounters:0};
 }
 export function recoveredIds(env,seed,kind){const prefix=`${kind}:${encodeURIComponent(String(seed))}::`;return Object.keys(env.ledger).filter(k=>k.startsWith(prefix)).map(k=>decodeURIComponent(k.slice(prefix.length)));}
 export function inventoryTotal(s){return Object.values(s.bag).reduce((n,c)=>n+c,0)}
@@ -151,7 +152,7 @@ export function applyTransaction(env,command,c){
  const type=command?.type;
  let key=null;
  if(type==='collect')key=ledgerKey('collect',command.seed,command.nodeId);
- if(type==='victory')key='battle:'+String(command.battle?.key||'');
+ if(type==='victory'||type==='escape')key=command.battle?.key?'battle:'+String(command.battle.key):null;
  if(key&&old.ledger[key])return {next:env,result:old.ledger[key],applied:false};
  const next=jsonCopy(old),char=next.character;let result={type};
  if(type==='collect'){
@@ -168,6 +169,7 @@ export function applyTransaction(env,command,c){
   const reward=BATTLE_MONSTERS[b.enemyId];
   // XP and loot from same canonical monster; never from UI-supplied values.
   char.hp=integer(b.playerHp,0,maxClassicHp(char,c));char.mp=integer(b.playerMp,0,maxClassicMp(char));
+  char.alchemy.preparations=reconcileBattlePreparations(char.alchemy.preparations,b.preparations||[]);
   const consumed=integer(b.potions,0,MAX_COUNT),before=char.bag['ger-pocao-restauradora']||0;
   if(consumed>before)throw Error('Poções do combate divergentes.');
   if(consumed===0)delete char.bag['ger-pocao-restauradora'];else char.bag['ger-pocao-restauradora']=consumed;
@@ -177,12 +179,13 @@ export function applyTransaction(env,command,c){
   record(char,`Venceu ${mon.nome}: +${mon.ouro} moedas, +${mon.xp} XP.`);
  }else if(type==='escape'){
   const b=command.battle;if(!['fled','lost'].includes(b?.status))throw Error('Retirada inválida.');
+  char.alchemy.preparations=reconcileBattlePreparations(char.alchemy.preparations,b.preparations||[]);
   char.hp=b.status==='lost'?Math.max(24,Math.floor(maxClassicHp(char,c)*.5)):integer(b.playerHp,1,maxClassicHp(char,c));
   char.mp=b.status==='lost'?Math.max(12,Math.floor(maxClassicMp(char)*.5)):integer(b.playerMp,0,maxClassicMp(char));
   const remaining=integer(b.potions,0,MAX_COUNT),had=char.bag['ger-pocao-restauradora']||0;
   if(remaining>had)throw Error('Poções divergentes.');
   if(remaining===0)delete char.bag['ger-pocao-restauradora'];else char.bag['ger-pocao-restauradora']=remaining;
-  result={type,status:b.status};record(char,b.status==='fled'?'Escapou de uma batalha.':'Foi resgatado após uma derrota.');
+  result={type,status:b.status,key:b.key||null};record(char,b.status==='fled'?'Escapou de uma batalha.':'Foi resgatado após uma derrota.');
  }else if(type==='studyIngredient'){
   if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
    throw Error('Estudo alquímico exige uma bancada e a curadoria canônica.');
