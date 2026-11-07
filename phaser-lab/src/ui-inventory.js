@@ -72,7 +72,7 @@ function element(doc,tag,className,content){
   const el=doc.createElement(tag);if(className)el.className=className;if(content!==undefined)el.textContent=text(content);return el;
 }
 
-export function createInventoryScreen({document:doc,bridge,catalogs,onChange=()=>{},canUsePreparation=()=>true}){
+export function createInventoryScreen({document:doc,bridge,catalogs,onUsePreparation=null,canUsePreparation=()=>true}){
   const root=doc.getElementById('inventoryUI'),grid=doc.getElementById('invGrid'),tablist=doc.getElementById('invTabs');
   const queryInput=doc.getElementById('invSearch');
   if(!root||!grid||!tablist||!queryInput)throw Error('Estrutura do inventário M1g-B ausente.');
@@ -146,7 +146,7 @@ export function createInventoryScreen({document:doc,bridge,catalogs,onChange=()=
     ].filter(Boolean).join(' · ')||'Sem modificadores registrados':'');
     setText(doc,'invSelectedSymbol',selected?.symbol||'◇');
     useButton.hidden=!selected?.isPreparation;
-    useButton.disabled=!selected?.isPreparation||!canUsePreparation();
+    useButton.disabled=!selected?.isPreparation||!onUsePreparation||!canUsePreparation();
     const active=grid.querySelector('.is-selected');
     active?.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});
     if(focusItem)active?.focus({preventScroll:true});
@@ -159,10 +159,9 @@ export function createInventoryScreen({document:doc,bridge,catalogs,onChange=()=
     if(!item?.isPreparation){useStatus.textContent='Selecione um preparo alquímico na mochila.';return false;}
     if(!canUsePreparation()){useStatus.textContent='Não é possível usar preparados durante uma batalha ou encontro.';return false;}
     try{
-      const receipt=bridge.execute({type:'usePreparation',id:item.id,context:'exploration'});
+      const receipt=onUsePreparation(item.id);
       render();
       useStatus.textContent=receipt.applied?'Preparo utilizado. O frasco saiu da mochila.':'Este preparo já foi utilizado.';
-      onChange(receipt);
       return Boolean(receipt.applied);
     }catch(error){
       // A mensagem pública do executor não revela IDs dos efeitos do frasco.
