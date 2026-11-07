@@ -97,3 +97,11 @@ Como pesquisa, a simulação permite por padrão somente beber uma Poção no **
 **Aceites:** `CTX-Q01` prévia sem consumo; `CTX-Q02` item só debitado após confirmação válida; `CTX-Q03` repetição idempotente; `CTX-Q04` colisão de transação bloqueada; `CTX-Q05` custo explícito sem cobrança dupla; `CTX-Q06` alvo/rota/resistência; `CTX-Q07` efeito oculto não revelado; `CTX-Q08` mistura parcialmente não implementada bloqueada inteira; `CTX-Q09` descanso neutro; `CTX-Q10` item legado preservado; `CTX-Q11` duração sem contrato bloqueada; `CTX-Q12` conciliação batalha/progresso sem perda ou duplicação.
 
 **Estado final:** estudo e protótipo de revisão; **nenhuma decisão canônica nova** sobre uso, custo, alvo, duração, potência ou save. [PR #100 permanece em rascunho](https://github.com/pedromaintenance/peren-o-bruxo/pull/100). O horizonte concreto é validar `CTX-D02` (fronteira transacional de combate), antes de começar a escrever o comando oficial de uso.
+
+## Atualização — implementação de combate na pré-alfa (07/11/2026)
+
+**Decisão posterior expressa do criador:** [Emenda S1 à Constituição](constituicao-design-v1.md) adia retrocompatibilidade de saves até depois da pré-alfa; começar de novo no jogo é aceitável. Por isso, os gates antigos referentes a **migração de saves de versões passadas** deixam de bloquear implementação. **Continua necessário não perder nem duplicar itens dentro da partida em andamento.**
+
+A [PR #101](https://github.com/pedromaintenance/peren-o-bruxo/pull/101) é o **primeiro passo de implementação jogável** após este estudo: uso de preparados criados pela bancada em batalha, com seleção por ID, consumo do estoque de combate e reconciliação uma única vez no fim da luta. A síntese de um frasco segue a curadoria; somente os efeitos `restaurar_saude` e `restaurar_magia` têm aplicação provisória (+24 PV/+12 PM **não canônicos**). Outros efeitos **bloqueiam o lote inteiro**, e Poções/Venenos/Tônicos/Bálsamos/Elixires não são tratados como vias idênticas.
+
+**Verificação:** [CI real success](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42423874692) com testes Node, build Vite e smoke Chromium, além das avaliações isoladas do estudo. A PR continua **draft, sem merge e sem publicação em Pages**. Permanecem abertos valores finais, resistência, duração, uso fora de combate e teste físico.
