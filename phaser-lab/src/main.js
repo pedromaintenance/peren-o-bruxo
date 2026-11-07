@@ -49,10 +49,15 @@ if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
 const inventory=createInventoryScreen({
  document,bridge,catalogs,
  canUsePreparation:()=>!app.registry.get('battleState')&&$('battleUI').hidden&&$('encounterModal').hidden,
- onChange:()=>{
-  app.registry.set('combatProfile',bridge.combatProfile());
-  app.registry.set('status','Peren usou um preparado alquímico.');
-  renderHub();updateHud();
+ onUsePreparation:(id)=>{
+  // A UI não executa comandos: o controlador continua responsável pelo bridge.
+  const tx=bridge.execute({type:'usePreparation',id,context:'exploration'});
+  if(tx.applied){
+   app.registry.set('combatProfile',bridge.combatProfile());
+   app.registry.set('status','Peren usou um preparado alquímico.');
+   renderHub();updateHud();
+  }
+  return tx;
  }
 });
 
