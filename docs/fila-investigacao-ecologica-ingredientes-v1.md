@@ -140,3 +140,9 @@ Os 25 P1 dividem-se em **5** materiais/cosmologia, **11** seres fantásticos e o
 Os **16 P2** receberam primeiro parecer documental e foram vinculados à [fila JSON de 106 IDs](../data/fila-investigacao-territorial-ingredientes.json), que agora contabiliza **52 pareceres emitidos**. Publicado o [dossiê individual dos P2](pareceres-p2-producao-hidrografia-ingredientes.md): oito ligados a agricultura, criação e manufatura; oito ligados a águas, desova e concreções.
 
 **Limite central:** o catálogo estabelece material/efeitos, mas não automaticamente ecologia, espécie produtora, cadeia de trabalho, ponto de comércio ou zona de obtenção. Cultivo e produção em regiões do atlas não comprovam itens específicos. O próximo lote são os **54 P3**. Os pareceres P0/P1/P2 **não promovem zonas a habitat, nem alteram gameplay**.
+
+## Quarta passagem — pareceres P3 completos e encerramento da fila (07/11/2026)
+
+A [fila estruturada](../data/fila-investigacao-territorial-ingredientes.json) agora contém **106/106 pareceres iniciais** (P0 11, P1 25, P2 16, P3 54), com **0 habitat homologado** e **0 autorização de drop gerada**. O [dossiê P3](pareceres-p3-primeira-passagem-ecologica.md) cobre as 54 fichas restantes com descrição do material, achado da matriz ecológica, pergunta por ingrediente e fonte de referência.
+
+O [documento de encerramento](fechamento-primeira-passagem-territorial-ingredientes.md) diferencia aprovação territorial, documentação histórica de cinco localidades em Peren, dados de cenário e testes ainda pendentes. Os três espelhos `itens.json` têm o mesmo SHA Git, mas sua leitura integral e comparação de campo com `curadoria_ingredientes.json` **não foi concluída**, pois o conector retornou arquivo vazio para uma leitura de 1,2 MB. Seguem inalterados zona, loot, preços, atributos, receitas e gameplay.
