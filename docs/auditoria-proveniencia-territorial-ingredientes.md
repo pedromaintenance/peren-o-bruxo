@@ -106,3 +106,7 @@ Em particular, se o jogo vier a permitir comprar material em Shadar-Riverie, iss
 - Os textos candidatos de Betta do Rio, Beladona e Escamas de Piranha continuam **não aprovados** e não foram aplicados.
 - [Relatório da fila e pareceres P0](fila-investigacao-ecologica-ingredientes-v1.md): fontes efetivamente verificadas, guardas de cânone, tabela dos 25 P1 e critérios de aceite.
 - **Nenhuma alteração** em curadoria ativa, zonas, atributos, receitas, combos, loot, economia, código, saves ou PWA. A comparação integral com o JSON compilado `data/itens.json` continua pendente.
+
+## Cruzamento com pareceres P1 — 07/11/2026
+
+A segunda fase de averiguação publicou [25 pareceres P1 por ID](pareceres-p1-taxonomia-habitats-ingredientes.md) e elevou a fila para **36/106 registros com primeira opinião documental**. A classificação de zonas continua **1 exclusividade explícita + 4 locais preservados em Peren + 106 zonas procedurais**, sem realocação nem aprovação ecológica. O próximo bloco são **16 P2** focados em habitat aquático, circulação, ofícios e produção, e em seguida **54 P3** de investigação rotineira. A matriz territorial original permanece inalterada.
