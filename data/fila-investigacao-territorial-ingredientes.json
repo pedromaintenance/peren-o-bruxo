@@ -60,7 +60,8 @@
     ],
     "nota_de_parecer": "O primeiro parecer documenta limites das fontes e propostas de correção, sem decidir proveniência, estatuto da criatura, compatibilidade de loot ou habitat.",
     "nota_taxonomica": "O marcador de fonte/material especial não classifica a substância como sobrenatural: contempla também material processado ou de criatura cuja espécie é incerta (por exemplo, Pó de Presa de Mamute e Poeira Luminosa).",
-    "atualizacao_p1": "Todos os 25 pareceres P1 foram emitidos com confronto documental de fontes; não representam aprovação de habitat, espécie, origem de extração, loot ou alteração canônica."
+    "atualizacao_p1": "Todos os 25 pareceres P1 foram emitidos com confronto documental de fontes; não representam aprovação de habitat, espécie, origem de extração, loot ou alteração canônica.",
+    "atualizacao_p2": "16/16 pareceres P2 concluídos. Produção (8) e ambiente aquático (8). Origem material, território, circulação e método de obtenção são dimensões independentes. As relações entre ingredientes não implicam mesma espécie nem cadeia comercial."
   },
   "resumo": {
     "total_ingredientes": 111,
@@ -84,10 +85,11 @@
     },
     "ids_triados": 106,
     "habitats_aprovados_nesta_rodada": 0,
-    "primeiros_pareceres_documentados": 36,
-    "revisoes_aguardando_parecer_inicial": 70,
+    "primeiros_pareceres_documentados": 52,
+    "revisoes_aguardando_parecer_inicial": 54,
     "propostas_de_redacao_referenciadas": 3,
-    "primeiros_pareceres_p1": 25
+    "primeiros_pareceres_p1": 25,
+    "primeiros_pareceres_p2": 16
   },
   "revisoes": [
     {
@@ -1796,8 +1798,33 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "cadeia_biologica_e_producao",
+        "fato_documentado_peren_e_carcaca": "Peren identifica a abelha como inseto polinizador e ingrediente alquímico; a Carcaça possui áreas agrícolas, sem declarar espécie local, apiários ou criadores.",
+        "lacuna_nao_resolvida": "Presença regional em Portomonte, distribuição da espécie, relação com Favo de Mel/Casca de Colmeia, eventual criação e método de coleta.",
+        "vedacao_de_inferencia": "Não interpretar agricultura protegida por Deméter como apicultura documentada nem presumir os três materiais originários da mesma espécie.",
+        "encaminhamento": "identificar_especie_e_relacao_com_colmeia_sem_inventar_apiario",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-honeycomb",
+          "ing-beehive-husk"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-garlic",
@@ -1825,8 +1852,30 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "cultivo_e_cadeia_agricola",
+        "fato_documentado_peren_e_carcaca": "Peren descreve bulbo de horta; a Carcaça documenta agricultura em Portomonte e Grama-Cortada, sem inventário de cultivos por cidade.",
+        "lacuna_nao_resolvida": "Quem cultiva alho, em qual solo e zona, escala e forma de transporte/comercialização; Garganta é a zona do gerador.",
+        "vedacao_de_inferencia": "Não converter o alho em cultura obrigatória de Garganta ou Grama-Cortada; manter Curar Doença II e outros três efeitos aprovados.",
+        "encaminhamento": "distinguir_produto_de_horta_de_producao_regional_comprovada",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-histcarp",
@@ -1854,8 +1903,30 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "identidade_de_especie_e_bacia",
+        "fato_documentado_peren_e_carcaca": "Peren descreve carpa resistente e atributos aquáticos; o atlas documenta rio, costa e mares com limites hídricos ainda abertos.",
+        "lacuna_nao_resolvida": "Tipo de água, região e população da Carpa de Pedra; não há demonstração de corpo pétreo ou filiação à ossatura de Golzdov.",
+        "vedacao_de_inferencia": "Não transformar Portomonte em área de captura, nem estender o nome 'Pedra' à anatomia mineral real.",
+        "encaminhamento": "especificar_agua_e_especie_antes_de_pesca_regional",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-beehive-husk",
@@ -1883,8 +1954,33 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "cadeia_biologica_e_producao",
+        "fato_documentado_peren_e_carcaca": "Peren descreve fragmentos de colmeia; o atlas registra agricultura e paisagens florestais, mas não criadores nem espécie produtora.",
+        "lacuna_nao_resolvida": "Espécie de inseto, formação da estrutura, obtenção do material e eventual comércio em Drakport.",
+        "vedacao_de_inferencia": "Não criar apiários em Drakport/Portomonte e não unir automaticamente Casca de Colmeia, Abelha e Favo de Mel por origem biológica.",
+        "encaminhamento": "diferenciar_colheita_de_colmeia_e_circulacao_comercial",
+        "documentos_confrontados": [
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-bee",
+          "ing-honeycomb"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-nordic-barnacle",
@@ -1912,8 +2008,30 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "microhabitat_aquatico_e_bacia",
+        "fato_documentado_peren_e_carcaca": "Peren descreve craca de água doce aderida a rochas e embarcações; a Carcaça possui Rio Ancestral, mas não todos os seus tributários e trechos.",
+        "lacuna_nao_resolvida": "Identidade e distribuição da craca, salinidade concreta do trecho, rochas ou embarcações colonizadas, origem em Eldroth.",
+        "vedacao_de_inferencia": "Presença em embarcação não prova que o animal seja nativo do porto; não presumir ocorrência no Abismo ou em todo o rio.",
+        "encaminhamento": "localizar_microhabitat_sem_confundir_transporte_com_natividade",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-honeycomb",
@@ -1941,8 +2059,33 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "cadeia_biologica_e_producao",
+        "fato_documentado_peren_e_carcaca": "Peren descreve favo nutritivo; existem regiões de cultivo e comércio, mas nenhum povoado produtor de mel ou espécie de abelha identificada.",
+        "lacuna_nao_resolvida": "Origem da colmeia, espécie produtora, método de obtenção e eventual circuito de venda no Além Sul.",
+        "vedacao_de_inferencia": "Não presumir mel da mesma colmeia que fornece Casca de Colmeia ou Abelha; agricultura não demonstra criação de abelhas.",
+        "encaminhamento": "distinguir_produto_animal_e_rede_de_fornecimento",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-bee",
+          "ing-beehive-husk"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-dwarven-oil",
@@ -1970,8 +2113,31 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "manufactura_e_origem_tecnica",
+        "fato_documentado_peren_e_carcaca": "Peren identifica lubrificante arcano retirado de mecanismos anões; a Carcaça documenta forjas e infraestrutura anã em Thargrid.",
+        "lacuna_nao_resolvida": "Se há autômatos próprios dessas oficinas, onde são fabricados, como o óleo é obtido ou reciclado, e por que está disponível na zona procedural Shadar-Riverie.",
+        "vedacao_de_inferencia": "Oficina anã não implica fábrica de autômatos nem rota de óleo; núcleos propostos do Ciclo LXII não são estabelecimentos canônicos.",
+        "encaminhamento": "confrontar_tecnologia_do_automato_e_procedencia_do_oleo",
+        "documentos_confrontados": [
+          "docs/LORE_HACK_CARCACA_DW.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+          "docs/ENGENHARIA_POLITICA_DA_FORJA_THARGRID_CICLO62.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-slaughterfish-egg",
@@ -1999,8 +2165,32 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "desova_e_bacia",
+        "fato_documentado_peren_e_carcaca": "Peren descreve ovas de peixe predador, de identidade ainda não localizada; o atlas não atesta piranhas no Rio Ancestral ou águas rubras.",
+        "lacuna_nao_resolvida": "Espécie produtora, se compartilha espécie com Escamas de Piranha, bacia e época/condições de desova em Ironwood.",
+        "vedacao_de_inferencia": "Não converter proximidade nominal em identidade genética ou usar toda a bacia do Rio Ancestral como local de coleta.",
+        "encaminhamento": "identificar_especie_reprodutiva_sem_inventar_periodo_de_desova",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "data/taxonomia_carcaca.json"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-slaughterfish-scales"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-salmon-roe",
@@ -2027,8 +2217,29 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "desova_e_bacia",
+        "fato_documentado_peren_e_carcaca": "Peren descreve ovas de salmão; o atlas registra picos nevados de Thargrid e Rio Ancestral, mas não os conecta hidrogeograficamente.",
+        "lacuna_nao_resolvida": "Habitat do salmão, se migra, onde desova, existência de rios de montanha ou comércio de ovas em Thargrid.",
+        "vedacao_de_inferencia": "Não inferir que neve fornece água ao Rio Ancestral ou que salmões desovam em Thargrid por analogia com ecologia terrestre.",
+        "encaminhamento": "separar_regime_hidrico_de_habitat_e_abastecimento",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-chicken-s-egg",
@@ -2055,8 +2266,30 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "criacoes_e_circulacao_alimentar",
+        "fato_documentado_peren_e_carcaca": "Peren descreve ovo culinário abundante; a Carcaça possui agricultores e sistemas de provisão, mas não inventário de galinheiros por região.",
+        "lacuna_nao_resolvida": "Espécie/linhagem criadora, local de postura, rede de abastecimento e significado da zona Thargrid: produção ou circulação.",
+        "vedacao_de_inferencia": "Não inventar galinheiro de Thargrid, Portomonte ou Grama-Cortada; 'abundante' no catálogo não prova reprodução em todas as cidades.",
+        "encaminhamento": "separar_disponibilidade_comercial_de_criacao_local",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-cyrodilic-spadetail",
@@ -2083,8 +2316,29 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "peixe_dulcicola_e_bacia",
+        "fato_documentado_peren_e_carcaca": "Peren descreve peixe de água doce; o Rio Ancestral está documentado, mas o atlas ainda não mapeia nascentes e afluentes.",
+        "lacuna_nao_resolvida": "Qual bacia e trecho têm ocorrência natural, se há mercado fluvial ou captação alternativa, e relação da zona gerada Thargrid.",
+        "vedacao_de_inferencia": "Não presumir natividade em todo o Rio Ancestral ou em Thargrid; não criar afluentes por hipótese de pesca.",
+        "encaminhamento": "identificar_bacia_e_fonte_de_captura",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-silverside-perch",
@@ -2111,8 +2365,29 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "peixe_de_agua_indefinida",
+        "fato_documentado_peren_e_carcaca": "Peren registra peixe de escamas claras, com resistência ao gelo como efeito alquímico; o atlas tem rios, costa e oceano sem população desta espécie identificada.",
+        "lacuna_nao_resolvida": "Água doce/salgada, corpo hídrico e captura; a zona Garganta não comprova fonte.",
+        "vedacao_de_inferencia": "Resistência ao Gelo II não demonstra habitat gelado; não inventar pesca em Garganta ou Thargrid por efeito.",
+        "encaminhamento": "identificar_tipo_de_agua_sem_usar_efeito_como_evidencia",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-pearl",
@@ -2140,8 +2415,32 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "producao_biologica_oceanica",
+        "fato_documentado_peren_e_carcaca": "Peren identifica a Pérola como concreção de origem marinha; o atlas confirma Mar de Sangue, águas azuis e uma fronteira móvel.",
+        "lacuna_nao_resolvida": "Organismo produtor, banco, coleta, água de origem, transporte até Drakport e vínculo com Pérola Pequena.",
+        "vedacao_de_inferencia": "Não atribuir ao Mar de Sangue inteiro, supor molusco específico nem afirmar que as duas pérolas são da mesma espécie.",
+        "encaminhamento": "distinguir_matriz_marinha_de_circulacao_para_porto",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+          "docs/ATLAS_MACROAMBIENTES_CICLO35.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-small-pearl"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-small-pearl",
@@ -2168,8 +2467,31 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "identidade_de_concrecao_e_origem",
+        "fato_documentado_peren_e_carcaca": "Peren descreve uma pérola pequena usada em preparados e amuletos; diferente da Pérola maior, o texto não afirma expressamente origem marinha.",
+        "lacuna_nao_resolvida": "Organismo ou processo de formação, tipo de água, zona de captura, eventual comércio em Shadar-Riverie e relação com Pérola.",
+        "vedacao_de_inferencia": "Não transportar automaticamente a origem marinha da Pérola maior para esta ficha; manter IDs e efeitos independentes.",
+        "encaminhamento": "registrar_especie_e_processo_produtor_sem_unificar_fichas",
+        "documentos_confrontados": [
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [
+          "ing-pearl"
+        ],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-wheat",
@@ -2197,8 +2519,31 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "agricultura_e_logistica",
+        "fato_documentado_peren_e_carcaca": "Peren descreve cereal comum; o atlas confirma produção agrícola diversificada em Grama-Cortada e agricultura favorecida em Portomonte, sem nomear trigo como cultivo.",
+        "lacuna_nao_resolvida": "Onde o trigo é cultivado, disponibilidade em Thargrid, armazenagem, necessidade hídrica específica e circuito de distribuição.",
+        "vedacao_de_inferencia": "Não inventar monocultura, excedentes ou dependência comercial de Thargrid; o benefício agrícola de Deméter não prova trigo.",
+        "encaminhamento": "investigar_cultivo_especifico_e_abastecimento_sem_concluir_monopolio",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md",
+          "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-jazbay-grapes",
@@ -2226,8 +2571,30 @@
       "decisao_sobre_habitat": "indeterminada",
       "aprovada_para_geracao_de_loot": false,
       "avaliado_com_fonte_primaria_territorial_especifica": false,
-      "estado_editorial": "triado_aguarda_averiguacao",
-      "alteracao_no_catalogo_ativo": false
+      "estado_editorial": "primeiro_parecer_documentado_pendente_fonte_ou_decisao",
+      "alteracao_no_catalogo_ativo": false,
+      "primeiro_parecer": {
+        "estado": "parecer_documental_emitido_sem_homologacao_territorial",
+        "eixo": "agricultura_e_logistica",
+        "fato_documentado_peren_e_carcaca": "Peren descreve uvas aromáticas; o atlas menciona sociedades agrícolas, mas não vinhedos ou cultivo de uva específica em Garganta.",
+        "lacuna_nao_resolvida": "Zona produtora, terra/água para vinha, transformação do extrato, origem comercial e eventuais produtores.",
+        "vedacao_de_inferencia": "Não fabricar viticultura aristocrática, monocultura ou rota colonial na Garganta; propostas de povoamento do Além Sul não tornam a espécie canônica.",
+        "encaminhamento": "distinguir_uva_comercial_de_vinicultura_local",
+        "documentos_confrontados": [
+          "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+          "docs/POVOAMENTO_ECOLOGIA_ALEM_SUL_CICLO54.md"
+        ],
+        "fonte_monstros_commit": "e02b8980cd767a10b1259bb2c4321fa67fd68a41",
+        "relacoes_entre_ingredientes_nao_homologadas": [],
+        "tipo_de_relacao": "semelhanca_material_ou_produtiva_nao_comprova_mesma_especie_mesmo_habitat_ou_cadeia_de_fornecimento",
+        "natureza_da_evidencia": "documental; prova de ambiente macro não prova procedência local do ingrediente",
+        "campo_zona_e_habitat_distintos": true,
+        "aprovacoes_autorais_novas": false,
+        "conserva_id_nome_atributos_e_intensidades": true,
+        "decisao_autoral_aplicada": false,
+        "prova_habitat_resolvida": false,
+        "permitir_spawn_ou_drop_com_base_no_parecer": false
+      }
     },
     {
       "id": "ing-fly-amanita",
