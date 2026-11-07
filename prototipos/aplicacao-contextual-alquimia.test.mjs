@@ -64,15 +64,15 @@ test('Mesmo com descanso deliberado, não há uso sem permissão/contexto espec�
 });
 test('Administração em inimigo não é permitida por padrão',()=>{
  const o=commitUse(exampleFixture(),c('enemy','combat','qa-pocao-dupla','foe','administer'),researchPolicy());
- assert.equal(o.applied,false);assert.equal(o.receipt.code,'target_or_action_unresolved');
+ assert.equal(o.applied,false);assert.equal(o.receipt.code,'family_route_unresolved');
 });
 test('Mesmo com permissão-alvo, inimigo exige decisão de resistência ou consentimento',()=>{
- const p=researchPolicy({permits:{"combat:administer:other_actor":true}});
+ const p=researchPolicy({permits:{"combat:administer:other_actor":true},familyActionPermissions:{"pocao:administer":true}});
  const o=commitUse(exampleFixture(),c('enemy','combat','qa-pocao-dupla','foe','administer'),p);
  assert.equal(o.applied,false);assert.equal(o.receipt.code,'resistance_or_consent_unresolved');
 });
 test('Alvo externo só é exercitado com todas as liberações marcadas como QA',()=>{
- const p=researchPolicy({permits:{"combat:administer:other_actor":true},hostileResistanceQaResolved:true});
+ const p=researchPolicy({permits:{"combat:administer:other_actor":true},familyActionPermissions:{"pocao:administer":true},hostileResistanceQaResolved:true});
  const o=commitUse(exampleFixture(),c('enemy','combat','qa-pocao-dupla','foe','administer'),p);
  assert.equal(o.applied,true);assert.equal(o.next.actors.foe.hp,55);
  assert.equal(o.next.actors.foe.mp,10);
@@ -146,7 +146,7 @@ test('Quantidade e custo nunca são consumidos em falhas consecutivas',()=>{
  assert.equal(env.bag['qa-pocao-dupla'],2);assert.equal(env.actions,3);
 });
 test('Resistência não pode ser ignorada por simples mudança de contexto',()=>{
- const p=researchPolicy({permits:{"exploration:administer:other_actor":true}});
+ const p=researchPolicy({permits:{"exploration:administer:other_actor":true},familyActionPermissions:{"pocao:administer":true}});
  const out=commitUse(exampleFixture(),c('herb','exploration','qa-pocao-dupla','foe','administer'),p);
  assert.equal(out.applied,false);assert.equal(out.receipt.code,'resistance_or_consent_unresolved');
 });
@@ -171,6 +171,23 @@ test('Não há uso por movimento de contexto para combate ou exploração',()=>{
 test('Alvo inexistente bloqueia sem aplicar em Peren como fallback',()=>{
  const o=commitUse(exampleFixture(),c('target','combat','qa-pocao-dupla','missing'),researchPolicy());
  assert.equal(o.applied,false);assert.equal(o.receipt.code,'missing_target');
+});
+test('Veneno não pode ser bebido por autorização genérica de poção',()=>{
+ const env=exampleFixture();env.preparations['qa-pocao-dupla'].family='veneno';
+ const o=commitUse(env,c('venom'),researchPolicy());
+ assert.equal(o.applied,false);assert.equal(o.receipt.code,'family_route_unresolved');
+});
+test('Veneno administrado não funciona sem via e resistência específicas',()=>{
+ const env=exampleFixture();env.preparations['qa-pocao-dupla'].family='veneno';
+ const p=researchPolicy({permits:{"combat:administer:other_actor":true},
+  familyActionPermissions:{"veneno:administer":true}});
+ const o=commitUse(env,c('venom2','combat','qa-pocao-dupla','foe','administer'),p);
+ assert.equal(o.applied,false);assert.equal(o.receipt.code,'resistance_or_consent_unresolved');
+});
+test('Poção em alvo externo não é liberada só por autorizar resistência',()=>{
+ const p=researchPolicy({hostileResistanceQaResolved:true});
+ const o=commitUse(exampleFixture(),c('enemy3','combat','qa-pocao-dupla','foe','administer'),p);
+ assert.equal(o.applied,false);assert.equal(o.receipt.code,'family_route_unresolved');
 });
 test('Recibo não altera metadados de incompatibilidade (não modelados)',()=>{
  const x=commitUse(exampleFixture(),c('none'),researchPolicy());
