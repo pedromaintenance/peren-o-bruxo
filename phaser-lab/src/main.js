@@ -46,8 +46,21 @@ if(['m1h','m1hb','m1hc','m1hd'].includes(chosenArt)){
   for(const img of document.querySelectorAll('img[src*="art/characters/peren/portrait"]'))
     img.src=img.getAttribute('src').replace('./art/characters/peren/','./'+dir+'/characters/peren/');
 }
+let inventoryPausedExploration=false;
 const inventory=createInventoryScreen({
  document,bridge,catalogs,
+ onOpen:()=>{
+  if(app.scene.isActive('ExplorationScene')){
+   app.scene.pause('ExplorationScene');
+   inventoryPausedExploration=true;
+  }
+ },
+ onClose:()=>{
+  if(!inventoryPausedExploration)return;
+  inventoryPausedExploration=false;
+  if($('hub').hidden&&$('encounterModal').hidden&&$('battleUI').hidden)
+   app.scene.resume('ExplorationScene');
+ },
  canUsePreparation:()=>!app.registry.get('battleState')&&$('battleUI').hidden&&$('encounterModal').hidden,
  onUsePreparation:(id)=>{
   // A UI não executa comandos: o controlador continua responsável pelo bridge.
