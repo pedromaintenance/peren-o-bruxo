@@ -127,3 +127,12 @@ Estes ingredientes **já haviam sido revisados individualmente** e agora receber
 - Atenção às relações **Abelha/Favo/Casca de Colmeia**, **Pérola/Pérola Pequena** e **Ovas/Escamas de Piranha**: sem demonstração de espécie, origem ou cadeia de fornecimento única.
 - Agricultura em Portomonte e Grama-Cortada e ofícios em Thargrid **não comprovam** os cultivos, criações ou substâncias individuais da lista. A hidrografia não comprova bacias, afluentes ou áreas de desova.
 - **0** habitats ou modos de obtenção homologados. **0** mudanças em ingredientes, zonas, atributos, receitas, combos, engines, loot, menus, saves ou PWA. A comparação integral com o JSON de itens compilado segue pendente.
+
+## Fechamento da primeira passagem territorial — 07/11/2026
+
+**106/106** ingredientes com zonas procedurais receberam primeiro parecer documental: **11 P0 + 25 P1 + 16 P2 + 54 P3**. Os cinco ingredientes com localizações preservadas por decisão/documentação de Peren continuam identificados separadamente na matriz dos **111/111**.
+
+- [Dossiê dos 54 P3](pareceres-p3-primeira-passagem-ecologica.md): 13 fungos/musgos/líquens, 21 plantas/ervas/raízes/vagens, 10 artrópodes/ovos, nove partes de fauna terrestre e um cristal especial.
+- [Fechamento e decisões pós-auditoria](fechamento-primeira-passagem-territorial-ingredientes.md): verificação de IDs, efeitos, atributos, níveis de evidência e próximos gates de decisão autoral.
+- Verificação complementar de espelhos: `data/itens.json`, `phaser-demo/data/itens.json` e `phaser-demo-m1hf/data/itens.json` apresentam **blob SHA igual**, mas a leitura integral do conteúdo compilado não foi possível pelo conector. **Não** considerar isso conferência dos campos contra o override.
+- **0 habitats homologados na fila; 0 alterações em atributos, efeitos, zona, receitas, combos, loot, engines ou saves** por este chat. As propostas não foram transferidas para execução. A próxima etapa é deliberação editorial por decisão, não mais uma rodada de preenchimento procedural.
