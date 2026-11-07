@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {applyExplorationPreparation} from '../src/prepared-use.js';
-import {buildCatalogs,newClassicState,stageFromClassic,applyTransaction,createProgressBridge,toCombatProfile,PHASER_KEY} from '../src/progress.js';
+import {buildCatalogs,newClassicState,stageFromClassic,applyTransaction,createProgressBridge,toCombatProfile,maxClassicHp,maxClassicMp,PHASER_KEY} from '../src/progress.js';
 import {inventoryViewModel} from '../src/ui-inventory.js';
 
 const get=name=>{
@@ -32,7 +32,7 @@ test('Exploração reutiliza executor e restaura PV sem gastar ação diária',(
 test('Restauração de magia altera somente MP e mantém teto',()=>{
  const e=stageFromClassic(state([p('preparo-m',['restaurar_magia'])],50,60),c);
  const x=applyTransaction(e,command('preparo-m'),c);
- assert.equal(x.next.character.mp,Math.min(60+12,68));
+ assert.equal(x.next.character.mp,Math.min(60+12,maxClassicMp(e.character)));
  assert.equal(x.next.character.hp,50);
 });
 test('Dois efeitos restauradores são aplicados no mesmo frasco, com gasto único',()=>{
@@ -44,7 +44,8 @@ test('Dois efeitos restauradores são aplicados no mesmo frasco, com gasto únic
  assert.equal(x.result.quantityConsumed,1);
 });
 test('Com recursos no máximo, não consome uma preparação inútil',()=>{
- const e=stageFromClassic(state([p()],114,68),c),snapshot=JSON.stringify(e);
+ const base=state([p()]);base.hp=maxClassicHp(base,c);base.mp=maxClassicMp(base);
+ const e=stageFromClassic(base,c),snapshot=JSON.stringify(e);
  assert.throws(()=>applyTransaction(e,command(),c),/máximo/);
  assert.equal(JSON.stringify(e),snapshot);
 });
