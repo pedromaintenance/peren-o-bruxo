@@ -341,6 +341,9 @@ function toggleBag(show){
   if(show){$('bagContents').textContent=inventoryText();}
 }
 $('openBagHub').addEventListener('click',()=>inventory.open());
+$('fieldInventoryBtn').addEventListener('click',()=>{
+ if($('battleUI').hidden&&$('encounterModal').hidden&&$('hub').hidden)inventory.open();
+});
 const originalHub=hub;
 // Wrap the existing hub transition so pause, controller selection and bag agree.
 hub=function(show){originalHub(show);if(show){toggleBag(false);selectHubChoice(0);}else forestVisited=true;};
@@ -426,6 +429,9 @@ function pollXbox(){
 }
 app.events.on('step',pollXbox);
 window.addEventListener('keydown',event=>{
+  if(event.code==='KeyI'&&$('hub').hidden&&$('battleUI').hidden&&$('encounterModal').hidden&&!inventory.isOpen()){
+   event.preventDefault();inventory.open();return;
+  }
   if(event.code!=='Escape')return;
   if(!$('battleUI').hidden){battleAction($('battleFinish').hidden?'flee':'finish');return;}
   if(!$('encounterModal').hidden){retreatBeast();return;}
