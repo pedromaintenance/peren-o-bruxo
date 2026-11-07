@@ -80,3 +80,19 @@ A aprovação delega **prototipagem e avaliação**, e não fixa fórmulas numé
 5. Código, dados, testes e materiais de lore do repositório.
 
 Conflitos entre documentação desatualizada e curadoria não devem ser corrigidos silenciosamente: registrar e verificar o histórico. Esta constituição não edita arquivos de gameplay por si só.
+
+## Emenda S1 — Política de saves durante a pré-alfa (07/11/2026)
+
+**[DECISÃO EXPRESSA DO CRIADOR — SUPERA RESTRIÇÕES ANTERIORES DE RETROCOMPATIBILIDADE]**
+
+O jogo está em **pré-alfa**. **Não é necessário preservar compatibilidade com saves existentes durante a evolução das mecânicas.** Perder o progresso e começar uma partida nova, quando uma mudança estrutural exigir, é aceitável. Migração de saves e compatibilidade retroativa são uma preocupação **para fases futuras**, não um gate de trabalho presente.
+
+**Consequências operacionais:**
+1. É permitido alterar schema, chaves ou formato do save Phaser de experimentação e exigir **nova partida**, sem desenvolver conversores nem manter comportamentos históricos só por compatibilidade.
+2. Isso **não** autoriza apagar automaticamente dados existentes no navegador/dispositivo do usuário, nem interferir em armazenamento clássico ou outros projetos. Pode-se usar nova chave/versão e informar que a partida antiga não é suportada.
+3. **Integridade dentro da partida atual continua obrigatória:** consumo único de itens, transações idempotentes quando necessárias, vitória/fuga/derrota sem inventário negativo, falhas sem pagamento duplicado e nenhuma adulteração silenciosa no estado ativo.
+4. Não confundir **compatibilidade de saves de versões anteriores** (adiada) com **gravação correta dos estados da build atual** (necessária). Mesmo em pré-alfa, uma partida não deve perder frascos por duplo débito ao liquidar combate.
+5. As cláusulas anteriores de reserva autoral relativas à *migração destrutiva de save* passam a se aplicar à preservação externa/publicada no futuro, não à exigência de manter saves históricos de pré-alfa funcionando enquanto o jogo é reestruturado.
+6. Não há aprovação automática de potência, duração, alvos, resistência, custo ou novas sinergias alquímicas. Essas decisões permanecem autônomas e documentadas.
+
+**Precedência:** esta emenda **prevalece sobre roadmaps, estudos e checklists anteriores** que tratavam compatibilidade com saves legados como requisito bloqueador de implementação. As referências históricas a esse risco podem permanecer como registro, mas devem ser marcadas como **adiadas para pós-pré-alfa**.
