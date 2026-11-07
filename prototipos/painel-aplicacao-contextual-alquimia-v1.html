@@ -134,6 +134,9 @@ function getDisposition(env,command,policy){
  const target=env.actors[command.targetId];if(!target)return {...out,code:"missing_target"};
  if(command.action==="apply_to_item")return {...out,code:"object_application_unresolved"};
  if(!["pocao","veneno"].includes(prep.family))return {...out,code:"family_application_unresolved"};
+ // A family name never grants permission to drink, administer or coat an object.
+ if(policy.familyActionPermissions?.[prep.family+":"+command.action]!==true)
+  return {...out,code:"family_route_unresolved"};
  if(command.context==="rest"&&!policy.allowDeliberateUseAtRest)
   return {...out,code:"rest_is_not_automatic_use"};
  const role=command.targetId==="peren"?"self":"other_actor";
@@ -240,6 +243,7 @@ function exampleFixture(){
 function researchPolicy(extra={}){
  return {schema:RESEARCH_POLICY,approved:false,
   permits:{"combat:drink:self":true,"exploration:drink:self":true},
+  familyActionPermissions:{"pocao:drink":true},
   actionCost:1,resolution:"net_by_resource",
   magnitudes:{restaurar_saude:20,restaurar_magia:12,dano_saude:10,dano_magia:8},
   allowDeliberateUseAtRest:false,hostileResistanceQaResolved:false,
