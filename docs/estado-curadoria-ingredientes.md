@@ -118,3 +118,12 @@ Estes ingredientes **já haviam sido revisados individualmente** e agora receber
 - [Relatório individualizado dos P1](pareceres-p1-taxonomia-habitats-ingredientes.md): fatos documentados, lacunas, inferências proibidas e recomendações por ID, com fontes e compromisso de manter a zona procedural como não homologada.
 - Regras de proteção reforçadas: `abissal_marinho` não é `demonio`; o Vazio não é um campo de mineração; nomes Luna/Gualápoles não provam fabricação/habitat; Pó de Presa de Mamute permanece fóssil descrito em Peren; os dois Ovos de Tordo são IDs distintos, sem novas espécies estabelecidas.
 - **0** habitats, drops ou nomes de ingredientes aprovados nesta rodada. **Nenhuma mudança** nos 111 ingredientes ativos, atributos, intensidades, custos, receitas, zonas, motor, PWA ou saves. Não foi feita auditoria integral de `data/itens.json` servido no jogo.
+
+## Continuidade — 16 pareceres P2 (07/11/2026)
+
+- **16/16 P2** avaliados individualmente na [fila territorial estruturada](../data/fila-investigacao-territorial-ingredientes.json): **8** itens de produção agrícola/criação/manufatura e **8** de origem aquática, pesca, desova ou concreção.
+- Total de **52/106** ingredientes com primeiro parecer (**11 P0 + 25 P1 + 16 P2**). Pendentes de primeiro parecer: **54 P3**. Os **5** ingredientes com regiões preservadas historicamente seguem fora da fila procedural, sem revisão de cânone.
+- [Relatório de pareceres P2](pareceres-p2-producao-hidrografia-ingredientes.md) publicado com conclusão documental por ID, limites de afirmação, conexões não homologadas entre ingredientes e modelo editorial sugerido para futura integração.
+- Atenção às relações **Abelha/Favo/Casca de Colmeia**, **Pérola/Pérola Pequena** e **Ovas/Escamas de Piranha**: sem demonstração de espécie, origem ou cadeia de fornecimento única.
+- Agricultura em Portomonte e Grama-Cortada e ofícios em Thargrid **não comprovam** os cultivos, criações ou substâncias individuais da lista. A hidrografia não comprova bacias, afluentes ou áreas de desova.
+- **0** habitats ou modos de obtenção homologados. **0** mudanças em ingredientes, zonas, atributos, receitas, combos, engines, loot, menus, saves ou PWA. A comparação integral com o JSON de itens compilado segue pendente.
