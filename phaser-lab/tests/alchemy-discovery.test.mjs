@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {ALCHEMY_FAMILIES,effectFamily,resolveAlchemyPair,effectDirectory,ingredientOptions,
   nextStudyEffect} from '../src/alchemy.js';
-import {buildCatalogs,newClassicState,stageFromClassic,applyTransaction,createProgressBridge} from '../src/progress.js';
+import {buildCatalogs,newClassicState,stageFromClassic,applyTransaction,createProgressBridge,PHASER_KEY} from '../src/progress.js';
 const get=(name)=>JSON.parse(readFileSync(new URL('../../data/'+name+'.json',import.meta.url),'utf8'));
 const cur=get('curadoria_ingredientes');
 const data=Object.fromEntries(['itens','receitas','magias','monstros','cidades'].map(x=>[x,get(x)]));
@@ -97,7 +97,7 @@ test('descobertas e preparações sobrevivem reload do save Phaser',()=>{
  const s=stageFromClassic(rich(),c);
  const result=applyTransaction(s,{type:'brewPair',ingredients:[a,b]},c);
  assert.equal(result.result.valid,true);
- storage.setItem('peren_phaser_save_m1d_v1',JSON.stringify(result.next));
+ storage.setItem(PHASER_KEY,JSON.stringify(result.next));
  const reopened=createProgressBridge(storage,c);
  assert.equal(reopened.state.alchemy.preparations.length,1);
  assert.ok(reopened.state.alchemy.known[a].includes('curar_doenca'));
