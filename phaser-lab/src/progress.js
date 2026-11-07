@@ -38,7 +38,7 @@ export function buildCatalogs(data){
 export function newClassicState(){
  return {version:1,city:'portomonte',day:1,actions:3,level:1,exp:0,gold:180,hp:114,mp:68,fatigue:0,reputation:0,
   skills:{alquimia:20,forja:10,encantamento:0,curtume:0,escrita:6,joalheria:0,cozinha:12,combate:14,arcanismo:18,comercio:9,coleta:12},lastLevels:{},
-  bag:{'ger-pocao-restauradora':3,'ger-pocao-de-foco':2,'ger-racoes-de-viagem':4,'ing-blue-mountain-flower':2,'ing-mudcrab-chitin':2,'ing-red-mountain-flower':2,'mat-agua-purificada':4,'mat-ferro-bruto':3,'mat-carvao-de-forja':2,'mat-couro-curtido':2,'mat-cristal-de-alma-menor':1,'mat-tinta-runica':1},
+  bag:{'ger-pocao-restauradora':3,'ger-pocao-de-foco':2,'ger-racoes-de-viagem':4,'ing-blue-mountain-flower':2,'ing-mudcrab-chitin':2,'ing-red-mountain-flower':2,'ing-butterfly-wing':2,'ing-white-cap':2,'mat-agua-purificada':4,'mat-ferro-bruto':3,'mat-carvao-de-forja':2,'mat-couro-curtido':2,'mat-cristal-de-alma-menor':1,'mat-tinta-runica':1},
   equip:{weapon:'eq-adaga-de-ferrugem',armor:'eq-peitoral-de-ferrugem',relic:null},learned:['mag-raio-de-fogo','mag-armadura-arcana','mag-raio-de-gelo','mag-misseis-magicos'],
   alchemy:{known:{},preparations:[],failed:0},
   completed:[],currentQuest:null,contractCount:0,battle:null,journal:['Dia 1 · Peren chega a Portomonte.'],achievements:[],flags:{},kills:0,sales:0,crafted:0};
