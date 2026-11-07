@@ -46,3 +46,5 @@ jobs:
           exit 1
       - name: Navegar e testar a bancada alquímica
         run: node scripts/alchemy-browser-smoke.mjs
+      - name: Usar preparado no inventário e validar pausa na floresta
+        run: node scripts/prepared-exploration-browser-smoke.mjs
