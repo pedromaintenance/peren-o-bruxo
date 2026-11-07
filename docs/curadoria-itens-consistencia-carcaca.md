@@ -293,3 +293,17 @@ A matriz diferencia `origem` (proveniência de registro), zona calculada, zona p
 **Foco da auditoria futura:** evitar que “restauração” e “regeneração” virem sinônimos nos textos editoriais sem decisão; distinguir aumento de capacidade de recuperação corrente; evitar tratar fraqueza a veneno como tipo implícito de `dano_saude`; observar contradições de grupos e famílias sem inventar incompatibilidade. As fontes extras podem ser anotadas por origem e intensidade, mas **não** atribuem automaticamente maior taxa, duração, qualidade ou chance de sucesso.
 
 **QA do handoff:** nenhum dos 111 ingredientes ou 53 IDs foi alterado; o simulador isolado registrou 31/31 casos e o painel de recursos 14/14 verificações simuladas. Não é prova de integração, browser real ou um novo balanceamento. **Apenas design e documentação.**
+
+## Handoff curatorial — aplicação contextual e identidade do preparado (07/11/2026)
+
+**Referências:** [estudo de aplicação contextual](estudo-aplicacao-contextual-alquimia-v1.md) · [roadmap de mecânicas, seção 23](roadmap-crafting-mecanicas-menus.md) · [PR #100 — protótipos isolados](https://github.com/pedromaintenance/peren-o-bruxo/pull/100).
+
+**Responsabilidade da curadoria:** conservar efeitos, nomes, propriedades ocultas, intensidade I–III, proveniência de ingredientes e identidade do preparado. **Não** alterar atributos de um material para fazer seu conteúdo caber na via de aplicação provisória (Poção, Veneno, Tônico, Elixir, Bálsamo). A **família do preparado** e o **alvo da aplicação** não devem ser confundidos com os 11 grupos semânticos propostos para os 53 efeitos.
+
+**Contrato de uso ainda não aprovado:** combater, explorar e descansar são contextos diferentes. A via (beber, administrar em criatura, aplicar em objeto) requer decisão por família. Uma Poção não autoriza automaticamente beber Veneno, e um Bálsamo não deve ser aplicado no corpo apenas porque está na mochila. Cada efeito ativo permanece em seu frasco; a falta de motor para um efeito **não autoriza descartá-lo no momento do uso**. Bloquear o lote completo e preservar o estoque até aprovação.
+
+**Conhecimento do personagem:** dados editoriais podem descrever todos os efeitos de uma mistura; a interface e o recibo de aplicação devem exibir **somente os efeitos já descobertos por Peren**. Efeitos ocultos não devem vazar por tooltip, logs ou atributos HTML. Identificadores técnicos do catálogo permanecem estáveis e **não** autorizam sinergias novas ou purificação automática.
+
+**Conflito real de integração, fora da responsabilidade curatorial:** o Phaser da branch de transição usa `battle.potions` e depois reconcilia com a mochila ao encerrar combate. Alterar a quantidade diretamente no inventário e manter esse débito do combate pode cobrar duas vezes. A equipe de mecânicas deverá escolher fronteira transacional e testar resultados antes de incorporar os preparados curados. O clássico permanece com seu save próprio e `Regenerate` imediato.
+
+**Estado:** matriz proposta de 15 cenários (3 contextos × 5 famílias), **37/37 verificações de lógica** e **15/15 verificações de interface** executadas em ambientes simulados. **Nenhuma propriedade, fórmula, receita, save, família canônica, combate ou material foi alterado.**
