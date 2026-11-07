@@ -36,6 +36,38 @@ export function applyBattlePreparation(state,id){
  }
  return {state:next,changes};
 }
+
+/**
+ * Pré-alfa de exploração: mesmo executor puro do combate, com recursos do mundo.
+ * Nenhuma cobrança de ação diária é definida nesta versão de playtest.
+ * Não permite gastos sem benefício porque o consumo é irreversível na sessão.
+ */
+export function applyExplorationPreparation(character,id,maximumHp,maximumMp){
+ if(!character||!character.alchemy||!Array.isArray(character.alchemy.preparations))
+  throw Error('Inventário de preparados indisponível.');
+ if(!Number.isSafeInteger(maximumHp)||!Number.isSafeInteger(maximumMp)||maximumHp<=0||maximumMp<0)
+  throw Error('Limites de recursos inválidos.');
+ if(!Number.isSafeInteger(character.hp)||!Number.isSafeInteger(character.mp)||
+     character.hp<0||character.mp<0||character.hp>maximumHp||character.mp>maximumMp)
+  throw Error('Recursos atuais inválidos.');
+ if(character.alchemy.preparations.filter(p=>p.id===id).length>1)
+  throw Error('Identidade de preparado duplicada.');
+ const state={playerHp:character.hp,playerMp:character.mp,playerMaxHp:maximumHp,
+  playerMaxMp:maximumMp,preparations:character.alchemy.preparations};
+ const evaluated=applyBattlePreparation(state,id);
+ if(evaluated.error)return {character,error:'Preparo indisponível para uso fora do combate nesta pré-alfa.'};
+ if(evaluated.changes.every(x=>x.before===x.after))
+  return {character,error:'Seus recursos já estão no máximo. O frasco não foi consumido.'};
+ return {
+  character:{...character,hp:evaluated.state.playerHp,mp:evaluated.state.playerMp,
+   alchemy:{...character.alchemy,preparations:evaluated.state.preparations}},
+  quantityConsumed:1,
+  // Não divulgar propriedades ocultas em recibos públicos/UI.
+  publicMessage:'Peren utilizou um preparado alquímico.',
+  internalChanges:evaluated.changes
+ };
+}
+
 /** At settlement, the battle owns which IDs remain. It cannot create new flasks. */
 export function reconcileBattlePreparations(original,remaining){
  if(!Array.isArray(original)||!Array.isArray(remaining))throw Error('Lista de preparados da batalha inválida.');
