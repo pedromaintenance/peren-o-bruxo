@@ -6,13 +6,14 @@
 import {BATTLE_MONSTERS,encounterKey} from './combat.js';
 import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
 import {reconcileBattlePreparations,applyExplorationPreparation} from './prepared-use.js';
+import {REGION_BY_ID} from './regions.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
 export const M1HF_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
 export const CLASSIC_KEY='peren_carcaca_save_v1';
 // Pré-alfa: esta feature usa chave nova, sem migrar, sobrescrever ou apagar saves anteriores.
-export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_preparados_prealpha_v1':'peren_phaser_save_preparados_prealpha_v1';
+export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_worlds_prealpha_v2':'peren_phaser_save_worlds_prealpha_v2';
 export const PHASER_SCHEMA=2;
 const MAX_GOLD=1e10, MAX_COUNT=1000000;
 const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
@@ -265,11 +266,19 @@ export function applyTransaction(env,command,c){
  }else if(type==='selectSeed'){
   const seed=String(command.seed||'');if(!/^[a-zA-Z0-9_-]{3,60}$/.test(seed))throw Error('Seed inválida.');
   next.worlds.activeSeed=seed;result={type,seed};
- }else if(type==='endDay'){
+ }else if(type==='selectRegion'){
+   const region=REGION_BY_ID[String(command.regionId||'')],seed=String(command.seed||'');
+   if(!region||!c.cidadesById[region.city])throw Error('Região não cadastrada na Carcaça.');
+   if(!/^[a-zA-Z0-9_-]{3,60}$/.test(seed)||!seed.startsWith(region.id+'-'))throw Error('Seed incompatível com a região.');
+   // Travel is one atomic commit: location, map and diary; no invented travel cost.
+   char.city=region.city;next.worlds.activeSeed=seed;
+   result={type,regionId:region.id,city:region.city,seed,cost:{dailyActions:0,gold:0}};
+   record(char,'Viajou para '+region.name+'.');
+  }else if(type==='endDay'){
   char.day++;char.actions=3;char.fatigue=Math.max(0,char.fatigue-26);
   char.hp=Math.min(maxClassicHp(char,c),char.hp+Math.floor(maxClassicHp(char,c)*.32));
   char.mp=Math.min(maxClassicMp(char),char.mp+Math.floor(maxClassicMp(char)*.38));
-  result={type,day:char.day};record(char,'Um novo dia amanhece em Portomonte.');
+  result={type,day:char.day};record(char,'Um novo dia amanhece em '+c.cidadesById[char.city].nome+'.');
  }else throw Error('Transação desconhecida: '+type);
  if(key)next.ledger[key]=result;
  next.revision++;next.history=[...(next.history||[]),{rev:next.revision,type,description:result.type==='victory'?result.monster:result.item||''}].slice(-80);
