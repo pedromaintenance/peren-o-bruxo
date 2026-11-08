@@ -1,0 +1,82 @@
+[
+ {
+  "id": "costa-sangue",
+  "nome": "Recifes do Mar de Sangue",
+  "cidade": "portomonte",
+  "perigo": 2,
+  "descricao": "Pescadores sumiram. Corais luminosos escondem cavernas tomadas por kuo-toa.",
+  "min_nivel": 2
+ },
+ {
+  "id": "floresta-murin",
+  "nome": "Floresta de Mürin",
+  "cidade": "portomonte",
+  "perigo": 2,
+  "descricao": "O druida Snoop Bog conhece caminhos cuja seiva cura a terra.",
+  "min_nivel": 2
+ },
+ {
+  "id": "minas-thargrid",
+  "nome": "Minas de Thargrid",
+  "cidade": "thargrid",
+  "perigo": 3,
+  "descricao": "Os anões dividem minério e vigília com a resistência; monstros vagam pelas galerias.",
+  "min_nivel": 3
+ },
+ {
+  "id": "trilha-ironwood",
+  "nome": "Caminhos de Ironwood",
+  "cidade": "ironwood",
+  "perigo": 3,
+  "descricao": "Mensageiros de Elara Stormoak precisam de guardas para escapar das patrulhas feéricas.",
+  "min_nivel": 3
+ },
+ {
+  "id": "ruinas-vandar",
+  "nome": "Ruínas de Vandar",
+  "cidade": "eldroth",
+  "perigo": 5,
+  "descricao": "Damaris Blackthorn coleciona relíquias entre servos mortos-vivos.",
+  "min_nivel": 5
+ },
+ {
+  "id": "cranio-golzdov",
+  "nome": "Escavações do Crânio",
+  "cidade": "garganta",
+  "perigo": 6,
+  "descricao": "Nas mandíbulas fossilizadas do ancestral, cada fragmento vale mais que uma vida.",
+  "min_nivel": 6
+ },
+ {
+  "id": "docas-drakport",
+  "nome": "Docas de Drakport",
+  "cidade": "drakport",
+  "perigo": 5,
+  "descricao": "Manifestos de navios registram nomes apagados e cargas que a Corte prefere ocultar.",
+  "min_nivel": 5
+ },
+ {
+  "id": "lama-da-foz",
+  "nome": "Foz de Gualápoles",
+  "cidade": "boca-abismo",
+  "perigo": 7,
+  "descricao": "O Arquivo dos Mortos Afogados guarda tessituras de nomes e ouro submerso.",
+  "min_nivel": 7
+ },
+ {
+  "id": "corte-riverie",
+  "nome": "Jardins da Corte",
+  "cidade": "shadar-riverie",
+  "perigo": 8,
+  "descricao": "Uma pedra de encantamento é exibida enquanto prisioneiros a alimentam.",
+  "min_nivel": 8
+ },
+ {
+  "id": "deserto-ossos",
+  "nome": "Areias do Além Sul",
+  "cidade": "alem-sul",
+  "perigo": 3,
+  "descricao": "Caravanas transportam suprimentos dos povoados para defender a costa.",
+  "min_nivel": 3
+ }
+]

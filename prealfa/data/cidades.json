@@ -1,0 +1,308 @@
+[
+ {
+  "id": "portomonte",
+  "nome": "Portomonte",
+  "regiao": "Costa Sul",
+  "descricao": "Refúgio de marinheiros e camponeses protegido pelo templo de Deméter.",
+  "especialidade": "alquimia",
+  "emblema": "🍃",
+  "perigo": 1,
+  "estacoes": [
+   "alquimia",
+   "cozinha",
+   "curtume"
+  ],
+  "mercadores": [
+   {
+    "id": "portomonte-sofia-do-porto-seguro",
+    "nome": "Sofia do Porto Seguro",
+    "perfil": "alquimia",
+    "descricao": "Tônicos e ervas para os refugiados."
+   },
+   {
+    "id": "portomonte-jonathan-o-taberneiro",
+    "nome": "Jonathan, o Taberneiro",
+    "perfil": "provisoes",
+    "descricao": "Suprimentos e notícias da costa."
+   },
+   {
+    "id": "portomonte-alina-das-conchas",
+    "nome": "Alina das Conchas",
+    "perfil": "oculto",
+    "descricao": "Relíquias retiradas de recifes profanados."
+   }
+  ]
+ },
+ {
+  "id": "thargrid",
+  "nome": "Thargrid",
+  "regiao": "Montanhas do Norte",
+  "descricao": "Reino Sob a Montanha: as forjas alimentam a resistência.",
+  "especialidade": "forja",
+  "emblema": "⚒️",
+  "perigo": 2,
+  "estacoes": [
+   "forja",
+   "curtume",
+   "joalheria"
+  ],
+  "mercadores": [
+   {
+    "id": "thargrid-borek-martelo-fundo",
+    "nome": "Borek Martelo-Fundo",
+    "perfil": "forja",
+    "descricao": "Metalurgia dos clãs livres."
+   },
+   {
+    "id": "thargrid-hilda-das-veias",
+    "nome": "Hilda das Veias",
+    "perfil": "mineracao",
+    "descricao": "Minério e pedras escolhidas na montanha."
+   },
+   {
+    "id": "thargrid-eirik-dos-selos",
+    "nome": "Eirik dos Selos",
+    "perfil": "oculto",
+    "descricao": "Grimórios e selos de resistência."
+   }
+  ]
+ },
+ {
+  "id": "ironwood",
+  "nome": "Ironwood",
+  "regiao": "Floresta do Norte",
+  "descricao": "Enclave dos rangers, druidas e informantes de Elara Stormoak.",
+  "especialidade": "madeira",
+  "emblema": "🌲",
+  "perigo": 2,
+  "estacoes": [
+   "alquimia",
+   "curtume",
+   "escrita"
+  ],
+  "mercadores": [
+   {
+    "id": "ironwood-snoop-bog",
+    "nome": "Snoop Bog",
+    "perfil": "alquimia",
+    "descricao": "Seivas e fungos conhecidos da mata."
+   },
+   {
+    "id": "ironwood-leira-cacadora",
+    "nome": "Leira Caçadora",
+    "perfil": "forja",
+    "descricao": "Arcos e couro para os patrulheiros."
+   },
+   {
+    "id": "ironwood-ara-menestrela",
+    "nome": "Ara Menestrela",
+    "perfil": "oculto",
+    "descricao": "Escrituras de druidas e mensageiros."
+   }
+  ]
+ },
+ {
+  "id": "garganta",
+  "nome": "Garganta",
+  "regiao": "Extremo Leste",
+  "descricao": "Cidade no crânio de Golzdov, ocupada pela Corte; minas e ruínas yokai.",
+  "especialidade": "minerio",
+  "emblema": "💀",
+  "perigo": 3,
+  "estacoes": [
+   "forja",
+   "encantamento",
+   "escrita"
+  ],
+  "mercadores": [
+   {
+    "id": "garganta-issara-da-bigorna",
+    "nome": "Íssara da Bigorna",
+    "perfil": "forja",
+    "descricao": "Ferros, ligas e armas tributadas à Corte."
+   },
+   {
+    "id": "garganta-narin-do-cranio",
+    "nome": "Narin do Crânio",
+    "perfil": "mineracao",
+    "descricao": "Pedras dos ossos de Golzdov."
+   },
+   {
+    "id": "garganta-o-escriba-sem-nome",
+    "nome": "O Escriba Sem Nome",
+    "perfil": "oculto",
+    "descricao": "Tradições arqueológicas e objetos proibidos."
+   }
+  ]
+ },
+ {
+  "id": "drakport",
+  "nome": "Drakport",
+  "regiao": "Rio Ancestral",
+  "descricao": "Porto escravista da Corte; comércio perigoso, contrabando e informação.",
+  "especialidade": "comercio",
+  "emblema": "⚓",
+  "perigo": 3,
+  "estacoes": [
+   "forja",
+   "alquimia",
+   "cozinha"
+  ],
+  "mercadores": [
+   {
+    "id": "drakport-rodrigo-o-contrabandista",
+    "nome": "Rodrigo, o Contrabandista",
+    "perfil": "oculto",
+    "descricao": "Mercadorias ilegais e contratos sem perguntas."
+   },
+   {
+    "id": "drakport-dorra-sete-trancas",
+    "nome": "Dorra Sete-Tranças",
+    "perfil": "provisoes",
+    "descricao": "Mantimentos para barcos de rio."
+   },
+   {
+    "id": "drakport-ferreiro-nohm",
+    "nome": "Ferreiro Nohm",
+    "perfil": "forja",
+    "descricao": "Armas e reparos para os cais."
+   }
+  ]
+ },
+ {
+  "id": "boca-abismo",
+  "nome": "Boca do Abismo",
+  "regiao": "Extremo Oeste",
+  "descricao": "Fortaleza de Ulorian sobre Gualápoles; guerras contra demônios.",
+  "especialidade": "essencia",
+  "emblema": "🌀",
+  "perigo": 4,
+  "estacoes": [
+   "encantamento",
+   "alquimia",
+   "escrita"
+  ],
+  "mercadores": [
+   {
+    "id": "boca-abismo-janka-da-foz",
+    "nome": "Janka da Foz",
+    "perfil": "alquimia",
+    "descricao": "Remédios para os mergulhadores."
+   },
+   {
+    "id": "boca-abismo-o-vigia-de-ulorian",
+    "nome": "O Vigia de Ulorian",
+    "perfil": "forja",
+    "descricao": "Ferragens e lâminas da fortaleza."
+   },
+   {
+    "id": "boca-abismo-mae-das-mares",
+    "nome": "Mãe das Marés",
+    "perfil": "oculto",
+    "descricao": "Memórias e magia de água profunda."
+   }
+  ]
+ },
+ {
+  "id": "shadar-riverie",
+  "nome": "Shadar-Riverie",
+  "regiao": "Rio Ancestral",
+  "descricao": "Capital aristocrática dos shadow fey, sob vigilância da Casa Uln-Shayr.",
+  "especialidade": "magia",
+  "emblema": "🌙",
+  "perigo": 5,
+  "estacoes": [
+   "encantamento",
+   "joalheria",
+   "escrita"
+  ],
+  "mercadores": [
+   {
+    "id": "shadar-riverie-lazaro-da-casa-uln-shayr",
+    "nome": "Lázaro da Casa Uln-Shayr",
+    "perfil": "oculto",
+    "descricao": "Artigos arcanos negociados em segredo."
+   },
+   {
+    "id": "shadar-riverie-dama-corven",
+    "nome": "Dama Corven",
+    "perfil": "forja",
+    "descricao": "Aço ornamental, facas e correntes."
+   },
+   {
+    "id": "shadar-riverie-liria-das-velas",
+    "nome": "Líria das Velas",
+    "perfil": "alquimia",
+    "descricao": "Perfumes, venenos e preparados feéricos."
+   }
+  ]
+ },
+ {
+  "id": "alem-sul",
+  "nome": "Além Sul",
+  "regiao": "Caatinga",
+  "descricao": "Povos dispersos, contrabandistas e guerreiros da Caatinga.",
+  "especialidade": "couros",
+  "emblema": "🏜️",
+  "perigo": 2,
+  "estacoes": [
+   "curtume",
+   "forja",
+   "cozinha"
+  ],
+  "mercadores": [
+   {
+    "id": "alem-sul-cida-da-estrada",
+    "nome": "Cida da Estrada",
+    "perfil": "provisoes",
+    "descricao": "Comida e tecidos das caravanas."
+   },
+   {
+    "id": "alem-sul-tamar-ferro-seco",
+    "nome": "Tamar Ferro Seco",
+    "perfil": "forja",
+    "descricao": "Armas e utensílios para os povos exilados."
+   },
+   {
+    "id": "alem-sul-zulmira-das-raizes",
+    "nome": "Zulmira das Raízes",
+    "perfil": "alquimia",
+    "descricao": "Raízes e antídotos contra os venenos da caatinga."
+   }
+  ]
+ },
+ {
+  "id": "eldroth",
+  "nome": "Eldroth",
+  "regiao": "Asa de Golzdov",
+  "descricao": "Floresta envenenada governada por Lady Sylara Nightwhisper.",
+  "especialidade": "ervas",
+  "emblema": "🍂",
+  "perigo": 5,
+  "estacoes": [
+   "alquimia",
+   "encantamento",
+   "escrita"
+  ],
+  "mercadores": [
+   {
+    "id": "eldroth-o-mercador-de-mascara",
+    "nome": "O Mercador de Máscara",
+    "perfil": "oculto",
+    "descricao": "Relíquias saqueadas das ruínas."
+   },
+   {
+    "id": "eldroth-nerin-das-folhas",
+    "nome": "Nerin das Folhas",
+    "perfil": "alquimia",
+    "descricao": "Ingredientes retirados sob risco mortal."
+   },
+   {
+    "id": "eldroth-artesao-dos-ossos",
+    "nome": "Artesão dos Ossos",
+    "perfil": "forja",
+    "descricao": "Armas feitas de matéria corrompida."
+   }
+  ]
+ }
+]

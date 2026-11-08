@@ -1,0 +1,38 @@
+{
+ "versao": "0.1.0",
+ "projeto": "Peren, o Bruxo — Mercador da Carcaça",
+ "observacao": "Base jogável original; NÃO é inventário completo de Skyrim nem reprodução integral de conteúdo de D&D. Registros de alquimia são derivados e reinventados. Magias e monstros provêm das obras fornecidas pelo usuário; apenas metadados e mecânicas originais são publicados.",
+ "contagens": {
+  "itens": 2785,
+  "receitas": 2316,
+  "magias": 354,
+  "monstros": 222,
+  "cidades": 9,
+  "expedicoes": 10,
+  "missoes": 32
+ },
+ "fontes": [
+  {
+   "nome": "vebyast/skyrim_alchemy",
+   "url": "https://github.com/vebyast/skyrim_alchemy",
+   "uso": "111 ingredientes e propriedades, nomes adaptados; receitas NÃO originais do Skyrim",
+   "escopo": "lista vanilla + DLC no arquivo skyrim_vanilla.csv"
+  },
+  {
+   "nome": "D&D 5e Livro do Jogador",
+   "uso": "extração local de títulos, níveis e escolas; efeitos de jogo reprogramados"
+  },
+  {
+   "nome": "D&D 5e Guia do Mestre",
+   "uso": "referência nominal e de raridade de itens, sem reprodução das descrições"
+  },
+  {
+   "nome": "D&D 5e Manual dos Monstros",
+   "uso": "nomes, categorias e nível de desafio; estatísticas de combate adaptadas"
+  },
+  {
+   "nome": "Carcaça Lore",
+   "uso": "geografia, política e facções do cenário original"
+  }
+ ]
+}

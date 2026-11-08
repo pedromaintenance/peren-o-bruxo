@@ -1,0 +1,3459 @@
+{
+  "schema": "peren-atributos-ingredientes-v1",
+  "politica": {
+    "minimo_por_ingrediente": 3,
+    "maximo_por_ingrediente": null,
+    "intensidade_minima": 1,
+    "intensidade_maxima": 3,
+    "observacao": "3 atributos mínimos. Atributos extras somente quando definidos na curadoria; intensidade inteira de 1 a 3. Ingredientes ainda não revisados mantêm efeitos legados em caráter provisório."
+  },
+  "itens": {
+    "ing-felsaad-tern-feathers": {
+      "nome": "Pena de Gaivota",
+      "descricao": "Pena das gaivotas que só existem em Portomonte. A influência do templo de Deméter confere forte poder de cura de doenças, restaura moderadamente o vigor físico e conserva uma capacidade tênue de voo.",
+      "zona": "portomonte",
+      "zona_exclusiva": "portomonte",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "curar_doenca",
+          "nome": "Curar doença",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "nome": "Voar",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Cure Disease",
+        "Fly",
+        "Fortify Constitution"
+      ],
+      "raridade": "comum"
+    },
+    "ing-mudcrab-chitin": {
+      "nome": "Carapaça de Caranguejo",
+      "descricao": "Carapaça de caranguejo com propriedades alquímicas de fortalecimento físico e proteção. Favorece especialmente a constituição, reforça a força e oferece resistência discreta a venenos.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Resist Poison"
+      ],
+      "raridade": "comum"
+    },
+    "ing-vampire-dust": {
+      "nome": "Pó de Vampiro",
+      "descricao": "Pó extraído de matéria vampírica, carregado de energia vital predatória. Potente para efeitos de vampirismo, pode ocultar a presença e favorece discretamente a regeneração da saúde.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "vampirismo",
+          "nome": "Vampirismo",
+          "intensidade": 3
+        },
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Vampirism",
+        "Invisibility",
+        "Regenerate Health"
+      ],
+      "raridade": "raro"
+    },
+    "ing-charred-skeever-hide": {
+      "nome": "Couro de Rato",
+      "descricao": "Couro de rato utilizado em preparados alquímicos de efeito debilitante: reduz fortemente o carisma, oferece resistência moderada a venenos e pode transmitir doenças em baixa intensidade.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "diminuir_carisma",
+          "nome": "Diminuir Carisma",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "infligir_doenca",
+          "nome": "Infligir Doença",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Reduce Charisma",
+        "Resist Poison",
+        "Inflict Disease"
+      ],
+      "raridade": "comum"
+    },
+    "ing-hawk-feathers": {
+      "nome": "Penas de Falcão",
+      "descricao": "Penas de falcão associadas a visão muito distante, voo moderado e agilidade discreta.",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "visao_a_distancia",
+          "nome": "Visão à Distância",
+          "intensidade": 3
+        },
+        {
+          "id": "voar",
+          "nome": "Voo",
+          "intensidade": 2
+        },
+        {
+          "id": "velocidade",
+          "nome": "Velocidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Distant Vision",
+        "Fly",
+        "Fortify Speed"
+      ],
+      "raridade": "comum"
+    },
+    "ing-jarrin-root": {
+      "nome": "Raiz Botulínica",
+      "descricao": "Raiz extremamente tóxica, usada em preparados alquímicos que causam grave dano à saúde e debilitam constituição, destreza e força.",
+      "origem": "curadoria_original_carcaca",
+      "raridade": "epico",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 3
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Ravage Constitution",
+        "Ravage Dexterity",
+        "Ravage Strength"
+      ]
+    },
+    "ing-river-betty": {
+      "nome": "Betta do Rio",
+      "raridade": "incomum",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "nome": "Diminuir Sabedoria",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Dexterity",
+        "Reduce Wisdom"
+      ]
+    },
+    "ing-emperor-parasol-moss": {
+      "nome": "Musgo Parassol",
+      "descricao": "Musgo úmido que prolifera sobre madeira apodrecida; revigora tecidos, mas perturba a saúde em doses excessivas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_inteligencia",
+          "nome": "Aumentar Inteligência",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Fortify Intelligence",
+        "Damage Health"
+      ]
+    },
+    "ing-nirnroot": {
+      "nome": "Raiz Velada",
+      "descricao": "Raiz luminescente que se oculta na vegetação e dificulta a percepção de quem a consome.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Resist Magic",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-crimson-nirnroot": {
+      "nome": "Raiz Velada Rubra",
+      "descricao": "Variante carmesim de seiva concentrada; encobre o corpo à custa de intensa exaustão.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 3
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Damage Health",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-deathbell": {
+      "nome": "Sino da Morte",
+      "descricao": "Flor de sino escuro usada em venenos para enfraquecer e retardar as vítimas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Slow",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-poison-bloom": {
+      "nome": "Flor Venenosa",
+      "descricao": "Flor de pétalas tóxicas encontrada em terrenos hostis; sua seiva causa debilidade e pavor.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Fear",
+        "Slow"
+      ]
+    },
+    "ing-ectoplasm": {
+      "nome": "Ectoplasma",
+      "descricao": "Resíduo espectral instável, capaz de alimentar conjurações e consumir a vitalidade do alquimista.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-falmer-ear": {
+      "nome": "Orelha de Troglodita",
+      "descricao": "Tecido de criatura subterrânea empregado em tinturas de percepção e preparados venenosos.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Perception",
+        "Damage Health"
+      ]
+    },
+    "ing-human-flesh": {
+      "nome": "Carne Humana",
+      "descricao": "Ingrediente macabro negociado às escondidas; associa furtividade, transe e efeitos paralisantes.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Fortify Sneak",
+        "Damage Health"
+      ]
+    },
+    "ing-human-heart": {
+      "nome": "Coração Humano",
+      "descricao": "Coração preservado por rituais obscuros, muito potente em misturas que alteram a vontade e drenam energia mágica.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Frenzy",
+        "Damage Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-imp-stool": {
+      "nome": "Fungo de Diabrete",
+      "descricao": "Fungo de ambiente degradado, usado tanto como base medicinal quanto em toxinas imobilizantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Restore Health",
+        "Damage Health"
+      ]
+    },
+    "ing-nightshade": {
+      "nome": "Beladona",
+      "descricao": "Planta tóxica de sombra, conhecida pelo dano lento e por interferir na recuperação mágica.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_ilusao",
+          "nome": "Aumentar Ilusão",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Fortify Magicka",
+        "Fortify Illusion"
+      ]
+    },
+    "ing-red-mountain-flower": {
+      "nome": "Flor Vermelha",
+      "descricao": "Flor rubra usada em tônicos arcanos; recupera energia mágica, mas sua seiva concentrada pode ferir.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Magicka",
+        "Damage Health"
+      ]
+    },
+    "ing-skeever-tail": {
+      "nome": "Cauda de Rato",
+      "descricao": "Cauda de roedor das docas empregada em venenos debilitantes e preparos protetores de curta duração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "infligir_doenca",
+          "nome": "Infligir Doença",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Damage Health",
+        "Reduce Constitution",
+        "Fortify Dexterity",
+        "Inflict Disease"
+      ]
+    },
+    "ing-small-antlers": {
+      "nome": "Chifres de Cervo",
+      "descricao": "Chifres imaturos moídos para unguentos de restauração e toxinas de efeito persistente.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Restoration",
+        "Weakness to Poison",
+        "Fortify Dexterity"
+      ]
+    },
+    "ing-troll-fat": {
+      "nome": "Gordura de Troll",
+      "descricao": "Gordura espessa de troll, útil em fortificantes e misturas que desencadeiam agressividade.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Strength",
+        "Frenzy"
+      ]
+    },
+    "ing-void-salts": {
+      "nome": "Sais do Vazio",
+      "descricao": "Cristais escuros associados ao Vazio; ampliam reservas arcanas, mas tornam o corpo vulnerável a descargas.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Magicka",
+        "Resist Magic",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-butterfly-wing": {
+      "nome": "Asa de Borboleta",
+      "descricao": "Asa delicada empregada em tônicos suaves de recuperação e preparados que debilitam energia arcana.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Damage Magicka",
+        "Reduce Strength"
+      ]
+    },
+    "ing-chaurus-eggs": {
+      "nome": "Ovo de Verme Gigante",
+      "descricao": "Ovos translúcidos de vermes subterrâneos, usados em extratos furtivos e fortificantes.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Fortify Constitution",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-daedra-heart": {
+      "nome": "Coração de Demônio",
+      "descricao": "Órgão de natureza demoníaca, intensamente carregado de vitalidade e energia mágica instável.",
+      "raridade": "epico",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_carisma",
+          "nome": "Aumentar Carisma",
+          "intensidade": 3
+        }
+      ],
+      "efeitos": [
+        "Fortify Magicka",
+        "Fear",
+        "Fortify Charisma"
+      ]
+    },
+    "ing-eye-of-sabre-cat": {
+      "nome": "Olho de Felino",
+      "descricao": "Olho preservado de grande felino, associado à recuperação do vigor e aos sentidos de caça.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "visao_a_distancia",
+          "nome": "Visão à Distância",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Fortify Perception",
+        "Restore Health",
+        "Far Sight"
+      ]
+    },
+    "ing-glow-dust": {
+      "nome": "Poeira Luminosa",
+      "descricao": "Pó cintilante empregado para canalizar descargas arcanas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Destruction",
+        "Resist Shock",
+        "Damage Magicka"
+      ]
+    },
+    "ing-hagraven-feathers": {
+      "nome": "Penas de Bruxa",
+      "descricao": "Penas carregadas de feitiçaria e agressividade ritual.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 3
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Conjuration",
+        "Frenzy",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-hanging-moss": {
+      "nome": "Musgo Pendente",
+      "descricao": "Musgo fibroso que cresce sob pedras e galhos úmidos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_saude",
+          "nome": "Aumentar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Health",
+        "Damage Magicka",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-luna-moth-wing": {
+      "nome": "Asa de Mariposa Lunar",
+      "descricao": "Asas de inseto noturno usadas em preparados de ocultação.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Regenerate Health",
+        "Damage Magicka"
+      ]
+    },
+    "ing-namira-s-rot": {
+      "nome": "Fungo de Gualápoles",
+      "descricao": "Fungo de decomposição associado a rituais soturnos, cuja influência sobrenatural torna a presença de quem o utiliza perturbadora e socialmente repulsiva, enfraquecendo seu Carisma sem necessariamente alterar sua aparência.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_carisma",
+          "nome": "Diminuir Carisma",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fear",
+        "Regenerate Health",
+        "Damage Magicka",
+        "Reduce Charisma"
+      ]
+    },
+    "ing-nordic-barnacle": {
+      "nome": "Craca de Rio",
+      "descricao": "Craca de água doce coletada em rochas e embarcações.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Regenerate Health",
+        "Damage Magicka"
+      ]
+    },
+    "ing-trama-root": {
+      "nome": "Raiz de Trama",
+      "descricao": "Raiz resistente de fibras entrelaçadas usada em compostos debilitantes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "diminuir_velocidade",
+          "nome": "Diminuir Velocidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Slow",
+        "Fortify Carry Weight",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-ancestor-moth-wing": {
+      "nome": "Asa de Mariposa Ancestral",
+      "descricao": "Asa de mariposa associada à evocação e à inscrição de encantamentos.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Conjuration",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-bear-claws": {
+      "nome": "Garras de Urso",
+      "descricao": "Garras maceradas para extratos de vigor e combate.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_saude",
+          "nome": "Aumentar Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Constitution",
+        "Fortify Strength",
+        "Fortify Health"
+      ]
+    },
+    "ing-blue-butterfly-wing": {
+      "nome": "Asa de Borboleta Azul",
+      "descricao": "Asa azul delicada utilizada na preparação de elixires arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Reduce Dexterity",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-blue-mountain-flower": {
+      "nome": "Flor Azul da Montanha",
+      "descricao": "Flor medicinal de encostas frias, usada para recuperar a vitalidade e facilitar rituais de conjuração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Constitution",
+        "Fortify Conjuration"
+      ]
+    },
+    "ing-burnt-spriggan-wood": {
+      "nome": "Madeira de Ent Carbonizado",
+      "descricao": "Madeira de um guardião vegetal destruído pelo fogo; ainda retém magia de transformação.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 3
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Alteration",
+        "Reduce Dexterity",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-chaurus-hunter-antennae": {
+      "nome": "Antena de Verme Gigante",
+      "descricao": "Órgão sensorial de predador quitinoso, valioso para encantamentos e conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Conjuration",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-chicken-s-egg": {
+      "nome": "Ovo de Galinha",
+      "descricao": "Ingrediente culinário abundante, usado como base de misturas de resistência.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Constitution",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-hawk-s-egg": {
+      "nome": "Ovo de Falcão",
+      "descricao": "Ovo de ave de rapina empregado em tônicos de percepção e vigor.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_percepcao",
+          "nome": "Aumentar Percepção",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Perception",
+        "Fortify Dexterity",
+        "Resist Magic"
+      ]
+    },
+    "ing-spider-egg": {
+      "nome": "Ovo de Aranha",
+      "descricao": "Ovo pegajoso usado em preparados de precisão e compostos debilitantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Reduce Constitution",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-spriggan-sap": {
+      "nome": "Seiva de Ent",
+      "descricao": "Seiva encantada de espírito vegetal, utilizada por artesãos e transmutadores.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "nome": "Aumentar Ferraria",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Fortify Alteration",
+        "Fortify Smithing"
+      ]
+    },
+    "ing-ash-creep-cluster": {
+      "nome": "Tufo Cinzento",
+      "descricao": "Frutos de trepadeira que prospera em cinzas quentes, favorecendo magia ígnea.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Destruction",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-berit-s-ashes": {
+      "nome": "Cinzas Mortuárias",
+      "descricao": "Cinzas preservadas de escriba envolvido em práticas rituais, usadas em conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Conjuration",
+        "Resist Fire",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-blisterwort": {
+      "nome": "Fungo de Bolha",
+      "descricao": "Fungo de polpa irritante empregado tanto em remédios quanto em fórmulas de agressividade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Frenzy",
+        "Reduce Strength"
+      ]
+    },
+    "ing-bone-meal": {
+      "nome": "Farinha de Ossos",
+      "descricao": "Ossos moídos empregados em preparados de resistência e conjuração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Conjuration",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-canis-root": {
+      "nome": "Raiz Canina",
+      "descricao": "Raiz dura usada em venenos imobilizantes e preparados de precisão.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Paralysis",
+        "Fortify Dexterity",
+        "Reduce Strength"
+      ]
+    },
+    "ing-cyrodilic-spadetail": {
+      "nome": "Peixe de Escamas Finas",
+      "descricao": "Peixe de água doce cuja carne pode ser usada em tônicos ou preparados que debilitam.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Restoration",
+        "Fear",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-giant-s-toe": {
+      "nome": "Dedo de Gigante",
+      "descricao": "Parte corpórea de gigante empregada em tônicos de robustez.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-rock-warbler-egg": {
+      "nome": "Ovo de Tordo",
+      "descricao": "Ovo de pequena ave usado como base de preparados curativos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Dexterity",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-creep-cluster": {
+      "nome": "Tufo Rastejante",
+      "descricao": "Cachos de trepadeira rasteira usados em extratos para carga e recuperação arcana.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Carry Weight",
+        "Restore Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-frost-mirriam": {
+      "nome": "Mirra da Geada",
+      "descricao": "Erva aromática de áreas frias utilizada em poções de ocultação e proteção contra geada.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_regeneracao_magia",
+          "nome": "Diminuir Regeneração de Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Resist Frost",
+        "Damage Magicka Regen"
+      ]
+    },
+    "ing-histcarp": {
+      "nome": "Carpa de Pedra",
+      "descricao": "Carpa resistente empregada em preparados aquáticos e arcanos.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Fortify Magicka",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-juniper-berries": {
+      "nome": "Bagas de Zimbro",
+      "descricao": "Bagas aromáticas para unguentos de recuperação e precisão.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Fortify Dexterity",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-large-antlers": {
+      "nome": "Chifres de Alce",
+      "descricao": "Chifres maduros moídos para preparados de força e firmeza corporal.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-silverside-perch": {
+      "nome": "Perca Prateada",
+      "descricao": "Peixe de escamas claras utilizado em tônicos de resistência ao frio.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_forca",
+          "nome": "Diminuir Força",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Constitution",
+        "Resist Frost",
+        "Reduce Strength"
+      ]
+    },
+    "ing-wheat": {
+      "nome": "Trigo",
+      "descricao": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Fortify Constitution",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-yellow-mountain-flower": {
+      "nome": "Flor Amarela da Montanha",
+      "descricao": "Flor de altitude usada em remédios protetores e preparados de restauração.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Restoration",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-blue-dartwing": {
+      "nome": "Libélula Azul",
+      "descricao": "Inseto de águas rasas usado em preparados de agilidade e proteção elétrica.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "medo",
+          "nome": "Medo",
+          "intensidade": 1
+        },
+        {
+          "id": "velocidade",
+          "nome": "Velocidade",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Shock",
+        "Fear",
+        "Speed"
+      ]
+    },
+    "ing-gleamblossom": {
+      "nome": "Flor Luminescente",
+      "descricao": "Flor de brilho tênue cuja seiva reúne propriedades medicinais e entorpecentes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Resist Magic",
+        "Paralysis"
+      ]
+    },
+    "ing-netch-jelly": {
+      "nome": "Gelatina de Medusa",
+      "descricao": "Gelatina translúcida de criatura flutuante, apreciada em fórmulas de imobilização.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Carry Weight",
+        "Fortify Constitution",
+        "Paralysis"
+      ]
+    },
+    "ing-powdered-mammoth-tusk": {
+      "nome": "Pó de Presa de Mamute",
+      "descricao": "Presa fossilizada reduzida a pó para unguentos de vigor e caçadas rituais.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Sneak",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-grass-pod": {
+      "nome": "Vagem da Charneca",
+      "descricao": "Vagem de solo úmido utilizada em remédios contra venenos e preparados arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_alteracao",
+          "nome": "Aumentar Alteração",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Alteration",
+        "Restore Magicka"
+      ]
+    },
+    "ing-dragon-s-tongue": {
+      "nome": "Língua-de-Dragão",
+      "descricao": "Planta de flores vivas cujo nome popular evoca a língua de um dragão.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ilusao",
+          "nome": "Aumentar Ilusão",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_carisma",
+          "nome": "Aumentar Carisma",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Illusion",
+        "Fortify Charisma"
+      ]
+    },
+    "ing-hagraven-claw": {
+      "nome": "Garra de Bruxa",
+      "descricao": "Garra de feiticeira monstruosa utilizada em encantamentos, proteções e maldições capazes de reprimir temporariamente a capacidade mágica de outras criaturas.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 3
+        },
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_magia",
+          "nome": "Diminuir Magia",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Enchanting",
+        "Resist Magic",
+        "Lingering Damage Magicka",
+        "Reduce Magicka"
+      ]
+    },
+    "ing-tundra-cotton": {
+      "nome": "Algodão da Tundra",
+      "descricao": "Fibras de campos frios usadas em infusões protetoras e preparados de concentração.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Magicka",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-bleeding-crown": {
+      "nome": "Coroa Sangrenta",
+      "descricao": "Fungo de chapéu rubro empregado em preparados defensivos, mas sensível ao fogo.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Block",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-boar-tusk": {
+      "nome": "Presa de Javali",
+      "descricao": "Presa robusta triturada em tônicos de força e agressividade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Constitution",
+        "Frenzy"
+      ]
+    },
+    "ing-pearl": {
+      "nome": "Pérola",
+      "descricao": "Concreção marinha usada em elixires de recuperação arcana.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Resist Shock",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-slaughterfish-scales": {
+      "nome": "Escamas de Piranha",
+      "descricao": "Escamas grossas usadas em preparados protetores e antídotos para ambientes gelados.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Block",
+        "Resist Frost",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-briar-heart": {
+      "nome": "Coração de Espinheiros",
+      "descricao": "Núcleo vegetal espinhoso e parasitário que concentra energia mágica, imobiliza suas presas e absorve a vitalidade de outros seres para sustentar a própria existência.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 1
+        },
+        {
+          "id": "vampirismo",
+          "nome": "Vampirismo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Fortify Magicka",
+        "Restore Magicka",
+        "Paralysis",
+        "Vampirism"
+      ]
+    },
+    "ing-honeycomb": {
+      "nome": "Favo de Mel",
+      "descricao": "Favo nutritivo empregado em tônicos de vigor físico e proteção.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Constitution",
+        "Fortify Block",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-hawk-beak": {
+      "nome": "Bico de Falcão",
+      "descricao": "Bico de ave de rapina usado em preparados de resistência e vigor.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Frost",
+        "Resist Shock"
+      ]
+    },
+    "ing-scaly-pholiota": {
+      "nome": "Cogumelo Escamoso",
+      "descricao": "Fungo lenhoso de escamas sobrepostas empregado em poções de carga e ilusão.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_carga",
+          "nome": "Aumentar Capacidade de Carga",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ilusao",
+          "nome": "Aumentar Ilusão",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Carry Weight",
+        "Fortify Illusion",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-wisp-wrappings": {
+      "nome": "Faixas de Espírito",
+      "descricao": "Resíduos espectrais recolhidos após a dissipação de uma aparição.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Destruction",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-frost-salts": {
+      "nome": "Sais da Geada",
+      "descricao": "Cristais gélidos usados em resistência ao frio e conjuração.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Frost",
+        "Restore Magicka",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-lavender": {
+      "nome": "Lavanda Selvagem",
+      "descricao": "Erva aromática que acalma e favorece a concentração em rituais.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_magia",
+          "nome": "Resistência à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_conjuracao",
+          "nome": "Aumentar Conjuração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Magic",
+        "Fortify Constitution",
+        "Fortify Conjuration"
+      ]
+    },
+    "ing-beehive-husk": {
+      "nome": "Casca de Colmeia",
+      "descricao": "Fragmentos de colmeia empregados em unguentos contra veneno e preparados de ocultação.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Sneak",
+        "Fortify Light Armor"
+      ]
+    },
+    "ing-glowing-mushroom": {
+      "nome": "Cogumelo Luminescente",
+      "descricao": "Fungo brilhante empregado em elixires para artesãos e feiticeiros.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destruicao",
+          "nome": "Aumentar Destruição",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_ferraria",
+          "nome": "Aumentar Ferraria",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Destruction",
+        "Fortify Smithing",
+        "Resist Shock"
+      ]
+    },
+    "ing-snowberries": {
+      "nome": "Bagas da Neve",
+      "descricao": "Pequenas bagas resistentes a extremos de temperatura.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Frost",
+        "Resist Fire",
+        "Fortify Enchanting"
+      ]
+    },
+    "ing-spawn-ash": {
+      "nome": "Cinzas de Criatura",
+      "descricao": "Cinzas de criatura sobrenatural, úteis em encantamentos e fórmulas debilitantes.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_encantamento",
+          "nome": "Aumentar Encantamento",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Enchanting",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-ice-wraith-teeth": {
+      "nome": "Dentes de Espectro Gelado",
+      "descricao": "Dentes espectrais gelados capazes de velar a presença do portador.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "invisibilidade",
+          "nome": "Invisibilidade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Invisibility",
+        "Fortify Heavy Armor",
+        "Weakness to Fire"
+      ]
+    },
+    "ing-sabre-cat-tooth": {
+      "nome": "Dente de Grande Felino",
+      "descricao": "Presa afiada de predador, empregada em tônicos de vigor e proteção.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Strength",
+        "Fortify Heavy Armor",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-thistle-branch": {
+      "nome": "Ramo de Cardo",
+      "descricao": "Ramo espinhoso usado em antídotos e preparações de resistência.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Heavy Armor",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-white-cap": {
+      "nome": "Chapéu Branco",
+      "descricao": "Cogumelo pálido usado em fórmulas para recuperar energia mágica.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_defesa",
+          "nome": "Aumentar Defesa",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Heavy Armor",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-dwarven-oil": {
+      "nome": "Óleo de Autômato",
+      "descricao": "Lubrificante arcano retirado de mecanismos anões, utilizado em preparações de energia mágica.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Restore Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-mora-tapinella": {
+      "nome": "Cogumelo de Raiz",
+      "descricao": "Fungo de madeira úmida empregado em preparados arcanos e debilitantes.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Fortify Constitution",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-taproot": {
+      "nome": "Raiz Mestra",
+      "descricao": "Raiz profunda carregada de seiva encantada, cujas ramificações formam uma rede de memória vegetal que conserva impressões e conhecimentos absorvidos do ambiente; sua seiva favorece a recuperação de magia e pode ampliar a Inteligência.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 3
+        },
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "aumentar_inteligencia",
+          "nome": "Aumentar Inteligência",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Restore Magicka",
+        "Weakness to Magic",
+        "Fortify Intelligence"
+      ]
+    },
+    "ing-ash-hopper-jelly": {
+      "nome": "Gelatina de Gafanhoto",
+      "descricao": "Secreção de criatura das terras queimadas, usada em pomadas curativas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 2
+        },
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Shock",
+        "Restore Health",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-ashen-grass-pod": {
+      "nome": "Vagem Cinzenta",
+      "descricao": "Vagem de áreas queimadas usada em compostos furtivos e resistentes ao calor.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Resist Fire",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-pine-thrush-egg": {
+      "nome": "Ovo de Tordo",
+      "descricao": "Ovo pequeno de ave silvestre empregado em tinturas de agilidade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Shock",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-jazbay-grapes": {
+      "nome": "Uvas de Jasmim",
+      "descricao": "Uvas perfumadas utilizadas em preparados mágicos, embora seu extrato concentrado seja nocivo.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_magia",
+          "nome": "Aumentar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Fortify Magicka",
+        "Ravage Health"
+      ]
+    },
+    "ing-salmon-roe": {
+      "nome": "Ovas de Salmão",
+      "descricao": "Ovas de peixe utilizadas em elixires de respiração aquática e concentração.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "respirar_na_agua",
+          "nome": "Respirar na Água",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Waterbreathing",
+        "Regenerate Magicka",
+        "Fortify Constitution"
+      ]
+    },
+    "ing-elves-ear": {
+      "nome": "Orelha-de-Elfo",
+      "descricao": "Fungo em forma de orelha que cresce em troncos e serve de base a preparações mágicas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Resist Fire",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-small-pearl": {
+      "nome": "Pérola Pequena",
+      "descricao": "Pérola diminuta utilizada em tônicos restauradores e amuletos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Resist Frost",
+        "Fortify Restoration"
+      ]
+    },
+    "ing-orange-dartwing": {
+      "nome": "Libélula Laranja",
+      "descricao": "Libélula de margens quentes, utilizada em preparados de agilidade e toxinas suaves.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_magia",
+          "nome": "Diminuir Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Ravage Magicka",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-slaughterfish-egg": {
+      "nome": "Ovas de Piranha",
+      "descricao": "Ovas de peixe predador utilizadas em antídotos e compostos corrosivos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 1
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Resist Poison",
+        "Fortify Dexterity",
+        "Lingering Damage Health"
+      ]
+    },
+    "ing-abecean-longfin": {
+      "nome": "Peixe-Espada do Sangue",
+      "descricao": "Peixe costeiro de escamas avermelhadas usado em infusões discretas e curativas.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Sneak",
+        "Fortify Restoration",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-salt-pile": {
+      "nome": "Sal do Sangue",
+      "descricao": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_restauracao",
+          "nome": "Aumentar Restauração",
+          "intensidade": 1
+        },
+        {
+          "id": "diminuir_destreza",
+          "nome": "Diminuir Destreza",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Regenerate Magicka",
+        "Fortify Restoration",
+        "Reduce Dexterity"
+      ]
+    },
+    "ing-purple-mountain-flower": {
+      "nome": "Flor Violeta",
+      "descricao": "Flor resistente às encostas e à bruma fria, utilizada em preparados de furtividade.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_furtividade",
+          "nome": "Aumentar Furtividade",
+          "intensidade": 1
+        },
+        {
+          "id": "resistencia_gelo",
+          "nome": "Resistência ao Gelo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Fortify Sneak",
+        "Resist Frost"
+      ]
+    },
+    "ing-garlic": {
+      "nome": "Alho",
+      "descricao": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "regenerar_saude",
+          "nome": "Regenerar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_veneno",
+          "nome": "Resistência a Veneno",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_constituicao",
+          "nome": "Aumentar Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "curar_doenca",
+          "nome": "Curar Doença",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Regenerate Health",
+        "Resist Poison",
+        "Fortify Constitution",
+        "Cure Disease"
+      ]
+    },
+    "ing-torchbug-thorax": {
+      "nome": "Tórax de Vaga-lume",
+      "descricao": "Órgão luminescente de inseto utilizado em compostos sensoriais e arcanos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_magia",
+          "nome": "Fraqueza à Magia",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Lingering Damage Magicka",
+        "Weakness to Magic"
+      ]
+    },
+    "ing-fly-amanita": {
+      "nome": "Amanita Rubra",
+      "descricao": "Cogumelo vermelho de propriedades psicoativas, utilizado em preparações de combate.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 2
+        },
+        {
+          "id": "aumentar_forca",
+          "nome": "Aumentar Força",
+          "intensidade": 2
+        },
+        {
+          "id": "frenesi",
+          "nome": "Frenesi",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_sabedoria",
+          "nome": "Diminuir Sabedoria",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Fortify Strength",
+        "Frenzy",
+        "Reduce Wisdom"
+      ]
+    },
+    "ing-scathecraw": {
+      "nome": "Espinho-da-Morte",
+      "descricao": "Espinho de planta nociva, macerado em fórmulas que debilitam corpo e energia arcana.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 3
+        },
+        {
+          "id": "dano_magia",
+          "nome": "Dano à Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Ravage Health",
+        "Ravage Magicka",
+        "Reduce Constitution"
+      ]
+    },
+    "ing-swamp-fungal-pod": {
+      "nome": "Fungo do Pântano",
+      "descricao": "Fungo úmido de propriedades ambivalentes: pode curar ou imobilizar.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_saude",
+          "nome": "Restaurar Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "paralisia",
+          "nome": "Paralisia",
+          "intensidade": 2
+        },
+        {
+          "id": "resistencia_eletricidade",
+          "nome": "Resistência à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Health",
+        "Paralysis",
+        "Resist Shock"
+      ]
+    },
+    "ing-giant-lichen": {
+      "nome": "Líquen Gigante",
+      "descricao": "Líquen espesso de ambientes úmidos, usado em tônicos arcanos e venenos.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "dano_saude",
+          "nome": "Dano à Saúde",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_veneno",
+          "nome": "Fraqueza a Veneno",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Ravage Health",
+        "Weakness to Poison"
+      ]
+    },
+    "ing-bee": {
+      "nome": "Abelha",
+      "descricao": "Inseto polinizador usado em tônicos de disposição, com risco de reações adversas.",
+      "raridade": "comum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "aumentar_destreza",
+          "nome": "Aumentar Destreza",
+          "intensidade": 2
+        },
+        {
+          "id": "diminuir_constituicao",
+          "nome": "Diminuir Constituição",
+          "intensidade": 1
+        },
+        {
+          "id": "fraqueza_eletricidade",
+          "nome": "Fraqueza à Eletricidade",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Fortify Dexterity",
+        "Reduce Constitution",
+        "Weakness to Shock"
+      ]
+    },
+    "ing-fire-salts": {
+      "nome": "Sais Ígneos",
+      "descricao": "Cristais quentes de origem sobrenatural, valiosos em fórmulas de proteção contra fogo.",
+      "raridade": "raro",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "resistencia_fogo",
+          "nome": "Resistência ao Fogo",
+          "intensidade": 3
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_gelo",
+          "nome": "Fraqueza ao Gelo",
+          "intensidade": 2
+        }
+      ],
+      "efeitos": [
+        "Resist Fire",
+        "Regenerate Magicka",
+        "Weakness to Frost"
+      ]
+    },
+    "ing-moon-sugar": {
+      "nome": "Açúcar Lunar",
+      "descricao": "Cristais adocicados de brilho pálido, usados em elixires de restauração arcana.",
+      "raridade": "incomum",
+      "origem": "curadoria_original_carcaca",
+      "atributos_revisados": true,
+      "atributos": [
+        {
+          "id": "restaurar_magia",
+          "nome": "Restaurar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "regenerar_magia",
+          "nome": "Regenerar Magia",
+          "intensidade": 2
+        },
+        {
+          "id": "fraqueza_fogo",
+          "nome": "Fraqueza ao Fogo",
+          "intensidade": 1
+        }
+      ],
+      "efeitos": [
+        "Restore Magicka",
+        "Regenerate Magicka",
+        "Weakness to Fire"
+      ]
+    }
+  },
+  "renomeacoes_textuais": {
+    "Pena de Gaivota de Portomonte": "Pena de Gaivota",
+    "Quitina de Caranguejo Carmesim": "Carapaça de Caranguejo",
+    "Pó de Vampiro de Vandar": "Pó de Vampiro",
+    "Couro de Rato Carbonizado": "Couro de Rato",
+    "Penas de Falcão das Montanhas": "Penas de Falcão",
+    "Raiz do Juramento Quebrado": "Raiz Botulínica",
+    "Betty do Rio Ancestral": "Betta do Rio",
+    "Musgo Parassol de Eldroth": "Musgo Parassol",
+    "Flor Venenosa da Garganta": "Flor Venenosa",
+    "Ectoplasma de Vandar": "Ectoplasma",
+    "Carne de Proscrito": "Carne Humana",
+    "Coração Proibido": "Coração Humano",
+    "Cogumelo do Imp": "Fungo de Diabrete",
+    "Beladona Negra": "Beladona",
+    "Flor Vermelha de Thargrid": "Flor Vermelha",
+    "Cauda de Rato das Docas": "Cauda de Rato",
+    "Asa de Borboleta da Foz": "Asa de Borboleta",
+    "Olho de Felino das Ilhas": "Olho de Felino",
+    "Chifres Jovens": "Chifres de Cervo",
+    "Ovos de Verme Quitinoso": "Ovo de Verme Gigante",
+    "Penas de Bruxa das Sombras": "Penas de Bruxa",
+    "Musgo Suspenso": "Musgo Pendente",
+    "Craca do Rio Ancestral": "Craca de Rio",
+    "Antena do Caçador Quitinoso": "Antena de Caçador Quitinoso",
+    "Cinzas de Um Escriba": "Cinzas de Escriba",
+    "Antena de Caçador Quitinoso": "Antena de Verme Gigante",
+    "Seiva de Guardião Arbóreo": "Seiva de Ent",
+    "Cachos de Cinza": "Tufo Cinzento",
+    "Cinzas de Escriba": "Cinzas Mortuárias",
+    "Chifres Grandes": "Chifres de Cervo Adulto",
+    "Cachos Rastejantes": "Tufo Rastejante",
+    "Chifres de Cervo Adulto": "Chifres de Alce",
+    "Trigo da Costa": "Trigo",
+    "Flor de Brilho": "Flor Luminescente",
+    "Presa de Mamute em Pó": "Pó de Presa de Mamute",
+    "Língua de Dragão": "Língua-de-Dragão",
+    "Gelatina de Netch": "Gelatina de Medusa",
+    "Pérola da Costa Sul": "Pérola",
+    "Escamas de Peixe Carniceiro": "Escamas de Piranha",
+    "Frutas da Neve": "Bagas da Neve",
+    "Dente de Felino": "Dente de Grande Felino",
+    "Orelha de Elfo": "Orelha-de-Elfo",
+    "Óleo de Autômato Anão": "Óleo de Autômato",
+    "Gelatina de Saltador das Cinzas": "Gelatina de Gafanhoto",
+    "Ovas de Peixe Carniceiro": "Ovas de Piranha",
+    "Pilha de Sal do Mar de Sangue": "Sal do Mar de Sangue",
+    "Alho das Hortas": "Alho",
+    "Tórax de Inseto-lanterna": "Tórax de Vaga-lume",
+    "Libélula Alaranjada": "Libélula Laranja",
+    "Peixe da Costa Escarlate": "Peixe-Espada do Sangue",
+    "Sal do Mar de Sangue": "Sal do Sangue"
+  },
+  "receitas_a_revisar_por_insumo": [
+    "ing-felsaad-tern-feathers",
+    "ing-mudcrab-chitin",
+    "ing-vampire-dust",
+    "ing-charred-skeever-hide",
+    "ing-hawk-feathers",
+    "ing-jarrin-root",
+    "ing-emperor-parasol-moss",
+    "ing-nirnroot",
+    "ing-crimson-nirnroot",
+    "ing-deathbell",
+    "ing-poison-bloom",
+    "ing-ectoplasm",
+    "ing-falmer-ear",
+    "ing-human-flesh",
+    "ing-human-heart",
+    "ing-imp-stool",
+    "ing-nightshade",
+    "ing-red-mountain-flower",
+    "ing-skeever-tail",
+    "ing-small-antlers",
+    "ing-troll-fat",
+    "ing-void-salts",
+    "ing-butterfly-wing",
+    "ing-chaurus-eggs",
+    "ing-daedra-heart",
+    "ing-eye-of-sabre-cat",
+    "ing-glow-dust",
+    "ing-hagraven-feathers",
+    "ing-hanging-moss",
+    "ing-luna-moth-wing",
+    "ing-namira-s-rot",
+    "ing-nordic-barnacle",
+    "ing-trama-root",
+    "ing-ancestor-moth-wing",
+    "ing-bear-claws",
+    "ing-blue-butterfly-wing",
+    "ing-blue-mountain-flower",
+    "ing-burnt-spriggan-wood",
+    "ing-chaurus-hunter-antennae",
+    "ing-chicken-s-egg",
+    "ing-hawk-s-egg",
+    "ing-spider-egg",
+    "ing-spriggan-sap",
+    "ing-ash-creep-cluster",
+    "ing-berit-s-ashes",
+    "ing-blisterwort",
+    "ing-bone-meal",
+    "ing-canis-root",
+    "ing-cyrodilic-spadetail",
+    "ing-giant-s-toe",
+    "ing-rock-warbler-egg",
+    "ing-creep-cluster",
+    "ing-frost-mirriam",
+    "ing-histcarp",
+    "ing-juniper-berries",
+    "ing-large-antlers",
+    "ing-silverside-perch",
+    "ing-wheat",
+    "ing-yellow-mountain-flower",
+    "ing-blue-dartwing",
+    "ing-gleamblossom",
+    "ing-netch-jelly",
+    "ing-powdered-mammoth-tusk",
+    "ing-grass-pod",
+    "ing-dragon-s-tongue",
+    "ing-hagraven-claw",
+    "ing-tundra-cotton",
+    "ing-bleeding-crown",
+    "ing-boar-tusk",
+    "ing-pearl",
+    "ing-slaughterfish-scales",
+    "ing-briar-heart",
+    "ing-honeycomb",
+    "ing-hawk-beak",
+    "ing-scaly-pholiota",
+    "ing-wisp-wrappings",
+    "ing-frost-salts",
+    "ing-lavender",
+    "ing-beehive-husk",
+    "ing-glowing-mushroom",
+    "ing-snowberries",
+    "ing-spawn-ash",
+    "ing-ice-wraith-teeth",
+    "ing-sabre-cat-tooth",
+    "ing-thistle-branch",
+    "ing-white-cap",
+    "ing-dwarven-oil",
+    "ing-mora-tapinella",
+    "ing-taproot",
+    "ing-ash-hopper-jelly",
+    "ing-ashen-grass-pod",
+    "ing-pine-thrush-egg",
+    "ing-jazbay-grapes",
+    "ing-salmon-roe",
+    "ing-elves-ear",
+    "ing-small-pearl",
+    "ing-orange-dartwing",
+    "ing-slaughterfish-egg",
+    "ing-abecean-longfin",
+    "ing-salt-pile",
+    "ing-purple-mountain-flower",
+    "ing-garlic",
+    "ing-torchbug-thorax",
+    "ing-fly-amanita",
+    "ing-scathecraw",
+    "ing-swamp-fungal-pod",
+    "ing-giant-lichen",
+    "ing-bee",
+    "ing-fire-salts",
+    "ing-moon-sugar"
+  ],
+  "regras_alquimia": {
+    "sem_stamina": "Não usar Stamina, Dano à Stamina, Restaurar Stamina, Aumentar Stamina nem Regeneração de Stamina. Substituir por Aumentar/Diminuir Força, Destreza ou Constituição, escolhendo conforme a natureza do ingrediente e respeitando intensidade de 1 a 3. Aplicar a todos os lotes futuros."
+  }
+}

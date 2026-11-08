@@ -1,0 +1,123 @@
+{
+  "stage": "M1h-F",
+  "candidate": true,
+  "approval": "pending visual review",
+  "license": "Kenney CC0",
+  "source": "https://kenney.nl/assets/platformer-art-extended-enemies",
+  "playable": [
+    "mob-galho-infectado",
+    "mob-fungo-violeta",
+    "mob-ettercap"
+  ],
+  "fallingBackToM1hE": [],
+  "format": {
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "rows": 7,
+    "columns": 4
+  },
+  "uniqueness": [
+    {
+      "action": "idle",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "walk",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "alert",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "attack",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "hurt",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "retreat",
+      "uniqueFrames": 4
+    },
+    {
+      "action": "death",
+      "uniqueFrames": 4
+    }
+  ],
+  "botanicals": [
+    {
+      "id": "mob-galho-infectado",
+      "method": "source-backed animated sprite",
+      "atlas": "256x448",
+      "portrait": "160x160",
+      "uniqueness": [
+        {
+          "action": "idle",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "walk",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "alert",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "attack",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "hurt",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "retreat",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "death",
+          "uniqueFrames": 4
+        }
+      ]
+    },
+    {
+      "id": "mob-fungo-violeta",
+      "method": "source-backed animated sprite",
+      "atlas": "256x448",
+      "portrait": "160x160",
+      "uniqueness": [
+        {
+          "action": "idle",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "walk",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "alert",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "attack",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "hurt",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "retreat",
+          "uniqueFrames": 4
+        },
+        {
+          "action": "death",
+          "uniqueFrames": 4
+        }
+      ]
+    }
+  ]
+}

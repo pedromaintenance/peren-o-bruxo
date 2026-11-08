@@ -1,0 +1,48 @@
+{
+  "stage": "M1h-C",
+  "state": "em_producao",
+  "approval": "pendente",
+  "base": "M1h-B",
+  "notes": "Subtle age lines, stern mouth, layered silver strands and articulated beard; non-destructive candidate",
+  "originalVariantsPreserved": [
+    "M1e",
+    "M1h-A",
+    "M1h-B"
+  ],
+  "report": [
+    {
+      "file": "peren-atlas.png",
+      "width": 1536,
+      "height": 256,
+      "frames": 128
+    },
+    {
+      "file": "portrait.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-cast.png",
+      "width": 256,
+      "height": 256
+    },
+    {
+      "file": "portrait-hurt.png",
+      "width": 256,
+      "height": 256
+    }
+  ],
+  "deprecatedVisualStage": true,
+  "currentRuntime": "Peren oficial do pacote fornecido pelo criador, aplicado a todos os caminhos de variante por compatibilidade",
+  "originalStageNotesAreHistorical": true,
+  "officialArt": {
+    "spriteFrames": 128,
+    "frameSize": [
+      48,
+      64
+    ],
+    "sourcePackageSHA256": "b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
+    "provenance": "ferramentas/gerar_peren_runtime.py",
+    "limitations": "Animações faltantes derivadas de poses reais; sem novos desenhos autorais"
+  }
+}

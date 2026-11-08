@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="240" height="300" shape-rendering="crispEdges">
+<defs><linearGradient id="coat" x2=".7" y2="1"><stop stop-color="#55758a"/><stop offset="1" stop-color="#3b536b"/></linearGradient></defs>
+<!-- sprite portrait without any UI text -->
+<path d="M10 295L25 224Q37 195 91 186H154Q210 202 226 240L237 300Z" fill="#101e29" stroke="#1a1721" stroke-width="9"/>
+<path d="M32 300L41 235L92 195H151L199 236L211 300Z" fill="url(#coat)" stroke="#1d252b" stroke-width="7"/>
+<path d="M79 196L120 232L164 194L147 274L99 274Z" fill="#1b2631"/>
+<path d="M105 163H137V217L121 236L101 217Z" fill="#9c7977" stroke="#2b2730" stroke-width="5"/>
+<path d="M57 101Q56 48 118 41Q183 40 187 103L177 167L145 195H95L66 164Z" fill="#c6cbd0" stroke="#26212d" stroke-width="8"/>
+<path d="M84 92H160L165 164L146 187L95 188L77 163Z" fill="#9c7977"/>
+<path d="M94 131H112V137H94ZM136 131H152V137H136Z" fill="#212f41"/>
+<path d="M119 139L113 159L126 158" fill="none" stroke="#87685f" stroke-width="4"/>
+<path d="M106 174Q122 181 140 171" fill="none" stroke="#68474b" stroke-width="4"/>
+<path d="M73 95Q68 53 99 41L79 143L83 205L60 218L60 116Z M157 55Q187 63 193 110L183 202L166 217L166 124Z" fill="#c6cbd0" stroke="#26222d" stroke-width="5"/>
+<path d="M60 83Q78 27 121 28Q163 25 181 78L159 103L80 103Z" fill="#324359" stroke="#211f29" stroke-width="9"/>
+<path d="M52 95L186 95L199 114L43 114Z" fill="#324359" stroke="#25202a" stroke-width="7"/>
+<path d="M97 252L121 273L143 252L143 246H97Z" fill="#91a5be" stroke="#29333a" stroke-width="5"/>
+<path d="M52 254L75 212L90 231L82 296H61Z M182 250L165 212L148 230L165 296H190Z" fill="#55758a" opacity=".75"/>
+</svg>

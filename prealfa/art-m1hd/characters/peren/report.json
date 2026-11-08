@@ -1,0 +1,38 @@
+{
+  "stage": "M1h-D",
+  "status": "em_producao",
+  "approval": "pendente",
+  "base": "M1h-C",
+  "focus": "severe brows, compressed mouth, silver moustache, age lines",
+  "atlas": {
+    "width": 1536,
+    "height": 256,
+    "frames": 128
+  },
+  "portraits": [
+    "portrait.png",
+    "portrait-cast.png",
+    "portrait-hurt.png"
+  ],
+  "unchanged": [
+    "M1e",
+    "M1h-A",
+    "M1h-B",
+    "M1h-C",
+    "gameplay",
+    "saves"
+  ],
+  "deprecatedVisualStage": true,
+  "currentRuntime": "Peren oficial do pacote fornecido pelo criador, aplicado a todos os caminhos de variante por compatibilidade",
+  "originalStageNotesAreHistorical": true,
+  "officialArt": {
+    "spriteFrames": 128,
+    "frameSize": [
+      48,
+      64
+    ],
+    "sourcePackageSHA256": "b8947630076d39f4b50a44d50d151088a00ba7e9cfbb84112310a780a9d01e20",
+    "provenance": "ferramentas/gerar_peren_runtime.py",
+    "limitations": "Animações faltantes derivadas de poses reais; sem novos desenhos autorais"
+  }
+}
