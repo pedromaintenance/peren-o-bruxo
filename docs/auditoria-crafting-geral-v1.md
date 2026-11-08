@@ -103,7 +103,7 @@ Todas as 16 refeições recebem `efeito: Restore Health`, com potência de 10 a 
 
 ## 4. Matérias-primas gerais: 33/33 rastreadas
 
-A auditoria individual dos 33 materiais identifica nome, tipo, nível, valor nominal, zona do cadastro, receitas que os consomem e dúvidas de proveniência. Contando **todas as 572 receitas não alquímicas**, **16 materiais** não são consumidos com quantidade positiva. Um deles, **Água Purificada**, aparece nas quatro receitas alquímicas específicas; portanto **15 dos 33** não aparecem como insumo positivo em nenhuma receita reconstruída do gerador.
+A auditoria individual dos 33 materiais identifica nome, tipo, nível, valor nominal, zona do cadastro, receitas que os consomem e dúvidas de proveniência. Contando **todas as 572 receitas não alquímicas**, **16 materiais** não são consumidos com quantidade positiva. Um deles, **Água Purificada**, aparece em **três das quatro** receitas alquímicas específicas; portanto **15 dos 33** não aparecem como insumo positivo em nenhuma receita reconstruída do gerador.
 
 | Material de base | Zona do cadastro (não homologada) | Receitas não alquímicas com consumo positivo | Nas quatro receitas alquímicas? | Limite principal |
 |---|---|---:|---|---|
