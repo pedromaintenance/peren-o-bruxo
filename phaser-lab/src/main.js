@@ -287,6 +287,7 @@ function enterRegion(regionId){
  app.registry.set('seed',nextSeed);app.registry.set('atExit',false);
  app.registry.set('combatProfile',bridge.combatProfile());
  regionSelect.value=regionId;regionHint();last='';hubTab='intro';
+ app.registry.set('regionTransitionInProgress',true);
  app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');
  renderHub();hub(false);updateHud();
 }
