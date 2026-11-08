@@ -303,12 +303,13 @@ app.events.on('peren-encounter',info=>{
  encounterFocus=document.activeElement;
  $('encounterModal').hidden=false;
  $('controls').inert=true;
+ $('encounterRegion').textContent=regionFromSeed(app.registry.get('seed')).name+' · Contato hostil';
  $('beastName').textContent=info.name;
  const monsterArt=chosenArt==='m1hf'?'./art-m1hf/monsters/':chosenArt==='m1he'?'./art-m1he/monsters/':'./art/monsters/';
  $('beastPortrait').src=`${monsterArt}${info.type}/portrait.png`;
  $('beastPortrait').alt=`Retrato de ${info.name}`;
  $('beastDescription').textContent=beastLore[info.type]||'Uma ameaça se aproxima.';
- $('encounterHint').textContent='A floresta exige decisões. Enfrente a criatura no combate Phaser ou recue.';
+ $('encounterHint').textContent='A expedição exige decisões. Enfrente a criatura no combate Phaser ou recue.';
  if(M1HF_PREVIEW){
   const assessment=encounterReadout(info,bridge.combatProfile());
   const panel=$('encounterAssessment');
@@ -318,7 +319,7 @@ app.events.on('peren-encounter',info=>{
   $('encounterReadiness').textContent=assessment.vitality;
   $('encounterSupplies').textContent=assessment.supplies;
  }
- $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura de Mürin');
+ $('beastClassification').textContent=({'mob-galho-infectado':'Vegetação corrompida','mob-fungo-violeta':'Fungo da mata','mob-ettercap':'Predador aracnídeo'}[info.type]||'Criatura da Carcaça');
  $('observeBeast').focus({preventScroll:true});
 });
 function retreatBeast(){const s=joyScene();if(s?.retreatEncounter()){
@@ -350,7 +351,7 @@ $('hub').hidden=false;$('controls').hidden=true;
 // Browsers generally reveal a new controller only after the user presses a button.
 const xbox=new XboxPadTracker();
 let lastPadLabel='', hubChoice=0, forestVisited=false;
-const hubButtons=[$('goForest'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
+const hubButtons=[$('goForest'),$('travelRegion'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
 function selectHubChoice(index){
   hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
   hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
@@ -438,6 +439,7 @@ function pollXbox(){
     if(key.y||key.view){inventory.open();return;}
     if(key.down)selectHubChoice(hubChoice+1);
     if(key.up)selectHubChoice(hubChoice-1);
+    if(key.left||key.right){const ids=REGIONS.map(x=>x.id),old=ids.indexOf(regionSelect.value);regionSelect.value=ids[(old+(key.right?1:ids.length-1))%ids.length];regionHint();return;}
     if(key.a)hubButtons[hubChoice].click();
     else if((key.b||key.menu)&&forestVisited)hub(false);
     return;
@@ -672,6 +674,16 @@ function notifyProgressError(err){const msg=err?.message||String(err);$('hubStat
   $('feedback').textContent=msg;app.registry.set('status',msg);
 }
 function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
+ const region=regionFromSeed(app.registry.get('seed'));
+ $('hubCityName').textContent=city.nome.toUpperCase();
+ $('hubCityKicker').textContent=city.regiao+' · Mercadores e oficinas';
+ $('hubServicesRegion').textContent=city.nome+' · Serviços';
+ $('goForestRegion').textContent=region.name;
+ $('hubStoryTitle').textContent=region.name;
+ $('hubStoryBody').textContent=region.subtitle+'. Explore a região, recolha ingredientes, enfrente ameaças e retorne para negociar ou fabricar.';
+ const scenery=document.querySelector('.m1g-scenery');
+ if(region.id!=='murin')scenery.style.backgroundImage=`linear-gradient(135deg,${region.colors[0]},${region.colors[3]})`;
+ else scenery.style.backgroundImage='linear-gradient(0deg,#061017ed 1%,#09202d50 60%,#0a1b2433 100%),url("./art/regions/portomonte/visao-carcaca.webp")';
  applyHubViewModel(document,hubViewModel(s,catalogs,bridge.source));
  $('combatWallet').textContent=`Nível ${s.level} · ${s.gold} moedas · ${s.exp} XP · ${inventoryTotal(s)} itens · ${s.actions} ações`;
  $('progressSource').textContent=bridge.source==='classic-import'?'Progresso importado do Peren clássico (cópia isolada)':'Progresso Phaser salvo (sem alterar o clássico)';
@@ -689,12 +701,12 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
   title.textContent='Oficinas · receitas reais';
   panel.textContent='Alquimia e Criação agora têm uma oficina própria. Selecione a opção no menu de Portomonte para preparar receitas reais, conferir ingredientes e nível de ofício.';
  }else if(hubTab==='shop'){
-  title.textContent='Comércio de Portomonte';
+  title.textContent='Comércio de '+city.nome;
   panel.textContent='Na nova banca mercantil, negocie os suprimentos reais da cidade com cotação e quantidade, ou venda os itens da mochila.';
  }else if(hubTab==='bag'){
   title.textContent='Vender itens da mochila';
   panel.textContent='O comércio possui uma aba específica para vender. Seu inventário permanece separado das transações.';
- }else{title.textContent='Armazém de Portomonte';panel.textContent='Peren pode coletar ingredientes em Mürin, voltar para a cidade, fabricar itens, negociar e guardar o progresso nesta versão de desenvolvimento.';}
+ }else{title.textContent='Armazém de '+city.nome;panel.textContent=`Região atual: ${region.name}. ${region.subtitle}. Dez mapas-base procedurais, cada um com sementes renováveis. Volte ao assentamento para usar as oficinas, o mercado e o caderno de alquimia.`;}
  if(hubTab!=='intro')panel.append(wrapper);
  if(inventory.isOpen())inventory.render();
  if(workshop.isOpen())workshop.render();
@@ -713,6 +725,7 @@ $('importProgress').addEventListener('change',async e=>{
  const file=e.target.files?.[0];e.target.value='';if(!file)return;
  try{if(file.size>2_000_000)throw Error('Backup excede 2 MB.');bridge.restore(await file.text());
     app.registry.set('combatProfile',bridge.combatProfile());app.registry.set('seed',bridge.read().worlds.activeSeed||'murin-001');
+     regionSelect.value=regionFromSeed(app.registry.get('seed')).id;regionHint();
     app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');renderHub();
  }catch(err){notifyProgressError(err)}
 });
