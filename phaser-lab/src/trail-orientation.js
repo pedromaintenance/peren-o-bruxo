@@ -11,7 +11,7 @@ export function trailOrientation(world,px,py){
     !Number.isFinite(px)||!Number.isFinite(py))return null;
  const exit={x:mid(world.exit.x),y:mid(world.exit.y)};
  if(Math.hypot(exit.x-px,exit.y-py)<40){
-  return {phase:'exit',label:'RETORNO À VISTA',hint:'Marco de Portomonte alcançado · use o botão PORTOMONTE'};
+  return {phase:'exit',label:'RETORNO À VISTA',hint:world.regionId==='murin'?'Marco de Portomonte alcançado · use o botão PORTOMONTE':`Saída de ${world.region?.name||'expedição'} · retorne ao assentamento`};
  }
  let closest=null,smallest=Infinity;
  for(let y=0;y<world.ground.length;y++){
@@ -29,6 +29,12 @@ export function trailOrientation(world,px,py){
   const dir=north?(closest.dy<0?'ao norte':'ao sul'):(closest.dx<0?'a oeste':'a leste');
   return {phase:'lost',label:'FORA DA TRILHA',
    hint:`Vestígios do caminho ${dir} · orientação aproximada`};
+ }
+ if(world.regionId&&world.regionId!=='murin'){
+  const crossing=world.region?.water==='river'&&Math.abs(px-mid(world.bridge.x))<=TILE*3.5;
+  if(crossing)return {phase:'bridge',label:'TRAVESSIA',hint:'Ponte sobre as águas · siga a estrada'};
+  if(px<mid(world.bridge.x))return {phase:'west',label:'TRILHA · '+world.region.name.toUpperCase(),hint:'Siga a passagem para leste; observe as criaturas e os recursos'};
+  return {phase:'east',label:'SAÍDA ADIANTE',hint:'Prossiga na direção leste para retornar ao assentamento'};
  }
  const bridge=world.bridge.x;
  if(Math.abs(px-mid(bridge))<=TILE*3.5){
