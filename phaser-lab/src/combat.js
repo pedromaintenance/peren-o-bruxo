@@ -23,7 +23,7 @@ export function newBattle(beast,profile,key){
  if(!key||typeof key!=='string')throw Error('Battle requires a stable encounter key');
  return {key,enemyId:beast.type,enemyName:beast.name,maxHp:m.hp,hp:m.hp,attack:m.attack,defense:m.defense,
    playerHp:clamp(profile.hp,1,profile.playerMaxHp||maxHp(profile.level)),playerMp:clamp(profile.mp,0,profile.playerMaxMp||maxMp(profile.level)),playerMaxHp:profile.playerMaxHp||maxHp(profile.level),playerMaxMp:profile.playerMaxMp||maxMp(profile.level),potions:profile.potions,preparations:(profile.preparations||[]).map(p=>({...p,effects:p.effects.map(e=>({...e})),ingredients:[...(p.ingredients||[])]})),playerAttack:profile.attack||null,playerDefense:profile.defense||null,learned:Array.isArray(profile.learned)?[...profile.learned]:null,
-   round:1,defending:false,frozen:0,burning:0,status:'active',log:['As sombras de Mürin se fecham.'],lastEvent:'start'};
+   round:1,defending:false,frozen:0,burning:0,status:'active',log:['Uma ameaça da Carcaça se aproxima.'],lastEvent:'start'};
 }
 const sample=rng=>clamp(Number(rng()),0,0.999999);
 export function stepBattle(battle,action,rng=Math.random){
