@@ -280,12 +280,18 @@ for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').add
 function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent='PRÉ-ALFA · mapas procedurais e progresso isolado do Peren clássico.';renderHub();}else app.scene.resume('ExplorationScene')}
 $('returnBtn').addEventListener('click',()=>hub(true));
 $('goForest').addEventListener('click',()=>hub(false));
-$('resetForest').addEventListener('click',()=>{
-  try{const name='murin-'+Date.now();bridge.execute({type:'selectSeed',seed:name});
-    app.registry.set('seed',name);app.registry.set('atExit',false);
-    app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');hub(false);
-  }catch(err){notifyProgressError(err)}
-});
+let regionNonce=0;
+function enterRegion(regionId){
+ const nextSeed=expeditionSeed(regionId,`${Date.now().toString(36)}-${(regionNonce++).toString(36)}`);
+ bridge.execute({type:'selectRegion',regionId,seed:nextSeed});
+ app.registry.set('seed',nextSeed);app.registry.set('atExit',false);
+ app.registry.set('combatProfile',bridge.combatProfile());
+ regionSelect.value=regionId;regionHint();last='';hubTab='intro';
+ app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');
+ renderHub();hub(false);updateHud();
+}
+$('travelRegion').addEventListener('click',()=>{try{enterRegion(regionSelect.value)}catch(err){notifyProgressError(err)}});
+$('resetForest').addEventListener('click',()=>{try{enterRegion(regionFromSeed(app.registry.get('seed')).id)}catch(err){notifyProgressError(err)}});
 // M1b encounter preview: no battle calculation and no mutation of classic saves.
 const beastLore={
  'mob-galho-infectado':'Galhos profanados se movem quando a mata percebe intrusos. A cobertura densa reduz sua percepção.',
