@@ -19,10 +19,13 @@ export class BattleScene extends Phaser.Scene {
     const w=this.scale.width,h=this.scale.height;
     this.cameras.main.setBackgroundColor('#0c161a');
     this.backdrop=this.add.image(w/2,h*.52,'murin-battle-bg').setDepth(-5).setDisplaySize(w,h*.72);
+    const region=this.registry.get('region');
+    if(region?.id&&region.id!=='murin')this.backdrop.setTint(Number.parseInt(region.colors[3].slice(1),16));
     this.add.rectangle(w/2,h*.095,w,h*.16,0x07121a,.9).setDepth(-4);
     this.add.rectangle(w/2,h*.875,w,h*.22,0x07121a,.88).setDepth(-4);
     this.peren=this.add.sprite(w*.27,h*.61,'peren',0).setScale(Math.max(1.8,w/225)).setDepth(12);
     this.foe=this.add.sprite(w*.735,h*.56,beast.type,0).setScale(Math.max(1.65,w/260)).setDepth(11).setFlipX(true);
+    if(region?.id&&region.id!=='murin')this.foe.setTint(Number.parseInt(region.colors[6].slice(1),16));
     this.peren.anims.play('peren-right-idle');
     this.foe.anims.play(`${beast.type}-idle`);
     this.nameText=this.add.text(w*.74,h*.41,beast.name.toUpperCase(),{fontFamily:'Georgia,serif',fontSize:'15px',color:'#f0d7a5',stroke:'#091117',strokeThickness:3}).setOrigin(.5).setDepth(15);

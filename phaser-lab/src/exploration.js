@@ -1,12 +1,14 @@
 import Phaser from 'phaser';
-import {buildForest,nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.js';
-import {MURIN_BEASTS,spawnMurinCreatures,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
+import {nearestResource,validExit,TILE,WIDTH,HEIGHT} from './world.js';
+import {buildExpedition,spawnRegionalCreatures} from './regions.js';
+import {installRegionTextures,regionGroundKey,regionObstacleKey} from './region-art.js';
+import {MURIN_BEASTS,monsterDecision,worldWeather,environmentAt,safeRetreat} from './encounters.js';
 import {encounterKey,defaultProfile} from './combat.js';
 import {harvestProximity} from './harvest-proximity.js';
 import {trailOrientation} from './trail-orientation.js';
 import {RETREAT_GRACE_MS,tickRetreatGrace,retreatGraceActive} from './retreat-grace.js';
 import {sneakActive,travelSpeed} from './stealth.js';
-const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
+const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW!=='0';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
@@ -29,7 +31,10 @@ export class ExplorationScene extends Phaser.Scene {
     }
   }
   create(){
-    this.world=buildForest(this.registry.get('seed')||'murin-001');
+    this.world=buildExpedition(this.registry.get('seed')||'murin-001');
+    this.registry.set('region',this.world.region);
+    this.registry.set('regionName',this.world.region.name);
+    this.registry.set('regionColors',this.world.region.colors);
     const bridge=this.registry.get('progressBridge');
     this.collected=new Set(bridge?.collectedIds(this.world.seed)||[]);
     if(!this.registry.get('combatProfile'))this.registry.set('combatProfile',defaultProfile());
@@ -45,10 +50,14 @@ export class ExplorationScene extends Phaser.Scene {
     this.registry.set('retreatGrace',0);
     if(!validExit(this.world))throw new Error('Expedição sem caminho até saída');
     const world=this.world; this.registry.set('worldValid',true);
+    installRegionTextures(this,world.region);
     this.cameras.main.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
     this.physics.world.setBounds(0,0,WIDTH*TILE,HEIGHT*TILE);
     const terrain=this.add.group();
-    for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++)terrain.add(this.add.image(x*TILE,y*TILE,'forest-ground',world.ground[y][x]).setOrigin(0).setDepth(-10));
+    for(let y=0;y<HEIGHT;y++)for(let x=0;x<WIDTH;x++){
+      const tile=world.ground[y][x],murin=world.regionId==='murin';
+      terrain.add(this.add.image(x*TILE,y*TILE,murin?'forest-ground':regionGroundKey(world.region,tile),murin?tile:undefined).setOrigin(0).setDepth(-10));
+    }
     // Foliage is visual only. Physics colliders are small trunk footprints.
     // Keeping images separate avoids StaticBody offsets turning crowns into walls.
     const colliders=this.physics.add.staticGroup();
@@ -56,7 +65,8 @@ export class ExplorationScene extends Phaser.Scene {
     for(const obj of world.obstacles){
       const x=(obj.x+.5)*TILE,y=(obj.y+.5)*TILE;
       const tree=obj.kind==='tree';
-      this.add.image(x,y,tree?`tree-${obj.variant}`:'stone')
+      const art=world.regionId==='murin'?(tree?`tree-${obj.variant}`:'stone'):regionObstacleKey(world.region,obj.kind);
+      this.add.image(x,y,art)
         .setOrigin(.5,tree?.91:.88).setDepth(y+(tree?6:0));
       const trunk=colliders.create(x,y+(tree?-2:-5),'stone');
       trunk.setDisplaySize(tree?14:22,tree?14:14).setVisible(false);
@@ -84,7 +94,8 @@ export class ExplorationScene extends Phaser.Scene {
     this.key=this.input.keyboard.addKeys('W,A,S,D,UP,DOWN,LEFT,RIGHT,SHIFT,E,SPACE,ESC,C');
     // A joystick is drawn in fixed HTML, outside the zoomed camera.
     this.joy={x:0,y:0,active:false};this.gamepadInput={move:{x:0,y:0},sprint:false,sneak:false};
-    this.registry.set('collected',{});this.registry.set('status',this.weather==='neblina'?'A névoa esconde predadores. Observe antes de avançar.':'Siga a trilha: ervas e criaturas estão à espreita.');
+    this.registry.set('collected',{});this.registry.set('atExit',false);
+    this.registry.set('status',this.weather==='neblina'?`Névoa em ${world.region.name}. Avance com cautela.`:`${world.region.name} · ${world.region.subtitle}.`);
     this.registry.set('beastCount',this.beasts.length);this.registry.set('weather',this.weather);this.registry.set('threat','Patrulhas distantes');
     // M1h-F.8: display-only conditions, never persisted or used as AI input.
     this.fieldSignature='';
@@ -93,7 +104,9 @@ export class ExplorationScene extends Phaser.Scene {
     // a few subtle environmental motes, spatial and not interactive
     const motes=this.add.particles(0,0,'rune',{x:{min:0,max:WIDTH*TILE},y:{min:0,max:HEIGHT*TILE},scale:{start:.08,end:0},alpha:{start:.32,end:0},lifespan:1800,frequency:400,quantity:1,blendMode:'ADD'}).setDepth(1000);
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)motes.stop();
-    if(!document.getElementById('hub').hidden)this.scene.pause();
+    const arrivingFromTravel=this.registry.get('regionTransitionInProgress')===true;
+    this.registry.set('regionTransitionInProgress',false);
+    if(!arrivingFromTravel&&!document.getElementById('hub').hidden)this.scene.pause();
   }
   animsForPeren(){
     for(const [dir,di] of Object.entries(directions))for(const [ai,act] of actions.entries()){
@@ -105,10 +118,11 @@ export class ExplorationScene extends Phaser.Scene {
   playState(act){const key=`peren-${this.direction}-${act}`;if(this.currentAnimation!==key){this.currentAnimation=key;this.player.anims.play(key,true)}}
   createBeasts(colliders,blockers){
     const claims=this.registry.get('combatProfile')?.claims||{};
-    this.beasts=spawnMurinCreatures(this.world).filter(monster=>!claims[encounterKey(this.world.seed,monster.instanceId)]).map(monster=>{
+    this.beasts=spawnRegionalCreatures(this.world).filter(monster=>!claims[encounterKey(this.world.seed,monster.instanceId)]).map(monster=>{
       const spr=this.physics.add.sprite(monster.x,monster.y,monster.type,0);
       spr.setCollideWorldBounds(true).setSize(25,18).setOffset(20,38).setMaxVelocity(95);
       spr.setDepth(spr.y+28);
+      if(this.world.regionId!=='murin')spr.setTint(Number.parseInt(this.world.region.colors[6].slice(1),16));
       this.physics.add.collider(spr,colliders);this.physics.add.collider(spr,blockers);
       for(const [ai,act] of ['idle','walk','alert','attack','hurt','retreat','death'].entries()){
         const key=`${monster.type}-${act}`;
@@ -303,7 +317,7 @@ export class ExplorationScene extends Phaser.Scene {
     else this.playState('idle');
     this.player.setDepth(this.player.y+24);
     this.updateBeasts(delta,_t);
-    const e=this.world.exit;if(Math.hypot((e.x+.5)*TILE-this.player.x,(e.y+.5)*TILE-this.player.y)<40){this.registry.set('status','Você encontrou a saída. O portal de Portomonte está logo adiante.');this.registry.set('atExit',true)}
+    const e=this.world.exit;if(Math.hypot((e.x+.5)*TILE-this.player.x,(e.y+.5)*TILE-this.player.y)<40){this.registry.set('status',`Saída de ${this.world.region.name} alcançada. Retorne a ${this.registry.get('progressBridge')?.state?.city||'cidade'}.`);this.registry.set('atExit',true)}
     else if(this.registry.get('atExit'))this.registry.set('atExit',false);
   }
 }

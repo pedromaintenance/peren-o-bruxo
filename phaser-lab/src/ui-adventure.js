@@ -17,7 +17,7 @@ export const actionDetails=id=>{
 };
 export function expeditionViewModel(s,c,reg={}){
  const maxHp=maxClassicHp(s,c),maxMp=maxClassicMp(s);
- return {name:'Peren, o Bruxo',location:'Floresta de Mürin',hp:s.hp,maxHp,hpPercent:ratio(s.hp,maxHp),
+ return {name:'Peren, o Bruxo',location:reg.location||'Floresta de Mürin',hp:s.hp,maxHp,hpPercent:ratio(s.hp,maxHp),
   mp:s.mp,maxMp,mpPercent:ratio(s.mp,maxMp),level:s.level,gold:s.gold,day:s.day,
   gathered:Object.values(reg.collected||{}).reduce((sum,value)=>sum+(Number(value)||0),0),
   weather:reg.weather||'sereno',threat:reg.threat||'Patrulhas distantes',
