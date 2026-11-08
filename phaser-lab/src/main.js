@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import { ExplorationScene } from './exploration.js';
-import {HERBS} from './world.js';
+import {REGIONS,REGION_BY_ID,regionFromSeed,expeditionSeed} from './regions.js';
 import {XboxPadTracker} from './gamepad.js';
 import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
@@ -157,18 +157,31 @@ const marketplace=createMarketplaceScreen({document,bridge,catalogs,onChange:()=
 const seed=String(new URLSearchParams(location.search).get('seed')||bridge.read().worlds.activeSeed||'murin-001').slice(0,60);
 app.registry.set('seed',seed);
 app.registry.set('progressBridge',bridge);
+const regionSelect=$('regionSelect');
+regionSelect.replaceChildren(...REGIONS.map(region=>{
+ const option=document.createElement('option');option.value=region.id;
+ option.textContent=`${region.name} · perigo ${region.danger}`;return option;
+}));
+regionSelect.value=regionFromSeed(seed).id;
+function regionHint(){
+ const region=REGION_BY_ID[regionSelect.value];
+ $('regionSummary').textContent=region?`${region.subtitle} · Assentamento: ${catalogs.cidadesById[region.city]?.nome||region.city} · nível de ameaça ${region.danger}`:'Região desconhecida';
+}
+regionSelect.addEventListener('change',regionHint);regionHint();
 app.registry.set('combatProfile',bridge.combatProfile());
 let last='';
 function updateHud(){
   const bag=app.registry.get('collected')||{};
   const total=Object.values(bag).reduce((a,b)=>a+b,0);
-  const msg=app.registry.get('status')||'Busque recursos na Floresta de Mürin.';
-  const signature=total+msg;
+  const region=regionFromSeed(app.registry.get('seed'));
+  const msg=app.registry.get('status')||`Explore ${region.name} e procure recursos.`;
+  const signature=total+msg+':'+region.id;
   if(last!==signature){last=signature;$('inventory-count').textContent=total;$('feedback').textContent=msg;
-    $('collected').textContent=HERBS.filter(h=>bag[h.id]).map(h=>`${h.name}: ${bag[h.id]}`).join(' · ')||'Nenhum ingrediente coletado';}
+    $('collected').textContent=Object.entries(bag).map(([id,n])=>`${catalogs.itensById[id]?.nome||id}: ${n}`).join(' · ')||'Nenhum ingrediente coletado';
+    $('hudRegion').textContent=region.name.toUpperCase();}
   const ui=expeditionViewModel(bridge.state,catalogs,{
     collected:bag,weather:app.registry.get('weather'),threat:app.registry.get('threat'),
-    status:msg,atExit:app.registry.get('atExit')});
+    status:msg,atExit:app.registry.get('atExit'),location:region.name});
   const sig=[ui.hp,ui.maxHp,ui.mp,ui.maxMp,ui.gold,ui.level,ui.day].join(':');
   if($('status').dataset.profileSig!==sig){
     $('status').dataset.profileSig=sig;
@@ -194,6 +207,7 @@ function updateHud(){
     }
   }
   $('returnBtn').hidden=!ui.canReturn;
+  $('returnBtn').textContent='↩ '+(catalogs.cidadesById[bridge.state.city]?.nome||'CIDADE').toUpperCase();
   $('weather').textContent='Tempo: '+(app.registry.get('weather')||'sereno');
   $('threat').textContent=app.registry.get('threat')||'Patrulhas distantes';
   if(M1HF_PREVIEW){
@@ -263,7 +277,7 @@ $('gatherBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene
 $('sneakBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('sneak'));
 $('sprintBtn').addEventListener('pointerdown',()=>app.scene.getScene('ExplorationScene')?.command('sprint'));
 for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').addEventListener(evt,()=>app.scene.getScene('ExplorationScene')?.command('walk'));
-function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent=M1HF_PREVIEW?'PRÉVIA M1h-F · save experimental protegido, separado do clássico e da demo anterior.':'Inventário e progresso salvos no M1d. Save clássico protegido contra alterações.';renderHub();}else app.scene.resume('ExplorationScene')}
+function hub(show){$('hub').hidden=!show;$('controls').hidden=show;if(show){app.scene.pause('ExplorationScene');$('hubStatus').textContent='PRÉ-ALFA · mapas procedurais e progresso isolado do Peren clássico.';renderHub();}else app.scene.resume('ExplorationScene')}
 $('returnBtn').addEventListener('click',()=>hub(true));
 $('goForest').addEventListener('click',()=>hub(false));
 $('resetForest').addEventListener('click',()=>{
