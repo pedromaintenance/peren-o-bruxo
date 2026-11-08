@@ -1,0 +1,6072 @@
+{
+  "schema": "peren.auditoria_crafting_nao_alquimico.v1",
+  "data": "2026-11-07",
+  "status": "analise_editorial_gerador_nao_executavel",
+  "metodo": "Reconstrução estática das matrizes RAW, lineages, forms, vestuário, lingotes, FOODS e GEAR e chamadas rec() em ferramentas/build_data.py; sem leitura integral dos compilados de 1.2 MB.",
+  "fontes": {
+    "gerador": {
+      "arquivo": "ferramentas/build_data.py",
+      "sha": "438a269a3381bd41f57ea0005c12041ab3de870d"
+    },
+    "cidade_e_crafting": "game.js; docs/roadmap-crafting-mecanicas-menus.md",
+    "atlas": "pedromaintenance/monstros-carcaca",
+    "limites": [
+      "não inferir zona canônica a partir do gerador",
+      "não inferir espécie/produtor pela nomenclatura",
+      "não considerar preço nominal equivalente a lucro ou preço de mercado",
+      "as alterações devem ser aprovadas pelo criador e testadas em branch experimental",
+      "não modifica dados compilados, itens ou receitas ativos"
+    ]
+  },
+  "estatisticas": {
+    "materias_primas_base": 33,
+    "produtos_tradicionais": 139,
+    "receitas_tradicionais": 139,
+    "receitas_por_estacao": {
+      "forja": 89,
+      "joalheria": 14,
+      "curtume": 20,
+      "cozinha": 16,
+      "encantamento": 0,
+      "escrita": 0
+    },
+    "ingredientes_alquimicos_auditados_separadamente": 111,
+    "materiais_ger_sem_consumo_nas_139": 19,
+    "materiais_ger_sem_uso_nas_139_mais_quatro_alquimia": 17,
+    "receitas_com_minerio_sem_lingote": 70,
+    "receitas_joalheria_com_minerio_sem_lingote": 10,
+    "receitas_forja_com_minerio_sem_lingote": 60,
+    "receitas_consumindo_lingote": 0,
+    "produtos_reconsumidos_em_outra_receita_tradicional": 0,
+    "armas_com_defesa": 49,
+    "joias_com_defesa": 14,
+    "bolsas_com_defesa": 4,
+    "alimentos_com_efeito_uniforme": 16
+  },
+  "materiais_base": [
+    {
+      "id": "mat-ferro-bruto",
+      "nome": "Ferro bruto",
+      "tipo": "minerio",
+      "nivel": 1,
+      "valor": 5,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 15,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-ferrugem",
+        "rec-espada-de-ferrugem",
+        "rec-machado-de-ferrugem",
+        "rec-martelo-de-ferrugem",
+        "rec-arco-de-ferrugem",
+        "rec-lanca-de-ferrugem",
+        "rec-cajado-de-ferrugem",
+        "rec-broquel-de-ferrugem",
+        "rec-peitoral-de-ferrugem",
+        "rec-elmo-de-ferrugem",
+        "rec-botas-de-ferrugem",
+        "rec-luvas-de-ferrugem",
+        "rec-anel-de-ferrugem",
+        "rec-colar-de-ferrugem",
+        "rec-lingote-de-ferrugem"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Ferro bruto, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-carvao-de-forja",
+      "nome": "Carvão de forja",
+      "tipo": "mineral",
+      "nivel": 1,
+      "valor": 4,
+      "zona_procedural": "thargrid",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 5,
+      "receitas_nao_alquimicas": [
+        "rec-lingote-de-ferrugem",
+        "rec-lingote-de-prata",
+        "rec-lingote-de-ouro-runico",
+        "rec-lingote-de-mitral",
+        "rec-lingote-de-adamante"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "combustivel_sem_fonte_ou_processamento_documentado"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Carvão de forja, e há evidência específica de produção ou comércio em thargrid?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-madeira-de-ironwood",
+      "nome": "Madeira de Ironwood",
+      "tipo": "madeira",
+      "nivel": 2,
+      "valor": 12,
+      "zona_procedural": "ironwood",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 7,
+      "receitas_nao_alquimicas": [
+        "rec-arco-de-ferrugem",
+        "rec-arco-de-prata",
+        "rec-arco-de-ouro-runico",
+        "rec-arco-de-mitral",
+        "rec-arco-de-adamante",
+        "rec-arco-de-osso-ancestral",
+        "rec-arco-de-escama-draconica"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nome_da_regiao_nao_e_prova_de_qualidade_ou_especie_de_madeira"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Madeira de Ironwood, e há evidência específica de produção ou comércio em ironwood?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-madeira-de-vandar",
+      "nome": "Madeira de Vandar",
+      "tipo": "madeira",
+      "nivel": 4,
+      "valor": 35,
+      "zona_procedural": "eldroth",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "ruinas_de_vandar_nao_confirmam_madeira_ou_extracao"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Madeira de Vandar, e há evidência específica de produção ou comércio em eldroth?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-couro-curtido",
+      "nome": "Couro curtido",
+      "tipo": "couro",
+      "nivel": 1,
+      "valor": 7,
+      "zona_procedural": "alem-sul",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 40,
+      "receitas_nao_alquimicas": [
+        "rec-broquel-de-ferrugem",
+        "rec-peitoral-de-ferrugem",
+        "rec-elmo-de-ferrugem",
+        "rec-botas-de-ferrugem",
+        "rec-luvas-de-ferrugem",
+        "rec-broquel-de-prata",
+        "rec-peitoral-de-prata",
+        "rec-elmo-de-prata",
+        "rec-botas-de-prata",
+        "rec-luvas-de-prata",
+        "rec-broquel-de-ouro-runico",
+        "rec-peitoral-de-ouro-runico",
+        "rec-elmo-de-ouro-runico",
+        "rec-botas-de-ouro-runico",
+        "rec-luvas-de-ouro-runico",
+        "rec-broquel-de-mitral",
+        "rec-peitoral-de-mitral",
+        "rec-elmo-de-mitral",
+        "rec-botas-de-mitral",
+        "rec-luvas-de-mitral",
+        "rec-broquel-de-adamante",
+        "rec-peitoral-de-adamante",
+        "rec-elmo-de-adamante",
+        "rec-botas-de-adamante",
+        "rec-luvas-de-adamante",
+        "rec-broquel-de-osso-ancestral",
+        "rec-peitoral-de-osso-ancestral",
+        "rec-elmo-de-osso-ancestral",
+        "rec-botas-de-osso-ancestral",
+        "rec-luvas-de-osso-ancestral",
+        "rec-broquel-de-escama-draconica",
+        "rec-peitoral-de-escama-draconica",
+        "rec-elmo-de-escama-draconica",
+        "rec-botas-de-escama-draconica",
+        "rec-luvas-de-escama-draconica",
+        "rec-traje-de-couro-curtido",
+        "rec-capuz-de-couro-curtido",
+        "rec-manto-de-couro-curtido",
+        "rec-bolsa-de-coleta-de-couro-curtido",
+        "rec-bracadeiras-de-couro-curtido"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Couro curtido, e há evidência específica de produção ou comércio em alem-sul?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-linha-de-seda",
+      "nome": "Linha de seda",
+      "tipo": "tecido",
+      "nivel": 2,
+      "valor": 14,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 5,
+      "receitas_nao_alquimicas": [
+        "rec-traje-de-linha-de-seda",
+        "rec-capuz-de-linha-de-seda",
+        "rec-manto-de-linha-de-seda",
+        "rec-bolsa-de-coleta-de-linha-de-seda",
+        "rec-bracadeiras-de-linha-de-seda"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Linha de seda, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-linho-de-demeter",
+      "nome": "Linho de Deméter",
+      "tipo": "tecido",
+      "nivel": 1,
+      "valor": 8,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 5,
+      "receitas_nao_alquimicas": [
+        "rec-traje-de-linho-de-demeter",
+        "rec-capuz-de-linho-de-demeter",
+        "rec-manto-de-linho-de-demeter",
+        "rec-bolsa-de-coleta-de-linho-de-demeter",
+        "rec-bracadeiras-de-linho-de-demeter"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "agricultura_em_portomonte_nao_confirma_plantio_de_linho_ou_monopolio"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Linho de Deméter, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-minerio-de-prata",
+      "nome": "Minério de prata",
+      "tipo": "minerio",
+      "nivel": 2,
+      "valor": 18,
+      "zona_procedural": "thargrid",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 15,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-prata",
+        "rec-espada-de-prata",
+        "rec-machado-de-prata",
+        "rec-martelo-de-prata",
+        "rec-arco-de-prata",
+        "rec-lanca-de-prata",
+        "rec-cajado-de-prata",
+        "rec-broquel-de-prata",
+        "rec-peitoral-de-prata",
+        "rec-elmo-de-prata",
+        "rec-botas-de-prata",
+        "rec-luvas-de-prata",
+        "rec-anel-de-prata",
+        "rec-colar-de-prata",
+        "rec-lingote-de-prata"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de prata, e há evidência específica de produção ou comércio em thargrid?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-minerio-de-ouro",
+      "nome": "Minério de ouro",
+      "tipo": "minerio",
+      "nivel": 3,
+      "valor": 38,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 15,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-ouro-runico",
+        "rec-espada-de-ouro-runico",
+        "rec-machado-de-ouro-runico",
+        "rec-martelo-de-ouro-runico",
+        "rec-arco-de-ouro-runico",
+        "rec-lanca-de-ouro-runico",
+        "rec-cajado-de-ouro-runico",
+        "rec-broquel-de-ouro-runico",
+        "rec-peitoral-de-ouro-runico",
+        "rec-elmo-de-ouro-runico",
+        "rec-botas-de-ouro-runico",
+        "rec-luvas-de-ouro-runico",
+        "rec-anel-de-ouro-runico",
+        "rec-colar-de-ouro-runico",
+        "rec-lingote-de-ouro-runico"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de ouro, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-minerio-de-mitral",
+      "nome": "Minério de mitral",
+      "tipo": "minerio",
+      "nivel": 4,
+      "valor": 65,
+      "zona_procedural": "thargrid",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 15,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-mitral",
+        "rec-espada-de-mitral",
+        "rec-machado-de-mitral",
+        "rec-martelo-de-mitral",
+        "rec-arco-de-mitral",
+        "rec-lanca-de-mitral",
+        "rec-cajado-de-mitral",
+        "rec-broquel-de-mitral",
+        "rec-peitoral-de-mitral",
+        "rec-elmo-de-mitral",
+        "rec-botas-de-mitral",
+        "rec-luvas-de-mitral",
+        "rec-anel-de-mitral",
+        "rec-colar-de-mitral",
+        "rec-lingote-de-mitral"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "metal_fantastico_sem_localizacao_geologica_demonstrada"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de mitral, e há evidência específica de produção ou comércio em thargrid?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-minerio-de-adamante",
+      "nome": "Minério de adamante",
+      "tipo": "minerio",
+      "nivel": 5,
+      "valor": 125,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 15,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-adamante",
+        "rec-espada-de-adamante",
+        "rec-machado-de-adamante",
+        "rec-martelo-de-adamante",
+        "rec-arco-de-adamante",
+        "rec-lanca-de-adamante",
+        "rec-cajado-de-adamante",
+        "rec-broquel-de-adamante",
+        "rec-peitoral-de-adamante",
+        "rec-elmo-de-adamante",
+        "rec-botas-de-adamante",
+        "rec-luvas-de-adamante",
+        "rec-anel-de-adamante",
+        "rec-colar-de-adamante",
+        "rec-lingote-de-adamante"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "metal_fantastico_sem_localizacao_geologica_demonstrada"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de adamante, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-osso-de-golzdov",
+      "nome": "Osso de Golzdov",
+      "tipo": "osso",
+      "nivel": 5,
+      "valor": 170,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 14,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-osso-ancestral",
+        "rec-espada-de-osso-ancestral",
+        "rec-machado-de-osso-ancestral",
+        "rec-martelo-de-osso-ancestral",
+        "rec-arco-de-osso-ancestral",
+        "rec-lanca-de-osso-ancestral",
+        "rec-cajado-de-osso-ancestral",
+        "rec-broquel-de-osso-ancestral",
+        "rec-peitoral-de-osso-ancestral",
+        "rec-elmo-de-osso-ancestral",
+        "rec-botas-de-osso-ancestral",
+        "rec-luvas-de-osso-ancestral",
+        "rec-anel-de-osso-ancestral",
+        "rec-colar-de-osso-ancestral"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "cosmologia_primordial_e_ossatura_sensivel"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Osso de Golzdov, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-escama-de-dragao",
+      "nome": "Escama de Dragão",
+      "tipo": "escama",
+      "nivel": 5,
+      "valor": 190,
+      "zona_procedural": "eldroth",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 14,
+      "receitas_nao_alquimicas": [
+        "rec-adaga-de-escama-draconica",
+        "rec-espada-de-escama-draconica",
+        "rec-machado-de-escama-draconica",
+        "rec-martelo-de-escama-draconica",
+        "rec-arco-de-escama-draconica",
+        "rec-lanca-de-escama-draconica",
+        "rec-cajado-de-escama-draconica",
+        "rec-broquel-de-escama-draconica",
+        "rec-peitoral-de-escama-draconica",
+        "rec-elmo-de-escama-draconica",
+        "rec-botas-de-escama-draconica",
+        "rec-luvas-de-escama-draconica",
+        "rec-anel-de-escama-draconica",
+        "rec-colar-de-escama-draconica"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "dragao_individuo_ou_especie_fonte_nao_identificada"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Escama de Dragão, e há evidência específica de produção ou comércio em eldroth?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-fibra-de-aranha-yokai",
+      "nome": "Fibra de Aranha Yokai",
+      "tipo": "tecido",
+      "nivel": 4,
+      "valor": 70,
+      "zona_procedural": "boca-abismo",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 5,
+      "receitas_nao_alquimicas": [
+        "rec-traje-de-fibra-de-aranha-yokai",
+        "rec-capuz-de-fibra-de-aranha-yokai",
+        "rec-manto-de-fibra-de-aranha-yokai",
+        "rec-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+        "rec-bracadeiras-de-fibra-de-aranha-yokai"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "yokai_povo_ou_tipo_nao_identifica_especie_de_aranha"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fibra de Aranha Yokai, e há evidência específica de produção ou comércio em boca-abismo?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-fragmento-de-gelo-eterno",
+      "nome": "Fragmento de Gelo Eterno",
+      "tipo": "essencia",
+      "nivel": 3,
+      "valor": 37,
+      "zona_procedural": "thargrid",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fragmento de Gelo Eterno, e há evidência específica de produção ou comércio em thargrid?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-brasa-feerica",
+      "nome": "Brasa Feérica",
+      "tipo": "essencia",
+      "nivel": 4,
+      "valor": 60,
+      "zona_procedural": "eldroth",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "origem_feerica_indeterminada"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Brasa Feérica, e há evidência específica de produção ou comércio em eldroth?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-essencia-do-vazio",
+      "nome": "Essência do Vazio",
+      "tipo": "essencia",
+      "nivel": 5,
+      "valor": 110,
+      "zona_procedural": "boca-abismo",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "vazio_nome_nao_comprova_extracao_cosmologica"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Essência do Vazio, e há evidência específica de produção ou comércio em boca-abismo?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-seiva-vital",
+      "nome": "Seiva Vital",
+      "tipo": "essencia",
+      "nivel": 2,
+      "valor": 21,
+      "zona_procedural": "ironwood",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "ser_vegetal_produtor_indeterminado"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Seiva Vital, e há evidência específica de produção ou comércio em ironwood?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-agua-purificada",
+      "nome": "Água Purificada",
+      "tipo": "agua",
+      "nivel": 1,
+      "valor": 7,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": true,
+      "alertas": [
+        "purificacao_para_agricultura_nao_confirma_potabilidade_ou_disponibilidade_comercial"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Água Purificada, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-tinta-runica",
+      "nome": "Tinta Rúnica",
+      "tipo": "tinta",
+      "nivel": 3,
+      "valor": 30,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nao_confundir_inscricao_yokai_com_material_da_tinta"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Tinta Rúnica, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-po-de-gema",
+      "nome": "Pó de Gema",
+      "tipo": "gema",
+      "nivel": 2,
+      "valor": 21,
+      "zona_procedural": "shadar-riverie",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 14,
+      "receitas_nao_alquimicas": [
+        "rec-anel-de-ferrugem",
+        "rec-colar-de-ferrugem",
+        "rec-anel-de-prata",
+        "rec-colar-de-prata",
+        "rec-anel-de-ouro-runico",
+        "rec-colar-de-ouro-runico",
+        "rec-anel-de-mitral",
+        "rec-colar-de-mitral",
+        "rec-anel-de-adamante",
+        "rec-colar-de-adamante",
+        "rec-anel-de-osso-ancestral",
+        "rec-colar-de-osso-ancestral",
+        "rec-anel-de-escama-draconica",
+        "rec-colar-de-escama-draconica"
+      ],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pó de Gema, e há evidência específica de produção ou comércio em shadar-riverie?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-cristal-de-alma-menor",
+      "nome": "Cristal de Alma Menor",
+      "tipo": "alma",
+      "nivel": 2,
+      "valor": 22,
+      "zona_procedural": "garganta",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": true,
+      "alertas": [
+        "conteudo_da_alma_e_forma_de_obtencao_nao_documentados"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Cristal de Alma Menor, e há evidência específica de produção ou comércio em garganta?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-cristal-de-alma-maior",
+      "nome": "Cristal de Alma Maior",
+      "tipo": "alma",
+      "nivel": 4,
+      "valor": 95,
+      "zona_procedural": "shadar-riverie",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "conteudo_da_alma_e_forma_de_obtencao_nao_documentados"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Cristal de Alma Maior, e há evidência específica de produção ou comércio em shadar-riverie?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-fragmento-de-juramento",
+      "nome": "Fragmento de Juramento",
+      "tipo": "reliquia",
+      "nivel": 5,
+      "valor": 240,
+      "zona_procedural": "boca-abismo",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "juramento_nao_tem_forma_material_documentada"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fragmento de Juramento, e há evidência específica de produção ou comércio em boca-abismo?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-perola-negra",
+      "nome": "Pérola Negra",
+      "tipo": "gema",
+      "nivel": 4,
+      "valor": 88,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pérola Negra, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-rubi-do-sangue",
+      "nome": "Rubi do Sangue",
+      "tipo": "gema",
+      "nivel": 4,
+      "valor": 84,
+      "zona_procedural": "boca-abismo",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nome_sangue_nao_identifica_origem_maritima"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Rubi do Sangue, e há evidência específica de produção ou comércio em boca-abismo?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-safira-lunar",
+      "nome": "Safira Lunar",
+      "tipo": "gema",
+      "nivel": 3,
+      "valor": 66,
+      "zona_procedural": "shadar-riverie",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nome_lunar_nao_identifica_templo"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Safira Lunar, e há evidência específica de produção ou comércio em shadar-riverie?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-esmeralda-da-floresta",
+      "nome": "Esmeralda da Floresta",
+      "tipo": "gema",
+      "nivel": 3,
+      "valor": 66,
+      "zona_procedural": "ironwood",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "floresta_nao_comprova_jazida_de_esmeralda"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Esmeralda da Floresta, e há evidência específica de produção ou comércio em ironwood?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-topazio-solar",
+      "nome": "Topázio Solar",
+      "tipo": "gema",
+      "nivel": 3,
+      "valor": 65,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nome_solar_nao_e_prova_de_culto_ou_origem"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Topázio Solar, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-quartzo-da-montanha",
+      "nome": "Quartzo da Montanha",
+      "tipo": "gema",
+      "nivel": 1,
+      "valor": 10,
+      "zona_procedural": "thargrid",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Quartzo da Montanha, e há evidência específica de produção ou comércio em thargrid?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-pederneira",
+      "nome": "Pederneira",
+      "tipo": "mineral",
+      "nivel": 1,
+      "valor": 3,
+      "zona_procedural": "alem-sul",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pederneira, e há evidência específica de produção ou comércio em alem-sul?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-sal-de-mare",
+      "nome": "Sal de Maré",
+      "tipo": "sal",
+      "nivel": 2,
+      "valor": 13,
+      "zona_procedural": "portomonte",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "nao_fundir_automaticamente_com_sal_do_sangue"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Sal de Maré, e há evidência específica de produção ou comércio em portomonte?",
+      "aprovado_para_loot_automatico": false
+    },
+    {
+      "id": "mat-vapor-de-eter",
+      "nome": "Vapor de Éter",
+      "tipo": "essencia",
+      "nivel": 5,
+      "valor": 110,
+      "zona_procedural": "shadar-riverie",
+      "origem": "original_carcaca",
+      "parecer_material": "identidade_tecnica_do_cadastro_documentada; fonte_produtora_e_zona_nao_homologadas",
+      "qtde_receitas_nao_alquimicas": 0,
+      "receitas_nao_alquimicas": [],
+      "uso_em_alquimia_explicita": false,
+      "alertas": [
+        "eter_nao_necessariamente_conceito_cosmologico_de_corau"
+      ],
+      "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Vapor de Éter, e há evidência específica de produção ou comércio em shadar-riverie?",
+      "aprovado_para_loot_automatico": false
+    }
+  ],
+  "produtos_reconstruidos": [
+    {
+      "id": "eq-adaga-de-ferrugem",
+      "nome": "Adaga de Ferrugem",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 20,
+      "ataque": 8,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-ferrugem",
+      "nome": "Espada de Ferrugem",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 12,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-ferrugem",
+      "nome": "Machado de Ferrugem",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 14,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-ferrugem",
+      "nome": "Martelo de Ferrugem",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 60,
+      "ataque": 15,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-ferrugem",
+      "nome": "Arco de Ferrugem",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 11,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-ferrugem",
+      "nome": "Lança de Ferrugem",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 11,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-ferrugem",
+      "nome": "Cajado de Ferrugem",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 10,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-ferrugem",
+      "nome": "Broquel de Ferrugem",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 0,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-ferrugem",
+      "nome": "Peitoral de Ferrugem",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 80,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-ferrugem",
+      "nome": "Elmo de Ferrugem",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 40,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-ferrugem",
+      "nome": "Botas de Ferrugem",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 20,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-ferrugem",
+      "nome": "Luvas de Ferrugem",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 20,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-ferrugem",
+      "nome": "Anel de Ferrugem",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 20,
+      "ataque": 0,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-ferrugem",
+      "nome": "Colar de Ferrugem",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 1,
+      "raridade": "comum",
+      "valor": 20,
+      "ataque": 0,
+      "defesa": 2,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-prata",
+      "nome": "Adaga de Prata",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 32,
+      "ataque": 11,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-prata",
+      "nome": "Espada de Prata",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 15,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-prata",
+      "nome": "Machado de Prata",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 17,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-prata",
+      "nome": "Martelo de Prata",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 96,
+      "ataque": 18,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-prata",
+      "nome": "Arco de Prata",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 14,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-prata",
+      "nome": "Lança de Prata",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 14,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-prata",
+      "nome": "Cajado de Prata",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 13,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-prata",
+      "nome": "Broquel de Prata",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-prata",
+      "nome": "Peitoral de Prata",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 128,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-prata",
+      "nome": "Elmo de Prata",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 64,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-prata",
+      "nome": "Botas de Prata",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 32,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-prata",
+      "nome": "Luvas de Prata",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 32,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-prata",
+      "nome": "Anel de Prata",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 32,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-prata",
+      "nome": "Colar de Prata",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 2,
+      "raridade": "incomum",
+      "valor": 32,
+      "ataque": 0,
+      "defesa": 4,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-ouro-runico",
+      "nome": "Adaga de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 44,
+      "ataque": 14,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-ouro-runico",
+      "nome": "Espada de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 18,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-ouro-runico",
+      "nome": "Machado de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 20,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-ouro-runico",
+      "nome": "Martelo de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 132,
+      "ataque": 21,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-ouro-runico",
+      "nome": "Arco de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 17,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-ouro-runico",
+      "nome": "Lança de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 17,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-ouro-runico",
+      "nome": "Cajado de Ouro Rúnico",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 16,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-ouro-runico",
+      "nome": "Broquel de Ouro Rúnico",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-ouro-runico",
+      "nome": "Peitoral de Ouro Rúnico",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 176,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-ouro-runico",
+      "nome": "Elmo de Ouro Rúnico",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 88,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-ouro-runico",
+      "nome": "Botas de Ouro Rúnico",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 44,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-ouro-runico",
+      "nome": "Luvas de Ouro Rúnico",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 44,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-ouro-runico",
+      "nome": "Anel de Ouro Rúnico",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 44,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-ouro-runico",
+      "nome": "Colar de Ouro Rúnico",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 3,
+      "raridade": "raro",
+      "valor": 44,
+      "ataque": 0,
+      "defesa": 6,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-mitral",
+      "nome": "Adaga de Mitral",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 56,
+      "ataque": 17,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-mitral",
+      "nome": "Espada de Mitral",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 21,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-mitral",
+      "nome": "Machado de Mitral",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 23,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-mitral",
+      "nome": "Martelo de Mitral",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 168,
+      "ataque": 24,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-mitral",
+      "nome": "Arco de Mitral",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 20,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-mitral",
+      "nome": "Lança de Mitral",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 20,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-mitral",
+      "nome": "Cajado de Mitral",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 19,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-mitral",
+      "nome": "Broquel de Mitral",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-mitral",
+      "nome": "Peitoral de Mitral",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 224,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-mitral",
+      "nome": "Elmo de Mitral",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 112,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-mitral",
+      "nome": "Botas de Mitral",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 56,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-mitral",
+      "nome": "Luvas de Mitral",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 56,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-mitral",
+      "nome": "Anel de Mitral",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 56,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-mitral",
+      "nome": "Colar de Mitral",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 4,
+      "raridade": "epico",
+      "valor": 56,
+      "ataque": 0,
+      "defesa": 8,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-adamante",
+      "nome": "Adaga de Adamante",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 20,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-adamante",
+      "nome": "Espada de Adamante",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 24,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-adamante",
+      "nome": "Machado de Adamante",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 26,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-adamante",
+      "nome": "Martelo de Adamante",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 204,
+      "ataque": 27,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-adamante",
+      "nome": "Arco de Adamante",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-adamante",
+      "nome": "Lança de Adamante",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-adamante",
+      "nome": "Cajado de Adamante",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 22,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-adamante",
+      "nome": "Broquel de Adamante",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-adamante",
+      "nome": "Peitoral de Adamante",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 272,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-adamante",
+      "nome": "Elmo de Adamante",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-adamante",
+      "nome": "Botas de Adamante",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-adamante",
+      "nome": "Luvas de Adamante",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-adamante",
+      "nome": "Anel de Adamante",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-adamante",
+      "nome": "Colar de Adamante",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-osso-ancestral",
+      "nome": "Adaga de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 20,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-osso-ancestral",
+      "nome": "Espada de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 24,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-osso-ancestral",
+      "nome": "Machado de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 26,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-osso-ancestral",
+      "nome": "Martelo de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 204,
+      "ataque": 27,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-osso-ancestral",
+      "nome": "Arco de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-osso-ancestral",
+      "nome": "Lança de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-osso-ancestral",
+      "nome": "Cajado de Osso Ancestral",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 22,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-osso-ancestral",
+      "nome": "Broquel de Osso Ancestral",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-osso-ancestral",
+      "nome": "Peitoral de Osso Ancestral",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 272,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-osso-ancestral",
+      "nome": "Elmo de Osso Ancestral",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-osso-ancestral",
+      "nome": "Botas de Osso Ancestral",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-osso-ancestral",
+      "nome": "Luvas de Osso Ancestral",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-osso-ancestral",
+      "nome": "Anel de Osso Ancestral",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-osso-ancestral",
+      "nome": "Colar de Osso Ancestral",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-adaga-de-escama-draconica",
+      "nome": "Adaga de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "adaga",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 20,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-espada-de-escama-draconica",
+      "nome": "Espada de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "espada",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 24,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-machado-de-escama-draconica",
+      "nome": "Machado de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "machado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 26,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-martelo-de-escama-draconica",
+      "nome": "Martelo de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "martelo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 204,
+      "ataque": 27,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-arco-de-escama-draconica",
+      "nome": "Arco de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "arco",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-lanca-de-escama-draconica",
+      "nome": "Lança de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "lanca",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 23,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-cajado-de-escama-draconica",
+      "nome": "Cajado de Escama Dracônica",
+      "categoria": "arma",
+      "tipo": "cajado",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 22,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-broquel-de-escama-draconica",
+      "nome": "Broquel de Escama Dracônica",
+      "categoria": "escudo",
+      "tipo": "escudo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-peitoral-de-escama-draconica",
+      "nome": "Peitoral de Escama Dracônica",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 272,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-elmo-de-escama-draconica",
+      "nome": "Elmo de Escama Dracônica",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 136,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-botas-de-escama-draconica",
+      "nome": "Botas de Escama Dracônica",
+      "categoria": "armadura",
+      "tipo": "botas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-luvas-de-escama-draconica",
+      "nome": "Luvas de Escama Dracônica",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 12,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-anel-de-escama-draconica",
+      "nome": "Anel de Escama Dracônica",
+      "categoria": "acessorio",
+      "tipo": "anel",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-colar-de-escama-draconica",
+      "nome": "Colar de Escama Dracônica",
+      "categoria": "acessorio",
+      "tipo": "colar",
+      "nivel": 5,
+      "raridade": "lendario",
+      "valor": 68,
+      "ataque": 0,
+      "defesa": 10,
+      "origem": "craft_original_inspirado_skyrim_e_dnd"
+    },
+    {
+      "id": "eq-traje-de-couro-curtido",
+      "nome": "Traje de Couro curtido",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "valor": 60,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-capuz-de-couro-curtido",
+      "nome": "Capuz de Couro curtido",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-manto-de-couro-curtido",
+      "nome": "Manto de Couro curtido",
+      "categoria": "armadura",
+      "tipo": "capa",
+      "valor": 60,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-bolsa-de-coleta-de-couro-curtido",
+      "nome": "Bolsa de Coleta de Couro curtido",
+      "categoria": "utilitario",
+      "tipo": "bolsa",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-bracadeiras-de-couro-curtido",
+      "nome": "Braçadeiras de Couro curtido",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-traje-de-linho-de-demeter",
+      "nome": "Traje de Linho de Deméter",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "valor": 60,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-capuz-de-linho-de-demeter",
+      "nome": "Capuz de Linho de Deméter",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-manto-de-linho-de-demeter",
+      "nome": "Manto de Linho de Deméter",
+      "categoria": "armadura",
+      "tipo": "capa",
+      "valor": 60,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-bolsa-de-coleta-de-linho-de-demeter",
+      "nome": "Bolsa de Coleta de Linho de Deméter",
+      "categoria": "utilitario",
+      "tipo": "bolsa",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-bracadeiras-de-linho-de-demeter",
+      "nome": "Braçadeiras de Linho de Deméter",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "valor": 40,
+      "nivel": 1,
+      "defesa": 2
+    },
+    {
+      "id": "eq-traje-de-linha-de-seda",
+      "nome": "Traje de Linha de seda",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "valor": 120,
+      "nivel": 2,
+      "defesa": 3
+    },
+    {
+      "id": "eq-capuz-de-linha-de-seda",
+      "nome": "Capuz de Linha de seda",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "valor": 80,
+      "nivel": 2,
+      "defesa": 3
+    },
+    {
+      "id": "eq-manto-de-linha-de-seda",
+      "nome": "Manto de Linha de seda",
+      "categoria": "armadura",
+      "tipo": "capa",
+      "valor": 120,
+      "nivel": 2,
+      "defesa": 3
+    },
+    {
+      "id": "eq-bolsa-de-coleta-de-linha-de-seda",
+      "nome": "Bolsa de Coleta de Linha de seda",
+      "categoria": "utilitario",
+      "tipo": "bolsa",
+      "valor": 80,
+      "nivel": 2,
+      "defesa": 3
+    },
+    {
+      "id": "eq-bracadeiras-de-linha-de-seda",
+      "nome": "Braçadeiras de Linha de seda",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "valor": 80,
+      "nivel": 2,
+      "defesa": 3
+    },
+    {
+      "id": "eq-traje-de-fibra-de-aranha-yokai",
+      "nome": "Traje de Fibra de Aranha Yokai",
+      "categoria": "armadura",
+      "tipo": "armadura",
+      "valor": 240,
+      "nivel": 4,
+      "defesa": 5
+    },
+    {
+      "id": "eq-capuz-de-fibra-de-aranha-yokai",
+      "nome": "Capuz de Fibra de Aranha Yokai",
+      "categoria": "armadura",
+      "tipo": "elmo",
+      "valor": 160,
+      "nivel": 4,
+      "defesa": 5
+    },
+    {
+      "id": "eq-manto-de-fibra-de-aranha-yokai",
+      "nome": "Manto de Fibra de Aranha Yokai",
+      "categoria": "armadura",
+      "tipo": "capa",
+      "valor": 240,
+      "nivel": 4,
+      "defesa": 5
+    },
+    {
+      "id": "eq-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+      "nome": "Bolsa de Coleta de Fibra de Aranha Yokai",
+      "categoria": "utilitario",
+      "tipo": "bolsa",
+      "valor": 160,
+      "nivel": 4,
+      "defesa": 5
+    },
+    {
+      "id": "eq-bracadeiras-de-fibra-de-aranha-yokai",
+      "nome": "Braçadeiras de Fibra de Aranha Yokai",
+      "categoria": "armadura",
+      "tipo": "luvas",
+      "valor": 160,
+      "nivel": 4,
+      "defesa": 5
+    },
+    {
+      "id": "mat-lingote-de-ferrugem",
+      "nome": "Lingote de Ferrugem",
+      "categoria": "material",
+      "tipo": "lingote",
+      "raridade": "comum",
+      "valor": 10,
+      "nivel": 1
+    },
+    {
+      "id": "mat-lingote-de-prata",
+      "nome": "Lingote de Prata",
+      "categoria": "material",
+      "tipo": "lingote",
+      "raridade": "comum",
+      "valor": 20,
+      "nivel": 2
+    },
+    {
+      "id": "mat-lingote-de-ouro-runico",
+      "nome": "Lingote de Ouro Rúnico",
+      "categoria": "material",
+      "tipo": "lingote",
+      "raridade": "comum",
+      "valor": 30,
+      "nivel": 3
+    },
+    {
+      "id": "mat-lingote-de-mitral",
+      "nome": "Lingote de Mitral",
+      "categoria": "material",
+      "tipo": "lingote",
+      "raridade": "comum",
+      "valor": 40,
+      "nivel": 4
+    },
+    {
+      "id": "mat-lingote-de-adamante",
+      "nome": "Lingote de Adamante",
+      "categoria": "material",
+      "tipo": "lingote",
+      "raridade": "comum",
+      "valor": 50,
+      "nivel": 5
+    },
+    {
+      "id": "food-ensopado-de-rio",
+      "nome": "Ensopado de Rio",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 12,
+      "nivel": 1,
+      "raridade": "comum",
+      "efeito": "Restore Health",
+      "potencia": 10
+    },
+    {
+      "id": "food-pao-de-mel-da-foz",
+      "nome": "Pão de Mel da Foz",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 15,
+      "nivel": 1,
+      "raridade": "comum",
+      "efeito": "Restore Health",
+      "potencia": 11
+    },
+    {
+      "id": "food-caldo-da-montanha",
+      "nome": "Caldo da Montanha",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 18,
+      "nivel": 1,
+      "raridade": "comum",
+      "efeito": "Restore Health",
+      "potencia": 12
+    },
+    {
+      "id": "food-guisado-de-caatinga",
+      "nome": "Guisado de Caatinga",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 21,
+      "nivel": 1,
+      "raridade": "comum",
+      "efeito": "Restore Health",
+      "potencia": 13
+    },
+    {
+      "id": "food-peixe-com-sal-do-mar",
+      "nome": "Peixe com Sal do Mar",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 24,
+      "nivel": 1,
+      "raridade": "comum",
+      "efeito": "Restore Health",
+      "potencia": 14
+    },
+    {
+      "id": "food-cogu-sopa-de-ironwood",
+      "nome": "Cogu-sopa de Ironwood",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 27,
+      "nivel": 2,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 15
+    },
+    {
+      "id": "food-racao-dos-vigias",
+      "nome": "Ração dos Vigias",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 30,
+      "nivel": 2,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 16
+    },
+    {
+      "id": "food-cha-de-lavanda",
+      "nome": "Chá de Lavanda",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 33,
+      "nivel": 2,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 17
+    },
+    {
+      "id": "food-prato-dos-anoes",
+      "nome": "Prato dos Anões",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 36,
+      "nivel": 2,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 18
+    },
+    {
+      "id": "food-banquete-de-portomonte",
+      "nome": "Banquete de Portomonte",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 39,
+      "nivel": 2,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 19
+    },
+    {
+      "id": "food-pescado-defumado",
+      "nome": "Pescado Defumado",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 42,
+      "nivel": 3,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 20
+    },
+    {
+      "id": "food-compota-das-montanhas",
+      "nome": "Compota das Montanhas",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 45,
+      "nivel": 3,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 21
+    },
+    {
+      "id": "food-torta-de-mel",
+      "nome": "Torta de Mel",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 48,
+      "nivel": 3,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 22
+    },
+    {
+      "id": "food-pao-de-demeter",
+      "nome": "Pão de Deméter",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 51,
+      "nivel": 3,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 23
+    },
+    {
+      "id": "food-cha-dos-sonhos",
+      "nome": "Chá dos Sonhos",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 54,
+      "nivel": 3,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 24
+    },
+    {
+      "id": "food-ensopado-de-algas",
+      "nome": "Ensopado de Algas",
+      "categoria": "comida",
+      "tipo": "refeicao",
+      "valor": 57,
+      "nivel": 4,
+      "raridade": "incomum",
+      "efeito": "Restore Health",
+      "potencia": 25
+    }
+  ],
+  "receitas_reconstruidas": [
+    {
+      "id": "rec-adaga-de-ferrugem",
+      "nome": "Adaga de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-ferrugem",
+      "nome": "Espada de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-ferrugem",
+      "nome": "Machado de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-ferrugem",
+      "nome": "Martelo de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-ferrugem",
+      "nome": "Arco de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-ferrugem",
+      "nome": "Lança de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-ferrugem",
+      "nome": "Cajado de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-ferrugem",
+      "nome": "Broquel de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-ferrugem",
+      "nome": "Peitoral de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-ferrugem",
+      "nome": "Elmo de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-ferrugem",
+      "nome": "Botas de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-ferrugem",
+      "nome": "Luvas de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-ferrugem",
+      "nome": "Anel de Ferrugem",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-ferrugem",
+      "nome": "Colar de Ferrugem",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-ferrugem",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico",
+        "ferrugem_e_nome_de_linhagem_nao_validado_metalurgicamente"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ferrugem",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-prata",
+      "nome": "Adaga de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-prata",
+      "nome": "Espada de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-prata",
+      "nome": "Machado de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-prata",
+      "nome": "Martelo de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-prata",
+      "nome": "Arco de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-prata",
+      "nome": "Lança de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-prata",
+      "nome": "Cajado de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-prata",
+      "nome": "Broquel de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-prata",
+      "nome": "Peitoral de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-prata",
+      "nome": "Elmo de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-prata",
+      "nome": "Botas de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-prata",
+      "nome": "Luvas de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-prata",
+      "nome": "Anel de Prata",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-prata",
+      "nome": "Colar de Prata",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-prata",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Prata",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-ouro-runico",
+      "nome": "Adaga de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-ouro-runico",
+      "nome": "Espada de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-ouro-runico",
+      "nome": "Machado de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-ouro-runico",
+      "nome": "Martelo de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-ouro-runico",
+      "nome": "Arco de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-ouro-runico",
+      "nome": "Lança de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-ouro-runico",
+      "nome": "Cajado de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-ouro-runico",
+      "nome": "Broquel de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-ouro-runico",
+      "nome": "Peitoral de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-ouro-runico",
+      "nome": "Elmo de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-ouro-runico",
+      "nome": "Botas de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-ouro-runico",
+      "nome": "Luvas de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-ouro-runico",
+      "nome": "Anel de Ouro Rúnico",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-ouro-runico",
+      "nome": "Colar de Ouro Rúnico",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 36,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-ouro-runico",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico",
+        "nome_runico_sem_operacao_de_inscricao_ou_encantamento"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Ouro Rúnico",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-mitral",
+      "nome": "Adaga de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-mitral",
+      "nome": "Espada de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-mitral",
+      "nome": "Machado de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-mitral",
+      "nome": "Martelo de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-mitral",
+      "nome": "Arco de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-mitral",
+      "nome": "Lança de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-mitral",
+      "nome": "Cajado de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-mitral",
+      "nome": "Broquel de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-mitral",
+      "nome": "Peitoral de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-mitral",
+      "nome": "Elmo de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-mitral",
+      "nome": "Botas de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-mitral",
+      "nome": "Luvas de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-mitral",
+      "nome": "Anel de Mitral",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-mitral",
+      "nome": "Colar de Mitral",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 48,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-mitral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Mitral",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-adamante",
+      "nome": "Adaga de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-adamante",
+      "nome": "Espada de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-adamante",
+      "nome": "Machado de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-adamante",
+      "nome": "Martelo de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-adamante",
+      "nome": "Arco de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-adamante",
+      "nome": "Lança de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-adamante",
+      "nome": "Cajado de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-adamante",
+      "nome": "Broquel de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-adamante",
+      "nome": "Peitoral de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-adamante",
+      "nome": "Elmo de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-adamante",
+      "nome": "Botas de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-adamante",
+      "nome": "Luvas de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-adamante",
+      "nome": "Anel de Adamante",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-adamante",
+      "nome": "Colar de Adamante",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-adamante",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "usa_minerio_bruto_ao_inves_de_lingote",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Adamante",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-osso-ancestral",
+      "nome": "Adaga de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-osso-ancestral",
+      "nome": "Espada de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-osso-ancestral",
+      "nome": "Machado de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-osso-ancestral",
+      "nome": "Martelo de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-osso-ancestral",
+      "nome": "Arco de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-osso-ancestral",
+      "nome": "Lança de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-osso-ancestral",
+      "nome": "Cajado de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-osso-ancestral",
+      "nome": "Broquel de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-osso-ancestral",
+      "nome": "Peitoral de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-osso-ancestral",
+      "nome": "Elmo de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-osso-ancestral",
+      "nome": "Botas de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-osso-ancestral",
+      "nome": "Luvas de Osso Ancestral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-osso-ancestral",
+      "nome": "Anel de Osso Ancestral",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-osso-ancestral",
+      "nome": "Colar de Osso Ancestral",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-osso-de-golzdov",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-osso-ancestral",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Osso Ancestral",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-adaga-de-escama-draconica",
+      "nome": "Adaga de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-adaga-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Adaga"
+    },
+    {
+      "id": "rec-espada-de-escama-draconica",
+      "nome": "Espada de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-espada-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Espada"
+    },
+    {
+      "id": "rec-machado-de-escama-draconica",
+      "nome": "Machado de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-machado-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Machado"
+    },
+    {
+      "id": "rec-martelo-de-escama-draconica",
+      "nome": "Martelo de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-martelo-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Martelo"
+    },
+    {
+      "id": "rec-arco-de-escama-draconica",
+      "nome": "Arco de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-madeira-de-ironwood",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-arco-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma",
+        "arco_usa_madeira_de_ironwood_e_materia_principal_generica"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Arco"
+    },
+    {
+      "id": "rec-lanca-de-escama-draconica",
+      "nome": "Lança de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-lanca-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Lança"
+    },
+    {
+      "id": "rec-cajado-de-escama-draconica",
+      "nome": "Cajado de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-cajado-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "atributo_defesa_gerado_tambem_para_arma"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Cajado"
+    },
+    {
+      "id": "rec-broquel-de-escama-draconica",
+      "nome": "Broquel de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-broquel-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Broquel"
+    },
+    {
+      "id": "rec-peitoral-de-escama-draconica",
+      "nome": "Peitoral de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 4
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-peitoral-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Peitoral"
+    },
+    {
+      "id": "rec-elmo-de-escama-draconica",
+      "nome": "Elmo de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-elmo-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Elmo"
+    },
+    {
+      "id": "rec-botas-de-escama-draconica",
+      "nome": "Botas de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-botas-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Botas"
+    },
+    {
+      "id": "rec-luvas-de-escama-draconica",
+      "nome": "Luvas de Escama Dracônica",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-luvas-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Luvas"
+    },
+    {
+      "id": "rec-anel-de-escama-draconica",
+      "nome": "Anel de Escama Dracônica",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-anel-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Anel"
+    },
+    {
+      "id": "rec-colar-de-escama-draconica",
+      "nome": "Colar de Escama Dracônica",
+      "estacao": "joalheria",
+      "pericia": "joalheria",
+      "nivel": 60,
+      "ingredientes": [
+        {
+          "item": "mat-escama-de-dragao",
+          "quantidade": 1
+        },
+        {
+          "item": "mat-po-de-gema",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "eq-colar-de-escama-draconica",
+      "quantidade": 1,
+      "grupo": "equipamento_7x14",
+      "alertas_editoriais": [
+        "fonte_material_especial_requer_procedencia",
+        "defesa_generica_em_joia_sem_modelo_ou_slot_especifico"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "linhagem": "Escama Dracônica",
+      "forma": "Colar"
+    },
+    {
+      "id": "rec-traje-de-couro-curtido",
+      "nome": "Traje de Couro curtido",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-traje-de-couro-curtido",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-couro-curtido"
+    },
+    {
+      "id": "rec-capuz-de-couro-curtido",
+      "nome": "Capuz de Couro curtido",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-capuz-de-couro-curtido",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-couro-curtido"
+    },
+    {
+      "id": "rec-manto-de-couro-curtido",
+      "nome": "Manto de Couro curtido",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-manto-de-couro-curtido",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-couro-curtido"
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-couro-curtido",
+      "nome": "Bolsa de Coleta de Couro curtido",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bolsa-de-coleta-de-couro-curtido",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal",
+        "bolsa_utilitaria_recebe_valor_de_defesa"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-couro-curtido"
+    },
+    {
+      "id": "rec-bracadeiras-de-couro-curtido",
+      "nome": "Braçadeiras de Couro curtido",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-couro-curtido",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bracadeiras-de-couro-curtido",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-couro-curtido"
+    },
+    {
+      "id": "rec-traje-de-linho-de-demeter",
+      "nome": "Traje de Linho de Deméter",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-linho-de-demeter",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-traje-de-linho-de-demeter",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linho-de-demeter"
+    },
+    {
+      "id": "rec-capuz-de-linho-de-demeter",
+      "nome": "Capuz de Linho de Deméter",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-linho-de-demeter",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-capuz-de-linho-de-demeter",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linho-de-demeter"
+    },
+    {
+      "id": "rec-manto-de-linho-de-demeter",
+      "nome": "Manto de Linho de Deméter",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-linho-de-demeter",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-manto-de-linho-de-demeter",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linho-de-demeter"
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-linho-de-demeter",
+      "nome": "Bolsa de Coleta de Linho de Deméter",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-linho-de-demeter",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bolsa-de-coleta-de-linho-de-demeter",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal",
+        "bolsa_utilitaria_recebe_valor_de_defesa"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linho-de-demeter"
+    },
+    {
+      "id": "rec-bracadeiras-de-linho-de-demeter",
+      "nome": "Braçadeiras de Linho de Deméter",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "mat-linho-de-demeter",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bracadeiras-de-linho-de-demeter",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linho-de-demeter"
+    },
+    {
+      "id": "rec-traje-de-linha-de-seda",
+      "nome": "Traje de Linha de seda",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 16,
+      "ingredientes": [
+        {
+          "item": "mat-linha-de-seda",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-traje-de-linha-de-seda",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linha-de-seda"
+    },
+    {
+      "id": "rec-capuz-de-linha-de-seda",
+      "nome": "Capuz de Linha de seda",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 16,
+      "ingredientes": [
+        {
+          "item": "mat-linha-de-seda",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-capuz-de-linha-de-seda",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linha-de-seda"
+    },
+    {
+      "id": "rec-manto-de-linha-de-seda",
+      "nome": "Manto de Linha de seda",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 16,
+      "ingredientes": [
+        {
+          "item": "mat-linha-de-seda",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-manto-de-linha-de-seda",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linha-de-seda"
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-linha-de-seda",
+      "nome": "Bolsa de Coleta de Linha de seda",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 16,
+      "ingredientes": [
+        {
+          "item": "mat-linha-de-seda",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bolsa-de-coleta-de-linha-de-seda",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal",
+        "bolsa_utilitaria_recebe_valor_de_defesa"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linha-de-seda"
+    },
+    {
+      "id": "rec-bracadeiras-de-linha-de-seda",
+      "nome": "Braçadeiras de Linha de seda",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 16,
+      "ingredientes": [
+        {
+          "item": "mat-linha-de-seda",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bracadeiras-de-linha-de-seda",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-linha-de-seda"
+    },
+    {
+      "id": "rec-traje-de-fibra-de-aranha-yokai",
+      "nome": "Traje de Fibra de Aranha Yokai",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 32,
+      "ingredientes": [
+        {
+          "item": "mat-fibra-de-aranha-yokai",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-traje-de-fibra-de-aranha-yokai",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-fibra-de-aranha-yokai"
+    },
+    {
+      "id": "rec-capuz-de-fibra-de-aranha-yokai",
+      "nome": "Capuz de Fibra de Aranha Yokai",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 32,
+      "ingredientes": [
+        {
+          "item": "mat-fibra-de-aranha-yokai",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-capuz-de-fibra-de-aranha-yokai",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-fibra-de-aranha-yokai"
+    },
+    {
+      "id": "rec-manto-de-fibra-de-aranha-yokai",
+      "nome": "Manto de Fibra de Aranha Yokai",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 32,
+      "ingredientes": [
+        {
+          "item": "mat-fibra-de-aranha-yokai",
+          "quantidade": 3
+        }
+      ],
+      "resultado": "eq-manto-de-fibra-de-aranha-yokai",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-fibra-de-aranha-yokai"
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+      "nome": "Bolsa de Coleta de Fibra de Aranha Yokai",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 32,
+      "ingredientes": [
+        {
+          "item": "mat-fibra-de-aranha-yokai",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal",
+        "bolsa_utilitaria_recebe_valor_de_defesa"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-fibra-de-aranha-yokai"
+    },
+    {
+      "id": "rec-bracadeiras-de-fibra-de-aranha-yokai",
+      "nome": "Braçadeiras de Fibra de Aranha Yokai",
+      "estacao": "curtume",
+      "pericia": "curtume",
+      "nivel": 32,
+      "ingredientes": [
+        {
+          "item": "mat-fibra-de-aranha-yokai",
+          "quantidade": 2
+        }
+      ],
+      "resultado": "eq-bracadeiras-de-fibra-de-aranha-yokai",
+      "quantidade": 1,
+      "grupo": "vestuario_4x5",
+      "alertas_editoriais": [
+        "curtume_engloba_costura_e_uso_de_tecido_sem_etapa_propria",
+        "receita_conta_apenas_material_principal"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "material": "mat-fibra-de-aranha-yokai"
+    },
+    {
+      "id": "rec-lingote-de-ferrugem",
+      "nome": "Lingote de Ferrugem",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 6,
+      "ingredientes": [
+        {
+          "item": "mat-ferro-bruto",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-carvao-de-forja",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "mat-lingote-de-ferrugem",
+      "quantidade": 2,
+      "grupo": "lingotes_5",
+      "alertas_editoriais": [
+        "nao_consumido_em_outras_receitas_nao_alquimicas",
+        "raridade_comum_em_todas_as_linhagens"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comparacao_valor_cadastral": {
+        "insumos": 14,
+        "produtos": 20,
+        "saldo": 6,
+        "nao_equivale_a_lucro": true
+      }
+    },
+    {
+      "id": "rec-lingote-de-prata",
+      "nome": "Lingote de Prata",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 12,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-prata",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-carvao-de-forja",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "mat-lingote-de-prata",
+      "quantidade": 2,
+      "grupo": "lingotes_5",
+      "alertas_editoriais": [
+        "nao_consumido_em_outras_receitas_nao_alquimicas",
+        "raridade_comum_em_todas_as_linhagens"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comparacao_valor_cadastral": {
+        "insumos": 40,
+        "produtos": 40,
+        "saldo": 0,
+        "nao_equivale_a_lucro": true
+      }
+    },
+    {
+      "id": "rec-lingote-de-ouro-runico",
+      "nome": "Lingote de Ouro Rúnico",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-ouro",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-carvao-de-forja",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "mat-lingote-de-ouro-runico",
+      "quantidade": 2,
+      "grupo": "lingotes_5",
+      "alertas_editoriais": [
+        "nao_consumido_em_outras_receitas_nao_alquimicas",
+        "raridade_comum_em_todas_as_linhagens"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comparacao_valor_cadastral": {
+        "insumos": 80,
+        "produtos": 60,
+        "saldo": -20,
+        "nao_equivale_a_lucro": true
+      }
+    },
+    {
+      "id": "rec-lingote-de-mitral",
+      "nome": "Lingote de Mitral",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 24,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-mitral",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-carvao-de-forja",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "mat-lingote-de-mitral",
+      "quantidade": 2,
+      "grupo": "lingotes_5",
+      "alertas_editoriais": [
+        "nao_consumido_em_outras_receitas_nao_alquimicas",
+        "raridade_comum_em_todas_as_linhagens"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comparacao_valor_cadastral": {
+        "insumos": 134,
+        "produtos": 80,
+        "saldo": -54,
+        "nao_equivale_a_lucro": true
+      }
+    },
+    {
+      "id": "rec-lingote-de-adamante",
+      "nome": "Lingote de Adamante",
+      "estacao": "forja",
+      "pericia": "forja",
+      "nivel": 30,
+      "ingredientes": [
+        {
+          "item": "mat-minerio-de-adamante",
+          "quantidade": 2
+        },
+        {
+          "item": "mat-carvao-de-forja",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "mat-lingote-de-adamante",
+      "quantidade": 2,
+      "grupo": "lingotes_5",
+      "alertas_editoriais": [
+        "nao_consumido_em_outras_receitas_nao_alquimicas",
+        "raridade_comum_em_todas_as_linhagens"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comparacao_valor_cadastral": {
+        "insumos": 254,
+        "produtos": 100,
+        "saldo": -154,
+        "nao_equivale_a_lucro": true
+      }
+    },
+    {
+      "id": "rec-ensopado-de-rio",
+      "nome": "Ensopado de Rio",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "ing-histcarp",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-garlic",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-ensopado-de-rio",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Carpa e alho não descrevem caldo nem processo."
+    },
+    {
+      "id": "rec-pao-de-mel-da-foz",
+      "nome": "Pão de Mel da Foz",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "ing-honeycomb",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-wheat",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-pao-de-mel-da-foz",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Favo e trigo sem massa/água/forno cadastrados; nome Foz não é procedência."
+    },
+    {
+      "id": "rec-caldo-da-montanha",
+      "nome": "Caldo da Montanha",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "ing-frost-mirriam",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-juniper-berries",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-caldo-da-montanha",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Ervas aromáticas sem água/caldo ou nutrição demonstrada."
+    },
+    {
+      "id": "rec-guisado-de-caatinga",
+      "nome": "Guisado de Caatinga",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "ing-boar-tusk",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-garlic",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-guisado-de-caatinga",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Presa de Javali e alho; falta ingrediente equivalente à carne."
+    },
+    {
+      "id": "rec-peixe-com-sal-do-mar",
+      "nome": "Peixe com Sal do Mar",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 8,
+      "ingredientes": [
+        {
+          "item": "ing-salmon-roe",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-salt-pile",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-peixe-com-sal-do-mar",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Ovas de Salmão não são filé; Sal do Sangue requer avaliação de segurança."
+    },
+    {
+      "id": "rec-cogu-sopa-de-ironwood",
+      "nome": "Cogu-sopa de Ironwood",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 13,
+      "ingredientes": [
+        {
+          "item": "ing-glowing-mushroom",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-white-cap",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-cogu-sopa-de-ironwood",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Cogumelos sem base de sopa; Ironwood não prova origem."
+    },
+    {
+      "id": "rec-racao-dos-vigias",
+      "nome": "Ração dos Vigias",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 13,
+      "ingredientes": [
+        {
+          "item": "ing-wheat",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-blue-mountain-flower",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-racao-dos-vigias",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Trigo e flor medicinal não descrevem fabricação da ração."
+    },
+    {
+      "id": "rec-cha-de-lavanda",
+      "nome": "Chá de Lavanda",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 13,
+      "ingredientes": [
+        {
+          "item": "ing-lavender",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-juniper-berries",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-cha-de-lavanda",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Sem água ou operação de infusão cadastrada."
+    },
+    {
+      "id": "rec-prato-dos-anoes",
+      "nome": "Prato dos Anões",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 13,
+      "ingredientes": [
+        {
+          "item": "ing-large-antlers",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-jazbay-grapes",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-prato-dos-anoes",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Chifres de Alce e uvas, sem alimento proteico descrito; não atribuir a tradição a todos os anões."
+    },
+    {
+      "id": "rec-banquete-de-portomonte",
+      "nome": "Banquete de Portomonte",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 13,
+      "ingredientes": [
+        {
+          "item": "ing-purple-mountain-flower",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-salmon-roe",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-banquete-de-portomonte",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Flor e ovas, sem escopo de banquete nem prova regional do peixe."
+    },
+    {
+      "id": "rec-pescado-defumado",
+      "nome": "Pescado Defumado",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "ing-silverside-perch",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-garlic",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-pescado-defumado",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Perca e alho sem etapa de defumação."
+    },
+    {
+      "id": "rec-compota-das-montanhas",
+      "nome": "Compota das Montanhas",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "ing-snowberries",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-jazbay-grapes",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-compota-das-montanhas",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Bagas e uvas sem processo de conservação."
+    },
+    {
+      "id": "rec-torta-de-mel",
+      "nome": "Torta de Mel",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "ing-chicken-s-egg",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-honeycomb",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-torta-de-mel",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Ovo e favo, sem farinha/massa."
+    },
+    {
+      "id": "rec-pao-de-demeter",
+      "nome": "Pão de Deméter",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "ing-wheat",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-salt-pile",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-pao-de-demeter",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Trigo e Sal do Sangue, sem água/fermento; bênção não prova segurança do sal."
+    },
+    {
+      "id": "rec-cha-dos-sonhos",
+      "nome": "Chá dos Sonhos",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 18,
+      "ingredientes": [
+        {
+          "item": "ing-mora-tapinella",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-moon-sugar",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-cha-dos-sonhos",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Fungo de Raiz e Açúcar Lunar sem água; não presumir inocuidade."
+    },
+    {
+      "id": "rec-ensopado-de-algas",
+      "nome": "Ensopado de Algas",
+      "estacao": "cozinha",
+      "pericia": "cozinha",
+      "nivel": 23,
+      "ingredientes": [
+        {
+          "item": "ing-grass-pod",
+          "quantidade": 1
+        },
+        {
+          "item": "ing-nordic-barnacle",
+          "quantidade": 1
+        }
+      ],
+      "resultado": "food-ensopado-de-algas",
+      "quantidade": 2,
+      "grupo": "culinaria_16",
+      "alertas_editoriais": [
+        "todas_as_16_refeicoes_geram_restore_health",
+        "receita_binaria_sem_procedimento_completo",
+        "revisar_coerencia_com_nome_do_prato"
+      ],
+      "parecer": "reconstruido_do_gerador_nao_aprovado_para_modificacao",
+      "comentario_curatorial": "Vagem da Charneca e Craca de Rio: nenhum dos dois é identificado como alga."
+    }
+  ],
+  "outros_itens_de_suprimento_gerados": [
+    {
+      "id": "ger-racoes-de-viagem",
+      "nome": "Rações de Viagem",
+      "categoria": "comida",
+      "valor": 7,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-agua-de-cantil",
+      "nome": "Água de Cantil",
+      "categoria": "consumivel",
+      "valor": 4,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-pao-de-trigo",
+      "nome": "Pão de Trigo",
+      "categoria": "comida",
+      "valor": 5,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-kit-de-aventureiro",
+      "nome": "Kit de Aventureiro",
+      "categoria": "utilitario",
+      "valor": 30,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-ferramentas-de-ferreiro",
+      "nome": "Ferramentas de Ferreiro",
+      "categoria": "ferramenta",
+      "valor": 80,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-ferramentas-de-alquimista",
+      "nome": "Ferramentas de Alquimista",
+      "categoria": "ferramenta",
+      "valor": 85,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-ferramentas-de-ladrao",
+      "nome": "Ferramentas de Ladrão",
+      "categoria": "ferramenta",
+      "valor": 45,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-ferramentas-de-joalheiro",
+      "nome": "Ferramentas de Joalheiro",
+      "categoria": "ferramenta",
+      "valor": 85,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-frasco-de-vidro",
+      "nome": "Frasco de Vidro",
+      "categoria": "material",
+      "valor": 5,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-pergaminho-vazio",
+      "nome": "Pergaminho Vazio",
+      "categoria": "material",
+      "valor": 9,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-tocha",
+      "nome": "Tocha",
+      "categoria": "utilitario",
+      "valor": 3,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-corda",
+      "nome": "Corda",
+      "categoria": "utilitario",
+      "valor": 11,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-pocao-restauradora",
+      "nome": "Poção Restauradora",
+      "categoria": "pocao",
+      "valor": 32,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": true
+    },
+    {
+      "id": "ger-pocao-de-foco",
+      "nome": "Poção de Foco",
+      "categoria": "pocao",
+      "valor": 36,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": true
+    },
+    {
+      "id": "ger-antidoto",
+      "nome": "Antídoto",
+      "categoria": "pocao",
+      "valor": 44,
+      "nivel": 2,
+      "tem_receita_alquimia_explicita": true
+    },
+    {
+      "id": "ger-bomba-de-fumaca",
+      "nome": "Bomba de Fumaça",
+      "categoria": "consumivel",
+      "valor": 40,
+      "nivel": 2,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-elixir-de-protecao",
+      "nome": "Elixir de Proteção",
+      "categoria": "pocao",
+      "valor": 55,
+      "nivel": 3,
+      "tem_receita_alquimia_explicita": true
+    },
+    {
+      "id": "ger-kit-de-acampamento",
+      "nome": "Kit de Acampamento",
+      "categoria": "utilitario",
+      "valor": 52,
+      "nivel": 2,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-vela-runica",
+      "nome": "Vela Rúnica",
+      "categoria": "material",
+      "valor": 15,
+      "nivel": 2,
+      "tem_receita_alquimia_explicita": false
+    },
+    {
+      "id": "ger-pergaminho-de-mapa",
+      "nome": "Pergaminho de Mapa",
+      "categoria": "utilitario",
+      "valor": 27,
+      "nivel": 1,
+      "tem_receita_alquimia_explicita": false
+    }
+  ]
+}
