@@ -10,7 +10,7 @@ import {REGION_BY_ID} from './regions.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
-export const M1HF_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
+export const M1HF_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW!=='0';
 export const CLASSIC_KEY='peren_carcaca_save_v1';
 // Pré-alfa: esta feature usa chave nova, sem migrar, sobrescrever ou apagar saves anteriores.
 export const PHASER_KEY=M1HF_PREVIEW?'peren_phaser_save_m1hf_worlds_prealpha_v2':'peren_phaser_save_worlds_prealpha_v2';
