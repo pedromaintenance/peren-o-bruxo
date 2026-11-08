@@ -8,7 +8,7 @@ import {harvestProximity} from './harvest-proximity.js';
 import {trailOrientation} from './trail-orientation.js';
 import {RETREAT_GRACE_MS,tickRetreatGrace,retreatGraceActive} from './retreat-grace.js';
 import {sneakActive,travelSpeed} from './stealth.js';
-const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW==='1';
+const ISOLATED_PREVIEW=import.meta.env?.VITE_PEREN_M1HF_PREVIEW!=='0';
 
 const ASSET = './art/';
 const artVariant=new URLSearchParams(location.search).get('art');
