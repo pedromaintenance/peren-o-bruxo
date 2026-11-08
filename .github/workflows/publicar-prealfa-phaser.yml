@@ -1,6 +1,10 @@
 name: Publicar pré-alfa Phaser isolada em /prealfa/
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/prealfa-release-trigger.md'
 permissions:
   contents: write
 jobs:
