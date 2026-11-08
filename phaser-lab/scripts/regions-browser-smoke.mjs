@@ -23,10 +23,24 @@ try{
  for(const [region,city] of destinations){
   await page.locator('#regionSelect').selectOption(region);
   await page.locator('#travelRegion').click();
-  await page.waitForFunction(id=>{
-    const game=window.__perenLab,scene=game?.scene?.getScene('ExplorationScene');
-    return scene?.world?.regionId===id&&game.scene.isActive('ExplorationScene');
-  },region,{timeout:30000});
+  try{
+   await page.waitForFunction(id=>{
+     const game=window.__perenLab,scene=game?.scene?.getScene('ExplorationScene');
+     return scene?.world?.regionId===id&&game.scene.isActive('ExplorationScene');
+   },region,{timeout:12000});
+  }catch(error){
+   const snapshot=await page.evaluate(()=>{
+     const game=window.__perenLab,scene=game?.scene?.getScene('ExplorationScene');
+     return {seed:game?.registry?.get('seed'),world:scene?.world?.regionId,
+       sceneStatus:scene?.sys?.settings?.status,active:game?.scene?.isActive('ExplorationScene'),
+       paused:game?.scene?.isPaused('ExplorationScene'),
+       hubHidden:document.getElementById('hub').hidden,
+       controlsHidden:document.getElementById('controls').hidden,
+       hubStatus:document.getElementById('hubStatus').textContent};
+   });
+   console.error('Region '+region+' failed to enter',JSON.stringify({snapshot,errors}));
+   throw error;
+  }
   assert.equal(await page.locator('#controls').isVisible(),true);
   const snapshot=await page.evaluate(()=>({
    city:window.__perenProgress.save.character.city,
