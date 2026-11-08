@@ -41,7 +41,17 @@
     "armas_com_defesa": 49,
     "joias_com_defesa": 14,
     "bolsas_com_defesa": 4,
-    "alimentos_com_efeito_uniforme": 16
+    "alimentos_com_efeito_uniforme": 16,
+    "subconjunto_de_receitas_aqui": 139,
+    "retroconciliacao_com_sete_oficios": {
+      "arquivo_adicional": "data/auditoria-crafting-escrita-encantamento-v1.json",
+      "receitas_escrita": 320,
+      "receitas_encantamento": 113,
+      "receitas_nao_alquimicas_total": 572,
+      "receitas_todas_com_alquimia": 2316
+    },
+    "materiais_sem_consumo_nas_572": 16,
+    "materiais_sem_consumo_nas_572_e_quatro_alquimicas": 15
   },
   "materiais_base": [
     {
@@ -74,7 +84,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Ferro bruto, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 15,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-carvao-de-forja",
@@ -98,7 +120,19 @@
         "combustivel_sem_fonte_ou_processamento_documentado"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Carvão de forja, e há evidência específica de produção ou comércio em thargrid?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 5,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-madeira-de-ironwood",
@@ -124,7 +158,19 @@
         "nome_da_regiao_nao_e_prova_de_qualidade_ou_especie_de_madeira"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Madeira de Ironwood, e há evidência específica de produção ou comércio em ironwood?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 7,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-madeira-de-vandar",
@@ -142,7 +188,19 @@
         "ruinas_de_vandar_nao_confirmam_madeira_ou_extracao"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Madeira de Vandar, e há evidência específica de produção ou comércio em eldroth?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-couro-curtido",
@@ -199,7 +257,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Couro curtido, e há evidência específica de produção ou comércio em alem-sul?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 40,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-linha-de-seda",
@@ -221,7 +291,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Linha de seda, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 5,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-linho-de-demeter",
@@ -245,7 +327,19 @@
         "agricultura_em_portomonte_nao_confirma_plantio_de_linho_ou_monopolio"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Linho de Deméter, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 320,
+        "unidades_totais_por_receita_executada_uma_vez": 640
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 325,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-minerio-de-prata",
@@ -277,7 +371,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de prata, e há evidência específica de produção ou comércio em thargrid?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 15,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-minerio-de-ouro",
@@ -309,7 +415,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de ouro, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 15,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-minerio-de-mitral",
@@ -343,7 +461,19 @@
         "metal_fantastico_sem_localizacao_geologica_demonstrada"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de mitral, e há evidência específica de produção ou comércio em thargrid?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 15,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-minerio-de-adamante",
@@ -377,7 +507,19 @@
         "metal_fantastico_sem_localizacao_geologica_demonstrada"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Minério de adamante, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 15,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-osso-de-golzdov",
@@ -410,7 +552,19 @@
         "cosmologia_primordial_e_ossatura_sensivel"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Osso de Golzdov, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 14,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-escama-de-dragao",
@@ -443,7 +597,19 @@
         "dragao_individuo_ou_especie_fonte_nao_identificada"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Escama de Dragão, e há evidência específica de produção ou comércio em eldroth?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 14,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-fibra-de-aranha-yokai",
@@ -467,7 +633,19 @@
         "yokai_povo_ou_tipo_nao_identifica_especie_de_aranha"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fibra de Aranha Yokai, e há evidência específica de produção ou comércio em boca-abismo?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 5,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-fragmento-de-gelo-eterno",
@@ -483,7 +661,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fragmento de Gelo Eterno, e há evidência específica de produção ou comércio em thargrid?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-brasa-feerica",
@@ -501,7 +691,19 @@
         "origem_feerica_indeterminada"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Brasa Feérica, e há evidência específica de produção ou comércio em eldroth?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-essencia-do-vazio",
@@ -519,7 +721,19 @@
         "vazio_nome_nao_comprova_extracao_cosmologica"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Essência do Vazio, e há evidência específica de produção ou comércio em boca-abismo?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-seiva-vital",
@@ -537,7 +751,19 @@
         "ser_vegetal_produtor_indeterminado"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Seiva Vital, e há evidência específica de produção ou comércio em ironwood?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-agua-purificada",
@@ -555,7 +781,19 @@
         "purificacao_para_agricultura_nao_confirma_potabilidade_ou_disponibilidade_comercial"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Água Purificada, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-tinta-runica",
@@ -573,7 +811,19 @@
         "nao_confundir_inscricao_yokai_com_material_da_tinta"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Tinta Rúnica, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 320,
+        "unidades_totais_por_receita_executada_uma_vez": 608
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 113,
+        "unidades_totais_por_receita_executada_uma_vez": 113,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 433,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-po-de-gema",
@@ -604,7 +854,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pó de Gema, e há evidência específica de produção ou comércio em shadar-riverie?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 113,
+        "unidades_totais_por_receita_executada_uma_vez": 263,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 127,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-cristal-de-alma-menor",
@@ -622,7 +884,19 @@
         "conteudo_da_alma_e_forma_de_obtencao_nao_documentados"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Cristal de Alma Menor, e há evidência específica de produção ou comércio em garganta?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 113,
+        "unidades_totais_por_receita_executada_uma_vez": 113,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 113,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-cristal-de-alma-maior",
@@ -640,7 +914,19 @@
         "conteudo_da_alma_e_forma_de_obtencao_nao_documentados"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Cristal de Alma Maior, e há evidência específica de produção ou comércio em shadar-riverie?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 11,
+        "unidades_totais_por_receita_executada_uma_vez": 11,
+        "receitas_com_referencia_mas_quantidade_zero": 102
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 11,
+      "sem_consumo_nas_572": false,
+      "sem_consumo_nas_572_e_quatro_alquimicas": false
     },
     {
       "id": "mat-fragmento-de-juramento",
@@ -658,7 +944,19 @@
         "juramento_nao_tem_forma_material_documentada"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Fragmento de Juramento, e há evidência específica de produção ou comércio em boca-abismo?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-perola-negra",
@@ -674,7 +972,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pérola Negra, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-rubi-do-sangue",
@@ -692,7 +1002,19 @@
         "nome_sangue_nao_identifica_origem_maritima"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Rubi do Sangue, e há evidência específica de produção ou comércio em boca-abismo?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-safira-lunar",
@@ -710,7 +1032,19 @@
         "nome_lunar_nao_identifica_templo"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Safira Lunar, e há evidência específica de produção ou comércio em shadar-riverie?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-esmeralda-da-floresta",
@@ -728,7 +1062,19 @@
         "floresta_nao_comprova_jazida_de_esmeralda"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Esmeralda da Floresta, e há evidência específica de produção ou comércio em ironwood?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-topazio-solar",
@@ -746,7 +1092,19 @@
         "nome_solar_nao_e_prova_de_culto_ou_origem"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Topázio Solar, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-quartzo-da-montanha",
@@ -762,7 +1120,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Quartzo da Montanha, e há evidência específica de produção ou comércio em thargrid?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-pederneira",
@@ -778,7 +1148,19 @@
       "uso_em_alquimia_explicita": false,
       "alertas": [],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Pederneira, e há evidência específica de produção ou comércio em alem-sul?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-sal-de-mare",
@@ -796,7 +1178,19 @@
         "nao_fundir_automaticamente_com_sal_do_sangue"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Sal de Maré, e há evidência específica de produção ou comércio em portomonte?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     },
     {
       "id": "mat-vapor-de-eter",
@@ -814,7 +1208,19 @@
         "eter_nao_necessariamente_conceito_cosmologico_de_corau"
       ],
       "pergunta_a_decidir": "Qual a fonte e processo de obtenção de Vapor de Éter, e há evidência específica de produção ou comércio em shadar-riverie?",
-      "aprovado_para_loot_automatico": false
+      "aprovado_para_loot_automatico": false,
+      "uso_escrita": {
+        "receitas": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0
+      },
+      "uso_encantamento": {
+        "receitas_com_consumo_real": 0,
+        "unidades_totais_por_receita_executada_uma_vez": 0,
+        "receitas_com_referencia_mas_quantidade_zero": 0
+      },
+      "total_receitas_nao_alquimicas_com_consumo_positivo": 0,
+      "sem_consumo_nas_572": true,
+      "sem_consumo_nas_572_e_quatro_alquimicas": true
     }
   ],
   "produtos_reconstruidos": [
@@ -6068,5 +6474,12 @@
       "nivel": 1,
       "tem_receita_alquimia_explicita": false
     }
-  ]
+  ],
+  "escopo": "Matriz individualizada de 33 materiais-base, 139 receitas e 139 produtos das quatro famílias artesanais: forja, joalheria, curtume e cozinha. Para ESCRITA (320) e ENCANTAMENTO (113), usar o dossiê irmão. Os dados são reconstruídos do gerador, não leitura do JSON compilado.",
+  "notas_reconciliacao": {
+    "significado": "Os campos de consumo antigos desta matriz se referem SOMENTE às 139 receitas de quatro ofícios. A reconciliação acrescenta 433 receitas de Escrita/Encantamento, excluindo quantidades zero como consumo real.",
+    "aviso": "Não confundir o campo receitas_encantamento:0 da análise parcial com ausência de encantamento no jogo; o total geral do gerador é 113.",
+    "ultima_conferencia": "2026-11-07",
+    "referencia_arquivo_irmao": "data/auditoria-crafting-escrita-encantamento-v1.json"
+  }
 }
