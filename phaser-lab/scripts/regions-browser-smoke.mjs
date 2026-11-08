@@ -32,8 +32,7 @@ try{
    city:window.__perenProgress.save.character.city,
    seed:window.__perenProgress.save.worlds.activeSeed,
    region:window.__perenLab.scene.getScene('ExplorationScene').world.regionId,
-   nodes:window.__perenLab.scene.getScene('ExplorationScene').world.nodes.length,
-   textures:window.__perenLab.scene.getScene('ExplorationScene').textures.list
+   nodes:window.__perenLab.scene.getScene('ExplorationScene').world.nodes.length
   }));
   assert.equal(snapshot.city,city);
   assert.equal(snapshot.region,region);
@@ -61,7 +60,7 @@ try{
   }
   await page.keyboard.press('Escape');
   await page.waitForSelector('#hub:not([hidden])');
-  assert.equal((await page.locator('#hubCityName').textContent()).trim().toLowerCase(),(await page.locator('#hubCityName').textContent()).trim().toLowerCase());
+  assert.ok((await page.locator('#hubCityName').textContent()).trim().length>2);
   assert.equal(await page.evaluate(()=>window.__perenProgress.save.character.city),city);
  }
  await page.locator('#resetForest').click();
