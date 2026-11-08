@@ -104,7 +104,9 @@ export class ExplorationScene extends Phaser.Scene {
     // a few subtle environmental motes, spatial and not interactive
     const motes=this.add.particles(0,0,'rune',{x:{min:0,max:WIDTH*TILE},y:{min:0,max:HEIGHT*TILE},scale:{start:.08,end:0},alpha:{start:.32,end:0},lifespan:1800,frequency:400,quantity:1,blendMode:'ADD'}).setDepth(1000);
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)motes.stop();
-    if(!document.getElementById('hub').hidden)this.scene.pause();
+    const arrivingFromTravel=this.registry.get('regionTransitionInProgress')===true;
+    this.registry.set('regionTransitionInProgress',false);
+    if(!arrivingFromTravel&&!document.getElementById('hub').hidden)this.scene.pause();
   }
   animsForPeren(){
     for(const [dir,di] of Object.entries(directions))for(const [ai,act] of actions.entries()){
