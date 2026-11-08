@@ -1,0 +1,48 @@
+name: Publicar pré-alfa Phaser isolada em /prealfa/
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publicar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Obter fonte da pré-alfa verificada
+        uses: actions/checkout@v4
+        with:
+          ref: feature/prealfa-mundo-procedural-20261107
+          path: source
+      - name: Obter site atual sem sobrescrever o clássico
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: site
+          fetch-depth: 1
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar dependências e gerar build estático
+        working-directory: source/phaser-lab
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+      - name: Provar integridade do gerador procedural
+        working-directory: source/phaser-lab
+        run: node --test tests/regions.test.mjs
+      - name: Publicar apenas a subpasta prealfa
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf site/prealfa
+          mkdir -p site/prealfa
+          cp -a source/phaser-lab/dist/. site/prealfa/
+          printf 'source_commit=%s\n' "$(git -C source rev-parse HEAD)" > site/prealfa/VERSION.txt
+          cd site
+          git add -A -- prealfa
+          if git diff --cached --quiet; then echo 'Prévia já atualizada'; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "deploy(prealfa): Phaser mundo procedural — sem tocar no clássico"
+          git push origin HEAD:main
