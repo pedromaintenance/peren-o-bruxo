@@ -60,3 +60,12 @@ Nenhum desses pontos foi implementado neste ciclo. Esta lista é uma **fila de d
 - Cenário **hipotético** da Forja em Thargrid, com Comércio 9 e materiais supostamente compráveis: **18** saldos positivos, **1** nulo e **70** negativos. **Não** equivale a lucratividade real: loja/estoque, trabalho, coleta e transportes não foram simulados.
 - Correção de referencial de mundo: **Golzdov e Kindau são entidades distintas**. `Osso de Golzdov` não vira material do cadáver de Kindau por analogia.
 - **0 decisões mecânicas aprovadas**; nenhum produto, receita, status de slot, preço, atributo, engine, save ou loot foi alterado. Próximo aprofundamento: **Joalheria 14/14**, com os mesmos critérios.
+
+## Segundo aprofundamento — Joalheria 14/14 (08/11/2026)
+
+- [Parecer da Joalheria](parecer-joalheria-14-gemas-slots-mercados-v1.md) e [matriz dos 14 pareceres](../data/auditoria-joalheria-14-v1.json), com oito questões `JOI-01` a `JOI-08` **não aprovadas**.
+- **Sete pares Anel/Colar** são equivalentes em insumos e atributos; **seis gemas específicas** não participam de receita do gerador; Pó de Gema participa de **14 Joias + 113 Encantamentos**.
+- Os **14 acessórios são equipados como relíquias** no clássico, competem pelo mesmo slot e, conforme `useRelic()`, ativam ataque arcano padrão, embora as receitas não contemplem Encantamento. A Defesa cadastrada não entra diretamente no cálculo do atributo do slot.
+- `vendorStock()` não oferece `acessorio` nos perfis de mercador; Joalheria existe somente em **Thargrid** e **Shadar-Riverie** no cadastro atual. O personagem inicia com proficiência zero e a menor receita exige 12, mas há tutores nessas cidades.
+- Simulação condicional em ambos os polos, com Comércio 9 e estoque hipotético: **14/14 saldos negativos em cada cidade**; não é lucro/prejuízo real. Nenhuma origem das gemas ou mudança de preço foi homologada.
+- **0** alterações no catálogo jogável, slots, engine, assets, receitas, mercado, save ou canon. Próximo ciclo proposto: **Curtume, 20/20**.
