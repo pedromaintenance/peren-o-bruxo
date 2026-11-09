@@ -179,3 +179,9 @@ As observações sobre biome, origem e cultura provêm da consulta ao atlas de [
 As **89 receitas da Forja** ganharam [parecer específico](parecer-forja-cadeia-produtiva-equipamentos-v1.md) e [matriz JSON individual de 89 IDs](../data/auditoria-forja-89-v1.json). A avaliação confirma **84 equipamentos + 5 lingotes, 60 peças produzidas diretamente de minérios e nenhuma receita que consome lingotes**. Os atributos de Defesa aparecem em 49 armas sem aplicação direta pelo slot de arma; os 35 escudos e armaduras compartilham o slot de proteção do clássico.
 
 Uma simulação **contrafactual** de custos com compra de todos os materiais em Thargrid, Comércio 9, e venda do produto no mesmo local identifica 70 saldos negativos, 18 positivos e um nulo. Não conclui lucro/prejuízo efetivo porque os estoques, tempo de ofício, deslocamento e coleta não foram modelados. A diferenciação de Golzdov e Kindau foi reafirmada. Toda a análise permanece **editorial**, sem refazer receita, inventar jazidas ou migrar save.
+
+## Aprofundamento II — Joalheria individualizada (08/11/2026)
+
+Publicados [parecer de Joalheria](parecer-joalheria-14-gemas-slots-mercados-v1.md) e [matriz JSON das 14 receitas](../data/auditoria-joalheria-14-v1.json). As sete linhagens geram pares Anel/Colar sem diferenciação de insumo/atributo. Seis gemas com nome próprio não são consumidas nas receitas reconstruídas; **Pó de Gema** é usado nas 14 joias e 113 encantamentos.
+
+No **clássico**, o slot `relic` comporta acessórios e lhes dá bônus por nível e ataque arcano por cargas, sem etapa explícita de encantamento. Os perfis de mercador não selecionam `acessorio` para venda; Thargrid e Shadar-Riverie têm as únicas duas oficinas. Simulações de compra de todos os insumos/venda da saída nas duas cidades resultam em **14 saldos negativos**, sem considerar oferta real e custo de trabalho. Decisões `JOI-01`–`JOI-08` permanecem pendentes; esta seção não modifica mecânicas ou fontes de materiais.
