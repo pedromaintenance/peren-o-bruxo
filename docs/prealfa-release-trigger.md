@@ -1,9 +1,11 @@
-# Publicação isolada da pré-alfa — 07/11/2026
+# Publicação isolada da pré-alfa — correção de batalha 08/11/2026
 
-Branch fonte: `feature/prealfa-mundo-procedural-20261107`
+Fonte: `feature/prealfa-battle-regions-battlers-20261108`
 
-Commit validado: `03c1c839107bde201aa8dc116b5fab8367b98bbf`
+Commit: `6f3424774dd6aa29d605a70fddda17e8f79a6d01`
 
-CI Phaser aprovado: https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42429340434
+CI completo aprovado: https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42548072535
 
-Este arquivo aciona a publicação em `/prealfa/`, preservando a raiz pública do jogo clássico e suas chaves de save.
+Atualização: cenários de combate específicos por região (Mürin preserva pintura própria; demais cenários procedurais) e battler oficial de Peren com idle de quatro quadros, conjurações de fogo/gelo/neutro, sem alterar o clássico.
+
+Release isolada em `/prealfa/`, jamais substituir `/` ou limpar os saves existentes.
