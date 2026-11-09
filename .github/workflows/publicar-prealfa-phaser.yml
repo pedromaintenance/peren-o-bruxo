@@ -15,7 +15,7 @@ jobs:
       - name: Obter fonte da pré-alfa verificada
         uses: actions/checkout@v4
         with:
-          ref: feature/prealfa-mundo-procedural-20261107
+          ref: feature/prealfa-battle-regions-battlers-20261108
           path: source
       - name: Obter site atual sem sobrescrever o clássico
         uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
           npm run build
       - name: Provar integridade do gerador procedural
         working-directory: source/phaser-lab
-        run: node --test tests/regions.test.mjs
+        run: node --test tests/regions.test.mjs tests/battle-visuals.test.mjs
       - name: Publicar apenas a subpasta prealfa
         shell: bash
         run: |
@@ -48,5 +48,5 @@ jobs:
           if git diff --cached --quiet; then echo 'Prévia já atualizada'; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "deploy(prealfa): Phaser mundo procedural — sem tocar no clássico"
+          git commit -m "deploy(prealfa): arenas regionais e battlers oficiais — clássico preservado"
           git push origin HEAD:main
