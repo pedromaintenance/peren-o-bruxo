@@ -1,0 +1,1664 @@
+{
+  "schema": "peren.auditoria_joalheria_14.v1",
+  "data": "2026-11-08",
+  "estado": "parecer_editorial_nao_executavel",
+  "escopo": "Reconstrução documental de 14 receitas; leitura do motor clássico e fontes do atlas. Não autoriza alterar efeitos, slots, mercados, tarifas ou receitas.",
+  "fontes": {
+    "peren": [
+      {
+        "caminho": "data/auditoria-crafting-nao-alquimico-v1.json",
+        "blob": "4b99ee79c379aafd361f6c02f3c4ece96e903169"
+      },
+      {
+        "caminho": "game.js",
+        "blob": "111a8456b35a27f20421d502f85c066a4150d006"
+      },
+      {
+        "caminho": "data/cidades.json",
+        "blob": "13fa94a8b913071f4058d6b73ba979135ee3ac6a"
+      },
+      {
+        "caminho": "docs/estado-curadoria-crafting-geral.md",
+        "blob": "df904952d079bc67dec30c77ed1ab53aad911c65"
+      }
+    ],
+    "monstros": {
+      "repositorio": "pedromaintenance/monstros-carcaca",
+      "commit": "39a84cbbd47b98ce752796263c0956decb9ed946",
+      "fontes": [
+        "docs/ATLAS_MACROAMBIENTES_CICLO35.md",
+        "docs/LORE_HACK_CARCACA_DW.md",
+        "docs/TEMPLO_LUA_SEVERINA_CICLO29.md",
+        "data/taxonomia_carcaca.json",
+        "docs/ENGENHARIA_POLITICA_DA_FORJA_THARGRID_CICLO62.md"
+      ],
+      "status": "ciclo LXII de forjas continua proposta nao homologada"
+    }
+  },
+  "avisos": [
+    "14 receitas são reconstruídas da matriz anterior, não leitura integral de data/receitas.json compilado.",
+    "As fontes de cidade são cadastro do jogo, não confirmação de produção territorial.",
+    "As 6 gemas específicas estão sem consumo nas 572 receitas não alquímicas; isso não implica inutilidade narrativa ou ausência em outros sistemas.",
+    "A fórmula de useRelic() da engine clássica atribui ação arcana a todos os acessórios, não prova intenção autoral de encantá-los.",
+    "A simulação de compra pressupõe estoque e nível/proficiência suficientes, o que NÃO está provado pela rotina de mercados; não é lucro operacional.",
+    "Não inferir origem física de Esmeralda da Floresta em Ironwood nem Safira Lunar no Templo da Lua, e assim por diante."
+  ],
+  "resumo": {
+    "itens_jewelry": 14,
+    "pares_sem_diferenciacao_mecanica": 7,
+    "gemas_nomeadas_sem_uso_positivo_no_gerador": 6,
+    "po_de_gema_em_joalheria": 14,
+    "po_de_gema_em_encantamento": 113,
+    "produtos_categoria_acessorio_fora_das_quotas_de_mercador": 14,
+    "produtos_sem_zona": 14,
+    "joias_ativam_arcano_sem_etapa_de_encantamento": 14,
+    "joias_concorrentes_com_reliquia": 14,
+    "receitas_joia_com_lingote": 0,
+    "joias_de_minerio_bruto": 10,
+    "primeiro_nivel_exigido": 12,
+    "nivel_joalheria_inicial": 0,
+    "oficinas_com_joalheria": 2,
+    "saldos_negativos_thargrid": 14,
+    "saldos_negativos_shadar_riverie": 14
+  },
+  "oficinas_reais_do_cadastro": {
+    "thargrid": {
+      "perigo": 2,
+      "perfis_mercadores": [
+        "forja",
+        "mineracao",
+        "oculto"
+      ],
+      "professor_de_joalheria": true
+    },
+    "shadar-riverie": {
+      "perigo": 5,
+      "perfis_mercadores": [
+        "oculto",
+        "forja",
+        "alquimia"
+      ],
+      "professor_de_joalheria": true
+    }
+  },
+  "gemas_especificas_sem_uso": [
+    {
+      "id": "mat-perola-negra",
+      "nome": "Pérola Negra",
+      "nivel": 4,
+      "valor": 88,
+      "zona_do_cadastro_nao_homologada": "portomonte",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    },
+    {
+      "id": "mat-rubi-do-sangue",
+      "nome": "Rubi do Sangue",
+      "nivel": 4,
+      "valor": 84,
+      "zona_do_cadastro_nao_homologada": "boca-abismo",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    },
+    {
+      "id": "mat-safira-lunar",
+      "nome": "Safira Lunar",
+      "nivel": 3,
+      "valor": 66,
+      "zona_do_cadastro_nao_homologada": "shadar-riverie",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    },
+    {
+      "id": "mat-esmeralda-da-floresta",
+      "nome": "Esmeralda da Floresta",
+      "nivel": 3,
+      "valor": 66,
+      "zona_do_cadastro_nao_homologada": "ironwood",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    },
+    {
+      "id": "mat-topazio-solar",
+      "nome": "Topázio Solar",
+      "nivel": 3,
+      "valor": 65,
+      "zona_do_cadastro_nao_homologada": "portomonte",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    },
+    {
+      "id": "mat-quartzo-da-montanha",
+      "nome": "Quartzo da Montanha",
+      "nivel": 1,
+      "valor": 10,
+      "zona_do_cadastro_nao_homologada": "thargrid",
+      "qtde_consumo_positivo_gerador": 0,
+      "consequencia": "não ligar automaticamente à joalheria sem decisão de lapidação, materialidade, técnica e economia"
+    }
+  ],
+  "po_de_gema": {
+    "id": "mat-po-de-gema",
+    "consumo_receitas_joalheria": 14,
+    "consumo_receitas_encantamento": 113,
+    "receitas_com_consumo_total": 127,
+    "unidades_consumidas_em_uma_execucao_de_cada_receita_de_encantamento": 263,
+    "unidades_consumidas_em_uma_execucao_de_cada_joia": 14,
+    "qtde_combinada_uma_execucao_de_cada_receita": 277,
+    "comprovacao_processamento_de_gemas_individuais": false
+  },
+  "comparacao_pares": [
+    {
+      "linhagem": "Ferrugem",
+      "ids": [
+        "rec-anel-de-ferrugem",
+        "rec-colar-de-ferrugem"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Prata",
+      "ids": [
+        "rec-anel-de-prata",
+        "rec-colar-de-prata"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Ouro Rúnico",
+      "ids": [
+        "rec-anel-de-ouro-runico",
+        "rec-colar-de-ouro-runico"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Mitral",
+      "ids": [
+        "rec-anel-de-mitral",
+        "rec-colar-de-mitral"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Adamante",
+      "ids": [
+        "rec-anel-de-adamante",
+        "rec-colar-de-adamante"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Osso Ancestral",
+      "ids": [
+        "rec-anel-de-osso-ancestral",
+        "rec-colar-de-osso-ancestral"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    },
+    {
+      "linhagem": "Escama Dracônica",
+      "ids": [
+        "rec-anel-de-escama-draconica",
+        "rec-colar-de-escama-draconica"
+      ],
+      "ing_custos_efeitos_e_requisitos_iguais": true,
+      "distincao_restante": "ID/nome/tipo do objeto"
+    }
+  ],
+  "matriz_por_receita": [
+    {
+      "id": "rec-anel-de-ferrugem",
+      "nome": "Anel de Ferrugem",
+      "produto_id": "eq-anel-de-ferrugem",
+      "forma": "Anel",
+      "linhagem": "Ferrugem",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 12,
+        "insumos": [
+          {
+            "item": "mat-ferro-bruto",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-ferro-bruto",
+          "nome": "Ferro bruto",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 1,
+          "valor": 5
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 1,
+          "raridade": "comum",
+          "ataque": 0,
+          "defesa": 2,
+          "valor_cadastral": 20,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 2,
+        "sobe_defesa_em": 1,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 3,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 20,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "O ferro bruto recebe tratamento para estética oxidada, ou Ferrugem é nome histórico de um ofício? Não declarar oxidação estável, rito nem qualidade metalúrgica sem decisão.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 33,
+          "venda_hipotetica_produto": 14,
+          "saldo_hipotetico": -19,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 29,
+          "venda_hipotetica_produto": 14,
+          "saldo_hipotetico": -15,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-ferrugem",
+      "nome": "Colar de Ferrugem",
+      "produto_id": "eq-colar-de-ferrugem",
+      "forma": "Colar",
+      "linhagem": "Ferrugem",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 12,
+        "insumos": [
+          {
+            "item": "mat-ferro-bruto",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-ferro-bruto",
+          "nome": "Ferro bruto",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 1,
+          "valor": 5
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 1,
+          "raridade": "comum",
+          "ataque": 0,
+          "defesa": 2,
+          "valor_cadastral": 20,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 2,
+        "sobe_defesa_em": 1,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 3,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 20,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "O ferro bruto recebe tratamento para estética oxidada, ou Ferrugem é nome histórico de um ofício? Não declarar oxidação estável, rito nem qualidade metalúrgica sem decisão.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 33,
+          "venda_hipotetica_produto": 14,
+          "saldo_hipotetico": -19,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 29,
+          "venda_hipotetica_produto": 14,
+          "saldo_hipotetico": -15,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-prata",
+      "nome": "Anel de Prata",
+      "produto_id": "eq-anel-de-prata",
+      "forma": "Anel",
+      "linhagem": "Prata",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 24,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-prata",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-prata",
+          "nome": "Minério de prata",
+          "zona_de_cadastro_nao_homologada": "thargrid",
+          "nivel": 2,
+          "valor": 18
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 2,
+          "raridade": "incomum",
+          "ataque": 0,
+          "defesa": 4,
+          "valor_cadastral": 32,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 4,
+        "sobe_defesa_em": 2,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 4,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 27,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A pureza, maleabilidade e eventual uso ritual da prata foram definidos? Não atribuir eficácia contra monstros sem fonte ou mecânica.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 44,
+          "venda_hipotetica_produto": 23,
+          "saldo_hipotetico": -21,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 47,
+          "venda_hipotetica_produto": 23,
+          "saldo_hipotetico": -24,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-prata",
+      "nome": "Colar de Prata",
+      "produto_id": "eq-colar-de-prata",
+      "forma": "Colar",
+      "linhagem": "Prata",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 24,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-prata",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-prata",
+          "nome": "Minério de prata",
+          "zona_de_cadastro_nao_homologada": "thargrid",
+          "nivel": 2,
+          "valor": 18
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 2,
+          "raridade": "incomum",
+          "ataque": 0,
+          "defesa": 4,
+          "valor_cadastral": 32,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 4,
+        "sobe_defesa_em": 2,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 4,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 27,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A pureza, maleabilidade e eventual uso ritual da prata foram definidos? Não atribuir eficácia contra monstros sem fonte ou mecânica.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 44,
+          "venda_hipotetica_produto": 23,
+          "saldo_hipotetico": -21,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 47,
+          "venda_hipotetica_produto": 23,
+          "saldo_hipotetico": -24,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-ouro-runico",
+      "nome": "Anel de Ouro Rúnico",
+      "produto_id": "eq-anel-de-ouro-runico",
+      "forma": "Anel",
+      "linhagem": "Ouro Rúnico",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 36,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-ouro",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-ouro",
+          "nome": "Minério de ouro",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 3,
+          "valor": 38
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 3,
+          "raridade": "raro",
+          "ataque": 0,
+          "defesa": 6,
+          "valor_cadastral": 44,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 6,
+        "sobe_defesa_em": 3,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 5,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 34,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "Que operação torna uma peça rúnica se não há inscrição, tinta, suporte de escrita ou etapa de Encantamento na receita?",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 96,
+          "venda_hipotetica_produto": 32,
+          "saldo_hipotetico": -64,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 73,
+          "venda_hipotetica_produto": 32,
+          "saldo_hipotetico": -41,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-ouro-runico",
+      "nome": "Colar de Ouro Rúnico",
+      "produto_id": "eq-colar-de-ouro-runico",
+      "forma": "Colar",
+      "linhagem": "Ouro Rúnico",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 36,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-ouro",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-ouro",
+          "nome": "Minério de ouro",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 3,
+          "valor": 38
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 3,
+          "raridade": "raro",
+          "ataque": 0,
+          "defesa": 6,
+          "valor_cadastral": 44,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 6,
+        "sobe_defesa_em": 3,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 5,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 34,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "Que operação torna uma peça rúnica se não há inscrição, tinta, suporte de escrita ou etapa de Encantamento na receita?",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 96,
+          "venda_hipotetica_produto": 32,
+          "saldo_hipotetico": -64,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 73,
+          "venda_hipotetica_produto": 32,
+          "saldo_hipotetico": -41,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-mitral",
+      "nome": "Anel de Mitral",
+      "produto_id": "eq-anel-de-mitral",
+      "forma": "Anel",
+      "linhagem": "Mitral",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 48,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-mitral",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-mitral",
+          "nome": "Minério de mitral",
+          "zona_de_cadastro_nao_homologada": "thargrid",
+          "nivel": 4,
+          "valor": 65
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 4,
+          "raridade": "epico",
+          "ataque": 0,
+          "defesa": 8,
+          "valor_cadastral": 56,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 8,
+        "sobe_defesa_em": 4,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 6,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 41,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A Carcaça documenta minas em Thargrid, mas não jazidas de Mitral, lapidários ou técnicas de joalheria com essa substância específica.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 119,
+          "venda_hipotetica_produto": 41,
+          "saldo_hipotetico": -78,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 109,
+          "venda_hipotetica_produto": 41,
+          "saldo_hipotetico": -68,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-mitral",
+      "nome": "Colar de Mitral",
+      "produto_id": "eq-colar-de-mitral",
+      "forma": "Colar",
+      "linhagem": "Mitral",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 48,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-mitral",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-mitral",
+          "nome": "Minério de mitral",
+          "zona_de_cadastro_nao_homologada": "thargrid",
+          "nivel": 4,
+          "valor": 65
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 4,
+          "raridade": "epico",
+          "ataque": 0,
+          "defesa": 8,
+          "valor_cadastral": 56,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 8,
+        "sobe_defesa_em": 4,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 6,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 41,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A Carcaça documenta minas em Thargrid, mas não jazidas de Mitral, lapidários ou técnicas de joalheria com essa substância específica.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 119,
+          "venda_hipotetica_produto": 41,
+          "saldo_hipotetico": -78,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 109,
+          "venda_hipotetica_produto": 41,
+          "saldo_hipotetico": -68,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-adamante",
+      "nome": "Anel de Adamante",
+      "produto_id": "eq-anel-de-adamante",
+      "forma": "Anel",
+      "linhagem": "Adamante",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-adamante",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-adamante",
+          "nome": "Minério de adamante",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 5,
+          "valor": 125
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A dureza e a forma de trabalhar Adamante em escala de anéis/colares precisam de processo próprio; não tratar Garganta como jazida aprovada.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 255,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -205,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 189,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -139,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-adamante",
+      "nome": "Colar de Adamante",
+      "produto_id": "eq-colar-de-adamante",
+      "forma": "Colar",
+      "linhagem": "Adamante",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-minerio-de-adamante",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-minerio-de-adamante",
+          "nome": "Minério de adamante",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 5,
+          "valor": 125
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A dureza e a forma de trabalhar Adamante em escala de anéis/colares precisam de processo próprio; não tratar Garganta como jazida aprovada.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 255,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -205,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 189,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -139,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-osso-ancestral",
+      "nome": "Anel de Osso Ancestral",
+      "produto_id": "eq-anel-de-osso-ancestral",
+      "forma": "Anel",
+      "linhagem": "Osso Ancestral",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-osso-de-golzdov",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-osso-de-golzdov",
+          "nome": "Osso de Golzdov",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 5,
+          "valor": 170
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "Osso de Golzdov diz respeito ao corpo que sustenta a Carcaça; exigir fonte, permissões sociais, técnicas de corte e valor ritual, sem confundir com Kindau.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 337,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -287,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 249,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -199,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-osso-ancestral",
+      "nome": "Colar de Osso Ancestral",
+      "produto_id": "eq-colar-de-osso-ancestral",
+      "forma": "Colar",
+      "linhagem": "Osso Ancestral",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-osso-de-golzdov",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-osso-de-golzdov",
+          "nome": "Osso de Golzdov",
+          "zona_de_cadastro_nao_homologada": "garganta",
+          "nivel": 5,
+          "valor": 170
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "Osso de Golzdov diz respeito ao corpo que sustenta a Carcaça; exigir fonte, permissões sociais, técnicas de corte e valor ritual, sem confundir com Kindau.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 337,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -287,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 249,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -199,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-anel-de-escama-draconica",
+      "nome": "Anel de Escama Dracônica",
+      "produto_id": "eq-anel-de-escama-draconica",
+      "forma": "Anel",
+      "linhagem": "Escama Dracônica",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-escama-de-dragao",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-escama-de-dragao",
+          "nome": "Escama de Dragão",
+          "zona_de_cadastro_nao_homologada": "eldroth",
+          "nivel": 5,
+          "valor": 190
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "anel",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A escama exige fonte individual ou espécie, modo de obtenção e tratamento do material, sem pressupor caça, exploração de seres sapientes ou habitat em Eldroth.",
+        "lacuna_da_forma": "O uso no dedo não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 373,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -323,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 276,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -226,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    },
+    {
+      "id": "rec-colar-de-escama-draconica",
+      "nome": "Colar de Escama Dracônica",
+      "produto_id": "eq-colar-de-escama-draconica",
+      "forma": "Colar",
+      "linhagem": "Escama Dracônica",
+      "status": "parecer_editorial_individual_sem_homologacao",
+      "dados_do_gerador": {
+        "estacao": "joalheria",
+        "pericia": "joalheria",
+        "pericia_requerida": 60,
+        "insumos": [
+          {
+            "item": "mat-escama-de-dragao",
+            "quantidade": 1
+          },
+          {
+            "item": "mat-po-de-gema",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_saida": 1,
+        "material_principal": {
+          "id": "mat-escama-de-dragao",
+          "nome": "Escama de Dragão",
+          "zona_de_cadastro_nao_homologada": "eldroth",
+          "nivel": 5,
+          "valor": 190
+        },
+        "po_de_gema": {
+          "id": "mat-po-de-gema",
+          "quantidade": 1,
+          "zona_de_cadastro_nao_homologada": "shadar-riverie"
+        },
+        "saida": {
+          "categoria": "acessorio",
+          "tipo": "colar",
+          "nivel": 5,
+          "raridade": "lendario",
+          "ataque": 0,
+          "defesa": 10,
+          "valor_cadastral": 68,
+          "zona_definida": false
+        }
+      },
+      "comportamento_no_classico": {
+        "slot_ao_equipar": "relic",
+        "sobe_ataque_em": 10,
+        "sobe_defesa_em": 5,
+        "defesa_numerica_do_item_aplicada_diretamente": false,
+        "cargas_por_batalha": 7,
+        "ativa_poder_arcano_sem_encantamento_no_gerador": true,
+        "ataque_de_ativacao_base": 48,
+        "ataque_de_ativacao_aleatorio_adicional": "rand(0,8)",
+        "e_item_de_reliquia_na_interfaz_apos_equipar": true,
+        "contem_efetivo_substrato_magico_na_receita": false
+      },
+      "papeis_independentes_para_decisao": {
+        "ornamento_fisico": true,
+        "gemas_individuais_nao_usadas_na_receita": true,
+        "etapa_de_lapidacao_documentada": false,
+        "etapa_de_encantamento_documentada": false,
+        "modelo_de_slot_de_anel_ou_pescoco_nao_existe_no_classico": true
+      },
+      "parecer": {
+        "nivel": "P0_mecanica_compartilhada_P1_identidade_material",
+        "observacao": "Anel/colar são distintos por ID e tipo, mas suas receitas e benefícios são idênticos dentro da linhagem. A categoria acessorio entra como relic sem distinção de objeto mundano, consumindo o slot mágico.",
+        "lacuna_de_linhagem": "A escama exige fonte individual ou espécie, modo de obtenção e tratamento do material, sem pressupor caça, exploração de seres sapientes ou habitat em Eldroth.",
+        "lacuna_da_forma": "O uso no pescoço não possui slot, proporção, efeito ou impedimento próprio.",
+        "evitar_inferir": "Não transformar a zona inicial de matéria-prima em jazida, nem efeitos combatentes em autorização automática de encantamento."
+      },
+      "simulacao_mercado_condicional": [
+        {
+          "cidade": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 373,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -323,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        },
+        {
+          "cidade": "shadar-riverie",
+          "perigo": 5,
+          "comercio": 9,
+          "compra_hipotetica_insumos": 276,
+          "venda_hipotetica_produto": 50,
+          "saldo_hipotetico": -226,
+          "estoque_disponivel_nao_comprovado": true,
+          "producao_nesse_nivel_somente_se_pericia_e_materiais_forem_suficientes": true
+        }
+      ],
+      "alteracao_de_catalogo_ativo": false,
+      "aprovacao_autoral_nova": false,
+      "pode_alimentar_loot_automatico": false
+    }
+  ],
+  "decisoes_pendentes": [
+    {
+      "id": "JOI-01",
+      "tema": "slots_e_beneficios",
+      "problema": "Anéis e colares usam relic, concedem ataque/defesa por nivel e competem com relíquias; defesa própria não é aplicada.",
+      "alternativas": [
+        "manter_um_slot_relic_com_rotulo_explicito",
+        "separar_aneis_e_colares_do_slot_reliquia_com_migracao_de_save",
+        "anexar_joia_a_reliquia_em_nova_gramatica"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-02",
+      "tema": "magia",
+      "problema": "Joia fisica sem encantamento ativado age como relíquia que projeta magia arcana.",
+      "alternativas": [
+        "joias_mundanas_sem_ativacao_ate_encantadas",
+        "joias_naturalmente_magicas_com_lore_autoral",
+        "preservar_comportamento_legacy_ate_migracao"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-03",
+      "tema": "gemas_e_lapidacao",
+      "problema": "Seis gemas específicas não entram em nenhuma receita; todas joias usam Pó de Gema.",
+      "alternativas": [
+        "pó_uso_basico_gemas_especificas_em_projetos_unicos",
+        "substituir_po_por_gema_em_determinadas_fichas",
+        "criar_processo_lapidacao_com_custo_e_regras"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-04",
+      "tema": "lingotes",
+      "problema": "10 joias de cinco linhagens usam minério bruto, sem lingote intermediário.",
+      "alternativas": [
+        "manter_pedra_mineral_bruta_com_operacao_abstrata",
+        "usar_lingotes_com_migracao_de_receitas",
+        "permitir_crafting_basico_e_qualidade_avancada"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-05",
+      "tema": "formas",
+      "problema": "Pares Anel/Colar são indistinguíveis em requisitos/atributos, variando apenas nome, ID e tipo.",
+      "alternativas": [
+        "forma_apenas_estetica_intencional",
+        "slots_diferentes_com_regras_proprias",
+        "efeitos_economicos_sem_bonificacao_de_combate"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-06",
+      "tema": "mercados_e_trabalho",
+      "problema": "Joias não entram nas cotas de mercador como categoria acessorio; duas oficinas oferecem tutores, mas fabricar exige nivel >=12.",
+      "alternativas": [
+        "prever_joalheiro_e_moeda_de_trabalho_na_economia",
+        "manter_crafting_como_fonte_unica_de_acessorios",
+        "distribuir_mercadores_de_joias_com_cotas_testadas"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-07",
+      "tema": "lore_e_procedencia",
+      "problema": "Gemas Lunar, Sangue, Floresta, Solar e Joias de Osso/Escama não possuem habitats/fornecimento homologados.",
+      "alternativas": [
+        "registrar_origem_indeterminada_sem_spawns",
+        "aprovar_fontes_especificas_quando_houver_documento_e_necessidade"
+      ],
+      "status": "proposta_sem_aprovacao"
+    },
+    {
+      "id": "JOI-08",
+      "tema": "economia",
+      "problema": "Nos dois polos de Joalheria, todos os 14 produtos têm saldo negativo sob compra hipotética de materiais no mercado e venda do produto.",
+      "alternativas": [
+        "tratar_joia_como_bem_de_uso_proprio",
+        "revisar_curva_de_precos_e_tributos",
+        "incorporar_qualidade_trabalho_e_clientela_sem_alterar_automaticamente"
+      ],
+      "status": "proposta_sem_aprovacao"
+    }
+  ]
+}
