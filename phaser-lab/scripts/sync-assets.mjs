@@ -10,6 +10,19 @@ for(const path of ['characters/peren','regions/floresta-murin','monsters/mob-gal
   await mkdir(join(dest,path),{recursive:true});
   await cp(join(source,path),join(dest,path),{recursive:true,force:true});
 }
+// Reuse only approved battle masters from the archived M1h-F build.
+// Copy original PNG bytes; never regenerate or recolour the battler sheets.
+const approvedBattle=resolve(lab,'..','phaser-demo-m1hf','art');
+const combatAtlas=join(dest,'battle','runtime-v84');
+const casterAtlas=join(dest,'characters','peren','battler','casting');
+await mkdir(combatAtlas,{recursive:true});
+await mkdir(casterAtlas,{recursive:true});
+await cp(join(approvedBattle,'battle','runtime-v84','idle.png'),join(combatAtlas,'idle.png'),{force:true});
+for(const filename of ['peren-casting.png','peren-casting-fire.png','peren-casting-ice.png']){
+  await cp(join(approvedBattle,'characters','peren','battler','casting',filename),join(casterAtlas,filename),{force:true});
+}
+console.log('Battlers oficiais originais e conjurações integrados sem alterar PNGs.');
+
 // The classic Peren already ships these self-contained ambience paintings.
 const classic=resolve(lab,'..','assets');
 const town=join(dest,'regions','portomonte');
