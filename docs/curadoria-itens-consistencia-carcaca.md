@@ -321,3 +321,7 @@ A [PR #102](https://github.com/pedromaintenance/peren-o-bruxo/pull/102) implemen
 ## Extensão da curadoria além da alquimia — Forja (08/11/2026)
 
 A auditoria **não se limita aos 111 ingredientes**. Consulte o [estado geral dos sete ofícios](estado-curadoria-crafting-geral.md) e o [parecer específico das 89 receitas de Forja](parecer-forja-cadeia-produtiva-equipamentos-v1.md), com [89 fichas estruturadas no JSON](../data/auditoria-forja-89-v1.json). As decisões FOR-01 a FOR-06 tratam refino, slots, atributos, nomenclatura, fontes de osso/escama e economia. Nenhuma decisão foi incorporada aos dados jogáveis; Joalheria será o próximo ofício aprofundado.
+
+## Continuidade da auditoria de ofícios — Joalheria 14/14 (08/11/2026)
+
+O ciclo de Forja foi sucedido pela [matriz dos 14 acessórios de Joalheria](../data/auditoria-joalheria-14-v1.json) e pelo [parecer de gemas, slots e mercados](parecer-joalheria-14-gemas-slots-mercados-v1.md). Os anéis/colares atualmente ocupam o slot `relic` no clássico e ativam poder arcano padrão sem receita de Encantamento; seis gemas específicas não são insumos positivos do gerador. As decisões `JOI-01`–`JOI-08` não estão aprovadas. **Não houve** mudança nos itens, receitas, economia, slots, Phaser, clássico ou saves. A próxima auditoria aprofundará Curtume.
