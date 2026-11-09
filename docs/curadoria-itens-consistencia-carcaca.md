@@ -317,3 +317,7 @@ A [PR #102](https://github.com/pedromaintenance/peren-o-bruxo/pull/102) implemen
 **Vias em investigação, sem aprovação:** lançar frasco (precisão/resistência), impregnar arma (cargas/duração/precedência com Bálsamos), administrar dose (contato/consentimento/furtividade). `poison-route-proposal.js` é **pesquisa pura**, não arma nem executa dano no gameplay. Não modificar ingredientes, suas intensidades I–III ou famílias para adequá-los a um resultado numérico imaginado.
 
 **Operacional pré-alfa:** o uso fora de combate só tem `restaurar_saude` e `restaurar_magia`, com valores temporários **24 PV/12 PM**, e nenhuma ação diária cobrada na hipótese de playtest. A retrocompatibilidade de saves de pré-alfa foi dispensada por decisão do criador (Emenda S1), mas a integridade do estoque na partida atual continua obrigatória. [CI aprovado](https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42425972550) incluindo 19 testes novos de exploração, 12 de Venenos e smoke Chromium.
+
+## Extensão da curadoria além da alquimia — Forja (08/11/2026)
+
+A auditoria **não se limita aos 111 ingredientes**. Consulte o [estado geral dos sete ofícios](estado-curadoria-crafting-geral.md) e o [parecer específico das 89 receitas de Forja](parecer-forja-cadeia-produtiva-equipamentos-v1.md), com [89 fichas estruturadas no JSON](../data/auditoria-forja-89-v1.json). As decisões FOR-01 a FOR-06 tratam refino, slots, atributos, nomenclatura, fontes de osso/escama e economia. Nenhuma decisão foi incorporada aos dados jogáveis; Joalheria será o próximo ofício aprofundado.
