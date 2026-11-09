@@ -51,3 +51,12 @@ Nenhum desses pontos foi implementado neste ciclo. Esta lista é uma **fila de d
 5. Para engenharia, comparar futuramente os JSONs compilados do clássico/Phaser e verificar o comportamento real, sem apagar saves.
 
 **Último marco:** auditoria documental inicial de todos os sete ofícios, com 33 materiais e 572 receitas tradicionais/não alquímicas rastreados, 102 alertas objetivos de quantidade e backlog editorial separado da implementação.
+
+## Primeiro aprofundamento — Forja 89/89 (08/11/2026)
+
+- [**Parecer de Forja — 89 receitas, 7 linhagens, 12 formas e 5 lingotes**](parecer-forja-cadeia-produtiva-equipamentos-v1.md) publicado com alternativas de refino, slots e validação da economia.
+- [**Matriz individualizada**](../data/auditoria-forja-89-v1.json): 84 peças e 5 lingotes, insumos, requisitos, flags, lacunas da forma e linhagem, seis decisões `FOR-01` a `FOR-06` **não aprovadas**, e um cenário quantitativo condicional de preços.
+- Achados: **60** equipamentos usam minério bruto e **0** usa os 5 lingotes; **49** armas recebem Defesa não aplicada via slot `weapon` no clássico; **35** escudos/armaduras compartilham `armor`; **7** arcos consomem Ironwood.
+- Cenário **hipotético** da Forja em Thargrid, com Comércio 9 e materiais supostamente compráveis: **18** saldos positivos, **1** nulo e **70** negativos. **Não** equivale a lucratividade real: loja/estoque, trabalho, coleta e transportes não foram simulados.
+- Correção de referencial de mundo: **Golzdov e Kindau são entidades distintas**. `Osso de Golzdov` não vira material do cadáver de Kindau por analogia.
+- **0 decisões mecânicas aprovadas**; nenhum produto, receita, status de slot, preço, atributo, engine, save ou loot foi alterado. Próximo aprofundamento: **Joalheria 14/14**, com os mesmos critérios.
