@@ -1,6 +1,8 @@
 /** Animated JRPG battle stage. State changes are delegated to combat.js (pure). */
 import Phaser from 'phaser';
 import {newBattle,stepBattle,settleBattle,settleEscape,defaultProfile,battleRng} from './combat.js';
+import {regionFromSeed} from './regions.js';
+import {PEREN_BATTLE_ART,BATTLE_ART_FILES,casterForAction,createRegionBattleBackdrop,measuredBattleArea} from './battle-visuals.js';
 
 const ART='./art/';
 export class BattleScene extends Phaser.Scene {
@@ -8,6 +10,7 @@ export class BattleScene extends Phaser.Scene {
   init(data){this.config=data;this.busy=false;this.resolved=false;}
   preload(){
     this.load.image('murin-battle-bg',ART+'battle/murin-battle.webp');
+    for(const sheet of BATTLE_ART_FILES)this.load.spritesheet(sheet.key,ART+sheet.file,{frameWidth:sheet.width,frameHeight:sheet.height});
     for(const type of ['fire','ice','arcane'])this.load.spritesheet('vfx-'+type,ART+`vfx/${type}.png`,{frameWidth:80,frameHeight:80});
   }
   create(){
@@ -17,19 +20,36 @@ export class BattleScene extends Phaser.Scene {
     this.state=newBattle(beast,profile,key);
     this.rng=battleRng(key+':round');
     const w=this.scale.width,h=this.scale.height;
+    this.region=this.registry.get('region')||regionFromSeed(this.registry.get('seed'));
     this.cameras.main.setBackgroundColor('#0c161a');
-    this.backdrop=this.add.image(w/2,h*.52,'murin-battle-bg').setDepth(-5).setDisplaySize(w,h*.72);
-    const region=this.registry.get('region');
-    if(region?.id&&region.id!=='murin')this.backdrop.setTint(Number.parseInt(region.colors[3].slice(1),16));
+    this.backdrop=null;this.drawBackdrop();
     this.add.rectangle(w/2,h*.095,w,h*.16,0x07121a,.9).setDepth(-4);
     this.add.rectangle(w/2,h*.875,w,h*.22,0x07121a,.88).setDepth(-4);
-    this.peren=this.add.sprite(w*.27,h*.61,'peren',0).setScale(Math.max(1.8,w/225)).setDepth(12);
-    this.foe=this.add.sprite(w*.735,h*.56,beast.type,0).setScale(Math.max(1.65,w/260)).setDepth(11).setFlipX(true);
-    if(region?.id&&region.id!=='murin')this.foe.setTint(Number.parseInt(region.colors[6].slice(1),16));
-    this.peren.anims.play('peren-right-idle');
-    this.foe.anims.play(`${beast.type}-idle`);
-    this.nameText=this.add.text(w*.74,h*.41,beast.name.toUpperCase(),{fontFamily:'Georgia,serif',fontSize:'15px',color:'#f0d7a5',stroke:'#091117',strokeThickness:3}).setOrigin(.5).setDepth(15);
-    this.hpBar=this.add.graphics().setDepth(16);
+    // The 560x821, four-frame approved Peren battler replaces the overworld sprite.
+    this.peren=this.add.sprite(0,0,PEREN_BATTLE_ART.idle.key,0).setOrigin(.5,1).setDepth(12);
+    if(!this.anims.exists('peren-battler-idle-loop'))this.anims.create({
+      key:'peren-battler-idle-loop',
+      frames:this.anims.generateFrameNumbers(PEREN_BATTLE_ART.idle.key,{start:0,end:PEREN_BATTLE_ART.idle.frames-1}),
+      frameRate:PEREN_BATTLE_ART.idle.fps,repeat:-1
+    });
+    this.peren.play('peren-battler-idle-loop');
+    for(const sheet of [PEREN_BATTLE_ART.fire,PEREN_BATTLE_ART.ice,PEREN_BATTLE_ART.neutral]){
+      const key=sheet.key+'-cast';
+      if(!this.anims.exists(key))this.anims.create({
+        key,frames:this.anims.generateFrameNumbers(sheet.key,{start:0,end:sheet.frames-1}),
+        frameRate:sheet.fps,repeat:0
+      });
+    }
+    // Original monster atlas remains the animated enemy battler until bespoke ones exist.
+    this.foe=this.add.sprite(0,0,beast.type,0).setOrigin(.5,1).setDepth(11).setFlipX(true);
+    if(this.region?.id!=='murin')this.foe.setTint(Number.parseInt(this.region.colors[6].slice(1),16));
+    this.foe.play(beast.type+'-idle');
+    this.nameText=this.add.text(0,0,beast.name.toUpperCase(),{
+      fontFamily:'Georgia,serif',fontSize:'15px',color:'#f0d7a5',stroke:'#091117',strokeThickness:3
+    }).setOrigin(.5).setDepth(15);
+    this.activeCaster=null;
+    this.applyBattleLayout();
+        this.hpBar=this.add.graphics().setDepth(16);
     this.floatGroup=this.add.group();
     for(const type of ['fire','ice','arcane'])if(!this.anims.exists('vfx-'+type))this.anims.create({key:'vfx-'+type,frames:this.anims.generateFrameNumbers('vfx-'+type,{start:0,end:9}),frameRate:18,repeat:0});
     this.scale.on('resize',this.resize,this);
@@ -38,13 +58,54 @@ export class BattleScene extends Phaser.Scene {
     this.game.events.emit('peren-battle-change',this.publicState());
     this.updateBar();
   }
-  resize(size){if(!this.peren)return;const w=size.width,h=size.height;
-    this.backdrop.setPosition(w/2,h*.52).setDisplaySize(w,h*.72);
-    this.peren.setPosition(w*.27,h*.61).setScale(Math.max(1.8,w/225));
-    this.foe.setPosition(w*.735,h*.56).setScale(Math.max(1.65,w/260));
-    this.nameText.setPosition(w*.74,h*.41);this.updateBar();
+  drawBackdrop(){
+    if(this.backdrop?.active)this.backdrop.destroy();
+    const w=this.scale.width,h=this.scale.height;
+    if(this.region?.id==='murin'){
+      this.backdrop=this.add.image(w/2,h*.52,'murin-battle-bg').setDepth(-8).setDisplaySize(w,h*.72);
+    }else{
+      this.backdrop=createRegionBattleBackdrop(this,this.region,this.registry.get('seed')||'murin-001');
+    }
   }
-  publicState(){if(!this.state)return null;const b=this.state,p=this.registry.get('combatProfile')||defaultProfile();return {status:b.status,round:b.round,enemyId:b.enemyId,monster:b.enemyName,enemyHp:b.hp,enemyMaxHp:b.maxHp,hp:b.playerHp,maxHp:b.playerMaxHp,mp:b.playerMp,maxMp:b.playerMaxMp,potions:b.potions,preparations:(b.preparations||[]).map((p,i)=>({id:p.id,label:'Preparo '+(i+1)})),log:b.log.slice(0,3),busy:this.busy,level:p.level,gold:p.gold,xp:p.xp,bag:p.bag,key:b.key,reward:this.reward||null};}
+  applyBattleLayout(){
+    if(!this.peren?.active)return;
+    const area=measuredBattleArea(this);
+    const x=area.w*(area.compact?.27:.25),foeX=area.w*(area.compact?.76:.74);
+    const playerScale=Math.min(area.w*(area.compact?.46:.37)/PEREN_BATTLE_ART.idle.width,
+      area.height*.89/PEREN_BATTLE_ART.idle.height);
+    const enemyScale=Math.min(area.w*(area.compact?.32:.28)/64,area.height*.60/64);
+    this.peren.setPosition(x,area.ground).setScale(playerScale);
+    this.foe.setPosition(foeX,area.ground-5).setScale(enemyScale);
+    this.nameText.setPosition(foeX,Math.max(area.top+16,area.ground-enemyScale*64-30));
+    if(this.activeCaster?.active){
+      const sheet=this.activeCasterSheet;
+      const scale=Math.min(area.w*(area.compact?.46:.37)/sheet.width,area.height*.89/sheet.height);
+      this.activeCaster.setPosition(x,area.ground).setScale(scale);
+    }
+    this.updateBar();
+  }
+  resize(){
+    if(!this.peren?.active)return;
+    this.drawBackdrop();
+    this.applyBattleLayout();
+  }
+  async showCasting(action){
+    const sheet=casterForAction(action);
+    if(!sheet||!this.textures.exists(sheet.key))return false;
+    this.peren.setVisible(false);
+    this.activeCasterSheet=sheet;
+    const caster=this.add.sprite(this.peren.x,this.peren.y,sheet.key,0).setOrigin(.5,1).setDepth(13);
+    this.activeCaster=caster;
+    this.applyBattleLayout();
+    caster.play(sheet.key+'-cast');
+    return true;
+  }
+  restoreIdle(){
+    this.activeCaster?.destroy();
+    this.activeCaster=null;this.activeCasterSheet=null;
+    if(this.peren?.active)this.peren.setVisible(true).play('peren-battler-idle-loop',true);
+  }
+    publicState(){if(!this.state)return null;const b=this.state,p=this.registry.get('combatProfile')||defaultProfile();return {status:b.status,round:b.round,enemyId:b.enemyId,monster:b.enemyName,enemyHp:b.hp,enemyMaxHp:b.maxHp,hp:b.playerHp,maxHp:b.playerMaxHp,mp:b.playerMp,maxMp:b.playerMaxMp,potions:b.potions,preparations:(b.preparations||[]).map((p,i)=>({id:p.id,label:'Preparo '+(i+1)})),log:b.log.slice(0,3),busy:this.busy,level:p.level,gold:p.gold,xp:p.xp,bag:p.bag,key:b.key,reward:this.reward||null};}
   updateBar(){if(!this.hpBar||!this.foe)return;const f=this.state;
     this.hpBar.clear();const x=this.foe.x-56,y=this.foe.y-95;
     this.hpBar.fillStyle(0x090f13,.93);this.hpBar.fillRoundedRect(x,y,112,11,3);
