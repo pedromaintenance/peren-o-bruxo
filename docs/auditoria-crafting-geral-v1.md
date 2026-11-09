@@ -173,3 +173,9 @@ A reconstrução das **2.316 receitas** combina `ferramentas/build_data.py`, `da
 As observações sobre biome, origem e cultura provêm da consulta ao atlas de [Monstros da Carcaça](https://github.com/pedromaintenance/monstros-carcaca). Propostas desse repositório permanecem não homologadas quando assim identificadas; as interpretações de metalurgia e culinária acima são **pareceres editoriais**, não novos fatos do cenário.
 
 **Próximo passo editorial:** pactuar o tratamento das **102 receitas estruturalmente inválidas** com o agente de mecânicas e preparar um pacote de decisão autoral, ofício por ofício, sem aplicar mutações automáticas.
+
+## Aprofundamento I — Forja individualizada (08/11/2026)
+
+As **89 receitas da Forja** ganharam [parecer específico](parecer-forja-cadeia-produtiva-equipamentos-v1.md) e [matriz JSON individual de 89 IDs](../data/auditoria-forja-89-v1.json). A avaliação confirma **84 equipamentos + 5 lingotes, 60 peças produzidas diretamente de minérios e nenhuma receita que consome lingotes**. Os atributos de Defesa aparecem em 49 armas sem aplicação direta pelo slot de arma; os 35 escudos e armaduras compartilham o slot de proteção do clássico.
+
+Uma simulação **contrafactual** de custos com compra de todos os materiais em Thargrid, Comércio 9, e venda do produto no mesmo local identifica 70 saldos negativos, 18 positivos e um nulo. Não conclui lucro/prejuízo efetivo porque os estoques, tempo de ofício, deslocamento e coleta não foram modelados. A diferenciação de Golzdov e Kindau foi reafirmada. Toda a análise permanece **editorial**, sem refazer receita, inventar jazidas ou migrar save.
