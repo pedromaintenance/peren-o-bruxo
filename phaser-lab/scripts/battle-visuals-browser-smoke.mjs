@@ -32,7 +32,7 @@ try{
   const visual=await page.evaluate(()=>{
    const b=window.__perenLab.scene.getScene('BattleScene');
    return {region:b.region?.id,backdropType:b.backdrop?.type,
-    playerTexture:b.peren?.texture?.key,frames:b.peren?.texture?.frameTotal,
+    playerTexture:b.peren?.texture?.key,frames:b.anims.get('peren-battler-idle-loop')?.frames?.length,
     playerAnimation:b.peren?.anims?.currentAnim?.key,opponent:b.foe?.texture?.key,
     foeVisible:b.foe?.visible,playerVisible:b.peren?.visible,
     casterFireLoaded:b.textures.exists('peren-battler-fire'),casterIceLoaded:b.textures.exists('peren-battler-ice')};
