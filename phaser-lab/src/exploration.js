@@ -39,7 +39,7 @@ export class ExplorationScene extends Phaser.Scene {
     this.collected=new Set(bridge?.collectedIds(this.world.seed)||[]);
     if(!this.registry.get('combatProfile'))this.registry.set('combatProfile',defaultProfile());
     this.weather=worldWeather(this.world.seed);
-    this.activeEncounter=null;this.enemyClock=0;
+    this.activeEncounter=null;this.enemyClock=0;this.worldTimeMs=0;
     this.harvestCueSignature=undefined;
     this.registry.set('harvestCue',null);
     this.trailCellSignature=undefined;
@@ -283,6 +283,27 @@ export class ExplorationScene extends Phaser.Scene {
   }
   update(_t,delta){
     if(!this.player)return;
+    // 1 real second = 1 in-world minute. Only the actively running Carcaça
+    // scene advances; menus, combat and tab suspension never create catch-up.
+    // Batch 3 minutes per atomic save to avoid one storage write per frame.
+    if(!this.isGathering&&!this.activeEncounter&&!this.registry.get('battleState')){
+      this.worldTimeMs+=Math.min(Math.max(0,delta),250);
+      if(this.worldTimeMs>=3000){
+        const minutes=Math.min(15,Math.floor(this.worldTimeMs/1000));
+        this.worldTimeMs-=minutes*1000;
+        const bridge=this.registry.get('progressBridge');
+        try{
+          const tx=bridge?.execute({type:'passTime',minutes});
+          if(tx?.applied){
+            const events=tx.next.worlds.eventLog;
+            const previous=tx.next.history.at(-1);
+            this.game.events.emit('peren-world-clock',{clock:tx.next.worlds.clock,alive:tx.next.character.survival.alive});
+            const newest=tx.next.character.journal[0]||'';
+            if(newest.includes('MARCO HISTÓRICO'))this.registry.set('status',newest);
+          }
+        }catch(error){this.game.events.emit('peren-progress-error',error.message);this.scene.pause();return;}
+      }
+    }
     if(ISOLATED_PREVIEW && retreatGraceActive(this.retreatGraceMs)){
       this.retreatGraceMs=tickRetreatGrace(this.retreatGraceMs,delta);
       const seconds=Math.ceil(this.retreatGraceMs/1000);
