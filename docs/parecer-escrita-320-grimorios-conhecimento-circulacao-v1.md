@@ -131,3 +131,9 @@ A forte diferença econômica entre Garganta e outras cidades é **uma hipótese
 - **0** alterações em `data/magias.json`, `data/receitas.json`, `data/itens.json`, `game.js`, gerador, catálogos curatoriais, loot, saves ou cânone do mundo.
 
 **Próxima frente:** Encantamento — **113 receitas** e seus **102 requisitos de Cristal de Alma Maior com quantidade zero**, além de fonte física do objeto, diferença entre ritual e artefato e custo social/cosmológico dos materiais.
+
+## Atualização de QA compilado — 10/11/2026
+
+Posteriormente a esta análise, a leitura por **SHA de blob Git** conseguiu acessar integralmente os arquivos `data/itens.json` e `data/receitas.json` que o conector de arquivos antes não retornava completos. **As 320 receitas de Escrita foram cotejadas com os registros publicados e não houve divergência de IDs, insumos, níveis, resultado, rendimento ou nome; seus 320 produtos foram conferidos com o catálogo.** Todos os 34 grimórios sem receita também estão no catálogo de itens e não aparecem como resultado de receita. Veja o [QA direto dos compilados](qa-crafting-compilado-2026-11-10.md) e os [102 requisitos inválidos encontrados no Encantamento](../data/qa-crafting-compilado-2026-11-10.json).
+
+A ressalva anterior sobre **impossibilidade de ler os compilados** ficou superada pela nova verificação. Permanecem pendentes testes de execução real, Phaser/prealfa, saves, mercados e decisões autorais.
