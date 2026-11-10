@@ -33,14 +33,16 @@ test('mortalidade/extensões: forma não concede imortalidade, formas futuras po
  const chronos=advanceSurvival(s,121*365.25*1440,{hp:114,maximumHp:114});
  assert.equal(chronos.survival.alive,false);
  assert.equal(chronos.survival.causeOfDeath,'velhice');
- const future=normalizeSurvival({...s,physiology:{form:'vampiro',diet:'blood',sleep:'none',mortality:'immortal',agingRate:0,resurrection:'permitted'}});
+ const future=normalizeSurvival({...s,physiology:{form:'imortal',diet:'none',sleep:'none',mortality:'immortal',agingRate:0,resurrection:'permitted'}});
  const frozen=advanceSurvival(future,80*366*1440,{hp:114,maximumHp:114});
  assert.equal(frozen.survival.ageMinutes,0);
  assert.equal(frozen.survival.rest,100);
  assert.equal(frozen.survival.alive,true);
- assert.ok(frozen.survival.hunger<100);
- // No actual vampire diet actions are implemented yet.
- assert.throws(()=>eatMeal(future),/não se alimenta/);
+ assert.equal(frozen.survival.hunger,100);
+ // A vampire form may exchange human diet for blood but remains hungry.
+ const vampire=normalizeSurvival({...s,physiology:{form:'vampiro',diet:'blood',sleep:'none',mortality:'mortal'}});
+ assert.throws(()=>eatMeal(vampire),/não se alimenta/);
+ assert.ok(advanceSurvival(vampire,60,{hp:114,maximumHp:114}).survival.hunger<100);
 });
 test('ações não têm limite diário; estudo, preparo e criação avançam minutos',()=>{
  let env=base();
