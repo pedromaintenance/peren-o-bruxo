@@ -102,7 +102,7 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
   function render(){
     if(!isDynamic())return;
     const s=bridge.state;
-    const directory=effectDirectory(data,s.alchemy?.known,s.bag,s.actions);
+    const directory=effectDirectory(data,s.alchemy?.known,s.bag,Infinity);
     const current=paintDirectory(directory);
     const selected=current?.effects.find(e=>e.id===effectId)||null;
     if(effectId&&!selected){effectId=null;idA='';idB='';}
@@ -117,15 +117,15 @@ export function createAlchemyScreen({document:doc,bridge,catalogs,onChange=()=>{
       'Combine quaisquer dois ingredientes. Os efeitos permanecem ocultos até a tentativa.');
     const options=choices();
     syncSelectors(options);
-    const enabled=s.actions>0&&!busy&&Boolean(idA&&idB&&idA!==idB);
+    const enabled=s.survival?.alive!==false&&!busy&&Boolean(idA&&idB&&idA!==idB);
     elements.alchemyBrew.disabled=!enabled;
     elements.alchemyBrew.textContent=busy?'Preparando...':modeKnown?'⚗ Produzir preparação':'✧ Experimentar mistura';
     const studyIngredient=idA&&data.itens[idA];
     const studyNext=studyIngredient?nextStudyEffect(data,s.alchemy.known,idA):null;
-    elements.alchemyStudy.disabled=!idA||!studyNext||s.actions<=0||busy;
+    elements.alchemyStudy.disabled=!idA||!studyNext||s.survival?.alive===false||busy;
     elements.alchemyStudy.textContent=studyNext?'Estudar ingrediente':'Sem propriedades por descobrir';
     set(doc,'alchemyOwned',options.length+' ingredientes disponíveis neste modo');
-    set(doc,'alchemyActions',s.actions+' ações restantes');
+    set(doc,'alchemyActions','Sem limite de ações · o tempo avança a cada experiência');
     paintPreparations();
     if(lastResult){
       if(lastResult.type==='brewPair'&&lastResult.valid)

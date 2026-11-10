@@ -38,7 +38,7 @@ try{
   const expected=resolveAlchemyPair(c.curadoria_ingredientes,pair);
   for(const id of pair)for(const effect of expected.effects)assert.ok(known[id].includes(effect.id));
   assert.equal(saved.character.alchemy.preparations.length,1);
-  assert.equal(saved.character.actions,1);
+  assert.equal(saved.character.actions,3);
   assert.equal(saved.character.bag[pair[0]],1);
   assert.equal(saved.character.bag[pair[1]],1);
   assert.ok(await page.locator('#alchemyEffectList .alchemy-effect.is-ready').count()>0);

@@ -27,7 +27,7 @@ test('M1g-C mostra contagens reais, skill e lote fixo de cada receita',()=>{
     assert.equal(part.need,catalog.quantidade);
     assert.equal(part.have,s.bag[part.id]||0);
   }
-  assert.equal(rec.eligible,craftable(s,source,catalogs)&&s.actions>0);
+  assert.equal(rec.eligible,craftable(s,source,catalogs));
 });
 test('M1g-C filtro, busca e indisponibilidade não inserem itens ou transações',()=>{
   const s=newClassicState();const copy=JSON.stringify(s);
@@ -42,10 +42,10 @@ test('M1g-C filtro, busca e indisponibilidade não inserem itens ou transações
   const empty=workshopViewModel(s,catalogs,{search:'receita-impossivel-123'});
   assert.equal(empty.selected,null);
   const noActions=workshopViewModel({...s,actions:0},catalogs);
-  assert.ok(noActions.recipes.every(r=>!r.eligible));
+  assert.ok(noActions.recipes.some(r=>r.eligible),'Sem limite diário: criação continua permitida');
   assert.equal(JSON.stringify(s),copy);
 });
-test('M1g-C confirmação produz apenas quantidade canonica e consome uma ação',()=>{
+test('M1g-C confirmação produz a quantidade canônica e consome tempo',()=>{
   const s=newClassicState();
   const rec=workshopViewModel(s,catalogs,{limit:4000}).recipes.find(r=>r.eligible);
   assert.ok(rec,'Nenhuma receita inicial fabricável no catálogo da cidade');
@@ -53,7 +53,7 @@ test('M1g-C confirmação produz apenas quantidade canonica e consome uma ação
   const tx=applyTransaction(env,{type:'craft',id:rec.id},catalogs);
   assert.equal(tx.applied,true);
   assert.equal(tx.next.character.crafted,s.crafted+1);
-  assert.equal(tx.next.character.actions,s.actions-1);
+  assert.equal(tx.next.character.actions,s.actions);assert.ok(tx.result.cost.minutes>0);
   assert.equal(tx.next.character.bag[rec.resultId],(s.bag[rec.resultId]||0)+rec.outputCount);
   for(const part of rec.requirements)assert.equal(tx.next.character.bag[part.id]||0,(s.bag[part.id]||0)-part.need);
   assert.equal(env.character.crafted,s.crafted,'estado antigo permanece imutável');

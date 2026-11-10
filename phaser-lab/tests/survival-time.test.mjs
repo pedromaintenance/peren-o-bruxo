@@ -1,0 +1,123 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {newSurvival,normalizeSurvival,advanceSurvival,eatMeal,survivalSummary} from '../src/survival.js';
+import {buildCatalogs,newClassicState,stageFromClassic,applyTransaction,PHASER_SCHEMA} from '../src/progress.js';
+import {advanceWorldClock,newWorldClock,erisianDate} from '../src/carcaca-time.js';
+const read=name=>JSON.parse(readFileSync(new URL('../../data/'+name+'.json',import.meta.url),'utf8'));
+const c=buildCatalogs(Object.fromEntries(['itens','receitas','magias','monstros','cidades','curadoria_ingredientes'].map(k=>[k,read(k)])));
+const base=()=>stageFromClassic(newClassicState(),c);
+test('dois medidores biológicos são independentes do tempo e do HP',()=>{
+ const s=newSurvival();
+ assert.equal(s.hunger,100);assert.equal(s.rest,100);assert.equal(s.physiology.form,'metamorfo');
+ assert.equal(s.physiology.mortality,'mortal');
+ const tick=advanceSurvival(s,6*60,{hp:114,maximumHp:114});
+ assert.ok(tick.survival.hunger<100);assert.ok(tick.survival.rest<100);
+ assert.equal(tick.hp,114);assert.equal(s.hunger,100);
+ const rest=advanceSurvival(tick.survival,8*60,{sleeping:true,hp:114,maximumHp:114});
+ assert.ok(rest.survival.rest>tick.survival.rest);
+ assert.ok(rest.survival.hunger<tick.survival.hunger);
+});
+test('starvation and sleep deprivation cause cumulative damage then death; no auto-resurrection',()=>{
+ const ill={...newSurvival(),hunger:0,rest:0};
+ const t=advanceSurvival(ill,24*60,{hp:114,maximumHp:114});
+ assert.equal(t.survival.alive,false);
+ assert.equal(t.hp,0);
+ assert.match(t.survival.causeOfDeath,/inanição|sono/);
+ const later=advanceSurvival(t.survival,8*60,{sleeping:true,hp:0,maximumHp:114});
+ assert.equal(later.survival.alive,false);
+ assert.throws(()=>eatMeal(t.survival),/morto/);
+});
+test('mortalidade/extensões: forma não concede imortalidade, formas futuras podem trocar necessidade',()=>{
+ const s=newSurvival();
+ const chronos=advanceSurvival(s,121*365.25*1440,{hp:114,maximumHp:114});
+ assert.equal(chronos.survival.alive,false);
+ assert.equal(chronos.survival.causeOfDeath,'velhice');
+ const future=normalizeSurvival({...s,physiology:{form:'imortal',diet:'none',sleep:'none',mortality:'immortal',agingRate:0,resurrection:'permitted'}});
+ const frozen=advanceSurvival(future,80*366*1440,{hp:114,maximumHp:114});
+ assert.equal(frozen.survival.ageMinutes,0);
+ assert.equal(frozen.survival.rest,100);
+ assert.equal(frozen.survival.alive,true);
+ assert.equal(frozen.survival.hunger,100);
+ // A vampire form may exchange human diet for blood but remains hungry.
+ const vampire=normalizeSurvival({...s,physiology:{form:'vampiro',diet:'blood',sleep:'none',mortality:'mortal'}});
+ assert.throws(()=>eatMeal(vampire),/não se alimenta/);
+ assert.ok(advanceSurvival(vampire,60,{hp:114,maximumHp:114}).survival.hunger<100);
+});
+test('ações não têm limite diário; estudo, preparo e criação avançam minutos',()=>{
+ let env=base();
+ env.character.actions=0;
+ const first=applyTransaction(env,{type:'studyIngredient',id:'ing-blue-mountain-flower'},c);
+ assert.equal(first.next.character.actions,0);
+ assert.ok(first.next.worlds.clock.minute>env.worlds.clock.minute);
+ const s=first.next;
+ const brew=applyTransaction(s,{type:'brewPair',ingredients:['ing-blue-mountain-flower','ing-butterfly-wing']},c);
+ assert.equal(brew.applied,true);assert.equal(brew.next.character.actions,0);
+ const craft=applyTransaction(brew.next,{type:'craft',id:'rec-pocao-restauradora'},c);
+ assert.equal(craft.next.character.actions,0);
+ assert.equal(craft.result.cost.minutes,90+Math.floor((c.receitasById['rec-pocao-restauradora'].nivel||0)*3));
+});
+test('dano de exaustão em pulsos de três minutos acumula frações sem zerar PV',()=>{
+ let env=base();env.character.survival.rest=0;env.character.survival.hunger=100;
+ const startHp=env.character.hp;
+ for(let i=0;i<40;i++){
+  const tx=applyTransaction(env,{type:'passTime',minutes:3},c);
+  env=tx.next;
+  assert.ok(Number.isSafeInteger(env.character.hp),'PV precisa continuar inteiro');
+  assert.equal(env.character.survival.alive,true,'Dano fracionário não mata do nada');
+ }
+ assert.equal(env.character.hp,startHp-6,'2 horas privadas de sono devem causar exatamente 6 PV');
+ assert.equal(env.character.survival.healthDebt,0);
+});
+test('alimentação gasta uma ração e tempo; sono recupera sem pular artificialmente o dia',()=>{
+ let env=base();
+ env.character.survival.hunger=35;
+ const initial=env.character.bag['ger-racoes-de-viagem'];
+ const eaten=applyTransaction(env,{type:'eat'},c);
+ assert.equal(eaten.next.character.bag['ger-racoes-de-viagem'],initial-1);
+ assert.ok(eaten.next.character.survival.hunger>35);
+ const before=eaten.next.worlds.clock.minute;
+ const slept=applyTransaction(eaten.next,{type:'sleep',hours:8},c);
+ assert.equal(slept.result.cost.minutes,480);
+ assert.equal(slept.next.worlds.clock.minute,(before+480)%1440);
+ assert.equal(slept.next.character.actions,3);
+ assert.ok(slept.next.character.survival.rest>0);
+});
+test('dilatação dimensional: relógio e metabolismo ficam congelados fora da Carcaça',()=>{
+ const env=base();
+ env.worlds.clock.dimension='shadowfell';
+ const before=JSON.stringify(env.character.survival);
+ const tx=applyTransaction(env,{type:'passTime',minutes:40},c);
+ assert.equal(tx.next.worlds.clock.year,922);
+ assert.equal(tx.next.worlds.clock.minute,480);
+ assert.equal(JSON.stringify(tx.next.character.survival),before);
+ assert.equal(tx.result.cost.minutes,0);
+});
+test('cada marco muda flags de mundo e diário, preservando identidade após reload',()=>{
+ let env=base();
+ env.worlds.clock={year:982,day:365,minute:1439,dimension:'carcaca'};
+ let tx=applyTransaction(env,{type:'passTime',minutes:1},c);
+ assert.equal(tx.next.worlds.clock.year,983);
+ assert.equal(tx.next.worlds.historicalFlags.templo_das_sombras_destruido,true);
+ assert.equal(tx.next.worlds.eventLog.filter(id=>id==='invasao-abismo-983').length,1);
+ assert.match(tx.next.character.journal[0],/983 EC/);
+ const again=applyTransaction(tx.next,{type:'passTime',minutes:1},c);
+ assert.equal(again.next.worlds.eventLog.filter(id=>id==='invasao-abismo-983').length,1);
+ env=base();
+ env.worlds.clock={year:983,day:365,minute:1439,dimension:'carcaca'};
+ tx=applyTransaction(env,{type:'passTime',minutes:1},c);
+ assert.equal(tx.next.worlds.historicalFlags.gualapolis_tomada_pelo_senhor_do_rio,true);
+ env=base();env.worlds.clock={year:998,day:365,minute:1439,dimension:'carcaca'};
+ tx=applyTransaction(env,{type:'passTime',minutes:1},c);
+ assert.equal(tx.next.worlds.historicalFlags.templo_do_crepusculo_construido,true);
+});
+
+test('interface não ensina a mecânica removida de três ações',()=>{
+ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ assert.ok(html.includes('id="hudHungerFill"'));
+ assert.ok(html.includes('id="hudRestFill"'));
+ assert.ok(html.includes('id="eatBtn"'));
+ assert.ok(html.includes('id="sleepHours"'));
+ assert.ok(html.includes('1 de Caos · Sweet · 922 EC'));
+ assert.doesNotMatch(html,/Cada criação consome uma ação|misturar gasta uma ação|3 ações disponíveis/);
+});

@@ -4,6 +4,7 @@
  */
 import {craftable,skillLevel} from './progress.js';
 import {createAlchemyScreen} from './ui-alchemy.js';
+import {erisianDate} from './carcaca-time.js';
 
 const tx=v=>String(v??'');
 const normal=v=>tx(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
@@ -26,8 +27,8 @@ export function workshopViewModel(s,c,{station='all',search='',selectedId=null,l
     const reasons=[];
     if(skill<rec.nivel)reasons.push('Ofício insuficiente: '+skill+' / '+rec.nivel);
     if(requires.some(ing=>!ing.ready))reasons.push('Faltam ingredientes');
-    if(s.actions<=0)reasons.push('Sem ações disponíveis; descanse');
-    const eligible=craftable(s,rec,c)&&s.actions>0;
+    if(s.survival?.alive===false)reasons.push('Peren não pode criar enquanto estiver morto');
+    const eligible=craftable(s,rec,c)&&s.survival?.alive!==false;
     return {id:rec.id,name:rec.nome,station:rec.estacao,stationName:names[rec.estacao]||rec.estacao,
       icon:icons[rec.estacao]||'✦',resultId:rec.resultado,resultName:result?.nome||rec.resultado,
       outputCount:rec.quantidade,description:result?.descricao||result?.descricaoCurta||'Sem descrição cadastrada.',
@@ -41,7 +42,7 @@ export function workshopViewModel(s,c,{station='all',search='',selectedId=null,l
   const selected=filtered.find(rec=>rec.id===selectedId)||filtered[0]||null;
   return {city:city?.nome||s.city,stations:[{id:'all',name:'Todas',icon:'✦'},...Array.from(available).map(id=>({id,name:names[id]||id,icon:icons[id]||'✧'}))],
     total:recipes.length,filteredTotal:filtered.length,recipes:filtered.slice(0,Math.max(1,limit)),
-    selected,actions:s.actions,gold:s.gold,day:s.day};
+    selected,actions:'Sem limite',gold:s.gold,day:s.day};
 }
 const put=(doc,id,value)=>{const el=doc.getElementById(id);if(el)el.textContent=tx(value);};
 const el=(doc,tag,cls,text)=>{const e=doc.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=tx(text);return e;};
@@ -72,8 +73,8 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     model=workshopViewModel(s,catalogs,{station,search:search.value,selectedId,limit});
     selectedId=model.selected?.id||null;
     put(doc,'craftCity',model.city);
-    put(doc,'craftDay','Dia '+model.day);
-    put(doc,'craftActions',model.actions+' ações');
+    put(doc,'craftDay',erisianDate(bridge.clock).label);
+    put(doc,'craftActions','Tempo e necessidades');
     put(doc,'craftGold',fmt(model.gold));
     put(doc,'craftRecipeCount',model.filteredTotal+' receitas encontradas');
     const tabNodes=model.stations.filter(t=>t.id!=='all').map(t=>{
@@ -122,7 +123,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     put(doc,'craftResultOwned',r?'Na bolsa: '+r.owned:'');
     put(doc,'craftResultDescription',r?.description||'Descubra receitas nas estações disponíveis da cidade.');
     put(doc,'craftSkill',r?'Proficiência '+r.skillName+': '+r.skill+' / '+r.level:'');
-    put(doc,'craftCostNote','Cada criação consome uma ação e produz a quantidade indicada pela receita.');
+    put(doc,'craftCostNote','Cada criação consome tempo, materiais e energia. Não existe limite diário de ações.');
     put(doc,'craftResultIcon',r?.icon||'⚗');
     const ing=doc.getElementById('craftIngredients');ing.replaceChildren();
     if(r){
@@ -135,7 +136,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     const canMake=Boolean(r?.eligible)&&!busy;
     button.disabled=!canMake;
     button.textContent=busy?'Preparando...':canMake?'⚗ Criar '+r.outputCount+' × '+r.resultName:'Criação indisponível';
-    put(doc,'craftBlockReason',r?(r.reasons.length?r.reasons.join(' · '):'Materiais, ofício e ações suficientes.'):'Nenhuma receita selecionada.');
+    put(doc,'craftBlockReason',r?(r.reasons.length?r.reasons.join(' · '):'Materiais e ofício suficientes. Tempo avança ao criar.'):'Nenhuma receita selecionada.');
     const block=doc.getElementById('craftBlockReason');
     if(block)block.dataset.ready=String(Boolean(r?.eligible));
     alchemy.show(station==='alquimia');

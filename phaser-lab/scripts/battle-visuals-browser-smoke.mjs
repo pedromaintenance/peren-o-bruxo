@@ -14,6 +14,9 @@ try{
  await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});
  await page.waitForFunction(()=>window.__perenLab?.registry?.get('ready')===true,{timeout:30000});
  for(const [index,id] of all.entries()){
+  const status=await page.evaluate(()=>window.__perenProgress.save.character.survival);
+  if(status.hunger<65)await page.locator('#eatBtn').click();
+  if(status.rest<65){await page.locator('#sleepHours').selectOption('8');await page.locator('#endDayBtn').click();}
   if(id==='murin'&&index===0)await page.locator('#goForest').click();
   else{
    await page.locator('#regionSelect').selectOption(id);

@@ -21,6 +21,16 @@ try{
   ['boca-abismo','boca-abismo'],['murin','portomonte']
  ];
  for(const [region,city] of destinations){
+  // O teste da viagem agora provisiona o personagem de verdade: viagens
+  // consecutivas sem comida e sono são perigosas por design, não bugs de mapa.
+  const needs=await page.evaluate(()=>window.__perenProgress.save.character.survival);
+  if(needs.hunger<65){
+   await page.locator('#eatBtn').click();
+  }
+  if(needs.rest<65){
+   await page.locator('#sleepHours').selectOption('8');
+   await page.locator('#endDayBtn').click();
+  }
   await page.locator('#regionSelect').selectOption(region);
   await page.locator('#travelRegion').click();
   try{
@@ -36,7 +46,11 @@ try{
        paused:game?.scene?.isPaused('ExplorationScene'),
        hubHidden:document.getElementById('hub').hidden,
        controlsHidden:document.getElementById('controls').hidden,
-       hubStatus:document.getElementById('hubStatus').textContent};
+       hubStatus:document.getElementById('hubStatus').textContent,
+       survival:window.__perenProgress.save.character.survival,
+       hp:window.__perenProgress.save.character.hp,
+       clock:window.__perenProgress.save.worlds.clock,
+       deathVisible:!document.getElementById('deathOverlay').hidden};
    });
    console.error('Region '+region+' failed to enter',JSON.stringify({snapshot,errors}));
    throw error;

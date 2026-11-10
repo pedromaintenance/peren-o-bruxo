@@ -33,7 +33,7 @@ test('pré-alfa nunca importa save clássico mesmo quando existe; preserva dados
 test('no classic file creates a valid fresh state, no classic save created',()=>{
  const storage=new MemoryStorage(),bridge=createProgressBridge(storage,c);
  assert.equal(bridge.state.level,1);bridge.execute({type:'endDay'});
- assert.equal(storage.getItem(CLASSIC_KEY),null);assert.equal(bridge.state.day,2);
+ assert.equal(storage.getItem(CLASSIC_KEY),null);assert.equal(bridge.state.day,1);assert.equal(bridge.clock.minute,960);
 });
 test('collection transactions are keyed per map seed and node; idempotent after reload',()=>{
  const world=buildForest('bridge-murin-43'),node=world.nodes[0],store=new MemoryStorage(),b=createProgressBridge(store,c);
@@ -74,15 +74,15 @@ test('escape and defeat consume resources but give no loot or XP',()=>{
  const defeat=applyTransaction(e,{type:'escape',battle:{status:'lost',playerHp:0,playerMp:0,potions:0}},c);
  assert.ok(defeat.next.character.hp>=24);assert.equal(defeat.next.character.gold,180);
 });
-test('crafting uses real recipe requirements and cost of daily action',()=>{
+test('crafting uses materials and minutes without an action cap',()=>{
  const store=new MemoryStorage(),b=createProgressBridge(store,c);const r=c.receitasById['rec-pocao-restauradora'];
  assert.equal(craftable(b.state,r,c),true);
  const a=b.execute({type:'craft',id:r.id});assert.equal(a.applied,true);
  assert.equal(b.state.bag['ger-pocao-restauradora'],4);
  assert.equal(b.state.bag['ing-blue-mountain-flower'],1);
- assert.equal(b.state.bag['mat-agua-purificada'],3);assert.equal(b.state.actions,2);
+ assert.equal(b.state.bag['mat-agua-purificada'],3);assert.equal(b.state.actions,3);assert.ok(b.clock.minute>480);
  assert.equal(b.state.crafted,1);
- b.execute({type:'craft',id:r.id});assert.equal(b.state.actions,1);
+ b.execute({type:'craft',id:r.id});assert.equal(b.state.actions,3);
  assert.throws(()=>b.execute({type:'craft',id:r.id}),/Faltam materiais/);
 });
 test('buy/sell use classic commerce pricing and preserve other inventory',()=>{
@@ -103,7 +103,7 @@ test('failed storage write is atomic and does not mutate running state',()=>{
 test('two tabs with divergent revisions cannot clobber each other',()=>{
  const store=new MemoryStorage(),a=createProgressBridge(store,c),b=createProgressBridge(store,c);
  a.execute({type:'endDay'});assert.throws(()=>b.execute({type:'endDay'}),/outra aba/);
- assert.equal(createProgressBridge(store,c).state.day,2);
+ assert.equal(createProgressBridge(store,c).state.day,1);
 });
 test('recovery exports/imports v2 with full ledger',()=>{
  const storage=new MemoryStorage(),b=createProgressBridge(storage,c),w=buildForest('reload');
