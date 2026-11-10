@@ -29,13 +29,14 @@ export function normalizePhysiology(source){
  };
 }
 export function newSurvival(){
- return {hunger:100,rest:100,ageMinutes:0,alive:true,causeOfDeath:null,physiology:{...DEFAULT_PHYSIOLOGY}};
+ return {hunger:100,rest:100,ageMinutes:0,healthDebt:0,alive:true,causeOfDeath:null,physiology:{...DEFAULT_PHYSIOLOGY}};
 }
 export function normalizeSurvival(source,legacyFatigue=0){
  const n=source&&typeof source==='object'&&!Array.isArray(source)?source:{};
  return {hunger:limit(validNumber(n.hunger,100),0,100),
   rest:limit(validNumber(n.rest,100-limit(validNumber(legacyFatigue,0),0,100)),0,100),
   ageMinutes:limit(validNumber(n.ageMinutes,0),0,100000*366*1440),
+  healthDebt:limit(validNumber(n.healthDebt,0),0,0.999999),
   alive:n.alive!==false,causeOfDeath:typeof n.causeOfDeath==='string'?n.causeOfDeath:null,
   physiology:normalizePhysiology(n.physiology)};
 }
@@ -53,13 +54,18 @@ export function advanceSurvival(current,minutes,{sleeping=false,hp=114,maximumHp
  const starve=p.diet==='none'?0:Math.max(0,hrs-Math.max(0,oldHunger)/(sleeping?SURVIVAL_RULES.hungerLossSleepingPerHour:SURVIVAL_RULES.hungerLossPerHour));
  const exhausted=p.sleep==='none'?0:sleeping?0:Math.max(0,hrs-Math.max(0,oldRest)/SURVIVAL_RULES.sleepLossPerHour);
  const damage=starve*SURVIVAL_RULES.starvationDamagePerHour+exhausted*SURVIVAL_RULES.sleepDeprivationDamagePerHour;
- const nextHp=Math.max(0,Math.min(maximumHp,hp)-damage);
+ // Damage remains integer at the HP boundary. Fractional damage accumulates
+ // persistently and does not disappear between short 3-minute world ticks.
+ const totalDamage=s.healthDebt+damage;
+ const appliedDamage=Math.floor(totalDamage+1e-8);
+ const healthDebt=round(totalDamage-appliedDamage);
+ const nextHp=Math.max(0,Math.round(Math.min(maximumHp,hp))-appliedDamage);
  const ageMinutes=s.ageMinutes+minutes*p.agingRate;
  const lifespanExceeded=p.mortality==='mortal'&&ageMinutes>=p.lifespanYears*365.25*1440;
  const death=nextHp<=0||lifespanExceeded;
  const cause=lifespanExceeded?'velhice':starve>0?'inanição':exhausted>0?'privação de sono':null;
- return {survival:{...s,hunger:round(hunger),rest:round(rest),ageMinutes:round(ageMinutes),
-  alive:!death,causeOfDeath:death?cause:null},hp:round(nextHp),damage:round(damage),death};
+ return {survival:{...s,hunger:round(hunger),rest:round(rest),ageMinutes:round(ageMinutes),healthDebt,
+  alive:!death,causeOfDeath:death?cause:null},hp:death?0:nextHp,damage:round(damage),death};
 }
 export function eatMeal(current,{recovery=SURVIVAL_RULES.mealRecovery}={}){
  const s=normalizeSurvival(current);
