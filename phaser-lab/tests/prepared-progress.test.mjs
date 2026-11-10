@@ -122,7 +122,7 @@ test('Percurso integral: ingredientes canônicos, bancada, frasco, batalha e inv
  assert.deepEqual(brew.result.preparation.effects.map(e=>e.id),['restaurar_saude']);
  const prepId=brew.result.preparation.id;
  assert.equal(brew.next.character.alchemy.preparations.length,1);
- assert.equal(brew.next.character.actions,2);
+ assert.equal(brew.next.character.actions,3);
  for(const id of ingredients)assert.equal(brew.next.character.bag[id],1);
  const b=newBattle({type:'mob-ettercap',name:'Ettercap'},toCombatProfile(brew.next,c),'murin::real-brew');
  const consumed=stepBattle(b,'prepared:'+prepId,()=>.1);
