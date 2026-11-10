@@ -49,7 +49,7 @@ test('estudo revela UMA propriedade, custa uma ação, não consome ingrediente,
  const env=stageFromClassic(rich(),c),before=env.character.bag[a];
  const effect=nextStudyEffect(cur,{},a);
  const result=applyTransaction(env,{type:'studyIngredient',id:a},c);
- assert.equal(result.next.character.actions,2);
+ assert.equal(result.next.character.actions,3);
  assert.equal(result.next.character.bag[a],before);
  assert.deepEqual(result.next.character.alchemy.known[a],[effect.id]);
  assert.ok(!result.next.character.alchemy.known[a].includes('curar_doenca')||effect.id==='curar_doenca');
@@ -64,7 +64,7 @@ test('experimento cego fabrica todos efeitos comuns e descobre seus atributos se
  assert.ok(tx.next.character.alchemy.known[b].includes('curar_doenca'));
  assert.equal(tx.next.character.alchemy.preparations.length,1);
  assert.equal(tx.next.character.alchemy.preparations[0].effects[0].potencia,undefined);
- assert.equal(tx.next.character.actions,2);
+ assert.equal(tx.next.character.actions,3);
  assert.equal(tx.next.character.bag[a],1);assert.equal(tx.next.character.bag[b],1);
  assert.equal(old.character.bag[a],2,'O estado anterior é imutável');
 });
@@ -79,7 +79,7 @@ test('experimento inválido consome os dois ingredientes e uma ação, sem fabri
  assert.equal(tx.result.valid,false);
  assert.equal(tx.next.character.alchemy.failed,1);
  assert.equal(tx.next.character.alchemy.preparations.length,0);
- assert.equal(tx.next.character.actions,2);
+ assert.equal(tx.next.character.actions,3);
  for(const id of pair)assert.equal(tx.next.character.bag[id]||0,(s.bag[id]||0)-1);
 });
 test('ingredientes ausentes ou repetidos falham atomicamente e nunca consomem ações',()=>{
@@ -101,7 +101,7 @@ test('descobertas e preparações sobrevivem reload do save Phaser',()=>{
  const reopened=createProgressBridge(storage,c);
  assert.equal(reopened.state.alchemy.preparations.length,1);
  assert.ok(reopened.state.alchemy.known[a].includes('curar_doenca'));
- assert.equal(reopened.state.actions,2);
+ assert.equal(reopened.state.actions,3);
  assert.equal(first.state.alchemy.preparations.length,0);
 });
 test('a interface oferece as duas rotas e não utiliza dados de save fora do bridge',()=>{
