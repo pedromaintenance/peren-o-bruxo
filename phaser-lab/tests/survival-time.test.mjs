@@ -57,6 +57,18 @@ test('ações não têm limite diário; estudo, preparo e criação avançam min
  assert.equal(craft.next.character.actions,0);
  assert.equal(craft.result.cost.minutes,90+Math.floor((c.receitasById['rec-pocao-restauradora'].nivel||0)*3));
 });
+test('dano de exaustão em pulsos de três minutos acumula frações sem zerar PV',()=>{
+ let env=base();env.character.survival.rest=0;env.character.survival.hunger=100;
+ const startHp=env.character.hp;
+ for(let i=0;i<40;i++){
+  const tx=applyTransaction(env,{type:'passTime',minutes:3},c);
+  env=tx.next;
+  assert.ok(Number.isSafeInteger(env.character.hp),'PV precisa continuar inteiro');
+  assert.equal(env.character.survival.alive,true,'Dano fracionário não mata do nada');
+ }
+ assert.equal(env.character.hp,startHp-6,'2 horas privadas de sono devem causar exatamente 6 PV');
+ assert.equal(env.character.survival.healthDebt,0);
+});
 test('alimentação gasta uma ração e tempo; sono recupera sem pular artificialmente o dia',()=>{
  let env=base();
  env.character.survival.hunger=35;
