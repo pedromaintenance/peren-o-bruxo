@@ -28,9 +28,10 @@ export const WORLD_HISTORY=Object.freeze([
   flags:['templo_do_crepusculo_construido']}
 ]);
 export const INITIAL_HISTORY=Object.freeze([
- {id:'voragar-e-dragoes-mortos',year:922,title:'A Queda dos Dragões',description:'Voragar e seus Dragões estão mortos.'},
- {id:'rayquaza-desaparecido',year:922,title:'O Desaparecimento de Rayquaza',description:'Rayquaza desapareceu misteriosamente.'}
+ {id:'voragar-e-dragoes-mortos',year:922,title:'A Queda dos Dragões',description:'Voragar e seus Dragões estão mortos.',flags:['voragar_morto','dragoes_de_voragar_mortos']},
+ {id:'rayquaza-desaparecido',year:922,title:'O Desaparecimento de Rayquaza',description:'Rayquaza desapareceu misteriosamente.',flags:['rayquaza_desaparecido']}
 ]);
+export function initialWorldFlags(){return Object.fromEntries(INITIAL_HISTORY.flatMap(e=>e.flags.map(flag=>[flag,true])))}
 export function isLeapEC(year){
  return Number.isSafeInteger(year)&&year>0&&year%4===0&&(year%100!==0||year%400===0);
 }
