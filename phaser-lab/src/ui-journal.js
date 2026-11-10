@@ -3,6 +3,7 @@
  * existing v2 envelope (last 80 transactions) and classic journal (last 90).
  * No invented quests, timestamps, drops, currencies, visits or new save fields.
  */
+import {erisianDate} from './carcaca-time.js';
 export const JOURNAL_TABS=Object.freeze([
  {id:'all',label:'Atividade',icon:'✦'},
  {id:'chronicle',label:'Crônicas',icon:'✎'},
@@ -19,7 +20,13 @@ const TYPES=Object.freeze({
  craft:{category:'craft',name:'Item criado',icon:'⚗'},
  buy:{category:'trade',name:'Compra',icon:'◈'},
  sell:{category:'trade',name:'Venda',icon:'◇'},
- endDay:{category:'other',name:'Novo dia',icon:'☾'},
+ endDay:{category:'other',name:'Sono',icon:'☾'},
+ sleep:{category:'other',name:'Dormir',icon:'☾'},
+ eat:{category:'other',name:'Comer',icon:'🍖'},
+ passTime:{category:'other',name:'Tempo transcorrido',icon:'⌛'},
+ selectRegion:{category:'other',name:'Viagem regional',icon:'✦'},
+ studyIngredient:{category:'craft',name:'Estudo alquímico',icon:'⚗'},
+ brewPair:{category:'craft',name:'Preparado alquímico',icon:'⚗'},
  selectSeed:{category:'other',name:'Nova rota',icon:'✦'}
 });
 const str=v=>String(v??'');
@@ -53,7 +60,7 @@ export function journalViewModel(envelope,catalogs,{category='all',query=''}={})
  return {entries,counts,category:active,query:str(query),
   totalRecorded:events.length,chronicles:chronicles.length,
   summary:{
-   day:safeInt(character.day),level:safeInt(character.level),kills:safeInt(character.kills),
+   day:safeInt(character.day),calendar:erisianDate(env.worlds?.clock).label,level:safeInt(character.level),kills:safeInt(character.kills),
    crafted:safeInt(character.crafted),gold:safeInt(character.gold),
    city:catalogs?.cidadesById?.[character.city]?.nome||str(character.city||'—'),
    seed:str(env.worlds?.activeSeed||'murin-001')
@@ -68,7 +75,7 @@ export function journalMarkdown(envelope,catalogs){
  '# Diário de Peren — registro da jornada',
  '',
  'Cidade atual: '+cleanLine(s.city),
- 'Dia atual: '+s.day+' · Nível: '+s.level+' · Vitórias acumuladas: '+s.kills,
+ 'Calendário da Carcaça: '+s.calendar+' · Nível: '+s.level+' · Vitórias acumuladas: '+s.kills,
  'Ofícios concluídos: '+s.crafted+' · Ouro atual: '+s.gold,
  'Seed ativa: '+cleanLine(s.seed),
  '',
@@ -104,7 +111,7 @@ export function createJournalScreen({document:doc,bridge,catalogs}){
  function render(){
   model=journalViewModel(bridge.read(),catalogs,{category,query:search.value});
   for(const [key,value] of Object.entries({
-   journalDay:'Dia '+model.summary.day,
+   journalDay:model.summary.calendar,
    journalLevel:'Nível '+model.summary.level,
    journalKills:String(model.summary.kills),
    journalCrafted:String(model.summary.crafted),
