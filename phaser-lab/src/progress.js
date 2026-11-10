@@ -7,7 +7,7 @@ import {BATTLE_MONSTERS,encounterKey} from './combat.js';
 import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
 import {reconcileBattlePreparations,applyExplorationPreparation} from './prepared-use.js';
 import {REGION_BY_ID} from './regions.js';
-import {EPOCH_EC,newWorldClock,normalizeWorldClock,advanceWorldClock,erisianDate,WORLD_HISTORY,clockPosition,daysInEC} from './carcaca-time.js';
+import {EPOCH_EC,newWorldClock,normalizeWorldClock,advanceWorldClock,erisianDate,WORLD_HISTORY,initialWorldFlags,clockPosition,daysInEC} from './carcaca-time.js';
 import {newSurvival,normalizeSurvival,advanceSurvival,eatMeal,canAct,survivalSummary} from './survival.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
@@ -91,7 +91,7 @@ export function weaponStats(s,c){const w=c.itensById[s.equip?.weapon],a=c.itensB
  defense:3+Math.floor(s.level/2)+(a?.defesa||0)+(r?.nivel||0)+((r?.nome||'').toUpperCase().includes('PROTEÇÃO')?3:0)
 }}
 function newEnvelope(raw,c,origin='new'){
- return {schema:PHASER_SCHEMA,revision:0,origin,character:normalizeClassic(raw,c),ledger:{},worlds:{activeSeed:'murin-001',clock:newWorldClock(),historicalFlags:{},eventLog:[]},history:[]};
+ return {schema:PHASER_SCHEMA,revision:0,origin,character:normalizeClassic(raw,c),ledger:{},worlds:{activeSeed:'murin-001',clock:newWorldClock(),historicalFlags:initialWorldFlags(),eventLog:[]},history:[]};
 }
 export function stageFromClassic(raw,c){return newEnvelope(raw,c,'classic-import');}
 /** Validate imported v2 backup in-memory, without writing localStorage. */
@@ -106,7 +106,7 @@ function checkEnvelope(raw,c){
    const daysPassed=Math.max(0,out.character.day-1);
    out.worlds.clock=advanceWorldClock(newWorldClock(),Math.min(daysPassed,100*366)*1440).clock;
  }else out.worlds.clock=normalizeWorldClock(world.clock);
- out.worlds.historicalFlags={...safeRecord(world.historicalFlags)};
+ out.worlds.historicalFlags={...initialWorldFlags(),...safeRecord(world.historicalFlags)};
  out.worlds.eventLog=Array.isArray(world.eventLog)?world.eventLog.filter(e=>typeof e==='string').slice(-40):[];
  for(const event of WORLD_HISTORY)if(out.worlds.clock.year>=event.year){
   for(const flag of event.flags)out.worlds.historicalFlags[flag]=true;
