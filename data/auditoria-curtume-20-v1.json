@@ -1,0 +1,2134 @@
+{
+  "schema": "peren.auditoria_curtume_20.v1",
+  "data": "2026-11-09",
+  "estado": "auditoria_editorial_nao_executavel_sem_aprovacao_mecanica",
+  "escopo": "Vinte receitas de Curtume (4 matérias-primas x 5 formas) confrontadas com produção, slots, utilidade, preços condicionais e lore. Não equivale à leitura integral de data/receitas.json compilado.",
+  "fontes": {
+    "peren": [
+      {
+        "path": "data/auditoria-crafting-nao-alquimico-v1.json",
+        "sha": "4b99ee79c379aafd361f6c02f3c4ece96e903169"
+      },
+      {
+        "path": "game.js",
+        "sha": "111a8456b35a27f20421d502f85c066a4150d006"
+      },
+      {
+        "path": "data/cidades.json",
+        "sha": "13fa94a8b913071f4058d6b73ba979135ee3ac6a"
+      },
+      {
+        "path": "ferramentas/build_data.py",
+        "nota": "Fórmula de geração das cinco formas e quatro materiais, previamente conferida."
+      }
+    ],
+    "monstros": {
+      "repo": "pedromaintenance/monstros-carcaca",
+      "commit": "39a84cbbd47b98ce752796263c0956decb9ed946",
+      "docs": [
+        "docs/LORE_HACK_CARCACA_DW.md",
+        "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md",
+        "data/taxonomia_carcaca.json",
+        "docs/POVOAMENTO_ECOLOGIA_THARGRID_IRONWOOD_ELDROTH_CICLO53.md",
+        "docs/OS_QUE_SUSTENTAM_A_VIDA_CUIDADO_CICLO68.md"
+      ],
+      "cautela": "Os ciclos LIII e LXVIII são propostas sem canonização; nenhuma espécie, oficina ou comunidade é aprovada por esta auditoria."
+    }
+  },
+  "metodologia": "Reconstrução via matriz editorial já existente e inspeção das funções canCraft/craft/equip/gather/def/perenView/cost/sellprice. A simulação de mercado fixa Comércio 9, compra todos os insumos e vende saída na cidade de oficina, sem confirmar estoque, trabalho, transporte ou posse. Não foi executado o jogo.",
+  "resumo": {
+    "receitas_curtime": 20,
+    "receitas_vestuario_com_slot_unico": 16,
+    "receitas_bolsa_sem_funcao_coleta_implementada": 4,
+    "receitas_têxteis": 15,
+    "receitas_base_couro": 5,
+    "defesa_na_bolsa_nao_usada": 4,
+    "materiais_base": 4,
+    "formas": 5,
+    "receitas_de_materia_prima_intermediaria_dentro_das_572": 0,
+    "material_couro_uso_em_outras_receitas": 35,
+    "linho_usos_em_escrita": 320,
+    "nivel_inicial_curtume": 0,
+    "nivel_min": 8,
+    "nivel_max": 32,
+    "oficinas": [
+      "portomonte",
+      "thargrid",
+      "ironwood",
+      "alem-sul"
+    ],
+    "oito_pecas_couro_linho_com_defesa_identica": 8,
+    "cenarios_por_cidade": {
+      "portomonte": {
+        "perigo": 1,
+        "receitas": 20,
+        "saldo_positivo": 15,
+        "saldo_zero": 0,
+        "saldo_negativo": 5,
+        "valor_min": -194,
+        "valor_max": 29
+      },
+      "thargrid": {
+        "perigo": 2,
+        "receitas": 20,
+        "saldo_positivo": 15,
+        "saldo_zero": 0,
+        "saldo_negativo": 5,
+        "valor_min": -206,
+        "valor_max": 35
+      },
+      "ironwood": {
+        "perigo": 2,
+        "receitas": 20,
+        "saldo_positivo": 15,
+        "saldo_zero": 0,
+        "saldo_negativo": 5,
+        "valor_min": -206,
+        "valor_max": 35
+      },
+      "alem-sul": {
+        "perigo": 2,
+        "receitas": 20,
+        "saldo_positivo": 15,
+        "saldo_zero": 0,
+        "saldo_negativo": 5,
+        "valor_min": -206,
+        "valor_max": 35
+      }
+    }
+  },
+  "formas": {
+    "Traje": {
+      "nature": "vestuário integral",
+      "usage": "O slot armor único não diferencia traje de peitoral, capuz, manto ou braçadeira.",
+      "units": 3,
+      "priority": "P1"
+    },
+    "Capuz": {
+      "nature": "proteção de cabeça",
+      "usage": "Equipar capuz substitui a armadura inteira, pois categoria armadura mapeia para armor no clássico.",
+      "units": 2,
+      "priority": "P1"
+    },
+    "Manto": {
+      "nature": "capa ou cobertura",
+      "usage": "O manto não possui slot próprio ou propriedade explícita de proteção climática/furtividade; ao equipar ocupa armor.",
+      "units": 3,
+      "priority": "P1"
+    },
+    "Bolsa de Coleta": {
+      "nature": "utilitário de transporte/coleta",
+      "usage": "A bolsa é utilitario e não recebe botão Equipar/Usar no inventário normal, embora tenha Defesa no catálogo; a rotina gather não consulta sua presença.",
+      "units": 2,
+      "priority": "P0"
+    },
+    "Braçadeiras": {
+      "nature": "proteção de antebraço",
+      "usage": "Equipar braçadeiras substitui peitoral/capuz/manto pelo mesmo slot armor.",
+      "units": 2,
+      "priority": "P1"
+    }
+  },
+  "materiais": {
+    "mat-couro-curtido": {
+      "nome": "Couro curtido",
+      "nivel_material": 1,
+      "valor_material": 7,
+      "zona_do_cadastro_nao_habitat": "alem-sul",
+      "receitas": 5,
+      "nivel_requerido": 8,
+      "defesa_na_saida": 2,
+      "questoes": {
+        "description": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origemApropriada": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "guard": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "decision": "CUR-03_materia_prima_animais_e_processo"
+      }
+    },
+    "mat-linho-de-demeter": {
+      "nome": "Linho de Deméter",
+      "nivel_material": 1,
+      "valor_material": 8,
+      "zona_do_cadastro_nao_habitat": "portomonte",
+      "receitas": 5,
+      "nivel_requerido": 8,
+      "defesa_na_saida": 2,
+      "questoes": {
+        "description": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origemApropriada": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "guard": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "decision": "CUR-03_materia_prima_animais_e_processo"
+      }
+    },
+    "mat-linha-de-seda": {
+      "nome": "Linha de seda",
+      "nivel_material": 2,
+      "valor_material": 14,
+      "zona_do_cadastro_nao_habitat": "portomonte",
+      "receitas": 5,
+      "nivel_requerido": 16,
+      "defesa_na_saida": 3,
+      "questoes": {
+        "description": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origemApropriada": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "guard": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "decision": "CUR-02_separar_operacoes_têxteis"
+      }
+    },
+    "mat-fibra-de-aranha-yokai": {
+      "nome": "Fibra de Aranha Yokai",
+      "nivel_material": 4,
+      "valor_material": 70,
+      "zona_do_cadastro_nao_habitat": "boca-abismo",
+      "receitas": 5,
+      "nivel_requerido": 32,
+      "defesa_na_saida": 5,
+      "questoes": {
+        "description": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origemApropriada": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "guard": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "decision": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      }
+    }
+  },
+  "contagem_por_forma": {
+    "Traje": 4,
+    "Capuz": 4,
+    "Manto": 4,
+    "Bolsa de Coleta": 4,
+    "Braçadeiras": 4
+  },
+  "pareceres_por_receita": [
+    {
+      "id": "rec-traje-de-couro-curtido",
+      "nome": "Traje de Couro curtido",
+      "produto_id": "eq-traje-de-couro-curtido",
+      "material_id": "mat-couro-curtido",
+      "forma": "Traje",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-couro-curtido",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "armadura",
+          "nivel": 1,
+          "valor": 60,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "vestuário integral",
+        "impacto_do_produto": "O slot armor único não diferencia traje de peitoral, capuz, manto ou braçadeira.",
+        "questao_material": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origem_a_identificar": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "nao_inferir": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 21,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-capuz-de-couro-curtido",
+      "nome": "Capuz de Couro curtido",
+      "produto_id": "eq-capuz-de-couro-curtido",
+      "material_id": "mat-couro-curtido",
+      "forma": "Capuz",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-couro-curtido",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "elmo",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de cabeça",
+        "impacto_do_produto": "Equipar capuz substitui a armadura inteira, pois categoria armadura mapeia para armor no clássico.",
+        "questao_material": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origem_a_identificar": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "nao_inferir": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 14,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 15,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-manto-de-couro-curtido",
+      "nome": "Manto de Couro curtido",
+      "produto_id": "eq-manto-de-couro-curtido",
+      "material_id": "mat-couro-curtido",
+      "forma": "Manto",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-couro-curtido",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "capa",
+          "nivel": 1,
+          "valor": 60,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "capa ou cobertura",
+        "impacto_do_produto": "O manto não possui slot próprio ou propriedade explícita de proteção climática/furtividade; ao equipar ocupa armor.",
+        "questao_material": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origem_a_identificar": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "nao_inferir": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 27,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 17,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 21,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-couro-curtido",
+      "nome": "Bolsa de Coleta de Couro curtido",
+      "produto_id": "eq-bolsa-de-coleta-de-couro-curtido",
+      "material_id": "mat-couro-curtido",
+      "forma": "Bolsa de Coleta",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-couro-curtido",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "utilitario",
+          "tipo": "bolsa",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "nenhum_na_UI",
+        "defesa_calculada_e_usada_no_slot_correto": false,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "utilitário de transporte/coleta",
+        "impacto_do_produto": "A bolsa é utilitario e não recebe botão Equipar/Usar no inventário normal, embora tenha Defesa no catálogo; a rotina gather não consulta sua presença.",
+        "questao_material": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origem_a_identificar": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "nao_inferir": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "risco": "P0_funcao_utilitaria_ausente",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 14,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 15,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bracadeiras-de-couro-curtido",
+      "nome": "Braçadeiras de Couro curtido",
+      "produto_id": "eq-bracadeiras-de-couro-curtido",
+      "material_id": "mat-couro-curtido",
+      "forma": "Braçadeiras",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-couro-curtido",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "luvas",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de antebraço",
+        "impacto_do_produto": "Equipar braçadeiras substitui peitoral/capuz/manto pelo mesmo slot armor.",
+        "questao_material": "Couro curtido é matéria já processada, não pele bruta. O gerador não apresenta nesta matriz a etapa de obtenção/curtimento nem determina o animal, o curtidor ou os insumos de tanagem.",
+        "origem_a_identificar": "animal, forma de obtenção, curtume e tratamento a verificar",
+        "nao_inferir": "Além Sul é zona de dados, não prova de rebanho, caça, beneficiamento nem comércio local",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 18,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 11,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 14,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 15,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-traje-de-linho-de-demeter",
+      "nome": "Traje de Linho de Deméter",
+      "produto_id": "eq-traje-de-linho-de-demeter",
+      "material_id": "mat-linho-de-demeter",
+      "forma": "Traje",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-linho-de-demeter",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "armadura",
+          "nivel": 1,
+          "valor": 60,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "vestuário integral",
+        "impacto_do_produto": "O slot armor único não diferencia traje de peitoral, capuz, manto ou braçadeira.",
+        "questao_material": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origem_a_identificar": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "nao_inferir": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 24,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 20,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-capuz-de-linho-de-demeter",
+      "nome": "Capuz de Linho de Deméter",
+      "produto_id": "eq-capuz-de-linho-de-demeter",
+      "material_id": "mat-linho-de-demeter",
+      "forma": "Capuz",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-linho-de-demeter",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "elmo",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de cabeça",
+        "impacto_do_produto": "Equipar capuz substitui a armadura inteira, pois categoria armadura mapeia para armor no clássico.",
+        "questao_material": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origem_a_identificar": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "nao_inferir": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 16,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 13,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-manto-de-linho-de-demeter",
+      "nome": "Manto de Linho de Deméter",
+      "produto_id": "eq-manto-de-linho-de-demeter",
+      "material_id": "mat-linho-de-demeter",
+      "forma": "Manto",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-linho-de-demeter",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "capa",
+          "nivel": 1,
+          "valor": 60,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "capa ou cobertura",
+        "impacto_do_produto": "O manto não possui slot próprio ou propriedade explícita de proteção climática/furtividade; ao equipar ocupa armor.",
+        "questao_material": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origem_a_identificar": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "nao_inferir": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 24,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 20,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 30,
+          "venda_hipotetica_produto": 44,
+          "saldo_hipotetico": 14,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-linho-de-demeter",
+      "nome": "Bolsa de Coleta de Linho de Deméter",
+      "produto_id": "eq-bolsa-de-coleta-de-linho-de-demeter",
+      "material_id": "mat-linho-de-demeter",
+      "forma": "Bolsa de Coleta",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-linho-de-demeter",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "utilitario",
+          "tipo": "bolsa",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "nenhum_na_UI",
+        "defesa_calculada_e_usada_no_slot_correto": false,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "utilitário de transporte/coleta",
+        "impacto_do_produto": "A bolsa é utilitario e não recebe botão Equipar/Usar no inventário normal, embora tenha Defesa no catálogo; a rotina gather não consulta sua presença.",
+        "questao_material": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origem_a_identificar": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "nao_inferir": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "risco": "P0_funcao_utilitaria_ausente",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 16,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 13,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bracadeiras-de-linho-de-demeter",
+      "nome": "Braçadeiras de Linho de Deméter",
+      "produto_id": "eq-bracadeiras-de-linho-de-demeter",
+      "material_id": "mat-linho-de-demeter",
+      "forma": "Braçadeiras",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 8,
+        "insumos": [
+          {
+            "item": "mat-linho-de-demeter",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "luvas",
+          "nivel": 1,
+          "valor": 40,
+          "defesa": 2
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de antebraço",
+        "impacto_do_produto": "Equipar braçadeiras substitui peitoral/capuz/manto pelo mesmo slot armor.",
+        "questao_material": "O nome evoca Deméter, mas o manuscrito documenta agricultura em Portomonte sem comprovar linho, fiação, tecelagem, monopólio do templo ou procedência religiosa.",
+        "origem_a_identificar": "cultivo, secagem, fiação e confecção a verificar sem deduzir produção pelo templo",
+        "nao_inferir": "A zona Portomonte e a bênção agrícola não demonstram uma cadeia têxtil",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-03_materia_prima_animais_e_processo"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 16,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 13,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 20,
+          "venda_hipotetica_produto": 29,
+          "saldo_hipotetico": 9,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-traje-de-linha-de-seda",
+      "nome": "Traje de Linha de seda",
+      "produto_id": "eq-traje-de-linha-de-seda",
+      "material_id": "mat-linha-de-seda",
+      "forma": "Traje",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 16,
+        "insumos": [
+          {
+            "item": "mat-linha-de-seda",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "armadura",
+          "nivel": 2,
+          "valor": 120,
+          "defesa": 3
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "vestuário integral",
+        "impacto_do_produto": "O slot armor único não diferencia traje de peitoral, capuz, manto ou braçadeira.",
+        "questao_material": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origem_a_identificar": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "nao_inferir": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-02_separar_operacoes_têxteis"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 60,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 29,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-capuz-de-linha-de-seda",
+      "nome": "Capuz de Linha de seda",
+      "produto_id": "eq-capuz-de-linha-de-seda",
+      "material_id": "mat-linha-de-seda",
+      "forma": "Capuz",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 16,
+        "insumos": [
+          {
+            "item": "mat-linha-de-seda",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "elmo",
+          "nivel": 2,
+          "valor": 80,
+          "defesa": 3
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de cabeça",
+        "impacto_do_produto": "Equipar capuz substitui a armadura inteira, pois categoria armadura mapeia para armor no clássico.",
+        "questao_material": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origem_a_identificar": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "nao_inferir": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-02_separar_operacoes_têxteis"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 40,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 19,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-manto-de-linha-de-seda",
+      "nome": "Manto de Linha de seda",
+      "produto_id": "eq-manto-de-linha-de-seda",
+      "material_id": "mat-linha-de-seda",
+      "forma": "Manto",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 16,
+        "insumos": [
+          {
+            "item": "mat-linha-de-seda",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "capa",
+          "nivel": 2,
+          "valor": 120,
+          "defesa": 3
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "capa ou cobertura",
+        "impacto_do_produto": "O manto não possui slot próprio ou propriedade explícita de proteção climática/furtividade; ao equipar ocupa armor.",
+        "questao_material": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origem_a_identificar": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "nao_inferir": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-02_separar_operacoes_têxteis"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 60,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 29,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 54,
+          "venda_hipotetica_produto": 89,
+          "saldo_hipotetico": 35,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-linha-de-seda",
+      "nome": "Bolsa de Coleta de Linha de seda",
+      "produto_id": "eq-bolsa-de-coleta-de-linha-de-seda",
+      "material_id": "mat-linha-de-seda",
+      "forma": "Bolsa de Coleta",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 16,
+        "insumos": [
+          {
+            "item": "mat-linha-de-seda",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "utilitario",
+          "tipo": "bolsa",
+          "nivel": 2,
+          "valor": 80,
+          "defesa": 3
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "nenhum_na_UI",
+        "defesa_calculada_e_usada_no_slot_correto": false,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "utilitário de transporte/coleta",
+        "impacto_do_produto": "A bolsa é utilitario e não recebe botão Equipar/Usar no inventário normal, embora tenha Defesa no catálogo; a rotina gather não consulta sua presença.",
+        "questao_material": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origem_a_identificar": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "nao_inferir": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "risco": "P0_funcao_utilitaria_ausente",
+        "decisao_pendente": "CUR-02_separar_operacoes_têxteis"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 40,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 19,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bracadeiras-de-linha-de-seda",
+      "nome": "Braçadeiras de Linha de seda",
+      "produto_id": "eq-bracadeiras-de-linha-de-seda",
+      "material_id": "mat-linha-de-seda",
+      "forma": "Braçadeiras",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 16,
+        "insumos": [
+          {
+            "item": "mat-linha-de-seda",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "luvas",
+          "nivel": 2,
+          "valor": 80,
+          "defesa": 3
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de antebraço",
+        "impacto_do_produto": "Equipar braçadeiras substitui peitoral/capuz/manto pelo mesmo slot armor.",
+        "questao_material": "O insumo é linha de seda, não tecido pronto; as cinco receitas tratam diretamente uma quantidade de linha como traje, capuz, manto, bolsa ou braçadeira sem etapa de tecelagem.",
+        "origem_a_identificar": "organismo ou fonte da seda, fiandeiro e transformação em tecido a verificar",
+        "nao_inferir": "Não inferir sericultura, fauna específica, espécie de inseto ou fazendas em Portomonte",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-02_separar_operacoes_têxteis"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 40,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 19,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 36,
+          "venda_hipotetica_produto": 59,
+          "saldo_hipotetico": 23,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-traje-de-fibra-de-aranha-yokai",
+      "nome": "Traje de Fibra de Aranha Yokai",
+      "produto_id": "eq-traje-de-fibra-de-aranha-yokai",
+      "material_id": "mat-fibra-de-aranha-yokai",
+      "forma": "Traje",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 32,
+        "insumos": [
+          {
+            "item": "mat-fibra-de-aranha-yokai",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "armadura",
+          "nivel": 4,
+          "valor": 240,
+          "defesa": 5
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "vestuário integral",
+        "impacto_do_produto": "O slot armor único não diferencia traje de peitoral, capuz, manto ou braçadeira.",
+        "questao_material": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origem_a_identificar": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "nao_inferir": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 372,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -194,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-capuz-de-fibra-de-aranha-yokai",
+      "nome": "Capuz de Fibra de Aranha Yokai",
+      "produto_id": "eq-capuz-de-fibra-de-aranha-yokai",
+      "material_id": "mat-fibra-de-aranha-yokai",
+      "forma": "Capuz",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 32,
+        "insumos": [
+          {
+            "item": "mat-fibra-de-aranha-yokai",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "elmo",
+          "nivel": 4,
+          "valor": 160,
+          "defesa": 5
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de cabeça",
+        "impacto_do_produto": "Equipar capuz substitui a armadura inteira, pois categoria armadura mapeia para armor no clássico.",
+        "questao_material": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origem_a_identificar": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "nao_inferir": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 248,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -129,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-manto-de-fibra-de-aranha-yokai",
+      "nome": "Manto de Fibra de Aranha Yokai",
+      "produto_id": "eq-manto-de-fibra-de-aranha-yokai",
+      "material_id": "mat-fibra-de-aranha-yokai",
+      "forma": "Manto",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 32,
+        "insumos": [
+          {
+            "item": "mat-fibra-de-aranha-yokai",
+            "quantidade": 3
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "capa",
+          "nivel": 4,
+          "valor": 240,
+          "defesa": 5
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "capa ou cobertura",
+        "impacto_do_produto": "O manto não possui slot próprio ou propriedade explícita de proteção climática/furtividade; ao equipar ocupa armor.",
+        "questao_material": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origem_a_identificar": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "nao_inferir": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 372,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -194,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 384,
+          "venda_hipotetica_produto": 178,
+          "saldo_hipotetico": -206,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+      "nome": "Bolsa de Coleta de Fibra de Aranha Yokai",
+      "produto_id": "eq-bolsa-de-coleta-de-fibra-de-aranha-yokai",
+      "material_id": "mat-fibra-de-aranha-yokai",
+      "forma": "Bolsa de Coleta",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 32,
+        "insumos": [
+          {
+            "item": "mat-fibra-de-aranha-yokai",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "utilitario",
+          "tipo": "bolsa",
+          "nivel": 4,
+          "valor": 160,
+          "defesa": 5
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "nenhum_na_UI",
+        "defesa_calculada_e_usada_no_slot_correto": false,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "utilitário de transporte/coleta",
+        "impacto_do_produto": "A bolsa é utilitario e não recebe botão Equipar/Usar no inventário normal, embora tenha Defesa no catálogo; a rotina gather não consulta sua presença.",
+        "questao_material": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origem_a_identificar": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "nao_inferir": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "risco": "P0_funcao_utilitaria_ausente",
+        "decisao_pendente": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 248,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -129,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    },
+    {
+      "id": "rec-bracadeiras-de-fibra-de-aranha-yokai",
+      "nome": "Braçadeiras de Fibra de Aranha Yokai",
+      "produto_id": "eq-bracadeiras-de-fibra-de-aranha-yokai",
+      "material_id": "mat-fibra-de-aranha-yokai",
+      "forma": "Braçadeiras",
+      "estado": "parecer_documental_sem_aprovacao",
+      "fonte_gerador": {
+        "estacao": "curtume",
+        "pericia": "curtume",
+        "nivel_requerido": 32,
+        "insumos": [
+          {
+            "item": "mat-fibra-de-aranha-yokai",
+            "quantidade": 2
+          }
+        ],
+        "quantidade_saida": 1,
+        "produto": {
+          "categoria": "armadura",
+          "tipo": "luvas",
+          "nivel": 4,
+          "valor": 160,
+          "defesa": 5
+        }
+      },
+      "diagnostico_mecanico": {
+        "slot_no_classico": "armor",
+        "defesa_calculada_e_usada_no_slot_correto": true,
+        "efeitos_exclusivos_da_forma_implementados": false,
+        "bonus_de_capacidade_da_bolsa_implementado": false,
+        "curtume_cobre_corte_e_costura_sem_etapas_intermediarias": true,
+        "processo_de_transformacao_do_material_para_vestuario_nao_definido": true,
+        "tem_cadeia_de_producao_anterior_para_esta_materia_prima": false
+      },
+      "parecer": {
+        "natureza": "proteção de antebraço",
+        "impacto_do_produto": "Equipar braçadeiras substitui peitoral/capuz/manto pelo mesmo slot armor.",
+        "questao_material": "O nome mistura fibra de aranha com o termo Yokai, que no corpus da Carcaça pode indicar povo antigo ou tipo de criatura. Não há espécie produtora, agência, cultivo ou autorização de coleta aprovada.",
+        "origem_a_identificar": "espécie/material, consentimento e relação econômica com seres potencialmente sapientes a esclarecer",
+        "nao_inferir": "Não igualar aranhas inteligentes propostas do atlas ao produto, nem converter sua coleta em loot de criaturas sapientes",
+        "risco": "P1_categoria_slot_e_lore",
+        "decisao_pendente": "CUR-04_fibra_yokai_sem_assumir_extracao"
+      },
+      "simulacao_comercio_sem_estoque_confirmado": [
+        {
+          "city_id": "portomonte",
+          "perigo": 1,
+          "comercio": 9,
+          "compra_hipotetica_material": 248,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -129,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "thargrid",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "ironwood",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        },
+        {
+          "city_id": "alem-sul",
+          "perigo": 2,
+          "comercio": 9,
+          "compra_hipotetica_material": 256,
+          "venda_hipotetica_produto": 119,
+          "saldo_hipotetico": -137,
+          "assume_disponibilidade_de_material_sem_verificar_estoque": true,
+          "custos_de_trabalho_tempo_licenca_transporte_nao_incluidos": true
+        }
+      ],
+      "nao_aprova_habitat": true,
+      "nao_aprova_loot": true,
+      "nao_aprova_mudanca_de_receita": true,
+      "nao_aprova_efeito_ou_slot": true
+    }
+  ],
+  "decisoes_em_aberto": [
+    {
+      "id": "CUR-01",
+      "tema": "funcao_bolsas",
+      "questao": "Qual função de coleta, transporte ou organização devem conceder as quatro Bolsas de Coleta?",
+      "opcoes": [
+        "manter_mercadoria_sem_bonus_ate_regra_nova",
+        "bonus_de_coleta_ou_reducao_de_perda_com_teste",
+        "sistema_de_carga_slots_e_restricoes"
+      ],
+      "risco": "Alterar rotina de coleta, save, economia e UI; não atribuir bônus invisível.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-02",
+      "tema": "processos",
+      "questao": "Curtume cobre apenas tratamento do couro ou também tecelagem, corte e costura?",
+      "opcoes": [
+        "estacao_unificada_nome_de_oficio_abstrato",
+        "separar_tecelagem_costura_no_mesmo_local",
+        "novas_estacoes_com_migracao"
+      ],
+      "risco": "Separar estações pode tornar receitas antigas inacessíveis; não apagar IDs.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-03",
+      "tema": "materiais",
+      "questao": "De onde vêm couro curtido, linho de Deméter e linha de seda; quais etapas antecedem o tecido?",
+      "opcoes": [
+        "origem_indeterminada_e_material_ja_processado",
+        "filiacao_regional_mediante_fontes_e_aprovacao",
+        "cadeias_de_trabalho_sem_assumir_monopolio"
+      ],
+      "risco": "Não inventar fazenda, criação, comércio ou propriedades por nome de local.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-04",
+      "tema": "fibra_yokai",
+      "questao": "O nome Fibra de Aranha Yokai designa criatura, povo, técnica ou mercadoria de procedência mista?",
+      "opcoes": [
+        "manter_indefinido_sem_drop",
+        "classificacao_especie_material_com_aprovacao",
+        "esclarecer_agencia_e_condicoes_de_obtencao"
+      ],
+      "risco": "Povos Yokai antigos e tipo yokai do bestiário não podem ser fundidos; propostas de aranhas sapientes não são fonte aprovada.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-05",
+      "tema": "slots_roupa",
+      "questao": "Como equipar traje, capuz, manto e braçadeiras sem substituir todas as demais armaduras?",
+      "opcoes": [
+        "manter_armor_unico_e_rotulo_explicito",
+        "slots_distintos_com_migracao_save",
+        "sistema_de_modificacoes_por_equipamento"
+      ],
+      "risco": "Defesa aplicada pode multiplicar-se indevidamente; requer QA de atributos e persistência.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-06",
+      "tema": "atributos_roupa",
+      "questao": "Qual a função distinta de forma, material e qualidade?",
+      "opcoes": [
+        "mesma_defesa_com_estetica_diferente",
+        "protecao_climatica_mobilidade_utilidade_contratos_separados",
+        "durabilidade_e_reparo_por_material"
+      ],
+      "risco": "Evitar bônus inventados para furtividade, resistência ou velocidade sem decisão autoral.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-07",
+      "tema": "economia",
+      "questao": "Como valorar trabalho, ferramentas, tratamento e produção profissional sem arbitrar preço a partir do valor cadastral?",
+      "opcoes": [
+        "manter_valores_legacy_ate_teste",
+        "considerar_margem_condicional_por_mercado",
+        "contratos_encomendas_e_reparos_autorizados"
+      ],
+      "risco": "Não inferir lucro real nem comércio regional; coletar custo do trabalho e estoque.",
+      "aprovado": false
+    },
+    {
+      "id": "CUR-08",
+      "tema": "identidade_e_social",
+      "questao": "Que bens atendem sobrevivência, abrigo, proteção e acessibilidade de corpos distintos na Carcaça?",
+      "opcoes": [
+        "adaptacoes_sob_demanda_sem_spawns_novos",
+        "projetos_alterativos_de_mantos_bolsas_e_braçadeiras",
+        "contratos_de_oficio_vinculados_a_necessidades_sociais"
+      ],
+      "risco": "Propostas de comunidades/corpos do atlas LXVII/LXVIII não são cânone e não podem virar NPCs ou oficinas automaticamente.",
+      "aprovado": false
+    }
+  ],
+  "nao_altera": [
+    "data/itens.json",
+    "data/receitas.json",
+    "data/curadoria_ingredientes.json",
+    "game.js",
+    "ferramentas/build_data.py",
+    "Phaser",
+    "loot",
+    "tabelas de mercado",
+    "slots",
+    "saves",
+    "canon ecológico"
+  ]
+}
