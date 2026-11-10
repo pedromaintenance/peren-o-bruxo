@@ -1,0 +1,1934 @@
+{
+  "schema": "peren.auditoria_cozinha_16.v1",
+  "data": "2026-11-09",
+  "estado": "parecer_editorial_nao_jogavel_sem_aprovacao_mecanica",
+  "escopo": "16 receitas de cozinha documentadas por ID, consistência de nome/insumo, propriedades efetivas, proveniência, adequação alimentar ficcional, função de viagem e opções editoriais.",
+  "fontes": {
+    "peren": [
+      {
+        "path": "data/auditoria-crafting-nao-alquimico-v1.json",
+        "sha": "4b99ee79c379aafd361f6c02f3c4ece96e903169"
+      },
+      {
+        "path": "data/auditoria_ecologica_ingredientes.json",
+        "sha": "8ab2c2882c567a40bc0a3e9e4fea810187c69429"
+      },
+      {
+        "path": "data/curadoria_ingredientes.json",
+        "sha": "57cf86f623ecabb4c30eb3a052384d627b615aa8"
+      },
+      {
+        "path": "ferramentas/build_data.py",
+        "sha": "438a269a3381bd41f57ea0005c12041ab3de870d"
+      },
+      {
+        "path": "game.js",
+        "sha": "111a8456b35a27f20421d502f85c066a4150d006"
+      },
+      {
+        "path": "data/cidades.json",
+        "sha": "13fa94a8b913071f4058d6b73ba979135ee3ac6a"
+      }
+    ],
+    "carcaca": {
+      "repo": "pedromaintenance/monstros-carcaca",
+      "commit": "53a18a7022dc5fb2f37c46297de604dcc0d9bb35",
+      "docs": [
+        "docs/ATLAS_DEMETER_PORTOMONTE_CICLO51.md",
+        "docs/ATLAS_HIDROGRAFIA_CONTINENTAL_CICLO39.md",
+        "docs/ATLAS_BASE_REGIOES_ASSENTAMENTOS_CULTURAS_MONSTROS_V0_1.md",
+        "docs/LORE_HACK_CARCACA_DW.md"
+      ],
+      "nao_pode_usar_propostas_como_canon": true
+    }
+  },
+  "observacoes_metodologicas": [
+    "Reconstrução estática, não comparação integral com data/receitas.json nem playtest do Phaser.",
+    "Classificação P0 indica tensão editorial, não prova de toxicidade real ou indisponibilidade de recurso mágico.",
+    "Os efeitos alquímicos dos ingredientes permanecem dados de seus itens e não migram automaticamente para o resultado culinário.",
+    "As alternativas no JSON são propostas sem aprovação autoral.",
+    "A culinária de uma cidade não prova que todos os ingredientes cresçam, sejam pescados ou criados localmente.",
+    "Nenhuma alteração em saves, itens, receitas, lojas, loot, engine ou cânone."
+  ],
+  "resumo": {
+    "receitas": 16,
+    "produtos": 16,
+    "itens_ingredientes_distintos": 23,
+    "insumos_totais_na_rodada": 32,
+    "quantidade_por_porcao": 2,
+    "niveis": {
+      "8": 5,
+      "13": 5,
+      "18": 5,
+      "23": 1
+    },
+    "prioridades": {
+      "P0": 4,
+      "P1": 6,
+      "P2": 6
+    },
+    "efeitos_restore_health": 16,
+    "potencia_min": 10,
+    "potencia_max": 25,
+    "receitas_com_fadiga_reduzida": 0,
+    "receitas_substituem_racao_de_viagem": 0,
+    "receitas_uso_agua_explicito": 0,
+    "receitas_com_ingrediente_nao_comprovado_para_consumo": 4,
+    "cidades_com_cozinha": [
+      "portomonte",
+      "drakport",
+      "alem-sul"
+    ],
+    "nivel_inicial_cozinha": 12,
+    "receitas_iniciais_por_pericia": 5
+  },
+  "regra_vigente_classico": {
+    "efeito": "No game.js useItem, as comidas com efeito Restore Health recebem somente recuperação de PV pela potencia; efeitos dos ingredientes de alquimia não são lidos.",
+    "fadiga": "food não chama rotina de fadiga nem alimenta necessidade de fome no código clássico examinado.",
+    "viagem": "A rotina travel verifica somente ger-racoes-de-viagem e, na ausência dele, cobra 20 moedas; não aceita Ração dos Vigias.",
+    "consumos": "A rotina craft deduz um de cada insumo, gasta uma ação e adiciona 2 porções; useItem remove 1 porção e não chama actionSpend.",
+    "mercado": "Mercadores de perfil provisoes podem oferecer itens da categoria comida; oferta concreta depende de vendorStock e estoques.",
+    "origem": "As zonas dos ingredientes são procedurais, salvo retenções documentadas; nomes de prato, de rio ou de cidade não validam coleta ou cozinha local."
+  },
+  "contagem_de_uso_dos_insumos": {
+    "ing-histcarp": 1,
+    "ing-garlic": 3,
+    "ing-honeycomb": 2,
+    "ing-wheat": 3,
+    "ing-frost-mirriam": 1,
+    "ing-juniper-berries": 2,
+    "ing-boar-tusk": 1,
+    "ing-salmon-roe": 2,
+    "ing-salt-pile": 2,
+    "ing-glowing-mushroom": 1,
+    "ing-white-cap": 1,
+    "ing-blue-mountain-flower": 1,
+    "ing-lavender": 1,
+    "ing-large-antlers": 1,
+    "ing-jazbay-grapes": 2,
+    "ing-purple-mountain-flower": 1,
+    "ing-silverside-perch": 1,
+    "ing-snowberries": 1,
+    "ing-chicken-s-egg": 1,
+    "ing-mora-tapinella": 1,
+    "ing-moon-sugar": 1,
+    "ing-grass-pod": 1,
+    "ing-nordic-barnacle": 1
+  },
+  "pareceres_por_receita": [
+    {
+      "id": "rec-ensopado-de-rio",
+      "nome": "Ensopado de Rio",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "processo_e_habitat",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 8,
+        "ingredientes": [
+          {
+            "item": "ing-histcarp",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-garlic",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-ensopado-de-rio",
+          "nome": "Ensopado de Rio",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 12,
+          "nivel": 1,
+          "raridade": "comum",
+          "efeito": "Restore Health",
+          "potencia": 10
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-histcarp",
+          "nome": "Carpa de Pedra",
+          "quantidade": 1,
+          "descricao_vigente": "Carpa resistente empregada em preparados aquáticos e arcanos.",
+          "substancia_descrita": "carpa de resistência incomum",
+          "alerta_de_proveniencia": "O nome Carpa de Pedra descreve o material em Peren, mas não comprova corpo pétreo, procedência das ossadas de Golzdov, distribuição pelo Rio Ancestral ou ocorrência no Mar de Sangue.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "respirar_na_agua",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-garlic",
+          "nome": "Alho",
+          "quantidade": 1,
+          "descricao_vigente": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+          "substancia_descrita": "bulbo de horta com propriedades curativas",
+          "alerta_de_proveniencia": "O Ciclo 4 de Peren aprovou explicitamente Curar Doença II como quarto atributo do Alho, preservando os três anteriores. A existência de hortas e regiões agrícolas na Carcaça não especifica cultivo de alho nem praticantes da medicina.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_veneno",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "curar_doenca",
+              "intensidade": 2
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Carpa e alho são alimentos plausíveis, mas o preparo de ensopado não especifica caldo, água, cozedura nem utensílio; Rio não identifica bacia de pesca.",
+        "pergunta_para_autoria": "Decidir se água/caldo e preparo são abstrações da estação ou componentes da receita.",
+        "alternativas_nao_aprovadas": [
+          "manter_receita_abstrata_e_descrever_cozimento",
+          "adicionar_processo_sem_insumo_novo",
+          "propor_insumo_auxiliar_apos_aprovacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 10,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-pao-de-mel-da-foz",
+      "nome": "Pão de Mel da Foz",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "panificacao_e_toponimo",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 8,
+        "ingredientes": [
+          {
+            "item": "ing-honeycomb",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-wheat",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-pao-de-mel-da-foz",
+          "nome": "Pão de Mel da Foz",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 15,
+          "nivel": 1,
+          "raridade": "comum",
+          "efeito": "Restore Health",
+          "potencia": 11
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-honeycomb",
+          "nome": "Favo de Mel",
+          "quantidade": 1,
+          "descricao_vigente": "Favo nutritivo empregado em tônicos de vigor físico e proteção.",
+          "substancia_descrita": "favo nutritivo",
+          "alerta_de_proveniencia": "O catálogo distingue Favo de Mel, Abelha e Casca de Colmeia. O nome comum não comprova que se originem de uma única espécie ou de um apiário regional; a agricultura de Grama-Cortada não comprova criação de abelhas.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_defesa",
+              "intensidade": 1
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-wheat",
+          "nome": "Trigo",
+          "quantidade": 1,
+          "descricao_vigente": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+          "substancia_descrita": "cereal e alimento de preparo medicinal",
+          "alerta_de_proveniencia": "Grama-Cortada tem agricultura hobbit documentada e há cultivo costeiro, porém nenhuma fonte estabelece que o trigo desta ficha seja produzido ou comercializado por esses grupos em particular.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Favo de Mel e Trigo sustentam um pão doce, mas o gerador não modela moagem, massa, água, fermentação ou cocção; 'Foz' não comprova local de origem.",
+        "pergunta_para_autoria": "Escolher o nível de abstração da panificação e o estatuto cultural do topônimo, sem instalar moinho/forno canônico.",
+        "alternativas_nao_aprovadas": [
+          "modelo_abstrato",
+          "etapas_de_moagem_cozimento_na_estacao",
+          "processo_e_cadeia_apenas_apos_decisao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 11,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-caldo-da-montanha",
+      "nome": "Caldo da Montanha",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "nome_e_processamento",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 8,
+        "ingredientes": [
+          {
+            "item": "ing-frost-mirriam",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-juniper-berries",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-caldo-da-montanha",
+          "nome": "Caldo da Montanha",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 18,
+          "nivel": 1,
+          "raridade": "comum",
+          "efeito": "Restore Health",
+          "potencia": 12
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-frost-mirriam",
+          "nome": "Mirra da Geada",
+          "quantidade": 1,
+          "descricao_vigente": "Erva aromática de áreas frias utilizada em poções de ocultação e proteção contra geada.",
+          "substancia_descrita": "erva aromática de áreas frias",
+          "alerta_de_proveniencia": "Peren descreve áreas frias e Thargrid possui picos nevados, porém o atlas não documenta esta erva, seu cultivo nem zona de coleta em Thargrid.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_furtividade",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_gelo",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_regeneracao_magia",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-juniper-berries",
+          "nome": "Bagas de Zimbro",
+          "quantidade": 1,
+          "descricao_vigente": "Bagas aromáticas para unguentos de recuperação e precisão.",
+          "substancia_descrita": "bagas aromáticas de planta",
+          "alerta_de_proveniencia": "O nome de espécie e aroma constam de Peren, mas os setores agrícolas da Carcaça não comprovam produção, comércio ou coleta de zimbro em nenhum povoado ou região.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_destreza",
+              "intensidade": 1
+            },
+            {
+              "id": "fraqueza_fogo",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Mirra da Geada e Bagas de Zimbro fornecem aromas, mas não descrevem líquido, veículo alimentar ou finalidade nutritiva. Montanha não confirma proveniência.",
+        "pergunta_para_autoria": "Definir se é infusão ou caldo e o papel do líquido/serviço.",
+        "alternativas_nao_aprovadas": [
+          "reclassificar_preparo_em_texto_sem_regras",
+          "manter_caldo_com_processamento_abstrato",
+          "especificar_componente_apos_teste"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 12,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-guisado-de-caatinga",
+      "nome": "Guisado de Caatinga",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P0",
+      "tipo_de_lacuna": "incompatibilidade_material",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 8,
+        "ingredientes": [
+          {
+            "item": "ing-boar-tusk",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-garlic",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-guisado-de-caatinga",
+          "nome": "Guisado de Caatinga",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 21,
+          "nivel": 1,
+          "raridade": "comum",
+          "efeito": "Restore Health",
+          "potencia": 13
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-boar-tusk",
+          "nome": "Presa de Javali",
+          "quantidade": 1,
+          "descricao_vigente": "Presa robusta triturada em tônicos de força e agressividade.",
+          "substancia_descrita": "presa de javali em tônicos",
+          "alerta_de_proveniencia": "O item é parte de fauna descrita em Peren. O atlas não autoriza atribuir javalis à Caatinga, Ironwood ou Eldroth, nem identificar o javali com criaturas sobrenaturais propostas.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_forca",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "frenesi",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-garlic",
+          "nome": "Alho",
+          "quantidade": 1,
+          "descricao_vigente": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+          "substancia_descrita": "bulbo de horta com propriedades curativas",
+          "alerta_de_proveniencia": "O Ciclo 4 de Peren aprovou explicitamente Curar Doença II como quarto atributo do Alho, preservando os três anteriores. A existência de hortas e regiões agrícolas na Carcaça não especifica cultivo de alho nem praticantes da medicina.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_veneno",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "curar_doenca",
+              "intensidade": 2
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "A receita consome Presa de Javali (dente) e Alho; não consome carne ou vegetal equivalente a proteína. A ficha da presa a descreve como parte triturada para tônicos.",
+        "pergunta_para_autoria": "Resolver contradição entre guisado e matéria-prima rígida; não inventar descarte de caça nem converter presa em carne por renomeação silenciosa.",
+        "alternativas_nao_aprovadas": [
+          "preservar_receita_e_assumir_preparo_fantastico_explicito",
+          "propor_insumo_comestivel_proprio",
+          "alterar_nome_do_prato_com_migracao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 13,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-peixe-com-sal-do-mar",
+      "nome": "Peixe com Sal do Mar",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "nome_e_risco_de_consistencia",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 8,
+        "ingredientes": [
+          {
+            "item": "ing-salmon-roe",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-salt-pile",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-peixe-com-sal-do-mar",
+          "nome": "Peixe com Sal do Mar",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 24,
+          "nivel": 1,
+          "raridade": "comum",
+          "efeito": "Restore Health",
+          "potencia": 14
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-salmon-roe",
+          "nome": "Ovas de Salmão",
+          "quantidade": 1,
+          "descricao_vigente": "Ovas de peixe utilizadas em elixires de respiração aquática e concentração.",
+          "substancia_descrita": "ovas de salmão",
+          "alerta_de_proveniencia": "O atlas não documenta desova, migração ou habitat de salmões; não importar ecologia terrestre como fato da Carcaça.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "respirar_na_agua",
+              "intensidade": 2
+            },
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-salt-pile",
+          "nome": "Sal do Sangue",
+          "quantidade": 1,
+          "descricao_vigente": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
+          "substancia_descrita": "sal das águas rubras",
+          "alerta_de_proveniencia": "A presença do Mar de Sangue é canônica; a descrição de Peren atribui o sal às águas rubras. O atlas não fixa salinidade, método de extração, escala produtiva nem distribuição de salinas ou rota mercantil.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_restauracao",
+              "intensidade": 1
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Ovas de Salmão e Sal do Sangue podem ser concebidos como prato de ovas, mas não representam filé de peixe. O sal é descrito como extraído do Mar de Sangue e não há validação alimentar.",
+        "pergunta_para_autoria": "Distinguir prato de ovas de pescado; decidir tratamento e segurança do Sal do Sangue.",
+        "alternativas_nao_aprovadas": [
+          "titulo_especifico_para_ovas",
+          "ficcao_de_preparo_que_torna_sal_comestivel",
+          "ajustar_insumos_apos_aprovacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 14,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-cogu-sopa-de-ironwood",
+      "nome": "Cogu-sopa de Ironwood",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "sopa_e_proveniencia",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 13,
+        "ingredientes": [
+          {
+            "item": "ing-glowing-mushroom",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-white-cap",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-cogu-sopa-de-ironwood",
+          "nome": "Cogu-sopa de Ironwood",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 27,
+          "nivel": 2,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 15
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-glowing-mushroom",
+          "nome": "Cogumelo Luminescente",
+          "quantidade": 1,
+          "descricao_vigente": "Fungo brilhante empregado em elixires para artesãos e feiticeiros.",
+          "substancia_descrita": "fungo de brilho próprio",
+          "alerta_de_proveniencia": "Luminescência é descrição de Peren. Nem florestas, nem cavernas de Thargrid, nem propostas ecológicas de Eldroth comprovam espécie ou lugar de coleta.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_destruicao",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_ferraria",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_eletricidade",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-white-cap",
+          "nome": "Chapéu Branco",
+          "quantidade": 1,
+          "descricao_vigente": "Cogumelo pálido usado em fórmulas para recuperar energia mágica.",
+          "substancia_descrita": "cogumelo pálido de uso arcano",
+          "alerta_de_proveniencia": "A taxonomia autoral enquadra fungos como flora, mas o acervo geográfico não estabelece local, clima ou cultura de extração deste fungo.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_defesa",
+              "intensidade": 1
+            },
+            {
+              "id": "fraqueza_gelo",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Dois cogumelos sustentam uma sopa, mas não há caldo ou água registrados. Não está comprovada ocorrência de ambos em Ironwood nem processamento para consumo.",
+        "pergunta_para_autoria": "Definir se líquidos e cozimento são abstraídos e se Ironwood é referência cultural ou procedência real.",
+        "alternativas_nao_aprovadas": [
+          "sopa_com_cozimento_abstrato",
+          "descrever_base_de_caldo",
+          "verificar_fonte_sem_relocalizacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 15,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-racao-dos-vigias",
+      "nome": "Ração dos Vigias",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "funcao_na_viagem",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 13,
+        "ingredientes": [
+          {
+            "item": "ing-wheat",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-blue-mountain-flower",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-racao-dos-vigias",
+          "nome": "Ração dos Vigias",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 30,
+          "nivel": 2,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 16
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-wheat",
+          "nome": "Trigo",
+          "quantidade": 1,
+          "descricao_vigente": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+          "substancia_descrita": "cereal e alimento de preparo medicinal",
+          "alerta_de_proveniencia": "Grama-Cortada tem agricultura hobbit documentada e há cultivo costeiro, porém nenhuma fonte estabelece que o trigo desta ficha seja produzido ou comercializado por esses grupos em particular.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-blue-mountain-flower",
+          "nome": "Flor Azul da Montanha",
+          "quantidade": 1,
+          "descricao_vigente": "Flor medicinal de encostas frias, usada para recuperar a vitalidade e facilitar rituais de conjuração.",
+          "substancia_descrita": "flor medicinal de encosta fria",
+          "alerta_de_proveniencia": "A ficha vincula Flor Azul da Montanha a encostas frias; Thargrid tem picos nevados, mas o atlas não comprova ocorrência da espécie nesses picos nem mecanismo de conjuração da seiva.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_conjuracao",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Trigo e Flor Azul da Montanha compõem um alimento nominal, porém não há técnica de conservação/rações. No clássico não substitui ger-racoes-de-viagem no deslocamento.",
+        "pergunta_para_autoria": "Definir se é comida curativa, ração durável ou ambos, sem alterar implicitamente os custos de viagem.",
+        "alternativas_nao_aprovadas": [
+          "manter_cura_e_nome_tematico",
+          "criar_funcao_de_viagem_com_teste",
+          "especificar_conservacao_e_peso"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 16,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-cha-de-lavanda",
+      "nome": "Chá de Lavanda",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "infusao_e_abstracao",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 13,
+        "ingredientes": [
+          {
+            "item": "ing-lavender",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-juniper-berries",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-cha-de-lavanda",
+          "nome": "Chá de Lavanda",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 33,
+          "nivel": 2,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 17
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-lavender",
+          "nome": "Lavanda Selvagem",
+          "quantidade": 1,
+          "descricao_vigente": "Erva aromática que acalma e favorece a concentração em rituais.",
+          "substancia_descrita": "erva aromática de uso ritual",
+          "alerta_de_proveniencia": "Peren descreve efeito calmante e concentração ritual; os três efeitos da ficha são resistência mágica, Constituição e Conjuração. O atlas tem horticultura e diferentes tradições religiosas, mas não demonstra plantio da espécie nem monopólio por culto ou guilda.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "resistencia_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "aumentar_conjuracao",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-juniper-berries",
+          "nome": "Bagas de Zimbro",
+          "quantidade": 1,
+          "descricao_vigente": "Bagas aromáticas para unguentos de recuperação e precisão.",
+          "substancia_descrita": "bagas aromáticas de planta",
+          "alerta_de_proveniencia": "O nome de espécie e aroma constam de Peren, mas os setores agrícolas da Carcaça não comprovam produção, comércio ou coleta de zimbro em nenhum povoado ou região.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_destreza",
+              "intensidade": 1
+            },
+            {
+              "id": "fraqueza_fogo",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Lavanda Selvagem e Bagas de Zimbro são aromáticas, mas a infusão não explicita água; a descrição de lavanda 'acalma' não é um quarto efeito mecânico.",
+        "pergunta_para_autoria": "Decidir se a água é recurso implícito da cozinha e se chás devem ter efeitos além da cura.",
+        "alternativas_nao_aprovadas": [
+          "agua_abstrata_na_estacao",
+          "processo_infusao_descritivo",
+          "efeito_especifico_apos_design"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 17,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-prato-dos-anoes",
+      "nome": "Prato dos Anões",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P0",
+      "tipo_de_lacuna": "incompatibilidade_material_e_cultura",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 13,
+        "ingredientes": [
+          {
+            "item": "ing-large-antlers",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-jazbay-grapes",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-prato-dos-anoes",
+          "nome": "Prato dos Anões",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 36,
+          "nivel": 2,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 18
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-large-antlers",
+          "nome": "Chifres de Alce",
+          "quantidade": 1,
+          "descricao_vigente": "Chifres maduros moídos para preparados de força e firmeza corporal.",
+          "substancia_descrita": "chifres maduros de alce",
+          "alerta_de_proveniencia": "O catálogo diferencia os Chifres de Alce dos Chifres de Cervo já auditados, mas o atlas não documenta população de alces, ecossistema ou procedência regional. A semelhança dos efeitos não prova que ambos sejam a mesma espécie.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_forca",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-jazbay-grapes",
+          "nome": "Uvas de Jasmim",
+          "quantidade": 1,
+          "descricao_vigente": "Uvas perfumadas utilizadas em preparados mágicos, embora seu extrato concentrado seja nocivo.",
+          "substancia_descrita": "uvas aromáticas de uso alquímico",
+          "alerta_de_proveniencia": "A Carcaça possui agricultores e sociedades comerciais, mas não há comprovação de vinhedos, produção de Uvas de Jasmim, rota de abastecimento ou método ritual de processamento.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "dano_saude",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Chifres de Alce e Uvas de Jasmim não fornecem preparação culinária explicitamente definida; Chifres são moídos para tônicos, não identificados como alimento. A receita não estabelece uma tradição de todos os anões.",
+        "pergunta_para_autoria": "Resolver papel dos chifres no prato e caráter cultural do nome, sem criar costume anão universal ou trocar ingredientes silenciosamente.",
+        "alternativas_nao_aprovadas": [
+          "uso_culinario_fantastico_documentado",
+          "substituir_insumo_por_alimento_adequado_com_aprovacao",
+          "renomear_preparo_com_compatibilidade"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 18,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-banquete-de-portomonte",
+      "nome": "Banquete de Portomonte",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "escala_e_regiao",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 13,
+        "ingredientes": [
+          {
+            "item": "ing-purple-mountain-flower",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-salmon-roe",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-banquete-de-portomonte",
+          "nome": "Banquete de Portomonte",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 39,
+          "nivel": 2,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 19
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-purple-mountain-flower",
+          "nome": "Flor Violeta",
+          "quantidade": 1,
+          "descricao_vigente": "Flor resistente às encostas e à bruma fria, utilizada em preparados de furtividade.",
+          "substancia_descrita": "flor de encosta fria",
+          "alerta_de_proveniencia": "A descrição de Peren documenta encostas e bruma; Thargrid nevado não confirma ocorrência desta espécie.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_destreza",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_furtividade",
+              "intensidade": 1
+            },
+            {
+              "id": "resistencia_gelo",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-salmon-roe",
+          "nome": "Ovas de Salmão",
+          "quantidade": 1,
+          "descricao_vigente": "Ovas de peixe utilizadas em elixires de respiração aquática e concentração.",
+          "substancia_descrita": "ovas de salmão",
+          "alerta_de_proveniencia": "O atlas não documenta desova, migração ou habitat de salmões; não importar ecologia terrestre como fato da Carcaça.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "respirar_na_agua",
+              "intensidade": 2
+            },
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Duas unidades de insumos (Flor Violeta e Ovas de Salmão) geram duas porções; não demonstram escala de banquete nem captura local de salmão ou produção em Portomonte.",
+        "pergunta_para_autoria": "Distinguir banquete como título festivo de refeição pequena e autorizar ou não o vínculo regional.",
+        "alternativas_nao_aprovadas": [
+          "titulo_ritual_festivo_sem_quantidade_maior",
+          "composicao_de_banquete_aprovada",
+          "ajustar_nome_sem_criar_pesca"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 19,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-pescado-defumado",
+      "nome": "Pescado Defumado",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "tecnica_de_conservacao",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 18,
+        "ingredientes": [
+          {
+            "item": "ing-silverside-perch",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-garlic",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-pescado-defumado",
+          "nome": "Pescado Defumado",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 42,
+          "nivel": 3,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 20
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-silverside-perch",
+          "nome": "Perca Prateada",
+          "quantidade": 1,
+          "descricao_vigente": "Peixe de escamas claras utilizado em tônicos de resistência ao frio.",
+          "substancia_descrita": "peixe de escamas claras",
+          "alerta_de_proveniencia": "O atlas registra corpos de água continentais e mares, mas não confirma onde a Perca Prateada vive. Resistência ao Gelo II é propriedade alquímica, não prova de habitar a neve de Thargrid ou um ambiente marinho específico.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_gelo",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_forca",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-garlic",
+          "nome": "Alho",
+          "quantidade": 1,
+          "descricao_vigente": "Bulbo cultivado nas hortas, tradicional em remédios e preparados protetores.",
+          "substancia_descrita": "bulbo de horta com propriedades curativas",
+          "alerta_de_proveniencia": "O Ciclo 4 de Peren aprovou explicitamente Curar Doença II como quarto atributo do Alho, preservando os três anteriores. A existência de hortas e regiões agrícolas na Carcaça não especifica cultivo de alho nem praticantes da medicina.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_veneno",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "curar_doenca",
+              "intensidade": 2
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Perca Prateada e Alho permitem um prato de pescado, mas nenhum combustível, tempo, técnica ou estação de defumação aparece no processo.",
+        "pergunta_para_autoria": "Decidir se 'Defumado' descreve técnica implícita da estação ou demanda trabalho/ferramenta adicional.",
+        "alternativas_nao_aprovadas": [
+          "defumacao_abstrata_na_estacao",
+          "procedimento_com_tempo_e_ferramenta",
+          "renomear_se_nao_houver_defumacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 20,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-compota-das-montanhas",
+      "nome": "Compota das Montanhas",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P2",
+      "tipo_de_lacuna": "conservacao_e_preparo",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 18,
+        "ingredientes": [
+          {
+            "item": "ing-snowberries",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-jazbay-grapes",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-compota-das-montanhas",
+          "nome": "Compota das Montanhas",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 45,
+          "nivel": 3,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 21
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-snowberries",
+          "nome": "Bagas da Neve",
+          "quantidade": 1,
+          "descricao_vigente": "Pequenas bagas resistentes a extremos de temperatura.",
+          "substancia_descrita": "fruto de clima extremo",
+          "alerta_de_proveniencia": "O atlas confirma picos nevados nas montanhas de Thargrid, mas não estabelece a distribuição destas bagas nem a origem de sua resistência a calor e gelo.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "resistencia_gelo",
+              "intensidade": 2
+            },
+            {
+              "id": "resistencia_fogo",
+              "intensidade": 1
+            },
+            {
+              "id": "aumentar_encantamento",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-jazbay-grapes",
+          "nome": "Uvas de Jasmim",
+          "quantidade": 1,
+          "descricao_vigente": "Uvas perfumadas utilizadas em preparados mágicos, embora seu extrato concentrado seja nocivo.",
+          "substancia_descrita": "uvas aromáticas de uso alquímico",
+          "alerta_de_proveniencia": "A Carcaça possui agricultores e sociedades comerciais, mas não há comprovação de vinhedos, produção de Uvas de Jasmim, rota de abastecimento ou método ritual de processamento.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "dano_saude",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Bagas da Neve e Uvas de Jasmim formam base frutal, mas o método de conservação/aquecimento não consta; extrato concentrado de Uvas de Jasmim é nocivo na descrição de Peren, sem transposição automática para a fruta preparada.",
+        "pergunta_para_autoria": "Definir conservação e se processamento altera risco ficcional, sem criar toxicologia numérica nem origem montanhosa.",
+        "alternativas_nao_aprovadas": [
+          "conservacao_abstrata",
+          "processamento_com_descricoes",
+          "seguranca_ficcional_com_aprovacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 21,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-torta-de-mel",
+      "nome": "Torta de Mel",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "nome_e_panificacao",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 18,
+        "ingredientes": [
+          {
+            "item": "ing-chicken-s-egg",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-honeycomb",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-torta-de-mel",
+          "nome": "Torta de Mel",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 48,
+          "nivel": 3,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 22
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-chicken-s-egg",
+          "nome": "Ovo de Galinha",
+          "quantidade": 1,
+          "descricao_vigente": "Ingrediente culinário abundante, usado como base de misturas de resistência.",
+          "substancia_descrita": "ovo de galinha e ingrediente culinário",
+          "alerta_de_proveniencia": "A ficha de Peren descreve um ovo culinário abundante. Os campos agrícolas e famílias produtoras da Carcaça existem, mas os documentos não registram criação de galinhas, sistema de distribuição regional ou certificação da procedência.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "resistencia_magia",
+              "intensidade": 1
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "diminuir_regeneracao_magia",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-honeycomb",
+          "nome": "Favo de Mel",
+          "quantidade": 1,
+          "descricao_vigente": "Favo nutritivo empregado em tônicos de vigor físico e proteção.",
+          "substancia_descrita": "favo nutritivo",
+          "alerta_de_proveniencia": "O catálogo distingue Favo de Mel, Abelha e Casca de Colmeia. O nome comum não comprova que se originem de uma única espécie ou de um apiário regional; a agricultura de Grama-Cortada não comprova criação de abelhas.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_defesa",
+              "intensidade": 1
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Ovo de Galinha e Favo de Mel não descrevem massa ou crosta de torta; não há trigo, farinha, forno ou técnica de panificação nos insumos registrados.",
+        "pergunta_para_autoria": "Decidir se 'torta' é nome de sobremesa sem massa, se farinha é insumo implícito ou se receita deve ser revista.",
+        "alternativas_nao_aprovadas": [
+          "nome_regional_de_sobremesa",
+          "processo_abstrato_com_farinha_ambiental",
+          "ajustar_insumo_mediante_aprovacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 22,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-pao-de-demeter",
+      "nome": "Pão de Deméter",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P1",
+      "tipo_de_lacuna": "ritual_e_qualidade_alimentar",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 18,
+        "ingredientes": [
+          {
+            "item": "ing-wheat",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-salt-pile",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-pao-de-demeter",
+          "nome": "Pão de Deméter",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 51,
+          "nivel": 3,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 23
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-wheat",
+          "nome": "Trigo",
+          "quantidade": 1,
+          "descricao_vigente": "Cereal comum empregado em cataplasmas e elixires nutritivos.",
+          "substancia_descrita": "cereal e alimento de preparo medicinal",
+          "alerta_de_proveniencia": "Grama-Cortada tem agricultura hobbit documentada e há cultivo costeiro, porém nenhuma fonte estabelece que o trigo desta ficha seja produzido ou comercializado por esses grupos em particular.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_saude",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 2
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-salt-pile",
+          "nome": "Sal do Sangue",
+          "quantidade": 1,
+          "descricao_vigente": "Sal extraído das águas rubras, empregado na conservação e em rituais alquímicos.",
+          "substancia_descrita": "sal das águas rubras",
+          "alerta_de_proveniencia": "A presença do Mar de Sangue é canônica; a descrição de Peren atribui o sal às águas rubras. O atlas não fixa salinidade, método de extração, escala produtiva nem distribuição de salinas ou rota mercantil.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_restauracao",
+              "intensidade": 1
+            },
+            {
+              "id": "diminuir_destreza",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Trigo e Sal do Sangue não especificam massa/água/fermentação; o templo de Deméter ajuda agricultura em Portomonte, mas não garante que o sal marítimo seja seguro ou a receita seja institucional.",
+        "pergunta_para_autoria": "Separar simbolismo religioso, alimentação e purificação das águas; escolher processo de panificação e status do sal.",
+        "alternativas_nao_aprovadas": [
+          "pao_cerimonial_apenas_nome",
+          "processamento_ficcional_do_sal_com_aprovacao",
+          "reestruturar_receita_com_teste"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 23,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-cha-dos-sonhos",
+      "nome": "Chá dos Sonhos",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P0",
+      "tipo_de_lacuna": "risco_alimentar_ficcional",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 18,
+        "ingredientes": [
+          {
+            "item": "ing-mora-tapinella",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-moon-sugar",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-cha-dos-sonhos",
+          "nome": "Chá dos Sonhos",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 54,
+          "nivel": 3,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 24
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-mora-tapinella",
+          "nome": "Cogumelo de Raiz",
+          "quantidade": 1,
+          "descricao_vigente": "Fungo de madeira úmida empregado em preparados arcanos e debilitantes.",
+          "substancia_descrita": "fungo sobre madeira úmida",
+          "alerta_de_proveniencia": "A presença de madeira úmida na ficha não comprova ocorrência em Eldroth, Ironwood ou nos bosques gnômicos. Fenômenos fúngicos propostos em Eldroth não foram canonizados como origem deste ingrediente.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_constituicao",
+              "intensidade": 1
+            },
+            {
+              "id": "dano_saude",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-moon-sugar",
+          "nome": "Açúcar Lunar",
+          "quantidade": 1,
+          "descricao_vigente": "Cristais adocicados de brilho pálido, usados em elixires de restauração arcana.",
+          "substancia_descrita": "cristais adocicados de brilho pálido",
+          "alerta_de_proveniencia": "A Carcaça possui o Templo da Lua no Rio Ancestral, mas o nome 'Açúcar Lunar' não demonstra vínculo com Severina, fases lunares, sacerdócio, rituais ou produção nesse local.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "restaurar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "regenerar_magia",
+              "intensidade": 2
+            },
+            {
+              "id": "fraqueza_fogo",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Cogumelo de Raiz possui Dano à Saúde I entre atributos da curadoria; Açúcar Lunar é cristal arcano. A receita de chá não documenta extração, neutralização ou segurança do consumo; no motor cura como os demais.",
+        "pergunta_para_autoria": "Decidir se chá é remédio, ritual, risco deliberado ou bebida com preparação própria, sem copiar o efeito Dano à Saúde como dano automático.",
+        "alternativas_nao_aprovadas": [
+          "receita_fantastica_com_preparo_de_seguranca",
+          "efeito_misto_autorizado_e_testado",
+          "substituicao_de_insumo_apos_deliberacao"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 24,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    },
+    {
+      "id": "rec-ensopado-de-algas",
+      "nome": "Ensopado de Algas",
+      "grupo": "cozinha",
+      "estado": "parecer_editorial_individual_sem_implementacao",
+      "prioridade_editorial": "P0",
+      "tipo_de_lacuna": "contradicao_nome_insumo",
+      "ficha_vigente": {
+        "estacao": "cozinha",
+        "pericia": "cozinha",
+        "nivel_requerido": 23,
+        "ingredientes": [
+          {
+            "item": "ing-grass-pod",
+            "quantidade": 1
+          },
+          {
+            "item": "ing-nordic-barnacle",
+            "quantidade": 1
+          }
+        ],
+        "quantidade_produzida": 2,
+        "produto": {
+          "id": "food-ensopado-de-algas",
+          "nome": "Ensopado de Algas",
+          "categoria": "comida",
+          "tipo": "refeicao",
+          "valor_cadastral": 57,
+          "nivel": 4,
+          "raridade": "incomum",
+          "efeito": "Restore Health",
+          "potencia": 25
+        }
+      },
+      "ingredientes_confrontados": [
+        {
+          "id": "ing-grass-pod",
+          "nome": "Vagem da Charneca",
+          "quantidade": 1,
+          "descricao_vigente": "Vagem de solo úmido utilizada em remédios contra venenos e preparados arcanos.",
+          "substancia_descrita": "vagem de solo úmido",
+          "alerta_de_proveniencia": "A descrição de Peren menciona solo úmido, mas o atlas macrorregional não estabelece um lugar denominado Charneca nem prova ocorrência desse vegetal em região específica.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "resistencia_veneno",
+              "intensidade": 2
+            },
+            {
+              "id": "aumentar_alteracao",
+              "intensidade": 2
+            },
+            {
+              "id": "restaurar_magia",
+              "intensidade": 1
+            }
+          ]
+        },
+        {
+          "id": "ing-nordic-barnacle",
+          "nome": "Craca de Rio",
+          "quantidade": 1,
+          "descricao_vigente": "Craca de água doce coletada em rochas e embarcações.",
+          "substancia_descrita": "craca de água doce sobre rochas e embarcações",
+          "alerta_de_proveniencia": "A descrição registra craca de água doce; o Rio Ancestral existe, mas os documentos não localizam afluentes, pontos de coleta, rochas colonizadas ou barcos portadores dessa espécie.",
+          "efeitos_alquimicos_nao_transferidos_automaticamente": [
+            {
+              "id": "respirar_na_agua",
+              "intensidade": 2
+            },
+            {
+              "id": "regenerar_saude",
+              "intensidade": 1
+            },
+            {
+              "id": "dano_magia",
+              "intensidade": 1
+            }
+          ]
+        }
+      ],
+      "parecer": {
+        "achado": "Vagem da Charneca e Craca de Rio não são identificadas como algas na curadoria; nenhuma alga aparece entre os dois insumos. Caldo e preparação da craca não são descritos.",
+        "pergunta_para_autoria": "Resolver a contradição nominal sem atribuir vegetais costeiros a algas ou inventar alga canônica.",
+        "alternativas_nao_aprovadas": [
+          "renomear_para_prato_de_vagem_e_craca",
+          "adicionar_alga_com_cadeia_de_ingrediente_aprovada",
+          "uso_de_alga_indireto_apenas_se_descrito"
+        ]
+      },
+      "efeito_no_motor_classico": {
+        "ao_consumir": "restaurar_vida",
+        "reducao_fadiga": 0,
+        "reducao_fome_nao_existe_necessidade_modelada": true,
+        "substitui_racoes_viagem": false,
+        "transfere_efeitos_alquimicos_dos_insumos": false,
+        "restauracao_de_vida_base": 25,
+        "acao_gasta_para_consumir": false
+      },
+      "status_autoral": {
+        "nova_receita_aprovada": false,
+        "novos_efeitos_aprovados": false,
+        "proveniencia_regional_validada": false,
+        "seguranca_ficcional_validada": false,
+        "autoriza_mudar_loot": false,
+        "autoriza_mudar_custos": false
+      }
+    }
+  ],
+  "decisoes_pendentes": [
+    {
+      "id": "COZ-01",
+      "eixo": "consumo_e_sobrevivencia",
+      "question": "Alimentação deve reduzir fadiga, sustentar viagem, prover saciedade ou continuar como cura simples?",
+      "options": [
+        "preservar_cura_legacy",
+        "adicionar_saciedade_ou_fadiga_em_sistema_separado",
+        "permitir_alimentos_especificos_como_provisoes_de_viagem_mediante_qa"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-02",
+      "eixo": "coerencia_de_ingredientes",
+      "question": "Como resolver Guisado de Caatinga, Prato dos Anões e Ensopado de Algas sem apagar IDs antigos?",
+      "options": [
+        "preparo_fantastico_descrito",
+        "renomear_com_migracao_textual",
+        "recompor_insumos_apos_aprovacao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-03",
+      "eixo": "seguranca_alimentar_ficcional",
+      "question": "Como tratar Sal do Sangue, Cogumelo de Raiz e Uvas de Jasmim, cujas descrições levantam risco ou incerteza?",
+      "options": [
+        "seguranca_explicitada_pelo_processamento",
+        "preparo_com_efeito_misto_se_aprovado",
+        "manter_efeito_legacy_ate_decisao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-04",
+      "eixo": "tecnica_culinaria",
+      "question": "Água, moagem, fermentação, defumação, conservas e cocção são operações implícitas da estação ou consumos explícitos?",
+      "options": [
+        "estacao_abstrai_processo",
+        "receita_com_processo_sem_insumos_consumidos",
+        "introduzir_etapas_e_insumos_com_migracao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-05",
+      "eixo": "variedade_nutritiva",
+      "question": "Todas as 16 receitas devem restaurar apenas Vida, com potência indexada de 10 a 25?",
+      "options": [
+        "manter_formula_simples",
+        "diversificar_efeitos_por_familia_de_prato",
+        "distinguir_recuperacao_de_beneficio_de_exploracao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-06",
+      "eixo": "rendimento_e_tempo",
+      "question": "Chás, ração, pão e banquete devem sempre gerar duas porções por uma ação?",
+      "options": [
+        "manter_duas_porcoes_legacy",
+        "rendimento_diferenciado_por_preparo",
+        "definir_tempo_e_ferramentas_de_producao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-07",
+      "eixo": "proveniencia_e_cultura",
+      "question": "Como distinguir prato com nome de região/povo de prato efetivamente tradicional ou produzido ali?",
+      "options": [
+        "nome_somente_tematico",
+        "fonte_tradicional_aprovada_por_povo",
+        "separar_local_de_venda_e_de_obtencao"
+      ],
+      "approved": false
+    },
+    {
+      "id": "COZ-08",
+      "eixo": "economia_e_trabalho",
+      "question": "Qual valor social e econômico da cozinha profissional, do cultivo, da pesca e da conservação dos alimentos?",
+      "options": [
+        "catering_e_comercio_regional",
+        "encomendas_e_racoes_com_testes",
+        "preservar_mercado_legacy_ate_dados_reais"
+      ],
+      "approved": false
+    }
+  ]
+}
