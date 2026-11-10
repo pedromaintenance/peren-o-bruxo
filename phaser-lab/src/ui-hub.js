@@ -1,15 +1,16 @@
 // M1g-A: presentation-only state. Rules and transactions remain in progress.js.
 import {maxClassicHp,maxClassicMp,inventoryTotal} from './progress.js';
 import {survivalSummary} from './survival.js';
+import {newWorldClock,advanceWorldClock,erisianDate} from './carcaca-time.js';
 const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
-export function hubViewModel(s,catalogs,origin='phaser'){
+export function hubViewModel(s,catalogs,origin='phaser',clock=null){
   const city=catalogs.cidadesById[s.city];
   const maxHp=maxClassicHp(s,catalogs),maxMp=maxClassicMp(s);
   const xpGoal=Math.max(1,s.level*62);
   const needs=survivalSummary(s.survival);
   const percent=(n,max)=>clamp(Math.round(n/Math.max(1,max)*100),0,100);
   return {
-    day:'Dia '+s.day,gold:new Intl.NumberFormat('pt-BR').format(s.gold),
+    day:erisianDate(clock||advanceWorldClock(newWorldClock(),(Math.max(1,s.day)-1)*1440).clock).label,gold:new Intl.NumberFormat('pt-BR').format(s.gold),
     level:'Nível '+s.level,xp:s.exp+' / '+xpGoal,xpPct:percent(s.exp,xpGoal),
     hp:s.hp+' / '+maxHp,hpPct:percent(s.hp,maxHp),
     mp:s.mp+' / '+maxMp,mpPct:percent(s.mp,maxMp),
