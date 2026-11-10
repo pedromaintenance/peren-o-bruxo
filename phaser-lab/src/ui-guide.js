@@ -22,7 +22,9 @@ export const GUIDE_SECTIONS=Object.freeze([
    ['Oficina','A bancada usa receitas e ingredientes reais do catálogo. Verifique o custo antes de fabricar.'],
    ['Comércio e inventário','Compre e venda itens em Portomonte. Consulte a bolsa para conferir os materiais carregados.'],
    ['Diário','O Diário reúne crônicas e transações já presentes no seu save. Pesquise, filtre e exporte Markdown quando quiser.'],
-   ['Descanso e novos mapas','Descansar avança o dia; Gerar nova floresta troca a rota, sem reiniciar Peren.']
+   ['Calendário da Carcaça','O ano é 922 EC no início. Cinco estações erisianas de 73 dias e semanas de cinco dias. Tempo avança enquanto explora ou faz ações.'],
+    ['Fome e sono','Comer rações repõe saciedade; dormir 1 a 12 horas repõe descanso. Sem limite de ações diárias: tudo consome tempo.'],
+    ['Descanso e novos mapas','Dormir não vira o dia artificialmente. Gerar novo mapa inicia outra expedição sem reiniciar Peren.']
   ]},
  {id:'seguranca',label:'Saves e testes',symbol:'✦',title:'GUARDE O QUE SOBREVIVEU',intro:'O protótipo não é o jogo clássico. Seus dados são independentes.',
   lines:[
