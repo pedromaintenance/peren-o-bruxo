@@ -2,9 +2,9 @@
 
 Fonte verificada: `feature/prealfa-calendario-erisiano-sobrevivencia-20261109`
 
-Commit fixado: `b680c6457b445cb8089e986f74a01d0006c2c8fd`
+Commit fixado: `948254920918bfa7d3046d37578c2df4a8c1c4ed`
 
-Validação integral Node + Phaser + Chromium: https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42742267131
+Validação integral Node + Phaser + Chromium: https://github.com/pedromaintenance/peren-o-bruxo/actions/runs/42772169452
 
 ## Mudanças desta release
 
@@ -17,3 +17,5 @@ Validação integral Node + Phaser + Chromium: https://github.com/pedromaintenan
 - Conserva os dez biomas e os battlers oficiais da release anterior.
 
 Apenas `/prealfa/` será alterada. A edição clássica em `/` e as chaves de save anteriores ficam preservadas. A branch da pré-alfa ainda não está integrada à `main`: este é um deploy controlado de uma build testada, sem merge prematuro.
+
+Ajuste complementar: mensagens estáticas da oficina e bancada agora mostram minutos, sem vestígios do antigo limite de três ações.
