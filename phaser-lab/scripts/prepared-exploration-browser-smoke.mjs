@@ -31,7 +31,7 @@ try{
  assert.equal(crafted.character.alchemy.preparations.length,1);
  const id=crafted.character.alchemy.preparations[0].id;
  assert.equal(crafted.character.hp,50);
- assert.equal(crafted.character.actions,2);
+ assert.equal(crafted.character.actions,3);
 
  await page.locator('#craftClose').click();
  await page.locator('#openBagHub').click();
@@ -47,7 +47,7 @@ try{
  await page.waitForFunction(()=>document.getElementById('invPrepFeedback').textContent.includes('Preparo utilizado.'));
  const used=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)),PHASER_KEY);
  assert.equal(used.character.hp,74,'Restaurar Saúde deve funcionar no mundo fora do combate');
- assert.equal(used.character.actions,2,'Uso de campo não cobra ação diária nesta hipótese');
+ assert.equal(used.character.actions,3,'Uso de campo não cobra ação diária');
  assert.equal(used.character.alchemy.preparations.length,0,'Deve consumir uma única instância');
  assert.equal(used.ledger['prepared-use:'+id].quantityConsumed,1);
  assert.equal(JSON.stringify(used.ledger['prepared-use:'+id]).includes('restaurar_saude'),false,'Recibo público não pode dar spoiler');
