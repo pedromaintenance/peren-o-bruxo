@@ -89,3 +89,12 @@ Nenhum desses pontos foi implementado neste ciclo. Esta lista é uma **fila de d
 - Simulação **condicional**, Comércio 9: Portomonte **5 positivos / 11 negativos**, Drakport **7 / 9**, Além Sul **6 / 10**. A projeção de sortimento inicial não encontrou os dois insumos de nenhuma receita simultaneamente nos mercadores; isso **não** exclui coleta, inventário próprio ou dias posteriores.
 - **Marco:** os **139/139** registros da produção tradicional (Forja 89, Joalheria 14, Curtume 20, Cozinha 16) receberam agora aprofundamento individualizado. Permanecem os **320 de Escrita** e **113 de Encantamento** para análise de segundo nível.
 - **0** alterações em receitas, itens, atributos, mercado, engine, saves ou lore. Próxima etapa: **Escrita**.
+
+## Quinto aprofundamento — Escrita 320/320, 34 grimórios sem receita e QA do compilado (10/11/2026)
+
+- Publicados [parecer de Escrita](parecer-escrita-320-grimorios-conhecimento-circulacao-v1.md) e [matriz individual dos 320 grimórios](../data/auditoria-escrita-320-v1.json), com **oito decisões ESC-01 a ESC-08** pendentes.
+- Os **354 grimórios** derivam das magias indexadas; **320 têm receitas** (D&D níveis 0–7) e **34 não** (níveis 8–9). Os 34 não aparecem em lojas ordinárias, missões ou drops do motor clássico examinado, não sendo prova de impossibilidade de obter em versões futuras.
+- O conjunto de 320 receitas exige **640 Linhos de Deméter + 608 Tintas Rúnicas** para fabricar uma de cada. O **Pergaminho Vazio** existe no catálogo mas não é insumo dessas receitas. Escrita e Arcanismo são gates diferentes; métodos de leitura dão **9 vs 12 XP** de Arcanismo.
+- **29** das magias fabricáveis com função `utilidade` possuem tipo de combate `arcane` genérico; isso pede distinção entre conhecimento, mundo e uso em combate. A triagem semântica inicial tem **24 P0, 205 P1 e 91 P2**, sem homologação automática.
+- **QA integrado de dados:** pela primeira vez os dois compilados grandes de [itens e receitas foram lidos integralmente](qa-crafting-compilado-2026-11-10.md). **572/572** receitas não alquímicas conferidas com os registros do compilado, **0 referências quebradas** e **102 requisitos com quantidade zero em Encantamento**, com [IDs individualizados](../data/qa-crafting-compilado-2026-11-10.json). Essa checagem supera a antiga ressalva de leitura, **mas não** executa teste em jogo nem valida Phaser.
+- **0** alterações em itens, receitas, magias, atributos, mercados, gerador, motores, saves ou cânone. Próximo ciclo: **Encantamento 113/113**.
