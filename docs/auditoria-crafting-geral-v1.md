@@ -199,3 +199,11 @@ A [Cozinha foi auditada em 16/16 receitas](parecer-cozinha-16-alimentacao-efeito
 Quatro pendências receberam prioridade P0 editorial (Guisado de Caatinga, Prato dos Anões, Chá dos Sonhos e Ensopado de Algas), **sem concluir toxicidade real** ou proibir gastronomia fantástica. Mercado simulado com Comércio 9 e compra hipotética integral dos insumos: **5/16**, **7/16** e **6/16** saldos positivos respectivamente em Portomonte, Drakport e Além Sul; o sortimento inicial projetado não atende simultaneamente aos dois insumos de uma receita em nenhuma das três cidades, ressalvada coleta, inventário inicial e rotação de lojas.
 
 **A produção tradicional dos quatro ofícios foi aprofundada: 139/139 receitas.** Próximos ofícios a aprofundar: Escrita (320) e Encantamento (113). Os pareceres não modificam dados jogáveis nem habitat.
+
+## Aprofundamento V — Escrita 320/320 e QA integral de JSON compilado (10/11/2026)
+
+As [320 receitas de Escrita e os 34 grimórios sem receita](parecer-escrita-320-grimorios-conhecimento-circulacao-v1.md) receberam [matriz individualizada](../data/auditoria-escrita-320-v1.json): 354 magias registradas, duas matérias-primas obrigatórias, 320 itens fabricáveis, 34 itens de alta magia sem rota ordinária identificada no clássico e oito decisões `ESC-01`–`ESC-08` não aprovadas. Há distinção entre Escrita e Arcanismo e entre fabricar e aprender; o uso via inventário e via tela de magias oferece XP diferente. A classificação de riscos nomeados é triagem editorial, não cópia dos efeitos de D&D nem rito homologado na Carcaça.
+
+**Correção de limitação técnica dos ciclos anteriores:** foi possível ler integralmente os dois JSONs compilados usando [blobs Git](qa-crafting-compilado-2026-11-10.md). Todos os **2.785 itens e 2.316 receitas** foram carregados; as **572 receitas não alquímicas** foram confrontadas com suas matrizes e **572/572 coincidiram** em IDs, insumos, nomes, níveis, estação, requisitos e saída. Não há referências quebradas. Persistem **102 insumos com quantidade 0 em Encantamento**, identificados por ID no [QA estruturado](../data/qa-crafting-compilado-2026-11-10.json). Isso não é teste de funcionamento em navegador, Phaser/prealfa, economias ou saves.
+
+O próximo aprofundamento editorial será **Encantamento**, sem modificar gameplay antes da decisão autoral.
