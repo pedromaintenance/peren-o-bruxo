@@ -189,11 +189,11 @@ export function applyTransaction(env,command,c){
  if(type==='victory'||type==='escape')key=command.battle?.key?'battle:'+String(command.battle.key):null;
  if(key&&old.ledger[key])return {next:env,result:old.ledger[key],applied:false};
  const next=jsonCopy(old),char=next.character;let result={type};
+ if(!canAct(char.survival))throw Error('Peren morreu. Nenhuma ação é permitida sem uma mecânica de ressurreição.');
  if(type==='collect'){
   const w=command.world,node=w?.nodes?.find(n=>n.id===command.nodeId);
   if(!node||String(w.seed)!==String(command.seed)||!Number.isInteger(node.count))throw Error('Coleta não corresponde ao mapa.');
   add(char,node.itemId,node.count,c);char.skills.coleta+=node.count*2;
-  char.fatigue=Math.min(100,char.fatigue+1);
   result={type,item:node.itemId,quantity:node.count};
   record(char,`Coletou ${node.count}× ${c.itensById[node.itemId].nome}.`);
  }else if(type==='victory'){
@@ -232,26 +232,24 @@ export function applyTransaction(env,command,c){
  }else if(type==='studyIngredient'){
   if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
    throw Error('Estudo alquímico exige uma bancada e a curadoria canônica.');
-  if(char.actions<=0)throw Error('Sem ações disponíveis.');
   const id=String(command.id||'');
   if((char.bag[id]||0)<1)throw Error('Ingrediente não está na mochila.');
   const effect=nextStudyEffect(c.curadoria_ingredientes,char.alchemy.known,id);
   if(!effect)throw Error('Todos os efeitos desse ingrediente já foram estudados.');
   char.alchemy.known={...char.alchemy.known,
     [id]:[...new Set([...(char.alchemy.known[id]||[]),effect.id])].sort()};
-  char.actions--;char.skills.alquimia+=2;
-  result={type,ingredient:id,effect:{id:effect.id,nome:effect.nome},cost:{actions:1,items:0}};
+  char.skills.alquimia+=2;
+  result={type,ingredient:id,effect:{id:effect.id,nome:effect.nome},cost:{dailyActions:0,items:0}};
   record(char,`Estudou ${c.curadoria_ingredientes.itens[id].nome} e descobriu ${effect.nome}.`);
  }else if(type==='brewPair'){
   if(!c.curadoria_ingredientes||!c.cidadesById[char.city]?.estacoes?.includes('alquimia'))
    throw Error('A mistura exige uma bancada alquímica e a curadoria canônica.');
-  if(char.actions<=0)throw Error('Sem ações disponíveis.');
   const mix=resolveAlchemyPair(c.curadoria_ingredientes,command.ingredients);
   for(const id of mix.ingredientIds)if((char.bag[id]||0)<1)throw Error('Ingredientes insuficientes.');
   // Experimentar é permitido sem estudar. O resultado vem exclusivamente
   // dos atributos canônicos, nunca de efeitos sugeridos pelo cliente/UI.
   for(const id of mix.ingredientIds)add(char,id,-1,c);
-  char.actions--;char.fatigue=Math.min(100,char.fatigue+3);
+  // Consumir ingredientes e tempo, nunca ações diárias.
   char.skills.alquimia+=mix.valid?7:1;
   if(mix.valid){
     char.alchemy.known=discoverShared(char.alchemy.known,mix.ingredientIds,mix.effects);
@@ -261,18 +259,17 @@ export function applyTransaction(env,command,c){
       ingredients:mix.ingredientIds,effects:mix.effects,createdDay:char.day};
     char.alchemy.preparations=[...char.alchemy.preparations,prep].slice(-400);
     char.crafted++;
-    result={type,valid:true,preparation:prep,cost:{actions:1,items:2}};
+    result={type,valid:true,preparation:prep,cost:{dailyActions:0,items:2}};
     record(char,`Preparou uma mistura de ${mix.effects.map(e=>e.nome).join(', ')}.`);
   }else{
     char.alchemy.failed++;
-    result={type,valid:false,ingredients:mix.ingredientIds,cost:{actions:1,items:2}};
+    result={type,valid:false,ingredients:mix.ingredientIds,cost:{dailyActions:0,items:2}};
     record(char,'Experimentou dois ingredientes incompatíveis; mistura fracassada.');
   }
  }else if(type==='craft'){
   const rec=c.receitasById[command.id];if(!craftable(char,rec,c))throw Error('Faltam materiais, oficina ou proficiência.');
-  if(char.actions<=0)throw Error('Sem ações; termine o dia primeiro.');
   for(const ing of rec.ingredientes)add(char,ing.item,-ing.quantidade,c);
-  add(char,rec.resultado,rec.quantidade,c);char.actions--;char.fatigue=Math.min(100,char.fatigue+3);
+  add(char,rec.resultado,rec.quantidade,c);
   char.crafted++;char.skills[rec.pericia]+=7+rec.nivel/3;
   result={type,item:rec.resultado,quantity:rec.quantidade,recipe:rec.id};
   record(char,`Fabricou ${rec.quantidade}× ${c.itensById[rec.resultado].nome}.`);
@@ -301,12 +298,50 @@ export function applyTransaction(env,command,c){
    char.city=region.city;next.worlds.activeSeed=seed;
    result={type,regionId:region.id,city:region.city,seed,cost:{dailyActions:0,gold:0}};
    record(char,'Viajou para '+region.name+'.');
-  }else if(type==='endDay'){
-  char.day++;char.actions=3;char.fatigue=Math.max(0,char.fatigue-26);
-  char.hp=Math.min(maxClassicHp(char,c),char.hp+Math.floor(maxClassicHp(char,c)*.32));
-  char.mp=Math.min(maxClassicMp(char),char.mp+Math.floor(maxClassicMp(char)*.38));
-  result={type,day:char.day};record(char,'Um novo dia amanhece em '+c.cidadesById[char.city].nome+'.');
+  }else if(type==='eat'){
+  const id=String(command.id||'ger-racoes-de-viagem');
+  if(id!=='ger-racoes-de-viagem')throw Error('Esta versão só permite comer rações de viagem.');
+  if((char.bag[id]||0)<1)throw Error('Sem rações. Compre provisões em um mercado.');
+  char.survival=eatMeal(char.survival);
+  add(char,id,-1,c);
+  result={type,item:id,quantityConsumed:1,hunger:char.survival.hunger};
+  record(char,'Comeu uma ração de viagem.');
+ }else if(type==='sleep'||type==='endDay'){
+  const hours=type==='endDay'?8:command.hours??8;
+  if(!Number.isSafeInteger(hours)||hours<1||hours>12)throw Error('O sono deve durar de 1 a 12 horas.');
+  if(next.worlds.clock.dimension!=='carcaca')throw Error('Não é possível dormir sem passagem de tempo nesta dimensão.');
+  result={type:'sleep',hours,cost:{dailyActions:0}};
+  record(char,'Dormiu durante '+hours+' horas.');
+ }else if(type==='passTime'){
+  if(!Number.isSafeInteger(command.minutes)||command.minutes<1||command.minutes>60)
+   throw Error('Pulso do relógio inválido (1 a 60 minutos).');
+  result={type,minutes:command.minutes};
  }else throw Error('Transação desconhecida: '+type);
+ const duration=result.type==='sleep'?result.hours*60:
+  actionMinutes(type,type==='craft'?{...command,recipeLevel:c.receitasById[command.id]?.nivel}:command);
+ if(duration>0){
+  const moved=advanceWorldClock(next.worlds.clock,duration);
+  next.worlds.clock=moved.clock;
+  if(moved.elapsed){
+   const biology=advanceSurvival(char.survival,moved.elapsed,{sleeping:result.type==='sleep',hp:char.hp,maximumHp:maxClassicHp(char,c)});
+   char.survival=biology.survival;char.hp=biology.hp;
+   char.fatigue=Math.round(100-char.survival.rest);
+   char.day=Math.floor(clockPosition(moved.clock)/1440)-Math.floor(clockPosition(newWorldClock())/1440)+1;
+   if(result.type==='sleep'&&char.survival.alive){
+    char.hp=Math.min(maxClassicHp(char,c),char.hp+Math.ceil(maxClassicHp(char,c)*.04*result.hours));
+    char.mp=Math.min(maxClassicMp(char),char.mp+Math.ceil(maxClassicMp(char)*.06*result.hours));
+   }
+   if(!char.survival.alive){char.flags={...char.flags,peren_morto:true};record(char,'Peren morreu de '+(char.survival.causeOfDeath||'causas desconhecidas')+'.');}
+   for(const event of moved.events)if(!next.worlds.eventLog.includes(event.id)){
+    next.worlds.eventLog.push(event.id);
+    for(const flag of event.flags)next.worlds.historicalFlags[flag]=true;
+    record(char,'MARCO HISTÓRICO '+event.year+' EC — '+event.description);
+   }
+   next.worlds.eventLog=next.worlds.eventLog.slice(-40);
+  }
+ }
+ result.cost={...result.cost,dailyActions:0,minutes:next.worlds.clock.dimension==='carcaca'?duration:0};
+ result.date=erisianDate(next.worlds.clock).label;
  if(key)next.ledger[key]=result;
  next.revision++;next.history=[...(next.history||[]),{rev:next.revision,type,description:result.type==='victory'?result.monster:result.item||''}].slice(-80);
  return {next,result,applied:true};
