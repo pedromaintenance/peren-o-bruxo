@@ -48,7 +48,8 @@
     "Os efeitos alquímicos dos ingredientes permanecem dados de seus itens e não migram automaticamente para o resultado culinário.",
     "As alternativas no JSON são propostas sem aprovação autoral.",
     "A culinária de uma cidade não prova que todos os ingredientes cresçam, sejam pescados ou criados localmente.",
-    "Nenhuma alteração em saves, itens, receitas, lojas, loot, engine ou cânone."
+    "Nenhuma alteração em saves, itens, receitas, lojas, loot, engine ou cânone.",
+    "Para a simulação comercial, preços foram reconstruídos de funções cost/sellprice no clássico para Comércio 9; material base foi reconstruído de 111 linhas do gerador, com overrides curatoriais de zona/valor/nível se presentes. O resultado não demonstra rentabilidade real nem possibilidade de comprar o insumo; o sortimento do dia 1 foi aproximado pela lógica de rank/quotas da engine sem verificar a quantidade disponível para venda."
   ],
   "resumo": {
     "receitas": 16,
@@ -80,7 +81,27 @@
       "alem-sul"
     ],
     "nivel_inicial_cozinha": 12,
-    "receitas_iniciais_por_pericia": 5
+    "receitas_iniciais_por_pericia": 5,
+    "economia_condicional": {
+      "portomonte": {
+        "saldo_positivo": 5,
+        "saldo_nulo": 0,
+        "saldo_negativo": 11,
+        "receitas_com_ambos_insumos_em_sortimento_no_dia_1": 0
+      },
+      "drakport": {
+        "saldo_positivo": 7,
+        "saldo_nulo": 0,
+        "saldo_negativo": 9,
+        "receitas_com_ambos_insumos_em_sortimento_no_dia_1": 0
+      },
+      "alem-sul": {
+        "saldo_positivo": 6,
+        "saldo_nulo": 0,
+        "saldo_negativo": 10,
+        "receitas_com_ambos_insumos_em_sortimento_no_dia_1": 0
+      }
+    }
   },
   "regra_vigente_classico": {
     "efeito": "No game.js useItem, as comidas com efeito Restore Health recebem somente recuperação de PV pela potencia; efeitos dos ingredientes de alquimia não são lidos.",
@@ -1930,5 +1951,481 @@
       ],
       "approved": false
     }
-  ]
+  ],
+  "comercio_hipotetico_por_cidade": {
+    "portomonte": {
+      "cidade": "portomonte",
+      "perigo": 1,
+      "comercio": 9,
+      "assume_compra_integral_dos_ingredientes": true,
+      "ignora_quantidades_de_estoque_e_tempo_de_trabalho": true,
+      "stock_vendedores": [
+        {
+          "id": "portomonte-sofia-do-porto-seguro",
+          "perfil": "alquimia",
+          "quantidade_de_ingredientes_ofertados": 11
+        },
+        {
+          "id": "portomonte-jonathan-o-taberneiro",
+          "perfil": "provisoes",
+          "quantidade_de_ingredientes_ofertados": 9
+        },
+        {
+          "id": "portomonte-alina-das-conchas",
+          "perfil": "oculto",
+          "quantidade_de_ingredientes_ofertados": 7
+        }
+      ],
+      "recursos_completos_no_sortimento_dia_1": 0,
+      "saldo_positivo": 5,
+      "saldo_nulo": 0,
+      "saldo_negativo": 11,
+      "receitas": [
+        {
+          "id": "rec-ensopado-de-rio",
+          "compra_insumos_hipotetica": 74,
+          "venda_das_duas_porcoes_hipotetica": 16,
+          "saldo_hipotetico": -58,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-mel-da-foz",
+          "compra_insumos_hipotetica": 86,
+          "venda_das_duas_porcoes_hipotetica": 22,
+          "saldo_hipotetico": -64,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-caldo-da-montanha",
+          "compra_insumos_hipotetica": 54,
+          "venda_das_duas_porcoes_hipotetica": 26,
+          "saldo_hipotetico": -28,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-guisado-de-caatinga",
+          "compra_insumos_hipotetica": 86,
+          "venda_das_duas_porcoes_hipotetica": 30,
+          "saldo_hipotetico": -56,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-peixe-com-sal-do-mar",
+          "compra_insumos_hipotetica": 63,
+          "venda_das_duas_porcoes_hipotetica": 34,
+          "saldo_hipotetico": -29,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cogu-sopa-de-ironwood",
+          "compra_insumos_hipotetica": 36,
+          "venda_das_duas_porcoes_hipotetica": 40,
+          "saldo_hipotetico": 4,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-racao-dos-vigias",
+          "compra_insumos_hipotetica": 77,
+          "venda_das_duas_porcoes_hipotetica": 44,
+          "saldo_hipotetico": -33,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cha-de-lavanda",
+          "compra_insumos_hipotetica": 54,
+          "venda_das_duas_porcoes_hipotetica": 48,
+          "saldo_hipotetico": -6,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-prato-dos-anoes",
+          "compra_insumos_hipotetica": 68,
+          "venda_das_duas_porcoes_hipotetica": 52,
+          "saldo_hipotetico": -16,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-banquete-de-portomonte",
+          "compra_insumos_hipotetica": 77,
+          "venda_das_duas_porcoes_hipotetica": 58,
+          "saldo_hipotetico": -19,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pescado-defumado",
+          "compra_insumos_hipotetica": 68,
+          "venda_das_duas_porcoes_hipotetica": 62,
+          "saldo_hipotetico": -6,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-compota-das-montanhas",
+          "compra_insumos_hipotetica": 63,
+          "venda_das_duas_porcoes_hipotetica": 66,
+          "saldo_hipotetico": 3,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-torta-de-mel",
+          "compra_insumos_hipotetica": 54,
+          "venda_das_duas_porcoes_hipotetica": 70,
+          "saldo_hipotetico": 16,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-demeter",
+          "compra_insumos_hipotetica": 54,
+          "venda_das_duas_porcoes_hipotetica": 74,
+          "saldo_hipotetico": 20,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cha-dos-sonhos",
+          "compra_insumos_hipotetica": 54,
+          "venda_das_duas_porcoes_hipotetica": 80,
+          "saldo_hipotetico": 26,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-ensopado-de-algas",
+          "compra_insumos_hipotetica": 86,
+          "venda_das_duas_porcoes_hipotetica": 84,
+          "saldo_hipotetico": -2,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        }
+      ]
+    },
+    "drakport": {
+      "cidade": "drakport",
+      "perigo": 3,
+      "comercio": 9,
+      "assume_compra_integral_dos_ingredientes": true,
+      "ignora_quantidades_de_estoque_e_tempo_de_trabalho": true,
+      "stock_vendedores": [
+        {
+          "id": "drakport-rodrigo-o-contrabandista",
+          "perfil": "oculto",
+          "quantidade_de_ingredientes_ofertados": 7
+        },
+        {
+          "id": "drakport-dorra-sete-trancas",
+          "perfil": "provisoes",
+          "quantidade_de_ingredientes_ofertados": 9
+        },
+        {
+          "id": "drakport-ferreiro-nohm",
+          "perfil": "forja",
+          "quantidade_de_ingredientes_ofertados": 3
+        }
+      ],
+      "recursos_completos_no_sortimento_dia_1": 0,
+      "saldo_positivo": 7,
+      "saldo_nulo": 0,
+      "saldo_negativo": 9,
+      "receitas": [
+        {
+          "id": "rec-ensopado-de-rio",
+          "compra_insumos_hipotetica": 79,
+          "venda_das_duas_porcoes_hipotetica": 16,
+          "saldo_hipotetico": -63,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-mel-da-foz",
+          "compra_insumos_hipotetica": 92,
+          "venda_das_duas_porcoes_hipotetica": 22,
+          "saldo_hipotetico": -70,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-caldo-da-montanha",
+          "compra_insumos_hipotetica": 58,
+          "venda_das_duas_porcoes_hipotetica": 26,
+          "saldo_hipotetico": -32,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-guisado-de-caatinga",
+          "compra_insumos_hipotetica": 79,
+          "venda_das_duas_porcoes_hipotetica": 30,
+          "saldo_hipotetico": -49,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-peixe-com-sal-do-mar",
+          "compra_insumos_hipotetica": 67,
+          "venda_das_duas_porcoes_hipotetica": 34,
+          "saldo_hipotetico": -33,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cogu-sopa-de-ironwood",
+          "compra_insumos_hipotetica": 30,
+          "venda_das_duas_porcoes_hipotetica": 40,
+          "saldo_hipotetico": 10,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-racao-dos-vigias",
+          "compra_insumos_hipotetica": 70,
+          "venda_das_duas_porcoes_hipotetica": 44,
+          "saldo_hipotetico": -26,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cha-de-lavanda",
+          "compra_insumos_hipotetica": 58,
+          "venda_das_duas_porcoes_hipotetica": 48,
+          "saldo_hipotetico": -10,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-prato-dos-anoes",
+          "compra_insumos_hipotetica": 64,
+          "venda_das_duas_porcoes_hipotetica": 52,
+          "saldo_hipotetico": -12,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-banquete-de-portomonte",
+          "compra_insumos_hipotetica": 73,
+          "venda_das_duas_porcoes_hipotetica": 58,
+          "saldo_hipotetico": -15,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-pescado-defumado",
+          "compra_insumos_hipotetica": 48,
+          "venda_das_duas_porcoes_hipotetica": 62,
+          "saldo_hipotetico": 14,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-compota-das-montanhas",
+          "compra_insumos_hipotetica": 64,
+          "venda_das_duas_porcoes_hipotetica": 66,
+          "saldo_hipotetico": 2,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-torta-de-mel",
+          "compra_insumos_hipotetica": 58,
+          "venda_das_duas_porcoes_hipotetica": 70,
+          "saldo_hipotetico": 12,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-demeter",
+          "compra_insumos_hipotetica": 58,
+          "venda_das_duas_porcoes_hipotetica": 74,
+          "saldo_hipotetico": 16,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-cha-dos-sonhos",
+          "compra_insumos_hipotetica": 48,
+          "venda_das_duas_porcoes_hipotetica": 80,
+          "saldo_hipotetico": 32,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-ensopado-de-algas",
+          "compra_insumos_hipotetica": 79,
+          "venda_das_duas_porcoes_hipotetica": 84,
+          "saldo_hipotetico": 5,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        }
+      ]
+    },
+    "alem-sul": {
+      "cidade": "alem-sul",
+      "perigo": 2,
+      "comercio": 9,
+      "assume_compra_integral_dos_ingredientes": true,
+      "ignora_quantidades_de_estoque_e_tempo_de_trabalho": true,
+      "stock_vendedores": [
+        {
+          "id": "alem-sul-cida-da-estrada",
+          "perfil": "provisoes",
+          "quantidade_de_ingredientes_ofertados": 9
+        },
+        {
+          "id": "alem-sul-tamar-ferro-seco",
+          "perfil": "forja",
+          "quantidade_de_ingredientes_ofertados": 3
+        },
+        {
+          "id": "alem-sul-zulmira-das-raizes",
+          "perfil": "alquimia",
+          "quantidade_de_ingredientes_ofertados": 11
+        }
+      ],
+      "recursos_completos_no_sortimento_dia_1": 0,
+      "saldo_positivo": 6,
+      "saldo_nulo": 0,
+      "saldo_negativo": 10,
+      "receitas": [
+        {
+          "id": "rec-ensopado-de-rio",
+          "compra_insumos_hipotetica": 88,
+          "venda_das_duas_porcoes_hipotetica": 16,
+          "saldo_hipotetico": -72,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-mel-da-foz",
+          "compra_insumos_hipotetica": 79,
+          "venda_das_duas_porcoes_hipotetica": 22,
+          "saldo_hipotetico": -57,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-caldo-da-montanha",
+          "compra_insumos_hipotetica": 53,
+          "venda_das_duas_porcoes_hipotetica": 26,
+          "saldo_hipotetico": -27,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-guisado-de-caatinga",
+          "compra_insumos_hipotetica": 88,
+          "venda_das_duas_porcoes_hipotetica": 30,
+          "saldo_hipotetico": -58,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-peixe-com-sal-do-mar",
+          "compra_insumos_hipotetica": 62,
+          "venda_das_duas_porcoes_hipotetica": 34,
+          "saldo_hipotetico": -28,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-cogu-sopa-de-ironwood",
+          "compra_insumos_hipotetica": 29,
+          "venda_das_duas_porcoes_hipotetica": 40,
+          "saldo_hipotetico": 11,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-racao-dos-vigias",
+          "compra_insumos_hipotetica": 72,
+          "venda_das_duas_porcoes_hipotetica": 44,
+          "saldo_hipotetico": -28,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-cha-de-lavanda",
+          "compra_insumos_hipotetica": 53,
+          "venda_das_duas_porcoes_hipotetica": 48,
+          "saldo_hipotetico": -5,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-prato-dos-anoes",
+          "compra_insumos_hipotetica": 62,
+          "venda_das_duas_porcoes_hipotetica": 52,
+          "saldo_hipotetico": -10,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-banquete-de-portomonte",
+          "compra_insumos_hipotetica": 71,
+          "venda_das_duas_porcoes_hipotetica": 58,
+          "saldo_hipotetico": -13,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pescado-defumado",
+          "compra_insumos_hipotetica": 70,
+          "venda_das_duas_porcoes_hipotetica": 62,
+          "saldo_hipotetico": -8,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-compota-das-montanhas",
+          "compra_insumos_hipotetica": 62,
+          "venda_das_duas_porcoes_hipotetica": 66,
+          "saldo_hipotetico": 4,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-torta-de-mel",
+          "compra_insumos_hipotetica": 46,
+          "venda_das_duas_porcoes_hipotetica": 70,
+          "saldo_hipotetico": 24,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-pao-de-demeter",
+          "compra_insumos_hipotetica": 53,
+          "venda_das_duas_porcoes_hipotetica": 74,
+          "saldo_hipotetico": 21,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 1
+        },
+        {
+          "id": "rec-cha-dos-sonhos",
+          "compra_insumos_hipotetica": 55,
+          "venda_das_duas_porcoes_hipotetica": 80,
+          "saldo_hipotetico": 25,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        },
+        {
+          "id": "rec-ensopado-de-algas",
+          "compra_insumos_hipotetica": 77,
+          "venda_das_duas_porcoes_hipotetica": 84,
+          "saldo_hipotetico": 7,
+          "ambos_insumos_no_sortimento_dia_1": false,
+          "disponiveis_no_sortimento_dia_1": 0
+        }
+      ]
+    }
+  }
 }
