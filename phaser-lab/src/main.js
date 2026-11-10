@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import { ExplorationScene } from './exploration.js';
 import {REGIONS,REGION_BY_ID,regionFromSeed,expeditionSeed} from './regions.js';
+import {erisianDate,WORLD_HISTORY,INITIAL_HISTORY} from './carcaca-time.js';
+import {survivalSummary} from './survival.js';
 import {XboxPadTracker} from './gamepad.js';
 import {BattleScene} from './battle-scene.js';
 import {SPELLS,defaultProfile} from './combat.js';
@@ -170,6 +172,18 @@ function regionHint(){
 regionSelect.addEventListener('change',regionHint);regionHint();
 app.registry.set('combatProfile',bridge.combatProfile());
 let last='';
+function updateNeeds(){
+ const bio=survivalSummary(bridge.state.survival),clock=erisianDate(bridge.clock);
+ for(const [id,value] of [['hudHunger',Math.round(bio.hunger)+'%'],['hudRest',Math.round(bio.rest)+'%']])$(id).textContent=value;
+ for(const [id,value] of [['hudHungerFill',bio.hunger],['hudRestFill',bio.rest]])$(id).style.width=value+'%';
+ $('hudDay').textContent=clock.label;
+ $('fieldEatBtn').disabled=!bio.alive||bio.hunger>=100||(bridge.state.bag['ger-racoes-de-viagem']||0)<=0;
+ const dead=$('deathOverlay');dead.hidden=bio.alive;
+ if(!bio.alive){
+  $('deathMessage').textContent='Peren morreu de '+(bridge.state.survival.causeOfDeath||'causas desconhecidas')+'. Esta forma era mortal. Somente uma restauração explícita de backup pode reiniciar esta jornada nesta pré-alfa.';
+  app.scene.pause('ExplorationScene');$('controls').inert=true;
+ }
+}
 function updateHud(){
   const bag=app.registry.get('collected')||{};
   const total=Object.values(bag).reduce((a,b)=>a+b,0);
@@ -183,13 +197,14 @@ function updateHud(){
     collected:bag,weather:app.registry.get('weather'),threat:app.registry.get('threat'),
     status:msg,atExit:app.registry.get('atExit'),location:region.name});
   const sig=[ui.hp,ui.maxHp,ui.mp,ui.maxMp,ui.gold,ui.level,ui.day].join(':');
+   updateNeeds();
   if($('status').dataset.profileSig!==sig){
     $('status').dataset.profileSig=sig;
     $('hudHp').textContent=ui.hp+' / '+ui.maxHp;
     $('hudMp').textContent=ui.mp+' / '+ui.maxMp;
     $('hudLevel').textContent='Nível '+ui.level;
     $('hudGold').textContent=ui.gold.toLocaleString('pt-BR');
-    $('hudDay').textContent='Dia '+ui.day;
+    // O dia oficial é formatado a partir do relógio erisiano, em updateNeeds().
     fillGauge(document,'hudHpFill',ui.hp,ui.maxHp);
     fillGauge(document,'hudMpFill',ui.mp,ui.maxMp);
   }
@@ -274,6 +289,12 @@ pad.addEventListener('pointerdown',event=>{event.preventDefault();pad.setPointer
 pad.addEventListener('pointermove',event=>{if(pad.hasPointerCapture(event.pointerId)){event.preventDefault();moveJoy(event)}});
 for(const name of ['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(name,releaseJoy);
 $('gatherBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('gather'));
+function eatRation(){
+ try{bridge.execute({type:'eat'});app.registry.set('combatProfile',bridge.combatProfile());app.registry.set('status','Peren comeu uma ração de viagem.');renderHub();updateHud()}
+ catch(err){notifyProgressError(err)}
+}
+$('fieldEatBtn').addEventListener('click',eatRation);
+$('eatBtn').addEventListener('click',eatRation);
 $('sneakBtn').addEventListener('click',()=>app.scene.getScene('ExplorationScene')?.command('sneak'));
 $('sprintBtn').addEventListener('pointerdown',()=>app.scene.getScene('ExplorationScene')?.command('sprint'));
 for(const evt of ['pointerup','pointercancel','pointerleave'])$('sprintBtn').addEventListener(evt,()=>app.scene.getScene('ExplorationScene')?.command('walk'));
@@ -352,7 +373,7 @@ $('hub').hidden=false;$('controls').hidden=true;
 // Browsers generally reveal a new controller only after the user presses a button.
 const xbox=new XboxPadTracker();
 let lastPadLabel='', hubChoice=0, forestVisited=false;
-const hubButtons=[$('goForest'),$('travelRegion'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
+const hubButtons=[$('goForest'),$('travelRegion'),$('showCraft'),$('showShop'),$('openBagHub'),$('showJournal'),$('showGuide'),$('endDayBtn'),$('eatBtn'),$('showInventory'),$('resetForest')].filter(button=>!button.hidden);
 function selectHubChoice(index){
   hubChoice=Math.max(0,Math.min(hubButtons.length-1,index));
   hubButtons.forEach((button,i)=>button.classList.toggle('pad-selected',i===hubChoice));
@@ -452,7 +473,10 @@ function pollXbox(){
 }
 app.events.on('step',pollXbox);
 window.addEventListener('keydown',event=>{
-  if(event.code==='KeyI'&&$('hub').hidden&&$('battleUI').hidden&&$('encounterModal').hidden&&!inventory.isOpen()){
+  if(event.code==='KeyF'&&$('hub').hidden&&$('battleUI').hidden&&$('encounterModal').hidden&&!inventory.isOpen()){
+    event.preventDefault();eatRation();return;
+   }
+   if(event.code==='KeyI'&&$('hub').hidden&&$('battleUI').hidden&&$('encounterModal').hidden&&!inventory.isOpen()){
    event.preventDefault();inventory.open();return;
   }
   if(event.code!=='Escape')return;
@@ -686,9 +710,18 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
  if(region.id!=='murin')scenery.style.backgroundImage=`linear-gradient(135deg,${region.colors[0]},${region.colors[3]})`;
  else scenery.style.backgroundImage='linear-gradient(0deg,#061017ed 1%,#09202d50 60%,#0a1b2433 100%),url("./art/regions/portomonte/visao-carcaca.webp")';
  applyHubViewModel(document,hubViewModel(s,catalogs,bridge.source));
- $('combatWallet').textContent=`Nível ${s.level} · ${s.gold} moedas · ${s.exp} XP · ${inventoryTotal(s)} itens · ${s.actions} ações`;
+ $('combatWallet').textContent=`Nível ${s.level} · ${s.gold} moedas · ${s.exp} XP · ${inventoryTotal(s)} itens · sem limite de ações`;
  $('progressSource').textContent=bridge.source==='classic-import'?'Progresso importado do Peren clássico (cópia isolada)':'Progresso Phaser salvo (sem alterar o clássico)';
- $('cityMeta').textContent=`Origem: ${city.nome} · Dia ${s.day} · PV ${s.hp} · PM ${s.mp}`;
+ const clock=erisianDate(bridge.clock),bio=survivalSummary(s.survival);
+ $('cityMeta').textContent=`${clock.label} · ${city.nome} · PV ${s.hp} · PM ${s.mp}`;
+ $('hubDay').textContent=clock.label;
+ $('endDayBtn').disabled=!bio.alive;$('eatBtn').disabled=!bio.alive||bio.hunger>=100||(s.bag['ger-racoes-de-viagem']||0)<1;
+ $('worldChronicleIntro').textContent=INITIAL_HISTORY.map(e=>e.description).join(' ');
+ const events=bridge.historicalEvents;
+ $('worldChronicleList').replaceChildren(...events.map(id=>{
+  const event=WORLD_HISTORY.find(e=>e.id===id);const li=document.createElement('li');
+  li.textContent=event?`${event.year} EC · ${event.description}`:id;return li;
+ }));
  const title=$('hubTitle'),panel=$('hubPanel');title.textContent='';panel.replaceChildren();
  const wrapper=document.createElement('div');wrapper.className='market-list';
  const addButton=(name,label,detail,action,id,disabled=false)=>{
@@ -717,7 +750,10 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
 $('showCraft').addEventListener('click',()=>{hubTab='craft';renderHub();workshop.open()});
 $('showShop').addEventListener('click',()=>{hubTab='shop';renderHub();marketplace.open('buy')});
 $('showInventory').addEventListener('click',()=>{hubTab='bag';renderHub();marketplace.open('sell')});
-$('endDayBtn').addEventListener('click',()=>{try{bridge.execute({type:'endDay'});app.registry.set('combatProfile',bridge.combatProfile());renderHub();}catch(err){notifyProgressError(err)}});
+$('endDayBtn').addEventListener('click',()=>{try{
+  bridge.execute({type:'sleep',hours:Number($('sleepHours').value)||8});
+  app.registry.set('combatProfile',bridge.combatProfile());renderHub();updateHud();
+ }catch(err){notifyProgressError(err)}});
 $('exportProgress').addEventListener('click',()=>{
  const blob=new Blob([bridge.export()],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download=M1HF_PREVIEW?`peren-m1hf-dia-${bridge.state.day}-backup.json`:`peren-phaser-m1d-dia-${bridge.state.day}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
