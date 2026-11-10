@@ -710,7 +710,7 @@ function renderHub(){const s=bridge.state,city=catalogs.cidadesById[s.city];
  const scenery=document.querySelector('.m1g-scenery');
  if(region.id!=='murin')scenery.style.backgroundImage=`linear-gradient(135deg,${region.colors[0]},${region.colors[3]})`;
  else scenery.style.backgroundImage='linear-gradient(0deg,#061017ed 1%,#09202d50 60%,#0a1b2433 100%),url("./art/regions/portomonte/visao-carcaca.webp")';
- applyHubViewModel(document,hubViewModel(s,catalogs,bridge.source));
+ applyHubViewModel(document,hubViewModel(s,catalogs,bridge.source,bridge.clock));
  $('combatWallet').textContent=`Nível ${s.level} · ${s.gold} moedas · ${s.exp} XP · ${inventoryTotal(s)} itens · sem limite de ações`;
  $('progressSource').textContent=bridge.source==='classic-import'?'Progresso importado do Peren clássico (cópia isolada)':'Progresso Phaser salvo (sem alterar o clássico)';
  const clock=erisianDate(bridge.clock),bio=survivalSummary(s.survival);
