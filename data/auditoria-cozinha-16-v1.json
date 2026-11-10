@@ -49,7 +49,8 @@
     "As alternativas no JSON são propostas sem aprovação autoral.",
     "A culinária de uma cidade não prova que todos os ingredientes cresçam, sejam pescados ou criados localmente.",
     "Nenhuma alteração em saves, itens, receitas, lojas, loot, engine ou cânone.",
-    "Para a simulação comercial, preços foram reconstruídos de funções cost/sellprice no clássico para Comércio 9; material base foi reconstruído de 111 linhas do gerador, com overrides curatoriais de zona/valor/nível se presentes. O resultado não demonstra rentabilidade real nem possibilidade de comprar o insumo; o sortimento do dia 1 foi aproximado pela lógica de rank/quotas da engine sem verificar a quantidade disponível para venda."
+    "Para a simulação comercial, preços foram reconstruídos de funções cost/sellprice no clássico para Comércio 9; material base foi reconstruído de 111 linhas do gerador, com overrides curatoriais de zona/valor/nível se presentes. O resultado não demonstra rentabilidade real nem possibilidade de comprar o insumo; o sortimento do dia 1 foi aproximado pela lógica de rank/quotas da engine sem verificar a quantidade disponível para venda.",
+    "A contagem de 4 P0 indica somente prioridade editorial; não implica que os 12 restantes tenham inocuidade ou procedência alimentar comprovada."
   ],
   "resumo": {
     "receitas": 16,
@@ -74,7 +75,6 @@
     "receitas_com_fadiga_reduzida": 0,
     "receitas_substituem_racao_de_viagem": 0,
     "receitas_uso_agua_explicito": 0,
-    "receitas_com_ingrediente_nao_comprovado_para_consumo": 4,
     "cidades_com_cozinha": [
       "portomonte",
       "drakport",
@@ -101,7 +101,8 @@
         "saldo_negativo": 10,
         "receitas_com_ambos_insumos_em_sortimento_no_dia_1": 0
       }
-    }
+    },
+    "casos_P0_de_incompatibilidade_material_ou_preparo_sensivel": 4
   },
   "regra_vigente_classico": {
     "efeito": "No game.js useItem, as comidas com efeito Restore Health recebem somente recuperação de PV pela potencia; efeitos dos ingredientes de alquimia não são lidos.",
