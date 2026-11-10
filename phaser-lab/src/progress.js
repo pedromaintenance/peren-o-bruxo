@@ -362,7 +362,7 @@ export function createProgressBridge(storage,c){
  function execute(command){sync();const tx=applyTransaction(env,command,c);if(!tx.applied)return tx;
   storage.setItem(PHASER_KEY,JSON.stringify(tx.next));env=tx.next;return tx;}
  return {
-  read,get state(){return env.character},get source(){return env.origin},combatProfile:()=>toCombatProfile(env,c),
+  read,get state(){return env.character},get clock(){return {...env.worlds.clock}},get historicalFlags(){return {...env.worlds.historicalFlags}},get historicalEvents(){return [...env.worlds.eventLog]},get source(){return env.origin},combatProfile:()=>toCombatProfile(env,c),
   committed:key=>Boolean(env.ledger[key]),collectedIds:seed=>recoveredIds(env,seed,'collect'),
   execute,export:()=>JSON.stringify(env,null,2),
   restore:text=>{const validated=checkEnvelope(JSON.parse(text),c);sync();
