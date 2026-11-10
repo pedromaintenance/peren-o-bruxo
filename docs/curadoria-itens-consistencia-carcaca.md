@@ -333,3 +333,9 @@ A auditoria geral agora inclui o [parecer de Curtume](parecer-curtume-20-materia
 ## Continuidade dos ofícios — Cozinha 16/16 e 139 receitas tradicionais (09/11/2026)
 
 A [Cozinha recebeu parecer das 16 receitas](parecer-cozinha-16-alimentacao-efeitos-e-procedencia-v1.md) e [matriz individualizada](../data/auditoria-cozinha-16-v1.json). São 23 ingredientes distintos e todos os produtos restauram Vida; não há mecanismo culinário próprio de fadiga/viagem no clássico, embora `Ração dos Vigias` seja produto fabricável. A auditoria marca quatro incoerências materiais ou lacunas de preparo como P0 e documenta decisões `COZ-01`–`COZ-08`, **todas pendentes**. O bloco tradicional está **139/139** aprofundado (89 Forja, 14 Joalheria, 20 Curtume, 16 Cozinha). A etapa seguinte é Escrita, depois Encantamento. Nenhum arquivo ativo, save, receita ou economia foi alterado.
+
+## Continuidade dos ofícios — Escrita 320/320 e compilados conferidos (10/11/2026)
+
+A revisão passou à [Escrita, com 320 pareceres](parecer-escrita-320-grimorios-conhecimento-circulacao-v1.md) e [matriz individual](../data/auditoria-escrita-320-v1.json). Dos 354 grimórios, 34 não têm receita (magias níveis 8–9). O sistema usa Linho de Deméter e Tinta Rúnica em todos os grimórios fabricáveis, sem consumir Pergaminho Vazio; a interface distingue Escrita de Arcanismo e seus dois meios de aprendizagem concedem XP distinto. As decisões `ESC-01`–`ESC-08` seguem pendentes.
+
+**Nova prova de integridade:** [QA integral por blob Git](qa-crafting-compilado-2026-11-10.md) reconciliou **572/572 receitas não alquímicas** com os dados efetivamente compilados, eliminando a limitação técnica de leitura dos arquivos grandes nos ciclos anteriores. Também confirmou **102 requisitos inválidos de quantidade 0** em Encantamento. Nenhum arquivo de gameplay foi modificado. Próximo: Encantamento.
