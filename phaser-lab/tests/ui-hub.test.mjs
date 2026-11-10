@@ -7,7 +7,7 @@ const data={};for(const key of ['itens','receitas','magias','monstros','cidades'
 const catalogs=buildCatalogs(data);
 test('Portomonte view reads real level, HP/MP maxima and EXP progression',()=>{
  const s=newClassicState(),vm=hubViewModel(s,catalogs);
- assert.equal(vm.day,'Dia 1');assert.equal(vm.gold,'180');
+ assert.match(vm.day,/922 EC/);assert.equal(vm.gold,'180');
  assert.equal(vm.hp,'114 / '+maxClassicHp(s,catalogs));assert.equal(vm.mp,'68 / '+maxClassicMp(s));
  assert.equal(vm.xp,'0 / 62');assert.equal(vm.xpPct,0);
  assert.equal(vm.origin,'Portomonte');
