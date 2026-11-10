@@ -111,3 +111,13 @@ test('cada marco muda flags de mundo e diário, preservando identidade após rel
  tx=applyTransaction(env,{type:'passTime',minutes:1},c);
  assert.equal(tx.next.worlds.historicalFlags.templo_do_crepusculo_construido,true);
 });
+
+test('interface não ensina a mecânica removida de três ações',()=>{
+ const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+ assert.ok(html.includes('id="hudHungerFill"'));
+ assert.ok(html.includes('id="hudRestFill"'));
+ assert.ok(html.includes('id="eatBtn"'));
+ assert.ok(html.includes('id="sleepHours"'));
+ assert.ok(html.includes('1 de Caos · Sweet · 922 EC'));
+ assert.doesNotMatch(html,/Cada criação consome uma ação|misturar gasta uma ação|3 ações disponíveis/);
+});
