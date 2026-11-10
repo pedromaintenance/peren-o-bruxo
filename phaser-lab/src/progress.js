@@ -54,7 +54,7 @@ export function normalizeClassic(raw,catalog){
  const n={...base,...original};
  n.version=1;n.battle=null; // A classic battle cannot be safely resumed in the Phaser renderer.
  n.level=integer(n.level,1,200);n.exp=integer(n.exp,0,MAX_GOLD);n.gold=integer(n.gold,0,MAX_GOLD);
- n.hp=integer(n.hp,0,100000);n.mp=integer(n.mp,0,100000);n.day=integer(n.day,1,100000);
+ n.hp=Number.isFinite(n.hp)?Math.round(clamp(n.hp,0,100000)):0;n.mp=integer(n.mp,0,100000);n.day=integer(n.day,1,100000);
  // Legacy 'actions' remains only for decoding old saves; no daily cap exists.
  n.actions=integer(n.actions,0,3);n.fatigue=integer(n.fatigue,0,100);
  n.survival=normalizeSurvival(raw.survival,n.fatigue);n.kills=integer(n.kills,0,MAX_COUNT);
