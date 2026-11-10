@@ -15,7 +15,7 @@ jobs:
       - name: Obter fonte da pré-alfa verificada
         uses: actions/checkout@v4
         with:
-          ref: b680c6457b445cb8089e986f74a01d0006c2c8fd
+          ref: 948254920918bfa7d3046d37578c2df4a8c1c4ed
           path: source
       - name: Obter site atual sem sobrescrever o clássico
         uses: actions/checkout@v4
