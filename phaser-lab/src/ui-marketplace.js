@@ -24,7 +24,7 @@ export function marketplaceViewModel(state,catalogs,{mode='buy',merchantId=null,
  const merchants=city?.mercadores||[];
  const merchant=merchants.find(m=>m.id===merchantId)||merchants[0]||null;
  // Other cities have no implementation-backed city stock yet.
- const cityStock=city?.id==='portomonte'?PORTOMONTE_SUPPLIES:[];
+ const cityStock=city?.id==='portomonte'?PORTOMONTE_SUPPLIES:['ger-racoes-de-viagem'];
  const ids=mode==='buy'?cityStock:Object.keys(state.bag).filter(id=>state.bag[id]>0);
  const equipped=new Set([state.equip?.weapon,state.equip?.armor,state.equip?.relic].filter(Boolean));
  const items=ids.map(id=>{
@@ -57,7 +57,7 @@ export function marketplaceViewModel(state,catalogs,{mode='buy',merchantId=null,
   stockNotice:mode==='buy'?
     (city?.id==='portomonte'
        ?'Suprimentos comuns de Portomonte. O catálogo ainda não define estoques individuais de mercadores.'
-       :'A cidade ainda não possui catálogo de suprimentos integrado.'):
+       :'Apenas rações comuns disponíveis. Outros estoques dependem de curadoria.'):
     'Itens reais da mochila; equipamentos atuais não podem ser vendidos.'};
 }
 const el=(doc,tag,cls,text)=>{const item=doc.createElement(tag);if(cls)item.className=cls;if(text!==undefined)item.textContent=String(text);return item;};
