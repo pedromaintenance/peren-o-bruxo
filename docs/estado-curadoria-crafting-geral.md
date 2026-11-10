@@ -79,3 +79,13 @@ Nenhum desses pontos foi implementado neste ciclo. Esta lista é uma **fila de d
 - **Fibra de Aranha Yokai** exige revisão taxonômica e de proveniência: povo Yokai e tipo `yokai` não são categorias automaticamente equivalentes. Propostas de aranhas inteligentes em Eldroth não foram homologadas.
 - Simulação condicional de compra e venda, Comércio 9, nas quatro cidades com Curtume: **15 saldos positivos, cinco negativos** em cada cidade, sem confirmar estoques, trabalho ou custos de rota. Não é lucratividade real.
 - **0** alterações em receitas, itens, equipamento, mercado, motor, Phaser, saves, loot ou canon. Próximo ciclo: **Cozinha 16/16**.
+
+## Quarto aprofundamento — Cozinha 16/16 (09/11/2026)
+
+- Publicados o [parecer completo da Cozinha](parecer-cozinha-16-alimentacao-efeitos-e-procedencia-v1.md) e a [matriz individualizada das 16 receitas](../data/auditoria-cozinha-16-v1.json), com **oito decisões COZ-01 a COZ-08 ainda não aprovadas**.
+- **16/16** refeições usam dois ingredientes e rendem duas porções; todas possuem `Restore Health` com potência de **10 a 25**, sem redução de fadiga, saciedade ou integração à viagem no clássico.
+- Quatro casos de prioridade **P0**: **Guisado de Caatinga** (Presa de Javali), **Prato dos Anões** (Chifres de Alce), **Chá dos Sonhos** (Cogumelo de Raiz, com Dano à Saúde na curadoria alquímica) e **Ensopado de Algas** (nenhum ingrediente identificado como alga). P0 significa pendência editorial, **não** comprovação de toxicidade ou impossibilidade mágica.
+- Cozinha disponível em **Portomonte, Drakport e Além Sul**. Peren começa em Cozinha **12**, com **cinco** receitas de nível **8** no alcance da perícia, condicionado a obter os insumos.
+- Simulação **condicional**, Comércio 9: Portomonte **5 positivos / 11 negativos**, Drakport **7 / 9**, Além Sul **6 / 10**. A projeção de sortimento inicial não encontrou os dois insumos de nenhuma receita simultaneamente nos mercadores; isso **não** exclui coleta, inventário próprio ou dias posteriores.
+- **Marco:** os **139/139** registros da produção tradicional (Forja 89, Joalheria 14, Curtume 20, Cozinha 16) receberam agora aprofundamento individualizado. Permanecem os **320 de Escrita** e **113 de Encantamento** para análise de segundo nível.
+- **0** alterações em receitas, itens, atributos, mercado, engine, saves ou lore. Próxima etapa: **Escrita**.
