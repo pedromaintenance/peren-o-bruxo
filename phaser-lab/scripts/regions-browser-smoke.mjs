@@ -36,7 +36,11 @@ try{
        paused:game?.scene?.isPaused('ExplorationScene'),
        hubHidden:document.getElementById('hub').hidden,
        controlsHidden:document.getElementById('controls').hidden,
-       hubStatus:document.getElementById('hubStatus').textContent};
+       hubStatus:document.getElementById('hubStatus').textContent,
+       survival:window.__perenProgress.save.character.survival,
+       hp:window.__perenProgress.save.character.hp,
+       clock:window.__perenProgress.save.worlds.clock,
+       deathVisible:!document.getElementById('deathOverlay').hidden};
    });
    console.error('Region '+region+' failed to enter',JSON.stringify({snapshot,errors}));
    throw error;
