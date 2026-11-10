@@ -7,6 +7,8 @@ import {BATTLE_MONSTERS,encounterKey} from './combat.js';
 import {resolveAlchemyPair,nextStudyEffect,discoverShared,effectFamily} from './alchemy.js';
 import {reconcileBattlePreparations,applyExplorationPreparation} from './prepared-use.js';
 import {REGION_BY_ID} from './regions.js';
+import {EPOCH_EC,newWorldClock,normalizeWorldClock,advanceWorldClock,erisianDate,WORLD_HISTORY,clockPosition,daysInEC} from './carcaca-time.js';
+import {newSurvival,normalizeSurvival,advanceSurvival,eatMeal,canAct,survivalSummary} from './survival.js';
 // The GitHub Pages M1h-F playtest runs in the same origin as the classic game.
 // Use a private staging key and disable classic-save import for that BUILD only.
 // import.meta.env is provided by Vite; Node tests use the stable defaults.
@@ -38,7 +40,7 @@ export function buildCatalogs(data){
  return cat;
 }
 export function newClassicState(){
- return {version:1,city:'portomonte',day:1,actions:3,level:1,exp:0,gold:180,hp:114,mp:68,fatigue:0,reputation:0,
+ return {version:1,city:'portomonte',day:1,actions:3,level:1,exp:0,gold:180,hp:114,mp:68,fatigue:0,reputation:0,survival:newSurvival(),
   skills:{alquimia:20,forja:10,encantamento:0,curtume:0,escrita:6,joalheria:0,cozinha:12,combate:14,arcanismo:18,comercio:9,coleta:12},lastLevels:{},
   bag:{'ger-pocao-restauradora':3,'ger-pocao-de-foco':2,'ger-racoes-de-viagem':4,'ing-blue-mountain-flower':2,'ing-mudcrab-chitin':2,'ing-red-mountain-flower':2,'ing-butterfly-wing':2,'ing-white-cap':2,'mat-agua-purificada':4,'mat-ferro-bruto':3,'mat-carvao-de-forja':2,'mat-couro-curtido':2,'mat-cristal-de-alma-menor':1,'mat-tinta-runica':1},
   equip:{weapon:'eq-adaga-de-ferrugem',armor:'eq-peitoral-de-ferrugem',relic:null},learned:['mag-raio-de-fogo','mag-armadura-arcana','mag-raio-de-gelo','mag-misseis-magicos'],
@@ -53,7 +55,9 @@ export function normalizeClassic(raw,catalog){
  n.version=1;n.battle=null; // A classic battle cannot be safely resumed in the Phaser renderer.
  n.level=integer(n.level,1,200);n.exp=integer(n.exp,0,MAX_GOLD);n.gold=integer(n.gold,0,MAX_GOLD);
  n.hp=integer(n.hp,0,100000);n.mp=integer(n.mp,0,100000);n.day=integer(n.day,1,100000);
- n.actions=integer(n.actions,0,3);n.fatigue=integer(n.fatigue,0,100);n.kills=integer(n.kills,0,MAX_COUNT);
+ // Legacy 'actions' remains only for decoding old saves; no daily cap exists.
+ n.actions=integer(n.actions,0,3);n.fatigue=integer(n.fatigue,0,100);
+ n.survival=normalizeSurvival(raw.survival,n.fatigue);n.kills=integer(n.kills,0,MAX_COUNT);
  n.sales=integer(n.sales,0,MAX_COUNT);n.crafted=integer(n.crafted,0,MAX_COUNT);
  n.skills={...base.skills};for(const [key,value] of Object.entries(safeRecord(raw.skills)))if(key in n.skills)n.skills[key]=Number.isFinite(value)?clamp(value,0,500000):n.skills[key];
  n.lastLevels=safeRecord(n.lastLevels);
@@ -87,7 +91,7 @@ export function weaponStats(s,c){const w=c.itensById[s.equip?.weapon],a=c.itensB
  defense:3+Math.floor(s.level/2)+(a?.defesa||0)+(r?.nivel||0)+((r?.nome||'').toUpperCase().includes('PROTEÇÃO')?3:0)
 }}
 function newEnvelope(raw,c,origin='new'){
- return {schema:PHASER_SCHEMA,revision:0,origin,character:normalizeClassic(raw,c),ledger:{},worlds:{activeSeed:'murin-001'},history:[]};
+ return {schema:PHASER_SCHEMA,revision:0,origin,character:normalizeClassic(raw,c),ledger:{},worlds:{activeSeed:'murin-001',clock:newWorldClock(),historicalFlags:{},eventLog:[]},history:[]};
 }
 export function stageFromClassic(raw,c){return newEnvelope(raw,c,'classic-import');}
 /** Validate imported v2 backup in-memory, without writing localStorage. */
@@ -96,6 +100,19 @@ function checkEnvelope(raw,c){
  if(!raw||raw.schema!==PHASER_SCHEMA||!Number.isSafeInteger(raw.revision)||raw.revision<0)throw Error('Arquivo Phaser incompatível.');
  if(!raw.ledger||typeof raw.ledger!=='object'||Array.isArray(raw.ledger))throw Error('Registro de transações inválido.');
  const world=safeRecord(raw.worlds),out={schema:PHASER_SCHEMA,revision:raw.revision,origin:raw.origin||'import',character:normalizeClassic(raw.character,c),ledger:{...raw.ledger},worlds:{...world},history:Array.isArray(raw.history)?raw.history.slice(-80):[]};
+ // Non-destructive migration of pre-calendar Phaser saves: preserve the
+ // elapsed legacy day count, never read or modify the classic edition.
+ if(!world.clock){
+   const daysPassed=Math.max(0,out.character.day-1);
+   out.worlds.clock=advanceWorldClock(newWorldClock(),Math.min(daysPassed,100*366)*1440).clock;
+ }else out.worlds.clock=normalizeWorldClock(world.clock);
+ out.worlds.historicalFlags={...safeRecord(world.historicalFlags)};
+ out.worlds.eventLog=Array.isArray(world.eventLog)?world.eventLog.filter(e=>typeof e==='string').slice(-40):[];
+ for(const event of WORLD_HISTORY)if(out.worlds.clock.year>=event.year){
+  for(const flag of event.flags)out.worlds.historicalFlags[flag]=true;
+  if(!out.worlds.eventLog.includes(event.id))out.worlds.eventLog.push(event.id);
+ }
+ out.worlds.eventLog=out.worlds.eventLog.slice(-40);
  return out;
 }
 export function toCombatProfile(env,c){const s=env.character,stats=weaponStats(s,c),claims={};
@@ -107,6 +124,16 @@ export function toCombatProfile(env,c){const s=env.character,stats=weaponStats(s
 export function recoveredIds(env,seed,kind){const prefix=`${kind}:${encodeURIComponent(String(seed))}::`;return Object.keys(env.ledger).filter(k=>k.startsWith(prefix)).map(k=>decodeURIComponent(k.slice(prefix.length)));}
 export function inventoryTotal(s){return Object.values(s.bag).reduce((n,c)=>n+c,0)}
 function record(s,text){s.journal=[`Dia ${s.day} · ${text}`,...(s.journal||[])].slice(0,90)}
+const COST_MINUTES=Object.freeze({collect:12,victory:8,escape:8,usePreparation:2,studyIngredient:90,brewPair:50,craft:90,buy:8,sell:8,selectSeed:0,selectRegion:180,eat:10,sleep:480,passTime:0});
+export function actionMinutes(type,command={}){
+ if(type==='victory'||type==='escape')return Math.min(240,Math.max(8,(command.battle?.round||1)*2));
+ if(type==='buy'||type==='sell')return 8+Math.max(0,(command.quantity||1)-1)*2;
+ if(type==='craft')return Math.max(30,90+Math.floor((command.recipeLevel||0)*3));
+ if(type==='selectRegion')return 120+(REGION_BY_ID[command.regionId]?.danger||1)*60;
+ if(type==='sleep')return (command.hours||8)*60;
+ if(type==='passTime')return command.minutes;
+ return COST_MINUTES[type]??0;
+}
 function add(s,id,amount,c){if(!c.itensById[id]||!Number.isSafeInteger(amount)||amount===0)throw Error('Item inválido.');
  const v=(s.bag[id]||0)+amount;if(v<0||v>MAX_COUNT)throw Error('Quantidade indisponível.');
  if(v===0)delete s.bag[id];else s.bag[id]=v;
