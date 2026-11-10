@@ -325,3 +325,7 @@ A auditoria **não se limita aos 111 ingredientes**. Consulte o [estado geral do
 ## Continuidade da auditoria de ofícios — Joalheria 14/14 (08/11/2026)
 
 O ciclo de Forja foi sucedido pela [matriz dos 14 acessórios de Joalheria](../data/auditoria-joalheria-14-v1.json) e pelo [parecer de gemas, slots e mercados](parecer-joalheria-14-gemas-slots-mercados-v1.md). Os anéis/colares atualmente ocupam o slot `relic` no clássico e ativam poder arcano padrão sem receita de Encantamento; seis gemas específicas não são insumos positivos do gerador. As decisões `JOI-01`–`JOI-08` não estão aprovadas. **Não houve** mudança nos itens, receitas, economia, slots, Phaser, clássico ou saves. A próxima auditoria aprofundará Curtume.
+
+## Continuidade dos ofícios — Curtume 20/20 (09/11/2026)
+
+A auditoria geral agora inclui o [parecer de Curtume](parecer-curtume-20-materiais-bolsas-e-slots-v1.md) e a [matriz por 20 receitas](../data/auditoria-curtume-20-v1.json). Quatro materiais alimentam 16 vestimentas/armaduras e quatro bolsas utilitárias: as vestimentas competem pelo slot `armor`; as bolsas não têm função de coleta implementada no clássico. As oito decisões `CUR-01`–`CUR-08` continuam propostas. A fonte de Fibra de Aranha Yokai e a produção de Linho de Deméter não foram homologadas. **Nenhuma alteração** em catálogo, saves, Phaser, runtime ou mercado. Próximo ofício aprofundado: **Cozinha**.
