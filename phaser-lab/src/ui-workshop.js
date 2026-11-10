@@ -4,6 +4,7 @@
  */
 import {craftable,skillLevel} from './progress.js';
 import {createAlchemyScreen} from './ui-alchemy.js';
+import {erisianDate} from './carcaca-time.js';
 
 const tx=v=>String(v??'');
 const normal=v=>tx(v).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
@@ -72,7 +73,7 @@ export function createWorkshopScreen({document:doc,bridge,catalogs,onChange=()=>
     model=workshopViewModel(s,catalogs,{station,search:search.value,selectedId,limit});
     selectedId=model.selected?.id||null;
     put(doc,'craftCity',model.city);
-    put(doc,'craftDay','Dia '+model.day);
+    put(doc,'craftDay',erisianDate(bridge.clock).label);
     put(doc,'craftActions','Tempo e necessidades');
     put(doc,'craftGold',fmt(model.gold));
     put(doc,'craftRecipeCount',model.filteredTotal+' receitas encontradas');
