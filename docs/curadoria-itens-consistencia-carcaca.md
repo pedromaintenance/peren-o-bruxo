@@ -329,3 +329,7 @@ O ciclo de Forja foi sucedido pela [matriz dos 14 acessórios de Joalheria](../d
 ## Continuidade dos ofícios — Curtume 20/20 (09/11/2026)
 
 A auditoria geral agora inclui o [parecer de Curtume](parecer-curtume-20-materiais-bolsas-e-slots-v1.md) e a [matriz por 20 receitas](../data/auditoria-curtume-20-v1.json). Quatro materiais alimentam 16 vestimentas/armaduras e quatro bolsas utilitárias: as vestimentas competem pelo slot `armor`; as bolsas não têm função de coleta implementada no clássico. As oito decisões `CUR-01`–`CUR-08` continuam propostas. A fonte de Fibra de Aranha Yokai e a produção de Linho de Deméter não foram homologadas. **Nenhuma alteração** em catálogo, saves, Phaser, runtime ou mercado. Próximo ofício aprofundado: **Cozinha**.
+
+## Continuidade dos ofícios — Cozinha 16/16 e 139 receitas tradicionais (09/11/2026)
+
+A [Cozinha recebeu parecer das 16 receitas](parecer-cozinha-16-alimentacao-efeitos-e-procedencia-v1.md) e [matriz individualizada](../data/auditoria-cozinha-16-v1.json). São 23 ingredientes distintos e todos os produtos restauram Vida; não há mecanismo culinário próprio de fadiga/viagem no clássico, embora `Ração dos Vigias` seja produto fabricável. A auditoria marca quatro incoerências materiais ou lacunas de preparo como P0 e documenta decisões `COZ-01`–`COZ-08`, **todas pendentes**. O bloco tradicional está **139/139** aprofundado (89 Forja, 14 Joalheria, 20 Curtume, 16 Cozinha). A etapa seguinte é Escrita, depois Encantamento. Nenhum arquivo ativo, save, receita ou economia foi alterado.
