@@ -1,0 +1,696 @@
+{
+  "schema": "peren.qa_compilado_crafting_2026_11_10.v1",
+  "data": "2026-11-10",
+  "estado": "qa_estatico_de_dados_compilados_sem_testes_de_jogo",
+  "objetivo": "Fecha a lacuna anterior: leitura integral, por blobs Git, dos JSONs compilados de itens e receitas e confronto de 572 receitas não alquímicas com matrizes editoriais.",
+  "font_code": "As fontes do gerador e do motor clássico foram lidas; os testes aqui são validação estrutural de JSON, não execução de mecânicas nem testes Phaser/prealfa.",
+  "fontes": [
+    {
+      "path": "data/itens.json",
+      "blob_sha": "e549607c26fa131fc742ce0b1a4b41e63f8a3488",
+      "bytes": 1193150,
+      "lido_integralmente": true
+    },
+    {
+      "path": "data/receitas.json",
+      "blob_sha": "cbc1bfba78e6e4828b6fc3daa986c7b5f614c172",
+      "bytes": 1204280,
+      "lido_integralmente": true
+    },
+    {
+      "path": "data/auditoria-crafting-nao-alquimico-v1.json",
+      "blob_sha": "4b99ee79c379aafd361f6c02f3c4ece96e903169",
+      "linhas_reconstruidas": 139
+    },
+    {
+      "path": "data/auditoria-crafting-escrita-encantamento-v1.json",
+      "blob_sha": "69cce2fb843a175fafff5c269555265b18a76189",
+      "linhas_reconstruidas": 433
+    }
+  ],
+  "estatisticas": {
+    "itens_publicados": 2785,
+    "receitas_publicadas": 2316,
+    "receitas_nao_alquimicas_reconciliadas": 572,
+    "alquimia": 1744,
+    "contagem_por_oficio": {
+      "forja": {
+        "publicadas": 89,
+        "reconstruidas": 89
+      },
+      "joalheria": {
+        "publicadas": 14,
+        "reconstruidas": 14
+      },
+      "curtume": {
+        "publicadas": 20,
+        "reconstruidas": 20
+      },
+      "cozinha": {
+        "publicadas": 16,
+        "reconstruidas": 16
+      },
+      "escrita": {
+        "publicadas": 320,
+        "reconstruidas": 320
+      },
+      "encantamento": {
+        "publicadas": 113,
+        "reconstruidas": 113
+      }
+    },
+    "ids_receita_unicos": true
+  },
+  "erros_estruturais": {
+    "campos_de_receitas_divergentes": [],
+    "referencias_de_ingrediente_ou_produto_inexistentes": [],
+    "produtos_artesanais_com_campos_divergentes": []
+  },
+  "requisitos_invalidos": {
+    "total": 102,
+    "em_encantamento": 102,
+    "caso_unico": "mat-cristal-de-alma-maior presente com quantidade 0 em 102 receitas; o Laboratorio considera quantidade <=0 inválida.",
+    "casos": [
+      {
+        "id_receita": "rec-forjar-algemas-dimensionais",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-amuleto-de-saude",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-acao-livre",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-armazenar-magia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-cativar-animais",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-escudo-mental",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-evasao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-protecao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-resistencia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-de-telecinesia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-anel-do-ariete",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-arco-do-juramento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-arma-de-alerta",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-armadura-de-adamante",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-armadura-de-mitral",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-armadura-de-resistencia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-azagaia-de-relampago",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-baralho-das-ilusoes",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-barco-dobravel",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-bolsa-de-truques",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-botas-aladas",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-botas-de-levitacao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-botas-do-inverno",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-bracadeiras-de-arquearia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-braseiro-de-comandar-elementais-do-fogo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-da-piton",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-das-florestas",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-de-cura",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-de-enfeiticar",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-de-trovao-e-relampago",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-do-fogo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cajado-do-poder",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-capa-do-saltimbanco",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-chapeu-de-disfarce",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-cinto-dos-anoes",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-colar-de-adaptacao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-contas-de-forca",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-corda-de-estrangulamento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-couro-batido-encantador",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-elmo-brilhante",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-elmo-de-telepatia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-escudo-animado",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-escudo-de-atracao-de-projeteis",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-escudo-sentinela",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-espada-da-vinganca",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-espada-do-sangramento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-faixas-de-ferro-de-bilarro",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-ferraduras-do-zefiro",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-flauta-assombrada",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-garrafa-do-efreeti",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-gema-de-visao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-globo-de-fluxo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-lamina-do-sol",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-leque-do-vento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-luvas-de-apanhar-projeteis",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-luvas-do-ladrao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-maca-do-rompimento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-machado-furioso",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-malha-elfica",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manto-da-aranha",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manto-de-deslocamento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manto-de-protecao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manto-do-morcego",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manual-de-rapidez-de-movimentos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-manual-do-bom-exercicio",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-matadora-de-dragoes",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-medalhao-de-pensamentos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-municao-1-2-ou-3",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pedra-da-boa-sorte",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pedras-de-mensagem",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pergaminho-de-protecao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-periapto-de-protecao-contra-veneno",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-perola-do-poder",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-po-da-seca",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-po-do-desaparecimento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-aumentar",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-encolher",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-escalar",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-heroismo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-ler-mentes",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-resistencia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-pocao-de-sopro-de-fogo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-olhos-de-aguia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-olhos-do-encantamento",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-robe-das-estrelas",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-robe-dos-itens-uteis",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-sacola-prestativa-de-heward",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-sandalias-de-patas-de-aranha",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-tapete-voador",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-tomo-da-compreensao",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-tomo-de-lideranca-e-influencia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-tridente-de-comandar-peixes",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-trombeta-do-valhalla",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-das-maravillhas",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-de-deteccao-de-inimigos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-de-medo",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-de-misseis-magicos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-de-paralisia",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-varinha-de-segredos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-espada-de-kas",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-livro-dos-grandes-feitos",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      },
+      {
+        "id_receita": "rec-forjar-olho-e-mao-de-vecna",
+        "estacao": "encantamento",
+        "id_insumo": "mat-cristal-de-alma-maior",
+        "quantidade": 0
+      }
+    ]
+  },
+  "conclusao": "572/572 receitas não alquímicas coincidem nos campos nome, estação, perícia, nível, insumos, resultado e rendimento. Nenhum item artesanal divergente, nenhuma referência quebrada. Os 102 requisitos zero são o único conjunto de quantidades inválidas em todas as 2316 receitas.",
+  "limites": [
+    "Os 1744 registros alquímicos foram contabilizados e testados quanto a referências e quantidades, mas não confrontados neste arquivo campo a campo contra sua lógica combinatória original.",
+    "Não foram testados efeitos de combate, mercados em runtime, inventário, save, Phaser ou prealfa.",
+    "Os documentos antigos que diziam que os JSONs grandes não eram legíveis ficam superados neste ponto específico, não em testes de gameplay.",
+    "Não executa correção nem promove decisão autoral.",
+    "O código gerador não foi reexecutado: comparação é contra os dados compilados atualmente versionados."
+  ]
+}
