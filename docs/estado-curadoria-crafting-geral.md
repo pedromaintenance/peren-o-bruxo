@@ -69,3 +69,13 @@ Nenhum desses pontos foi implementado neste ciclo. Esta lista é uma **fila de d
 - `vendorStock()` não oferece `acessorio` nos perfis de mercador; Joalheria existe somente em **Thargrid** e **Shadar-Riverie** no cadastro atual. O personagem inicia com proficiência zero e a menor receita exige 12, mas há tutores nessas cidades.
 - Simulação condicional em ambos os polos, com Comércio 9 e estoque hipotético: **14/14 saldos negativos em cada cidade**; não é lucro/prejuízo real. Nenhuma origem das gemas ou mudança de preço foi homologada.
 - **0** alterações no catálogo jogável, slots, engine, assets, receitas, mercado, save ou canon. Próximo ciclo proposto: **Curtume, 20/20**.
+
+## Terceiro aprofundamento — Curtume 20/20 (09/11/2026)
+
+- [Parecer das 20 receitas de Curtume](parecer-curtume-20-materiais-bolsas-e-slots-v1.md) e [matriz individualizada](../data/auditoria-curtume-20-v1.json) publicados, com **oito decisões CUR-01 a CUR-08 ainda não aprovadas**.
+- **Quatro materiais × cinco formas**: 16 peças de `armadura` e quatro Bolsas de Coleta `utilitario`. **15/20 receitas** usam insumos têxteis; não existe neste grafo receita de curtimento/tecelagem/fiação anterior aos materiais.
+- No clássico, **16 peças** concorrem pelo slot único `armor`; **quatro bolsas** têm Defesa no cadastro mas não podem ser equipadas pelo botão normal e não alteram `gather()` nem capacidade de carga.
+- **Couro Curtido** atende a cinco receitas de Curtume e 35 de Forja; **Linho de Deméter**, a cinco de Curtume e 320 de Escrita. Não presumir produção local de linho pelo templo de Deméter.
+- **Fibra de Aranha Yokai** exige revisão taxonômica e de proveniência: povo Yokai e tipo `yokai` não são categorias automaticamente equivalentes. Propostas de aranhas inteligentes em Eldroth não foram homologadas.
+- Simulação condicional de compra e venda, Comércio 9, nas quatro cidades com Curtume: **15 saldos positivos, cinco negativos** em cada cidade, sem confirmar estoques, trabalho ou custos de rota. Não é lucratividade real.
+- **0** alterações em receitas, itens, equipamento, mercado, motor, Phaser, saves, loot ou canon. Próximo ciclo: **Cozinha 16/16**.
