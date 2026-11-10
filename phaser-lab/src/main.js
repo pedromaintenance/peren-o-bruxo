@@ -305,6 +305,7 @@ let regionNonce=0;
 function enterRegion(regionId){
  const nextSeed=expeditionSeed(regionId,`${Date.now().toString(36)}-${(regionNonce++).toString(36)}`);
  bridge.execute({type:'selectRegion',regionId,seed:nextSeed});
+ if(bridge.state.survival.alive===false){renderHub();updateHud();return;}
  app.registry.set('seed',nextSeed);app.registry.set('atExit',false);
  app.registry.set('combatProfile',bridge.combatProfile());
  regionSelect.value=regionId;regionHint();last='';hubTab='intro';
@@ -768,6 +769,24 @@ $('importProgress').addEventListener('change',async e=>{
 });
 app.events.on('peren-progress-change',()=>{if(!$('hub').hidden)renderHub()});
 app.events.on('peren-progress-error',message=>notifyProgressError({message}));
+// Death is a permanent mortal state unless an explicit earlier backup is restored.
+// The system deliberately does not grant resurrection or immortality to a metamorfo.
+$('deathBackup').addEventListener('click',()=>$('exportProgress').click());
+$('deathImport').addEventListener('change',async event=>{
+ const file=event.target.files?.[0];event.target.value='';if(!file)return;
+ try{
+  if(file.size>2_000_000)throw Error('Backup excede 2 MB.');
+  const content=await file.text(),candidate=validatePhaserBackup(content,catalogs);
+  if(!candidate.character.survival.alive)throw Error('O backup selecionado também contém Peren morto.');
+  bridge.restore(content);
+  app.registry.set('combatProfile',bridge.combatProfile());
+  app.registry.set('seed',bridge.read().worlds.activeSeed||'murin-001');
+  regionSelect.value=regionFromSeed(app.registry.get('seed')).id;regionHint();
+  $('controls').inert=false;$('deathOverlay').hidden=true;
+  app.scene.stop('ExplorationScene');app.scene.start('ExplorationScene');
+  hub(true);renderHub();updateHud();
+ }catch(err){$('deathStatus').textContent='Não foi possível restaurar: '+(err?.message||String(err));}
+});
 window.__perenProgress={get save(){return bridge.read()},get key(){return PHASER_KEY},get classicKey(){return CLASSIC_KEY}};
 renderHub();
 
