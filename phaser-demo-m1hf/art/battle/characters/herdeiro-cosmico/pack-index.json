@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "pack_id": "herdeiro-cosmico-battle-v1",
+  "game": "Peren, o Bruxo",
+  "source_sha256": "09880e7b0b50a09490af5e056e744f1ce0b7921ba5d5f0c7566c9df7254e5402",
+  "source_size_px": [
+    1448,
+    1086
+  ],
+  "source_file": "Folha de Assets do Herdeiro Cósmico(1).png",
+  "source_mode": "RGBA",
+  "archive": "Herdeiro_Cosmico_Battle_Assets_v1.zip",
+  "sprites_total": 32,
+  "repo_status": "metadata_only_binarios_em_pacote_da_conversa",
+  "engine_status": "não integrado",
+  "character_binding": "a confirmar",
+  "art_license": "não informada",
+  "groups": {
+    "retratos": [
+      "retrato_01_frontal",
+      "retrato_02_semiperfil",
+      "retrato_03_queixo_erguido",
+      "retrato_04_cabeca_baixa",
+      "retrato_05_cabeca_elevada"
+    ],
+    "olhos": [
+      "olhos_01",
+      "olhos_02",
+      "olhos_03",
+      "olhos_04",
+      "olhos_05_cosmicos",
+      "olhos_06"
+    ],
+    "bocas": [
+      "boca_01_seria",
+      "boca_02_sutil",
+      "boca_03_fala",
+      "boca_04_neutra",
+      "boca_05_tensa",
+      "boca_06_grito"
+    ],
+    "palpebras": [
+      "palpebras_01",
+      "palpebras_02",
+      "palpebras_03",
+      "palpebras_04"
+    ],
+    "maos": [
+      "mao_01_sinal",
+      "mao_02_pinca",
+      "mao_03_conjuracao",
+      "mao_04_rosto"
+    ],
+    "cabelos": [
+      "cabelo_01",
+      "cabelo_02"
+    ],
+    "mantos": [
+      "manto_01_ombro",
+      "manto_02_capa"
+    ],
+    "efeitos": [
+      "efeito_01_portal",
+      "efeito_02_vortice",
+      "efeito_03_explosao"
+    ]
+  },
+  "pixel_policy": "preservar alfa e dimensões; não reamostrar originais",
+  "note": "manifest completo com caixas de recorte, hashes por sprite e âncoras preliminares está no ZIP local"
+}
