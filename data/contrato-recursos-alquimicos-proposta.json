@@ -1,0 +1,255 @@
+{
+  "schema": "peren.alquimia.recursos.proposta.v1",
+  "data": "2026-11-05",
+  "estado": "PROPOSTA_NAO_CANONICA",
+  "autorizacao": "Somente estudo de transições, não define potência, duração, morte, economia ou permissão de uso.",
+  "fundamentacao": {
+    "dados": [
+      "data/curadoria_ingredientes.json",
+      "data/catalogo-combos-alquimicos.json"
+    ],
+    "classificacao": "data/taxonomia-efeitos-alquimicos-proposta.json (PR #98, não aprovado)",
+    "gameplay_legado": "game.js (main) — PV/MP atuais; máximo por função; useItem traduz Regenerate Health/Magicka em restauração imediata",
+    "estudo": "docs/estudo-recursos-alquimicos-v1.md"
+  },
+  "invariantes_de_design": [
+    "O cálculo de efeitos ativados depende de pelo menos dois tipos distintos de ingredientes antes de executar esta camada.",
+    "Uma preparação pode ativar mais de um efeito e preservar todos, mesmo se incompatíveis.",
+    "Em caso de incompatibilidade aprovada, o preparado é Impuro; o classificador não é definido pelos recursos.",
+    "Valores I–III das origens não determinam magnitude numérica neste contrato.",
+    "Capacidade, valor atual e taxa de recuperação não são a mesma grandeza.",
+    "Efeitos de regeneração não se convertem automaticamente em restauração imediata na semântica proposta.",
+    "A adaptação do jogo clássico exige compatibilidade explícita para itens Regenerate legados."
+  ],
+  "operadores_propostos": [
+    {
+      "effectId": "dano_saude",
+      "nome_curadoria": "Dano à Saúde",
+      "grupo_semantico_da_taxonomia": "recurso_atual",
+      "dominio_de_pesquisa": "recurso_atual",
+      "operacao_proposta": "reduzir_atual",
+      "recurso": "saude",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "dano_magia",
+      "nome_curadoria": "Dano à Magia",
+      "grupo_semantico_da_taxonomia": "recurso_atual",
+      "dominio_de_pesquisa": "recurso_atual",
+      "operacao_proposta": "reduzir_atual",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "restaurar_saude",
+      "nome_curadoria": "Restaurar Saúde",
+      "grupo_semantico_da_taxonomia": "recurso_atual",
+      "dominio_de_pesquisa": "recurso_atual",
+      "operacao_proposta": "aumentar_atual",
+      "recurso": "saude",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "restaurar_magia",
+      "nome_curadoria": "Restaurar Magia",
+      "grupo_semantico_da_taxonomia": "recurso_atual",
+      "dominio_de_pesquisa": "recurso_atual",
+      "operacao_proposta": "aumentar_atual",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "aumentar_saude",
+      "nome_curadoria": "Aumentar Saúde",
+      "grupo_semantico_da_taxonomia": "capacidade_e_defesa",
+      "dominio_de_pesquisa": "capacidade",
+      "operacao_proposta": "aumentar_maximo_hipotetico",
+      "recurso": "saude",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "aumentar_magia",
+      "nome_curadoria": "Aumentar Magia",
+      "grupo_semantico_da_taxonomia": "capacidade_e_defesa",
+      "dominio_de_pesquisa": "capacidade",
+      "operacao_proposta": "aumentar_maximo_hipotetico",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "diminuir_magia",
+      "nome_curadoria": "Diminuir Magia",
+      "grupo_semantico_da_taxonomia": "capacidade_e_defesa",
+      "dominio_de_pesquisa": "ambiguo",
+      "operacao_proposta": "diminuir_maximo_ou_eficacia",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "regenerar_saude",
+      "nome_curadoria": "Regenerar Saúde",
+      "grupo_semantico_da_taxonomia": "fluxo_de_recurso",
+      "dominio_de_pesquisa": "fluxo",
+      "operacao_proposta": "aumentar_taxa_hipotetica",
+      "recurso": "saude",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "regenerar_magia",
+      "nome_curadoria": "Regenerar Magia",
+      "grupo_semantico_da_taxonomia": "fluxo_de_recurso",
+      "dominio_de_pesquisa": "fluxo",
+      "operacao_proposta": "aumentar_taxa_hipotetica",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    },
+    {
+      "effectId": "diminuir_regeneracao_magia",
+      "nome_curadoria": "Diminuir Regeneração de Magia",
+      "grupo_semantico_da_taxonomia": "fluxo_de_recurso",
+      "dominio_de_pesquisa": "fluxo",
+      "operacao_proposta": "diminuir_taxa_hipotetica",
+      "recurso": "magia",
+      "magnitude": null,
+      "unidade": null,
+      "duracao": null,
+      "resistencia": null,
+      "acumulo": null,
+      "ordem_de_resolucao": null,
+      "meio_de_aplicacao": null,
+      "aprovacao_autoral": false
+    }
+  ],
+  "conflitos_a_decidir": {
+    "aplicacao_simultanea": [
+      "dano_antes_de_restaurar",
+      "restaurar_antes_de_dano",
+      "saldo_liquido_em_lote"
+    ],
+    "capacidade_maxima": [
+      "preservar_valor_atual_com_clamp",
+      "preservar_deficit",
+      "preservar_proporcao"
+    ],
+    "diminuir_magia": [
+      "reduzir_capacidade_maxima",
+      "reduzir_eficacia_arcana"
+    ],
+    "regeneracao": [
+      "qual_e_a_unidade_de_intervalo",
+      "como_empilhar_taxas",
+      "piso_de_taxa_ou_degeneracao",
+      "duracao_das_influencias"
+    ],
+    "expiracao_e_persistencia": [
+      "retorno_do_maximo_ao_valor_base",
+      "corte_de_excesso_ao_cessar",
+      "save_de_estados_ativos",
+      "fora_do_combate"
+    ],
+    "economia_e_veiculo": [
+      "consumo_por_preparo",
+      "poção_veneno_tonico_elixir_balsamo",
+      "alvo_e_resistencia"
+    ]
+  },
+  "amostras_de_QA_nao_canonicas": {
+    "saude_para_ordem": {
+      "current": 95,
+      "max": 100,
+      "baseRate": 0,
+      "dano": 40,
+      "restauracao": 40
+    },
+    "saude_para_capacidade": {
+      "current": 60,
+      "max": 100,
+      "baseRate": 2,
+      "aumento_maximo": 30
+    },
+    "magia_para_capacidade": {
+      "current": 70,
+      "max": 80,
+      "baseRate": 1,
+      "diminuicao_hipotetica": 40
+    },
+    "saude_para_regeneracao": {
+      "current": 98,
+      "max": 100,
+      "baseRate": 2,
+      "aumento_taxa": 8,
+      "ticks": 3
+    },
+    "magia_para_regeneracao": {
+      "current": 30,
+      "max": 80,
+      "baseRate": 1,
+      "aumento_taxa": 4,
+      "diminuicao_taxa": 2,
+      "ticks": 2
+    }
+  }
+}
